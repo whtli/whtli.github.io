@@ -162,6 +162,523 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-sql学习0731-INDEX、DROP、ALTER、 AUTO INCREMENT" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/31/sql%E5%AD%A6%E4%B9%A00731-INDEX%E3%80%81DROP%E3%80%81ALTER%E3%80%81%20AUTO%20INCREMENT/">sql学习0731-INDEX、DROP、ALTER、 AUTO INCREMENT</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/31/sql%E5%AD%A6%E4%B9%A00731-INDEX%E3%80%81DROP%E3%80%81ALTER%E3%80%81%20AUTO%20INCREMENT/" class="archive-article-date">
+  	<time datetime="2020-07-31T14:32:11.786Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-31</time>
+</a>
+        
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="创建索引"><a href="#创建索引" class="headerlink" title="创建索引"></a>创建索引</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>在不读取整个表的情况下，索引能更加快速地查找数据。用户无法看到索引，他们只能被用来提高查询效率。更新一个带有索引的表比更新一个不带索引的表花费更多时间，这是由于索引本身也需要更新导致的。因此，理想的做法是仅在经常被搜索的表上创建索引。</p>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">创建简单索引，允许重复</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">INDEX</span> index_name</span><br><span class="line"><span class="keyword">ON</span> table_name (column_name);</span><br><span class="line"></span><br><span class="line">创建简单索引（在多个列上），允许重复</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">INDEX</span> index_name</span><br><span class="line"><span class="keyword">ON</span> table_name (column_name1, column_name2);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">创建唯一索引，不允许重复，唯一索引意味着两个行不能拥有同一个索引值</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">UNIQUE</span> <span class="keyword">INDEX</span> index_name</span><br><span class="line"><span class="keyword">ON</span> table_name (column_name)</span><br></pre></td></tr></table></figure>
+
+<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">INDEX</span> PIndex</span><br><span class="line"><span class="keyword">ON</span> Persons (LastName);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">INDEX</span> PIndex</span><br><span class="line"><span class="keyword">ON</span> Persons (LastName, FirstName);</span><br></pre></td></tr></table></figure>
+
+<h1 id="DROP"><a href="#DROP" class="headerlink" title="DROP"></a>DROP</h1><h2 id="介绍-1"><a href="#介绍-1" class="headerlink" title="介绍"></a>介绍</h2><p>通过DROP语句可以删除索引、表、数据库</p>
+<h2 id="语法1-撤销索引-DROP-INDEX"><a href="#语法1-撤销索引-DROP-INDEX" class="headerlink" title="语法1 撤销索引 DROP INDEX"></a>语法1 撤销索引 DROP INDEX</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(Oracle)</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">INDEX</span> index_name;</span><br></pre></td></tr></table></figure>
+
+<h2 id="语法2-撤销表-DROP-TABLE"><a href="#语法2-撤销表-DROP-TABLE" class="headerlink" title="语法2 撤销表 DROP TABLE"></a>语法2 撤销表 DROP TABLE</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> table_name;</span><br></pre></td></tr></table></figure>
+
+<h2 id="语法3-撤销数据库-DROP-DATABASE"><a href="#语法3-撤销数据库-DROP-DATABASE" class="headerlink" title="语法3 撤销数据库 DROP DATABASE"></a>语法3 撤销数据库 DROP DATABASE</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">DATABASE</span> database_name;</span><br></pre></td></tr></table></figure>
+
+<h2 id="语法4-TRUNCATE-TABLE语句"><a href="#语法4-TRUNCATE-TABLE语句" class="headerlink" title="语法4 TRUNCATE TABLE语句"></a>语法4 TRUNCATE TABLE语句</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">只删除表中内容，不删除表</span><br><span class="line"><span class="keyword">TRUNCATE</span> <span class="keyword">TABLE</span> table_name;</span><br></pre></td></tr></table></figure>
+
+<h1 id="ALTER-TABLE"><a href="#ALTER-TABLE" class="headerlink" title="ALTER TABLE"></a>ALTER TABLE</h1><h2 id="介绍-2"><a href="#介绍-2" class="headerlink" title="介绍"></a>介绍</h2><p>ALTER TABLE 语句用于在已有的表中 添加、删除 或 修改 各个列。</p>
+<h2 id="语法1-在表中添加列"><a href="#语法1-在表中添加列" class="headerlink" title="语法1 在表中添加列"></a>语法1 在表中添加列</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name</span><br><span class="line"><span class="keyword">ADD</span> column_name data_type;</span><br></pre></td></tr></table></figure>
+<h2 id="语法2-删除表中的列"><a href="#语法2-删除表中的列" class="headerlink" title="语法2 删除表中的列"></a>语法2 删除表中的列</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">COLUMN</span> column_name;</span><br></pre></td></tr></table></figure>
+
+<h2 id="语法3-改变表中的数据类中"><a href="#语法3-改变表中的数据类中" class="headerlink" title="语法3 改变表中的数据类中"></a>语法3 改变表中的数据类中</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name</span><br><span class="line"><span class="keyword">MODIFY</span> column_name data_type;</span><br></pre></td></tr></table></figure>
+<h2 id="举例Persons表"><a href="#举例Persons表" class="headerlink" title="举例Persons表"></a>举例Persons表</h2><table>
+<thead>
+<tr>
+<th>P_id</th>
+<th>LastName</th>
+<th>FirstName</th>
+<th>City</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>san</td>
+<td>zhang</td>
+<td>BeiJing</td>
+</tr>
+<tr>
+<td>2</td>
+<td>si</td>
+<td>li</td>
+<td>ShangHai</td>
+</tr>
+<tr>
+<td>3</td>
+<td>wu</td>
+<td>wang</td>
+<td>GuangZhou</td>
+</tr>
+</tbody></table>
+<h2 id="实例1"><a href="#实例1" class="headerlink" title="实例1"></a>实例1</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">在 "Persons" 表中添加一个名为 "DateOfBirth" 的列</span><br><span class="line"></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> Persons</span><br><span class="line"><span class="keyword">ADD</span> DateOfBirth <span class="built_in">date</span>;</span><br></pre></td></tr></table></figure>
+
+<p>操作后的表如下：<br>| P_id | LastName | FirstName | City | DateOfBirth |<br>|–|–|–|–|–|<br>| 1 | san | zhang | BeiJing ||<br>| 2 | si | li | ShangHai ||<br>| 3 | wu | wang | GuangZhou ||</p>
+<h2 id="实例2"><a href="#实例2" class="headerlink" title="实例2"></a>实例2</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">改变 "Persons" 表中 "DateOfBirth" 列的数据类型</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> Persons</span><br><span class="line"><span class="keyword">MODIFY</span> DateOfBirth <span class="keyword">year</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="实例3"><a href="#实例3" class="headerlink" title="实例3"></a>实例3</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">删除 "Person" 表中的 "DateOfBirth" 列</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> Persons</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">COLUMN</span> DataOfBirth;</span><br></pre></td></tr></table></figure>
+<p>操作后的表如下：<br>| P_id | LastName | FirstName | City |<br>|–|–|–|–|<br>| 1 | san | zhang | BeiJing |<br>| 2 | si | li | ShangHai |<br>| 3 | wu | wang | GuangZhou |</p>
+<h1 id="AUTO-INCREMENT-字段"><a href="#AUTO-INCREMENT-字段" class="headerlink" title="AUTO INCREMENT 字段"></a>AUTO INCREMENT 字段</h1><h2 id="介绍-3"><a href="#介绍-3" class="headerlink" title="介绍"></a>介绍</h2><p>我们通常希望在每次插入新记录时，自动地创建主键字段的值。<br>AUTO INCREMENT 字段可以在新记录插入到表中的时候生成一个唯一的数字</p>
+<h2 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">在 Oracle 中，必须通过 sequence 对象（该对象生成数字序列）创建 AUTO INCREMENT 字段:</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">SEQUENCE</span> seq_person</span><br><span class="line"><span class="keyword">MINVALUE</span>        <span class="number">1</span></span><br><span class="line"><span class="keyword">START</span> <span class="keyword">WITH</span>      <span class="number">1</span></span><br><span class="line"><span class="keyword">INCREMENT</span> <span class="keyword">BY</span>    <span class="number">1</span></span><br><span class="line"><span class="keyword">CACHE</span>           <span class="number">10</span></span><br></pre></td></tr></table></figure>
+<p>上面的代码创建一个名为 seq_person 的 sequence 对象，它以1起始且以 1 为单位递增。该对象缓存10个值以提高性能。cache选项规定了为了提高访问速度要存储多少个序列值。</p>
+<h2 id="实例-1"><a href="#实例-1" class="headerlink" title="实例"></a>实例</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">要在 "Persons" 表中插入新记录，我们必须使用 nextval 函数（该函数从 seq_person 序列中取回下一个值）：</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> Persons (<span class="keyword">ID</span>,FirstName,LastName)</span><br><span class="line"><span class="keyword">VALUES</span> (seq_person.nextval,<span class="string">'Lars'</span>,<span class="string">'Monsen'</span>)</span><br></pre></td></tr></table></figure>
+<p>上面的 SQL 语句会在 “Persons” 表中插入一条新记录。<br>“ID” 列会被赋值为来自 seq_person 序列的下一个数字，所以使用了nextval函数；<br>“FirstName”列 会被设置为 “Lars”；”LastName” 列会被设置为 “Monsen”。</p>
+<h1 id="VIEW-试图"><a href="#VIEW-试图" class="headerlink" title="VIEW(试图)"></a>VIEW(试图)</h1><h2 id="介绍-4"><a href="#介绍-4" class="headerlink" title="介绍"></a>介绍</h2><p>视图是可视化的表，下面主要介绍怎样创建、更新和删除视图</p>
+<h2 id="创建视图-CREATE-VIEW"><a href="#创建视图-CREATE-VIEW" class="headerlink" title="创建视图 CREATE　VIEW"></a>创建视图 CREATE　VIEW</h2><h3 id="语法1-创建视图"><a href="#语法1-创建视图" class="headerlink" title="语法1 创建视图"></a>语法1 创建视图</h3><p>视图是基于SQL语句的结果集的可视化的表。</p>
+<p>视图包含行和列，像一个真实的表（实际上并不是）。视图中的字段就是来自一个或多个数据库中的真实的表中的字段。</p>
+<p>可以向视图添加WHERE语句、JOIN语句以及SQL函数，也可以呈现数据，就像这些数据来自于某个单一的表一样。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span> view_name <span class="keyword">AS</span> <span class="comment">-- 创建 -- </span></span><br><span class="line"><span class="keyword">SELECT</span> column_name(s)    </span><br><span class="line"><span class="keyword">FROM</span> table_name</span><br><span class="line"><span class="keyword">WHERE</span> condition;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>视图总是显示最新的数据，每次查询视图时，数据库引擎通过使用视图的SQL语句重建数据。</p>
+</blockquote>
+<h3 id="实例1-创建视图"><a href="#实例1-创建视图" class="headerlink" title="实例1 创建视图"></a>实例1 创建视图</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">视图 &quot;Current Product List&quot; 会从 &quot;Products&quot; 表列出所有正在使用的产品</span><br><span class="line"></span><br><span class="line">CREATE VIEW [Current Product List] AS</span><br><span class="line">SELECT ProductID, ProductName</span><br><span class="line">FROM Products</span><br><span class="line">WHERE Discontinued&#x3D;No;</span><br></pre></td></tr></table></figure>
+<h3 id="实例2-查询实例1中的视图"><a href="#实例2-查询实例1中的视图" class="headerlink" title="实例2 查询实例1中的视图"></a>实例2 查询实例1中的视图</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * </span><br><span class="line"><span class="keyword">FROM</span> [<span class="keyword">Current</span> Product <span class="keyword">List</span>];</span><br></pre></td></tr></table></figure>
+
+<h2 id="更新视图-REPLACE-VIEW"><a href="#更新视图-REPLACE-VIEW" class="headerlink" title="更新视图 REPLACE VIEW"></a>更新视图 REPLACE VIEW</h2><h3 id="语法2"><a href="#语法2" class="headerlink" title="语法2"></a>语法2</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">OR</span> <span class="keyword">REPLACE</span> <span class="keyword">VIEW</span> view_name <span class="keyword">AS</span></span><br><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table_name</span><br><span class="line"><span class="keyword">WHERE</span> condition;</span><br></pre></td></tr></table></figure>
+<h3 id="实例3-1"><a href="#实例3-1" class="headerlink" title="实例3"></a>实例3</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">向 "Current Product List" 视图添加 "Category" 列</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span> [<span class="keyword">Current</span> Product <span class="keyword">List</span>] <span class="keyword">AS</span></span><br><span class="line"><span class="keyword">SELECT</span> ProductID, ProductName, <span class="keyword">Category</span></span><br><span class="line"><span class="keyword">FROM</span> Products</span><br><span class="line"><span class="keyword">WHERE</span> Discontinued=<span class="keyword">No</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="撤销视图-DROP-VIEW"><a href="#撤销视图-DROP-VIEW" class="headerlink" title="撤销视图 DROP VIEW"></a>撤销视图 DROP VIEW</h2><h3 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">VIEW</span> view_name</span><br></pre></td></tr></table></figure>
+
+<h1 id="NULL-值"><a href="#NULL-值" class="headerlink" title="NULL 值"></a>NULL 值</h1><h2 id="介绍-5"><a href="#介绍-5" class="headerlink" title="介绍"></a>介绍</h2><p>NULL值代表遗漏的未知数据。表的列默认是可以存放NULL值的。<br>下面介绍 IS NULL 和 IS NOT NULL 操作符。</p>
+<h2 id="NULL-值-1"><a href="#NULL-值-1" class="headerlink" title="NULL 值"></a>NULL 值</h2><h3 id="介绍-6"><a href="#介绍-6" class="headerlink" title="介绍"></a>介绍</h3><ul>
+<li><p>如果表中的某个列是可选的，那么我们可以在不向该列添加值的情况下，插入新记录或更新已有的记录。这意味着该字段将以 NULL值的形式来保存。</p>
+</li>
+<li><p>NULL 值的处理方式与其他值不同。</p>
+</li>
+<li><p>NULL 用作未知的 或 不适用 的 值 的 占位符。</p>
+</li>
+<li><p>无法比较 NULL 和 0，因为它们不等价。</p>
+</li>
+<li><p>也无法使用比较运算符来测试 NULL 值，比如 =、&lt; 或 &lt;&gt;。</p>
+</li>
+<li><p>必须使用 IS NULL 和 IS NOT NULL 操作符。</p>
+</li>
+</ul>
+<h3 id="实例1-IS-NULL"><a href="#实例1-IS-NULL" class="headerlink" title="实例1 IS NULL"></a>实例1 IS NULL</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> LastName, FirstName, Address <span class="keyword">FROM</span> Persons</span><br><span class="line"><span class="keyword">WHERE</span> Address <span class="keyword">IS</span> <span class="literal">NULL</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="实例2-IS-NOT-NULL"><a href="#实例2-IS-NOT-NULL" class="headerlink" title="实例2 IS NOT NULL"></a>实例2 IS NOT NULL</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> LastName, FirstName, Address <span class="keyword">FROM</span> Persons</span><br><span class="line"><span class="keyword">WHERE</span> Address <span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>;</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/31/sql%E5%AD%A6%E4%B9%A00731-INDEX%E3%80%81DROP%E3%80%81ALTER%E3%80%81%20AUTO%20INCREMENT/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-sql学习0729-SELECT INTO、INSERT INTO SELECT、CREATE DATABASE、CREATE TABLE" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/31/sql%E5%AD%A6%E4%B9%A00729-SELECT%20INTO%E3%80%81INSERT%20INTO%20SELECT%E3%80%81CREATE%20DATABASE%E3%80%81CREATE%20TABLE/">sql学习0729-SELECT INTO、INSERT INTO SELECT、CREATE DATABASE、CREATE TABLE</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/31/sql%E5%AD%A6%E4%B9%A00729-SELECT%20INTO%E3%80%81INSERT%20INTO%20SELECT%E3%80%81CREATE%20DATABASE%E3%80%81CREATE%20TABLE/" class="archive-article-date">
+  	<time datetime="2020-07-31T14:32:11.770Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-31</time>
+</a>
+        
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="SELECT-INTO"><a href="#SELECT-INTO" class="headerlink" title="SELECT INTO"></a>SELECT INTO</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>可以从一个表复制数据，然后把数据插入到另一个新表中。</p>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * </span><br><span class="line"><span class="keyword">INTO</span> table2 [<span class="keyword">IN</span> externable]</span><br><span class="line"><span class="keyword">FROM</span> table1</span><br></pre></td></tr></table></figure>
+<p>或</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span>　column_name(s)</span><br><span class="line"><span class="keyword">INTO</span> table2 [<span class="keyword">IN</span> externaldb]</span><br><span class="line"><span class="keyword">FROM</span> table1</span><br></pre></td></tr></table></figure>
+
+<h2 id="实例1-创建website-表的备份"><a href="#实例1-创建website-表的备份" class="headerlink" title="实例1 创建website 表的备份"></a>实例1 创建website 表的备份</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">INTO</span> WebsitesBackup2020</span><br><span class="line"><span class="keyword">FROM</span> Websites</span><br></pre></td></tr></table></figure>
+<h2 id="实例2-只复制一些列插入到新表中"><a href="#实例2-只复制一些列插入到新表中" class="headerlink" title="实例2 只复制一些列插入到新表中"></a>实例2 只复制一些列插入到新表中</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">name</span>, <span class="keyword">url</span></span><br><span class="line"><span class="keyword">INTO</span> WebsitesBackup2020</span><br><span class="line"><span class="keyword">FROM</span> Websites;</span><br></pre></td></tr></table></figure>
+
+<h2 id="实例3-只复制中国的网站插入到新表中"><a href="#实例3-只复制中国的网站插入到新表中" class="headerlink" title="实例3 只复制中国的网站插入到新表中"></a>实例3 只复制中国的网站插入到新表中</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">INTO</span> WebsitesBackup2020</span><br><span class="line"><span class="keyword">FROM</span> Websites</span><br><span class="line"><span class="keyword">WHERE</span> country = <span class="string">'China'</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="实例4-复制多个表中的数据插入到新表中"><a href="#实例4-复制多个表中的数据插入到新表中" class="headerlink" title="实例4 复制多个表中的数据插入到新表中"></a>实例4 复制多个表中的数据插入到新表中</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Websites.name, access_log.count, access_log.date</span><br><span class="line"><span class="keyword">INTO</span> WebsitesBackup2020</span><br><span class="line"><span class="keyword">FROM</span> Websites</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> access_log</span><br><span class="line"><span class="keyword">ON</span> Websites.id=access_log.site_id;</span><br></pre></td></tr></table></figure>
+
+<h1 id="INSERT-INTO-SELECT"><a href="#INSERT-INTO-SELECT" class="headerlink" title="INSERT INTO SELECT"></a>INSERT INTO SELECT</h1><h2 id="介绍-1"><a href="#介绍-1" class="headerlink" title="介绍"></a>介绍</h2><p>可以从一个表复制数据，然后把数据插入到一个已存在的表中。目标表中任何已存在的行都不会受影响。</p>
+<h2 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">可以从一个表中复制 所有的列 插入到另一个已存在的表中</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> table2</span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> table1;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">可以从一个表中复制 特定的列 插入到另一个已存在的表中</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> table2 (column_name(s))</span><br><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table1;</span><br></pre></td></tr></table></figure>
+<h2 id="实例1-复制APP中的数据插入到Websites中"><a href="#实例1-复制APP中的数据插入到Websites中" class="headerlink" title="实例1 复制APP中的数据插入到Websites中"></a>实例1 复制APP中的数据插入到Websites中</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> Websites (<span class="keyword">name</span>, country)</span><br><span class="line"><span class="keyword">SELECT</span> app_name, country <span class="keyword">FROM</span> apps;</span><br></pre></td></tr></table></figure>
+
+<h2 id="实例2-复制-id-是-1-的-APP-到-“Websites”-中"><a href="#实例2-复制-id-是-1-的-APP-到-“Websites”-中" class="headerlink" title="实例2 复制 id 是 1 的 APP 到 “Websites” 中"></a>实例2 复制 id 是 1 的 APP 到 “Websites” 中</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> Websites (<span class="keyword">name</span>, country)</span><br><span class="line"><span class="keyword">SELECT</span> app_name, country <span class="keyword">FROM</span> apps</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">id</span>=<span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="note"><a href="#note" class="headerlink" title="note"></a>note</h2><p>select into from 和 insert into select 都是用来复制表</p>
+<p>两者的主要区别为： </p>
+<ul>
+<li>select into from 要求目标表不存在，因为在插入时会自动创建；</li>
+<li>insert into select from 要求目标表存在。</li>
+</ul>
+<h1 id="Create-Database"><a href="#Create-Database" class="headerlink" title="Create Database"></a>Create Database</h1><h2 id="介绍-2"><a href="#介绍-2" class="headerlink" title="介绍"></a>介绍</h2><p>创建数据库</p>
+<h2 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h2><p>CREATE DATABASE database_name;</p>
+<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>CREATE DATABASE Store;</p>
+<h1 id="Create-Table"><a href="#Create-Table" class="headerlink" title="Create Table"></a>Create Table</h1><h2 id="介绍-3"><a href="#介绍-3" class="headerlink" title="介绍"></a>介绍</h2><p>创建表</p>
+<h2 id="语法-3"><a href="#语法-3" class="headerlink" title="语法"></a>语法</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> table_name</span><br><span class="line">(</span><br><span class="line">column_name1 data_type(<span class="keyword">size</span>),</span><br><span class="line">column_name2 data_type(<span class="keyword">size</span>),</span><br><span class="line">column_name3 data_type(<span class="keyword">size</span>),</span><br><span class="line">....</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h2 id="实例-1"><a href="#实例-1" class="headerlink" title="实例"></a>实例</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">Store</span></span><br><span class="line">(</span><br><span class="line">gools_id    <span class="built_in">int</span>,</span><br><span class="line">goods_name  <span class="built_in">varchar</span>(<span class="number">255</span>),</span><br><span class="line">goods_country <span class="built_in">varchar</span>(<span class="number">255</span>),</span><br><span class="line">goods_price <span class="built_in">varchar</span>(<span class="number">255</span>),</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/31/sql%E5%AD%A6%E4%B9%A00729-SELECT%20INTO%E3%80%81INSERT%20INTO%20SELECT%E3%80%81CREATE%20DATABASE%E3%80%81CREATE%20TABLE/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-sql学习0730-Constraints（约束）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/31/sql%E5%AD%A6%E4%B9%A00730-Constraints%EF%BC%88%E7%BA%A6%E6%9D%9F%EF%BC%89/">sql学习0730-Constraints（约束）</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/31/sql%E5%AD%A6%E4%B9%A00730-Constraints%EF%BC%88%E7%BA%A6%E6%9D%9F%EF%BC%89/" class="archive-article-date">
+  	<time datetime="2020-07-31T14:32:11.770Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-31</time>
+</a>
+        
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>SQL 约束用于规定表中的数据规则。</p>
+<p>如果存在违反约束的数据行为，行为会被约束终止。</p>
+<p>约束可以在创建表时规定（通过 CREATE TABLE 语句）；</p>
+<p>或者在表创建之后规定（通过 ALTER TABLE 语句）。</p>
+<h2 id="语法（CREATE-TABLE-CONSTRAINT）"><a href="#语法（CREATE-TABLE-CONSTRAINT）" class="headerlink" title="语法（CREATE TABLE + CONSTRAINT）"></a>语法（CREATE TABLE + CONSTRAINT）</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> table_name</span><br><span class="line">(</span><br><span class="line">column_name1 data_type(<span class="keyword">size</span>) constraint_name,</span><br><span class="line">column_name2 data_type(<span class="keyword">size</span>) constraint_name,</span><br><span class="line">column_name3 data_type(<span class="keyword">size</span>) constraint_name,</span><br><span class="line">....</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h2 id="在-SQL-中，有以下6个约束："><a href="#在-SQL-中，有以下6个约束：" class="headerlink" title="在 SQL 中，有以下6个约束："></a>在 SQL 中，有以下6个约束：</h2><ul>
+<li>NOT NULL          - 指示某列不能存储 NULL 值。</li>
+<li>UNIQUE            - 保证某列的每行必须有唯一的值，独一无二的值。</li>
+<li>PRIMARY KEY(主键) - NOT NULL和 UNIQUE的结合。确保某列（或两个列多个列的结合）有唯一标识，有助于更容易更快速地找到表中的一个特定的记录。</li>
+<li>FOREIGN KEY(外键) - 保证一个表中的数据匹配另一个表中的值的参照完整性。</li>
+<li>CHECK             - 保证列中的值符合指定的条件。</li>
+<li>DEFAULT           - 规定没有给列赋值时的默认值。</li>
+</ul>
+<h2 id="NOT-NULL-约束"><a href="#NOT-NULL-约束" class="headerlink" title="NOT NULL 约束"></a>NOT NULL 约束</h2><h3 id="介绍-1"><a href="#介绍-1" class="headerlink" title="介绍"></a>介绍</h3><p>在默认的情况下，表的列 是接受 NULL 值的，但NOT NULL约束强制该列不接受 NULL值，强制字段始终包含非空值。如果不向字段添加值，就无法插入或更新记录。</p>
+<h3 id="实例1-创建表时定义not-null约束"><a href="#实例1-创建表时定义not-null约束" class="headerlink" title="实例1 创建表时定义not null约束"></a>实例1 创建表时定义not null约束</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">下面的 SQL 语句强制 "ID" 列、 "LastName" 列以及 "FirstName" 列不能为NULL。</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> Persons (</span><br><span class="line">    <span class="keyword">ID</span>          <span class="built_in">int</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">    LastName    <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">    FirstName   <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">    Age         <span class="built_in">int</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h3 id="实例2-在已经存在的表中添加-NOT-NULL-约束"><a href="#实例2-在已经存在的表中添加-NOT-NULL-约束" class="headerlink" title="实例2 在已经存在的表中添加 NOT NULL 约束"></a>实例2 在已经存在的表中添加 NOT NULL 约束</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">在已创建的Persons表的 "Age" 字段中 添加 NOT NULL 约束</span><br><span class="line"></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> Persons</span><br><span class="line"><span class="keyword">MODIFY</span> Age <span class="built_in">int</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="实例3-删除-NOT-NULL-约束"><a href="#实例3-删除-NOT-NULL-约束" class="headerlink" title="实例3 删除 NOT NULL 约束"></a>实例3 删除 NOT NULL 约束</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">在一个已创建的表的 "Age" 字段中删除 NOT NULL 约束</span><br><span class="line"></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> Persons</span><br><span class="line"><span class="keyword">MODIFY</span> Age <span class="built_in">int</span> <span class="literal">NULL</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="UNIQUE-约束"><a href="#UNIQUE-约束" class="headerlink" title="UNIQUE 约束"></a>UNIQUE 约束</h2><h3 id="介绍-2"><a href="#介绍-2" class="headerlink" title="介绍"></a>介绍</h3><ul>
+<li><p>UNIQUE 约束唯一标识数据库表中的每条记录。</p>
+</li>
+<li><p>UNIQUE 和 PRIMARY KEY 约束均为列或列集合提供了唯一性的保证。</p>
+</li>
+<li><p>PRIMARY KEY 约束拥有自动定义的 UNIQUE 约束。</p>
+</li>
+<li><p>每个表可以有多个 UNIQUE 约束，但是每个表只能有一个 PRIMARY KEY 约束。</p>
+</li>
+</ul>
+<h3 id="实例1-创建表时的UNIQUE约束"><a href="#实例1-创建表时的UNIQUE约束" class="headerlink" title="实例1 创建表时的UNIQUE约束"></a>实例1 创建表时的UNIQUE约束</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> Persons</span><br><span class="line">(</span><br><span class="line">P_Id        <span class="built_in">int</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">UNIQUE</span>,       <span class="comment">-- 直接说明了是UNIQUE -- </span></span><br><span class="line">LastName    <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">FirstName   <span class="built_in">varchar</span>(<span class="number">255</span>),</span><br><span class="line">Address     <span class="built_in">varchar</span>(<span class="number">255</span>),</span><br><span class="line">City        <span class="built_in">varchar</span>(<span class="number">255</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">命名 UNIQUE 约束，并定义多个列的 UNIQUE 约束</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> Persons</span><br><span class="line">(</span><br><span class="line">P_Id        <span class="built_in">int</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">LastName    <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">FirstName   <span class="built_in">varchar</span>(<span class="number">255</span>),</span><br><span class="line">Address     <span class="built_in">varchar</span>(<span class="number">255</span>),</span><br><span class="line">City        <span class="built_in">varchar</span>(<span class="number">255</span>),</span><br><span class="line"><span class="keyword">CONSTRAINT</span>  uc_PersonID <span class="keyword">UNIQUE</span> (P_Id, LastName)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h3 id="实例2-更改表时的UNIQUE约束"><a href="#实例2-更改表时的UNIQUE约束" class="headerlink" title="实例2 更改表时的UNIQUE约束"></a>实例2 更改表时的UNIQUE约束</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">表Persons已经存在，需要在P_ID列创建UNIQUE约束</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> Persons</span><br><span class="line"><span class="keyword">ADD</span> <span class="keyword">UNIQUE</span> (P_ID);</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">表Persons已经存在，需要重命名UNIQE 约束，并定义多个列的约束</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> Persons</span><br><span class="line"><span class="keyword">ADD</span> <span class="keyword">CONSTRAINT</span> uc_PersonID (P_ID, LastName);</span><br></pre></td></tr></table></figure>
+
+<h3 id="实例3-撤销UNIQUE约束"><a href="#实例3-撤销UNIQUE约束" class="headerlink" title="实例3 撤销UNIQUE约束"></a>实例3 撤销UNIQUE约束</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> Persons</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">CONSTRAINT</span> uc_Person_ID;</span><br></pre></td></tr></table></figure>
+
+<h2 id="PRIMARY-KEY-主键-约束"><a href="#PRIMARY-KEY-主键-约束" class="headerlink" title="PRIMARY KEY (主键) 约束"></a>PRIMARY KEY (主键) 约束</h2><h3 id="介绍-3"><a href="#介绍-3" class="headerlink" title="介绍"></a>介绍</h3><ul>
+<li>PRIMARY KEY约束 唯一标识数据库表中的每条记录。</li>
+<li>主键必须包含唯一的值。</li>
+<li>主键列不能包含 NULL 值。</li>
+<li>每个表都有且只能有一个主键。</li>
+</ul>
+<h3 id="实例1-创建表时的PRIMARY-约束"><a href="#实例1-创建表时的PRIMARY-约束" class="headerlink" title="实例1 创建表时的PRIMARY 约束"></a>实例1 创建表时的PRIMARY 约束</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">在 "Persons" 表创建时在 "P_Id" 列上创建 PRIMARY KEY 约束</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> Persons(</span><br><span class="line">P_Id        <span class="built_in">int</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> PRIMARY <span class="keyword">KEY</span>,  <span class="comment">-- 主键定义 -- </span></span><br><span class="line">LastName    <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">FirstName   <span class="built_in">varchar</span>(<span class="number">255</span>),</span><br><span class="line">Address     <span class="built_in">varchar</span>(<span class="number">255</span>),</span><br><span class="line">City        <span class="built_in">varchar</span>(<span class="number">255</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">在建表的同时命名 PRIMARY KEY 约束，并定义多个列的 PRIMARY KEY 约束</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> Persons</span><br><span class="line">(</span><br><span class="line">P_Id        <span class="built_in">int</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">LastName    <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">FirstName   <span class="built_in">varchar</span>(<span class="number">255</span>),</span><br><span class="line">Address     <span class="built_in">varchar</span>(<span class="number">255</span>),</span><br><span class="line">City        <span class="built_in">varchar</span>(<span class="number">255</span>),</span><br><span class="line"><span class="keyword">CONSTRAINT</span>  pk_PersonID PRIMARY <span class="keyword">KEY</span> (P_Id,LastName)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h3 id="实例2-更改表时的-PRIMARY-约束"><a href="#实例2-更改表时的-PRIMARY-约束" class="headerlink" title="实例2 更改表时的 PRIMARY 约束"></a>实例2 更改表时的 PRIMARY 约束</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">表Persons 已经被创建，需在 "P_Id" 列创建 PRIMARY KEY 约束</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> Persons</span><br><span class="line"><span class="keyword">ADD</span> PRIMARY <span class="keyword">KEY</span> (P_Id);</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">需要命名 PRIMARY KEY 约束，并定义多个列的 PRIMARY KEY 约束</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> Persons</span><br><span class="line"><span class="keyword">ADD</span> <span class="keyword">CONSTRAINT</span> pk_PersonID PRIMARY <span class="keyword">KEY</span> (P_Id,LastName);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意事项：使用 ALTER TABLE 语句添加主键的时候，必须把主键列声明为不包含 NULL 值（在表首次创建时）。</p>
+</blockquote>
+<h3 id="实例3-撤销-PRIMARY-KEY-约束"><a href="#实例3-撤销-PRIMARY-KEY-约束" class="headerlink" title="实例3 撤销 PRIMARY KEY 约束"></a>实例3 撤销 PRIMARY KEY 约束</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> Persons</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">CONSTRAINT</span> pk_PersonID;</span><br></pre></td></tr></table></figure>
+
+<h2 id="FOREIGN-KEY-外键约束"><a href="#FOREIGN-KEY-外键约束" class="headerlink" title="FOREIGN KEY (外键约束)"></a>FOREIGN KEY (外键约束)</h2><h3 id="介绍-4"><a href="#介绍-4" class="headerlink" title="介绍"></a>介绍</h3><ul>
+<li>一个表中的 FOREIGN KEY 指向另一个表中的 UNIQUE KEY。</li>
+<li>FOREIGN KEY 约束用于预防破坏表之间连接的行为。</li>
+<li>FOREIGN KEY 约束能防止非法数据插入外键列，因为它必须是它指向的那个表中的值之一。</li>
+</ul>
+<h3 id="实例1-创建表时的-FOREIGN-KEY-约束"><a href="#实例1-创建表时的-FOREIGN-KEY-约束" class="headerlink" title="实例1 创建表时的 FOREIGN KEY 约束"></a>实例1 创建表时的 FOREIGN KEY 约束</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">下面的 SQL 在 "Orders" 表创建时在 "P_Id" 列上创建 FOREIGN KEY 约束</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> Orders</span><br><span class="line">(</span><br><span class="line">O_Id    <span class="built_in">int</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> PRIMARY <span class="keyword">KEY</span>,</span><br><span class="line">OrderNo <span class="built_in">int</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">P_Id    <span class="built_in">int</span> <span class="keyword">FOREIGN</span> <span class="keyword">KEY</span> <span class="keyword">REFERENCES</span> Persons(P_Id) <span class="comment">-- 外键定义 -- </span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">命名 FOREIGN KEY 约束，并定义多个列的 FOREIGN KEY 约束</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> Orders</span><br><span class="line">(</span><br><span class="line">O_Id    <span class="built_in">int</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">OrderNo <span class="built_in">int</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">P_Id    <span class="built_in">int</span>,</span><br><span class="line">PRIMARY <span class="keyword">KEY</span> (O_Id),</span><br><span class="line"><span class="keyword">CONSTRAINT</span> fk_PerOrders <span class="keyword">FOREIGN</span> <span class="keyword">KEY</span> (P_Id) <span class="keyword">REFERENCES</span> Persons(P_Id) </span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h3 id="实例2-修改表时的-FOREIGN-KEY-约束"><a href="#实例2-修改表时的-FOREIGN-KEY-约束" class="headerlink" title="实例2 修改表时的 FOREIGN KEY 约束"></a>实例2 修改表时的 FOREIGN KEY 约束</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">已经创建"Orders"表，如果需要在 "P_Id" 列创建 FOREIGN KEY 约束</span><br><span class="line"></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> Orders</span><br><span class="line"><span class="keyword">ADD</span> <span class="keyword">FOREIGN</span> <span class="keyword">KEY</span> (P_Id) <span class="keyword">REFERENCES</span> Persons(P_Id); <span class="comment">-- 外键定义 --</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">命名 FOREIGN KEY 约束，并定义多个列的 FOREIGN KEY 约束</span><br><span class="line"></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> Orders</span><br><span class="line"><span class="keyword">ADD</span> <span class="keyword">CONSTRAINT</span> fk_PerOrders <span class="keyword">FOREIGN</span> <span class="keyword">KEY</span> (P_Id) <span class="keyword">REFERENCES</span> Persons(P_Id);</span><br></pre></td></tr></table></figure>
+
+<h3 id="实例3-撤销-FOREIGN-KEY-约束"><a href="#实例3-撤销-FOREIGN-KEY-约束" class="headerlink" title="实例3 撤销 FOREIGN KEY 约束"></a>实例3 撤销 FOREIGN KEY 约束</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> Orders</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">CONSTRAINT</span> fk_PerOrders</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在创建外键约束时，必须先创建外键约束所依赖的表，并且该列为该表的主键</p>
+</blockquote>
+<h2 id="notes："><a href="#notes：" class="headerlink" title="notes："></a>notes：</h2><ul>
+<li><p>子表：谁创建外键谁就是子表</p>
+</li>
+<li><p>父表：这个外键所依赖的表</p>
+</li>
+</ul>
+<h2 id="CHECK-约束"><a href="#CHECK-约束" class="headerlink" title="CHECK 约束"></a>CHECK 约束</h2><h3 id="介绍-5"><a href="#介绍-5" class="headerlink" title="介绍"></a>介绍</h3><p>CHECK 约束用于限制列中的值的范围。</p>
+<p>如果对单个列定义CHECK约束，那么该列只允许存在特定的值。</p>
+<p>如果对一个表定义CHECK约束，那么此约束会基于行中其他列的值在特定的列中对值进行限制。</p>
+<h3 id="实例1-创建表时的-CHECK-约束"><a href="#实例1-创建表时的-CHECK-约束" class="headerlink" title="实例1 创建表时的 CHECK 约束"></a>实例1 创建表时的 CHECK 约束</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">要求： 创建"Persons" 时，在 "P_Id" 列上创建 <span class="keyword">CHECK</span> 约束。</span><br><span class="line"><span class="keyword">CHECK</span> 约束规定 <span class="string">"P_Id"</span> 列只能存在大于 <span class="number">0</span> 的整数。</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> Persons</span><br><span class="line">(</span><br><span class="line">P_Id        <span class="built_in">int</span>             <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">CHECK</span> (P_Id &gt; <span class="number">0</span>), <span class="comment">-- check定义 --</span></span><br><span class="line">LastName    <span class="built_in">varchar</span>(<span class="number">255</span>)    <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">FirstName   <span class="built_in">varchar</span>(<span class="number">255</span>),</span><br><span class="line">Address     <span class="built_in">varchar</span>(<span class="number">255</span>),</span><br><span class="line">City        <span class="built_in">varchar</span>(<span class="number">255</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">命名 <span class="keyword">CHECK</span> 约束，并定义多个列的 <span class="keyword">CHECK</span> 约束</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> Persons</span><br><span class="line">(</span><br><span class="line">P_Id        <span class="built_in">int</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">LastName    <span class="built_in">varchar</span>(<span class="number">255</span>)    <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">FirstName   <span class="built_in">varchar</span>(<span class="number">255</span>),</span><br><span class="line">Address     <span class="built_in">varchar</span>(<span class="number">255</span>),</span><br><span class="line">City        <span class="built_in">varchar</span>(<span class="number">255</span>),</span><br><span class="line"><span class="keyword">CONSTRAINT</span>  chk_Person <span class="keyword">CHECK</span> (P_Id &gt; <span class="number">0</span> <span class="keyword">AND</span> City = <span class="string">'QingDao'</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h3 id="实例2-修改表时的-CHECK-约束"><a href="#实例2-修改表时的-CHECK-约束" class="headerlink" title="实例2 修改表时的 CHECK 约束"></a>实例2 修改表时的 CHECK 约束</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Person表已创建，在 "P_Id" 列创建 <span class="keyword">CHECK</span> 约束</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> Persons</span><br><span class="line"><span class="keyword">ADD</span> <span class="keyword">CHECK</span> (P_Id &gt; <span class="number">0</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">命名 <span class="keyword">CHECK</span> 约束，并定义多个列的 <span class="keyword">CHECK</span> 约束</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> Persons</span><br><span class="line"><span class="keyword">ADD</span> <span class="keyword">CHECK</span> chk_Person <span class="keyword">CHECK</span> (P_Id &gt; <span class="number">0</span> <span class="keyword">AND</span> City = <span class="string">'Sandnes'</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="实例3-撤销-CHECK-约束"><a href="#实例3-撤销-CHECK-约束" class="headerlink" title="实例3 撤销 CHECK 约束"></a>实例3 撤销 CHECK 约束</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> Persons</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">CONSTRAINT</span> chk_Person;</span><br></pre></td></tr></table></figure>
+
+<h2 id="DEFAULT-约束"><a href="#DEFAULT-约束" class="headerlink" title="DEFAULT 约束"></a>DEFAULT 约束</h2><h3 id="介绍-6"><a href="#介绍-6" class="headerlink" title="介绍"></a>介绍</h3><p>DEFAULT 约束用于向列中插入默认值。如果没有规定其他的值，那么会将默认值添加到所有的新记录。</p>
+<h3 id="实例1-创建表时的DEFAULT约束"><a href="#实例1-创建表时的DEFAULT约束" class="headerlink" title="实例1 创建表时的DEFAULT约束"></a>实例1 创建表时的DEFAULT约束</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">创建"Persons" 表时，在 "City" 列上创建 DEFAULT 约束</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> Persons</span><br><span class="line">(</span><br><span class="line">    P_Id        <span class="built_in">int</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">    LastName    <span class="built_in">varchar</span>(<span class="number">255</span>)    <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">    FirstName   <span class="built_in">varchar</span>(<span class="number">255</span>),</span><br><span class="line">    Address     <span class="built_in">varchar</span>(<span class="number">255</span>),</span><br><span class="line">    City        <span class="built_in">varchar</span>(<span class="number">255</span>)    <span class="keyword">DEFAULT</span> <span class="string">'QingDao'</span> <span class="comment">-- DEFAULT约束定义 -- </span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h3 id="实例2-创建表时的DEFAULT约束"><a href="#实例2-创建表时的DEFAULT约束" class="headerlink" title="实例2 创建表时的DEFAULT约束"></a>实例2 创建表时的DEFAULT约束</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Persons表已经被创建，在 "City" 列创建 DEFAULT 约束</span><br><span class="line"></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> Person</span><br><span class="line"><span class="keyword">MODIFY</span> City <span class="keyword">DEFAULT</span> <span class="string">'QingDao'</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="实例3-创建表时的DEFAULT约束"><a href="#实例3-创建表时的DEFAULT约束" class="headerlink" title="实例3 创建表时的DEFAULT约束"></a>实例3 创建表时的DEFAULT约束</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> Persons</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">COLUMN</span> City <span class="keyword">DROP</span> <span class="keyword">DEFAULT</span>;</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/31/sql%E5%AD%A6%E4%B9%A00730-Constraints%EF%BC%88%E7%BA%A6%E6%9D%9F%EF%BC%89/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-sql学习0728-JOIN（INNER JOIN、LEFT JOIN、RIGHT JOIN、FULL OUTER JOIN）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/31/sql%E5%AD%A6%E4%B9%A00728-JOIN%EF%BC%88INNER%20JOIN%E3%80%81LEFT%20JOIN%E3%80%81RIGHT%20JOIN%E3%80%81FULL%20OUTER%20JOIN%EF%BC%89/">sql学习0728-JOIN（INNER JOIN、LEFT JOIN、RIGHT JOIN、FULL OUTER JOIN）</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/31/sql%E5%AD%A6%E4%B9%A00728-JOIN%EF%BC%88INNER%20JOIN%E3%80%81LEFT%20JOIN%E3%80%81RIGHT%20JOIN%E3%80%81FULL%20OUTER%20JOIN%EF%BC%89/" class="archive-article-date">
+  	<time datetime="2020-07-31T14:32:11.754Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-31</time>
+</a>
+        
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="JOIN（连接）"><a href="#JOIN（连接）" class="headerlink" title="JOIN（连接）"></a>JOIN（连接）</h1><h2 id="总介绍"><a href="#总介绍" class="headerlink" title="总介绍"></a>总介绍</h2><p>把两个或多个表的行连接起来<br>有左连接，右连接，全连接，内连接，外连接等七个</p>
+<h2 id="不同的-JOIN"><a href="#不同的-JOIN" class="headerlink" title="不同的 JOIN"></a>不同的 JOIN</h2><ul>
+<li>INNER JOIN：如果表中有至少一个匹配，则返回行</li>
+<li>LEFT JOIN：即使右表中没有匹配，也从左表返回所有的行</li>
+<li>RIGHT JOIN：即使左表中没有匹配，也从右表返回所有的行</li>
+<li>FULL JOIN：只要其中一个表中存在匹配，则返回行</li>
+</ul>
+<blockquote>
+<p>连接的结果可以在逻辑上看作是由SELECT语句指定的列组成的新表。</p>
+</blockquote>
+<blockquote>
+<p>左连接与右连接的左右指的是以两张表中的哪一张为基准，它们都是外连接。</p>
+</blockquote>
+<blockquote>
+<p>外连接就好像是为非基准表添加了一行全为空值的万能行，用来与基准表中找不到匹配的行进行匹配。假设两个没有空值的表进行左连接，左表是基准表，左表的所有行都出现在结果中，右表则可能因为无法与基准表匹配而出现是空值的字段。<br>这部分主要涉及的是表连接的逻辑问题。</p>
+</blockquote>
+<h2 id="INNER-JOIN（简单的-JOIN）-最常见的-JOIN-类型"><a href="#INNER-JOIN（简单的-JOIN）-最常见的-JOIN-类型" class="headerlink" title="INNER JOIN（简单的 JOIN） 最常见的 JOIN 类型"></a>INNER JOIN（简单的 JOIN） 最常见的 JOIN 类型</h2><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>INNER JOIN 关键字在表中存在至少一个匹配时返回行。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table1</span><br><span class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span> table2</span><br><span class="line"><span class="keyword">ON</span> table1.column_name=table2.column_name;</span><br></pre></td></tr></table></figure>
+<p>或</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table1</span><br><span class="line"><span class="keyword">JOIN</span> table2</span><br><span class="line"><span class="keyword">ON</span> table1.column_name=table2.column_name;</span><br></pre></td></tr></table></figure>
+
+
+<blockquote>
+<p>note:</p>
+</blockquote>
+<p>INNER JOIN 与 JOIN 是相同的<br>INNER JOIN 关键字在表中存在至少一个匹配时返回行。<br>如果 “table1” 表中的行在 “table2” 中没有匹配，则不会列出这些行。</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Websites.name, access_log.count, access_log.date</span><br><span class="line"><span class="keyword">FROM</span> Websites</span><br><span class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span> access_log</span><br><span class="line"><span class="keyword">ON</span> Websites.id=access_log.site_id</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> access_log.count;</span><br></pre></td></tr></table></figure>
+
+<h3 id="在使用-join-时，on-和-where-条件的区别如下："><a href="#在使用-join-时，on-和-where-条件的区别如下：" class="headerlink" title="在使用 join 时，on 和 where 条件的区别如下："></a>在使用 join 时，on 和 where 条件的区别如下：</h3><ul>
+<li>1.on 条件是在生成临时表时使用的条件，它不管 on 中的条件是否为真，都会返回左边表中的记录。</li>
+<li>2.where 条件是在临时表生成好后，再对临时表进行过滤的条件。这时已经没有 left join 的含义（必须返回左边表的记录）了，条件不为真的就全部过滤掉。</li>
+</ul>
+<h2 id="LEFT-JOIN-左连接"><a href="#LEFT-JOIN-左连接" class="headerlink" title="LEFT JOIN(左连接)"></a>LEFT JOIN(左连接)</h2><h3 id="介绍-1"><a href="#介绍-1" class="headerlink" title="介绍"></a>介绍</h3><p>LEFT JOIN 关键字从左表（table1）返回所有的行，即使右表（table2）中没有匹配。如果右表中没有匹配，则结果为 NULL。</p>
+<h3 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table1</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> table2</span><br><span class="line"><span class="keyword">ON</span> table1.column_name=table2.column_name;</span><br></pre></td></tr></table></figure>
+<p>或：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table1</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">OUTER</span> <span class="keyword">JOIN</span> table2</span><br><span class="line"><span class="keyword">ON</span> table1.column_name=table2.column_name;</span><br></pre></td></tr></table></figure>
+
+<h3 id="实例-1"><a href="#实例-1" class="headerlink" title="实例"></a>实例</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Websites.name, access_log.count, access_log.date</span><br><span class="line"><span class="keyword">FROM</span> Websites</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> access_log</span><br><span class="line"><span class="keyword">ON</span> Websites.id=access_log.site_id</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> access_log.count <span class="keyword">DESC</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="RIGHT-JOIN-右连接"><a href="#RIGHT-JOIN-右连接" class="headerlink" title="RIGHT JOIN(右连接)"></a>RIGHT JOIN(右连接)</h2><h3 id="介绍-2"><a href="#介绍-2" class="headerlink" title="介绍"></a>介绍</h3><p>RIGHT JOIN 关键字从右表（table2）返回所有的行，即使左表（table1）中没有匹配。如果左表中没有匹配，则结果为 NULL。</p>
+<h3 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table1</span><br><span class="line"><span class="keyword">RIGHT</span> <span class="keyword">JOIN</span> table2</span><br><span class="line"><span class="keyword">ON</span> table1.column_name=table2.column_name;</span><br></pre></td></tr></table></figure>
+<p>或：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table1</span><br><span class="line"><span class="keyword">RIGHT</span> <span class="keyword">OUTER</span> <span class="keyword">JOIN</span> table2</span><br><span class="line"><span class="keyword">ON</span> table1.column_name=table2.column_name;</span><br></pre></td></tr></table></figure>
+<h3 id="实例-2"><a href="#实例-2" class="headerlink" title="实例"></a>实例</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Websites.name, access_log.count, access_log.date</span><br><span class="line"><span class="keyword">FROM</span> access_log</span><br><span class="line"><span class="keyword">RIGHT</span> <span class="keyword">JOIN</span> Websites</span><br><span class="line"><span class="keyword">ON</span> access_log.site_id=Websites.id</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> access_log.count <span class="keyword">DESC</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="FULL-OUTER-JOIN-全外连接"><a href="#FULL-OUTER-JOIN-全外连接" class="headerlink" title="FULL OUTER JOIN(全外连接)"></a>FULL OUTER JOIN(全外连接)</h2><h3 id="介绍-3"><a href="#介绍-3" class="headerlink" title="介绍"></a>介绍</h3><p>FULL OUTER JOIN 关键字只要左表（table1）和右表（table2）其中一个表中存在匹配，则返回行.<br>简言之：FULL OUTER JOIN 关键字结合了 LEFT JOIN 和 RIGHT JOIN 的结果。</p>
+<h3 id="语法-3"><a href="#语法-3" class="headerlink" title="语法"></a>语法</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table1</span><br><span class="line"><span class="keyword">FULL</span> <span class="keyword">OUTER</span> <span class="keyword">JOIN</span> table2</span><br><span class="line"><span class="keyword">ON</span> table1.column_name=table2.column_name;</span><br></pre></td></tr></table></figure>
+
+<h3 id="实例-3"><a href="#实例-3" class="headerlink" title="实例"></a>实例</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Websites.name, access_log.count, access_log.date</span><br><span class="line"><span class="keyword">FROM</span> Websites</span><br><span class="line"><span class="keyword">FULL</span> <span class="keyword">OUTER</span> <span class="keyword">JOIN</span> access_log</span><br><span class="line"><span class="keyword">ON</span> Websites.id=access_log.site_id</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> access_log.count <span class="keyword">DESC</span>;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>note：FULL OUTER JOIN 关键字返回左表（Websites）和右表（access_log）中所有的行。如果 “Websites” 表中的行在 “access_log” 中没有匹配或者 “access_log” 表中的行在 “Websites” 表中没有匹配，也会列出这些行。</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/31/sql%E5%AD%A6%E4%B9%A00728-JOIN%EF%BC%88INNER%20JOIN%E3%80%81LEFT%20JOIN%E3%80%81RIGHT%20JOIN%E3%80%81FULL%20OUTER%20JOIN%EF%BC%89/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-sql学习0728-JOIN（INNER JOIN、ＬＥＦＴ JOIN、RIGHT JOIN、FULL OUTER JOIN）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -861,425 +1378,9 @@
 
 
   
-    <article id="post-LeetCode精选TOP面试题53.最大子序和" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/24/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%9853.%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%92%8C/">LeetCode精选TOP面试题53.最大子序和</a>
-    </h1>
-  
-
-        
-        <a href="/2020/05/24/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%9853.%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%92%8C/" class="archive-article-date">
-  	<time datetime="2020-05-24T10:02:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-24</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">example:</span><br><span class="line">input : -2,1,-3,4,-1,2,1,-5,4</span><br><span class="line">output: 6</span><br><span class="line">note  : 连续子数组 [4,-1,2,1] 的和最大，为 6</span><br></pre></td></tr></table></figure>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">动态规划</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">贪心算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/LeetCode//" class="article-tag-list-link color4">LeetCode</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/05/24/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%9853.%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%92%8C/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-LeetCode精选TOP面试题38.外观数列" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/27/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%9838.%E5%A4%96%E8%A7%82%E6%95%B0%E5%88%97/">LeetCode精选TOP面试题38.外观数列</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/27/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%9838.%E5%A4%96%E8%A7%82%E6%95%B0%E5%88%97/" class="archive-article-date">
-  	<time datetime="2020-03-27T06:54:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-27</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>「外观数列」是一个整数序列，从数字 1 开始，序列中的每一项都是对前一项的描述。前五项如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1.   1</span><br><span class="line">2.   11</span><br><span class="line">3.   21</span><br><span class="line">4.   1211</span><br><span class="line">5.   111221</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1  被读作  <span class="string">"one 1"</span>  (<span class="string">"一个一"</span>) , 即 11。</span><br><span class="line">11 被读作 <span class="string">"two 1s"</span> (<span class="string">"两个一"</span>）, 即 21。</span><br><span class="line">21 被读作 <span class="string">"one 2"</span>,  <span class="string">"one 1"</span> （<span class="string">"一个二"</span> ,  <span class="string">"一个一"</span>) , 即 1211。</span><br><span class="line">给定一个正整数 n（1 ≤ n ≤ 30），输出外观数列的第 n 项。</span><br><span class="line">注意：整数序列中的每一项将表示为一个字符串。</span><br></pre></td></tr></table></figure>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">字符串</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/LeetCode//" class="article-tag-list-link color4">LeetCode</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/27/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%9838.%E5%A4%96%E8%A7%82%E6%95%B0%E5%88%97/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-LeetCode精选TOP面试题160.相交链表" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/27/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98160.%E7%9B%B8%E4%BA%A4%E9%93%BE%E8%A1%A8/">LeetCode精选TOP面试题160.相交链表</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/27/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98160.%E7%9B%B8%E4%BA%A4%E9%93%BE%E8%A1%A8/" class="archive-article-date">
-  	<time datetime="2020-03-27T05:53:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-27</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>编写一个程序，找到两个单链表相交的起始节点。返回值是ListNode类型。<br>示例 1：<img src="https://img-blog.csdnimg.cn/20200327134233744.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Zsb3dlcl80ODIzNw==,size_16,color_FFFFFF,t_70" alt="示例1"></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">输入：intersectVal = 8, listA = [4,1,8,4,5], listB = [5,0,1,8,4,5], </span><br><span class="line">	 skipA = 2, skipB = 3</span><br><span class="line">输出：Reference of the node with value = 8</span><br><span class="line">输入解释：相交节点的值为 8 （注意，如果两个列表相交则不能为 0）。</span><br><span class="line">		从各自的表头开始算起，链表 A 为 [4,1,8,4,5]，链表 B 为 [5,0,1,8,4,5]。</span><br><span class="line">		在 A 中，相交节点前有 2 个节点；在 B 中，相交节点前有 3 个节点。</span><br></pre></td></tr></table></figure>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">链表</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/LeetCode//" class="article-tag-list-link color4">LeetCode</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/27/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98160.%E7%9B%B8%E4%BA%A4%E9%93%BE%E8%A1%A8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-LeetCode精选TOP面试题268.缺失数字" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/23/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98268.%E7%BC%BA%E5%A4%B1%E6%95%B0%E5%AD%97/">LeetCode精选TOP面试题268.缺失数字</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/23/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98268.%E7%BC%BA%E5%A4%B1%E6%95%B0%E5%AD%97/" class="archive-article-date">
-  	<time datetime="2020-03-23T14:00:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-23</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="题目回忆"><a href="#题目回忆" class="headerlink" title="题目回忆"></a>题目回忆</h3><p>给定一个包含 0, 1, 2, …, n 中 n 个数的序列，找出 0 .. n 中没有出现在序列中的那个数。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">遍历</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数组</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数值计算</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/LeetCode//" class="article-tag-list-link color4">LeetCode</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/23/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98268.%E7%BC%BA%E5%A4%B1%E6%95%B0%E5%AD%97/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
     </nav>
   
 
@@ -1413,15 +1514,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数组</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数值计算</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">列表</a>
+                <a href="javascript:void(0)" class="js-tag color3">数组</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1429,11 +1526,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">字符串</a>
+                <a href="javascript:void(0)" class="js-tag color3">列表</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">进制转换</a>
+                <a href="javascript:void(0)" class="js-tag color4">字符串</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1445,11 +1542,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">位运算</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">汉明码</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">位运算</a>
+                <a href="javascript:void(0)" class="js-tag color5">进制转换</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1477,19 +1578,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">矩阵</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">迭代</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+                <a href="javascript:void(0)" class="js-tag color3">矩阵</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">栈</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">遍历算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1501,11 +1602,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">循环</a>
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">遍历算法</a>
+                <a href="javascript:void(0)" class="js-tag color3">循环</a>
               </li>
              
               <li class="article-tag-list-item">
