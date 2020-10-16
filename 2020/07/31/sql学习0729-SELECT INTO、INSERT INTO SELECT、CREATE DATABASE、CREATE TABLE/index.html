@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>sql学习0729-SELECT INTO、INSERT INTO SELECT、CREATE DATABASE、CREATE TABLE | flower48237的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="SELECT INTO介绍可以从一个表复制数据，然后把数据插入到另一个新表中。 语法123SELECT * INTO table2 [IN externable]FROM table1 或 123SELECT　column_name(s)INTO table2 [IN externaldb]FROM table1  实例1 创建website 表的备份123SELECT *INTO Website">
+  <meta name="description" content="SELECT INTO介绍可以从一个表复制数据，然后把数据插入到另一个新表中。 语法123SELECT * INTO table2 [IN externable]FROM table1 或 123SELECT　column_name(s)INTO table2 [IN externaldb]FROM table1">
 <meta property="og:type" content="article">
 <meta property="og:title" content="sql学习0729-SELECT INTO、INSERT INTO SELECT、CREATE DATABASE、CREATE TABLE">
 <meta property="og:url" content="http://yoursite.com/2020/07/31/sql%E5%AD%A6%E4%B9%A00729-SELECT%20INTO%E3%80%81INSERT%20INTO%20SELECT%E3%80%81CREATE%20DATABASE%E3%80%81CREATE%20TABLE/index.html">
 <meta property="og:site_name" content="flower48237的个人博客">
-<meta property="og:description" content="SELECT INTO介绍可以从一个表复制数据，然后把数据插入到另一个新表中。 语法123SELECT * INTO table2 [IN externable]FROM table1 或 123SELECT　column_name(s)INTO table2 [IN externaldb]FROM table1  实例1 创建website 表的备份123SELECT *INTO Website">
+<meta property="og:description" content="SELECT INTO介绍可以从一个表复制数据，然后把数据插入到另一个新表中。 语法123SELECT * INTO table2 [IN externable]FROM table1 或 123SELECT　column_name(s)INTO table2 [IN externaldb]FROM table1">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-07-31T14:32:11.770Z">
-<meta property="article:modified_time" content="2020-07-30T13:36:38.928Z">
+<meta property="article:modified_time" content="2020-10-16T14:42:42.031Z">
 <meta property="article:author" content="flower48237">
 <meta name="twitter:card" content="summary">
   
@@ -193,7 +193,7 @@
 <h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * </span><br><span class="line"><span class="keyword">INTO</span> table2 [<span class="keyword">IN</span> externable]</span><br><span class="line"><span class="keyword">FROM</span> table1</span><br></pre></td></tr></table></figure>
 <p>或</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span>　column_name(s)</span><br><span class="line"><span class="keyword">INTO</span> table2 [<span class="keyword">IN</span> externaldb]</span><br><span class="line"><span class="keyword">FROM</span> table1</span><br></pre></td></tr></table></figure>
-
+<a id="more"></a>
 <h2 id="实例1-创建website-表的备份"><a href="#实例1-创建website-表的备份" class="headerlink" title="实例1 创建website 表的备份"></a>实例1 创建website 表的备份</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">INTO</span> WebsitesBackup2020</span><br><span class="line"><span class="keyword">FROM</span> Websites</span><br></pre></td></tr></table></figure>
 <h2 id="实例2-只复制一些列插入到新表中"><a href="#实例2-只复制一些列插入到新表中" class="headerlink" title="实例2 只复制一些列插入到新表中"></a>实例2 只复制一些列插入到新表中</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">name</span>, <span class="keyword">url</span></span><br><span class="line"><span class="keyword">INTO</span> WebsitesBackup2020</span><br><span class="line"><span class="keyword">FROM</span> Websites;</span><br></pre></td></tr></table></figure>
 
@@ -438,6 +438,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数值计算</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">整数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">二叉树</a>
               </li>
              
@@ -454,31 +470,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">整数</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数值计算</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">数组</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
+                <a href="javascript:void(0)" class="js-tag color3">列表</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">列表</a>
+                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -498,19 +498,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">汉明码</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">进制转换</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">反转</a>
+                <a href="javascript:void(0)" class="js-tag color4">汉明码</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">贪心算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">反转</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -534,15 +534,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">矩阵</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">栈</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">遍历算法</a>
+                <a href="javascript:void(0)" class="js-tag color3">矩阵</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -554,7 +554,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+                <a href="javascript:void(0)" class="js-tag color5">遍历算法</a>
               </li>
              
               <li class="article-tag-list-item">
