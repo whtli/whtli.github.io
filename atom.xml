@@ -6,7 +6,7 @@
   <link href="https://flower48237.com/atom.xml" rel="self"/>
   
   <link href="https://flower48237.com/"/>
-  <updated>2021-05-23T12:55:13.021Z</updated>
+  <updated>2021-05-23T12:59:22.479Z</updated>
   <id>https://flower48237.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Modify at 2021/5/24</title>
+    <title>测试百度搜搜索用-鸡排大仙儿的网站</title>
     <link href="https://flower48237.com/2021/05/23/%E6%B5%8B%E8%AF%95%E7%99%BE%E5%BA%A6%E6%90%9C%E7%B4%A2%E7%94%A8-%E9%B8%A1%E6%8E%92%E5%A4%A7%E4%BB%99%E5%84%BF%E7%9A%84%E7%BD%91%E7%AB%99/"/>
     <id>https://flower48237.com/2021/05/23/%E6%B5%8B%E8%AF%95%E7%99%BE%E5%BA%A6%E6%90%9C%E7%B4%A2%E7%94%A8-%E9%B8%A1%E6%8E%92%E5%A4%A7%E4%BB%99%E5%84%BF%E7%9A%84%E7%BD%91%E7%AB%99/</id>
     <published>2021-05-23T12:54:13.974Z</published>
-    <updated>2021-05-23T12:55:13.021Z</updated>
+    <updated>2021-05-23T12:59:22.479Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><a id="more"></a><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
     
