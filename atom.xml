@@ -3,11 +3,11 @@
   <title>鸡排大仙儿的个人博客</title>
   
   <subtitle>卟呤卟呤</subtitle>
-  <link href="http://yoursite.com/atom.xml" rel="self"/>
+  <link href="https://flower48237.com/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="https://flower48237.com/"/>
   <updated>2020-10-16T14:42:38.478Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>https://flower48237.com/</id>
   
   <author>
     <name>flower48237</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>sql学习0731-INDEX、DROP、ALTER、 AUTO INCREMENT</title>
-    <link href="http://yoursite.com/2020/07/31/sql%E5%AD%A6%E4%B9%A00731-INDEX%E3%80%81DROP%E3%80%81ALTER%E3%80%81%20AUTO%20INCREMENT/"/>
-    <id>http://yoursite.com/2020/07/31/sql%E5%AD%A6%E4%B9%A00731-INDEX%E3%80%81DROP%E3%80%81ALTER%E3%80%81%20AUTO%20INCREMENT/</id>
+    <link href="https://flower48237.com/2020/07/31/sql%E5%AD%A6%E4%B9%A00731-INDEX%E3%80%81DROP%E3%80%81ALTER%E3%80%81%20AUTO%20INCREMENT/"/>
+    <id>https://flower48237.com/2020/07/31/sql%E5%AD%A6%E4%B9%A00731-INDEX%E3%80%81DROP%E3%80%81ALTER%E3%80%81%20AUTO%20INCREMENT/</id>
     <published>2020-07-31T14:32:11.786Z</published>
     <updated>2020-10-16T14:42:38.478Z</updated>
     
@@ -34,29 +34,9 @@
   </entry>
   
   <entry>
-    <title>sql学习0729-SELECT INTO、INSERT INTO SELECT、CREATE DATABASE、CREATE TABLE</title>
-    <link href="http://yoursite.com/2020/07/31/sql%E5%AD%A6%E4%B9%A00729-SELECT%20INTO%E3%80%81INSERT%20INTO%20SELECT%E3%80%81CREATE%20DATABASE%E3%80%81CREATE%20TABLE/"/>
-    <id>http://yoursite.com/2020/07/31/sql%E5%AD%A6%E4%B9%A00729-SELECT%20INTO%E3%80%81INSERT%20INTO%20SELECT%E3%80%81CREATE%20DATABASE%E3%80%81CREATE%20TABLE/</id>
-    <published>2020-07-31T14:32:11.770Z</published>
-    <updated>2020-10-16T14:42:42.031Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="SELECT-INTO"><a href="#SELECT-INTO" class="headerlink" title="SELECT INTO"></a>SELECT INTO</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>可以从一个表复制数据，然后把数据插入到另一个新表中。</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * </span><br><span class="line"><span class="keyword">INTO</span> table2 [<span class="keyword">IN</span> externable]</span><br><span class="line"><span class="keyword">FROM</span> table1</span><br></pre></td></tr></table></figure><p>或</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span>　column_name(s)</span><br><span class="line"><span class="keyword">INTO</span> table2 [<span class="keyword">IN</span> externaldb]</span><br><span class="line"><span class="keyword">FROM</span> table1</span><br></pre></td></tr></table></figure><a id="more"></a><h2 id="实例1-创建website-表的备份"><a href="#实例1-创建website-表的备份" class="headerlink" title="实例1 创建website 表的备份"></a>实例1 创建website 表的备份</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">INTO</span> WebsitesBackup2020</span><br><span class="line"><span class="keyword">FROM</span> Websites</span><br></pre></td></tr></table></figure><h2 id="实例2-只复制一些列插入到新表中"><a href="#实例2-只复制一些列插入到新表中" class="headerlink" title="实例2 只复制一些列插入到新表中"></a>实例2 只复制一些列插入到新表中</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">name</span>, <span class="keyword">url</span></span><br><span class="line"><span class="keyword">INTO</span> WebsitesBackup2020</span><br><span class="line"><span class="keyword">FROM</span> Websites;</span><br></pre></td></tr></table></figure><h2 id="实例3-只复制中国的网站插入到新表中"><a href="#实例3-只复制中国的网站插入到新表中" class="headerlink" title="实例3 只复制中国的网站插入到新表中"></a>实例3 只复制中国的网站插入到新表中</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">INTO</span> WebsitesBackup2020</span><br><span class="line"><span class="keyword">FROM</span> Websites</span><br><span class="line"><span class="keyword">WHERE</span> country = <span class="string">'China'</span>;</span><br></pre></td></tr></table></figure><h2 id="实例4-复制多个表中的数据插入到新表中"><a href="#实例4-复制多个表中的数据插入到新表中" class="headerlink" title="实例4 复制多个表中的数据插入到新表中"></a>实例4 复制多个表中的数据插入到新表中</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Websites.name, access_log.count, access_log.date</span><br><span class="line"><span class="keyword">INTO</span> WebsitesBackup2020</span><br><span class="line"><span class="keyword">FROM</span> Websites</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> access_log</span><br><span class="line"><span class="keyword">ON</span> Websites.id=access_log.site_id;</span><br></pre></td></tr></table></figure><h1 id="INSERT-INTO-SELECT"><a href="#INSERT-INTO-SELECT" class="headerlink" title="INSERT INTO SELECT"></a>INSERT INTO SELECT</h1><h2 id="介绍-1"><a href="#介绍-1" class="headerlink" title="介绍"></a>介绍</h2><p>可以从一个表复制数据，然后把数据插入到一个已存在的表中。目标表中任何已存在的行都不会受影响。</p><h2 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">可以从一个表中复制 所有的列 插入到另一个已存在的表中</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> table2</span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> table1;</span><br></pre></td></tr></table></figure><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">可以从一个表中复制 特定的列 插入到另一个已存在的表中</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> table2 (column_name(s))</span><br><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table1;</span><br></pre></td></tr></table></figure><h2 id="实例1-复制APP中的数据插入到Websites中"><a href="#实例1-复制APP中的数据插入到Websites中" class="headerlink" title="实例1 复制APP中的数据插入到Websites中"></a>实例1 复制APP中的数据插入到Websites中</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> Websites (<span class="keyword">name</span>, country)</span><br><span class="line"><span class="keyword">SELECT</span> app_name, country <span class="keyword">FROM</span> apps;</span><br></pre></td></tr></table></figure><h2 id="实例2-复制-id-是-1-的-APP-到-“Websites”-中"><a href="#实例2-复制-id-是-1-的-APP-到-“Websites”-中" class="headerlink" title="实例2 复制 id 是 1 的 APP 到 “Websites” 中"></a>实例2 复制 id 是 1 的 APP 到 “Websites” 中</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> Websites (<span class="keyword">name</span>, country)</span><br><span class="line"><span class="keyword">SELECT</span> app_name, country <span class="keyword">FROM</span> apps</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">id</span>=<span class="number">1</span>;</span><br></pre></td></tr></table></figure><h2 id="note"><a href="#note" class="headerlink" title="note"></a>note</h2><p>select into from 和 insert into select 都是用来复制表</p><p>两者的主要区别为： </p><ul><li>select into from 要求目标表不存在，因为在插入时会自动创建；</li><li>insert into select from 要求目标表存在。</li></ul><h1 id="Create-Database"><a href="#Create-Database" class="headerlink" title="Create Database"></a>Create Database</h1><h2 id="介绍-2"><a href="#介绍-2" class="headerlink" title="介绍"></a>介绍</h2><p>创建数据库</p><h2 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h2><p>CREATE DATABASE database_name;</p><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>CREATE DATABASE Store;</p><h1 id="Create-Table"><a href="#Create-Table" class="headerlink" title="Create Table"></a>Create Table</h1><h2 id="介绍-3"><a href="#介绍-3" class="headerlink" title="介绍"></a>介绍</h2><p>创建表</p><h2 id="语法-3"><a href="#语法-3" class="headerlink" title="语法"></a>语法</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> table_name</span><br><span class="line">(</span><br><span class="line">column_name1 data_type(<span class="keyword">size</span>),</span><br><span class="line">column_name2 data_type(<span class="keyword">size</span>),</span><br><span class="line">column_name3 data_type(<span class="keyword">size</span>),</span><br><span class="line">....</span><br><span class="line">);</span><br></pre></td></tr></table></figure><h2 id="实例-1"><a href="#实例-1" class="headerlink" title="实例"></a>实例</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">Store</span></span><br><span class="line">(</span><br><span class="line">gools_id    <span class="built_in">int</span>,</span><br><span class="line">goods_name  <span class="built_in">varchar</span>(<span class="number">255</span>),</span><br><span class="line">goods_country <span class="built_in">varchar</span>(<span class="number">255</span>),</span><br><span class="line">goods_price <span class="built_in">varchar</span>(<span class="number">255</span>),</span><br><span class="line">);</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;SELECT-INTO&quot;&gt;&lt;a href=&quot;#SELECT-INTO&quot; class=&quot;headerlink&quot; title=&quot;SELECT INTO&quot;&gt;&lt;/a&gt;SELECT INTO&lt;/h1&gt;&lt;h2 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot; title=&quot;介绍&quot;&gt;&lt;/a&gt;介绍&lt;/h2&gt;&lt;p&gt;可以从一个表复制数据，然后把数据插入到另一个新表中。&lt;/p&gt;
-&lt;h2 id=&quot;语法&quot;&gt;&lt;a href=&quot;#语法&quot; class=&quot;headerlink&quot; title=&quot;语法&quot;&gt;&lt;/a&gt;语法&lt;/h2&gt;&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;SELECT&lt;/span&gt; * &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;INTO&lt;/span&gt; table2 [&lt;span class=&quot;keyword&quot;&gt;IN&lt;/span&gt; externable]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;FROM&lt;/span&gt; table1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;或&lt;/p&gt;
-&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;SELECT&lt;/span&gt;　column_name(s)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;INTO&lt;/span&gt; table2 [&lt;span class=&quot;keyword&quot;&gt;IN&lt;/span&gt; externaldb]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;FROM&lt;/span&gt; table1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
     <title>sql学习0730-Constraints（约束）</title>
-    <link href="http://yoursite.com/2020/07/31/sql%E5%AD%A6%E4%B9%A00730-Constraints%EF%BC%88%E7%BA%A6%E6%9D%9F%EF%BC%89/"/>
-    <id>http://yoursite.com/2020/07/31/sql%E5%AD%A6%E4%B9%A00730-Constraints%EF%BC%88%E7%BA%A6%E6%9D%9F%EF%BC%89/</id>
+    <link href="https://flower48237.com/2020/07/31/sql%E5%AD%A6%E4%B9%A00730-Constraints%EF%BC%88%E7%BA%A6%E6%9D%9F%EF%BC%89/"/>
+    <id>https://flower48237.com/2020/07/31/sql%E5%AD%A6%E4%B9%A00730-Constraints%EF%BC%88%E7%BA%A6%E6%9D%9F%EF%BC%89/</id>
     <published>2020-07-31T14:32:11.770Z</published>
     <updated>2020-10-16T14:42:42.038Z</updated>
     
@@ -75,9 +55,29 @@
   </entry>
   
   <entry>
+    <title>sql学习0729-SELECT INTO、INSERT INTO SELECT、CREATE DATABASE、CREATE TABLE</title>
+    <link href="https://flower48237.com/2020/07/31/sql%E5%AD%A6%E4%B9%A00729-SELECT%20INTO%E3%80%81INSERT%20INTO%20SELECT%E3%80%81CREATE%20DATABASE%E3%80%81CREATE%20TABLE/"/>
+    <id>https://flower48237.com/2020/07/31/sql%E5%AD%A6%E4%B9%A00729-SELECT%20INTO%E3%80%81INSERT%20INTO%20SELECT%E3%80%81CREATE%20DATABASE%E3%80%81CREATE%20TABLE/</id>
+    <published>2020-07-31T14:32:11.770Z</published>
+    <updated>2020-10-16T14:42:42.031Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="SELECT-INTO"><a href="#SELECT-INTO" class="headerlink" title="SELECT INTO"></a>SELECT INTO</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>可以从一个表复制数据，然后把数据插入到另一个新表中。</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * </span><br><span class="line"><span class="keyword">INTO</span> table2 [<span class="keyword">IN</span> externable]</span><br><span class="line"><span class="keyword">FROM</span> table1</span><br></pre></td></tr></table></figure><p>或</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span>　column_name(s)</span><br><span class="line"><span class="keyword">INTO</span> table2 [<span class="keyword">IN</span> externaldb]</span><br><span class="line"><span class="keyword">FROM</span> table1</span><br></pre></td></tr></table></figure><a id="more"></a><h2 id="实例1-创建website-表的备份"><a href="#实例1-创建website-表的备份" class="headerlink" title="实例1 创建website 表的备份"></a>实例1 创建website 表的备份</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">INTO</span> WebsitesBackup2020</span><br><span class="line"><span class="keyword">FROM</span> Websites</span><br></pre></td></tr></table></figure><h2 id="实例2-只复制一些列插入到新表中"><a href="#实例2-只复制一些列插入到新表中" class="headerlink" title="实例2 只复制一些列插入到新表中"></a>实例2 只复制一些列插入到新表中</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">name</span>, <span class="keyword">url</span></span><br><span class="line"><span class="keyword">INTO</span> WebsitesBackup2020</span><br><span class="line"><span class="keyword">FROM</span> Websites;</span><br></pre></td></tr></table></figure><h2 id="实例3-只复制中国的网站插入到新表中"><a href="#实例3-只复制中国的网站插入到新表中" class="headerlink" title="实例3 只复制中国的网站插入到新表中"></a>实例3 只复制中国的网站插入到新表中</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">INTO</span> WebsitesBackup2020</span><br><span class="line"><span class="keyword">FROM</span> Websites</span><br><span class="line"><span class="keyword">WHERE</span> country = <span class="string">'China'</span>;</span><br></pre></td></tr></table></figure><h2 id="实例4-复制多个表中的数据插入到新表中"><a href="#实例4-复制多个表中的数据插入到新表中" class="headerlink" title="实例4 复制多个表中的数据插入到新表中"></a>实例4 复制多个表中的数据插入到新表中</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Websites.name, access_log.count, access_log.date</span><br><span class="line"><span class="keyword">INTO</span> WebsitesBackup2020</span><br><span class="line"><span class="keyword">FROM</span> Websites</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> access_log</span><br><span class="line"><span class="keyword">ON</span> Websites.id=access_log.site_id;</span><br></pre></td></tr></table></figure><h1 id="INSERT-INTO-SELECT"><a href="#INSERT-INTO-SELECT" class="headerlink" title="INSERT INTO SELECT"></a>INSERT INTO SELECT</h1><h2 id="介绍-1"><a href="#介绍-1" class="headerlink" title="介绍"></a>介绍</h2><p>可以从一个表复制数据，然后把数据插入到一个已存在的表中。目标表中任何已存在的行都不会受影响。</p><h2 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">可以从一个表中复制 所有的列 插入到另一个已存在的表中</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> table2</span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> table1;</span><br></pre></td></tr></table></figure><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">可以从一个表中复制 特定的列 插入到另一个已存在的表中</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> table2 (column_name(s))</span><br><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table1;</span><br></pre></td></tr></table></figure><h2 id="实例1-复制APP中的数据插入到Websites中"><a href="#实例1-复制APP中的数据插入到Websites中" class="headerlink" title="实例1 复制APP中的数据插入到Websites中"></a>实例1 复制APP中的数据插入到Websites中</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> Websites (<span class="keyword">name</span>, country)</span><br><span class="line"><span class="keyword">SELECT</span> app_name, country <span class="keyword">FROM</span> apps;</span><br></pre></td></tr></table></figure><h2 id="实例2-复制-id-是-1-的-APP-到-“Websites”-中"><a href="#实例2-复制-id-是-1-的-APP-到-“Websites”-中" class="headerlink" title="实例2 复制 id 是 1 的 APP 到 “Websites” 中"></a>实例2 复制 id 是 1 的 APP 到 “Websites” 中</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> Websites (<span class="keyword">name</span>, country)</span><br><span class="line"><span class="keyword">SELECT</span> app_name, country <span class="keyword">FROM</span> apps</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">id</span>=<span class="number">1</span>;</span><br></pre></td></tr></table></figure><h2 id="note"><a href="#note" class="headerlink" title="note"></a>note</h2><p>select into from 和 insert into select 都是用来复制表</p><p>两者的主要区别为： </p><ul><li>select into from 要求目标表不存在，因为在插入时会自动创建；</li><li>insert into select from 要求目标表存在。</li></ul><h1 id="Create-Database"><a href="#Create-Database" class="headerlink" title="Create Database"></a>Create Database</h1><h2 id="介绍-2"><a href="#介绍-2" class="headerlink" title="介绍"></a>介绍</h2><p>创建数据库</p><h2 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h2><p>CREATE DATABASE database_name;</p><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>CREATE DATABASE Store;</p><h1 id="Create-Table"><a href="#Create-Table" class="headerlink" title="Create Table"></a>Create Table</h1><h2 id="介绍-3"><a href="#介绍-3" class="headerlink" title="介绍"></a>介绍</h2><p>创建表</p><h2 id="语法-3"><a href="#语法-3" class="headerlink" title="语法"></a>语法</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> table_name</span><br><span class="line">(</span><br><span class="line">column_name1 data_type(<span class="keyword">size</span>),</span><br><span class="line">column_name2 data_type(<span class="keyword">size</span>),</span><br><span class="line">column_name3 data_type(<span class="keyword">size</span>),</span><br><span class="line">....</span><br><span class="line">);</span><br></pre></td></tr></table></figure><h2 id="实例-1"><a href="#实例-1" class="headerlink" title="实例"></a>实例</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">Store</span></span><br><span class="line">(</span><br><span class="line">gools_id    <span class="built_in">int</span>,</span><br><span class="line">goods_name  <span class="built_in">varchar</span>(<span class="number">255</span>),</span><br><span class="line">goods_country <span class="built_in">varchar</span>(<span class="number">255</span>),</span><br><span class="line">goods_price <span class="built_in">varchar</span>(<span class="number">255</span>),</span><br><span class="line">);</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;SELECT-INTO&quot;&gt;&lt;a href=&quot;#SELECT-INTO&quot; class=&quot;headerlink&quot; title=&quot;SELECT INTO&quot;&gt;&lt;/a&gt;SELECT INTO&lt;/h1&gt;&lt;h2 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot; title=&quot;介绍&quot;&gt;&lt;/a&gt;介绍&lt;/h2&gt;&lt;p&gt;可以从一个表复制数据，然后把数据插入到另一个新表中。&lt;/p&gt;
+&lt;h2 id=&quot;语法&quot;&gt;&lt;a href=&quot;#语法&quot; class=&quot;headerlink&quot; title=&quot;语法&quot;&gt;&lt;/a&gt;语法&lt;/h2&gt;&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;SELECT&lt;/span&gt; * &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;INTO&lt;/span&gt; table2 [&lt;span class=&quot;keyword&quot;&gt;IN&lt;/span&gt; externable]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;FROM&lt;/span&gt; table1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;或&lt;/p&gt;
+&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;SELECT&lt;/span&gt;　column_name(s)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;INTO&lt;/span&gt; table2 [&lt;span class=&quot;keyword&quot;&gt;IN&lt;/span&gt; externaldb]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;FROM&lt;/span&gt; table1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>sql学习0728-JOIN（INNER JOIN、LEFT JOIN、RIGHT JOIN、FULL OUTER JOIN）</title>
-    <link href="http://yoursite.com/2020/07/31/sql%E5%AD%A6%E4%B9%A00728-JOIN%EF%BC%88INNER%20JOIN%E3%80%81LEFT%20JOIN%E3%80%81RIGHT%20JOIN%E3%80%81FULL%20OUTER%20JOIN%EF%BC%89/"/>
-    <id>http://yoursite.com/2020/07/31/sql%E5%AD%A6%E4%B9%A00728-JOIN%EF%BC%88INNER%20JOIN%E3%80%81LEFT%20JOIN%E3%80%81RIGHT%20JOIN%E3%80%81FULL%20OUTER%20JOIN%EF%BC%89/</id>
+    <link href="https://flower48237.com/2020/07/31/sql%E5%AD%A6%E4%B9%A00728-JOIN%EF%BC%88INNER%20JOIN%E3%80%81LEFT%20JOIN%E3%80%81RIGHT%20JOIN%E3%80%81FULL%20OUTER%20JOIN%EF%BC%89/"/>
+    <id>https://flower48237.com/2020/07/31/sql%E5%AD%A6%E4%B9%A00728-JOIN%EF%BC%88INNER%20JOIN%E3%80%81LEFT%20JOIN%E3%80%81RIGHT%20JOIN%E3%80%81FULL%20OUTER%20JOIN%EF%BC%89/</id>
     <published>2020-07-31T14:32:11.754Z</published>
     <updated>2020-10-16T14:42:42.020Z</updated>
     
@@ -108,8 +108,8 @@
   
   <entry>
     <title>sql学习0728-JOIN（INNER JOIN、ＬＥＦＴ JOIN、RIGHT JOIN、FULL OUTER JOIN）</title>
-    <link href="http://yoursite.com/2020/07/28/sql%E5%AD%A6%E4%B9%A00728-JOIN%EF%BC%88INNER%20JOIN%E3%80%81%EF%BC%AC%EF%BC%A5%EF%BC%A6%EF%BC%B4%20JOIN%E3%80%81RIGHT%20JOIN%E3%80%81FULL%20OUTER%20JOIN%EF%BC%89/"/>
-    <id>http://yoursite.com/2020/07/28/sql%E5%AD%A6%E4%B9%A00728-JOIN%EF%BC%88INNER%20JOIN%E3%80%81%EF%BC%AC%EF%BC%A5%EF%BC%A6%EF%BC%B4%20JOIN%E3%80%81RIGHT%20JOIN%E3%80%81FULL%20OUTER%20JOIN%EF%BC%89/</id>
+    <link href="https://flower48237.com/2020/07/28/sql%E5%AD%A6%E4%B9%A00728-JOIN%EF%BC%88INNER%20JOIN%E3%80%81%EF%BC%AC%EF%BC%A5%EF%BC%A6%EF%BC%B4%20JOIN%E3%80%81RIGHT%20JOIN%E3%80%81FULL%20OUTER%20JOIN%EF%BC%89/"/>
+    <id>https://flower48237.com/2020/07/28/sql%E5%AD%A6%E4%B9%A00728-JOIN%EF%BC%88INNER%20JOIN%E3%80%81%EF%BC%AC%EF%BC%A5%EF%BC%A6%EF%BC%B4%20JOIN%E3%80%81RIGHT%20JOIN%E3%80%81FULL%20OUTER%20JOIN%EF%BC%89/</id>
     <published>2020-07-28T15:14:23.355Z</published>
     <updated>2020-10-16T14:41:10.800Z</updated>
     
@@ -140,8 +140,8 @@
   
   <entry>
     <title>sql学习0722-增删改查</title>
-    <link href="http://yoursite.com/2020/07/28/sql%E5%AD%A6%E4%B9%A00722-%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/"/>
-    <id>http://yoursite.com/2020/07/28/sql%E5%AD%A6%E4%B9%A00722-%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/</id>
+    <link href="https://flower48237.com/2020/07/28/sql%E5%AD%A6%E4%B9%A00722-%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/"/>
+    <id>https://flower48237.com/2020/07/28/sql%E5%AD%A6%E4%B9%A00722-%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/</id>
     <published>2020-07-28T15:14:23.339Z</published>
     <updated>2020-10-16T14:42:41.955Z</updated>
     
@@ -158,26 +158,9 @@
   </entry>
   
   <entry>
-    <title>sql学习0724-SELECT TOP, LIMIT, ROWNUM 子句、LIKE、IN</title>
-    <link href="http://yoursite.com/2020/07/28/sql%E5%AD%A6%E4%B9%A00724-SELECT%20TOP,%20LIMIT,%20ROWNUM%20%E5%AD%90%E5%8F%A5%E3%80%81LIKE%E3%80%81IN/"/>
-    <id>http://yoursite.com/2020/07/28/sql%E5%AD%A6%E4%B9%A00724-SELECT%20TOP,%20LIMIT,%20ROWNUM%20%E5%AD%90%E5%8F%A5%E3%80%81LIKE%E3%80%81IN/</id>
-    <published>2020-07-28T15:14:23.339Z</published>
-    <updated>2020-10-16T14:42:41.999Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="SELECT-TOP-LIMIT-ROWNUM-子句"><a href="#SELECT-TOP-LIMIT-ROWNUM-子句" class="headerlink" title="SELECT TOP, LIMIT, ROWNUM 子句"></a>SELECT TOP, LIMIT, ROWNUM 子句</h1><a id="more"></a><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>SELECT TOP 子句用于规定要返回的记录的数目。</p><p>SELECT TOP 子句对于拥有数千条记录的大型表来说，是非常有用的。<br>** notes **:<br>不是所有的数据库系统都支持 SELECT TOP 语句。<br>MySQL 支持 LIMIT 语句来选取指定的条数数据， Oracle 可以使用 ROWNUM 来选取。</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table_name</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">ROWNUM</span> &lt;= <span class="built_in">number</span>;</span><br></pre></td></tr></table></figure><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * </span><br><span class="line"><span class="keyword">FROM</span> <span class="keyword">Store</span></span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">ROWNUM</span> &lt;= <span class="number">5</span>;</span><br></pre></td></tr></table></figure><h1 id="SQL-通配符"><a href="#SQL-通配符" class="headerlink" title="SQL 通配符"></a>SQL 通配符</h1><h2 id="介绍-1"><a href="#介绍-1" class="headerlink" title="介绍"></a>介绍</h2><p>通配符可以用于替代字符串中的任何其他字符。</p><p>在SQL中，通配符与SQL LIKE操作符一起使用。<br>SQL通配符用于搜索表中的数据</p><h2 id="在SQL中，可以使用以下通配符"><a href="#在SQL中，可以使用以下通配符" class="headerlink" title="在SQL中，可以使用以下通配符"></a>在SQL中，可以使用以下通配符</h2><table><thead><tr><th>通配符</th><th>含义</th></tr></thead><tbody><tr><td>%</td><td>替代0个或者多个字符</td></tr><tr><td>_</td><td>替代一个字符</td></tr><tr><td>[charlist]</td><td>字符中的任何单一字符</td></tr><tr><td>[^charlist] 或 [!charlist]</td><td>不在字符列中的任何单一字符</td></tr></tbody></table><h2 id="实例1"><a href="#实例1" class="headerlink" title="实例1"></a>实例1</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">%</span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">Store</span></span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">url</span> <span class="keyword">LIKE</span> <span class="string">'https%'</span></span><br><span class="line">该<span class="keyword">SQL</span> 语句选取 <span class="keyword">url</span> 以字母 <span class="string">"https"</span> 开始的所有商品。</span><br></pre></td></tr></table></figure><h2 id="实例2"><a href="#实例2" class="headerlink" title="实例2"></a>实例2</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">%</span><br><span class="line">SELECT * FROM Store</span><br><span class="line">WHERE url LIKE &#39;%oo%&#39;</span><br><span class="line">该SQL 语句选取 url 包含模式 &quot;oo&quot; 的所有商品。</span><br></pre></td></tr></table></figure><h2 id="实例3"><a href="#实例3" class="headerlink" title="实例3"></a>实例3</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">_</span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">Store</span></span><br><span class="line"><span class="keyword">FROM</span> Websites</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">name</span> <span class="keyword">LIKE</span> <span class="string">'_gle'</span>;</span><br><span class="line">该SQL 语句选取 name 以一个任意字符开始，然后是 "gle" 的所有商品。</span><br></pre></td></tr></table></figure><h2 id="实例4"><a href="#实例4" class="headerlink" title="实例4"></a>实例4</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">_</span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">Store</span></span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">name</span> <span class="keyword">LIKE</span> <span class="string">'G_o_le'</span>;</span><br><span class="line">该 SQL 语句选取 name 以 "G" 开始，然后是一个任意字符，然后是 "o"，然后是一个任意字符，然后是 "le" 的所有商品。</span><br></pre></td></tr></table></figure><h2 id="实例5"><a href="#实例5" class="headerlink" title="实例5"></a>实例5</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[charlist] </span><br><span class="line">MySQL 中使用 REGEXP 或 NOT REGEXP 运算符 (或 RLIKE 和 NOT RLIKE) 来操作正则表达式。</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">Store</span></span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">name</span> REGEXP <span class="string">'^[GFs]'</span>;</span><br><span class="line">该 SQL 语句选取 name 以 "G"、"F" 或 "s" 为开头的所有商品：</span><br></pre></td></tr></table></figure><h2 id="实例6"><a href="#实例6" class="headerlink" title="实例6"></a>实例6</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[charlist]</span><br><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> <span class="keyword">Store</span></span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">name</span> REGEXP <span class="string">'^[A-H]'</span>;</span><br><span class="line">该SQL语句选取name以A到H字母开头的所有商品。</span><br></pre></td></tr></table></figure><h2 id="实例7"><a href="#实例7" class="headerlink" title="实例7"></a>实例7</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[^charlist]</span><br><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> <span class="keyword">Store</span></span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">name</span> REGEXP <span class="string">'^[A-H]'</span>;</span><br><span class="line">该SQL语句选取name以A到H字母开头的所有商品。</span><br></pre></td></tr></table></figure><h1 id="LIKE-操作符"><a href="#LIKE-操作符" class="headerlink" title="LIKE 操作符"></a>LIKE 操作符</h1><h2 id="介绍-2"><a href="#介绍-2" class="headerlink" title="介绍"></a>介绍</h2><p>LIKE 操作符用于在 WHERE 子句中 搜索 列中的 指定模式。</p><h2 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> table_name</span><br><span class="line"><span class="keyword">WHERE</span> column_name <span class="keyword">LIKE</span> pattern;</span><br></pre></td></tr></table></figure><h2 id="实例1-1"><a href="#实例1-1" class="headerlink" title="实例1"></a>实例1</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * </span><br><span class="line"><span class="keyword">FROM</span> <span class="keyword">Store</span></span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">name</span> <span class="keyword">LIKE</span> <span class="string">'S%'</span>;</span><br><span class="line"></span><br><span class="line">该SQL 语句选取 name 以字母 "S" 开头的所有客户</span><br></pre></td></tr></table></figure><h2 id="实例2-1"><a href="#实例2-1" class="headerlink" title="实例2"></a>实例2</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * </span><br><span class="line"><span class="keyword">FROM</span> Websites</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">name</span> <span class="keyword">LIKE</span> <span class="string">'%k'</span>;</span><br><span class="line"></span><br><span class="line">该SQL 语句选取 name 以字母 "k" 结尾的所有客户</span><br></pre></td></tr></table></figure><h2 id="实例3-1"><a href="#实例3-1" class="headerlink" title="实例3"></a>实例3</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> <span class="keyword">Store</span></span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">name</span> <span class="keyword">LIKE</span> %ry%;</span><br><span class="line"></span><br><span class="line">该SQL 语句选取 name 包含模式 "ry" 的所有客户：</span><br></pre></td></tr></table></figure><h2 id="note"><a href="#note" class="headerlink" title="note"></a>note</h2><p>通过使用 NOT 关键字，您可以选取不匹配模式的记录。</p><h2 id="实例4-1"><a href="#实例4-1" class="headerlink" title="实例4"></a>实例4</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> <span class="keyword">Store</span></span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">name</span> <span class="keyword">NOT</span> <span class="keyword">LIKE</span> %ry%;</span><br></pre></td></tr></table></figure><h1 id="IN-操作符"><a href="#IN-操作符" class="headerlink" title="IN 操作符"></a>IN 操作符</h1><h2 id="介绍-3"><a href="#介绍-3" class="headerlink" title="介绍"></a>介绍</h2><p>IN 操纵符允许在WHERE子句中规定多个值</p><h2 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table_name</span><br><span class="line"><span class="keyword">WHERE</span> column_name <span class="keyword">IN</span> (value1,value2,...);</span><br></pre></td></tr></table></figure><h2 id="实例-1"><a href="#实例-1" class="headerlink" title="实例"></a>实例</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">Store</span></span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">name</span> <span class="keyword">IN</span> (<span class="string">'西瓜'</span>,<span class="string">'苹果'</span>);</span><br><span class="line"></span><br><span class="line">该 SQL 语句选取 name 为 "西瓜" 或 "苹果" 的所有网站</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;SELECT-TOP-LIMIT-ROWNUM-子句&quot;&gt;&lt;a href=&quot;#SELECT-TOP-LIMIT-ROWNUM-子句&quot; class=&quot;headerlink&quot; title=&quot;SELECT TOP, LIMIT, ROWNUM 子句&quot;&gt;&lt;/a&gt;SELECT TOP, LIMIT, ROWNUM 子句&lt;/h1&gt;</summary>
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
     <title>sql学习0727-BETWEEN、AS、UNION</title>
-    <link href="http://yoursite.com/2020/07/28/sql%E5%AD%A6%E4%B9%A00727-BETWEEN%E3%80%81AS%E3%80%81UNION/"/>
-    <id>http://yoursite.com/2020/07/28/sql%E5%AD%A6%E4%B9%A00727-BETWEEN%E3%80%81AS%E3%80%81UNION/</id>
+    <link href="https://flower48237.com/2020/07/28/sql%E5%AD%A6%E4%B9%A00727-BETWEEN%E3%80%81AS%E3%80%81UNION/"/>
+    <id>https://flower48237.com/2020/07/28/sql%E5%AD%A6%E4%B9%A00727-BETWEEN%E3%80%81AS%E3%80%81UNION/</id>
     <published>2020-07-28T15:14:23.339Z</published>
     <updated>2020-10-16T14:42:42.009Z</updated>
     
@@ -192,9 +175,26 @@
   </entry>
   
   <entry>
+    <title>sql学习0724-SELECT TOP, LIMIT, ROWNUM 子句、LIKE、IN</title>
+    <link href="https://flower48237.com/2020/07/28/sql%E5%AD%A6%E4%B9%A00724-SELECT%20TOP,%20LIMIT,%20ROWNUM%20%E5%AD%90%E5%8F%A5%E3%80%81LIKE%E3%80%81IN/"/>
+    <id>https://flower48237.com/2020/07/28/sql%E5%AD%A6%E4%B9%A00724-SELECT%20TOP,%20LIMIT,%20ROWNUM%20%E5%AD%90%E5%8F%A5%E3%80%81LIKE%E3%80%81IN/</id>
+    <published>2020-07-28T15:14:23.339Z</published>
+    <updated>2020-10-16T14:42:41.999Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="SELECT-TOP-LIMIT-ROWNUM-子句"><a href="#SELECT-TOP-LIMIT-ROWNUM-子句" class="headerlink" title="SELECT TOP, LIMIT, ROWNUM 子句"></a>SELECT TOP, LIMIT, ROWNUM 子句</h1><a id="more"></a><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>SELECT TOP 子句用于规定要返回的记录的数目。</p><p>SELECT TOP 子句对于拥有数千条记录的大型表来说，是非常有用的。<br>** notes **:<br>不是所有的数据库系统都支持 SELECT TOP 语句。<br>MySQL 支持 LIMIT 语句来选取指定的条数数据， Oracle 可以使用 ROWNUM 来选取。</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table_name</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">ROWNUM</span> &lt;= <span class="built_in">number</span>;</span><br></pre></td></tr></table></figure><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * </span><br><span class="line"><span class="keyword">FROM</span> <span class="keyword">Store</span></span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">ROWNUM</span> &lt;= <span class="number">5</span>;</span><br></pre></td></tr></table></figure><h1 id="SQL-通配符"><a href="#SQL-通配符" class="headerlink" title="SQL 通配符"></a>SQL 通配符</h1><h2 id="介绍-1"><a href="#介绍-1" class="headerlink" title="介绍"></a>介绍</h2><p>通配符可以用于替代字符串中的任何其他字符。</p><p>在SQL中，通配符与SQL LIKE操作符一起使用。<br>SQL通配符用于搜索表中的数据</p><h2 id="在SQL中，可以使用以下通配符"><a href="#在SQL中，可以使用以下通配符" class="headerlink" title="在SQL中，可以使用以下通配符"></a>在SQL中，可以使用以下通配符</h2><table><thead><tr><th>通配符</th><th>含义</th></tr></thead><tbody><tr><td>%</td><td>替代0个或者多个字符</td></tr><tr><td>_</td><td>替代一个字符</td></tr><tr><td>[charlist]</td><td>字符中的任何单一字符</td></tr><tr><td>[^charlist] 或 [!charlist]</td><td>不在字符列中的任何单一字符</td></tr></tbody></table><h2 id="实例1"><a href="#实例1" class="headerlink" title="实例1"></a>实例1</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">%</span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">Store</span></span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">url</span> <span class="keyword">LIKE</span> <span class="string">'https%'</span></span><br><span class="line">该<span class="keyword">SQL</span> 语句选取 <span class="keyword">url</span> 以字母 <span class="string">"https"</span> 开始的所有商品。</span><br></pre></td></tr></table></figure><h2 id="实例2"><a href="#实例2" class="headerlink" title="实例2"></a>实例2</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">%</span><br><span class="line">SELECT * FROM Store</span><br><span class="line">WHERE url LIKE &#39;%oo%&#39;</span><br><span class="line">该SQL 语句选取 url 包含模式 &quot;oo&quot; 的所有商品。</span><br></pre></td></tr></table></figure><h2 id="实例3"><a href="#实例3" class="headerlink" title="实例3"></a>实例3</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">_</span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">Store</span></span><br><span class="line"><span class="keyword">FROM</span> Websites</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">name</span> <span class="keyword">LIKE</span> <span class="string">'_gle'</span>;</span><br><span class="line">该SQL 语句选取 name 以一个任意字符开始，然后是 "gle" 的所有商品。</span><br></pre></td></tr></table></figure><h2 id="实例4"><a href="#实例4" class="headerlink" title="实例4"></a>实例4</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">_</span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">Store</span></span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">name</span> <span class="keyword">LIKE</span> <span class="string">'G_o_le'</span>;</span><br><span class="line">该 SQL 语句选取 name 以 "G" 开始，然后是一个任意字符，然后是 "o"，然后是一个任意字符，然后是 "le" 的所有商品。</span><br></pre></td></tr></table></figure><h2 id="实例5"><a href="#实例5" class="headerlink" title="实例5"></a>实例5</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[charlist] </span><br><span class="line">MySQL 中使用 REGEXP 或 NOT REGEXP 运算符 (或 RLIKE 和 NOT RLIKE) 来操作正则表达式。</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">Store</span></span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">name</span> REGEXP <span class="string">'^[GFs]'</span>;</span><br><span class="line">该 SQL 语句选取 name 以 "G"、"F" 或 "s" 为开头的所有商品：</span><br></pre></td></tr></table></figure><h2 id="实例6"><a href="#实例6" class="headerlink" title="实例6"></a>实例6</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[charlist]</span><br><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> <span class="keyword">Store</span></span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">name</span> REGEXP <span class="string">'^[A-H]'</span>;</span><br><span class="line">该SQL语句选取name以A到H字母开头的所有商品。</span><br></pre></td></tr></table></figure><h2 id="实例7"><a href="#实例7" class="headerlink" title="实例7"></a>实例7</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[^charlist]</span><br><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> <span class="keyword">Store</span></span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">name</span> REGEXP <span class="string">'^[A-H]'</span>;</span><br><span class="line">该SQL语句选取name以A到H字母开头的所有商品。</span><br></pre></td></tr></table></figure><h1 id="LIKE-操作符"><a href="#LIKE-操作符" class="headerlink" title="LIKE 操作符"></a>LIKE 操作符</h1><h2 id="介绍-2"><a href="#介绍-2" class="headerlink" title="介绍"></a>介绍</h2><p>LIKE 操作符用于在 WHERE 子句中 搜索 列中的 指定模式。</p><h2 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> table_name</span><br><span class="line"><span class="keyword">WHERE</span> column_name <span class="keyword">LIKE</span> pattern;</span><br></pre></td></tr></table></figure><h2 id="实例1-1"><a href="#实例1-1" class="headerlink" title="实例1"></a>实例1</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * </span><br><span class="line"><span class="keyword">FROM</span> <span class="keyword">Store</span></span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">name</span> <span class="keyword">LIKE</span> <span class="string">'S%'</span>;</span><br><span class="line"></span><br><span class="line">该SQL 语句选取 name 以字母 "S" 开头的所有客户</span><br></pre></td></tr></table></figure><h2 id="实例2-1"><a href="#实例2-1" class="headerlink" title="实例2"></a>实例2</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * </span><br><span class="line"><span class="keyword">FROM</span> Websites</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">name</span> <span class="keyword">LIKE</span> <span class="string">'%k'</span>;</span><br><span class="line"></span><br><span class="line">该SQL 语句选取 name 以字母 "k" 结尾的所有客户</span><br></pre></td></tr></table></figure><h2 id="实例3-1"><a href="#实例3-1" class="headerlink" title="实例3"></a>实例3</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> <span class="keyword">Store</span></span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">name</span> <span class="keyword">LIKE</span> %ry%;</span><br><span class="line"></span><br><span class="line">该SQL 语句选取 name 包含模式 "ry" 的所有客户：</span><br></pre></td></tr></table></figure><h2 id="note"><a href="#note" class="headerlink" title="note"></a>note</h2><p>通过使用 NOT 关键字，您可以选取不匹配模式的记录。</p><h2 id="实例4-1"><a href="#实例4-1" class="headerlink" title="实例4"></a>实例4</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> <span class="keyword">Store</span></span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">name</span> <span class="keyword">NOT</span> <span class="keyword">LIKE</span> %ry%;</span><br></pre></td></tr></table></figure><h1 id="IN-操作符"><a href="#IN-操作符" class="headerlink" title="IN 操作符"></a>IN 操作符</h1><h2 id="介绍-3"><a href="#介绍-3" class="headerlink" title="介绍"></a>介绍</h2><p>IN 操纵符允许在WHERE子句中规定多个值</p><h2 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table_name</span><br><span class="line"><span class="keyword">WHERE</span> column_name <span class="keyword">IN</span> (value1,value2,...);</span><br></pre></td></tr></table></figure><h2 id="实例-1"><a href="#实例-1" class="headerlink" title="实例"></a>实例</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">Store</span></span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">name</span> <span class="keyword">IN</span> (<span class="string">'西瓜'</span>,<span class="string">'苹果'</span>);</span><br><span class="line"></span><br><span class="line">该 SQL 语句选取 name 为 "西瓜" 或 "苹果" 的所有网站</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;SELECT-TOP-LIMIT-ROWNUM-子句&quot;&gt;&lt;a href=&quot;#SELECT-TOP-LIMIT-ROWNUM-子句&quot; class=&quot;headerlink&quot; title=&quot;SELECT TOP, LIMIT, ROWNUM 子句&quot;&gt;&lt;/a&gt;SELECT TOP, LIMIT, ROWNUM 子句&lt;/h1&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>Modify at 2020/7/6</title>
-    <link href="http://yoursite.com/2020/07/06/hello-world/"/>
-    <id>http://yoursite.com/2020/07/06/hello-world/</id>
+    <link href="https://flower48237.com/2020/07/06/hello-world/"/>
+    <id>https://flower48237.com/2020/07/06/hello-world/</id>
     <published>2020-07-06T05:13:42.437Z</published>
     <updated>2020-07-06T10:54:45.418Z</updated>
     
@@ -213,8 +213,8 @@
   
   <entry>
     <title>LeetCode精选TOP面试题26.删除排序数组中的重复项</title>
-    <link href="http://yoursite.com/2020/05/25/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%9826.%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9/"/>
-    <id>http://yoursite.com/2020/05/25/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%9826.%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9/</id>
+    <link href="https://flower48237.com/2020/05/25/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%9826.%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9/"/>
+    <id>https://flower48237.com/2020/05/25/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%9826.%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9/</id>
     <published>2020-05-25T11:41:00.000Z</published>
     <updated>2020-07-06T10:57:15.120Z</updated>
     
@@ -227,25 +227,25 @@
     
     
     
-    <category term="LeetCode" scheme="http://yoursite.com/categories/LeetCode/"/>
+    <category term="LeetCode" scheme="https://flower48237.com/categories/LeetCode/"/>
     
     
-    <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+    <category term="Java" scheme="https://flower48237.com/tags/Java/"/>
     
-    <category term="遍历" scheme="http://yoursite.com/tags/%E9%81%8D%E5%8E%86/"/>
+    <category term="LeetCode" scheme="https://flower48237.com/tags/LeetCode/"/>
     
-    <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
+    <category term="面试" scheme="https://flower48237.com/tags/%E9%9D%A2%E8%AF%95/"/>
     
-    <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
+    <category term="遍历" scheme="https://flower48237.com/tags/%E9%81%8D%E5%8E%86/"/>
     
-    <category term="面试" scheme="http://yoursite.com/tags/%E9%9D%A2%E8%AF%95/"/>
+    <category term="数组" scheme="https://flower48237.com/tags/%E6%95%B0%E7%BB%84/"/>
     
   </entry>
   
   <entry>
     <title>LeetCode精选TOP面试题53.最大子序和</title>
-    <link href="http://yoursite.com/2020/05/24/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%9853.%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%92%8C/"/>
-    <id>http://yoursite.com/2020/05/24/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%9853.%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%92%8C/</id>
+    <link href="https://flower48237.com/2020/05/24/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%9853.%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%92%8C/"/>
+    <id>https://flower48237.com/2020/05/24/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%9853.%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%92%8C/</id>
     <published>2020-05-24T10:02:00.000Z</published>
     <updated>2020-07-06T10:57:25.949Z</updated>
     
@@ -257,25 +257,25 @@
     
     
     
-    <category term="LeetCode" scheme="http://yoursite.com/categories/LeetCode/"/>
+    <category term="LeetCode" scheme="https://flower48237.com/categories/LeetCode/"/>
     
     
-    <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+    <category term="Java" scheme="https://flower48237.com/tags/Java/"/>
     
-    <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
+    <category term="LeetCode" scheme="https://flower48237.com/tags/LeetCode/"/>
     
-    <category term="面试" scheme="http://yoursite.com/tags/%E9%9D%A2%E8%AF%95/"/>
+    <category term="面试" scheme="https://flower48237.com/tags/%E9%9D%A2%E8%AF%95/"/>
     
-    <category term="动态规划" scheme="http://yoursite.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    <category term="动态规划" scheme="https://flower48237.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
     
-    <category term="贪心算法" scheme="http://yoursite.com/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/"/>
+    <category term="贪心算法" scheme="https://flower48237.com/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>LeetCode精选TOP面试题38.外观数列</title>
-    <link href="http://yoursite.com/2020/03/27/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%9838.%E5%A4%96%E8%A7%82%E6%95%B0%E5%88%97/"/>
-    <id>http://yoursite.com/2020/03/27/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%9838.%E5%A4%96%E8%A7%82%E6%95%B0%E5%88%97/</id>
+    <link href="https://flower48237.com/2020/03/27/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%9838.%E5%A4%96%E8%A7%82%E6%95%B0%E5%88%97/"/>
+    <id>https://flower48237.com/2020/03/27/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%9838.%E5%A4%96%E8%A7%82%E6%95%B0%E5%88%97/</id>
     <published>2020-03-27T06:54:51.000Z</published>
     <updated>2020-03-27T06:55:16.000Z</updated>
     
@@ -288,25 +288,25 @@
     
     
     
-    <category term="LeetCode" scheme="http://yoursite.com/categories/LeetCode/"/>
+    <category term="LeetCode" scheme="https://flower48237.com/categories/LeetCode/"/>
     
     
-    <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+    <category term="Java" scheme="https://flower48237.com/tags/Java/"/>
     
-    <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
+    <category term="LeetCode" scheme="https://flower48237.com/tags/LeetCode/"/>
     
-    <category term="面试" scheme="http://yoursite.com/tags/%E9%9D%A2%E8%AF%95/"/>
+    <category term="面试" scheme="https://flower48237.com/tags/%E9%9D%A2%E8%AF%95/"/>
     
-    <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    <category term="数据结构" scheme="https://flower48237.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
-    <category term="字符串" scheme="http://yoursite.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    <category term="字符串" scheme="https://flower48237.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
   </entry>
   
   <entry>
     <title>LeetCode精选TOP面试题160.相交链表</title>
-    <link href="http://yoursite.com/2020/03/27/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98160.%E7%9B%B8%E4%BA%A4%E9%93%BE%E8%A1%A8/"/>
-    <id>http://yoursite.com/2020/03/27/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98160.%E7%9B%B8%E4%BA%A4%E9%93%BE%E8%A1%A8/</id>
+    <link href="https://flower48237.com/2020/03/27/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98160.%E7%9B%B8%E4%BA%A4%E9%93%BE%E8%A1%A8/"/>
+    <id>https://flower48237.com/2020/03/27/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98160.%E7%9B%B8%E4%BA%A4%E9%93%BE%E8%A1%A8/</id>
     <published>2020-03-27T05:53:22.000Z</published>
     <updated>2020-03-27T05:56:12.000Z</updated>
     
@@ -318,25 +318,25 @@
     
     
     
-    <category term="LeetCode" scheme="http://yoursite.com/categories/LeetCode/"/>
+    <category term="LeetCode" scheme="https://flower48237.com/categories/LeetCode/"/>
     
     
-    <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+    <category term="Java" scheme="https://flower48237.com/tags/Java/"/>
     
-    <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
+    <category term="LeetCode" scheme="https://flower48237.com/tags/LeetCode/"/>
     
-    <category term="面试" scheme="http://yoursite.com/tags/%E9%9D%A2%E8%AF%95/"/>
+    <category term="面试" scheme="https://flower48237.com/tags/%E9%9D%A2%E8%AF%95/"/>
     
-    <category term="链表" scheme="http://yoursite.com/tags/%E9%93%BE%E8%A1%A8/"/>
+    <category term="链表" scheme="https://flower48237.com/tags/%E9%93%BE%E8%A1%A8/"/>
     
-    <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    <category term="数据结构" scheme="https://flower48237.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
   <entry>
     <title>LeetCode精选TOP面试题268.缺失数字</title>
-    <link href="http://yoursite.com/2020/03/23/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98268.%E7%BC%BA%E5%A4%B1%E6%95%B0%E5%AD%97/"/>
-    <id>http://yoursite.com/2020/03/23/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98268.%E7%BC%BA%E5%A4%B1%E6%95%B0%E5%AD%97/</id>
+    <link href="https://flower48237.com/2020/03/23/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98268.%E7%BC%BA%E5%A4%B1%E6%95%B0%E5%AD%97/"/>
+    <id>https://flower48237.com/2020/03/23/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98268.%E7%BC%BA%E5%A4%B1%E6%95%B0%E5%AD%97/</id>
     <published>2020-03-23T14:00:03.000Z</published>
     <updated>2020-03-23T14:55:36.000Z</updated>
     
@@ -347,27 +347,27 @@
     
     
     
-    <category term="LeetCode" scheme="http://yoursite.com/categories/LeetCode/"/>
+    <category term="LeetCode" scheme="https://flower48237.com/categories/LeetCode/"/>
     
     
-    <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+    <category term="Java" scheme="https://flower48237.com/tags/Java/"/>
     
-    <category term="遍历" scheme="http://yoursite.com/tags/%E9%81%8D%E5%8E%86/"/>
+    <category term="数值计算" scheme="https://flower48237.com/tags/%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/"/>
     
-    <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
+    <category term="LeetCode" scheme="https://flower48237.com/tags/LeetCode/"/>
     
-    <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
+    <category term="面试" scheme="https://flower48237.com/tags/%E9%9D%A2%E8%AF%95/"/>
     
-    <category term="面试" scheme="http://yoursite.com/tags/%E9%9D%A2%E8%AF%95/"/>
+    <category term="遍历" scheme="https://flower48237.com/tags/%E9%81%8D%E5%8E%86/"/>
     
-    <category term="数值计算" scheme="http://yoursite.com/tags/%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/"/>
+    <category term="数组" scheme="https://flower48237.com/tags/%E6%95%B0%E7%BB%84/"/>
     
   </entry>
   
   <entry>
     <title>LeetCode精选TOP面试题190.颠倒二进制位</title>
-    <link href="http://yoursite.com/2020/03/23/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98190.%E9%A2%A0%E5%80%92%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%BD%8D/"/>
-    <id>http://yoursite.com/2020/03/23/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98190.%E9%A2%A0%E5%80%92%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%BD%8D/</id>
+    <link href="https://flower48237.com/2020/03/23/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98190.%E9%A2%A0%E5%80%92%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%BD%8D/"/>
+    <id>https://flower48237.com/2020/03/23/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98190.%E9%A2%A0%E5%80%92%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%BD%8D/</id>
     <published>2020-03-23T12:30:47.000Z</published>
     <updated>2020-03-23T14:53:48.000Z</updated>
     
@@ -379,25 +379,25 @@
     
     
     
-    <category term="LeetCode" scheme="http://yoursite.com/categories/LeetCode/"/>
+    <category term="LeetCode" scheme="https://flower48237.com/categories/LeetCode/"/>
     
     
-    <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+    <category term="Java" scheme="https://flower48237.com/tags/Java/"/>
     
-    <category term="遍历" scheme="http://yoursite.com/tags/%E9%81%8D%E5%8E%86/"/>
+    <category term="LeetCode" scheme="https://flower48237.com/tags/LeetCode/"/>
     
-    <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
+    <category term="面试" scheme="https://flower48237.com/tags/%E9%9D%A2%E8%AF%95/"/>
     
-    <category term="面试" scheme="http://yoursite.com/tags/%E9%9D%A2%E8%AF%95/"/>
+    <category term="遍历" scheme="https://flower48237.com/tags/%E9%81%8D%E5%8E%86/"/>
     
-    <category term="位运算" scheme="http://yoursite.com/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
+    <category term="位运算" scheme="https://flower48237.com/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
     
   </entry>
   
   <entry>
     <title>LeetCode精选TOP面试题121.买卖股票的最佳时机</title>
-    <link href="http://yoursite.com/2020/03/23/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98121.%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA/"/>
-    <id>http://yoursite.com/2020/03/23/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98121.%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA/</id>
+    <link href="https://flower48237.com/2020/03/23/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98121.%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA/"/>
+    <id>https://flower48237.com/2020/03/23/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98121.%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA/</id>
     <published>2020-03-23T12:24:21.000Z</published>
     <updated>2020-03-23T14:54:06.000Z</updated>
     
@@ -408,27 +408,27 @@
     
     
     
-    <category term="LeetCode" scheme="http://yoursite.com/categories/LeetCode/"/>
+    <category term="LeetCode" scheme="https://flower48237.com/categories/LeetCode/"/>
     
     
-    <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+    <category term="Java" scheme="https://flower48237.com/tags/Java/"/>
     
-    <category term="遍历" scheme="http://yoursite.com/tags/%E9%81%8D%E5%8E%86/"/>
+    <category term="LeetCode" scheme="https://flower48237.com/tags/LeetCode/"/>
     
-    <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
+    <category term="面试" scheme="https://flower48237.com/tags/%E9%9D%A2%E8%AF%95/"/>
     
-    <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
+    <category term="遍历" scheme="https://flower48237.com/tags/%E9%81%8D%E5%8E%86/"/>
     
-    <category term="面试" scheme="http://yoursite.com/tags/%E9%9D%A2%E8%AF%95/"/>
+    <category term="数组" scheme="https://flower48237.com/tags/%E6%95%B0%E7%BB%84/"/>
     
-    <category term="动态规划" scheme="http://yoursite.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    <category term="动态规划" scheme="https://flower48237.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
     
   </entry>
   
   <entry>
     <title>LeetCode精选TOP面试题202.快乐数</title>
-    <link href="http://yoursite.com/2020/03/17/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98202.%E5%BF%AB%E4%B9%90%E6%95%B0/"/>
-    <id>http://yoursite.com/2020/03/17/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98202.%E5%BF%AB%E4%B9%90%E6%95%B0/</id>
+    <link href="https://flower48237.com/2020/03/17/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98202.%E5%BF%AB%E4%B9%90%E6%95%B0/"/>
+    <id>https://flower48237.com/2020/03/17/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98202.%E5%BF%AB%E4%B9%90%E6%95%B0/</id>
     <published>2020-03-17T03:14:50.000Z</published>
     <updated>2020-03-23T14:49:16.000Z</updated>
     
@@ -439,23 +439,23 @@
     
     
     
-    <category term="LeetCode" scheme="http://yoursite.com/categories/LeetCode/"/>
+    <category term="LeetCode" scheme="https://flower48237.com/categories/LeetCode/"/>
     
     
-    <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+    <category term="Java" scheme="https://flower48237.com/tags/Java/"/>
     
-    <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
+    <category term="数值计算" scheme="https://flower48237.com/tags/%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/"/>
     
-    <category term="面试" scheme="http://yoursite.com/tags/%E9%9D%A2%E8%AF%95/"/>
+    <category term="LeetCode" scheme="https://flower48237.com/tags/LeetCode/"/>
     
-    <category term="数值计算" scheme="http://yoursite.com/tags/%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/"/>
+    <category term="面试" scheme="https://flower48237.com/tags/%E9%9D%A2%E8%AF%95/"/>
     
   </entry>
   
   <entry>
     <title>LeetCode精选TOP面试题122.买卖股票的最佳时机II</title>
-    <link href="http://yoursite.com/2020/03/17/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98122.%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BAII/"/>
-    <id>http://yoursite.com/2020/03/17/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98122.%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BAII/</id>
+    <link href="https://flower48237.com/2020/03/17/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98122.%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BAII/"/>
+    <id>https://flower48237.com/2020/03/17/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98122.%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BAII/</id>
     <published>2020-03-17T02:55:26.000Z</published>
     <updated>2020-03-23T14:51:58.000Z</updated>
     
@@ -466,27 +466,27 @@
     
     
     
-    <category term="LeetCode" scheme="http://yoursite.com/categories/LeetCode/"/>
+    <category term="LeetCode" scheme="https://flower48237.com/categories/LeetCode/"/>
     
     
-    <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+    <category term="Java" scheme="https://flower48237.com/tags/Java/"/>
     
-    <category term="遍历" scheme="http://yoursite.com/tags/%E9%81%8D%E5%8E%86/"/>
+    <category term="LeetCode" scheme="https://flower48237.com/tags/LeetCode/"/>
     
-    <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
+    <category term="面试" scheme="https://flower48237.com/tags/%E9%9D%A2%E8%AF%95/"/>
     
-    <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
+    <category term="遍历" scheme="https://flower48237.com/tags/%E9%81%8D%E5%8E%86/"/>
     
-    <category term="面试" scheme="http://yoursite.com/tags/%E9%9D%A2%E8%AF%95/"/>
+    <category term="数组" scheme="https://flower48237.com/tags/%E6%95%B0%E7%BB%84/"/>
     
-    <category term="动态规划" scheme="http://yoursite.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    <category term="动态规划" scheme="https://flower48237.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
     
   </entry>
   
   <entry>
     <title>笔试题6-数值统计</title>
-    <link href="http://yoursite.com/2020/03/11/%E7%AC%94%E8%AF%95%E9%A2%986-%E6%95%B0%E5%80%BC%E7%BB%9F%E8%AE%A1/"/>
-    <id>http://yoursite.com/2020/03/11/%E7%AC%94%E8%AF%95%E9%A2%986-%E6%95%B0%E5%80%BC%E7%BB%9F%E8%AE%A1/</id>
+    <link href="https://flower48237.com/2020/03/11/%E7%AC%94%E8%AF%95%E9%A2%986-%E6%95%B0%E5%80%BC%E7%BB%9F%E8%AE%A1/"/>
+    <id>https://flower48237.com/2020/03/11/%E7%AC%94%E8%AF%95%E9%A2%986-%E6%95%B0%E5%80%BC%E7%BB%9F%E8%AE%A1/</id>
     <published>2020-03-11T15:18:00.000Z</published>
     <updated>2020-03-11T15:34:32.000Z</updated>
     
@@ -497,21 +497,21 @@
     
     
     
-    <category term="笔试题" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AF%95%E9%A2%98/"/>
+    <category term="笔试题" scheme="https://flower48237.com/categories/%E7%AC%94%E8%AF%95%E9%A2%98/"/>
     
     
-    <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+    <category term="Java" scheme="https://flower48237.com/tags/Java/"/>
     
-    <category term="数值计算" scheme="http://yoursite.com/tags/%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/"/>
+    <category term="数值计算" scheme="https://flower48237.com/tags/%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/"/>
     
-    <category term="字符串" scheme="http://yoursite.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    <category term="字符串" scheme="https://flower48237.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
   </entry>
   
   <entry>
     <title>笔试题5-十六进制转十进制</title>
-    <link href="http://yoursite.com/2020/03/11/%E7%AC%94%E8%AF%95%E9%A2%985-%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E8%BD%AC%E5%8D%81%E8%BF%9B%E5%88%B6/"/>
-    <id>http://yoursite.com/2020/03/11/%E7%AC%94%E8%AF%95%E9%A2%985-%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E8%BD%AC%E5%8D%81%E8%BF%9B%E5%88%B6/</id>
+    <link href="https://flower48237.com/2020/03/11/%E7%AC%94%E8%AF%95%E9%A2%985-%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E8%BD%AC%E5%8D%81%E8%BF%9B%E5%88%B6/"/>
+    <id>https://flower48237.com/2020/03/11/%E7%AC%94%E8%AF%95%E9%A2%985-%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E8%BD%AC%E5%8D%81%E8%BF%9B%E5%88%B6/</id>
     <published>2020-03-11T15:00:52.000Z</published>
     <updated>2020-03-11T15:43:04.000Z</updated>
     
@@ -523,14 +523,14 @@
     
     
     
-    <category term="笔试题" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AF%95%E9%A2%98/"/>
+    <category term="笔试题" scheme="https://flower48237.com/categories/%E7%AC%94%E8%AF%95%E9%A2%98/"/>
     
     
-    <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+    <category term="Java" scheme="https://flower48237.com/tags/Java/"/>
     
-    <category term="字符串" scheme="http://yoursite.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    <category term="字符串" scheme="https://flower48237.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
-    <category term="进制转换" scheme="http://yoursite.com/tags/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/"/>
+    <category term="进制转换" scheme="https://flower48237.com/tags/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/"/>
     
   </entry>
   
