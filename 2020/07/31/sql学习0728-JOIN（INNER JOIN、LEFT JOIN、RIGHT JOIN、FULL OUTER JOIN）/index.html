@@ -1,34 +1,71 @@
-extends partial/layout
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="Core"><title>sql学习0728-JOIN（INNER JOIN、LEFT JOIN、RIGHT JOIN、FULL OUTER JOIN） · flower48237的个人博客</title><meta name="description" content="JOIN（连接）总介绍把两个或多个表的行连接起来有左连接，右连接，全连接，内连接，外连接等七个
+不同的 JOIN
+INNER JOIN：如果表中有至少一个匹配，则返回行
+LEFT JOIN：即使右表中没有匹配，也从左表返回所有的行
+RIGHT JOIN：即使左表中没有匹配，也从右表返回所有的行
+FU"><meta name="keywords" content="极限博客,极限Blog,博客,极限"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><script src="/js/jquery.js"></script><meta name="generator" content="Hexo 4.2.1"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/logo@2x.png" style="width:127px;"><h3 title=""><a href="/">flower48237的个人博客</a></h3><div class="description"><p>心之所愿，无事不成。<br> Nothing is impossible to a willing heart.</p></div></div></div><ul class="social-links"><li><a href="https://github.com/flower48237" target="_blank" rel="noopener"><i class="fa fa-github"></i></a></li><li><a href="mailto:liq982@gmail.com"><i class="fa fa-envelope"></i></a></li></ul><div class="footer"><div class="p"> <span>© 2017 - 2020 </span><i class="fa fa-star"></i><span> Core</span></div><div class="by_farbox"><span>Powered by </span><a href="https://hexo.io/zh-cn/" target="_blank">Hexo </a><span> & </span><a href="https://github.com/mrcore/hexo-theme-Anatole-Core" target="_blank">Anatole-Core  </a></div><div class="beian"><a href="http://www.beian.miit.gov.cn/" target="_blank"></a><span style="height:10px;margin-left: 10px;">|</span><img src="/images/gongan.png" style="height:10px;margin-left: 10px;position: relative;top: 1px;"><span style="margin-left: 2px;"></span></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">首页</a></li><li><a href="/archives">归档</a></li><li><a href="/tags">标签</a></li><li><a href="/about">关于</a></li><li><a href="/guestbook">留言</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>sql学习0728-JOIN（INNER JOIN、LEFT JOIN、RIGHT JOIN、FULL OUTER JOIN）</a></h3></div><div class="post-content"><h1 id="JOIN（连接）"><a href="#JOIN（连接）" class="headerlink" title="JOIN（连接）"></a>JOIN（连接）</h1><h2 id="总介绍"><a href="#总介绍" class="headerlink" title="总介绍"></a>总介绍</h2><p>把两个或多个表的行连接起来<br>有左连接，右连接，全连接，内连接，外连接等七个</p>
+<h2 id="不同的-JOIN"><a href="#不同的-JOIN" class="headerlink" title="不同的 JOIN"></a>不同的 JOIN</h2><ul>
+<li>INNER JOIN：如果表中有至少一个匹配，则返回行</li>
+<li>LEFT JOIN：即使右表中没有匹配，也从左表返回所有的行</li>
+<li>RIGHT JOIN：即使左表中没有匹配，也从右表返回所有的行</li>
+<li>FULL JOIN：只要其中一个表中存在匹配，则返回行</li>
+</ul>
+<blockquote>
+<p>连接的结果可以在逻辑上看作是由SELECT语句指定的列组成的新表。</p>
+</blockquote>
+<blockquote>
+<p>左连接与右连接的左右指的是以两张表中的哪一张为基准，它们都是外连接。</p>
+</blockquote>
+<blockquote>
+<p>外连接就好像是为非基准表添加了一行全为空值的万能行，用来与基准表中找不到匹配的行进行匹配。假设两个没有空值的表进行左连接，左表是基准表，左表的所有行都出现在结果中，右表则可能因为无法与基准表匹配而出现是空值的字段。<br>这部分主要涉及的是表连接的逻辑问题。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="INNER-JOIN（简单的-JOIN）-最常见的-JOIN-类型"><a href="#INNER-JOIN（简单的-JOIN）-最常见的-JOIN-类型" class="headerlink" title="INNER JOIN（简单的 JOIN） 最常见的 JOIN 类型"></a>INNER JOIN（简单的 JOIN） 最常见的 JOIN 类型</h2><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>INNER JOIN 关键字在表中存在至少一个匹配时返回行。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table1</span><br><span class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span> table2</span><br><span class="line"><span class="keyword">ON</span> table1.column_name=table2.column_name;</span><br></pre></td></tr></table></figure>
+<p>或</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table1</span><br><span class="line"><span class="keyword">JOIN</span> table2</span><br><span class="line"><span class="keyword">ON</span> table1.column_name=table2.column_name;</span><br></pre></td></tr></table></figure>
 
-include mixins
 
-block site_title
-    != page.title + " · " + config.title
+<blockquote>
+<p>note:</p>
+</blockquote>
+<p>INNER JOIN 与 JOIN 是相同的<br>INNER JOIN 关键字在表中存在至少一个匹配时返回行。<br>如果 “table1” 表中的行在 “table2” 中没有匹配，则不会列出这些行。</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Websites.name, access_log.count, access_log.date</span><br><span class="line"><span class="keyword">FROM</span> Websites</span><br><span class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span> access_log</span><br><span class="line"><span class="keyword">ON</span> Websites.id=access_log.site_id</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> access_log.count;</span><br></pre></td></tr></table></figure>
 
-block description
-    - var desc = page.desc || strip_html(page.content).replace(/^\s*/, '').replace(/\s*$/, '').substring(0, 150);
-    meta(name="description", content=desc)
+<h3 id="在使用-join-时，on-和-where-条件的区别如下："><a href="#在使用-join-时，on-和-where-条件的区别如下：" class="headerlink" title="在使用 join 时，on 和 where 条件的区别如下："></a>在使用 join 时，on 和 where 条件的区别如下：</h3><ul>
+<li>1.on 条件是在生成临时表时使用的条件，它不管 on 中的条件是否为真，都会返回左边表中的记录。</li>
+<li>2.where 条件是在临时表生成好后，再对临时表进行过滤的条件。这时已经没有 left join 的含义（必须返回左边表的记录）了，条件不为真的就全部过滤掉。</li>
+</ul>
+<h2 id="LEFT-JOIN-左连接"><a href="#LEFT-JOIN-左连接" class="headerlink" title="LEFT JOIN(左连接)"></a>LEFT JOIN(左连接)</h2><h3 id="介绍-1"><a href="#介绍-1" class="headerlink" title="介绍"></a>介绍</h3><p>LEFT JOIN 关键字从左表（table1）返回所有的行，即使右表（table2）中没有匹配。如果右表中没有匹配，则结果为 NULL。</p>
+<h3 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table1</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> table2</span><br><span class="line"><span class="keyword">ON</span> table1.column_name=table2.column_name;</span><br></pre></td></tr></table></figure>
+<p>或：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table1</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">OUTER</span> <span class="keyword">JOIN</span> table2</span><br><span class="line"><span class="keyword">ON</span> table1.column_name=table2.column_name;</span><br></pre></td></tr></table></figure>
 
-block content
-  .autopagerize_page_element: .content: .post-page
-    include mixins
-    +make_post(page, true)
-    .share
-      .evernote
-        a.fa.fa-bookmark(href="",onclick="javascript:join_favorite()", ref="sidebar")
-      .weibo
-        a.fa.fa-weibo(href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&title=',e(d.title),'&appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));")
-      .twitter
-        a.fa.fa-twitter(href=url_for("http://twitter.com/home?status="+","+config.url+"/"+page.path+","+config.title+","+page.title+",;"))
-    - var prev = page.prev ? page.prev.path : false;
-    - var next = page.next ? page.next.path : false;
-    .pagination
-      ul.clearfix
-        if prev
-          li.pre.pagbuttons
-            a.btn(role="navigation",href=url_for(prev), title=page.prev.title)!= __('prev_post')
-        if next
-          li.next.pagbuttons
-            a.btn(role="navigation",href=url_for(next), title=page.next.title)!= __('next_post')
-    if page.comments
-        include partial/comments
+<h3 id="实例-1"><a href="#实例-1" class="headerlink" title="实例"></a>实例</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Websites.name, access_log.count, access_log.date</span><br><span class="line"><span class="keyword">FROM</span> Websites</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> access_log</span><br><span class="line"><span class="keyword">ON</span> Websites.id=access_log.site_id</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> access_log.count <span class="keyword">DESC</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="RIGHT-JOIN-右连接"><a href="#RIGHT-JOIN-右连接" class="headerlink" title="RIGHT JOIN(右连接)"></a>RIGHT JOIN(右连接)</h2><h3 id="介绍-2"><a href="#介绍-2" class="headerlink" title="介绍"></a>介绍</h3><p>RIGHT JOIN 关键字从右表（table2）返回所有的行，即使左表（table1）中没有匹配。如果左表中没有匹配，则结果为 NULL。</p>
+<h3 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table1</span><br><span class="line"><span class="keyword">RIGHT</span> <span class="keyword">JOIN</span> table2</span><br><span class="line"><span class="keyword">ON</span> table1.column_name=table2.column_name;</span><br></pre></td></tr></table></figure>
+<p>或：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table1</span><br><span class="line"><span class="keyword">RIGHT</span> <span class="keyword">OUTER</span> <span class="keyword">JOIN</span> table2</span><br><span class="line"><span class="keyword">ON</span> table1.column_name=table2.column_name;</span><br></pre></td></tr></table></figure>
+<h3 id="实例-2"><a href="#实例-2" class="headerlink" title="实例"></a>实例</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Websites.name, access_log.count, access_log.date</span><br><span class="line"><span class="keyword">FROM</span> access_log</span><br><span class="line"><span class="keyword">RIGHT</span> <span class="keyword">JOIN</span> Websites</span><br><span class="line"><span class="keyword">ON</span> access_log.site_id=Websites.id</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> access_log.count <span class="keyword">DESC</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="FULL-OUTER-JOIN-全外连接"><a href="#FULL-OUTER-JOIN-全外连接" class="headerlink" title="FULL OUTER JOIN(全外连接)"></a>FULL OUTER JOIN(全外连接)</h2><h3 id="介绍-3"><a href="#介绍-3" class="headerlink" title="介绍"></a>介绍</h3><p>FULL OUTER JOIN 关键字只要左表（table1）和右表（table2）其中一个表中存在匹配，则返回行.<br>简言之：FULL OUTER JOIN 关键字结合了 LEFT JOIN 和 RIGHT JOIN 的结果。</p>
+<h3 id="语法-3"><a href="#语法-3" class="headerlink" title="语法"></a>语法</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table1</span><br><span class="line"><span class="keyword">FULL</span> <span class="keyword">OUTER</span> <span class="keyword">JOIN</span> table2</span><br><span class="line"><span class="keyword">ON</span> table1.column_name=table2.column_name;</span><br></pre></td></tr></table></figure>
+
+<h3 id="实例-3"><a href="#实例-3" class="headerlink" title="实例"></a>实例</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Websites.name, access_log.count, access_log.date</span><br><span class="line"><span class="keyword">FROM</span> Websites</span><br><span class="line"><span class="keyword">FULL</span> <span class="keyword">OUTER</span> <span class="keyword">JOIN</span> access_log</span><br><span class="line"><span class="keyword">ON</span> Websites.id=access_log.site_id</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> access_log.count <span class="keyword">DESC</span>;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>note：FULL OUTER JOIN 关键字返回左表（Websites）和右表（access_log）中所有的行。如果 “Websites” 表中的行在 “access_log” 中没有匹配或者 “access_log” 表中的行在 “Websites” 表中没有匹配，也会列出这些行。</p>
+</blockquote>
+</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2020-07-31</span><i class="fa fa-tag"></i><span class="leancloud_visitors"></span></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="" onclick="javascript:join_favorite()" ref="sidebar"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" href="http://twitter.com/home?status=,http://yoursite.com/2020/07/31/sql学习0728-JOIN（INNER JOIN、LEFT JOIN、RIGHT JOIN、FULL OUTER JOIN）/,flower48237的个人博客,sql学习0728-JOIN（INNER JOIN、LEFT JOIN、RIGHT JOIN、FULL OUTER JOIN）,;" target="_blank" rel="noopener"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2020/07/31/sql%E5%AD%A6%E4%B9%A00730-Constraints%EF%BC%88%E7%BA%A6%E6%9D%9F%EF%BC%89/" title="sql学习0730-Constraints（约束）">上一篇</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/2020/07/28/sql%E5%AD%A6%E4%B9%A00728-JOIN%EF%BC%88INNER%20JOIN%E3%80%81%EF%BC%AC%EF%BC%A5%EF%BC%A6%EF%BC%B4%20JOIN%E3%80%81RIGHT%20JOIN%E3%80%81FULL%20OUTER%20JOIN%EF%BC%89/" title="sql学习0728-JOIN（INNER JOIN、ＬＥＦＴ JOIN、RIGHT JOIN、FULL OUTER JOIN）">下一篇</a></li></ul></div><script src="/js/visitors.js"></script><a id="comments"></a><div id="vcomments" style="margin:0 30px;"></div><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="//cdn.jsdelivr.net/gh/xcss/valine@latest/dist/Valine.min.js"></script><script>var valine = new Valine({
+  el:'#vcomments',
+  notify:false || false, 
+  verify:false|| false, 
+  app_id:'',
+  app_key:'',
+  placeholder:'念念不忘，必有回响...',
+  path: window.location.pathname,
+  serverURLs: '',
+  visitor:true,
+  recordIP:true,
+  avatar:'mp'
+})</script></div></div></div></div><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/add-bookmark.js"></script><script src="/js/baidu-tongji.js"></script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"left","width":200,"height":400,"hOffset":5,"vOffset":-38},"mobile":{"show":false,"scale":0.2},"react":{"opacityDefault":0.8,"opacityOnHover":0.2},"log":false});</script></body></html>

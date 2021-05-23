@@ -1,34 +1,113 @@
-extends partial/layout
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="Core"><title>sql学习0731-INDEX、DROP、ALTER、 AUTO INCREMENT · flower48237的个人博客</title><meta name="description" content="创建索引介绍在不读取整个表的情况下，索引能更加快速地查找数据。用户无法看到索引，他们只能被用来提高查询效率。更新一个带有索引的表比更新一个不带索引的表花费更多时间，这是由于索引本身也需要更新导致的。因此，理想的做法是仅在经常被搜索的表上创建索引。
 
-include mixins
+语法123456789创建简单索引，允许重复CRE"><meta name="keywords" content="极限博客,极限Blog,博客,极限"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><script src="/js/jquery.js"></script><meta name="generator" content="Hexo 4.2.1"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/logo@2x.png" style="width:127px;"><h3 title=""><a href="/">flower48237的个人博客</a></h3><div class="description"><p>心之所愿，无事不成。<br> Nothing is impossible to a willing heart.</p></div></div></div><ul class="social-links"><li><a href="https://github.com/flower48237" target="_blank" rel="noopener"><i class="fa fa-github"></i></a></li><li><a href="mailto:liq982@gmail.com"><i class="fa fa-envelope"></i></a></li></ul><div class="footer"><div class="p"> <span>© 2017 - 2020 </span><i class="fa fa-star"></i><span> Core</span></div><div class="by_farbox"><span>Powered by </span><a href="https://hexo.io/zh-cn/" target="_blank">Hexo </a><span> & </span><a href="https://github.com/mrcore/hexo-theme-Anatole-Core" target="_blank">Anatole-Core  </a></div><div class="beian"><a href="http://www.beian.miit.gov.cn/" target="_blank"></a><span style="height:10px;margin-left: 10px;">|</span><img src="/images/gongan.png" style="height:10px;margin-left: 10px;position: relative;top: 1px;"><span style="margin-left: 2px;"></span></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">首页</a></li><li><a href="/archives">归档</a></li><li><a href="/tags">标签</a></li><li><a href="/about">关于</a></li><li><a href="/guestbook">留言</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>sql学习0731-INDEX、DROP、ALTER、 AUTO INCREMENT</a></h3></div><div class="post-content"><h1 id="创建索引"><a href="#创建索引" class="headerlink" title="创建索引"></a>创建索引</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>在不读取整个表的情况下，索引能更加快速地查找数据。用户无法看到索引，他们只能被用来提高查询效率。更新一个带有索引的表比更新一个不带索引的表花费更多时间，这是由于索引本身也需要更新导致的。因此，理想的做法是仅在经常被搜索的表上创建索引。</p>
+<a id="more"></a>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">创建简单索引，允许重复</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">INDEX</span> index_name</span><br><span class="line"><span class="keyword">ON</span> table_name (column_name);</span><br><span class="line"></span><br><span class="line">创建简单索引（在多个列上），允许重复</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">INDEX</span> index_name</span><br><span class="line"><span class="keyword">ON</span> table_name (column_name1, column_name2);</span><br></pre></td></tr></table></figure>
 
-block site_title
-    != page.title + " · " + config.title
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">创建唯一索引，不允许重复，唯一索引意味着两个行不能拥有同一个索引值</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">UNIQUE</span> <span class="keyword">INDEX</span> index_name</span><br><span class="line"><span class="keyword">ON</span> table_name (column_name)</span><br></pre></td></tr></table></figure>
 
-block description
-    - var desc = page.desc || strip_html(page.content).replace(/^\s*/, '').replace(/\s*$/, '').substring(0, 150);
-    meta(name="description", content=desc)
+<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">INDEX</span> PIndex</span><br><span class="line"><span class="keyword">ON</span> Persons (LastName);</span><br></pre></td></tr></table></figure>
 
-block content
-  .autopagerize_page_element: .content: .post-page
-    include mixins
-    +make_post(page, true)
-    .share
-      .evernote
-        a.fa.fa-bookmark(href="",onclick="javascript:join_favorite()", ref="sidebar")
-      .weibo
-        a.fa.fa-weibo(href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&title=',e(d.title),'&appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));")
-      .twitter
-        a.fa.fa-twitter(href=url_for("http://twitter.com/home?status="+","+config.url+"/"+page.path+","+config.title+","+page.title+",;"))
-    - var prev = page.prev ? page.prev.path : false;
-    - var next = page.next ? page.next.path : false;
-    .pagination
-      ul.clearfix
-        if prev
-          li.pre.pagbuttons
-            a.btn(role="navigation",href=url_for(prev), title=page.prev.title)!= __('prev_post')
-        if next
-          li.next.pagbuttons
-            a.btn(role="navigation",href=url_for(next), title=page.next.title)!= __('next_post')
-    if page.comments
-        include partial/comments
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">INDEX</span> PIndex</span><br><span class="line"><span class="keyword">ON</span> Persons (LastName, FirstName);</span><br></pre></td></tr></table></figure>
+
+<h1 id="DROP"><a href="#DROP" class="headerlink" title="DROP"></a>DROP</h1><h2 id="介绍-1"><a href="#介绍-1" class="headerlink" title="介绍"></a>介绍</h2><p>通过DROP语句可以删除索引、表、数据库</p>
+<h2 id="语法1-撤销索引-DROP-INDEX"><a href="#语法1-撤销索引-DROP-INDEX" class="headerlink" title="语法1 撤销索引 DROP INDEX"></a>语法1 撤销索引 DROP INDEX</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(Oracle)</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">INDEX</span> index_name;</span><br></pre></td></tr></table></figure>
+
+<h2 id="语法2-撤销表-DROP-TABLE"><a href="#语法2-撤销表-DROP-TABLE" class="headerlink" title="语法2 撤销表 DROP TABLE"></a>语法2 撤销表 DROP TABLE</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> table_name;</span><br></pre></td></tr></table></figure>
+
+<h2 id="语法3-撤销数据库-DROP-DATABASE"><a href="#语法3-撤销数据库-DROP-DATABASE" class="headerlink" title="语法3 撤销数据库 DROP DATABASE"></a>语法3 撤销数据库 DROP DATABASE</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">DATABASE</span> database_name;</span><br></pre></td></tr></table></figure>
+
+<h2 id="语法4-TRUNCATE-TABLE语句"><a href="#语法4-TRUNCATE-TABLE语句" class="headerlink" title="语法4 TRUNCATE TABLE语句"></a>语法4 TRUNCATE TABLE语句</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">只删除表中内容，不删除表</span><br><span class="line"><span class="keyword">TRUNCATE</span> <span class="keyword">TABLE</span> table_name;</span><br></pre></td></tr></table></figure>
+
+<h1 id="ALTER-TABLE"><a href="#ALTER-TABLE" class="headerlink" title="ALTER TABLE"></a>ALTER TABLE</h1><h2 id="介绍-2"><a href="#介绍-2" class="headerlink" title="介绍"></a>介绍</h2><p>ALTER TABLE 语句用于在已有的表中 添加、删除 或 修改 各个列。</p>
+<h2 id="语法1-在表中添加列"><a href="#语法1-在表中添加列" class="headerlink" title="语法1 在表中添加列"></a>语法1 在表中添加列</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name</span><br><span class="line"><span class="keyword">ADD</span> column_name data_type;</span><br></pre></td></tr></table></figure>
+<h2 id="语法2-删除表中的列"><a href="#语法2-删除表中的列" class="headerlink" title="语法2 删除表中的列"></a>语法2 删除表中的列</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">COLUMN</span> column_name;</span><br></pre></td></tr></table></figure>
+
+<h2 id="语法3-改变表中的数据类中"><a href="#语法3-改变表中的数据类中" class="headerlink" title="语法3 改变表中的数据类中"></a>语法3 改变表中的数据类中</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name</span><br><span class="line"><span class="keyword">MODIFY</span> column_name data_type;</span><br></pre></td></tr></table></figure>
+<h2 id="举例Persons表"><a href="#举例Persons表" class="headerlink" title="举例Persons表"></a>举例Persons表</h2><table>
+<thead>
+<tr>
+<th>P_id</th>
+<th>LastName</th>
+<th>FirstName</th>
+<th>City</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>san</td>
+<td>zhang</td>
+<td>BeiJing</td>
+</tr>
+<tr>
+<td>2</td>
+<td>si</td>
+<td>li</td>
+<td>ShangHai</td>
+</tr>
+<tr>
+<td>3</td>
+<td>wu</td>
+<td>wang</td>
+<td>GuangZhou</td>
+</tr>
+</tbody></table>
+<h2 id="实例1"><a href="#实例1" class="headerlink" title="实例1"></a>实例1</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">在 "Persons" 表中添加一个名为 "DateOfBirth" 的列</span><br><span class="line"></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> Persons</span><br><span class="line"><span class="keyword">ADD</span> DateOfBirth <span class="built_in">date</span>;</span><br></pre></td></tr></table></figure>
+
+<p>操作后的表如下：<br>| P_id | LastName | FirstName | City | DateOfBirth |<br>|–|–|–|–|–|<br>| 1 | san | zhang | BeiJing ||<br>| 2 | si | li | ShangHai ||<br>| 3 | wu | wang | GuangZhou ||</p>
+<h2 id="实例2"><a href="#实例2" class="headerlink" title="实例2"></a>实例2</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">改变 "Persons" 表中 "DateOfBirth" 列的数据类型</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> Persons</span><br><span class="line"><span class="keyword">MODIFY</span> DateOfBirth <span class="keyword">year</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="实例3"><a href="#实例3" class="headerlink" title="实例3"></a>实例3</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">删除 "Person" 表中的 "DateOfBirth" 列</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> Persons</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">COLUMN</span> DataOfBirth;</span><br></pre></td></tr></table></figure>
+<p>操作后的表如下：<br>| P_id | LastName | FirstName | City |<br>|–|–|–|–|<br>| 1 | san | zhang | BeiJing |<br>| 2 | si | li | ShangHai |<br>| 3 | wu | wang | GuangZhou |</p>
+<h1 id="AUTO-INCREMENT-字段"><a href="#AUTO-INCREMENT-字段" class="headerlink" title="AUTO INCREMENT 字段"></a>AUTO INCREMENT 字段</h1><h2 id="介绍-3"><a href="#介绍-3" class="headerlink" title="介绍"></a>介绍</h2><p>我们通常希望在每次插入新记录时，自动地创建主键字段的值。<br>AUTO INCREMENT 字段可以在新记录插入到表中的时候生成一个唯一的数字</p>
+<h2 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">在 Oracle 中，必须通过 sequence 对象（该对象生成数字序列）创建 AUTO INCREMENT 字段:</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">SEQUENCE</span> seq_person</span><br><span class="line"><span class="keyword">MINVALUE</span>        <span class="number">1</span></span><br><span class="line"><span class="keyword">START</span> <span class="keyword">WITH</span>      <span class="number">1</span></span><br><span class="line"><span class="keyword">INCREMENT</span> <span class="keyword">BY</span>    <span class="number">1</span></span><br><span class="line"><span class="keyword">CACHE</span>           <span class="number">10</span></span><br></pre></td></tr></table></figure>
+<p>上面的代码创建一个名为 seq_person 的 sequence 对象，它以1起始且以 1 为单位递增。该对象缓存10个值以提高性能。cache选项规定了为了提高访问速度要存储多少个序列值。</p>
+<h2 id="实例-1"><a href="#实例-1" class="headerlink" title="实例"></a>实例</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">要在 "Persons" 表中插入新记录，我们必须使用 nextval 函数（该函数从 seq_person 序列中取回下一个值）：</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> Persons (<span class="keyword">ID</span>,FirstName,LastName)</span><br><span class="line"><span class="keyword">VALUES</span> (seq_person.nextval,<span class="string">'Lars'</span>,<span class="string">'Monsen'</span>)</span><br></pre></td></tr></table></figure>
+<p>上面的 SQL 语句会在 “Persons” 表中插入一条新记录。<br>“ID” 列会被赋值为来自 seq_person 序列的下一个数字，所以使用了nextval函数；<br>“FirstName”列 会被设置为 “Lars”；”LastName” 列会被设置为 “Monsen”。</p>
+<h1 id="VIEW-试图"><a href="#VIEW-试图" class="headerlink" title="VIEW(试图)"></a>VIEW(试图)</h1><h2 id="介绍-4"><a href="#介绍-4" class="headerlink" title="介绍"></a>介绍</h2><p>视图是可视化的表，下面主要介绍怎样创建、更新和删除视图</p>
+<h2 id="创建视图-CREATE-VIEW"><a href="#创建视图-CREATE-VIEW" class="headerlink" title="创建视图 CREATE　VIEW"></a>创建视图 CREATE　VIEW</h2><h3 id="语法1-创建视图"><a href="#语法1-创建视图" class="headerlink" title="语法1 创建视图"></a>语法1 创建视图</h3><p>视图是基于SQL语句的结果集的可视化的表。</p>
+<p>视图包含行和列，像一个真实的表（实际上并不是）。视图中的字段就是来自一个或多个数据库中的真实的表中的字段。</p>
+<p>可以向视图添加WHERE语句、JOIN语句以及SQL函数，也可以呈现数据，就像这些数据来自于某个单一的表一样。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span> view_name <span class="keyword">AS</span> <span class="comment">-- 创建 -- </span></span><br><span class="line"><span class="keyword">SELECT</span> column_name(s)    </span><br><span class="line"><span class="keyword">FROM</span> table_name</span><br><span class="line"><span class="keyword">WHERE</span> condition;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>视图总是显示最新的数据，每次查询视图时，数据库引擎通过使用视图的SQL语句重建数据。</p>
+</blockquote>
+<h3 id="实例1-创建视图"><a href="#实例1-创建视图" class="headerlink" title="实例1 创建视图"></a>实例1 创建视图</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">视图 &quot;Current Product List&quot; 会从 &quot;Products&quot; 表列出所有正在使用的产品</span><br><span class="line"></span><br><span class="line">CREATE VIEW [Current Product List] AS</span><br><span class="line">SELECT ProductID, ProductName</span><br><span class="line">FROM Products</span><br><span class="line">WHERE Discontinued&#x3D;No;</span><br></pre></td></tr></table></figure>
+<h3 id="实例2-查询实例1中的视图"><a href="#实例2-查询实例1中的视图" class="headerlink" title="实例2 查询实例1中的视图"></a>实例2 查询实例1中的视图</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * </span><br><span class="line"><span class="keyword">FROM</span> [<span class="keyword">Current</span> Product <span class="keyword">List</span>];</span><br></pre></td></tr></table></figure>
+
+<h2 id="更新视图-REPLACE-VIEW"><a href="#更新视图-REPLACE-VIEW" class="headerlink" title="更新视图 REPLACE VIEW"></a>更新视图 REPLACE VIEW</h2><h3 id="语法2"><a href="#语法2" class="headerlink" title="语法2"></a>语法2</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">OR</span> <span class="keyword">REPLACE</span> <span class="keyword">VIEW</span> view_name <span class="keyword">AS</span></span><br><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table_name</span><br><span class="line"><span class="keyword">WHERE</span> condition;</span><br></pre></td></tr></table></figure>
+<h3 id="实例3-1"><a href="#实例3-1" class="headerlink" title="实例3"></a>实例3</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">向 "Current Product List" 视图添加 "Category" 列</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span> [<span class="keyword">Current</span> Product <span class="keyword">List</span>] <span class="keyword">AS</span></span><br><span class="line"><span class="keyword">SELECT</span> ProductID, ProductName, <span class="keyword">Category</span></span><br><span class="line"><span class="keyword">FROM</span> Products</span><br><span class="line"><span class="keyword">WHERE</span> Discontinued=<span class="keyword">No</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="撤销视图-DROP-VIEW"><a href="#撤销视图-DROP-VIEW" class="headerlink" title="撤销视图 DROP VIEW"></a>撤销视图 DROP VIEW</h2><h3 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">VIEW</span> view_name</span><br></pre></td></tr></table></figure>
+
+<h1 id="NULL-值"><a href="#NULL-值" class="headerlink" title="NULL 值"></a>NULL 值</h1><h2 id="介绍-5"><a href="#介绍-5" class="headerlink" title="介绍"></a>介绍</h2><p>NULL值代表遗漏的未知数据。表的列默认是可以存放NULL值的。<br>下面介绍 IS NULL 和 IS NOT NULL 操作符。</p>
+<h2 id="NULL-值-1"><a href="#NULL-值-1" class="headerlink" title="NULL 值"></a>NULL 值</h2><h3 id="介绍-6"><a href="#介绍-6" class="headerlink" title="介绍"></a>介绍</h3><ul>
+<li><p>如果表中的某个列是可选的，那么我们可以在不向该列添加值的情况下，插入新记录或更新已有的记录。这意味着该字段将以 NULL值的形式来保存。</p>
+</li>
+<li><p>NULL 值的处理方式与其他值不同。</p>
+</li>
+<li><p>NULL 用作未知的 或 不适用 的 值 的 占位符。</p>
+</li>
+<li><p>无法比较 NULL 和 0，因为它们不等价。</p>
+</li>
+<li><p>也无法使用比较运算符来测试 NULL 值，比如 =、&lt; 或 &lt;&gt;。</p>
+</li>
+<li><p>必须使用 IS NULL 和 IS NOT NULL 操作符。</p>
+</li>
+</ul>
+<h3 id="实例1-IS-NULL"><a href="#实例1-IS-NULL" class="headerlink" title="实例1 IS NULL"></a>实例1 IS NULL</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> LastName, FirstName, Address <span class="keyword">FROM</span> Persons</span><br><span class="line"><span class="keyword">WHERE</span> Address <span class="keyword">IS</span> <span class="literal">NULL</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="实例2-IS-NOT-NULL"><a href="#实例2-IS-NOT-NULL" class="headerlink" title="实例2 IS NOT NULL"></a>实例2 IS NOT NULL</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> LastName, FirstName, Address <span class="keyword">FROM</span> Persons</span><br><span class="line"><span class="keyword">WHERE</span> Address <span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>;</span><br></pre></td></tr></table></figure>
+</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2020-07-31</span><i class="fa fa-tag"></i><span class="leancloud_visitors"></span></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="" onclick="javascript:join_favorite()" ref="sidebar"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" href="http://twitter.com/home?status=,http://yoursite.com/2020/07/31/sql学习0731-INDEX、DROP、ALTER、 AUTO INCREMENT/,flower48237的个人博客,sql学习0731-INDEX、DROP、ALTER、 AUTO INCREMENT,;" target="_blank" rel="noopener"></a></div></div><div class="pagination"><ul class="clearfix"><li class="next pagbuttons"><a class="btn" role="navigation" href="/2020/07/31/sql%E5%AD%A6%E4%B9%A00729-SELECT%20INTO%E3%80%81INSERT%20INTO%20SELECT%E3%80%81CREATE%20DATABASE%E3%80%81CREATE%20TABLE/" title="sql学习0729-SELECT INTO、INSERT INTO SELECT、CREATE DATABASE、CREATE TABLE">下一篇</a></li></ul></div><script src="/js/visitors.js"></script><a id="comments"></a><div id="vcomments" style="margin:0 30px;"></div><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="//cdn.jsdelivr.net/gh/xcss/valine@latest/dist/Valine.min.js"></script><script>var valine = new Valine({
+  el:'#vcomments',
+  notify:false || false, 
+  verify:false|| false, 
+  app_id:'',
+  app_key:'',
+  placeholder:'念念不忘，必有回响...',
+  path: window.location.pathname,
+  serverURLs: '',
+  visitor:true,
+  recordIP:true,
+  avatar:'mp'
+})</script></div></div></div></div><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/add-bookmark.js"></script><script src="/js/baidu-tongji.js"></script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"left","width":200,"height":400,"hOffset":5,"vOffset":-38},"mobile":{"show":false,"scale":0.2},"react":{"opacityDefault":0.8,"opacityOnHover":0.2},"log":false});</script></body></html>
