@@ -459,7 +459,7 @@
   </url>
   
   <url>
-    <loc>https://flower48237.com/tags/%E6%95%B4%E6%95%B0/</loc>
+    <loc>https://flower48237.com/tags/%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/</loc>
     <lastmod>2021-05-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -480,7 +480,7 @@
   </url>
   
   <url>
-    <loc>https://flower48237.com/tags/%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/</loc>
+    <loc>https://flower48237.com/tags/%E6%95%B4%E6%95%B0/</loc>
     <lastmod>2021-05-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -501,6 +501,13 @@
   </url>
   
   <url>
+    <loc>https://flower48237.com/tags/%E6%95%B0%E7%BB%84/</loc>
+    <lastmod>2021-05-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://flower48237.com/tags/DFS/</loc>
     <lastmod>2021-05-24</lastmod>
     <changefreq>daily</changefreq>
@@ -509,13 +516,6 @@
   
   <url>
     <loc>https://flower48237.com/tags/BFS/</loc>
-    <lastmod>2021-05-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://flower48237.com/tags/%E6%95%B0%E7%BB%84/</loc>
     <lastmod>2021-05-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -613,14 +613,14 @@
   </url>
   
   <url>
-    <loc>https://flower48237.com/tags/%E8%BF%AD%E4%BB%A3/</loc>
+    <loc>https://flower48237.com/tags/%E6%8C%87%E9%92%88/</loc>
     <lastmod>2021-05-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://flower48237.com/tags/%E6%8C%87%E9%92%88/</loc>
+    <loc>https://flower48237.com/tags/%E8%BF%AD%E4%BB%A3/</loc>
     <lastmod>2021-05-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -662,14 +662,14 @@
   </url>
   
   <url>
-    <loc>https://flower48237.com/tags/%E5%BE%AA%E7%8E%AF/</loc>
+    <loc>https://flower48237.com/tags/%E9%81%8D%E5%8E%86%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2021-05-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://flower48237.com/tags/%E9%81%8D%E5%8E%86%E7%AE%97%E6%B3%95/</loc>
+    <loc>https://flower48237.com/tags/%E5%BE%AA%E7%8E%AF/</loc>
     <lastmod>2021-05-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
