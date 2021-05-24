@@ -212,26 +212,6 @@
   </entry>
   
   <entry>
-    <title>Modify at 2020/7/6</title>
-    <link href="https://flower48237.com/2020/07/06/hello-world/"/>
-    <id>https://flower48237.com/2020/07/06/hello-world/</id>
-    <published>2020-07-06T05:13:42.437Z</published>
-    <updated>2020-07-06T10:54:45.418Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
     <title>LeetCode精选TOP面试题26.删除排序数组中的重复项</title>
     <link href="https://flower48237.com/2020/05/25/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%9826.%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9/"/>
     <id>https://flower48237.com/2020/05/25/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%9826.%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9/</id>
@@ -252,11 +232,11 @@
     
     <category term="Java" scheme="https://flower48237.com/tags/Java/"/>
     
-    <category term="遍历" scheme="https://flower48237.com/tags/%E9%81%8D%E5%8E%86/"/>
-    
     <category term="LeetCode" scheme="https://flower48237.com/tags/LeetCode/"/>
     
     <category term="面试" scheme="https://flower48237.com/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+    <category term="遍历" scheme="https://flower48237.com/tags/%E9%81%8D%E5%8E%86/"/>
     
     <category term="数组" scheme="https://flower48237.com/tags/%E6%95%B0%E7%BB%84/"/>
     
@@ -317,9 +297,9 @@
     
     <category term="面试" scheme="https://flower48237.com/tags/%E9%9D%A2%E8%AF%95/"/>
     
-    <category term="字符串" scheme="https://flower48237.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-    
     <category term="数据结构" scheme="https://flower48237.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    <category term="字符串" scheme="https://flower48237.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
   </entry>
   
@@ -372,13 +352,13 @@
     
     <category term="Java" scheme="https://flower48237.com/tags/Java/"/>
     
-    <category term="遍历" scheme="https://flower48237.com/tags/%E9%81%8D%E5%8E%86/"/>
+    <category term="数值计算" scheme="https://flower48237.com/tags/%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/"/>
     
     <category term="LeetCode" scheme="https://flower48237.com/tags/LeetCode/"/>
     
     <category term="面试" scheme="https://flower48237.com/tags/%E9%9D%A2%E8%AF%95/"/>
     
-    <category term="数值计算" scheme="https://flower48237.com/tags/%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/"/>
+    <category term="遍历" scheme="https://flower48237.com/tags/%E9%81%8D%E5%8E%86/"/>
     
     <category term="数组" scheme="https://flower48237.com/tags/%E6%95%B0%E7%BB%84/"/>
     
@@ -404,11 +384,11 @@
     
     <category term="Java" scheme="https://flower48237.com/tags/Java/"/>
     
-    <category term="遍历" scheme="https://flower48237.com/tags/%E9%81%8D%E5%8E%86/"/>
-    
     <category term="LeetCode" scheme="https://flower48237.com/tags/LeetCode/"/>
     
     <category term="面试" scheme="https://flower48237.com/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+    <category term="遍历" scheme="https://flower48237.com/tags/%E9%81%8D%E5%8E%86/"/>
     
     <category term="位运算" scheme="https://flower48237.com/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
     
@@ -433,11 +413,11 @@
     
     <category term="Java" scheme="https://flower48237.com/tags/Java/"/>
     
-    <category term="遍历" scheme="https://flower48237.com/tags/%E9%81%8D%E5%8E%86/"/>
-    
     <category term="LeetCode" scheme="https://flower48237.com/tags/LeetCode/"/>
     
     <category term="面试" scheme="https://flower48237.com/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+    <category term="遍历" scheme="https://flower48237.com/tags/%E9%81%8D%E5%8E%86/"/>
     
     <category term="数组" scheme="https://flower48237.com/tags/%E6%95%B0%E7%BB%84/"/>
     
@@ -464,11 +444,11 @@
     
     <category term="Java" scheme="https://flower48237.com/tags/Java/"/>
     
+    <category term="数值计算" scheme="https://flower48237.com/tags/%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/"/>
+    
     <category term="LeetCode" scheme="https://flower48237.com/tags/LeetCode/"/>
     
     <category term="面试" scheme="https://flower48237.com/tags/%E9%9D%A2%E8%AF%95/"/>
-    
-    <category term="数值计算" scheme="https://flower48237.com/tags/%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/"/>
     
   </entry>
   
@@ -491,11 +471,11 @@
     
     <category term="Java" scheme="https://flower48237.com/tags/Java/"/>
     
-    <category term="遍历" scheme="https://flower48237.com/tags/%E9%81%8D%E5%8E%86/"/>
-    
     <category term="LeetCode" scheme="https://flower48237.com/tags/LeetCode/"/>
     
     <category term="面试" scheme="https://flower48237.com/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+    <category term="遍历" scheme="https://flower48237.com/tags/%E9%81%8D%E5%8E%86/"/>
     
     <category term="数组" scheme="https://flower48237.com/tags/%E6%95%B0%E7%BB%84/"/>
     
@@ -525,6 +505,32 @@
     <category term="数值计算" scheme="https://flower48237.com/tags/%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/"/>
     
     <category term="字符串" scheme="https://flower48237.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>笔试题5-十六进制转十进制</title>
+    <link href="https://flower48237.com/2020/03/11/%E7%AC%94%E8%AF%95%E9%A2%985-%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E8%BD%AC%E5%8D%81%E8%BF%9B%E5%88%B6/"/>
+    <id>https://flower48237.com/2020/03/11/%E7%AC%94%E8%AF%95%E9%A2%985-%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E8%BD%AC%E5%8D%81%E8%BF%9B%E5%88%B6/</id>
+    <published>2020-03-11T15:00:52.000Z</published>
+    <updated>2020-03-11T15:43:04.000Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="题目回顾"><a href="#题目回顾" class="headerlink" title="题目回顾"></a>题目回顾</h3><p>十六进制与十进制的转换，输入一个十六进制字符串，转换成十进制数输出。</p><h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>需要思路么？大概不需要，遍历字符串，把字符0~9的当做一类处理，字符A ~ F的当做一类处理，转成整数后按照转换规则对每一位进行指数、乘法操作并累加就好啦。</p><a id="more"></a><h3 id="代码（Java）"><a href="#代码（Java）" class="headerlink" title="代码（Java）"></a>代码（Java）</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> *<span class="doctag">@author</span> : flower48237</span></span><br><span class="line"><span class="comment"> *<span class="doctag">@version</span>: 2020年3月11日 下午9:12:13 </span></span><br><span class="line"><span class="comment"> *<span class="doctag">@note</span> : OX to Ten</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"><span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">String str = in.nextLine();</span><br><span class="line"><span class="comment">//用long定义sum是为了防止溢出</span></span><br><span class="line"><span class="keyword">long</span> sum = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> len = str.length();</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line"> <span class="keyword">char</span> ch = str.charAt(i);</span><br><span class="line"> <span class="keyword">int</span> chval = (<span class="keyword">int</span>)ch;</span><br><span class="line"> <span class="keyword">if</span>(chval - <span class="number">48</span> &gt; <span class="number">9</span>)&#123;</span><br><span class="line">                 <span class="keyword">if</span>(str.charAt(i) == <span class="string">'a'</span>)</span><br><span class="line">                     sum += <span class="number">10</span> * Math.pow(<span class="number">16</span>,len-i-<span class="number">1</span>);</span><br><span class="line">                 <span class="keyword">else</span> <span class="keyword">if</span>(ch == <span class="string">'b'</span>)</span><br><span class="line">                     sum += <span class="number">11</span>*Math.pow(<span class="number">16</span>,len-i-<span class="number">1</span>);</span><br><span class="line">                 <span class="keyword">else</span> <span class="keyword">if</span>(ch == <span class="string">'c'</span>)</span><br><span class="line">                     sum += <span class="number">12</span>*Math.pow(<span class="number">16</span>,len-i-<span class="number">1</span>);</span><br><span class="line">                 <span class="keyword">else</span> <span class="keyword">if</span>(ch == <span class="string">'d'</span>)</span><br><span class="line">                     sum += <span class="number">13</span>*Math.pow(<span class="number">16</span>,len-i-<span class="number">1</span>);</span><br><span class="line">                 <span class="keyword">else</span> <span class="keyword">if</span>(ch == <span class="string">'e'</span>)</span><br><span class="line">                     sum += <span class="number">14</span>*Math.pow(<span class="number">16</span>,len-i-<span class="number">1</span>);</span><br><span class="line">                 <span class="keyword">else</span> <span class="keyword">if</span>(ch == <span class="string">'f'</span>)</span><br><span class="line">                     sum += <span class="number">15</span>*Math.pow(<span class="number">16</span>,len-i-<span class="number">1</span>);</span><br><span class="line">             &#125;</span><br><span class="line">             <span class="keyword">else</span>&#123;</span><br><span class="line">                 sum+=(chval - <span class="number">48</span>) * Math.pow(<span class="number">16</span>,len-i-<span class="number">1</span>);</span><br><span class="line">             &#125;</span><br><span class="line">&#125;</span><br><span class="line">System.out.print(sum);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>联通软件研究院笔试编程题之一，感觉考的很重视基础。</p></blockquote>]]></content>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;题目回顾&quot;&gt;&lt;a href=&quot;#题目回顾&quot; class=&quot;headerlink&quot; title=&quot;题目回顾&quot;&gt;&lt;/a&gt;题目回顾&lt;/h3&gt;&lt;p&gt;十六进制与十进制的转换，输入一个十六进制字符串，转换成十进制数输出。&lt;/p&gt;
+&lt;h3 id=&quot;解题思路&quot;&gt;&lt;a href=&quot;#解题思路&quot; class=&quot;headerlink&quot; title=&quot;解题思路&quot;&gt;&lt;/a&gt;解题思路&lt;/h3&gt;&lt;p&gt;需要思路么？大概不需要，遍历字符串，把字符0~9的当做一类处理，字符A ~ F的当做一类处理，转成整数后按照转换规则对每一位进行指数、乘法操作并累加就好啦。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="笔试题" scheme="https://flower48237.com/categories/%E7%AC%94%E8%AF%95%E9%A2%98/"/>
+    
+    
+    <category term="Java" scheme="https://flower48237.com/tags/Java/"/>
+    
+    <category term="字符串" scheme="https://flower48237.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    
+    <category term="进制转换" scheme="https://flower48237.com/tags/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/"/>
     
   </entry>
   
