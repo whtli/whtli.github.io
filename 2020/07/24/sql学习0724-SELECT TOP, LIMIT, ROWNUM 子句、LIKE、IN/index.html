@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://flower48237.com">
-  <title>sql学习0728-JOIN（INNER JOIN、LEFT JOIN、RIGHT JOIN、FULL OUTER JOIN） | 鸡排大仙儿的个人博客</title>
+  <title>SQL学习：SELECT TOP, LIMIT, ROWNUM 子句、LIKE、IN | 鸡排大仙儿的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="JOIN（连接）总介绍把两个或多个表的行连接起来有左连接，右连接，全连接，内连接，外连接等七个 不同的 JOIN INNER JOIN：如果表中有至少一个匹配，则返回行 LEFT JOIN：即使右表中没有匹配，也从左表返回所有的行 RIGHT JOIN：即使左表中没有匹配，也从右表返回所有的行 FULL JOIN：只要其中一个表中存在匹配，则返回行   连接的结果可以在逻辑上看作是由SELECT语">
+  <meta name="description" content="SELECT TOP, LIMIT, ROWNUM 子句介绍SELECT TOP 子句用于规定要返回的记录的数目。 SELECT TOP 子句对于拥有数千条记录的大型表来说，是非常有用的。** notes **:不是所有的数据库系统都支持 SELECT TOP 语句。MySQL 支持 LIMIT 语句来选取指定的条数数据， Oracle 可以使用 ROWNUM 来选取。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="sql学习0728-JOIN（INNER JOIN、LEFT JOIN、RIGHT JOIN、FULL OUTER JOIN）">
-<meta property="og:url" content="https://flower48237.com/2020/07/31/sql%E5%AD%A6%E4%B9%A00728-JOIN%EF%BC%88INNER%20JOIN%E3%80%81LEFT%20JOIN%E3%80%81RIGHT%20JOIN%E3%80%81FULL%20OUTER%20JOIN%EF%BC%89/index.html">
+<meta property="og:title" content="SQL学习：SELECT TOP, LIMIT, ROWNUM 子句、LIKE、IN">
+<meta property="og:url" content="https://flower48237.com/2020/07/24/sql%E5%AD%A6%E4%B9%A00724-SELECT%20TOP,%20LIMIT,%20ROWNUM%20%E5%AD%90%E5%8F%A5%E3%80%81LIKE%E3%80%81IN/index.html">
 <meta property="og:site_name" content="鸡排大仙儿的个人博客">
-<meta property="og:description" content="JOIN（连接）总介绍把两个或多个表的行连接起来有左连接，右连接，全连接，内连接，外连接等七个 不同的 JOIN INNER JOIN：如果表中有至少一个匹配，则返回行 LEFT JOIN：即使右表中没有匹配，也从左表返回所有的行 RIGHT JOIN：即使左表中没有匹配，也从右表返回所有的行 FULL JOIN：只要其中一个表中存在匹配，则返回行   连接的结果可以在逻辑上看作是由SELECT语">
+<meta property="og:description" content="SELECT TOP, LIMIT, ROWNUM 子句介绍SELECT TOP 子句用于规定要返回的记录的数目。 SELECT TOP 子句对于拥有数千条记录的大型表来说，是非常有用的。** notes **:不是所有的数据库系统都支持 SELECT TOP 语句。MySQL 支持 LIMIT 语句来选取指定的条数数据， Oracle 可以使用 ROWNUM 来选取。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-07-31T14:32:11.754Z">
-<meta property="article:modified_time" content="2020-10-16T14:42:42.020Z">
+<meta property="article:published_time" content="2020-07-24T10:02:00.000Z">
+<meta property="article:modified_time" content="2021-06-02T14:23:37.429Z">
 <meta property="article:author" content="flower48237">
+<meta property="article:tag" content="SQL">
+<meta property="article:tag" content="基础">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="鸡排大仙儿的个人博客" type="application/atom+xml">
@@ -68,7 +70,7 @@
 			</ul>
 		</nav>
 		<nav>
-			总文章数 63
+			总文章数 62
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -171,20 +173,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-sql学习0728-JOIN（INNER JOIN、LEFT JOIN、RIGHT JOIN、FULL OUTER JOIN）" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-sql学习0724-SELECT TOP, LIMIT, ROWNUM 子句、LIKE、IN" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      sql学习0728-JOIN（INNER JOIN、LEFT JOIN、RIGHT JOIN、FULL OUTER JOIN）
+      SQL学习：SELECT TOP, LIMIT, ROWNUM 子句、LIKE、IN
     </h1>
   
 
         
-        <a href="/2020/07/31/sql%E5%AD%A6%E4%B9%A00728-JOIN%EF%BC%88INNER%20JOIN%E3%80%81LEFT%20JOIN%E3%80%81RIGHT%20JOIN%E3%80%81FULL%20OUTER%20JOIN%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2020-07-31T14:32:11.754Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-31</time>
+        <a href="/2020/07/24/sql%E5%AD%A6%E4%B9%A00724-SELECT%20TOP,%20LIMIT,%20ROWNUM%20%E5%AD%90%E5%8F%A5%E3%80%81LIKE%E3%80%81IN/" class="archive-article-date">
+  	<time datetime="2020-07-24T10:02:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-24</time>
 </a>
         
         
@@ -196,59 +198,67 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="JOIN（连接）"><a href="#JOIN（连接）" class="headerlink" title="JOIN（连接）"></a>JOIN（连接）</h1><h2 id="总介绍"><a href="#总介绍" class="headerlink" title="总介绍"></a>总介绍</h2><p>把两个或多个表的行连接起来<br>有左连接，右连接，全连接，内连接，外连接等七个</p>
-<h2 id="不同的-JOIN"><a href="#不同的-JOIN" class="headerlink" title="不同的 JOIN"></a>不同的 JOIN</h2><ul>
-<li>INNER JOIN：如果表中有至少一个匹配，则返回行</li>
-<li>LEFT JOIN：即使右表中没有匹配，也从左表返回所有的行</li>
-<li>RIGHT JOIN：即使左表中没有匹配，也从右表返回所有的行</li>
-<li>FULL JOIN：只要其中一个表中存在匹配，则返回行</li>
-</ul>
-<blockquote>
-<p>连接的结果可以在逻辑上看作是由SELECT语句指定的列组成的新表。</p>
-</blockquote>
-<blockquote>
-<p>左连接与右连接的左右指的是以两张表中的哪一张为基准，它们都是外连接。</p>
-</blockquote>
-<blockquote>
-<p>外连接就好像是为非基准表添加了一行全为空值的万能行，用来与基准表中找不到匹配的行进行匹配。假设两个没有空值的表进行左连接，左表是基准表，左表的所有行都出现在结果中，右表则可能因为无法与基准表匹配而出现是空值的字段。<br>这部分主要涉及的是表连接的逻辑问题。</p>
-</blockquote>
+        <h1 id="SELECT-TOP-LIMIT-ROWNUM-子句"><a href="#SELECT-TOP-LIMIT-ROWNUM-子句" class="headerlink" title="SELECT TOP, LIMIT, ROWNUM 子句"></a>SELECT TOP, LIMIT, ROWNUM 子句</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>SELECT TOP 子句用于规定要返回的记录的数目。</p>
+<p>SELECT TOP 子句对于拥有数千条记录的大型表来说，是非常有用的。<br>** notes **:<br>不是所有的数据库系统都支持 SELECT TOP 语句。<br>MySQL 支持 LIMIT 语句来选取指定的条数数据， Oracle 可以使用 ROWNUM 来选取。</p>
 <a id="more"></a>
-<h2 id="INNER-JOIN（简单的-JOIN）-最常见的-JOIN-类型"><a href="#INNER-JOIN（简单的-JOIN）-最常见的-JOIN-类型" class="headerlink" title="INNER JOIN（简单的 JOIN） 最常见的 JOIN 类型"></a>INNER JOIN（简单的 JOIN） 最常见的 JOIN 类型</h2><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>INNER JOIN 关键字在表中存在至少一个匹配时返回行。</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table1</span><br><span class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span> table2</span><br><span class="line"><span class="keyword">ON</span> table1.column_name=table2.column_name;</span><br></pre></td></tr></table></figure>
-<p>或</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table1</span><br><span class="line"><span class="keyword">JOIN</span> table2</span><br><span class="line"><span class="keyword">ON</span> table1.column_name=table2.column_name;</span><br></pre></td></tr></table></figure>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table_name</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">ROWNUM</span> &lt;= <span class="built_in">number</span>;</span><br></pre></td></tr></table></figure>
 
+<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * </span><br><span class="line"><span class="keyword">FROM</span> <span class="keyword">Store</span></span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">ROWNUM</span> &lt;= <span class="number">5</span>;</span><br></pre></td></tr></table></figure>
 
-<blockquote>
-<p>note:</p>
-</blockquote>
-<p>INNER JOIN 与 JOIN 是相同的<br>INNER JOIN 关键字在表中存在至少一个匹配时返回行。<br>如果 “table1” 表中的行在 “table2” 中没有匹配，则不会列出这些行。</p>
-<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Websites.name, access_log.count, access_log.date</span><br><span class="line"><span class="keyword">FROM</span> Websites</span><br><span class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span> access_log</span><br><span class="line"><span class="keyword">ON</span> Websites.id=access_log.site_id</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> access_log.count;</span><br></pre></td></tr></table></figure>
+<h1 id="SQL-通配符"><a href="#SQL-通配符" class="headerlink" title="SQL 通配符"></a>SQL 通配符</h1><h2 id="介绍-1"><a href="#介绍-1" class="headerlink" title="介绍"></a>介绍</h2><p>通配符可以用于替代字符串中的任何其他字符。</p>
+<p>在SQL中，通配符与SQL LIKE操作符一起使用。<br>SQL通配符用于搜索表中的数据</p>
+<h2 id="在SQL中，可以使用以下通配符"><a href="#在SQL中，可以使用以下通配符" class="headerlink" title="在SQL中，可以使用以下通配符"></a>在SQL中，可以使用以下通配符</h2><table>
+<thead>
+<tr>
+<th>通配符</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>%</td>
+<td>替代0个或者多个字符</td>
+</tr>
+<tr>
+<td>_</td>
+<td>替代一个字符</td>
+</tr>
+<tr>
+<td>[charlist]</td>
+<td>字符中的任何单一字符</td>
+</tr>
+<tr>
+<td>[^charlist] 或 [!charlist]</td>
+<td>不在字符列中的任何单一字符</td>
+</tr>
+</tbody></table>
+<h2 id="实例1"><a href="#实例1" class="headerlink" title="实例1"></a>实例1</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">%</span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">Store</span></span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">url</span> <span class="keyword">LIKE</span> <span class="string">'https%'</span></span><br><span class="line">该<span class="keyword">SQL</span> 语句选取 <span class="keyword">url</span> 以字母 <span class="string">"https"</span> 开始的所有商品。</span><br></pre></td></tr></table></figure>
+<h2 id="实例2"><a href="#实例2" class="headerlink" title="实例2"></a>实例2</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">%</span><br><span class="line">SELECT * FROM Store</span><br><span class="line">WHERE url LIKE &#39;%oo%&#39;</span><br><span class="line">该SQL 语句选取 url 包含模式 &quot;oo&quot; 的所有商品。</span><br></pre></td></tr></table></figure>
 
-<h3 id="在使用-join-时，on-和-where-条件的区别如下："><a href="#在使用-join-时，on-和-where-条件的区别如下：" class="headerlink" title="在使用 join 时，on 和 where 条件的区别如下："></a>在使用 join 时，on 和 where 条件的区别如下：</h3><ul>
-<li>1.on 条件是在生成临时表时使用的条件，它不管 on 中的条件是否为真，都会返回左边表中的记录。</li>
-<li>2.where 条件是在临时表生成好后，再对临时表进行过滤的条件。这时已经没有 left join 的含义（必须返回左边表的记录）了，条件不为真的就全部过滤掉。</li>
-</ul>
-<h2 id="LEFT-JOIN-左连接"><a href="#LEFT-JOIN-左连接" class="headerlink" title="LEFT JOIN(左连接)"></a>LEFT JOIN(左连接)</h2><h3 id="介绍-1"><a href="#介绍-1" class="headerlink" title="介绍"></a>介绍</h3><p>LEFT JOIN 关键字从左表（table1）返回所有的行，即使右表（table2）中没有匹配。如果右表中没有匹配，则结果为 NULL。</p>
-<h3 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table1</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> table2</span><br><span class="line"><span class="keyword">ON</span> table1.column_name=table2.column_name;</span><br></pre></td></tr></table></figure>
-<p>或：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table1</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">OUTER</span> <span class="keyword">JOIN</span> table2</span><br><span class="line"><span class="keyword">ON</span> table1.column_name=table2.column_name;</span><br></pre></td></tr></table></figure>
+<h2 id="实例3"><a href="#实例3" class="headerlink" title="实例3"></a>实例3</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">_</span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">Store</span></span><br><span class="line"><span class="keyword">FROM</span> Websites</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">name</span> <span class="keyword">LIKE</span> <span class="string">'_gle'</span>;</span><br><span class="line">该SQL 语句选取 name 以一个任意字符开始，然后是 "gle" 的所有商品。</span><br></pre></td></tr></table></figure>
 
-<h3 id="实例-1"><a href="#实例-1" class="headerlink" title="实例"></a>实例</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Websites.name, access_log.count, access_log.date</span><br><span class="line"><span class="keyword">FROM</span> Websites</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> access_log</span><br><span class="line"><span class="keyword">ON</span> Websites.id=access_log.site_id</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> access_log.count <span class="keyword">DESC</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="实例4"><a href="#实例4" class="headerlink" title="实例4"></a>实例4</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">_</span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">Store</span></span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">name</span> <span class="keyword">LIKE</span> <span class="string">'G_o_le'</span>;</span><br><span class="line">该 SQL 语句选取 name 以 "G" 开始，然后是一个任意字符，然后是 "o"，然后是一个任意字符，然后是 "le" 的所有商品。</span><br></pre></td></tr></table></figure>
 
-<h2 id="RIGHT-JOIN-右连接"><a href="#RIGHT-JOIN-右连接" class="headerlink" title="RIGHT JOIN(右连接)"></a>RIGHT JOIN(右连接)</h2><h3 id="介绍-2"><a href="#介绍-2" class="headerlink" title="介绍"></a>介绍</h3><p>RIGHT JOIN 关键字从右表（table2）返回所有的行，即使左表（table1）中没有匹配。如果左表中没有匹配，则结果为 NULL。</p>
-<h3 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table1</span><br><span class="line"><span class="keyword">RIGHT</span> <span class="keyword">JOIN</span> table2</span><br><span class="line"><span class="keyword">ON</span> table1.column_name=table2.column_name;</span><br></pre></td></tr></table></figure>
-<p>或：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table1</span><br><span class="line"><span class="keyword">RIGHT</span> <span class="keyword">OUTER</span> <span class="keyword">JOIN</span> table2</span><br><span class="line"><span class="keyword">ON</span> table1.column_name=table2.column_name;</span><br></pre></td></tr></table></figure>
-<h3 id="实例-2"><a href="#实例-2" class="headerlink" title="实例"></a>实例</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Websites.name, access_log.count, access_log.date</span><br><span class="line"><span class="keyword">FROM</span> access_log</span><br><span class="line"><span class="keyword">RIGHT</span> <span class="keyword">JOIN</span> Websites</span><br><span class="line"><span class="keyword">ON</span> access_log.site_id=Websites.id</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> access_log.count <span class="keyword">DESC</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="实例5"><a href="#实例5" class="headerlink" title="实例5"></a>实例5</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[charlist] </span><br><span class="line">MySQL 中使用 REGEXP 或 NOT REGEXP 运算符 (或 RLIKE 和 NOT RLIKE) 来操作正则表达式。</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">Store</span></span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">name</span> REGEXP <span class="string">'^[GFs]'</span>;</span><br><span class="line">该 SQL 语句选取 name 以 "G"、"F" 或 "s" 为开头的所有商品：</span><br></pre></td></tr></table></figure>
+<h2 id="实例6"><a href="#实例6" class="headerlink" title="实例6"></a>实例6</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[charlist]</span><br><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> <span class="keyword">Store</span></span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">name</span> REGEXP <span class="string">'^[A-H]'</span>;</span><br><span class="line">该SQL语句选取name以A到H字母开头的所有商品。</span><br></pre></td></tr></table></figure>
 
-<h2 id="FULL-OUTER-JOIN-全外连接"><a href="#FULL-OUTER-JOIN-全外连接" class="headerlink" title="FULL OUTER JOIN(全外连接)"></a>FULL OUTER JOIN(全外连接)</h2><h3 id="介绍-3"><a href="#介绍-3" class="headerlink" title="介绍"></a>介绍</h3><p>FULL OUTER JOIN 关键字只要左表（table1）和右表（table2）其中一个表中存在匹配，则返回行.<br>简言之：FULL OUTER JOIN 关键字结合了 LEFT JOIN 和 RIGHT JOIN 的结果。</p>
-<h3 id="语法-3"><a href="#语法-3" class="headerlink" title="语法"></a>语法</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table1</span><br><span class="line"><span class="keyword">FULL</span> <span class="keyword">OUTER</span> <span class="keyword">JOIN</span> table2</span><br><span class="line"><span class="keyword">ON</span> table1.column_name=table2.column_name;</span><br></pre></td></tr></table></figure>
+<h2 id="实例7"><a href="#实例7" class="headerlink" title="实例7"></a>实例7</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[^charlist]</span><br><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> <span class="keyword">Store</span></span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">name</span> REGEXP <span class="string">'^[A-H]'</span>;</span><br><span class="line">该SQL语句选取name以A到H字母开头的所有商品。</span><br></pre></td></tr></table></figure>
 
-<h3 id="实例-3"><a href="#实例-3" class="headerlink" title="实例"></a>实例</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Websites.name, access_log.count, access_log.date</span><br><span class="line"><span class="keyword">FROM</span> Websites</span><br><span class="line"><span class="keyword">FULL</span> <span class="keyword">OUTER</span> <span class="keyword">JOIN</span> access_log</span><br><span class="line"><span class="keyword">ON</span> Websites.id=access_log.site_id</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> access_log.count <span class="keyword">DESC</span>;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>note：FULL OUTER JOIN 关键字返回左表（Websites）和右表（access_log）中所有的行。如果 “Websites” 表中的行在 “access_log” 中没有匹配或者 “access_log” 表中的行在 “Websites” 表中没有匹配，也会列出这些行。</p>
-</blockquote>
+<h1 id="LIKE-操作符"><a href="#LIKE-操作符" class="headerlink" title="LIKE 操作符"></a>LIKE 操作符</h1><h2 id="介绍-2"><a href="#介绍-2" class="headerlink" title="介绍"></a>介绍</h2><p>LIKE 操作符用于在 WHERE 子句中 搜索 列中的 指定模式。</p>
+<h2 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> table_name</span><br><span class="line"><span class="keyword">WHERE</span> column_name <span class="keyword">LIKE</span> pattern;</span><br></pre></td></tr></table></figure>
+
+<h2 id="实例1-1"><a href="#实例1-1" class="headerlink" title="实例1"></a>实例1</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * </span><br><span class="line"><span class="keyword">FROM</span> <span class="keyword">Store</span></span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">name</span> <span class="keyword">LIKE</span> <span class="string">'S%'</span>;</span><br><span class="line"></span><br><span class="line">该SQL 语句选取 name 以字母 "S" 开头的所有客户</span><br></pre></td></tr></table></figure>
+
+<h2 id="实例2-1"><a href="#实例2-1" class="headerlink" title="实例2"></a>实例2</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * </span><br><span class="line"><span class="keyword">FROM</span> Websites</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">name</span> <span class="keyword">LIKE</span> <span class="string">'%k'</span>;</span><br><span class="line"></span><br><span class="line">该SQL 语句选取 name 以字母 "k" 结尾的所有客户</span><br></pre></td></tr></table></figure>
+
+<h2 id="实例3-1"><a href="#实例3-1" class="headerlink" title="实例3"></a>实例3</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> <span class="keyword">Store</span></span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">name</span> <span class="keyword">LIKE</span> %ry%;</span><br><span class="line"></span><br><span class="line">该SQL 语句选取 name 包含模式 "ry" 的所有客户：</span><br></pre></td></tr></table></figure>
+
+<h2 id="note"><a href="#note" class="headerlink" title="note"></a>note</h2><p>通过使用 NOT 关键字，您可以选取不匹配模式的记录。</p>
+<h2 id="实例4-1"><a href="#实例4-1" class="headerlink" title="实例4"></a>实例4</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> <span class="keyword">Store</span></span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">name</span> <span class="keyword">NOT</span> <span class="keyword">LIKE</span> %ry%;</span><br></pre></td></tr></table></figure>
+
+<h1 id="IN-操作符"><a href="#IN-操作符" class="headerlink" title="IN 操作符"></a>IN 操作符</h1><h2 id="介绍-3"><a href="#介绍-3" class="headerlink" title="介绍"></a>介绍</h2><p>IN 操纵符允许在WHERE子句中规定多个值</p>
+<h2 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table_name</span><br><span class="line"><span class="keyword">WHERE</span> column_name <span class="keyword">IN</span> (value1,value2,...);</span><br></pre></td></tr></table></figure>
+
+<h2 id="实例-1"><a href="#实例-1" class="headerlink" title="实例"></a>实例</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">Store</span></span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">name</span> <span class="keyword">IN</span> (<span class="string">'西瓜'</span>,<span class="string">'苹果'</span>);</span><br><span class="line"></span><br><span class="line">该 SQL 语句选取 name 为 "西瓜" 或 "苹果" 的所有网站</span><br></pre></td></tr></table></figure>
 
       
 
@@ -257,7 +267,33 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SQL</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/SQL//" class="article-tag-list-link color4">SQL</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -307,7 +343,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://flower48237.com/2020/07/31/sql%E5%AD%A6%E4%B9%A00728-JOIN%EF%BC%88INNER%20JOIN%E3%80%81LEFT%20JOIN%E3%80%81RIGHT%20JOIN%E3%80%81FULL%20OUTER%20JOIN%EF%BC%89/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://flower48237.com/2020/07/24/sql%E5%AD%A6%E4%B9%A00724-SELECT%20TOP,%20LIMIT,%20ROWNUM%20%E5%AD%90%E5%8F%A5%E3%80%81LIKE%E3%80%81IN/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -321,18 +357,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/07/31/sql%E5%AD%A6%E4%B9%A00730-Constraints%EF%BC%88%E7%BA%A6%E6%9D%9F%EF%BC%89/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/07/27/sql%E5%AD%A6%E4%B9%A00727-BETWEEN%E3%80%81AS%E3%80%81UNION/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          sql学习0730-Constraints（约束）
+          SQL学习：BETWEEN、AS、UNION 操作符
         
       </div>
     </a>
   
   
-    <a href="/2020/07/28/sql%E5%AD%A6%E4%B9%A00728-JOIN%EF%BC%88INNER%20JOIN%E3%80%81%EF%BC%AC%EF%BC%A5%EF%BC%A6%EF%BC%B4%20JOIN%E3%80%81RIGHT%20JOIN%E3%80%81FULL%20OUTER%20JOIN%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">sql学习0728-JOIN（INNER JOIN、ＬＥＦＴ JOIN、RIGHT JOIN、FULL OUTER JOIN）</div>
+    <a href="/2020/05/25/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%9826.%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">LeetCode精选TOP面试题26.删除排序数组中的重复项</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -351,6 +387,19 @@
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#SELECT-TOP-LIMIT-ROWNUM-子句"><span class="toc-number">1.</span> <span class="toc-text">SELECT TOP, LIMIT, ROWNUM 子句</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#介绍"><span class="toc-number">1.1.</span> <span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#语法"><span class="toc-number">1.2.</span> <span class="toc-text">语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实例"><span class="toc-number">1.3.</span> <span class="toc-text">实例</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SQL-通配符"><span class="toc-number">2.</span> <span class="toc-text">SQL 通配符</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#介绍-1"><span class="toc-number">2.1.</span> <span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在SQL中，可以使用以下通配符"><span class="toc-number">2.2.</span> <span class="toc-text">在SQL中，可以使用以下通配符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实例1"><span class="toc-number">2.3.</span> <span class="toc-text">实例1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实例2"><span class="toc-number">2.4.</span> <span class="toc-text">实例2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实例3"><span class="toc-number">2.5.</span> <span class="toc-text">实例3</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实例4"><span class="toc-number">2.6.</span> <span class="toc-text">实例4</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实例5"><span class="toc-number">2.7.</span> <span class="toc-text">实例5</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实例6"><span class="toc-number">2.8.</span> <span class="toc-text">实例6</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实例7"><span class="toc-number">2.9.</span> <span class="toc-text">实例7</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#LIKE-操作符"><span class="toc-number">3.</span> <span class="toc-text">LIKE 操作符</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#介绍-2"><span class="toc-number">3.1.</span> <span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#语法-1"><span class="toc-number">3.2.</span> <span class="toc-text">语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实例1-1"><span class="toc-number">3.3.</span> <span class="toc-text">实例1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实例2-1"><span class="toc-number">3.4.</span> <span class="toc-text">实例2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实例3-1"><span class="toc-number">3.5.</span> <span class="toc-text">实例3</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#note"><span class="toc-number">3.6.</span> <span class="toc-text">note</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实例4-1"><span class="toc-number">3.7.</span> <span class="toc-text">实例4</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#IN-操作符"><span class="toc-number">4.</span> <span class="toc-text">IN 操作符</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#介绍-3"><span class="toc-number">4.1.</span> <span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#语法-2"><span class="toc-number">4.2.</span> <span class="toc-text">语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实例-1"><span class="toc-number">4.3.</span> <span class="toc-text">实例</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
@@ -602,6 +651,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">读书笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">操作符</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">基础</a>
               </li>
             
             <div class="clearfix"></div>
