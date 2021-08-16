@@ -6,28 +6,66 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://flower48237.com">
-  <title>LeetCode精选TOP面试题104.二叉树的最大深度 | 鸡排大仙儿的个人博客</title>
+  <title>《Causality - Models  Reasoning  and Inference》读书笔记 | 鸡排大仙儿的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="题目描述给定一个二叉树，找出其最大深度。二叉树的深度为根节点到最远叶子节点的最长路径上的节点数。说明: 叶子节点是指没有子节点的节点。示例：给定二叉树 [3,9,20,null,null,15,7]返回它的最大深度 3 。">
+  <meta name="description" content="Causality - Models  Reasoning  and Inference - 2E  Judea Pearl  Preface 笔者认为，概率关系只是因果机制的表面现象，而因果机制是我们理解世界的基础和推动力。  笔者认为，对科学进步的最大阻碍莫过于把我们所有的数学资源集中在概率和统计推断上，而把因果考虑留给直觉和良好的判断。  笔者尝试提出数学工具来处理因果关系和概率关系。  使">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode精选TOP面试题104.二叉树的最大深度">
-<meta property="og:url" content="https://flower48237.com/2020/02/13/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98104.%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6/index.html">
+<meta property="og:title" content="《Causality - Models  Reasoning  and Inference》读书笔记">
+<meta property="og:url" content="https://flower48237.com/2021/08/16/Causality-Models%20%20Reasoning%20%20and%20Inference/index.html">
 <meta property="og:site_name" content="鸡排大仙儿的个人博客">
-<meta property="og:description" content="题目描述给定一个二叉树，找出其最大深度。二叉树的深度为根节点到最远叶子节点的最长路径上的节点数。说明: 叶子节点是指没有子节点的节点。示例：给定二叉树 [3,9,20,null,null,15,7]返回它的最大深度 3 。">
+<meta property="og:description" content="Causality - Models  Reasoning  and Inference - 2E  Judea Pearl  Preface 笔者认为，概率关系只是因果机制的表面现象，而因果机制是我们理解世界的基础和推动力。  笔者认为，对科学进步的最大阻碍莫过于把我们所有的数学资源集中在概率和统计推断上，而把因果考虑留给直觉和良好的判断。  笔者尝试提出数学工具来处理因果关系和概率关系。  使">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200213215946113.png">
-<meta property="article:published_time" content="2020-02-13T14:12:45.000Z">
-<meta property="article:modified_time" content="2020-02-16T11:11:56.000Z">
+<meta property="og:image" content="c:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210808132109973.png">
+<meta property="og:image" content="c:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210808132225391.png">
+<meta property="og:image" content="c:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210808162204233.png">
+<meta property="og:image" content="c:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210808164416424.png">
+<meta property="og:image" content="c:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210808170808685.png">
+<meta property="og:image" content="c:/Users/Q/AppData/Roaming/Typora/typora-user-images/image-20210808183959130.png">
+<meta property="og:image" content="c:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210808184351094.png">
+<meta property="og:image" content="c:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210808185803317.png">
+<meta property="og:image" content="c:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210808192313344.png">
+<meta property="og:image" content="c:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210808192630286.png">
+<meta property="og:image" content="c:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210808192735691.png">
+<meta property="og:image" content="c:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210809151518343.png">
+<meta property="og:image" content="c:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210809174236571.png">
+<meta property="og:image" content="c:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210809195136108.png">
+<meta property="og:image" content="c:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210809195601349.png">
+<meta property="og:image" content="c:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210809200113411.png">
+<meta property="og:image" content="c:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210809234700576.png">
+<meta property="og:image" content="c:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210809234923007.png">
+<meta property="og:image" content="c:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210810155452877.png">
+<meta property="og:image" content="c:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210810155847352.png">
+<meta property="og:image" content="c:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210810155949343.png">
+<meta property="og:image" content="c:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210810213806956.png">
+<meta property="og:image" content="c:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210812151742383.png">
+<meta property="og:image" content="c:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210812151610623.png">
+<meta property="og:image" content="c:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210812153348432.png">
+<meta property="og:image" content="c:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210812154740623.png">
+<meta property="og:image" content="c:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210812154010050.png">
+<meta property="og:image" content="c:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210812161728471.png">
+<meta property="og:image" content="c:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210812165001172.png">
+<meta property="og:image" content="c:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210812210437051.png">
+<meta property="og:image" content="c:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210812213227753.png">
+<meta property="og:image" content="c:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210812233705119.png">
+<meta property="og:image" content="c:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210812232316720.png">
+<meta property="og:image" content="c:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210812232324515.png">
+<meta property="og:image" content="c:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210812232332609.png">
+<meta property="og:image" content="c:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210812232341052.png">
+<meta property="og:image" content="c:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210813144609922.png">
+<meta property="og:image" content="c:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210813180910637.png">
+<meta property="og:image" content="c:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210813180923286.png">
+<meta property="og:image" content="c:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210813181727884.png">
+<meta property="og:image" content="c:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210813180056573.png">
+<meta property="og:image" content="c:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210813183040307.png">
+<meta property="og:image" content="c:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210816215755164.png">
+<meta property="og:image" content="c:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210816221034314.png">
+<meta property="og:image" content="c:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210816221327954.png">
+<meta property="article:published_time" content="2021-08-16T14:18:00.000Z">
+<meta property="article:modified_time" content="2021-08-16T14:18:19.454Z">
 <meta property="article:author" content="flower48237">
-<meta property="article:tag" content="Java">
-<meta property="article:tag" content="LeetCode">
-<meta property="article:tag" content="面试">
-<meta property="article:tag" content="二叉树">
-<meta property="article:tag" content="遍历">
-<meta property="article:tag" content="DFS">
-<meta property="article:tag" content="BFS">
+<meta property="article:tag" content="读书笔记">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200213215946113.png">
+<meta name="twitter:image" content="c:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210808132109973.png">
   
     <link rel="alternative" href="/atom.xml" title="鸡排大仙儿的个人博客" type="application/atom+xml">
   
@@ -180,20 +218,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-LeetCode精选TOP面试题104.二叉树的最大深度" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Causality-Models  Reasoning  and Inference" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      LeetCode精选TOP面试题104.二叉树的最大深度
+      《Causality - Models  Reasoning  and Inference》读书笔记
     </h1>
   
 
         
-        <a href="/2020/02/13/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98104.%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6/" class="archive-article-date">
-  	<time datetime="2020-02-13T14:12:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-13</time>
+        <a href="/2021/08/16/Causality-Models%20%20Reasoning%20%20and%20Inference/" class="archive-article-date">
+  	<time datetime="2021-08-16T14:18:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-16</time>
 </a>
         
         
@@ -205,13 +243,354 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>给定一个二叉树，找出其最大深度。<br>二叉树的深度为根节点到最远叶子节点的最长路径上的节点数。<br>说明: 叶子节点是指没有子节点的节点。<br>示例：<br>给定二叉树 [3,9,20,null,null,15,7]<br><img src="https://img-blog.csdnimg.cn/20200213215946113.png" alt="在这里插入图片描述"><br>返回它的最大深度 3 。</p>
+        <p>Causality - Models  Reasoning  and Inference - 2E</p>
+<blockquote>
+<p>Judea Pearl</p>
+</blockquote>
+<h3 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h3><ul>
+<li><p>笔者认为，概率关系只是因果机制的表面现象，而因果机制是我们理解世界的基础和推动力。<img src="C:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210808132109973.png" alt="image-20210808132109973"></p>
+</li>
+<li><p>笔者认为，对科学进步的最大阻碍莫过于把我们所有的数学资源集中在概率和统计推断上，而把因果考虑留给直觉和良好的判断。</p>
+</li>
+<li><p>笔者尝试提出数学工具来处理因果关系和概率关系。</p>
+</li>
+<li><p>使用概率计算的简单扩展，读者将能够在数学上确定干预可能产生的影响，什么测量方法适合控制混淆，如何利用存在于因果路径上的测量方法，如何用一套测量方法交换另一套测量方法，以及如何估计一个事件导致另一个事件发生的概率。<img src="C:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210808132225391.png" alt="image-20210808132225391"></p>
+</li>
+<li><p>读者希望被首次引入到用因果关系方面的建议开始与结尾,接着席卷其他历史/概念书的部分：1.1.1,3.3.3,4.5.3,5.1,5.4.1之前,6.1,7.2,7.4,7.5,8.3,9.1,9.3和10.1。</p>
+</li>
+<li><p>更正式地驱动的读者,可能急于探究面对数学方面和计算工具,建议从7.1节开始,然后为我建 筑进行如下：1.2节,第3章,sect1ons4.2 - 4.4, 5.2 - -5.3,部分6.2 - -6.3,7.3节、章8 -  10。</p>
+</li>
+</ul>
 <a id="more"></a>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p><strong>思路1</strong><br>非递归<br>借助任意一种二叉树的遍历方法进行最大深度的求解，先序、中序、后续都可以，代码大体流程是相同的，层次遍历的话是单独的模式。借助两个栈，一个存储当前结点，一个存储当前结点的深度，那么通过比较当前深度与最大深度，不断更新最大深度，当遍历结束后，就可以直接返回最大深度了。<br><strong>思路2</strong><br>递归<br>递归的方法也不难理解，当遇到叶子节点就返回0 <strong>（这也是这个递归程序的边界）</strong> ，否则继续递归，并返回深度值加1。理解不了的画个递归的图解就行了。</p>
-<h3 id="代码（Java实现）"><a href="#代码（Java实现）" class="headerlink" title="代码（Java实现）"></a>代码（Java实现）</h3><p><strong>1.非递归代码</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Stack;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxDepth</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>)&#123;</span><br><span class="line">       		<span class="comment">// 空树，深度是0</span></span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 前序遍历 - 借助栈</span></span><br><span class="line">        Stack&lt;TreeNode&gt; stack = <span class="keyword">new</span> Stack&lt;TreeNode&gt;();<span class="comment">// 存放结点</span></span><br><span class="line">        Stack&lt;Integer&gt; remDeep = <span class="keyword">new</span> Stack&lt;Integer&gt;();<span class="comment">// 存放深度</span></span><br><span class="line">		</span><br><span class="line">		<span class="comment">// 定义一个新的结点指向目标树的根节点，用于遍历</span></span><br><span class="line">        TreeNode tmp = root;</span><br><span class="line">        <span class="keyword">int</span> maxDepth = <span class="number">0</span>；	<span class="comment">// 记录最大深度</span></span><br><span class="line">        <span class="keyword">int</span> curDepth = <span class="number">0</span>;	<span class="comment">// 记录遍历时的‘当前’深度</span></span><br><span class="line"></span><br><span class="line">        curDepth ++ ;		<span class="comment">// 树不空，当前深度肯定&gt;=1，所以先加上1</span></span><br><span class="line">        <span class="comment">// 先序遍历的模式</span></span><br><span class="line">        <span class="keyword">while</span> (!stack.isEmpty() || tmp != <span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">while</span> (tmp != <span class="keyword">null</span>)&#123;</span><br><span class="line">            	<span class="comment">// 不断向左</span></span><br><span class="line">                stack.add(tmp);</span><br><span class="line">                remDeep.add(curDepth);</span><br><span class="line">                tmp = tmp.left;</span><br><span class="line">                curDepth ++;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            tmp = stack.pop();			<span class="comment">// 退回到当前结点的双亲节点</span></span><br><span class="line">            curDepth = remDeep.pop();	<span class="comment">// 当前深度也退回到双亲节点所在的深度</span></span><br><span class="line">            <span class="keyword">if</span> (tmp.right == <span class="keyword">null</span> &amp;&amp; tmp.left == <span class="keyword">null</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span> (curDepth &gt; maxDepth)&#123;</span><br><span class="line">                	<span class="comment">// 更新最大深度</span></span><br><span class="line">                    maxDepth = curDepth;	</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            tmp = tmp.right; <span class="comment">// 访问右子树</span></span><br><span class="line">            curDepth ++;	 <span class="comment">// 当前深度+1</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxDepth;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>2.递归代码</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution2</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxDepth</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>)&#123;		<span class="comment">// 叶子节点是边界值</span></span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;	</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">int</span> ldepth = maxDepth(root.left);	<span class="comment">// 递归求左子树深度</span></span><br><span class="line">            <span class="keyword">int</span> rdepth = maxDepth(root.right);	<span class="comment">// 递归求右子树深度</span></span><br><span class="line">            <span class="comment">// 哪个大哪个就是当前子树的最大深度，</span></span><br><span class="line">            <span class="comment">// 层层返回之后就是目标数的最大深度</span></span><br><span class="line">            <span class="keyword">return</span> ldepth &gt; rdepth ? ldepth + <span class="number">1</span> : rdepth + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="Chapter-1"><a href="#Chapter-1" class="headerlink" title="Chapter 1"></a>Chapter 1</h3><blockquote>
+<p>Introduction to Probabilities,Graphs,and Causal Models</p>
+<p>概率、图、因果模型的介绍</p>
+</blockquote>
+<h4 id="1-1-Introduction-to-Probability-Theory"><a href="#1-1-Introduction-to-Probability-Theory" class="headerlink" title="1.1 Introduction to Probability Theory"></a>1.1 Introduction to Probability Theory</h4><h5 id="1-1-1-Why-probabilities"><a href="#1-1-1-Why-probabilities" class="headerlink" title="1.1.1 Why probabilities"></a>1.1.1 Why probabilities</h5><ul>
+<li><p>stuble 微妙的</p>
+</li>
+<li><p>utterance 话语</p>
+</li>
+<li><p>plagued 困扰</p>
+</li>
+<li><p>antecedent 先行词</p>
+</li>
+<li><p>因为我们观察到，因果性话语经常用于充满不确定性的场合。因此，任何旨在容纳此类话语的因果关系理论，都必须用一种语言来区分各种可能性的细微差别——确切地说，就是概率语言。</p>
+<p><img src="C:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210808162204233.png" alt="image-20210808162204233"></p>
+</li>
+<li><p>discipline 学科</p>
+</li>
+<li><p>在经济学、流行病学、社会学、心理学等学科中，研究人员不仅关注因果联系的存在或缺失，而且还关注这些联系的相对强度，以及从有噪声（干扰变量等非目标值）的观察结果中推断这些联系的方法。<img src="C:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210808164416424.png" alt="image-20210808164416424"></p>
+</li>
+<li><p>finite granularity 有限的粒度</p>
+</li>
+<li><p>manifested 证明，显示</p>
+</li>
+<li><p>implicit 隐含</p>
+</li>
+<li><p>概率论，由于特别能够容忍不明确的例外，使我们能够专注于因果关系的主要问题，而不必应付这类悖论（悖论的出现是因为我们的语言系统是有限的）。<img src="C:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210808170808685.png" alt="image-20210808170808685"></p>
+</li>
+<li><p>portray 描述</p>
+</li>
+<li><p>universality 普遍性</p>
+</li>
+<li><p>recast 重做的事情</p>
+</li>
+<li><p>merely 仅仅是</p>
+</li>
+</ul>
+<h5 id="1-1-2-Basic-Concepts-in-Probability-Theory"><a href="#1-1-2-Basic-Concepts-in-Probability-Theory" class="headerlink" title="1.1.2 Basic Concepts in Probability Theory"></a>1.1.2 Basic Concepts in Probability Theory</h5><ul>
+<li>bulk 体积、容量</li>
+<li>discrete 离散的</li>
+<li><strong>discrete variables 离散变量</strong> </li>
+<li><strong>continuous variables  连续变量</strong></li>
+<li>rudimentary 基本的</li>
+<li>notation 符号</li>
+<li>elementary conepts 基本的问题</li>
+<li>elaborated in full generality 全面阐述</li>
+<li>outlined 概述</li>
+<li>adhare 坚持</li>
+<li>formalism 形式</li>
+<li>assigne 分配</li>
+<li>proposition 命题</li>
+<li>manipulate 操作</li>
+<li>explicitly articulate 明确的表达</li>
+<li>axiom 公理</li>
+<li>在贝叶斯法则中，信念度量遵循概率论的三个基本公理:<img src="C:\Users\Q\AppData\Roaming\Typora\typora-user-images\image-20210808183959130.png" alt="image-20210808183959130" style="zoom:80%;" /></li>
+<li>law of total probability全概率公式：P(A) = ∑<del>i</del>P(A, B<del>i</del>)</li>
+<li>independent and conditionally independent 独立和条件独立<img src="C:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210808184351094.png" alt="image-20210808184351094"></li>
+<li>贝叶斯认为条件关系比联合事件更基本的——也就是说，更符合人类知识的组织。<img src="C:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210808185803317.png" alt="image-20210808185803317"></li>
+<li>下图中公式的分解为假设或“基于假设”的推理提供了基础。  <img src="C:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210808192313344.png" alt="image-20210808192313344"></li>
+<li>chain rule formula 链式法则。乘积法则(方程(1.9))的另一个有用的推广是公式的链式法则。 它表示，如果我们有一组n个事件，E E2….. En，则联合事件(E, E2，… ， E)可以写成n个条件概率的乘积:  <img src="C:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210808192630286.png" alt="image-20210808192630286"></li>
+<li>贝叶斯推理的核心在于著名的反演公式，即将P(H|e)和P(e|H)关联了起来。其中P(H|e)被称为后验概率/posterior，P(A)被称为先验概率/prior<img src="C:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210808192735691.png" alt="image-20210808192735691"></li>
+<li>proportionally 成比例地</li>
+<li>joint probability function 联合概率函数</li>
+<li>sufficient information 充分信息</li>
+<li>algebraic 代数的</li>
+</ul>
+<h5 id="1-1-3-Combining-Predictive-and-Diagnostic-Support"><a href="#1-1-3-Combining-Predictive-and-Diagnostic-Support" class="headerlink" title="1.1.3 Combining Predictive and Diagnostic Support"></a>1.1.3 Combining Predictive and Diagnostic Support</h5><ul>
+<li>likelihood ratio 概率比、似然率</li>
+<li>essence 本质、实质</li>
+<li>portray 描述</li>
+<li>dictate 规定、命令</li>
+<li>predictive 预测</li>
+<li>prospective 未来的</li>
+<li>diagnostic 诊断</li>
+<li>retrospective 回顾</li>
+<li>tacit 隐性的</li>
+<li>贝叶斯技术的力量主要来自于事实，在因果推理中，关系P(e|H)是相当局部的，给定的H是真的，e的概率可以自然地估计，因为它通常不依赖于知识库中的许多其他命题。<img src="C:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210809151518343.png" alt="image-20210809151518343"></li>
+</ul>
+<h5 id="1-1-4-Random-Variables-and-Exceptions"><a href="#1-1-4-Random-Variables-and-Exceptions" class="headerlink" title="1.1.4 Random Variables and Exceptions"></a>1.1.4 Random Variables and Exceptions</h5><ul>
+<li>partitions 分区</li>
+<li>generic 通用的</li>
+<li>Cartesian product 笛卡尔积</li>
+<li>随机变量和期望的相关公式<img src="C:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210809174236571.png" alt=""></li>
+<li>期望、方差、相关系数、回归系数、条件相关系数、协方差、标准差等内容</li>
+<li>变量之间的条件独立关系，是因果建模中的一个中心概念。<img src="C:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210809195136108.png" alt="image-20210809195136108"></li>
+</ul>
+<h5 id="1-1-5-Condtional-Independence-and-Graphoids"><a href="#1-1-5-Condtional-Independence-and-Graphoids" class="headerlink" title="1.1.5 Condtional Independence and Graphoids"></a>1.1.5 Condtional Independence and Graphoids</h5><ul>
+<li>介绍了条件独立性<img src="C:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210809195601349.png" alt="image-20210809195601349"></li>
+<li>terse 简洁的</li>
+<li>marginal independence 边际独立</li>
+<li>unconditional independence 非条件独立</li>
+<li>非条件独立也叫边际独立 <img src="C:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210809200113411.png" alt="image-20210809200113411"></li>
+<li>graphoid axioms 图形公理</li>
+<li>intercepte 截获，拦截</li>
+<li>intuitive 直觉的</li>
+<li>symmetry axioms 对称定理</li>
+<li>decomposition axioms 分解定理</li>
+<li>contraction axioms 收缩定理</li>
+<li>五个满足条件独立关系后的性质：<img src="C:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210809234700576.png" alt="image-20210809234700576"></li>
+<li>对称公理：在任何知识状态 Z 中，如果 Y 没有告诉我们关于 X 的任何新信息，那么 X 告诉我们关于 Y 的任何新信息。</li>
+<li>分解公理：如果判断两个组合的信息项与 X 无关，那么每个单独的项也无关紧要。</li>
+<li>弱联合公理：学习无关信息 W 不能帮助无关信息 Y 与 X 相关。</li>
+<li>收缩公理：如果我们在学习了一些不相关的信息 Y 后判断 W 与 X 不相关，那么在我们倾向于 Y 之前，W 一定是不相关的。</li>
+<li>弱联合和收缩性质意味着不相关的信息不应该改变系统中其他命题的相关状态； 相关的仍然相关，不相关的仍然不相关。</li>
+<li>交集公理：如果当我们知道 W 时 Y 与 X 无关，如果当我们知道 Y 时 W 与 X 无关，那么 W 和 Y（或它们的组合）都与 X 无关。</li>
+<li><img src="C:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210809234923007.png" alt="image-20210809234923007"></li>
+</ul>
+<h4 id="1-2-Graphs-and-Probabilities"><a href="#1-2-Graphs-and-Probabilities" class="headerlink" title="1.2 Graphs and Probabilities"></a>1.2 Graphs and Probabilities</h4><h5 id="1-2-1-Graphical-Notation-and-Terminology"><a href="#1-2-1-Graphical-Notation-and-Terminology" class="headerlink" title="1.2.1 Graphical Notation and Terminology"></a>1.2.1 Graphical Notation and Terminology</h5><ul>
+<li><p>confounder 混淆因素</p>
+</li>
+<li><p>dotted curved arcs 虚线弧形</p>
+</li>
+<li><p>strip away 剥去</p>
+</li>
+<li><p>preceding edge 前边</p>
+</li>
+<li><p>skeleton 骨骼</p>
+</li>
+<li><p>mutual 相互的</p>
+</li>
+<li><p>feedback 反馈</p>
+</li>
+<li><p>acyclic 无环的</p>
+</li>
+<li><p>directed acyclic graph （DAG）有向无环图</p>
+<p><img src="C:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210810155452877.png" alt="image-20210810155452877"></p>
+</li>
+<li><p>terminology 术语</p>
+</li>
+<li><p>kinship 亲属关系</p>
+</li>
+<li><p>adjacent node 相邻节点</p>
+</li>
+<li><p><img src="C:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210810155847352.png" alt="image-20210810155847352"></p>
+</li>
+</ul>
+<h5 id="1-2-2-Bayesian-Network-⭐"><a href="#1-2-2-Bayesian-Network-⭐" class="headerlink" title="1.2.2 Bayesian Network ⭐"></a>1.2.2 Bayesian Network ⭐</h5><ul>
+<li><p>threefold 三重</p>
+</li>
+<li><p>facilitate 促进</p>
+</li>
+<li><p>图在概率和统计建模中的作用有三个方面:</p>
+<p><img src="C:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210810155949343.png" alt="image-20210810155949343"></p>
+<ul>
+<li><p>提供表达实质性假设的便利手段;</p>
+</li>
+<li><p>便于联合概率函数的经济学表示;</p>
+</li>
+<li><p>便于从观察中做出有效的推断。</p>
+</li>
+</ul>
+</li>
+<li><p>specify 指定</p>
+</li>
+<li><p>arbitrary 任意的</p>
+</li>
+<li><p>dichotomous 对立的</p>
+</li>
+<li><p>substantial 实质性的</p>
+</li>
+<li><p>coherently 连贯的</p>
+</li>
+<li><p>decomposition 分解</p>
+</li>
+<li><p>Markov networks 马尔可夫网络</p>
+</li>
+<li><p>symmtrical spatial relationship 对称的空间关系</p>
+</li>
+<li><p>temporal relation 时间关系</p>
+</li>
+<li><p>有向图，尤其是有向无环图，常用来表示因果关系或者时间关系，并被称为贝叶斯网络，这是 Pearl (1985) 中创造的一个术语，以强调三个方面：</p>
+<p><img src="C:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210810213806956.png" alt="image-20210810213806956"></p>
+<p>(1) 输入信息的主观性；<br>(2) 依赖贝叶斯条件作为更新信息的基础；<br>(3) 因果推理模式和证据推理模式之间的区别，这一区别强调了托马斯贝叶斯 1763 年的论文。</p>
+</li>
+<li><p>with occasional 偶尔</p>
+</li>
+<li><p>illustrate 说明</p>
+</li>
+<li><p>arbitrarily 任意地</p>
+</li>
+<li><p>概率微积分的链式法则(方程(1.12))总是允许我们将P分解为n个条件分布的乘积:<img src="C:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210812151742383.png" alt="image-20210812151742383"></p>
+<p><img src="C:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210812151610623.png" alt="image-20210812151610623"></p>
+</li>
+<li><p>predecessors 前驱</p>
+</li>
+<li><p>considerably 相当地、非常地、大大地</p>
+</li>
+<li><p><img src="C:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210812153348432.png" alt="image-20210812153348432"></p>
+</li>
+<li><p>render 致使</p>
+</li>
+<li><p>redundant 冗余</p>
+</li>
+<li><p>assignment 赋值</p>
+</li>
+<li><p>recursive 递归</p>
+</li>
+<li><p>examine 检查</p>
+</li>
+<li><p>递归画图的步骤<img src="C:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210812154740623.png" alt="image-20210812154740623"></p>
+</li>
+<li><p>当分布P(u)严格为正时(即不涉及逻辑或定义约束)，集合PA<del>j</del>是唯一的，因此变量的每一个配置v，无论多么不可能，都有一定的发生概率。在此条件下，若给定变量的顺序，则与P(v)相关的贝叶斯网络是唯一的。</p>
+</li>
+<li><p>是一个简单但是经典的贝叶斯网络（图1.2）。<img src="C:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210812154010050.png" alt="image-20210812154010050"></p>
+</li>
+<li><p>一个DAG是概率分布P的贝叶斯网络的必要条件是，P符合G所规定的乘积分解。像下图中的公式，以及它应用于上图时的写法：<img src="C:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210812161728471.png" alt="image-20210812161728471"></p>
+</li>
+<li><p>in accordance with 按照</p>
+</li>
+<li><p>compatibility 兼容性</p>
+</li>
+<li><p>factorization 因式分解</p>
+</li>
+<li><p>primarily 主要地</p>
+</li>
+<li><p>sufficent 充足的</p>
+</li>
+<li><p>stochastic 随机的</p>
+</li>
+<li><p>instance 实例</p>
+</li>
+<li><p>d-separation，方向分离，在本书中很重要<img src="C:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210812165001172.png" alt="image-20210812165001172"></p>
+</li>
+</ul>
+<h5 id="1-2-3-The-d-Separation-Criterion-⭐"><a href="#1-2-3-The-d-Separation-Criterion-⭐" class="headerlink" title="1.2.3 The d-Separation Criterion ⭐"></a>1.2.3 The d-Separation Criterion ⭐</h5><ul>
+<li>disjoint 不相交的</li>
+<li>consecutive 连续的</li>
+<li>阻塞了路径，即为d-separation<img src="C:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210812210437051.png" alt="image-20210812210437051"></li>
+<li>intuition 直觉</li>
+<li>marginally 边际地</li>
+<li>figuratively 形象地</li>
+<li>metaphorically 比喻地</li>
+<li>converging 收敛</li>
+<li>对两个独立原因的共同结果的观察，往往使这些原因相互依赖，因为考虑到后果已经发生，关于其中一个原因的信息往往会使另一个原因发生的概率变大或者变小。 这种模式在统计文献中被称为选择偏差或伯克森悖论，在人工智能中被称为解释效应。<img src="C:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210812213227753.png" alt="image-20210812213227753"></li>
+<li>Theorem 定理</li>
+<li>Probabilistic Implication 概率含义</li>
+<li>没有d-separation意味着依赖</li>
+<li>相关定理：<img src="C:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210812233705119.png" alt="image-20210812233705119">)<img src="C:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210812232316720.png" alt="image-20210812232316720">)<img src="C:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210812232324515.png" alt="image-20210812232324515">)<img src="C:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210812232332609.png" alt="image-20210812232332609">)<img src="C:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210812232341052.png" alt="image-20210812232341052"></li>
+</ul>
+<h5 id="1-2-4-Inference-with-Bayesian-Network"><a href="#1-2-4-Inference-with-Bayesian-Network" class="headerlink" title="1.2.4 Inference with Bayesian Network"></a>1.2.4 Inference with Bayesian Network</h5><ul>
+<li>coherent 连贯的</li>
+<li>boils down 可以归结为</li>
+<li>network topology 网络拓扑</li>
+<li>propagation 传播</li>
+<li>exhaust 耗尽</li>
+<li>exponential 指数级的</li>
+<li>exceed reasonable bounds 超出合理范围</li>
+<li>stochastic simulation 随机模拟</li>
+<li>local subsets 局部子集</li>
+<li>exploit 利用</li>
+</ul>
+<h4 id="1-3-Causal-Bayesian-Network-⭐"><a href="#1-3-Causal-Bayesian-Network-⭐" class="headerlink" title="1.3 Causal Bayesian Network ⭐"></a>1.3 Causal Bayesian Network ⭐</h4><ul>
+<li><p>将有向无环图解释为独立假设的载体并不一定意味着因果关系； 事实上，它对于任何一组递归独立的变量都是有效的，不一定是因果或时间顺序的。<img src="C:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210813144609922.png" alt="image-20210813144609922"></p>
+</li>
+<li><p>ubiquity 无处不在</p>
+</li>
+<li><p>defensible 可辩护的，有道理的</p>
+</li>
+<li><p>assertion 声明，主张</p>
+</li>
+<li><p>mediate 调节</p>
+</li>
+<li><p>因果关系不支持的依赖性被认为是奇怪的或虚假的，甚至被称为“悖论”（参见伯克森悖论的讨论，第 1.2.3 节）。<img src="C:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210813180910637.png" alt="image-20210813180910637"></p>
+</li>
+<li><p>围绕因果而非关联信息构建 DAG 模型的两个。</p>
+<p>（1）模型构建所需的判断更有意义，更容易理解，因此更可靠。<img src="C:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210813180923286.png" alt="image-20210813180923286"></p>
+<p>（2）在因果关系上建立贝叶斯网络的第二个优势是表示和响应外部或自发变化的能力——这是理解因果组织的基础。环境中机制的任何本地重新配置，只需稍作修改，都可以转换为网络拓扑的同构重新配置。<img src="C:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210813181727884.png" alt="image-20210813181727884"></p>
+</li>
+<li><p>demonstrate 证明</p>
+</li>
+<li><p>In extreme cases 在极端情况下</p>
+</li>
+<li><p>paradigm 范式</p>
+</li>
+<li><p>vehicle 工具、车辆</p>
+</li>
+<li><p>tap 挖掘</p>
+</li>
+<li><p>笔者认为因果知识的重要性高于相关（联想？）知识。如果条件独立判断是存储的因果关系的副产品，那么直接挖掘和表示这些关系将是一种更自然、更可靠的表达我们对世界的了解或信仰的方式。<img src="C:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210813180056573.png" alt="image-20210813180056573"></p>
+</li>
+</ul>
+<h5 id="1-3-1-Causal-Network-as-Oracles-for-Interventions"><a href="#1-3-1-Causal-Network-as-Oracles-for-Interventions" class="headerlink" title="1.3.1 Causal Network as Oracles for Interventions"></a>1.3.1 Causal Network as Oracles for Interventions</h5><ul>
+<li>因果网络作为干预措施的启示（Oracle？）</li>
+<li>conceivable 可想象的</li>
+<li>联合分布告诉我们事件的可能性有多大，以及概率如何随着后续观察而变化，但是<strong>因果模型也告诉我们这些概率将如何因外部干预而发生变化</strong>（例如在政策分析、治疗管理或规划日常活动中遇到的那些）。<img src="C:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210813183040307.png" alt="image-20210813183040307"></li>
+<li>假设变化是局部的，不会扩散到指定的机制之外。<img src="C:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210816215755164.png" alt="image-20210816215755164"></li>
+<li>mutilated 残缺的</li>
+<li>interventional distributions 介入分布</li>
+<li>a truncated factorization 一个截断因子分解<img src="C:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210816221034314.png" alt="image-20210816221034314"></li>
+<li>exogenous 外生的</li>
+<li>因果贝叶斯网络图的两个性质<img src="C:%5CUsers%5CQ%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210816221327954.png" alt="image-20210816221327954"></li>
+</ul>
+<h5 id="1-3-2-Causal-Relationships-and-Their-Stability"><a href="#1-3-2-Causal-Relationships-and-Their-Stability" class="headerlink" title="1.3.2 Causal Relationships and Their Stability"></a>1.3.2 Causal Relationships and Their Stability</h5><ul>
+<li><h3 id="Chapter-2"><a href="#Chapter-2" class="headerlink" title="Chapter 2"></a>Chapter 2</h3></li>
+</ul>
+<blockquote>
+<p>A Theory of Inferred Causal</p>
+<p>推断因果关系理论</p>
+</blockquote>
+<ul>
+<li></li>
+<li></li>
+</ul>
+<h3 id="Chapter-3"><a href="#Chapter-3" class="headerlink" title="Chapter 3"></a>Chapter 3</h3><blockquote>
+<p>Causal Diagrams and the Identification of Causal Effect</p>
+<p>因果图和因果效应识别</p>
+</blockquote>
+<ul>
+<li></li>
+<li></li>
+</ul>
+<h3 id="Chapter-4"><a href="#Chapter-4" class="headerlink" title="Chapter 4"></a>Chapter 4</h3><blockquote>
+<p>Actions，Plans，and Direct Effects</p>
+<p>行动,计划,直接影响</p>
+</blockquote>
+<ul>
+<li></li>
+<li></li>
+</ul>
+<h3 id="Chapter-5"><a href="#Chapter-5" class="headerlink" title="Chapter 5"></a>Chapter 5</h3><blockquote>
+<p>Causality and Structural Models in Social Science and Economics</p>
+<p>社会科学与经济学中的因果关系与结构模型</p>
+</blockquote>
+<ul>
+<li></li>
+<li></li>
+</ul>
 
       
 
@@ -225,31 +604,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">二叉树</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">遍历</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">DFS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">BFS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">读书笔记</a>
         		</li>
       		
 		</ul>
@@ -261,7 +616,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/LeetCode//" class="article-tag-list-link color4">LeetCode</a>
+        			<a href="/categories/读书笔记//" class="article-tag-list-link color5">读书笔记</a>
         		</li>
       		
 		</ul>
@@ -316,7 +671,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://flower48237.com/2020/02/13/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98104.%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://flower48237.com/2021/08/16/Causality-Models%20%20Reasoning%20%20and%20Inference/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -330,18 +685,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/02/14/%E3%80%90%E5%89%91%E6%8C%87offer%E3%80%91%E9%9D%A2%E8%AF%95%E9%A2%9831-%E6%A0%88%E7%9A%84%E5%8E%8B%E5%85%A5%E3%80%81%E5%BC%B9%E5%87%BA%E5%BA%8F%E5%88%97/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          【剑指offer】面试题31-栈的压入、弹出序列
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/02/13/LeetCode%E7%AE%97%E6%B3%95%E9%A2%98002-%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">LeetCode算法题2.两数相加</div>
+    <a href="/2021/06/02/%E3%80%8A%E5%B1%85%E5%AE%89%E6%80%9D%E5%8D%B1%C2%B7%E5%9B%BD%E5%AE%B6%E5%AE%89%E5%85%A8%E4%B8%8E%E4%B9%A1%E6%9D%91%E6%B2%BB%E7%90%86%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">《居安思危·国家安全与乡村治理》读书笔记</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -368,7 +714,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目描述"><span class="toc-number">1.</span> <span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码（Java实现）"><span class="toc-number">3.</span> <span class="toc-text">代码（Java实现）</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Preface"><span class="toc-number">1.</span> <span class="toc-text">Preface</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Chapter-1"><span class="toc-number">2.</span> <span class="toc-text">Chapter 1</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-Introduction-to-Probability-Theory"><span class="toc-number">2.1.</span> <span class="toc-text">1.1 Introduction to Probability Theory</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-1-1-Why-probabilities"><span class="toc-number">2.1.1.</span> <span class="toc-text">1.1.1 Why probabilities</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-1-2-Basic-Concepts-in-Probability-Theory"><span class="toc-number">2.1.2.</span> <span class="toc-text">1.1.2 Basic Concepts in Probability Theory</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-1-3-Combining-Predictive-and-Diagnostic-Support"><span class="toc-number">2.1.3.</span> <span class="toc-text">1.1.3 Combining Predictive and Diagnostic Support</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-1-4-Random-Variables-and-Exceptions"><span class="toc-number">2.1.4.</span> <span class="toc-text">1.1.4 Random Variables and Exceptions</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-1-5-Condtional-Independence-and-Graphoids"><span class="toc-number">2.1.5.</span> <span class="toc-text">1.1.5 Condtional Independence and Graphoids</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-Graphs-and-Probabilities"><span class="toc-number">2.2.</span> <span class="toc-text">1.2 Graphs and Probabilities</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-2-1-Graphical-Notation-and-Terminology"><span class="toc-number">2.2.1.</span> <span class="toc-text">1.2.1 Graphical Notation and Terminology</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-2-2-Bayesian-Network-⭐"><span class="toc-number">2.2.2.</span> <span class="toc-text">1.2.2 Bayesian Network ⭐</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-2-3-The-d-Separation-Criterion-⭐"><span class="toc-number">2.2.3.</span> <span class="toc-text">1.2.3 The d-Separation Criterion ⭐</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-2-4-Inference-with-Bayesian-Network"><span class="toc-number">2.2.4.</span> <span class="toc-text">1.2.4 Inference with Bayesian Network</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-Causal-Bayesian-Network-⭐"><span class="toc-number">2.3.</span> <span class="toc-text">1.3 Causal Bayesian Network ⭐</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-3-1-Causal-Network-as-Oracles-for-Interventions"><span class="toc-number">2.3.1.</span> <span class="toc-text">1.3.1 Causal Network as Oracles for Interventions</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-3-2-Causal-Relationships-and-Their-Stability"><span class="toc-number">2.3.2.</span> <span class="toc-text">1.3.2 Causal Relationships and Their Stability</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Chapter-2"><span class="toc-number">3.</span> <span class="toc-text">Chapter 2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Chapter-3"><span class="toc-number">4.</span> <span class="toc-text">Chapter 3</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Chapter-4"><span class="toc-number">5.</span> <span class="toc-text">Chapter 4</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Chapter-5"><span class="toc-number">6.</span> <span class="toc-text">Chapter 5</span></a></li></ol>
                     </div>
                 </span>
             </div>
