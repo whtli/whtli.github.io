@@ -6,7 +6,7 @@
   <link href="https://flower48237.com/atom.xml" rel="self"/>
   
   <link href="https://flower48237.com/"/>
-  <updated>2021-09-26T08:21:40.275Z</updated>
+  <updated>2021-09-26T08:21:56.562Z</updated>
   <id>https://flower48237.com/</id>
   
   <author>
@@ -17,17 +17,17 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>《The Book of Why》 — Chapter2</title>
-    <link href="https://flower48237.com/2021/09/26/The%20Book%20of%20Why%20-%20Chapter%20(2)/"/>
-    <id>https://flower48237.com/2021/09/26/The%20Book%20of%20Why%20-%20Chapter%20(2)/</id>
+    <title>《The Book of Why》 — Preface &amp; Chapter1</title>
+    <link href="https://flower48237.com/2021/09/26/The%20Book%20of%20Why%20-%20Chapter%20(1)/"/>
+    <id>https://flower48237.com/2021/09/26/The%20Book%20of%20Why%20-%20Chapter%20(1)/</id>
     <published>2021-09-26T03:17:00.000Z</published>
-    <updated>2021-09-26T08:21:40.275Z</updated>
+    <updated>2021-09-26T08:21:56.562Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="第二章-从海盗到豚鼠：因果推断的起源"><a href="#第二章-从海盗到豚鼠：因果推断的起源" class="headerlink" title="第二章 从海盗到豚鼠：因果推断的起源"></a>第二章 从海盗到豚鼠：因果推断的起源</h3><blockquote><p>Chapter2  — From Buccaneers to Guinea Pigs:  The Genesis of Causal Inference</p></blockquote><a id="more"></a><h4 id="高尔顿和被丢弃的探索"><a href="#高尔顿和被丢弃的探索" class="headerlink" title="高尔顿和被丢弃的探索"></a>高尔顿和被丢弃的探索</h4><h4 id="皮尔逊：狂热者的愤怒"><a href="#皮尔逊：狂热者的愤怒" class="headerlink" title="皮尔逊：狂热者的愤怒"></a>皮尔逊：狂热者的愤怒</h4><ul><li>使用因果透镜可知在某些情况下，正确的分析只能来自于聚合数据而非来自分组数据。因果推断的逻辑能够在事实上告诉我们应该信任哪个结果。（50）</li><li>休厄尔·赖特首次建立了一套根据数据回答因果关系的数学方法，被称为路径图或者路径分析。赖特首次证明了“相关关系不等于因果关系”这个判定应该让位于“某些相关关系确实意味着因果关系”。（53）</li></ul><h4 id="但它仍在动"><a href="#但它仍在动" class="headerlink" title="但它仍在动"></a>但它仍在动</h4><ul><li>因果关系绝不仅是针对数据的关系，在因果分析中，必须将对数据生成过程的理解体现出来，并以此得出初始数据不包含的内容。（63）</li><li>结构方程建模（SEM）（64）</li></ul><h4 id="从主观性到客观性——贝叶斯连接"><a href="#从主观性到客观性——贝叶斯连接" class="headerlink" title="从主观性到客观性——贝叶斯连接"></a>从主观性到客观性——贝叶斯连接</h4><ul><li>与相关性分析和大多数主流统计学不同，因果分析要求研究者<strong>做出主观判断</strong>。绘制的因果图是对于某个研究课题所涉及的因果过程拓扑结构的定性判断，在因果关系方面，睿智的主观性比任何客观性都更能阐明我们所处的这个真实世界。（67）</li><li>贝叶斯分析的原型：先验判断+新的证据-&gt;经过修正的判断。（67）</li><li>许多例子已经证明，随着数据量的增加，先验判断的影响会越来越小，乃至彻底消失，这就让我们最终得到的那个结论仍然是客观的。（68）</li></ul><blockquote><p>《THE BOOK OF WHY: THE NEW SCIENCE OF CAUSE AND EFFECT》</p><p>——JUDEA PEARL AND DANA MACKENZIE</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h3><blockquote><p>Preface</p></blockquote><a id="more"></a><ul><li>因果革命最重要的成果之一就是解释了如何在不实际实施干预的情况下预测干预效果。如果拥有一个因果模型，就可以在大部分情况下从未经干预处理的数据中预测干预的效果了。（XVI）</li><li>“反事实的算法化”是因果革命的另一项宝贵的成果。（XVII）</li><li>因果推断引擎是一种问题处理机器，他接收三种不同的输入——假设、问题、数据。（XVIII）</li><li>以因果模型的路径来表示变量之间的听从模式通常会导向数据中某种显而易见的模式或相关关系（也被称为可被验证的蕴涵），将D和L之间没有连接路径翻译成统计学语言，就是D和L相互独立，也就是说，发现D的存在不会改变L发生的可能性。（XX）</li><li>如果拥有一个因果模型，就可以在大部分情况下从未经干预处理的数据中预测干预的结果了。（XXIII）</li><li>第一章：因果关系之梯，观察、干预、反事实（XXIV）</li><li>第二章：发展历史</li><li>第三章：贝叶斯网络及实例</li><li>第四章：随机对照试验</li><li>第五章：因果论发展史重要节点</li><li>第六章：悖论</li><li>第七章：干预</li><li>第八章：反事实</li><li>第九章：中介</li><li>第十章：人类智能的自动化（强人工智能）</li></ul><h3 id="第一章-因果关系之梯"><a href="#第一章-因果关系之梯" class="headerlink" title="第一章 因果关系之梯"></a>第一章 因果关系之梯</h3><blockquote><p>CHAPTER 1 — The Ladder of Causation</p></blockquote><ul><li>没有哪台机器可以从原始数据中获得解释。对数据的解释需要借助外部推力。（4）</li><li>因果模型的一个关键特征：模块性（6）</li><li>因果图是因果推理引擎的计算核心（6）</li></ul><h4 id="因果关系的三个层级"><a href="#因果关系的三个层级" class="headerlink" title="因果关系的三个层级"></a>因果关系的三个层级</h4><blockquote><p>观察能力seeing、行动能力doing、想象能力imaging </p><p>观察、                    干预、                 反事实</p></blockquote><img src="C:\Users\Q\AppData\Roaming\Typora\typora-user-images\image-20210916214238294.png" alt="image-20210916214238294" style="zoom: 50%;" /><ul><li><p>关联 ： 观察寻找规律，如果观察到某一事件改变了观察到的另一个事件的可能性，则称这两个事件关联。（7）</p></li><li><p>因果关系之梯的第一层级要求我们基于被动观察做出预测（7）</p></li><li><p>相关分析和回归分析是典型的关联度量之法。（9）</p></li><li><p>强人工智能的目标是制造出拥有类人智能的机器，让它们能与人类交流并指导人类的探索方向。而深度学习只是让机器具备了高超的能力，而非智能，这种差异是巨大的，原因就在于后者缺少现实模型。（9）</p></li><li><p>干预涉及主动改变现状。（10）</p></li><li><p>无论数据集多大或者神经网络多深，只要使用的是被动收集的数据，都无法回答有关干预的问题。（10）</p></li><li><p>因果关系之梯第二层级的典型问题是：“如果我们实施……行动，将会怎样？”即我们改变环境会发生什么？记作P(Y|do(X))。另一个热门问题是怎么做。（11）</p></li><li><p>数据就是事实。（12）</p></li><li><p>反事实位于因果关系之梯的顶层。（13）</p><h4 id="迷你图灵测试"><a href="#迷你图灵测试" class="headerlink" title="迷你图灵测试"></a>迷你图灵测试</h4></li><li><p>无论何时，如果想使某件事发生，那么就删除指向该事件的所有箭头，之后继续按照逻辑规则进行分析，就好像那些箭头从未出现过一样。（19）</p></li><li><p>使某件事发生就意味着将它从所有其他影响因子中解放出来，并使它受限于唯一的影响因子——能强制其发生的那个因子。（19）</p></li><li><p>构建因果模型不仅仅是画箭头，箭头背后还隐藏着概率。（23）</p></li><li><p>通常情况下，因果图自身的结构就足以让我们推测出各种因果关系和反事实：简单的或复杂的，确定的或概率的，线性的或非线性的。（23）</p></li></ul><h4 id="论概率与因果关系"><a href="#论概率与因果关系" class="headerlink" title="论概率与因果关系"></a>论概率与因果关系</h4><ul><li>因果关系不能被简化为概率！（25）</li><li>概率提高这个概念确实不能单纯的用概率来表示。（27）</li><li>贝叶斯网络是一种关于不确定性的推理方法，它可以根据我们观察到的某些事实迅速推算出某些其他事实为真或为假的概率。（28）</li><li>贝叶斯网络适用于一个所有问题都被简化为概率或者变量间的关联程度的世界，他无法自动升级到因果关系之梯的第二层或第三层。（29）</li><li>作者的主要观点：概率能将我们对静态世界的信念进行编码，而因果论则告诉我们，当世界被改变时，无论改变是通过干预还是通过想象实现的，概率是否会发生改变以及如何改变。（29）</li></ul><blockquote><p>《THE BOOK OF WHY: THE NEW SCIENCE OF CAUSE AND EFFECT》</p><p> ——JUDEA PEARL AND DANA MACKENZIE</p></blockquote>]]></content>
     
     
-    <summary type="html">&lt;h3 id=&quot;第二章-从海盗到豚鼠：因果推断的起源&quot;&gt;&lt;a href=&quot;#第二章-从海盗到豚鼠：因果推断的起源&quot; class=&quot;headerlink&quot; title=&quot;第二章 从海盗到豚鼠：因果推断的起源&quot;&gt;&lt;/a&gt;第二章 从海盗到豚鼠：因果推断的起源&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;Chapter2  — From Buccaneers to Guinea Pigs:  The Genesis of Causal Inference&lt;/p&gt;
+    <summary type="html">&lt;h3 id=&quot;序言&quot;&gt;&lt;a href=&quot;#序言&quot; class=&quot;headerlink&quot; title=&quot;序言&quot;&gt;&lt;/a&gt;序言&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;Preface&lt;/p&gt;
 &lt;/blockquote&gt;</summary>
     
     
@@ -42,17 +42,17 @@
   </entry>
   
   <entry>
-    <title>《The Book of Why》 — Preface &amp; Chapter1</title>
-    <link href="https://flower48237.com/2021/09/26/The%20Book%20of%20Why%20-%20Chapter%20(1)/"/>
-    <id>https://flower48237.com/2021/09/26/The%20Book%20of%20Why%20-%20Chapter%20(1)/</id>
+    <title>《The Book of Why》 — Chapter2</title>
+    <link href="https://flower48237.com/2021/09/26/The%20Book%20of%20Why%20-%20Chapter%20(2)/"/>
+    <id>https://flower48237.com/2021/09/26/The%20Book%20of%20Why%20-%20Chapter%20(2)/</id>
     <published>2021-09-26T03:17:00.000Z</published>
-    <updated>2021-09-26T08:21:56.562Z</updated>
+    <updated>2021-09-26T08:21:40.275Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h3><blockquote><p>Preface</p></blockquote><a id="more"></a><ul><li>因果革命最重要的成果之一就是解释了如何在不实际实施干预的情况下预测干预效果。如果拥有一个因果模型，就可以在大部分情况下从未经干预处理的数据中预测干预的效果了。（XVI）</li><li>“反事实的算法化”是因果革命的另一项宝贵的成果。（XVII）</li><li>因果推断引擎是一种问题处理机器，他接收三种不同的输入——假设、问题、数据。（XVIII）</li><li>以因果模型的路径来表示变量之间的听从模式通常会导向数据中某种显而易见的模式或相关关系（也被称为可被验证的蕴涵），将D和L之间没有连接路径翻译成统计学语言，就是D和L相互独立，也就是说，发现D的存在不会改变L发生的可能性。（XX）</li><li>如果拥有一个因果模型，就可以在大部分情况下从未经干预处理的数据中预测干预的结果了。（XXIII）</li><li>第一章：因果关系之梯，观察、干预、反事实（XXIV）</li><li>第二章：发展历史</li><li>第三章：贝叶斯网络及实例</li><li>第四章：随机对照试验</li><li>第五章：因果论发展史重要节点</li><li>第六章：悖论</li><li>第七章：干预</li><li>第八章：反事实</li><li>第九章：中介</li><li>第十章：人类智能的自动化（强人工智能）</li></ul><h3 id="第一章-因果关系之梯"><a href="#第一章-因果关系之梯" class="headerlink" title="第一章 因果关系之梯"></a>第一章 因果关系之梯</h3><blockquote><p>CHAPTER 1 — The Ladder of Causation</p></blockquote><ul><li>没有哪台机器可以从原始数据中获得解释。对数据的解释需要借助外部推力。（4）</li><li>因果模型的一个关键特征：模块性（6）</li><li>因果图是因果推理引擎的计算核心（6）</li></ul><h4 id="因果关系的三个层级"><a href="#因果关系的三个层级" class="headerlink" title="因果关系的三个层级"></a>因果关系的三个层级</h4><blockquote><p>观察能力seeing、行动能力doing、想象能力imaging </p><p>观察、                    干预、                 反事实</p></blockquote><img src="C:\Users\Q\AppData\Roaming\Typora\typora-user-images\image-20210916214238294.png" alt="image-20210916214238294" style="zoom: 50%;" /><ul><li><p>关联 ： 观察寻找规律，如果观察到某一事件改变了观察到的另一个事件的可能性，则称这两个事件关联。（7）</p></li><li><p>因果关系之梯的第一层级要求我们基于被动观察做出预测（7）</p></li><li><p>相关分析和回归分析是典型的关联度量之法。（9）</p></li><li><p>强人工智能的目标是制造出拥有类人智能的机器，让它们能与人类交流并指导人类的探索方向。而深度学习只是让机器具备了高超的能力，而非智能，这种差异是巨大的，原因就在于后者缺少现实模型。（9）</p></li><li><p>干预涉及主动改变现状。（10）</p></li><li><p>无论数据集多大或者神经网络多深，只要使用的是被动收集的数据，都无法回答有关干预的问题。（10）</p></li><li><p>因果关系之梯第二层级的典型问题是：“如果我们实施……行动，将会怎样？”即我们改变环境会发生什么？记作P(Y|do(X))。另一个热门问题是怎么做。（11）</p></li><li><p>数据就是事实。（12）</p></li><li><p>反事实位于因果关系之梯的顶层。（13）</p><h4 id="迷你图灵测试"><a href="#迷你图灵测试" class="headerlink" title="迷你图灵测试"></a>迷你图灵测试</h4></li><li><p>无论何时，如果想使某件事发生，那么就删除指向该事件的所有箭头，之后继续按照逻辑规则进行分析，就好像那些箭头从未出现过一样。（19）</p></li><li><p>使某件事发生就意味着将它从所有其他影响因子中解放出来，并使它受限于唯一的影响因子——能强制其发生的那个因子。（19）</p></li><li><p>构建因果模型不仅仅是画箭头，箭头背后还隐藏着概率。（23）</p></li><li><p>通常情况下，因果图自身的结构就足以让我们推测出各种因果关系和反事实：简单的或复杂的，确定的或概率的，线性的或非线性的。（23）</p></li></ul><h4 id="论概率与因果关系"><a href="#论概率与因果关系" class="headerlink" title="论概率与因果关系"></a>论概率与因果关系</h4><ul><li>因果关系不能被简化为概率！（25）</li><li>概率提高这个概念确实不能单纯的用概率来表示。（27）</li><li>贝叶斯网络是一种关于不确定性的推理方法，它可以根据我们观察到的某些事实迅速推算出某些其他事实为真或为假的概率。（28）</li><li>贝叶斯网络适用于一个所有问题都被简化为概率或者变量间的关联程度的世界，他无法自动升级到因果关系之梯的第二层或第三层。（29）</li><li>作者的主要观点：概率能将我们对静态世界的信念进行编码，而因果论则告诉我们，当世界被改变时，无论改变是通过干预还是通过想象实现的，概率是否会发生改变以及如何改变。（29）</li></ul><blockquote><p>《THE BOOK OF WHY: THE NEW SCIENCE OF CAUSE AND EFFECT》</p><p> ——JUDEA PEARL AND DANA MACKENZIE</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="第二章-从海盗到豚鼠：因果推断的起源"><a href="#第二章-从海盗到豚鼠：因果推断的起源" class="headerlink" title="第二章 从海盗到豚鼠：因果推断的起源"></a>第二章 从海盗到豚鼠：因果推断的起源</h3><blockquote><p>Chapter2  — From Buccaneers to Guinea Pigs:  The Genesis of Causal Inference</p></blockquote><a id="more"></a><h4 id="高尔顿和被丢弃的探索"><a href="#高尔顿和被丢弃的探索" class="headerlink" title="高尔顿和被丢弃的探索"></a>高尔顿和被丢弃的探索</h4><h4 id="皮尔逊：狂热者的愤怒"><a href="#皮尔逊：狂热者的愤怒" class="headerlink" title="皮尔逊：狂热者的愤怒"></a>皮尔逊：狂热者的愤怒</h4><ul><li>使用因果透镜可知在某些情况下，正确的分析只能来自于聚合数据而非来自分组数据。因果推断的逻辑能够在事实上告诉我们应该信任哪个结果。（50）</li><li>休厄尔·赖特首次建立了一套根据数据回答因果关系的数学方法，被称为路径图或者路径分析。赖特首次证明了“相关关系不等于因果关系”这个判定应该让位于“某些相关关系确实意味着因果关系”。（53）</li></ul><h4 id="但它仍在动"><a href="#但它仍在动" class="headerlink" title="但它仍在动"></a>但它仍在动</h4><ul><li>因果关系绝不仅是针对数据的关系，在因果分析中，必须将对数据生成过程的理解体现出来，并以此得出初始数据不包含的内容。（63）</li><li>结构方程建模（SEM）（64）</li></ul><h4 id="从主观性到客观性——贝叶斯连接"><a href="#从主观性到客观性——贝叶斯连接" class="headerlink" title="从主观性到客观性——贝叶斯连接"></a>从主观性到客观性——贝叶斯连接</h4><ul><li>与相关性分析和大多数主流统计学不同，因果分析要求研究者<strong>做出主观判断</strong>。绘制的因果图是对于某个研究课题所涉及的因果过程拓扑结构的定性判断，在因果关系方面，睿智的主观性比任何客观性都更能阐明我们所处的这个真实世界。（67）</li><li>贝叶斯分析的原型：先验判断+新的证据-&gt;经过修正的判断。（67）</li><li>许多例子已经证明，随着数据量的增加，先验判断的影响会越来越小，乃至彻底消失，这就让我们最终得到的那个结论仍然是客观的。（68）</li></ul><blockquote><p>《THE BOOK OF WHY: THE NEW SCIENCE OF CAUSE AND EFFECT》</p><p>——JUDEA PEARL AND DANA MACKENZIE</p></blockquote>]]></content>
     
     
-    <summary type="html">&lt;h3 id=&quot;序言&quot;&gt;&lt;a href=&quot;#序言&quot; class=&quot;headerlink&quot; title=&quot;序言&quot;&gt;&lt;/a&gt;序言&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;Preface&lt;/p&gt;
+    <summary type="html">&lt;h3 id=&quot;第二章-从海盗到豚鼠：因果推断的起源&quot;&gt;&lt;a href=&quot;#第二章-从海盗到豚鼠：因果推断的起源&quot; class=&quot;headerlink&quot; title=&quot;第二章 从海盗到豚鼠：因果推断的起源&quot;&gt;&lt;/a&gt;第二章 从海盗到豚鼠：因果推断的起源&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;Chapter2  — From Buccaneers to Guinea Pigs:  The Genesis of Causal Inference&lt;/p&gt;
 &lt;/blockquote&gt;</summary>
     
     
@@ -274,11 +274,11 @@
     
     <category term="Java" scheme="https://flower48237.com/tags/Java/"/>
     
-    <category term="遍历" scheme="https://flower48237.com/tags/%E9%81%8D%E5%8E%86/"/>
-    
     <category term="LeetCode" scheme="https://flower48237.com/tags/LeetCode/"/>
     
     <category term="面试" scheme="https://flower48237.com/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+    <category term="遍历" scheme="https://flower48237.com/tags/%E9%81%8D%E5%8E%86/"/>
     
     <category term="数组" scheme="https://flower48237.com/tags/%E6%95%B0%E7%BB%84/"/>
     
@@ -394,15 +394,15 @@
     
     <category term="Java" scheme="https://flower48237.com/tags/Java/"/>
     
-    <category term="遍历" scheme="https://flower48237.com/tags/%E9%81%8D%E5%8E%86/"/>
-    
     <category term="LeetCode" scheme="https://flower48237.com/tags/LeetCode/"/>
     
     <category term="面试" scheme="https://flower48237.com/tags/%E9%9D%A2%E8%AF%95/"/>
     
-    <category term="数值计算" scheme="https://flower48237.com/tags/%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/"/>
+    <category term="遍历" scheme="https://flower48237.com/tags/%E9%81%8D%E5%8E%86/"/>
     
     <category term="数组" scheme="https://flower48237.com/tags/%E6%95%B0%E7%BB%84/"/>
+    
+    <category term="数值计算" scheme="https://flower48237.com/tags/%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/"/>
     
   </entry>
   
@@ -426,11 +426,11 @@
     
     <category term="Java" scheme="https://flower48237.com/tags/Java/"/>
     
-    <category term="遍历" scheme="https://flower48237.com/tags/%E9%81%8D%E5%8E%86/"/>
-    
     <category term="LeetCode" scheme="https://flower48237.com/tags/LeetCode/"/>
     
     <category term="面试" scheme="https://flower48237.com/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+    <category term="遍历" scheme="https://flower48237.com/tags/%E9%81%8D%E5%8E%86/"/>
     
     <category term="位运算" scheme="https://flower48237.com/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
     
@@ -455,11 +455,11 @@
     
     <category term="Java" scheme="https://flower48237.com/tags/Java/"/>
     
-    <category term="遍历" scheme="https://flower48237.com/tags/%E9%81%8D%E5%8E%86/"/>
-    
     <category term="LeetCode" scheme="https://flower48237.com/tags/LeetCode/"/>
     
     <category term="面试" scheme="https://flower48237.com/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+    <category term="遍历" scheme="https://flower48237.com/tags/%E9%81%8D%E5%8E%86/"/>
     
     <category term="数组" scheme="https://flower48237.com/tags/%E6%95%B0%E7%BB%84/"/>
     
@@ -513,11 +513,11 @@
     
     <category term="Java" scheme="https://flower48237.com/tags/Java/"/>
     
-    <category term="遍历" scheme="https://flower48237.com/tags/%E9%81%8D%E5%8E%86/"/>
-    
     <category term="LeetCode" scheme="https://flower48237.com/tags/LeetCode/"/>
     
     <category term="面试" scheme="https://flower48237.com/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+    <category term="遍历" scheme="https://flower48237.com/tags/%E9%81%8D%E5%8E%86/"/>
     
     <category term="数组" scheme="https://flower48237.com/tags/%E6%95%B0%E7%BB%84/"/>
     
