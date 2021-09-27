@@ -6,7 +6,7 @@
   <link href="https://flower48237.com/atom.xml" rel="self"/>
   
   <link href="https://flower48237.com/"/>
-  <updated>2021-09-27T12:21:59.970Z</updated>
+  <updated>2021-09-27T12:25:53.334Z</updated>
   <id>https://flower48237.com/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>《The Book of Why》 — Chapter3</title>
+    <link href="https://flower48237.com/2021/09/27/The%20Book%20of%20Why%20-%20Chapter%20(3)/"/>
+    <id>https://flower48237.com/2021/09/27/The%20Book%20of%20Why%20-%20Chapter%20(3)/</id>
+    <published>2021-09-27T12:21:00.000Z</published>
+    <updated>2021-09-27T12:25:53.334Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="第三章-从证据到因：当贝叶斯牧师遇见福尔摩斯先生"><a href="#第三章-从证据到因：当贝叶斯牧师遇见福尔摩斯先生" class="headerlink" title="第三章 从证据到因：当贝叶斯牧师遇见福尔摩斯先生"></a>第三章 从证据到因：当贝叶斯牧师遇见福尔摩斯先生</h3><blockquote><p>CHAPTER 3 — From Evidence to Causes: Reverend  Bayes Meets Mr. Holmes</p></blockquote><a id="more"></a><h4 id="电脑侦探波拿巴"><a href="#电脑侦探波拿巴" class="headerlink" title="电脑侦探波拿巴"></a>电脑侦探波拿巴</h4><ul><li>贝叶斯网络与因果图的关系很简单：因果图就是一个贝叶斯网络，其中的每个箭头都表示一个直接的因果关系，或者至少表明了存在某个因果关系的可能性。反过来，并不是所有的贝叶斯网络都是因果关系网络。而在很多实际应用中这一点并不重要。（75）</li></ul><h4 id="贝叶斯牧师与逆概率问题"><a href="#贝叶斯牧师与逆概率问题" class="headerlink" title="贝叶斯牧师与逆概率问题"></a>贝叶斯牧师与逆概率问题</h4><ul><li>贝叶斯的理论表明可以从一个果推断某个因的概率，即逆概率推理。从因到果是前向概率。（77）</li><li>数据对于因果不对称是不敏感的。（79）</li><li>贝叶斯法则在统计学中最重要的应用：可以在判断较为可靠的一个方向上直接估算出条件概率，并利用数学工具推导处在判断较为模糊的另一个方向上的概率。</li><li>还可以将贝叶斯法则看作一种方法，用以更新对某一特定假设的信念。（81）</li><li>“主观性”，有时被看作贝叶斯网络的一个缺点，但也有一些人认为这是贝叶斯推理的一个强大优势，它允许我们在数学上表达我们的个人经验，并以条理化、易懂的方式将其与数据结合起来。在普通直觉不起作用或情绪可能会导致我们误入歧途的情况下，贝叶斯网络能够引导我们进行正确的推理。（83）</li></ul><h4 id="从贝叶斯法则到贝叶斯网络"><a href="#从贝叶斯法则到贝叶斯网络" class="headerlink" title="从贝叶斯法则到贝叶斯网络"></a>从贝叶斯法则到贝叶斯网络</h4><ul><li>贝叶斯法则无可争议的优势：可以同时在诊断模式（结果推原因，逆概率）和预测模式（原因推结果，前向概率）中运行。（88）</li><li>任何人工智能都必须建立在模拟我们所知道的人类神经信息处理过程的基础上，并且不确定性下的机器推理必须借助类似的信息传递的体系结构来构建。信息是一个方向上的条件概率和另一个方向上的似然比。（89）</li></ul><h4 id="贝叶斯网络：应如何看待数据"><a href="#贝叶斯网络：应如何看待数据" class="headerlink" title="贝叶斯网络：应如何看待数据"></a>贝叶斯网络：应如何看待数据</h4><ul><li><p>贝叶斯的逆概率规则是一种形式作为简单的贝叶斯网络。（91）</p></li><li><p>贝叶斯法则告诉我们是如何逆转正向推理的过程，具体做法就是用先验概率×似然比。（91）</p></li><li><p>包含两个连接的三节点网络——“接合”，是所有贝叶斯网络（以及因果网络）的构建模块。（92-94）</p><ul><li><p>A—&gt;B—&gt;C ：链</p></li><li><p>A&lt;—B—&gt;C ：叉</p><p>B通常被视作A和C的共因，或混杂因子，<strong>混杂因子会使A和C在统计学上发生关联，即使他们之间没有直接的因果关系。</strong></p></li><li><p>A—&gt;B&lt;—C ：对撞</p><p>与“<strong>对撞偏倚</strong>”（“辩解效应”）有关</p></li></ul></li></ul><h4 id="我的行李箱在哪里？从亚琛到桑给巴尔"><a href="#我的行李箱在哪里？从亚琛到桑给巴尔" class="headerlink" title="我的行李箱在哪里？从亚琛到桑给巴尔"></a>我的行李箱在哪里？从亚琛到桑给巴尔</h4><ul><li>贝叶斯网络的两个方面：图示和条件概率表。（95）</li><li>图示以定性的方式描述了变量之间的关系，条件概率作为定量的输入可以使贝叶斯网络得到一个定量的结果。（95）</li></ul><h4 id="真实世界中的贝叶斯网络"><a href="#真实世界中的贝叶斯网络" class="headerlink" title="真实世界中的贝叶斯网络"></a>真实世界中的贝叶斯网络</h4><ul><li>贝叶斯网络一旦建立，就不需要对其进行干预，告诉它该如何评估新的数据片段。整个网络的更新可以很快完成。这个网络是一体化的，这意味着它作为一个整体对所有的新信息作出反应。（102-103）</li><li>贝叶斯网络的透明性使它有别于其他机器学习的模型，后者更倾向于制造高深莫测的“黑盒”。（103）</li><li>因果推断科学的一个目标就是创建更为顺畅的人机接口，比如将调查人员的直觉也纳入信念传播的计算过程。（103）</li></ul><h4 id="从贝叶斯网络到因果图⭐"><a href="#从贝叶斯网络到因果图⭐" class="headerlink" title="从贝叶斯网络到因果图⭐"></a>从贝叶斯网络到因果图⭐</h4><ul><li>从理论和实践的角度看，贝叶斯网络抓住了实现因果图与数据的交互的关键。贝叶斯网络的所有概率性质和在其基础上发展起来的信念传播算法在因果图中仍然有效。（106）</li><li>贝叶斯网络与因果图的主要区别在于他们的构造和用途。实际上，贝叶斯网络不过是一张巨大的概率表的简洁表示形式。（106）</li><li>因果图的假设不能是心血来潮地虚构，它必须经过数据地审查，并且是可证伪的。（107）</li><li>解读因果模型的另一种更加便捷的方法是假设实验。因果图中的每个箭头可以被看作一个假设实验的结果陈述。（107）</li><li>因果图的图形结构与它所代表的数据之间的关系，允许我们在不进行实际操作的情况下进行模拟调整。（108）</li><li>A &lt;- B -&gt; C，在<strong>不进行任何观测的情况下，A和C伪相关</strong>。（108）⭐</li></ul><blockquote><p>《THE BOOK OF WHY: THE NEW SCIENCE OF CAUSE AND EFFECT》</p><p>——JUDEA PEARL AND DANA MACKENZIE</p></blockquote>]]></content>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;第三章-从证据到因：当贝叶斯牧师遇见福尔摩斯先生&quot;&gt;&lt;a href=&quot;#第三章-从证据到因：当贝叶斯牧师遇见福尔摩斯先生&quot; class=&quot;headerlink&quot; title=&quot;第三章 从证据到因：当贝叶斯牧师遇见福尔摩斯先生&quot;&gt;&lt;/a&gt;第三章 从证据到因：当贝叶斯牧师遇见福尔摩斯先生&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;CHAPTER 3 — From Evidence to Causes: Reverend  Bayes Meets Mr. Holmes&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="Causality" scheme="https://flower48237.com/categories/Causality/"/>
+    
+    
+    <category term="Causality" scheme="https://flower48237.com/tags/Causality/"/>
+    
+    <category term="因果推断" scheme="https://flower48237.com/tags/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD/"/>
+    
+  </entry>
+  
+  <entry>
     <title>《The Book of Why》 — Chapter4</title>
     <link href="https://flower48237.com/2021/09/27/The%20Book%20of%20Why%20-%20Chapter%20(4)/"/>
     <id>https://flower48237.com/2021/09/27/The%20Book%20of%20Why%20-%20Chapter%20(4)/</id>
     <published>2021-09-27T12:21:00.000Z</published>
-    <updated>2021-09-27T12:21:59.970Z</updated>
+    <updated>2021-09-27T12:26:25.892Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="第四章-混杂和去混杂：或者，消灭潜伏变量"><a href="#第四章-混杂和去混杂：或者，消灭潜伏变量" class="headerlink" title="第四章 混杂和去混杂：或者，消灭潜伏变量"></a>第四章 混杂和去混杂：或者，消灭潜伏变量</h3><blockquote><p>CHAPTER 4 — Confounding and Deconfounding:  Or, Slaying the Lurking Variable</p></blockquote><a id="more"></a><ul><li><p>当一个变量同时影响到选择接受处理的对象以及实验结果时，混杂偏倚就产生了。（115）⭐</p></li><li><img src="C:\Users\Q\AppData\Roaming\Typora\typora-user-images\image-20210920193220443.png" alt="image-20210920193220443" style="zoom:33%;" /><p>如上图所示，位于叉接合中心的变量Z就是X和Y的<strong>混杂因子</strong>。真正的因果效应X-&gt;Y与由叉接合X&lt;-Z-&gt;Y诱导的X和Y之间的伪相关混合在一起。（115）</p></li><li><p>本章的目标之一就是从因果图的角度来解释，为什么随机对照实验能估计出X-&gt;Y的因果效应，同时免除混杂偏倚的影响。因果图使分析重心从混杂因子向<strong>去混杂因子</strong>的转变成为可能（117）</p></li><li><p>因果革命允许我们超越费舍尔的随机对照实验，通过非实验性研究推断因果效应，其主要途径就来自这种分析重点的转变。（117）</p></li><li><p>“后门准则”（back-door criterion）可以明确识别出因果图中哪些变量是去混因子。（118）</p></li><li><p>目前的普遍共识：（1）混杂需要，也具备一个因果解决方案；（2）因果图提供了一种完整的、系统的方法引领我们找到那个解决方案。（118）</p></li></ul><h4 id="对混杂的长期恐惧"><a href="#对混杂的长期恐惧" class="headerlink" title="对混杂的长期恐惧"></a>对混杂的长期恐惧</h4><ul><li>掌握既定结论背后的假设比试图用随机对照试验来规避这些假设更有价值。且随机对照试验本身也由局限性。（120）</li></ul><h4 id="对自然的巧妙询问：随机对照试验为何有效"><a href="#对自然的巧妙询问：随机对照试验为何有效" class="headerlink" title="对自然的巧妙询问：随机对照试验为何有效"></a>对自然的巧妙询问：随机对照试验为何有效</h4><h4 id="混杂的新范式"><a href="#混杂的新范式" class="headerlink" title="混杂的新范式"></a>混杂的新范式</h4><ul><li>已知条件概率P(Y | X)、X与Y之间的因果关系P(Y | do(X))，混杂可定义为导致P(Y | X) ≠ P(Y | do(X))，即两个概率出现差异的所有因素。（127）</li><li>“后门准则”将定义混杂、识别混杂因子和根据混杂因子进行统计调整这些问题变成了一个简单的过程。（133）</li></ul><h4 id="do算子和后门准则⭐（本节有很多图示例子可参考学习）"><a href="#do算子和后门准则⭐（本节有很多图示例子可参考学习）" class="headerlink" title="do算子和后门准则⭐（本节有很多图示例子可参考学习）"></a>do算子和后门准则⭐（本节有很多图示例子可参考学习）</h4><ul><li><p>可以将链接看作一个管道，找个管道将信息从起点X传递到终点Y。（133）</p></li><li><p>事实上，非因果路径是混杂的根源。（之前将混杂定义为任何使得P(Y | X) ≠ P(Y | do(X))的因素），do算子会清除指向X的所有箭头，这样它就可以防止有关X的任何信息在非因果方向流动。（133）</p></li><li><p>需要牢记的一条基本规则：（134）</p><p>控制一个变量的后代节点（或替代物）如同“部分地”控制变量本身；</p><p>控制一个中介物的某个后代节点意味着部分的关闭了信息管道；</p><p>控制一个对撞变量的某个后代节点意味着部分地打开了信息管道。</p></li><li><p>A&lt;—B&lt;—C—&gt;D&lt;—E—&gt;F—&gt;G&lt;—H—&gt;I—&gt;J</p><p>如上面的因果图，如果这条路径的一个接合被阻断，那么J就无法通过这条路径“找到”A。</p><p>因此有很多办法阻断A和J之间的信息流通：控制B、控制C、不控制D、控制E、控制F、不控制G、控制H、控制I等，并且只需要做到一项就足够了。这就是为什么常规的统计过程——控制我们可以测量的一切，造成了如此严重的误导。</p><p>事实上，对上图所示的路径来说，在不控制任何变量的前提下，这条路径本身就算被阻断的！D和G的对撞在没有任何外部帮助的情况下阻断了这条路径。而控制D和G将打开这条路径，使A和J能完成信息流通。（134）</p></li><li><p>更确切地说，后门准则（back-door criterion）定义为<strong>所有X和Y之间以指向X的箭头为开始的路径</strong>；如果阻断了后门路径（这些路径允许X和Y之间的伪相关信息在管道中流动），就完成了对X和Y的去混杂。</p><p>如果试图通过控制某一组变量Z来实现这一点，还需要确保Z的任何成员都不是X的后代，否则可能部分或完全地关闭这条X和Y之间地因果路径。（135）</p></li><li><p>“M偏倚”指出了传统方法的一个错误：仅仅因为某个变量与X和Y都相关就将该变量视为混杂因子是错误的。（137）</p></li><li><p><strong>混杂问题的完整解决方案是因果革命的主要两点之一</strong>。（140）</p></li><li><img src="C:\Users\Q\AppData\Roaming\Typora\typora-user-images\image-20210920193347790.png" alt="image-20210920193347790" style="zoom:33%;" /></li><li><img src="C:\Users\Q\AppData\Roaming\Typora\typora-user-images\image-20210920193428216.png" alt="image-20210920193428216" style="zoom:33%;" /><img src="C:\Users\Q\AppData\Roaming\Typora\typora-user-images\image-20210920193516109.png" alt="image-20210920193516109" style="zoom: 42%;" /></li></ul><blockquote><p>《THE BOOK OF WHY: THE NEW SCIENCE OF CAUSE AND EFFECT》</p><p>——JUDEA PEARL AND DANA MACKENZIE</p></blockquote>]]></content>
     
@@ -79,32 +104,6 @@
     <summary type="html">&lt;h3 id=&quot;第二章-从海盗到豚鼠：因果推断的起源&quot;&gt;&lt;a href=&quot;#第二章-从海盗到豚鼠：因果推断的起源&quot; class=&quot;headerlink&quot; title=&quot;第二章 从海盗到豚鼠：因果推断的起源&quot;&gt;&lt;/a&gt;第二章 从海盗到豚鼠：因果推断的起源&lt;/h3&gt;&lt;blockquote&gt;
 &lt;p&gt;Chapter2  — From Buccaneers to Guinea Pigs:  The Genesis of Causal Inference&lt;/p&gt;
 &lt;/blockquote&gt;</summary>
-    
-    
-    
-    <category term="Causality" scheme="https://flower48237.com/categories/Causality/"/>
-    
-    
-    <category term="Causality" scheme="https://flower48237.com/tags/Causality/"/>
-    
-    <category term="因果推断" scheme="https://flower48237.com/tags/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《The Book of Why》 — Chapter3</title>
-    <link href="https://flower48237.com/2021/09/26/The%20Book%20of%20Why%20-%20Chapter%20(3)/"/>
-    <id>https://flower48237.com/2021/09/26/The%20Book%20of%20Why%20-%20Chapter%20(3)/</id>
-    <published>2021-09-26T03:17:00.000Z</published>
-    <updated>2021-09-27T12:20:21.550Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="《The-Book-of-Why》-—-Chapter3"><a href="#《The-Book-of-Why》-—-Chapter3" class="headerlink" title="《The Book of Why》 — Chapter3"></a>《The Book of Why》 — Chapter3</h1><h3 id="第三章-从证据到因：当贝叶斯牧师遇见福尔摩斯先生"><a href="#第三章-从证据到因：当贝叶斯牧师遇见福尔摩斯先生" class="headerlink" title="第三章 从证据到因：当贝叶斯牧师遇见福尔摩斯先生"></a>第三章 从证据到因：当贝叶斯牧师遇见福尔摩斯先生</h3><blockquote><p>CHAPTER 3 — From Evidence to Causes: Reverend  Bayes Meets Mr. Holmes</p></blockquote><h4 id="电脑侦探波拿巴"><a href="#电脑侦探波拿巴" class="headerlink" title="电脑侦探波拿巴"></a>电脑侦探波拿巴</h4><ul><li>贝叶斯网络与因果图的关系很简单：因果图就是一个贝叶斯网络，其中的每个箭头都表示一个直接的因果关系，或者至少表明了存在某个因果关系的可能性。反过来，并不是所有的贝叶斯网络都是因果关系网络。而在很多实际应用中这一点并不重要。（75）</li></ul><h4 id="贝叶斯牧师与逆概率问题"><a href="#贝叶斯牧师与逆概率问题" class="headerlink" title="贝叶斯牧师与逆概率问题"></a>贝叶斯牧师与逆概率问题</h4><ul><li>贝叶斯的理论表明可以从一个果推断某个因的概率，即逆概率推理。从因到果是前向概率。（77）</li><li>数据对于因果不对称是不敏感的。（79）</li><li>贝叶斯法则在统计学中最重要的应用：可以在判断较为可靠的一个方向上直接估算出条件概率，并利用数学工具推导处在判断较为模糊的另一个方向上的概率。</li><li>还可以将贝叶斯法则看作一种方法，用以更新对某一特定假设的信念。（81）</li><li>“主观性”，有时被看作贝叶斯网络的一个缺点，但也有一些人认为这是贝叶斯推理的一个强大优势，它允许我们在数学上表达我们的个人经验，并以条理化、易懂的方式将其与数据结合起来。在普通直觉不起作用或情绪可能会导致我们误入歧途的情况下，贝叶斯网络能够引导我们进行正确的推理。（83）</li></ul><h4 id="从贝叶斯法则到贝叶斯网络"><a href="#从贝叶斯法则到贝叶斯网络" class="headerlink" title="从贝叶斯法则到贝叶斯网络"></a>从贝叶斯法则到贝叶斯网络</h4><ul><li>贝叶斯法则无可争议的优势：可以同时在诊断模式（结果推原因，逆概率）和预测模式（原因推结果，前向概率）中运行。（88）</li><li>任何人工智能都必须建立在模拟我们所知道的人类神经信息处理过程的基础上，并且不确定性下的机器推理必须借助类似的信息传递的体系结构来构建。信息是一个方向上的条件概率和另一个方向上的似然比。（89）</li></ul><h4 id="贝叶斯网络：应如何看待数据"><a href="#贝叶斯网络：应如何看待数据" class="headerlink" title="贝叶斯网络：应如何看待数据"></a>贝叶斯网络：应如何看待数据</h4><ul><li><p>贝叶斯的逆概率规则是一种形式作为简单的贝叶斯网络。（91）</p></li><li><p>贝叶斯法则告诉我们是如何逆转正向推理的过程，具体做法就是用先验概率×似然比。（91）</p></li><li><p>包含两个连接的三节点网络——“接合”，是所有贝叶斯网络（以及因果网络）的构建模块。（92-94）</p><ul><li><p>A—&gt;B—&gt;C ：链</p></li><li><p>A&lt;—B—&gt;C ：叉</p><p>B通常被视作A和C的共因，或混杂因子，<strong>混杂因子会使A和C在统计学上发生关联，即使他们之间没有直接的因果关系。</strong></p></li><li><p>A—&gt;B&lt;—C ：对撞</p><p>与“<strong>对撞偏倚</strong>”（“辩解效应”）有关</p></li></ul></li></ul><h4 id="我的行李箱在哪里？从亚琛到桑给巴尔"><a href="#我的行李箱在哪里？从亚琛到桑给巴尔" class="headerlink" title="我的行李箱在哪里？从亚琛到桑给巴尔"></a>我的行李箱在哪里？从亚琛到桑给巴尔</h4><ul><li>贝叶斯网络的两个方面：图示和条件概率表。（95）</li><li>图示以定性的方式描述了变量之间的关系，条件概率作为定量的输入可以使贝叶斯网络得到一个定量的结果。（95）</li></ul><h4 id="真实世界中的贝叶斯网络"><a href="#真实世界中的贝叶斯网络" class="headerlink" title="真实世界中的贝叶斯网络"></a>真实世界中的贝叶斯网络</h4><ul><li>贝叶斯网络一旦建立，就不需要对其进行干预，告诉它该如何评估新的数据片段。整个网络的更新可以很快完成。这个网络是一体化的，这意味着它作为一个整体对所有的新信息作出反应。（102-103）</li><li>贝叶斯网络的透明性使它有别于其他机器学习的模型，后者更倾向于制造高深莫测的“黑盒”。（103）</li><li>因果推断科学的一个目标就是创建更为顺畅的人机接口，比如将调查人员的直觉也纳入信念传播的计算过程。（103）</li></ul><h4 id="从贝叶斯网络到因果图⭐"><a href="#从贝叶斯网络到因果图⭐" class="headerlink" title="从贝叶斯网络到因果图⭐"></a>从贝叶斯网络到因果图⭐</h4><ul><li>从理论和实践的角度看，贝叶斯网络抓住了实现因果图与数据的交互的关键。贝叶斯网络的所有概率性质和在其基础上发展起来的信念传播算法在因果图中仍然有效。（106）</li><li>贝叶斯网络与因果图的主要区别在于他们的构造和用途。实际上，贝叶斯网络不过是一张巨大的概率表的简洁表示形式。（106）</li><li>因果图的假设不能是心血来潮地虚构，它必须经过数据地审查，并且是可证伪的。（107）</li><li>解读因果模型的另一种更加便捷的方法是假设实验。因果图中的每个箭头可以被看作一个假设实验的结果陈述。（107）</li><li>因果图的图形结构与它所代表的数据之间的关系，允许我们在不进行实际操作的情况下进行模拟调整。（108）</li><li>A &lt;- B -&gt; C，在<strong>不进行任何观测的情况下，A和C伪相关</strong>。（108）⭐</li></ul><blockquote><p>《THE BOOK OF WHY: THE NEW SCIENCE OF CAUSE AND EFFECT》</p><p>——JUDEA PEARL AND DANA MACKENZIE</p></blockquote>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla</summary>
-      
     
     
     
