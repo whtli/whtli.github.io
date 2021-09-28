@@ -6,7 +6,7 @@
   <link href="https://flower48237.com/atom.xml" rel="self"/>
   
   <link href="https://flower48237.com/"/>
-  <updated>2021-09-27T12:25:53.334Z</updated>
+  <updated>2021-09-28T12:50:36.310Z</updated>
   <id>https://flower48237.com/</id>
   
   <author>
@@ -15,6 +15,56 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>《The Book of Why》 — Chapter6</title>
+    <link href="https://flower48237.com/2021/09/28/The%20Book%20of%20Why%20-%20Chapter%20(6)/"/>
+    <id>https://flower48237.com/2021/09/28/The%20Book%20of%20Why%20-%20Chapter%20(6)/</id>
+    <published>2021-09-28T12:50:00.000Z</published>
+    <updated>2021-09-28T12:50:36.310Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="第六章-大量的悖论⭐（实例）"><a href="#第六章-大量的悖论⭐（实例）" class="headerlink" title="第六章 大量的悖论⭐（实例）"></a>第六章 大量的悖论⭐（实例）</h3><blockquote><p>CHAPTER 6 — Paradoxes Galore!</p></blockquote><a id="more"></a><ul><li>出生体重悖论反映了因果关系和相关关系之间的张力，这种张力源自于二者处于因果关系之梯的两个不同层级上，又因为人类的直觉在因果逻辑下运作而数据遵从的则是概率和比例的逻辑而进一步加剧。（165）</li><li>当我们在一个领域所学到的规则误用到其他的领域时，悖论就出现了。（165）</li><li>因果悖论突出强调了直觉性的因果推理模式与概率统计逻辑相冲突的地方。（165）</li></ul><h4 id="令人费解的“蒙提·霍尔悖论”"><a href="#令人费解的“蒙提·霍尔悖论”" class="headerlink" title="令人费解的“蒙提·霍尔悖论”"></a>令人费解的“蒙提·霍尔悖论”</h4><ul><li><p>问题：三个门，两羊一车，选一个，主持人打开另外两个中有羊的一个，此时，换门是否更有利于赢得车？（166）</p></li><li><p>解决这一悖论的关键是，不仅需要考虑数据，也需要注意数据生成的过程。（167）</p></li><li><p>习惯“数据约简”而忽略数据的生成过程是不可取的。（168）</p></li><li><img src="C:\Users\Q\AppData\Roaming\Typora\typora-user-images\image-20210920194134974.png" alt="image-20210920194134974" style="zoom:50%;" /><p>上图为该悖论的因果图，“主持人打开的门”是一个对撞因子，一旦我们获得了关于这个变量的信息，图中所有的概率都变成了关于这一信息的条件概率。但是，当我们以对撞因子为条件时，就会在两个父节点之间制造出一种虚假的依存关系（伪相关）。（169）</p></li><li><p>贝叶斯分析的一个普遍主题：任何通过了威胁其有效性的测试的假设，其可能性都会变大。威胁越大，幸存下来的假设的可能性就越大。（170）</p></li></ul><h4 id="更多的对撞偏倚：伯克森悖论"><a href="#更多的对撞偏倚：伯克森悖论" class="headerlink" title="更多的对撞偏倚：伯克森悖论"></a>更多的对撞偏倚：伯克森悖论</h4><ul><li><p>问题：两种疾病即使在一般人群中彼此不存在实际联系，在医院的病人中也会形成某种似是而非的关联。（172）</p></li><li><p>同类型的悖论现象：扔硬币游戏，同时扔两个硬币100次，只在至少一次正面的情况下记录结果，根据这些记录，会发现两枚硬币的抛掷结果并不独立，每次当硬币1为反面落地时，硬币2必为正面落地。</p><p>事实上，这些结果是删除了所有两枚硬币都是背面朝上的结果后得到的，换句话说：对这个对撞因子进行了变量控制。（174）⭐</p></li><li><p>最纯粹的、最本质的意义上：我们观察到的相关就是一种错觉，我们选择哪些事件进入数据集同时忽略另一些事的做法给我们自己带来了错觉。（175）</p></li></ul><h4 id="辛普森悖论"><a href="#辛普森悖论" class="headerlink" title="辛普森悖论"></a>辛普森悖论</h4><ul><li>问题：BBG药物，服用药物对男性患者群体有害，对女性患者群体也有害，但对整体的患者群体有益。（176）</li><li>确凿性原则：假设无论事件C是否发生，某个行动都会增加某一结果的可能性，则该行动也将在我们不知道C是否发生的情况下增加这个结果的可能性，条件是该行动不改变C的概率。（181）</li><li>使用聚合数据或者分割数据，哪种做法更合适，取决于数据的生成过程。（182）</li><li>只有当每个子总体的相对比例在各群组之间一致的情况下，确凿性原则才起作用。（189）</li></ul><blockquote><p>《THE BOOK OF WHY: THE NEW SCIENCE OF CAUSE AND EFFECT》</p><p>——JUDEA PEARL AND DANA MACKENZIE</p></blockquote>]]></content>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;第六章-大量的悖论⭐（实例）&quot;&gt;&lt;a href=&quot;#第六章-大量的悖论⭐（实例）&quot; class=&quot;headerlink&quot; title=&quot;第六章 大量的悖论⭐（实例）&quot;&gt;&lt;/a&gt;第六章 大量的悖论⭐（实例）&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;CHAPTER 6 — Paradoxes Galore!&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="Causality" scheme="https://flower48237.com/categories/Causality/"/>
+    
+    
+    <category term="Causality" scheme="https://flower48237.com/tags/Causality/"/>
+    
+    <category term="因果推断" scheme="https://flower48237.com/tags/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《The Book of Why》 — Chapter5</title>
+    <link href="https://flower48237.com/2021/09/28/The%20Book%20of%20Why%20-%20Chapter%20(5)/"/>
+    <id>https://flower48237.com/2021/09/28/The%20Book%20of%20Why%20-%20Chapter%20(5)/</id>
+    <published>2021-09-28T12:50:00.000Z</published>
+    <updated>2021-09-28T12:50:10.950Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="第五章-烟雾缭绕的争论：消除迷雾，澄清事实"><a href="#第五章-烟雾缭绕的争论：消除迷雾，澄清事实" class="headerlink" title="第五章 烟雾缭绕的争论：消除迷雾，澄清事实"></a>第五章 烟雾缭绕的争论：消除迷雾，澄清事实</h3><blockquote><p>CHAPTER 5 The Smoke-Filled Debate:  Clearing the Air</p></blockquote><a id="more"></a><ul><li>时间序列对于因果关系的证明来说是一种非常糟糕的证据。（147）</li><li>因果图的美在于它<strong>让偏倚的源头变得显而易见</strong>。（159）</li></ul><blockquote><p>《THE BOOK OF WHY: THE NEW SCIENCE OF CAUSE AND EFFECT》</p><p>——JUDEA PEARL AND DANA MACKENZIE</p></blockquote>]]></content>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;第五章-烟雾缭绕的争论：消除迷雾，澄清事实&quot;&gt;&lt;a href=&quot;#第五章-烟雾缭绕的争论：消除迷雾，澄清事实&quot; class=&quot;headerlink&quot; title=&quot;第五章 烟雾缭绕的争论：消除迷雾，澄清事实&quot;&gt;&lt;/a&gt;第五章 烟雾缭绕的争论：消除迷雾，澄清事实&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;CHAPTER 5 The Smoke-Filled Debate:  Clearing the Air&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="Causality" scheme="https://flower48237.com/categories/Causality/"/>
+    
+    
+    <category term="Causality" scheme="https://flower48237.com/tags/Causality/"/>
+    
+    <category term="因果推断" scheme="https://flower48237.com/tags/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD/"/>
+    
+  </entry>
   
   <entry>
     <title>《The Book of Why》 — Chapter3</title>
@@ -497,64 +547,6 @@
     
     
     <summary type="html">&lt;h3 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h3&gt;&lt;p&gt;给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。&lt;br&gt;如果你最多只允许完成一笔交易（即买入和卖出一支股票一次），设计一个算法来计算你所能获取的最大利润。&lt;br&gt;!!! 不能在买入股票前卖出股票 !!!&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="LeetCode" scheme="https://flower48237.com/categories/LeetCode/"/>
-    
-    
-    <category term="Java" scheme="https://flower48237.com/tags/Java/"/>
-    
-    <category term="LeetCode" scheme="https://flower48237.com/tags/LeetCode/"/>
-    
-    <category term="面试" scheme="https://flower48237.com/tags/%E9%9D%A2%E8%AF%95/"/>
-    
-    <category term="遍历" scheme="https://flower48237.com/tags/%E9%81%8D%E5%8E%86/"/>
-    
-    <category term="数组" scheme="https://flower48237.com/tags/%E6%95%B0%E7%BB%84/"/>
-    
-    <category term="动态规划" scheme="https://flower48237.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode精选TOP面试题202.快乐数</title>
-    <link href="https://flower48237.com/2020/03/17/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98202.%E5%BF%AB%E4%B9%90%E6%95%B0/"/>
-    <id>https://flower48237.com/2020/03/17/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98202.%E5%BF%AB%E4%B9%90%E6%95%B0/</id>
-    <published>2020-03-17T03:14:50.000Z</published>
-    <updated>2020-03-23T14:49:16.000Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>编写一个算法来判断一个数是不是“快乐数”。<br>题目来源：<a href="https://leetcode-cn.com/problems/happy-number" target="_blank" rel="noopener">LeetCode</a><br>一个“快乐数”定义为：对于一个正整数，每一次将该数替换为它每个位置上的数字的平方和，然后重复这个过程直到这个数变为 1，也可能是无限循环但始终变不到 1。如果可以变为 1，那么这个数就是快乐数。</p><a id="more"></a><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">示例: </span><br><span class="line">输入: 19</span><br><span class="line">输出: <span class="literal">true</span></span><br><span class="line">解释: </span><br><span class="line">12 + 92 = 82</span><br><span class="line">82 + 22 = 68</span><br><span class="line">62 + 82 = 100</span><br><span class="line">12 + 02 + 02 = 1</span><br></pre></td></tr></table></figure><h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>这是一个在编程的时候会出现死循环的问题，个人认为重点工作其实倒不是怎么判断是不是快乐数，而是找到打破循环的方法或者条件。</p><ul><li>思路1 ：快慢指针<br>慢指针slower每次前进一步（进行一次平方计算），快指针faster每次前进两步（进行两次平方计算），当slower和faster不相等的时候，就一直循环。那为啥还说能打破循环呢？<br>这是因为当快慢指针相等的时候会停止循环，相等的有两种情况：<ul><li>当慢指针和快指针都通过计算变成了1；</li><li>当慢指针走过一圈之后，快指针肯定恰好走过了两圈，如果不是快乐数，快慢指针的值肯定是相同的；<blockquote><p>之所以选择快指针走两步而不是三步四步，是因为1，2公倍数最小，公约数最多，这样最节省空间和时间</p></blockquote></li></ul></li><li>思路2 ：借助HashSet<br>哈希Set特点就是不允许重复，那只要每次求和之后，判断当前的值n是否已经存在于hashset中就好啦，存在就不是快乐数，直接return false，不存在就添加进hashset，直到n 变成1跳出循环，或者返回false。</li><li>思路3 ：投机取巧<br>小于10的数中，只有1和7是快乐数，借鉴<a href="https://leetcode-cn.com/problems/happy-number/solution/cyu-yan-by-hui-fei-de-xiao-hou/" target="_blank" rel="noopener">leetcode上大神的思路</a>，所以，投机取巧就很简单了:<ul><li>只要每次计算得到的n大于10，那么就继续计算;</li><li>每次计算得到的n小于10，如果等于1或者7，就是快乐数，不等就不是。</li></ul></li></ul><h3 id="代码实现-Java"><a href="#代码实现-Java" class="headerlink" title="代码实现(Java)"></a>代码实现(Java)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> : flower48237</span></span><br><span class="line"><span class="comment"> * @2020/3/16 20:38</span></span><br><span class="line"><span class="comment"> * title : LeetCode精选TOP面试题202.快乐数</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution3</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isHappy</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 法 1 -- 快慢指针</span></span><br><span class="line">        <span class="keyword">int</span> slower = n;</span><br><span class="line">        <span class="keyword">int</span> faster = n;</span><br><span class="line">        <span class="keyword">do</span> &#123;</span><br><span class="line">            slower = getSqrtSum(slower);</span><br><span class="line">            faster = getSqrtSum(faster);</span><br><span class="line">            faster = getSqrtSum(faster);</span><br><span class="line">        &#125;<span class="keyword">while</span> (slower != faster);</span><br><span class="line">        <span class="keyword">return</span> slower == <span class="number">1</span>;<span class="comment">// 返回slower和1是否相等的判定值</span></span><br><span class="line">        </span><br><span class="line">    <span class="comment">// 法 2 -- 借助HashSet</span></span><br><span class="line">        HashSet&lt;Integer&gt; hashset = <span class="keyword">new</span> HashSet&lt;Integer&gt;();</span><br><span class="line">        hashset.add(n);</span><br><span class="line">        <span class="keyword">if</span> (n == <span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (n != <span class="number">1</span>)&#123;</span><br><span class="line">            n = getSqrtSum(n);</span><br><span class="line">            <span class="keyword">if</span> (hashset.contains(n))&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            hashset.add(n);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 法 3 -- 投机取巧</span></span><br><span class="line">        <span class="keyword">while</span> (<span class="keyword">true</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span> (n &lt; <span class="number">10</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span> (n == <span class="number">1</span> || n == <span class="number">7</span>) &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">                &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            n = getSqrtSum(n);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 三个方法都会用到的计算平方的步骤</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getSqrtSum</span><span class="params">(<span class="keyword">int</span> num)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (num &gt; <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> item = num % <span class="number">10</span>;</span><br><span class="line">            sum += item * item;</span><br><span class="line">            num /= <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-    <summary type="html">&lt;h3 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h3&gt;&lt;p&gt;编写一个算法来判断一个数是不是“快乐数”。&lt;br&gt;题目来源：&lt;a href=&quot;https://leetcode-cn.com/problems/happy-number&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;LeetCode&lt;/a&gt;&lt;br&gt;一个“快乐数”定义为：对于一个正整数，每一次将该数替换为它每个位置上的数字的平方和，然后重复这个过程直到这个数变为 1，也可能是无限循环但始终变不到 1。如果可以变为 1，那么这个数就是快乐数。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="LeetCode" scheme="https://flower48237.com/categories/LeetCode/"/>
-    
-    
-    <category term="Java" scheme="https://flower48237.com/tags/Java/"/>
-    
-    <category term="LeetCode" scheme="https://flower48237.com/tags/LeetCode/"/>
-    
-    <category term="面试" scheme="https://flower48237.com/tags/%E9%9D%A2%E8%AF%95/"/>
-    
-    <category term="数值计算" scheme="https://flower48237.com/tags/%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode精选TOP面试题122.买卖股票的最佳时机II</title>
-    <link href="https://flower48237.com/2020/03/17/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98122.%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BAII/"/>
-    <id>https://flower48237.com/2020/03/17/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98122.%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BAII/</id>
-    <published>2020-03-17T02:55:26.000Z</published>
-    <updated>2020-03-23T14:51:58.000Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。<br>设计一个算法来计算你所能获取的最大利润。你可以尽可能地完成更多的交易（多次买卖一支股票）。<br>不能同时参与多笔交易（必须在再次购买前出售掉之前的股票）。</p><a id="more"></a><p>示例 1:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入: [7,1,5,3,6,4]</span><br><span class="line">输出: 7</span><br><span class="line">解释: 在第 2 天（股票价格 = 1）的时候买入，在第 3 天（股票价格 = 5）的时候卖出, 这笔交易所能获得利润 = 5-1 = 4 。</span><br><span class="line">     随后，在第 4 天（股票价格 = 3）的时候买入，在第 5 天（股票价格 = 6）的时候卖出, 这笔交易所能获得利润 = 6-3 = 3 。</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">示例 2:</span><br><span class="line">输入: [1,2,3,4,5]</span><br><span class="line">输出: 4</span><br><span class="line">解释: 在第 1 天（股票价格 = 1）的时候买入，在第 5 天 （股票价格 = 5）的时候卖出, 这笔交易所能获得利润 = 5-1 = 4 。</span><br><span class="line">     注意你不能在第 1 天和第 2 天接连购买股票，之后再将它们卖出。</span><br><span class="line">     因为这样属于同时参与了多笔交易，你必须在再次购买前出售掉之前的股票。</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">示例 3:</span><br><span class="line"></span><br><span class="line">输入: [7,6,4,3,1]</span><br><span class="line">输出: 0</span><br><span class="line">解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。</span><br></pre></td></tr></table></figure><h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><ul><li>思路1 ：一步一计算<br>定义入手价格变量 in ，遍历数组，判断当前元素item与in的大小关系，如果item &gt; in， 那么直接卖出，利润累加；如果item &lt; in， 更新in为item，表示可以用比之前更低的价格买入。<br>考虑以下两种情况：<br>股票一路走低，那就直接不用买了，只更新in，但是利润不要累加；<br>股票一路走高，那就每次都第二天先卖出赚利润后再买入，利润不断累加，符合题意，并可以引出<strong>思路2</strong>。</li><li>思路2：只计算上升曲线，<br>啥意思呢？<br>就是只考虑思路1的第二步，当今天的股价比前一天高，就把差价累加到利润中，很明显，当股票走低转折的时候，作为买家我是不会在前一天购买的，这其实并不合理，因为股价很难预测，但是题目要求是根据给定数组推算利润，所以这是可行的。<h3 id="代码实现（Java）"><a href="#代码实现（Java）" class="headerlink" title="代码实现（Java）"></a>代码实现（Java）</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> : flower48237</span></span><br><span class="line"><span class="comment"> * @2020/3/16 17:23</span></span><br><span class="line"><span class="comment"> * title : LeetCode精选TOP面试题122.买卖股票的最佳时机II</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="keyword">int</span>[] prices)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (prices.length == <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="comment">// 判断数组是否为空</span></span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> interest = <span class="number">0</span>; <span class="comment">// 利润初始化为0</span></span><br><span class="line">        <span class="comment">// 法1</span></span><br><span class="line">        <span class="keyword">int</span> in = prices[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; prices.length; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (prices[i] &gt; in)&#123;</span><br><span class="line">            <span class="comment">// 那么直接卖出，利润累加</span></span><br><span class="line">                interest += prices[i] - in;</span><br><span class="line">                <span class="comment">// 更新入手价in</span></span><br><span class="line">                in = prices[i];</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span> (prices[i] &lt; in)&#123;</span><br><span class="line">            <span class="comment">// 更新入手价in</span></span><br><span class="line">                in = prices[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 法 2</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; prices.length; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (prices[i] &gt; prices[i - <span class="number">1</span>])&#123;</span><br><span class="line">            <span class="comment">// 只计算上升曲线，差价累加</span></span><br><span class="line">            <span class="comment">// 很容易考虑如果在曲线图内，连续的差值实际上就等于</span></span><br><span class="line">            <span class="comment">// 波峰-波谷 = 极高价卖出 - 极低价买入</span></span><br><span class="line">                interest += prices[i] - prices[i - <span class="number">1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> interest;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>其实就是贪心算法的思路</p></blockquote></li></ul>]]></content>
-    
-    
-    <summary type="html">&lt;h3 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h3&gt;&lt;p&gt;给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。&lt;br&gt;设计一个算法来计算你所能获取的最大利润。你可以尽可能地完成更多的交易（多次买卖一支股票）。&lt;br&gt;不能同时参与多笔交易（必须在再次购买前出售掉之前的股票）。&lt;/p&gt;</summary>
     
     
     
