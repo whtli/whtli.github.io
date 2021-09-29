@@ -6,17 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://flower48237.com">
-  <title>Tag: BFS | 鸡排大仙儿的个人博客</title>
+  <title>《The Book of Why》 — Chapter8 | 鸡排大仙儿的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="鸡排大仙儿的个人博客，Java、Causality&#x2F;因果推断、学习、博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="鸡排大仙儿的个人博客">
-<meta property="og:url" content="https://flower48237.com/tags/BFS/index.html">
+  <meta name="description" content="第八章 反事实：探索关于假如的世界 CHAPTER 8 — Counterfactuals: Mining Worlds That  Could Have Been">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《The Book of Why》 — Chapter8">
+<meta property="og:url" content="https://flower48237.com/2021/09/29/The%20Book%20of%20Why%20-%20Chapter%20(8)/index.html">
 <meta property="og:site_name" content="鸡排大仙儿的个人博客">
-<meta property="og:description" content="鸡排大仙儿的个人博客，Java、Causality&#x2F;因果推断、学习、博客">
+<meta property="og:description" content="第八章 反事实：探索关于假如的世界 CHAPTER 8 — Counterfactuals: Mining Worlds That  Could Have Been">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-09-29T07:20:00.000Z">
+<meta property="article:modified_time" content="2021-09-29T07:19:55.129Z">
 <meta property="article:author" content="鸡排大仙儿">
-<meta property="article:tag" content="Java、Causality&#x2F;因果推断、学习、博客">
+<meta property="article:tag" content="Causality">
+<meta property="article:tag" content="因果推断">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="鸡排大仙儿的个人博客" type="application/atom+xml">
@@ -162,156 +165,269 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-The Book of Why - Chapter (8)" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/15/%E3%80%90%E5%89%91%E6%8C%87offer%E3%80%91%E9%9D%A2%E8%AF%95%E9%A2%9832-%E4%BB%8E%E4%B8%8A%E5%88%B0%E4%B8%8B%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91/" class="archive-article-date">
-  	<time datetime="2020-02-15T12:05:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-15</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/15/%E3%80%90%E5%89%91%E6%8C%87offer%E3%80%91%E9%9D%A2%E8%AF%95%E9%A2%9832-%E4%BB%8E%E4%B8%8A%E5%88%B0%E4%B8%8B%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91/">【剑指offer】面试题32-从上到下打印二叉树</a>
+    <h1 class="article-title" itemprop="name">
+      《The Book of Why》 — Chapter8
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2021/09/29/The%20Book%20of%20Why%20-%20Chapter%20(8)/" class="archive-article-date">
+  	<time datetime="2021-09-29T07:20:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-29</time>
+</a>
+        
+        
+        <span class="archive-article-date">
+            阅读量 <span id="busuanzi_value_page_pv"></span>
+        </span>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="第八章-反事实：探索关于假如的世界"><a href="#第八章-反事实：探索关于假如的世界" class="headerlink" title="第八章 反事实：探索关于假如的世界"></a>第八章 反事实：探索关于假如的世界</h3><blockquote>
+<p>CHAPTER 8 — Counterfactuals: Mining Worlds That  Could Have Been</p>
+</blockquote>
+<a id="more"></a>
+
+<ul>
+<li>我们已经见识了几种方法，可以用于在各种情景设定和条件下确定干预的效果。在第四章我们讨论了随机对照试验，他被誉为医学临床试验的黄金标准，我们还看到了一些适用于观察性研究的方法，其中处理组和对照组的成员不是随机分配的。对此，如果我们可以采集到能够阻断所有后门路径的变量集的数据，我们就可以使用后门调整公式来估算出干预效果。如果能找到一个被混杂因子“屏蔽”的前门路径，我们就可以引入前门调整。如果我们愿意接受线性或者单调性假设，那么我们就可以使用工具变量（假设该变量可以从因果图中找到，或研究者可以根据试验设计提出一个合适的变量）。此外，那些真正富有冒险精神的研究者还可以使用do演算或者其衍生算法，绘制出一条通往干预之峰的新路线。（235）</li>
+<li>随机对照试验、后门调整公式、前门调整公式、工具变量、do演算等努力目标都是找到研究中处理的某个总效应或者在某些典型个体或子总体中的效应（平均因果效应）。（235）</li>
+<li>责任和过失、遗憾和信誉——这些概念都可以被纳入因果思维之中。（235）</li>
+<li>人类具有想象不存在的世界的能力，我们的天赋是能看到“假如……则本可能是什么”。（236）</li>
+<li>因果关系的理论框架——休厄尔·赖特的路径图及其衍生产物结构因果模型（SCMs）。（236）</li>
+<li>三种不同的因果关系：必要因果关系、充分因果关系、充要因果关系。（237）</li>
+</ul>
+<h4 id="从修昔底德和亚伯拉罕到休谟和刘易斯"><a href="#从修昔底德和亚伯拉罕到休谟和刘易斯" class="headerlink" title="从修昔底德和亚伯拉罕到休谟和刘易斯"></a>从修昔底德和亚伯拉罕到休谟和刘易斯</h4><ul>
+<li>剂量—阈值曲线 或 “阈值效应”（239）</li>
+</ul>
+<h4 id="潜在结果、结构方程和反事实的算法化"><a href="#潜在结果、结构方程和反事实的算法化" class="headerlink" title="潜在结果、结构方程和反事实的算法化"></a>潜在结果、结构方程和反事实的算法化</h4><ul>
+<li><p>唐纳德·鲁宾将潜在结果作为一种回答因果问题的语言加以介绍，这一理论成果为研究人员提供乐了一种高度灵活的语言，使其可以在总体和个体层面上表述出几乎所有他们想问的问题。（245）</p>
+</li>
+<li><p>假设X的值为x，则变量Y一定会取某个与之对应的值Y<del>X=x</del>(u)也可写为Y<del>x</del>，其客观存在性与Y在现实中实际取的值相当。潜在结果，或反事实，是在个体层面而非总体层面上定义的。（245）</p>
+</li>
+<li><p>将因果推断问题看作是数据缺失问题，可能会造成非常严重的误导。（248）</p>
+</li>
+<li><p>匹配、线性回归等插值方法在本质上是有缺陷的，它们是数据驱动的，不是模型驱动的。没有哪种纯粹基于数据的方法（第一层级）可以回答反事实的问题（第三层级）。即使是标准的数据缺失问题也需要借助因果建模来解决。（249-250）</p>
+</li>
+<li><p>将中介物误认作混杂因子是因果推断中最知名的错误之一，混淆因子要求统计调整，而中介物禁止统计调整。（251）</p>
+</li>
+<li><p>方程的创建者必须承诺他所写的方程真实反映了他所认定的现实世界中谁听从于谁的观点。这种承诺或信念上的差异赋予了结构方程支持反事实假设的力量和否定回归方程的力量。（252）</p>
+</li>
+<li><p>从结构模型中推导反事实的三个步骤（253）：</p>
+<ul>
+<li>（1）外展：估计特质因子（外生变量）</li>
+<li>（2）干预：利用do算子改变模型，以反映反事实假设</li>
+<li>（3）预测：利用修改后的模型及有关外生变量的更新信息来估算结果。</li>
+</ul>
+</li>
+<li><p>上述三个步骤中，步骤2告诉我们要用do算子删除指向被赋予了反事实值的变量的箭头，那些可能通过干预变量影响结果的变量，在相应的箭头被删除后就不再被允许以这种方式传递信息了。（253）</p>
+</li>
+<li><p>以上三个步骤被概况为<strong>“因果推断第一定律”：Y<del>x</del></strong>(u) = Y<del>Mx</del>(u)。</p>
+<p>潜在结果Y<del>x</del>(u)可以通过下述方法来推断：构建模型M<del>x</del>（确保删除所有指向X的箭头），并计算结果Y(u)。因果关系之梯的第二层级和第三层级中的所有可估量都由此产生。简言之，将反事实简化为一个算法使我们得以在数学所允许的范围内征服第三层级的一大片版图。（254）</p>
+</li>
+<li><p>有效估计：若模型假设是有效的，潜在的结果与估计值会重合。（254）</p>
+</li>
+<li><p>借助结构方程得到的任何反事实（潜在）结果，都合乎逻辑地遵循了模型所体现地假设，而根据数据驱动方法所获得地答案就像伪相关一样反复无常，因为它无法被用来解释重要的建模假设。（254）</p>
+</li>
+<li><p>利用模型和数据结合，可以成功预测个体在某个假设条件下（在反事实的世界中）的表现。但前提是我们做出了强有力的假设，除了断定观察到的变量之间的因果关系，还假设了函数关系是线性的。（—爱丽丝的例子）但<strong>事实上我们并不总能获得这些函数的信息</strong>。（254）</p>
+</li>
+</ul>
+<h4 id="看到你的假设的好处"><a href="#看到你的假设的好处" class="headerlink" title="看到你的假设的好处"></a>看到你的假设的好处</h4><ul>
+<li>珀尔为计算反事实所展示的结构因果模型方法与鲁宾所使用的潜在因果方法不同，一个主要区别就是前者使用了因果图，因果图允许研究者用他们自己能理解的方式表示因果假设，并把所有的反事实作为其世界模型的一种衍生属性。（255）</li>
+<li>如何利用因果图来判断（条件的）可忽略性，以一组匹配变量Z为条件，要确定对于结果Y来说是否可忽略，只需要测试Z是否阻断了X和Y之间的所有后门路径，同时Z的成员都不是X的后代即可。（257）</li>
+<li>我们可以很容易地测试出以因果图为基础建立的模型与数据的兼容性。（258）</li>
+<li>可测试性：无论何时，只要图中X和Y之间的所有路径都被一组节点Z阻断，那么在以Z为条件的前提下，数据中的X和Y就应该是条件独立的。这就是d-separation。这个属性允许我们在数据未能显示出相应的独立性时否定并放弃模型。（258）</li>
+<li>响应函数是赋予结构因果模型处理反事实的能力的关键因素。同时又是结构因果模型和因果贝叶斯模型的一个主要区别点。（258）</li>
+<li>结构因果模型与概率贝叶斯网络、因果贝叶斯网络的不同之处在于，SCM没有条件概率表，指向Y的箭头只简单地表示Y是其父变量和外生变量U<del>Y</del>的一个函数：Y = f<del>Y</del>(X,A,B,C,…,U<del>Y</del>)。（258）</li>
+<li>结构方程模型SEM和结构因果模型SCM的一个重要区别是，SCM中的因果关系不一定是线性的。SCM分析所用到的方法对非线性函数、线性函数和离散变量、连续变量同样有效。（260）</li>
+</ul>
+<h4 id="反事实与法律"><a href="#反事实与法律" class="headerlink" title="反事实与法律"></a>反事实与法律</h4><ul>
+<li>PN（probability of necessity）必要性概率</li>
+<li>PS（probability of sufficiency）充分性概率</li>
+<li>必要性概率涉及两个不同世界之间的对比，X=1的现实世界和X=0的反事实世界。是否有事后判断（知道现实世界中发生了什么事）是反事实和干预之间的关键区别。没有事后判断，P(Y<del>X=0</del>=0)和P(Y=0|do(X=0))之间就没有区别。（262）</li>
+</ul>
+<h4 id="必要因、充分因和气候变化"><a href="#必要因、充分因和气候变化" class="headerlink" title="必要因、充分因和气候变化"></a>必要因、充分因和气候变化</h4><ul>
+<li>选择线性模型通常是出于方便，而不是出于什么可靠的理由。（270）</li>
+</ul>
+<h4 id="反事实的世界"><a href="#反事实的世界" class="headerlink" title="反事实的世界"></a>反事实的世界</h4><ul>
+<li><p>将反事实纳入考虑后，因果推断引擎提出的因果问题的多样性和丰富性就会大大加强。（270）</p>
+</li>
+<li><p>现在反事实方法最受欢迎的一种应用形式就是“中介分析”。（271）</p>
+</li>
+<li><p>中介物或者中间变量指的是将处理效应传递给结果的事物。</p>
+<p>人们感兴趣的主要问题是，中介变量是否解释了处理变量的全部影响，或者处理变量的部分效果是否可以不通过中介变量传递给结果。（271）</p>
+</li>
+<li><p>中介分析的目的是将直接效应（未通过中介物介导）从间接效应（通过中介物介导）中解析出来。（271）</p>
+</li>
+<li><p>直接效应和间接效应都涉及反事实陈述。（271）</p>
+</li>
+</ul>
+<blockquote>
+<p>《THE BOOK OF WHY: THE NEW SCIENCE OF CAUSE AND EFFECT》</p>
+<p>——JUDEA PEARL AND DANA MACKENZIE</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Causality</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">二叉树</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">遍历</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">BFS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">因果推断</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/剑指offer//" class="article-tag-list-link color3">剑指offer</a>
+        			<a href="/categories/Causality//" class="article-tag-list-link color5">Causality</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://flower48237.com/2021/09/29/The%20Book%20of%20Why%20-%20Chapter%20(8)/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/13/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98104.%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6/" class="archive-article-date">
-  	<time datetime="2020-02-13T14:12:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-13</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2021/09/29/The%20Book%20of%20Why%20-%20Chapter%20(7)/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          《The Book of Why》 — Chapter7
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/09/28/The%20Book%20of%20Why%20-%20Chapter%20(6)/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">《The Book of Why》 — Chapter6</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/13/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98104.%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6/">LeetCode精选TOP面试题104.二叉树的最大深度</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">二叉树</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">遍历</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">DFS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">BFS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/LeetCode//" class="article-tag-list-link color4">LeetCode</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#第八章-反事实：探索关于假如的世界"><span class="toc-number">1.</span> <span class="toc-text">第八章 反事实：探索关于假如的世界</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#从修昔底德和亚伯拉罕到休谟和刘易斯"><span class="toc-number">1.1.</span> <span class="toc-text">从修昔底德和亚伯拉罕到休谟和刘易斯</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#潜在结果、结构方程和反事实的算法化"><span class="toc-number">1.2.</span> <span class="toc-text">潜在结果、结构方程和反事实的算法化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#看到你的假设的好处"><span class="toc-number">1.3.</span> <span class="toc-text">看到你的假设的好处</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#反事实与法律"><span class="toc-number">1.4.</span> <span class="toc-text">反事实与法律</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#必要因、充分因和气候变化"><span class="toc-number">1.5.</span> <span class="toc-text">必要因、充分因和气候变化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#反事实的世界"><span class="toc-number">1.6.</span> <span class="toc-text">反事实的世界</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -341,9 +457,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
