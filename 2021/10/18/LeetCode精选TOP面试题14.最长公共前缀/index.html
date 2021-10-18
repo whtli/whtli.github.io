@@ -16,7 +16,7 @@
 <meta property="og:description" content="题目描述编写一个函数来查找字符串数组中的最长公共前缀。如果不存在公共前缀，返回空字符串 “”。 12345exampleinput  : str1 &#x3D; &amp;#123;&quot;flower&quot;,&quot;flow&quot;,&quot;flight&quot;&amp;#125;output : &quot;fl&quot;input  : str2 &#x3D; &amp;#123;&quot;dog&quot;,&quot;race&quot;,&quot;car&quot;&amp;#125;output : &quot;&quot;">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-10-18T13:59:36.286Z">
-<meta property="article:modified_time" content="2021-10-18T13:58:29.157Z">
+<meta property="article:modified_time" content="2021-10-18T14:05:22.705Z">
 <meta property="article:author" content="鸡排大仙儿">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="LeetCode">
@@ -206,7 +206,7 @@
 <ul>
 <li><p>分治策略</p>
 </li>
-<li><p>LCP的计算满足结合律</p>
+<li><p>最长公共前缀（LCP）的计算满足结合律</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LCP(S1,……,Sn) = LCP(LCP(S1,……,Sk),LCP(Sk+1,……,Sn))</span><br></pre></td></tr></table></figure></li>
 <li><p>时间复杂度：O(mn)，m是数组中的字符串的平均长度，n是字符串数量。<br>递推公式：T(n) = 2 × T(n/2)+O(m) =&gt; T(n)=O(mn)</p>
 </li>
