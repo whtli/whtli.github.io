@@ -6,23 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://flower48237.com">
-  <title>LeetCode精选TOP面试题13.罗马数字转整数 | 鸡排大仙儿的个人博客</title>
+  <title>LeetCode精选TOP面试题53.最大子序和 | 鸡排大仙儿的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="题目描述罗马数字包含以下七种字符: I， V， X， L，C，D 和 M。 12345678字符          数值I             1V             5X             10L             50C             100D             500M             1000 例如， 罗马数字 2 写做 II ，即为两个并列的">
+  <meta name="description" content="题目描述给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。 1234example:input : -2,1,-3,4,-1,2,1,-5,4output: 6note  : 连续子数组 [4,-1,2,1] 的和最大，为 6">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode精选TOP面试题13.罗马数字转整数">
-<meta property="og:url" content="https://flower48237.com/2020/03/05/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%9813.%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97%E8%BD%AC%E6%95%B4%E6%95%B0/index.html">
+<meta property="og:title" content="LeetCode精选TOP面试题53.最大子序和">
+<meta property="og:url" content="https://flower48237.com/2020/05/24/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98053.%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%92%8C/index.html">
 <meta property="og:site_name" content="鸡排大仙儿的个人博客">
-<meta property="og:description" content="题目描述罗马数字包含以下七种字符: I， V， X， L，C，D 和 M。 12345678字符          数值I             1V             5X             10L             50C             100D             500M             1000 例如， 罗马数字 2 写做 II ，即为两个并列的">
+<meta property="og:description" content="题目描述给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。 1234example:input : -2,1,-3,4,-1,2,1,-5,4output: 6note  : 连续子数组 [4,-1,2,1] 的和最大，为 6">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-03-05T08:56:56.000Z">
-<meta property="article:modified_time" content="2020-03-05T08:59:38.000Z">
+<meta property="article:published_time" content="2020-05-24T10:02:00.000Z">
+<meta property="article:modified_time" content="2020-07-06T10:57:25.949Z">
 <meta property="article:author" content="鸡排大仙儿">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="LeetCode">
 <meta property="article:tag" content="面试">
-<meta property="article:tag" content="数值计算">
-<meta property="article:tag" content="字符串">
+<meta property="article:tag" content="动态规划">
+<meta property="article:tag" content="贪心算法">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="鸡排大仙儿的个人博客" type="application/atom+xml">
@@ -73,7 +73,7 @@
 			</ul>
 		</nav>
 		<nav>
-			总文章数 74
+			总文章数 75
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -168,20 +168,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-LeetCode精选TOP面试题13.罗马数字转整数" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-LeetCode精选TOP面试题053.最大子序和" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      LeetCode精选TOP面试题13.罗马数字转整数
+      LeetCode精选TOP面试题53.最大子序和
     </h1>
   
 
         
-        <a href="/2020/03/05/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%9813.%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97%E8%BD%AC%E6%95%B4%E6%95%B0/" class="archive-article-date">
-  	<time datetime="2020-03-05T08:56:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-05</time>
+        <a href="/2020/05/24/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98053.%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%92%8C/" class="archive-article-date">
+  	<time datetime="2020-05-24T10:02:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-24</time>
 </a>
         
         
@@ -193,29 +193,27 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>罗马数字包含以下七种字符: I， V， X， L，C，D 和 M。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">字符          数值</span><br><span class="line">I             <span class="number">1</span></span><br><span class="line">V             <span class="number">5</span></span><br><span class="line">X             <span class="number">10</span></span><br><span class="line">L             <span class="number">50</span></span><br><span class="line">C             <span class="number">100</span></span><br><span class="line">D             <span class="number">500</span></span><br><span class="line">M             <span class="number">1000</span></span><br></pre></td></tr></table></figure>
-<p>例如， 罗马数字 2 写做 II ，即为两个并列的 1。12 写做 XII ，即为 X + II 。 27 写做  XXVII, 即为 XX + V + II 。<br>通常情况下，罗马数字中小的数字在大的数字的右边。但也存在特例。</p>
+        <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">example:</span><br><span class="line">input : -2,1,-3,4,-1,2,1,-5,4</span><br><span class="line">output: 6</span><br><span class="line">note  : 连续子数组 [4,-1,2,1] 的和最大，为 6</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<p>例如 4 不写做 IIII，而是 IV。数字 1 在数字 5 的左边，所表示的数等于大数 5 减小数 1 得到的数值 4 。同样地，数字 9 表示为 IX。这个特殊的规则只适用于以下六种情况：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">I 可以放在 V (<span class="number">5</span>) 和 X (<span class="number">10</span>) 的左边，来表示 <span class="number">4</span> 和 <span class="number">9</span>。</span><br><span class="line">X 可以放在 L (<span class="number">50</span>) 和 C (<span class="number">100</span>) 的左边，来表示 <span class="number">40</span> 和 <span class="number">90</span>。 </span><br><span class="line">C 可以放在 D (<span class="number">500</span>) 和 M (<span class="number">1000</span>) 的左边，来表示 <span class="number">400</span> 和 <span class="number">900</span>。</span><br><span class="line">给定一个罗马数字，将其转换成整数。输入确保在 <span class="number">1</span> 到 <span class="number">3999</span> 的范围内。</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">示例 1:</span><br><span class="line">输入: <span class="string">"III"</span></span><br><span class="line">输出: 3</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">示例 2:</span><br><span class="line">输入: <span class="string">"IV"</span></span><br><span class="line">输出: 4</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">示例 3:</span><br><span class="line">输入: <span class="string">"IX"</span></span><br><span class="line">输出: 9</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">示例 4:</span><br><span class="line">输入: <span class="string">"LVIII"</span></span><br><span class="line">输出: 58</span><br><span class="line">解释: L = 50, V= 5, III = 3.</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">示例 5:</span><br><span class="line">输入: <span class="string">"MCMXCIV"</span></span><br><span class="line">输出: 1994</span><br><span class="line">解释: M = 1000, CM = 900, XC = 90, IV = 4.</span><br></pre></td></tr></table></figure>
-
-<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>1.遍历字符串，把当前遍历得到的元素curnum和它的前一个元素prenum进行比较；<br>2.如果prenum  &lt; curnum，那么令累加和sum减去prenum的值；<br>3.如果prenum  &gt; curnum，那么令累加和sum加上prenum的值；<br>4.每次遍历的 <strong>加/减</strong> 运算之后，更新prenum为当前元素值curnum；<br>5.当遍历结束之后，累加和sum需要加上最后一个字符代表的罗马数字的值，因为这个值没有被处理。</p>
-<h3 id="代码（Java）"><a href="#代码（Java）" class="headerlink" title="代码（Java）"></a>代码（Java）</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> : flower48237</span></span><br><span class="line"><span class="comment"> * @2020/3/4 19:15</span></span><br><span class="line"><span class="comment"> * explanation: LeetCode精选TOP面试题13.罗马数字转整数</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">romanToInt</span><span class="params">(String s)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> prenum = getVal(s.charAt(<span class="number">0</span>));	<span class="comment">// 前一个元素，初始化为首元素</span></span><br><span class="line">        <span class="keyword">int</span> curnum = <span class="number">0</span>;						<span class="comment">// 当前元素，初始化为0</span></span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;						<span class="comment">// 累加和，初始化为0</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; s.length(); i ++)&#123;	<span class="comment">// 从 下标 1 开始遍历</span></span><br><span class="line">            curnum = getVal(s.charAt(i));	<span class="comment">// 获取字符对应的数字值</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (prenum &lt; curnum)&#123;</span><br><span class="line">            	<span class="comment">// 如果prenum&lt;curnum，那么令累加和sum减去prenum的值</span></span><br><span class="line">                sum = sum - prenum;</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;		</span><br><span class="line">            	<span class="comment">// 如果prenum  &gt; curnum，那么令累加和sum加上prenum的值</span></span><br><span class="line">                sum = sum + prenum;</span><br><span class="line">            &#125;</span><br><span class="line">			<span class="comment">// 每次遍历的 加/减 运算之后，更新prenum为当前元素值curnum</span></span><br><span class="line">            prenum = curnum;</span><br><span class="line">        &#125;</span><br><span class="line">		<span class="comment">//遍历结束之后，累加和sum需要加上最后一个字符代表的罗马数字的值，因为这个值没有被处理</span></span><br><span class="line">        sum += prenum;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// getVal函数获取字符对应的整数值，用switch来做，比if else判断要快。</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getVal</span><span class="params">(<span class="keyword">char</span> ch)</span></span>&#123;</span><br><span class="line">        <span class="keyword">switch</span>(ch) &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'I'</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'V'</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="number">5</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'X'</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="number">10</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'L'</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="number">50</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'C'</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="number">100</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'D'</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="number">500</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'M'</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="number">1000</span>;</span><br><span class="line">            <span class="keyword">default</span>: <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>个人感觉这个问题，只要理解了，当前元素比它的前一个元素小，和就加，当前元素比它的前一个元素大，和就减，把这个事情想清楚就好解决了，比较不容易理解的地方在最后一个字符对应值的处理方式，最后一个字符前面的元素，比他大，那么直接加上值，比他小，那么实际上在循环的最后一步已经从和里减去了，这个题的思路是提前一步解决和差问题。</p>
-</blockquote>
-
+<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p><strong>思路1</strong></p>
+<p>动态规划 – 时间复杂度O(N), 空间复杂度O(1)</p>
+<ul>
+<li>（1）从下标1开始遍历数组，当前元素item的前一个元素pre若大于0，则item更新为item+pre，否则继续遍历。</li>
+<li>（2）在遍历过程中比使用Math.max(max, item)函数对比当前最大值和item值的大小以确定最终的最大和。</li>
+</ul>
+<p><strong>思路2</strong></p>
+<p>贪心算法 – 时间复杂度O(N), 空间复杂度O(1)</p>
+<ul>
+<li>若当前元素之前的元素序列之和小于0，则舍弃这个“和”</li>
+<li>定义temp用于比较“当前元素”与“当前元素之前的元素序列之和”谁更大</li>
+</ul>
+<p><strong>思路3</strong></p>
+<p>分治法 – 时间复杂度O(N), 空间复杂度O(logN)<br>这个思路是查看官方题解才了解的，并不是最优的算法，最优算法依然是动态规划，但是并没有理解透彻，所以就不在这里做不准确的解释了。详细内容请到<a href="https://leetcode-cn.com/problems/maximum-subarray/solution/zui-da-zi-xu-he-by-leetcode-solution/" target="_blank" rel="noopener">Leetcode官方题解</a>中学习。</p>
+<h3 id="代码（Java）"><a href="#代码（Java）" class="headerlink" title="代码（Java）"></a>代码（Java）</h3><p><strong>思路1代码</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution2</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxSubArray</span><span class="params">(<span class="keyword">int</span>[] nums)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> max = nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; nums.length; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[i-<span class="number">1</span>] &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                nums[i] += nums[i-<span class="number">1</span>];       <span class="comment">// 当前元素item[i]的前驱元素item[i-1]&gt;0,更新当前元素的值</span></span><br><span class="line">            &#125;</span><br><span class="line">            max = Math.max(nums[i], max);   <span class="comment">// 确定目前为止的最大值</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>思路2代码</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxSubArray</span><span class="params">(<span class="keyword">int</span>[] nums)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> temp = nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">int</span> max = nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; nums.length; i++)&#123;</span><br><span class="line">            temp = Math.max(nums[i], temp + nums[i]); <span class="comment">// 等价于比较“当前元素”与“当前元素之前的元素序列之和”谁更大</span></span><br><span class="line">                                                      <span class="comment">// temp = Math.max(0, temp);</span></span><br><span class="line">            max = Math.max(temp, max);                <span class="comment">// 确定临时最大值</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -240,11 +238,11 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数值计算</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">动态规划</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">字符串</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">贪心算法</a>
         		</li>
       		
 		</ul>
@@ -311,7 +309,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://flower48237.com/2020/03/05/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%9813.%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97%E8%BD%AC%E6%95%B4%E6%95%B0/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://flower48237.com/2020/05/24/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98053.%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%92%8C/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -325,18 +323,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/03/08/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98283.%E7%A7%BB%E5%8A%A8%E9%9B%B6/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/05/25/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98026.%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          LeetCode精选TOP面试题283. 移动零
+          LeetCode精选TOP面试题26.删除排序数组中的重复项
         
       </div>
     </a>
   
   
-    <a href="/2020/03/04/%E7%AC%94%E8%AF%95%E9%A2%984-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%BA%8F%E5%88%97%E7%9A%84%E8%BD%AC%E6%8D%A2/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">笔试题4-字符串序列的转换</div>
+    <a href="/2020/03/27/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98038.%E5%A4%96%E8%A7%82%E6%95%B0%E5%88%97/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">LeetCode精选TOP面试题38.外观数列</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -660,6 +658,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">哈希表</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">二分查找</a>
               </li>
             
             <div class="clearfix"></div>

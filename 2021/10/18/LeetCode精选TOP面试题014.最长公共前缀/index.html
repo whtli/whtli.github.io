@@ -6,23 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://flower48237.com">
-  <title>LeetCode精选TOP面试题26.删除排序数组中的重复项 | 鸡排大仙儿的个人博客</title>
+  <title>LeetCode精选面试题14.最长公共前缀 | 鸡排大仙儿的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="题目描述给定一个排序数组，你需要在 原地 删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。不要使用额外的数组空间，你必须在 原地 修改输入数组 并在使用 O(1) 额外空间的条件下完成。 1234example1:input  : [1,1,2] output : [1,2]note   : 函数应该返回新的长度 2, 并且原数组 nums 的前两个元素被修改为 1, 2。 1">
+  <meta name="description" content="题目描述编写一个函数来查找字符串数组中的最长公共前缀。如果不存在公共前缀，返回空字符串 “”。 12345exampleinput  : str1 &#x3D; &amp;#123;&quot;flower&quot;,&quot;flow&quot;,&quot;flight&quot;&amp;#125;output : &quot;fl&quot;input  : str2 &#x3D; &amp;#123;&quot;dog&quot;,&quot;race&quot;,&quot;car&quot;&amp;#125;output : &quot;&quot;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode精选TOP面试题26.删除排序数组中的重复项">
-<meta property="og:url" content="https://flower48237.com/2020/05/25/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%9826.%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9/index.html">
+<meta property="og:title" content="LeetCode精选面试题14.最长公共前缀">
+<meta property="og:url" content="https://flower48237.com/2021/10/18/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98014.%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%89%8D%E7%BC%80/index.html">
 <meta property="og:site_name" content="鸡排大仙儿的个人博客">
-<meta property="og:description" content="题目描述给定一个排序数组，你需要在 原地 删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。不要使用额外的数组空间，你必须在 原地 修改输入数组 并在使用 O(1) 额外空间的条件下完成。 1234example1:input  : [1,1,2] output : [1,2]note   : 函数应该返回新的长度 2, 并且原数组 nums 的前两个元素被修改为 1, 2。 1">
+<meta property="og:description" content="题目描述编写一个函数来查找字符串数组中的最长公共前缀。如果不存在公共前缀，返回空字符串 “”。 12345exampleinput  : str1 &#x3D; &amp;#123;&quot;flower&quot;,&quot;flow&quot;,&quot;flight&quot;&amp;#125;output : &quot;fl&quot;input  : str2 &#x3D; &amp;#123;&quot;dog&quot;,&quot;race&quot;,&quot;car&quot;&amp;#125;output : &quot;&quot;">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-05-25T11:41:00.000Z">
-<meta property="article:modified_time" content="2020-07-06T10:57:15.120Z">
+<meta property="article:published_time" content="2021-10-18T13:59:36.286Z">
+<meta property="article:modified_time" content="2021-10-18T14:05:22.705Z">
 <meta property="article:author" content="鸡排大仙儿">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="LeetCode">
 <meta property="article:tag" content="面试">
-<meta property="article:tag" content="遍历">
-<meta property="article:tag" content="数组">
+<meta property="article:tag" content="字符串">
+<meta property="article:tag" content="分治">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="鸡排大仙儿的个人博客" type="application/atom+xml">
@@ -73,7 +73,7 @@
 			</ul>
 		</nav>
 		<nav>
-			总文章数 74
+			总文章数 75
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -168,20 +168,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-LeetCode精选TOP面试题26.删除排序数组中的重复项" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-LeetCode精选TOP面试题014.最长公共前缀" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      LeetCode精选TOP面试题26.删除排序数组中的重复项
+      LeetCode精选面试题14.最长公共前缀
     </h1>
   
 
         
-        <a href="/2020/05/25/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%9826.%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9/" class="archive-article-date">
-  	<time datetime="2020-05-25T11:41:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-25</time>
+        <a href="/2021/10/18/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98014.%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%89%8D%E7%BC%80/" class="archive-article-date">
+  	<time datetime="2021-10-18T13:59:36.286Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-10-18</time>
 </a>
         
         
@@ -193,13 +193,32 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>给定一个排序数组，你需要在 原地 删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。<br>不要使用额外的数组空间，你必须在 原地 修改输入数组 并在使用 O(1) 额外空间的条件下完成。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">example1:</span><br><span class="line">input  : [1,1,2] </span><br><span class="line">output : [1,2]</span><br><span class="line">note   : 函数应该返回新的长度 2, 并且原数组 nums 的前两个元素被修改为 1, 2。</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">example2:</span><br><span class="line">input  : [0,0,1,1,1,2,2,3,3,4]</span><br><span class="line">output : [0,1,2,3,4]</span><br><span class="line">note   : 函数应该返回新的长度 5, 并且原数组 nums 的前五个元素被修改为 0, 1, 2, 3, 4。</span><br></pre></td></tr></table></figure>
+        <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>编写一个函数来查找字符串数组中的最长公共前缀。如果不存在公共前缀，返回空字符串 “”。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">example</span><br><span class="line">input  : str1 = &#123;<span class="string">"flower"</span>,<span class="string">"flow"</span>,<span class="string">"flight"</span>&#125;</span><br><span class="line">output : <span class="string">"fl"</span></span><br><span class="line">input  : str2 = &#123;<span class="string">"dog"</span>,<span class="string">"race"</span>,<span class="string">"car"</span>&#125;</span><br><span class="line">output : <span class="string">""</span></span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p><strong>思路</strong><br>双指针遍历，一个指针i用于遍历数组，另一个指针len用于修改数组。<br>当前元素的值num[i]与其前一个元素的值num[i-1]不相等的时候，num[len]的值更新为num[i]，以此实现对数组的修改。</p>
-<h3 id="代码（Java）"><a href="#代码（Java）" class="headerlink" title="代码（Java）"></a>代码（Java）</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">removeDuplicates</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; nums.length; i++)&#123; <span class="comment">// 下标从1开始是为了访问i-1时防止出现溢出。</span></span><br><span class="line">            <span class="keyword">if</span> (nums[i] != nums[i-<span class="number">1</span>])&#123;</span><br><span class="line">                nums[len ++] = nums[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> len;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p><strong>思路1</strong></p>
+<ul>
+<li>纵向扫描，直接遍历对比。从前向后遍历所有字符串的每一列，比较相同列上的字符是否相同。<br>如果相同则继续对下一列进行比较，如果不相同则当前列不再属于公共前缀，当前列之前的部分就是最长公共前缀。<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1   2   3   4   5   6</span><br><span class="line">---------------------</span><br><span class="line">f   l   o   w   e   r</span><br><span class="line"></span><br><span class="line">f   l   o   w</span><br><span class="line"></span><br><span class="line">f   l   i   g   h   t</span><br></pre></td></tr></table></figure></li>
+<li>时间复杂度：O(mn)，m是数组中的字符串的平均长度，n是字符串数量。最坏情况下数组中每个字符串的每个字符都会被比较一次。</li>
+<li>空间复杂度：O(1)。使用的额外空间复杂度为常数。</li>
+</ul>
+<p><strong>思路2</strong></p>
+<ul>
+<li><p>分治策略</p>
+</li>
+<li><p>最长公共前缀（LCP）的计算满足结合律</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LCP(S1,……,Sn) = LCP(LCP(S1,……,Sk),LCP(Sk+1,……,Sn))</span><br></pre></td></tr></table></figure></li>
+<li><p>时间复杂度：O(mn)，m是数组中的字符串的平均长度，n是字符串数量。<br>递推公式：T(n) = 2 × T(n/2)+O(m) =&gt; T(n)=O(mn)</p>
+</li>
+<li><p>空间复杂度：O(m × log n)，其中m是字符串数组中的字符串的平均长度，n是字符串的数量。<br>空间复杂度主要取决于递归调用的层数，层数最大为log n，每层需要m的空间存储返回结果。</p>
+<h3 id="代码（Java）"><a href="#代码（Java）" class="headerlink" title="代码（Java）"></a>代码（Java）</h3></li>
+</ul>
+<p><strong>思路1代码</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution1</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">longestCommonPrefix</span><span class="params">(String[] strs)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (strs == <span class="keyword">null</span> || strs.length == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// solution1</span></span><br><span class="line">        <span class="keyword">int</span> length = strs[<span class="number">0</span>].length();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; length; k ++)&#123;</span><br><span class="line">            <span class="keyword">char</span> ch = strs[<span class="number">0</span>].charAt(k);</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; strs.length; i++) &#123;</span><br><span class="line">                <span class="keyword">if</span>(k == strs[i].length() || strs[i].charAt(k) != ch)&#123;</span><br><span class="line">                    <span class="keyword">return</span> strs[<span class="number">0</span>].substring(<span class="number">0</span>, k);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> strs[<span class="number">0</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>思路2代码</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution2</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">longestCommonPrefix</span><span class="params">(String[] strs)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (strs == <span class="keyword">null</span> || strs.length == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * solution2 divide and conquer</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> divideAndConquer(strs, <span class="number">0</span>, strs.length - <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> String <span class="title">divideAndConquer</span><span class="params">(String[] strings, <span class="keyword">int</span> start, <span class="keyword">int</span> end)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (start == end) &#123;</span><br><span class="line">            <span class="keyword">return</span> strings[start];</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 防止加法溢出</span></span><br><span class="line">            <span class="keyword">int</span> middle = (end - start) / <span class="number">2</span> + start;</span><br><span class="line">            String lcpLeft = divideAndConquer(strings, start, middle);</span><br><span class="line">            String lcpRight = divideAndConquer(strings, middle + <span class="number">1</span>, end);</span><br><span class="line">            <span class="keyword">return</span> commonPrefix(lcpLeft, lcpRight);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> String <span class="title">commonPrefix</span><span class="params">(String lcpLeft, String lcpRight)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> minLength = Math.min(lcpLeft.length(), lcpRight.length());</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> index = <span class="number">0</span>; index &lt; minLength; index++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (lcpLeft.charAt(index) != lcpRight.charAt(index)) &#123;</span><br><span class="line">                <span class="keyword">return</span> lcpLeft.substring(<span class="number">0</span>, index);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> lcpLeft.substring(<span class="number">0</span>, minLength);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Main代码</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        String[] strings = &#123;<span class="string">"abc"</span>,<span class="string">"ab"</span>, <span class="string">"abd"</span>&#125;;</span><br><span class="line">        Solution solution = <span class="keyword">new</span> Solution();</span><br><span class="line">        String result = solution.longestCommonPrefix(strings);</span><br><span class="line">        System.out.println(<span class="string">"result: "</span> + result);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -224,11 +243,11 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">遍历</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">字符串</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数组</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">分治</a>
         		</li>
       		
 		</ul>
@@ -295,7 +314,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://flower48237.com/2020/05/25/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%9826.%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://flower48237.com/2021/10/18/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98014.%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%89%8D%E7%BC%80/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -309,18 +328,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/07/24/sql%E5%AD%A6%E4%B9%A00724-SELECT%20TOP,%20LIMIT,%20ROWNUM%20%E5%AD%90%E5%8F%A5%E3%80%81LIKE%E3%80%81IN/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/10/19/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98234.%E5%9B%9E%E6%96%87%E9%93%BE%E8%A1%A8/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          SQL学习：SELECT TOP, LIMIT, ROWNUM 子句、LIKE、IN
+          LeetCode精选TOP面试题234.回文链表
         
       </div>
     </a>
   
   
-    <a href="/2020/05/24/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%9853.%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%92%8C/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">LeetCode精选TOP面试题53.最大子序和</div>
+    <a href="/2021/10/01/The%20Book%20of%20Why%20-%20Chapter%20(10)/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">《The Book of Why》 — Chapter10</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -644,6 +663,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">哈希表</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">二分查找</a>
               </li>
             
             <div class="clearfix"></div>
