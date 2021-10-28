@@ -67,7 +67,7 @@
 			</ul>
 		</nav>
 		<nav>
-			总文章数 78
+			总文章数 79
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -163,6 +163,98 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-The Book of Why - Chapter (9)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/10/01/The%20Book%20of%20Why%20-%20Chapter%20(9)/">《The Book of Why》 — Chapter9</a>
+    </h1>
+  
+
+        
+        <a href="/2021/10/01/The%20Book%20of%20Why%20-%20Chapter%20(9)/" class="archive-article-date">
+  	<time datetime="2021-10-01T08:45:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-10-01</time>
+</a>
+        
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="第九章-中介：寻找蕴藏的作用机制"><a href="#第九章-中介：寻找蕴藏的作用机制" class="headerlink" title="第九章 中介：寻找蕴藏的作用机制"></a>第九章 中介：寻找蕴藏的作用机制</h3><blockquote>
+<p>CHAPTER 9 — Mediation: The Search for a Mechanism</p>
+</blockquote>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Causality</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">因果推断</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Causality//" class="article-tag-list-link color5">Causality</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/10/01/The%20Book%20of%20Why%20-%20Chapter%20(9)/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-The Book of Why - Chapter (7)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -990,100 +1082,6 @@
 
 
   
-    <article id="post-sql学习0730-Constraints（约束）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/30/sql%E5%AD%A6%E4%B9%A00730-Constraints%EF%BC%88%E7%BA%A6%E6%9D%9F%EF%BC%89/">SQL学习：CONSTRAINTS</a>
-    </h1>
-  
-
-        
-        <a href="/2020/07/30/sql%E5%AD%A6%E4%B9%A00730-Constraints%EF%BC%88%E7%BA%A6%E6%9D%9F%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2020-07-30T10:02:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-30</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>SQL 约束用于规定表中的数据规则。</p>
-<p>如果存在违反约束的数据行为，行为会被约束终止。</p>
-<p>约束可以在创建表时规定（通过 CREATE TABLE 语句）；</p>
-<p>或者在表创建之后规定（通过 ALTER TABLE 语句）。</p>
-<h2 id="语法（CREATE-TABLE-CONSTRAINT）"><a href="#语法（CREATE-TABLE-CONSTRAINT）" class="headerlink" title="语法（CREATE TABLE + CONSTRAINT）"></a>语法（CREATE TABLE + CONSTRAINT）</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> table_name</span><br><span class="line">(</span><br><span class="line">column_name1 data_type(<span class="keyword">size</span>) constraint_name,</span><br><span class="line">column_name2 data_type(<span class="keyword">size</span>) constraint_name,</span><br><span class="line">column_name3 data_type(<span class="keyword">size</span>) constraint_name,</span><br><span class="line">....</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SQL</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">操作符</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/SQL//" class="article-tag-list-link color4">SQL</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/30/sql%E5%AD%A6%E4%B9%A00730-Constraints%EF%BC%88%E7%BA%A6%E6%9D%9F%EF%BC%89/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&amp;首页; 上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/3/">下一页; &amp;末页</a>
@@ -1374,6 +1372,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">字符匹配</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">树</a>
               </li>
             
             <div class="clearfix"></div>
