@@ -16,7 +16,7 @@
 <meta property="og:description" content="题目描述 给定一个字符串表达式 s ，请你实现一个基本计算器来计算并返回它的值。 整数除法仅保留整数部分。  1234567exampleinput  : s &#x3D; &quot;3+2*2&quot;output : 7input  : s &#x3D; &quot;3+2*2&quot;output : 1input  : s &#x3D; &quot; 3+5 &#x2F; 2 &quot;output : 5">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-11-20T15:26:12.700Z">
-<meta property="article:modified_time" content="2021-11-20T15:23:31.752Z">
+<meta property="article:modified_time" content="2021-11-20T15:29:06.792Z">
 <meta property="article:author" content="鸡排大仙儿">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="LeetCode">
@@ -222,7 +222,7 @@
 </ul>
 <p><strong>思路2：逆波兰式</strong></p>
 <ul>
-<li>遇到不同字符的处理逻辑与思路1相同</li>
+<li>遇到不同字符的处理逻辑与思路1相同，但是不进行计算</li>
 <li>只不过在遍历过程中增加了将原表达式转为逆波兰式的步骤</li>
 <li>然后使用逆波兰表达式求解的思路，同leetCode 150 </li>
 </ul>
