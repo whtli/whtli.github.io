@@ -6,7 +6,7 @@
   <link href="https://hexo.flower48237.com/atom.xml" rel="self"/>
   
   <link href="https://hexo.flower48237.com/"/>
-  <updated>2021-12-08T00:26:49.732Z</updated>
+  <updated>2021-12-08T13:12:15.406Z</updated>
   <id>https://hexo.flower48237.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>安装Anaconda+常用的conda命令+Anaconda换源+安装Jupyter</title>
+    <link href="https://hexo.flower48237.com/2021/12/08/%E5%AE%89%E8%A3%85Anaconda+%E5%B8%B8%E7%94%A8%E7%9A%84conda%E5%91%BD%E4%BB%A4+Anaconda%E6%8D%A2%E6%BA%90+%E5%AE%89%E8%A3%85Jupyter/"/>
+    <id>https://hexo.flower48237.com/2021/12/08/%E5%AE%89%E8%A3%85Anaconda+%E5%B8%B8%E7%94%A8%E7%9A%84conda%E5%91%BD%E4%BB%A4+Anaconda%E6%8D%A2%E6%BA%90+%E5%AE%89%E8%A3%85Jupyter/</id>
+    <published>2021-12-08T13:00:00.000Z</published>
+    <updated>2021-12-08T13:12:15.406Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="安装Anaconda"><a href="#安装Anaconda" class="headerlink" title="安装Anaconda"></a>安装Anaconda</h2><ul><li><a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/" target="_blank" rel="noopener">下载并安装Anaconda</a></li></ul><h2 id="常用的conda命令"><a href="#常用的conda命令" class="headerlink" title="常用的conda命令"></a>常用的conda命令</h2>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建虚拟环境</span></span><br><span class="line">conda create -n pytorch python=3.6</span><br><span class="line"><span class="comment"># 删除虚拟环境</span></span><br><span class="line">conda env remove -n pytorch</span><br><span class="line"><span class="comment"># 激活指定虚拟环境</span></span><br><span class="line">conda activate pytorch</span><br><span class="line"><span class="comment"># 退出当前虚拟环境</span></span><br><span class="line">conda deactivate</span><br><span class="line"><span class="comment"># 安装包，如numpy（提前进入目标环境）</span></span><br><span class="line">conda install numpy</span><br><span class="line">或</span><br><span class="line">pip install numpy</span><br><span class="line"><span class="comment"># 安装指定版本的包，如numpy</span></span><br><span class="line">pip install numpy==1.6.0</span><br><span class="line"><span class="comment"># 升级包</span></span><br><span class="line">pip install --upgrade numpy</span><br><span class="line"><span class="comment"># 卸载包</span></span><br><span class="line">pip uninstall numpy</span><br><span class="line"><span class="comment"># 查看conda中所有环境</span></span><br><span class="line">conda info -e</span><br><span class="line"><span class="comment"># 查看某个环境中安装的所有包（提前进入目标环境）</span></span><br><span class="line">conda list</span><br></pre></td></tr></table></figure><h2 id="Anaconda换源"><a href="#Anaconda换源" class="headerlink" title="Anaconda换源"></a>Anaconda换源</h2><ul><li>修改镜像为国内源，如<a href="https://mirror.tuna.tsinghua.edu.cn/help/anaconda/" target="_blank" rel="noopener">清华源</a></li></ul><h2 id="安装Jupyter"><a href="#安装Jupyter" class="headerlink" title="安装Jupyter"></a>安装Jupyter</h2><ul><li><p>安装Anaconda软件之后，在首页找到Jupyter点击Install。</p></li><li><p>不同虚拟环境下各自的Jupyter，只需提前在Anaconda软件界面切换虚拟环境。<img src="https://img-blog.csdnimg.cn/924a3454cffd4f64b270843cf8e0a9f1.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbGlxOTgy,size_20,color_FFFFFF,t_70,g_se,x_16" alt="\[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-ZeDiUbNm-1638962174624)(C:\Users\Q\AppData\Roaming\Typora\typora-user-images\image-20211208170503225.png)\]"></p></li><li><p>为不同的jupyter指定不同的工作路径，首先为这个jupyter新增一个本地工作路径<code>path</code>，找到“开始”处新增的快捷方式：Jupyter Notebook (pytorch)，右键打开文件路径，再右键属性，修改<strong>目标(T)</strong>，把<code>&quot;%USERPROFILE&quot;</code>修改为指定路径path，如图。<br><img src="https://img-blog.csdnimg.cn/b46cec417d1e454ea23d617f1bc9755d.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbGlxOTgy,size_20,color_FFFFFF,t_70,g_se,x_16" alt="&lt;img src=&quot;C:\Users\Q\AppData\Roaming\Typora\typora-user-images\image-20211208170823226.png&quot; alt=&quot;image-20211208170823226&quot; style=&quot;zoom: 33%;&quot; /&gt;"><br><img src="https://img-blog.csdnimg.cn/35e6df5b53eb40ffa276e2b3f52eece8.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbGlxOTgy,size_20,color_FFFFFF,t_70,g_se,x_16" alt="&lt;img src=&quot;C:\Users\Q\AppData\Roaming\Typora\typora-user-images\image-20211208171047220.png&quot; alt=&quot;image-20211208171047220&quot; style=&quot;zoom:33%;&quot; /&gt;"></p></li></ul><ul><li>修改后单击该快捷方式即可进入网页使用JupyterNoteBook</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    <category term="D2L" scheme="https://hexo.flower48237.com/categories/D2L/"/>
+    
+    
+    <category term="Anaconda" scheme="https://hexo.flower48237.com/tags/Anaconda/"/>
+    
+    <category term="conda" scheme="https://hexo.flower48237.com/tags/conda/"/>
+    
+    <category term="Jupyter" scheme="https://hexo.flower48237.com/tags/Jupyter/"/>
+    
+  </entry>
   
   <entry>
     <title>SpringBoot+Vue项目部署到Linux服务器</title>
@@ -81,9 +109,9 @@
     
     <category term="数组" scheme="https://hexo.flower48237.com/tags/%E6%95%B0%E7%BB%84/"/>
     
-    <category term="树" scheme="https://hexo.flower48237.com/tags/%E6%A0%91/"/>
-    
     <category term="二叉树" scheme="https://hexo.flower48237.com/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
+    
+    <category term="树" scheme="https://hexo.flower48237.com/tags/%E6%A0%91/"/>
     
   </entry>
   
@@ -115,9 +143,9 @@
     
     <category term="面试" scheme="https://hexo.flower48237.com/tags/%E9%9D%A2%E8%AF%95/"/>
     
-    <category term="树" scheme="https://hexo.flower48237.com/tags/%E6%A0%91/"/>
-    
     <category term="二叉树" scheme="https://hexo.flower48237.com/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
+    
+    <category term="树" scheme="https://hexo.flower48237.com/tags/%E6%A0%91/"/>
     
     <category term="DFS" scheme="https://hexo.flower48237.com/tags/DFS/"/>
     
@@ -155,11 +183,11 @@
     
     <category term="面试" scheme="https://hexo.flower48237.com/tags/%E9%9D%A2%E8%AF%95/"/>
     
-    <category term="树" scheme="https://hexo.flower48237.com/tags/%E6%A0%91/"/>
-    
     <category term="二叉树" scheme="https://hexo.flower48237.com/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     
     <category term="BFS" scheme="https://hexo.flower48237.com/tags/BFS/"/>
+    
+    <category term="树" scheme="https://hexo.flower48237.com/tags/%E6%A0%91/"/>
     
     <category term="队列" scheme="https://hexo.flower48237.com/tags/%E9%98%9F%E5%88%97/"/>
     
@@ -203,9 +231,9 @@
     
     <category term="数组" scheme="https://hexo.flower48237.com/tags/%E6%95%B0%E7%BB%84/"/>
     
-    <category term="二分查找" scheme="https://hexo.flower48237.com/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/"/>
-    
     <category term="双指针" scheme="https://hexo.flower48237.com/tags/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
+    
+    <category term="二分查找" scheme="https://hexo.flower48237.com/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/"/>
     
     <category term="哈希" scheme="https://hexo.flower48237.com/tags/%E5%93%88%E5%B8%8C/"/>
     
@@ -690,45 +718,6 @@
     <category term="面试" scheme="https://hexo.flower48237.com/tags/%E9%9D%A2%E8%AF%95/"/>
     
     <category term="字符串" scheme="https://hexo.flower48237.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode精选TOP面试题88.合并两个有序数组</title>
-    <link href="https://hexo.flower48237.com/2021/10/25/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98088.%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84/"/>
-    <id>https://hexo.flower48237.com/2021/10/25/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98088.%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84/</id>
-    <published>2021-10-25T12:08:07.995Z</published>
-    <updated>2021-10-25T12:06:25.561Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><ul><li>给定两个 非递减顺序 排列的整数数组 nums1 和 nums2，另有两个整数m和n，分别表示nums1和nums2中的元素数目。</li><li>合并nums2到nums1中，使合并后的数组同样按 非递减顺序 排列。最终合并后数组不应由函数返回，而是存储在数组 nums1 中。</li><li>为了应对这种情况，nums1 的初始长度为 m + n，其中前 m 个元素表示应合并的元素，后 n 个元素为 0 ，应忽略。nums2 的长度为 n 。</li><li>nums1.length == m + n; </li><li>nums2.length == n</li><li>0 &lt;= m, n &lt;= 200</li><li>1 &lt;= m + n &lt;= 200</li><li>-109 &lt;= nums1[i], nums2[j] &lt;= 109</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">example</span><br><span class="line">input  : nums1 = &#123;1,2,3,0,0,0&#125;, m = 3, nums2 = &#123;2,5,6&#125;, n = 3</span><br><span class="line">output : &#123;1,2,2,3,5,6&#125;</span><br><span class="line">input  : nums1 = &#123;1&#125;, m = 1, nums2 = &#123;&#125;, n = 0</span><br><span class="line">output : &#123;1&#125;</span><br><span class="line">input  : nums1 = &#123;0&#125;, m = 0, nums2 = &#123;2&#125;, n = 1</span><br><span class="line">output : &#123;2&#125;</span><br></pre></td></tr></table></figure><a id="more"></a><h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><h4 id="关键点：两个数组都是有序数组"><a href="#关键点：两个数组都是有序数组" class="headerlink" title="关键点：两个数组都是有序数组"></a>关键点：两个数组都是有序数组</h4><p><strong>思路1 逆序双指针</strong></p><ul><li>因为nums1的后几位是与nums2等长的0元素，所以逆序用双指针分别指向两个数组末尾，找到最大元素，将其值赋给nums1尾部，依次循环向前</li><li>当某个指针遍历结束时停止第一轮遍历，此时肯定有一个数组已经被完全纳入到nums1尾部</li><li>且此时并不会对nums1和nums2这两个数组的未排序元素造成影响</li><li>之后，若nums1未被全部遍历，则不需要继续处理，因为此时数组必定已经有序；若nums2未被全部遍历，则需继续逆序遍历nums2，将其元素值依次赋值到nums1中</li></ul><p><strong>思路2 合并数组后排序</strong></p><h3 id="代码（Java）"><a href="#代码（Java）" class="headerlink" title="代码（Java）"></a>代码（Java）</h3><p><strong>思路1代码</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution1</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span>[] nums1, <span class="keyword">int</span> m, <span class="keyword">int</span>[] nums2, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (n == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> length = m + n;</span><br><span class="line">        <span class="keyword">int</span> i = m - <span class="number">1</span>, j = n - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (i &gt;= <span class="number">0</span> &amp;&amp; j &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">            nums1[--length] = nums1[i] &gt; nums2[j] ? nums1[i--] : nums2[j--];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (i &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">            nums1[--length] = nums1[i--];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (j &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">            nums1[--length] = nums2[j--];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><strong>思路2代码</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution2</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span>[] nums1, <span class="keyword">int</span> m, <span class="keyword">int</span>[] nums2, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (n == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            nums1[i + m] = nums2[i];</span><br><span class="line">        &#125;</span><br><span class="line">        Arrays.sort(nums1);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-    <summary type="html">&lt;h3 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;给定两个 非递减顺序 排列的整数数组 nums1 和 nums2，另有两个整数m和n，分别表示nums1和nums2中的元素数目。&lt;/li&gt;
-&lt;li&gt;合并nums2到nums1中，使合并后的数组同样按 非递减顺序 排列。最终合并后数组不应由函数返回，而是存储在数组 nums1 中。&lt;/li&gt;
-&lt;li&gt;为了应对这种情况，nums1 的初始长度为 m + n，其中前 m 个元素表示应合并的元素，后 n 个元素为 0 ，应忽略。nums2 的长度为 n 。&lt;/li&gt;
-&lt;li&gt;nums1.length == m + n; &lt;/li&gt;
-&lt;li&gt;nums2.length == n&lt;/li&gt;
-&lt;li&gt;0 &amp;lt;= m, n &amp;lt;= 200&lt;/li&gt;
-&lt;li&gt;1 &amp;lt;= m + n &amp;lt;= 200&lt;/li&gt;
-&lt;li&gt;-109 &amp;lt;= nums1[i], nums2[j] &amp;lt;= 109&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;example&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;input  : nums1 = &amp;#123;1,2,3,0,0,0&amp;#125;, m = 3, nums2 = &amp;#123;2,5,6&amp;#125;, n = 3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;output : &amp;#123;1,2,2,3,5,6&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;input  : nums1 = &amp;#123;1&amp;#125;, m = 1, nums2 = &amp;#123;&amp;#125;, n = 0&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;output : &amp;#123;1&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;input  : nums1 = &amp;#123;0&amp;#125;, m = 0, nums2 = &amp;#123;2&amp;#125;, n = 1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;output : &amp;#123;2&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
-    
-    
-    
-    <category term="LeetCode" scheme="https://hexo.flower48237.com/categories/LeetCode/"/>
-    
-    
-    <category term="Java" scheme="https://hexo.flower48237.com/tags/Java/"/>
-    
-    <category term="LeetCode" scheme="https://hexo.flower48237.com/tags/LeetCode/"/>
-    
-    <category term="面试" scheme="https://hexo.flower48237.com/tags/%E9%9D%A2%E8%AF%95/"/>
-    
-    <category term="数组" scheme="https://hexo.flower48237.com/tags/%E6%95%B0%E7%BB%84/"/>
-    
-    <category term="排序" scheme="https://hexo.flower48237.com/tags/%E6%8E%92%E5%BA%8F/"/>
     
   </entry>
   
