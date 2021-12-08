@@ -67,7 +67,7 @@
 			</ul>
 		</nav>
 		<nav>
-			总文章数 97
+			总文章数 98
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -164,19 +164,131 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-安装Anaconda+常用的conda命令+Anaconda换源+安装Jupyter" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-D2L-win10使用Anaconda创建可使用PyTorch的虚拟环境" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2021/12/08/%E5%AE%89%E8%A3%85Anaconda+%E5%B8%B8%E7%94%A8%E7%9A%84conda%E5%91%BD%E4%BB%A4+Anaconda%E6%8D%A2%E6%BA%90+%E5%AE%89%E8%A3%85Jupyter/">安装Anaconda+常用的conda命令+Anaconda换源+安装Jupyter</a>
+      <a class="article-title" href="/2021/12/08/D2L-win10%E4%BD%BF%E7%94%A8Anaconda%E5%88%9B%E5%BB%BA%E5%8F%AF%E4%BD%BF%E7%94%A8PyTorch%E7%9A%84%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/">win10使用Anaconda创建可使用PyTorch虚拟环境</a>
     </h1>
   
 
         
-        <a href="/2021/12/08/%E5%AE%89%E8%A3%85Anaconda+%E5%B8%B8%E7%94%A8%E7%9A%84conda%E5%91%BD%E4%BB%A4+Anaconda%E6%8D%A2%E6%BA%90+%E5%AE%89%E8%A3%85Jupyter/" class="archive-article-date">
+        <a href="/2021/12/08/D2L-win10%E4%BD%BF%E7%94%A8Anaconda%E5%88%9B%E5%BB%BA%E5%8F%AF%E4%BD%BF%E7%94%A8PyTorch%E7%9A%84%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/" class="archive-article-date">
+  	<time datetime="2021-12-08T14:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-08</time>
+</a>
+        
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1、安装Anaconda"><a href="#1、安装Anaconda" class="headerlink" title="1、安装Anaconda"></a>1、安装Anaconda</h2><ul>
+<li>可参考<a href="https://blog.csdn.net/flower_48237/article/details/121798811" target="_blank" rel="noopener">安装Anaconda+常用的conda命令+Anaconda换源+安装Jupyter</a></li>
+</ul>
+<h2 id="2、创建虚拟环境"><a href="#2、创建虚拟环境" class="headerlink" title="2、创建虚拟环境"></a>2、创建虚拟环境</h2><ul>
+<li>win10系统，进入cmd</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建名为pytorch的虚拟环境</span></span><br><span class="line">conda create --name pytorch python=3.6</span><br><span class="line"><span class="comment"># 激活名为pytorch的虚拟环境</span></span><br><span class="line">conda activate pytorch</span><br></pre></td></tr></table></figure>
+<h2 id="安装PyTorch包"><a href="#安装PyTorch包" class="headerlink" title="安装PyTorch包"></a>安装PyTorch包</h2><ul>
+<li><p>进入<a href="https://pytorch.org/get-started/locally/" target="_blank" rel="noopener">PyTorch官网</a>，根据提示选择适合自己电脑配置的安装命令，如图，蓝色不跟需要注意选择<img src="https://img-blog.csdnimg.cn/0e5dd92a795040e0a6daab5dc56ac70f.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbGlxOTgy,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在pytorch虚拟环境中使用官网提示的命令安装PyTorch</span></span><br><span class="line">conda install pytorch torchvision torchaudio cpuonly -c pytorch</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>命令行输入<code>python</code>进入python，并输入下面代码可查看pytorch是否安装成功：</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> torchvision</span><br><span class="line">print(torch.__version)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>安装成功提示如图 <img src="https://img-blog.csdnimg.cn/2a045f0e3c5245c4924820c79ee3b50b.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbGlxOTgy,size_20,color_FFFFFF,t_70,g_se,x_16" alt="\[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-luSHFDuQ-1638969271298)(C:\Users\Q\AppData\Roaming\Typora\typora-user-images\image-20211208164303307.png)\]"></li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">深度学习</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">PyTorch</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/D2L//" class="article-tag-list-link color4">D2L</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/12/08/D2L-win10%E4%BD%BF%E7%94%A8Anaconda%E5%88%9B%E5%BB%BA%E5%8F%AF%E4%BD%BF%E7%94%A8PyTorch%E7%9A%84%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-D2L-安装Anaconda+常用的conda命令+Anaconda换源+安装Jupyter" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/12/08/D2L-%E5%AE%89%E8%A3%85Anaconda+%E5%B8%B8%E7%94%A8%E7%9A%84conda%E5%91%BD%E4%BB%A4+Anaconda%E6%8D%A2%E6%BA%90+%E5%AE%89%E8%A3%85Jupyter/">安装Anaconda+常用的conda命令+Anaconda换源+安装Jupyter</a>
+    </h1>
+  
+
+        
+        <a href="/2021/12/08/D2L-%E5%AE%89%E8%A3%85Anaconda+%E5%B8%B8%E7%94%A8%E7%9A%84conda%E5%91%BD%E4%BB%A4+Anaconda%E6%8D%A2%E6%BA%90+%E5%AE%89%E8%A3%85Jupyter/" class="archive-article-date">
   	<time datetime="2021-12-08T13:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-08</time>
 </a>
         
@@ -227,6 +339,10 @@
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Jupyter</a>
         		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">深度学习</a>
+        		</li>
       		
 		</ul>
 	</div>
@@ -246,7 +362,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2021/12/08/%E5%AE%89%E8%A3%85Anaconda+%E5%B8%B8%E7%94%A8%E7%9A%84conda%E5%91%BD%E4%BB%A4+Anaconda%E6%8D%A2%E6%BA%90+%E5%AE%89%E8%A3%85Jupyter/">展开全文 >></a>
+          <a class="article-more-a" href="/2021/12/08/D2L-%E5%AE%89%E8%A3%85Anaconda+%E5%B8%B8%E7%94%A8%E7%9A%84conda%E5%91%BD%E4%BB%A4+Anaconda%E6%8D%A2%E6%BA%90+%E5%AE%89%E8%A3%85Jupyter/">展开全文 >></a>
         </p>
       
 
@@ -1365,118 +1481,6 @@
 
 
   
-    <article id="post-LeetCode精选TOP面试题150.逆波兰表达式求值" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/11/20/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98150.%E9%80%86%E6%B3%A2%E5%85%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%B1%82%E5%80%BC/">LeetCode精选TOP面试题150.逆波兰表达式求值</a>
-    </h1>
-  
-
-        
-        <a href="/2021/11/20/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98150.%E9%80%86%E6%B3%A2%E5%85%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%B1%82%E5%80%BC/" class="archive-article-date">
-  	<time datetime="2021-11-20T14:20:11.849Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-20</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><ul>
-<li>根据 逆波兰表示法，求表达式的值。</li>
-<li>有效的算符包括 +、-、*、/ 。每个运算对象可以是整数，也可以是另一个逆波兰表达式。</li>
-<li>整数除法只保留整数部分。</li>
-<li>给定逆波兰表达式总是有效的。即表达式总会得出有效数值且不存在除数为 0 的情况。</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">example</span><br><span class="line">input  : tokens = &#123;<span class="string">"2"</span>,<span class="string">"1"</span>,<span class="string">"+"</span>,<span class="string">"3"</span>,<span class="string">"*"</span>&#125;</span><br><span class="line">output : 9</span><br><span class="line">note   : 该算式转化为常见的中缀算术表达式为：((2 + 1) * 3) = 9</span><br><span class="line">input  : tokens = &#123;<span class="string">"4"</span>,<span class="string">"13"</span>,<span class="string">"5"</span>,<span class="string">"/"</span>,<span class="string">"+"</span>&#125;</span><br><span class="line">output : 6</span><br><span class="line">note   : 该算式转化为常见的中缀算术表达式为：(4 + (13 / 5)) = 6</span><br><span class="line">input  : tokens = &#123;<span class="string">"10"</span>,<span class="string">"6"</span>,<span class="string">"9"</span>,<span class="string">"3"</span>,<span class="string">"+"</span>,<span class="string">"-11"</span>,<span class="string">"*"</span>,<span class="string">"/"</span>,<span class="string">"*"</span>,<span class="string">"17"</span>,<span class="string">"+"</span>,<span class="string">"5"</span>,<span class="string">"+"</span>&#125;</span><br><span class="line">output : 22</span><br><span class="line">note   : 该算式转化为常见的中缀算术表达式为：((10 * (6 / ((9 + 3) * -11))) + 17) + 5</span><br></pre></td></tr></table></figure>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">字符串</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数组</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">栈</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/LeetCode//" class="article-tag-list-link color4">LeetCode</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/11/20/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98150.%E9%80%86%E6%B3%A2%E5%85%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%B1%82%E5%80%BC/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/2/">下一页; &amp;末页</a>
@@ -1827,6 +1831,18 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Jupyter</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">深度学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">PyTorch</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
             
             <div class="clearfix"></div>
