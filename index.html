@@ -192,19 +192,8 @@
 <li>win10系统，进入cmd</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建名为pytorch的虚拟环境</span></span><br><span class="line">conda create --name pytorch python=3.6</span><br><span class="line"><span class="comment"># 激活名为pytorch的虚拟环境</span></span><br><span class="line">conda activate pytorch</span><br></pre></td></tr></table></figure>
-<h2 id="安装PyTorch包"><a href="#安装PyTorch包" class="headerlink" title="安装PyTorch包"></a>安装PyTorch包</h2><ul>
-<li><p>进入<a href="https://pytorch.org/get-started/locally/" target="_blank" rel="noopener">PyTorch官网</a>，根据提示选择适合自己电脑配置的安装命令，如图，蓝色不跟需要注意选择<img src="https://img-blog.csdnimg.cn/0e5dd92a795040e0a6daab5dc56ac70f.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbGlxOTgy,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在pytorch虚拟环境中使用官网提示的命令安装PyTorch</span></span><br><span class="line">conda install pytorch torchvision torchaudio cpuonly -c pytorch</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>命令行输入<code>python</code>进入python，并输入下面代码可查看pytorch是否安装成功：</p>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> torchvision</span><br><span class="line">print(torch.__version)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>安装成功提示如图 <img src="https://img-blog.csdnimg.cn/2a045f0e3c5245c4924820c79ee3b50b.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbGlxOTgy,size_20,color_FFFFFF,t_70,g_se,x_16" alt="\[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-luSHFDuQ-1638969271298)(C:\Users\Q\AppData\Roaming\Typora\typora-user-images\image-20211208164303307.png)\]"></li>
-</ul>
-
+<h2 id="安装PyTorch包"><a href="#安装PyTorch包" class="headerlink" title="安装PyTorch包"></a>安装PyTorch包</h2>
+        
       
 
       
@@ -301,22 +290,7 @@
 <li><a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/" target="_blank" rel="noopener">下载并安装Anaconda</a></li>
 </ul>
 <h2 id="常用的conda命令"><a href="#常用的conda命令" class="headerlink" title="常用的conda命令"></a>常用的conda命令</h2>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建虚拟环境</span></span><br><span class="line">conda create -n pytorch python=3.6</span><br><span class="line"><span class="comment"># 删除虚拟环境</span></span><br><span class="line">conda env remove -n pytorch</span><br><span class="line"><span class="comment"># 激活指定虚拟环境</span></span><br><span class="line">conda activate pytorch</span><br><span class="line"><span class="comment"># 退出当前虚拟环境</span></span><br><span class="line">conda deactivate</span><br><span class="line"><span class="comment"># 安装包，如numpy（提前进入目标环境）</span></span><br><span class="line">conda install numpy</span><br><span class="line">或</span><br><span class="line">pip install numpy</span><br><span class="line"><span class="comment"># 安装指定版本的包，如numpy</span></span><br><span class="line">pip install numpy==1.6.0</span><br><span class="line"><span class="comment"># 升级包</span></span><br><span class="line">pip install --upgrade numpy</span><br><span class="line"><span class="comment"># 卸载包</span></span><br><span class="line">pip uninstall numpy</span><br><span class="line"><span class="comment"># 查看conda中所有环境</span></span><br><span class="line">conda info -e</span><br><span class="line"><span class="comment"># 查看某个环境中安装的所有包（提前进入目标环境）</span></span><br><span class="line">conda list</span><br></pre></td></tr></table></figure>
-
-<h2 id="Anaconda换源"><a href="#Anaconda换源" class="headerlink" title="Anaconda换源"></a>Anaconda换源</h2><ul>
-<li>修改镜像为国内源，如<a href="https://mirror.tuna.tsinghua.edu.cn/help/anaconda/" target="_blank" rel="noopener">清华源</a></li>
-</ul>
-<h2 id="安装Jupyter"><a href="#安装Jupyter" class="headerlink" title="安装Jupyter"></a>安装Jupyter</h2><ul>
-<li><p>安装Anaconda软件之后，在首页找到Jupyter点击Install。</p>
-</li>
-<li><p>不同虚拟环境下各自的Jupyter，只需提前在Anaconda软件界面切换虚拟环境。<img src="https://img-blog.csdnimg.cn/924a3454cffd4f64b270843cf8e0a9f1.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbGlxOTgy,size_20,color_FFFFFF,t_70,g_se,x_16" alt="\[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-ZeDiUbNm-1638962174624)(C:\Users\Q\AppData\Roaming\Typora\typora-user-images\image-20211208170503225.png)\]"></p>
-</li>
-<li><p>为不同的jupyter指定不同的工作路径，首先为这个jupyter新增一个本地工作路径<code>path</code>，找到“开始”处新增的快捷方式：Jupyter Notebook (pytorch)，右键打开文件路径，再右键属性，修改<strong>目标(T)</strong>，把<code>&quot;%USERPROFILE&quot;</code>修改为指定路径path，如图。<br><img src="https://img-blog.csdnimg.cn/b46cec417d1e454ea23d617f1bc9755d.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbGlxOTgy,size_20,color_FFFFFF,t_70,g_se,x_16" alt="&lt;img src=&quot;C:\Users\Q\AppData\Roaming\Typora\typora-user-images\image-20211208170823226.png&quot; alt=&quot;image-20211208170823226&quot; style=&quot;zoom: 33%;&quot; /&gt;"><br><img src="https://img-blog.csdnimg.cn/35e6df5b53eb40ffa276e2b3f52eece8.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbGlxOTgy,size_20,color_FFFFFF,t_70,g_se,x_16" alt="&lt;img src=&quot;C:\Users\Q\AppData\Roaming\Typora\typora-user-images\image-20211208171047220.png&quot; alt=&quot;image-20211208171047220&quot; style=&quot;zoom:33%;&quot; /&gt;"></p>
-</li>
-</ul>
-<ul>
-<li>修改后单击该快捷方式即可进入网页使用JupyterNoteBook</li>
-</ul>
-
+        
       
 
       
