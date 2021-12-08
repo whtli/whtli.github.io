@@ -67,7 +67,7 @@
 			</ul>
 		</nav>
 		<nav>
-			总文章数 95
+			总文章数 96
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -163,6 +163,302 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-SpringBoot+Vue项目部署到Linux服务器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/12/08/SpringBoot+Vue%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E5%88%B0Linux%E6%9C%8D%E5%8A%A1%E5%99%A8/">SpringBoot+Vue项目部署到Linux服务器</a>
+    </h1>
+  
+
+        
+        <a href="/2021/12/08/SpringBoot+Vue%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E5%88%B0Linux%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="archive-article-date">
+  	<time datetime="2021-12-08T01:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-08</time>
+</a>
+        
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>Note:<br>1、Linux服务器选用的是CentOS7.7，其他类型也可以<br>2、需要在服务器配置jdk和Nginx<br>3、后端打包类型为jar包，war包需要自行修改后端配置<br>4、暂未部署Docker，后续更新</p>
+</blockquote>
+<h2 id="1、服务器配置"><a href="#1、服务器配置" class="headerlink" title="1、服务器配置"></a>1、服务器配置</h2><h3 id="1-1-安装宝塔"><a href="#1-1-安装宝塔" class="headerlink" title="1.1 安装宝塔"></a>1.1 安装宝塔</h3><ul>
+<li><p>参考<a href="https://www.bt.cn/bbs/thread-19376-1-1.html" target="_blank" rel="noopener">宝塔官方教程</a>即可，首先登录服务器，设置安全组放行端口，把8888放开，然后使用终端执行命令（以CentOS为例）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y wget &amp;&amp; wget -O install.sh http://download.bt.cn/install/install_6.0.sh &amp;&amp; sh install.sh 2c87998c</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装完成后记录终端处的登录入口、账号、密码，然后登录</p>
+</li>
+<li><p>登录后需要注册个账号，注册绑定后即可正常使用宝塔</p>
+</li>
+</ul>
+<h3 id="1-2-安装并配置MySQL、Redis、Nginx"><a href="#1-2-安装并配置MySQL、Redis、Nginx" class="headerlink" title="1.2 安装并配置MySQL、Redis、Nginx"></a>1.2 安装并配置MySQL、Redis、Nginx</h3><ul>
+<li>使用宝塔安装Mysql、Redis、Nginx，便于管理</li>
+<li>在宝塔的软件商店中搜索Mysql、Redis、Nginx并快捷安装</li>
+</ul>
+<h3 id="1-3-创建数据库并导入数据"><a href="#1-3-创建数据库并导入数据" class="headerlink" title="1.3 创建数据库并导入数据"></a>1.3 创建数据库并导入数据</h3><ul>
+<li>进入宝塔的数据库界面，添加数据库，填写数据库名、选择字符集、设置访问权限为<strong>所有人</strong>（这样才能使用其他终端访问），完成后提交，提示添加成功即为创建成功<br><img src="https://img-blog.csdnimg.cn/1071649913bc4f13adaae52735417a23.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbGlxOTgy,size_20,color_FFFFFF,t_70,g_se,x_16" alt="\[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-fkjp1sk8-1638865326066)(C:\Users\Q\AppData\Roaming\Typora\typora-user-images\image-20211206191659514.png)\]"></li>
+<li>创建成功后，点击导入，把本地数据库的测试数据导入到服务器中的数据库。提示导入数据库成功即可。<img src="https://img-blog.csdnimg.cn/9e6c0ba2679d44adbb5942704d21c09c.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/2a15f18acdd844408670d127b9e72e02.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbGlxOTgy,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述">)<img src="https://img-blog.csdnimg.cn/b5630943ab0c48d99467dfcfcae2e13e.png" alt="在这里插入图片描述"></li>
+</ul>
+<h3 id="1-4-安装并配置jdk"><a href="#1-4-安装并配置jdk" class="headerlink" title="1.4 安装并配置jdk"></a>1.4 安装并配置jdk</h3><h4 id="1-4-1-官网下载JDK并上传到服务器"><a href="#1-4-1-官网下载JDK并上传到服务器" class="headerlink" title="1.4.1 官网下载JDK并上传到服务器"></a>1.4.1 官网下载JDK并上传到服务器</h4><ul>
+<li><p>从<a href="https://www.oracle.com/java/technologies/downloads/#java8" target="_blank" rel="noopener">官网下载</a>可用于Linux的jdk包，通过宝塔上传到服务器</p>
+</li>
+<li><p>建议上传到/www/server下</p>
+<blockquote>
+<p>PS：/www/server是宝塔软件的默认安装目录，把软件都放到一起，方便查找</p>
+</blockquote>
+</li>
+<li><p>然后使用终端，进入jdk的上传目录，使用解压命令，把上传的jdk文件解压到当前目录，然后把解压后的文件夹重命名为jdk8</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf jdk-8u311-linux-x64.tar.gz</span><br><span class="line">mv jdk1.8.0_311 jdk8</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="1-4-2-配置环境变量"><a href="#1-4-2-配置环境变量" class="headerlink" title="1.4.2 配置环境变量"></a>1.4.2 配置环境变量</h4><ul>
+<li><p>1.打开 /etc/profile 文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim profile</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>2.在 profile 文件末尾，配置jdk环境</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> JAVA_HOME=/www/server/jdk8</span><br><span class="line"><span class="built_in">export</span> CLASSPATH=$:CLASSPATH:<span class="variable">$JAVA_HOME</span>/lib/</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$PATH</span></span><br><span class="line"><span class="built_in">export</span> JRE_HOME=<span class="variable">$JAVA_HOME</span>/jre</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>3.使 profile 生效</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> profile</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>4.查看jdk是否配置成功</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -version</span><br></pre></td></tr></table></figure>
+
+<p>显示版本号即为配置成功<br><img src="https://img-blog.csdnimg.cn/89f0b3afb759448e9c1bdd24b38b1f16.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbGlxOTgy,size_20,color_FFFFFF,t_70,g_se,x_16" alt="&lt;img src=&quot;C:\Users\Q\AppData\Roaming\Typora\typora-user-images\image-20211205185540742.png&quot; alt=&quot;image-20211205185540742&quot; style=&quot;zoom: 40%;&quot; /&gt;"></p>
+<h3 id="1-5-安全组配置、放行端口配置"><a href="#1-5-安全组配置、放行端口配置" class="headerlink" title="1.5  安全组配置、放行端口配置"></a>1.5  安全组配置、放行端口配置</h3></li>
+</ul>
+<h4 id="1-5-1-安全组配置"><a href="#1-5-1-安全组配置" class="headerlink" title="1.5.1 安全组配置"></a>1.5.1 安全组配置</h4><ul>
+<li><p>登录云服务器，在控制台处找到服务器，然后对安全组规则进行更改</p>
+</li>
+<li><p>以华为云为例，在入方向规则处添加前后端使用的端口（如8080和8081）<br><img src="https://img-blog.csdnimg.cn/77388f3c42be44a9ace3f761099a122c.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbGlxOTgy,size_20,color_FFFFFF,t_70,g_se,x_16" alt="\[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-zB2nM8g3-1638865326069)(C:\Users\Q\AppData\Roaming\Typora\typora-user-images\image-20211207141808228.png)\]"></p>
+<h4 id="1-5-2-放行端口配置"><a href="#1-5-2-放行端口配置" class="headerlink" title="1.5.2 放行端口配置"></a>1.5.2 放行端口配置</h4></li>
+<li><p>在宝塔的安全功能中放行前后端项目需要使用的端口，如8080和8081<img src="https://img-blog.csdnimg.cn/218017c99b1a4501b6da994d8c15b92e.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbGlxOTgy,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<h2 id="2、SpringBoot项目配置"><a href="#2、SpringBoot项目配置" class="headerlink" title="2、SpringBoot项目配置"></a>2、SpringBoot项目配置</h2></li>
+</ul>
+<h3 id="2-1-配置修改"><a href="#2-1-配置修改" class="headerlink" title="2.1 配置修改"></a>2.1 配置修改</h3><ul>
+<li><p>后端拆分application.yml配置文件，可拆分出本地dev和生产pro两个（也可以多拆出test）<img src="https://img-blog.csdnimg.cn/77ca91faa60c4ff48261a68a38c284b9.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbGlxOTgy,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+</li>
+<li><p>application.yml文件中保留通用配置<img src="https://img-blog.csdnimg.cn/7e40290fe7e14f4480f026f523f17ca4.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbGlxOTgy,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+</li>
+<li><p>application-dev.yml文件中配置本地运行项目所用的配置<img src="https://img-blog.csdnimg.cn/1ba3b831d83c4ddaa18284c39b011efa.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbGlxOTgy,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+</li>
+<li><p>application-pro.yml文件中配置服务器中运行项目所用的配置，其中服务器数据库名称，即为1.3节中添加的数据库名，密码从宝塔界面点击复制即可，注意不是使用root密码，而是使用刚创建的数据库的密码（下图有误，redis的host保持127.0.0.1即可）<img src="https://img-blog.csdnimg.cn/b23b0a832651403185814cfab9f2147b.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbGlxOTgy,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述">)<img src="https://img-blog.csdnimg.cn/97fe5323b1c2405d8d479a5b3686efff.png" alt="在这里插入图片描述"></p>
+</li>
+<li><p>dev和pro的不同之处主要是MySQL的配置。</p>
+<ul>
+<li>pro中需要按照<strong>服务器的IP和数据库配置</strong>来填写，可在application.yml文件中修改active指向pro，来测试是否能够成功连接服务器中的数据库</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-2-打包"><a href="#2-2-打包" class="headerlink" title="2.2 打包"></a>2.2 打包</h3><ul>
+<li><p>修改application.yml文件中的active:pro，然后执行maven clean，清除本地测试时生成的jar包<img src="https://img-blog.csdnimg.cn/3150f7541e3748149f0b32032c789857.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbGlxOTgy,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+</li>
+<li><p>执行maven package，后端项目打包完成<img src="https://img-blog.csdnimg.cn/371e2ef7900a453b8e0fa74d5aecafe7.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbGlxOTgy,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<h3 id="2-3-上传到服务器"><a href="#2-3-上传到服务器" class="headerlink" title="2.3 上传到服务器"></a>2.3 上传到服务器</h3></li>
+<li><p>找到项目路径下打包出的文件 target，找到target下的打包文件，后缀名是 .jar，即可运行的jar包，然后使用宝塔将其从本地路径中上传到服务器，路径可以为 /www/wwwroot/project_name，末尾的project_name文件夹可按照自己需求新建</p>
+<blockquote>
+<p> PS：/www/wwwroot路径是宝塔默认建站目录，放到此处便于查找</p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/a4fa2547b3784434a70c23e9c7b66099.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbGlxOTgy,size_20,color_FFFFFF,t_70,g_se,x_16" alt="\[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-lvcAnWm8-1638865326074)(C:\Users\Q\AppData\Roaming\Typora\typora-user-images\image-20211207142402694.png)\]"></p>
+</li>
+</ul>
+<h3 id="2-4-后端项目服务器配置"><a href="#2-4-后端项目服务器配置" class="headerlink" title="2.4 后端项目服务器配置"></a>2.4 后端项目服务器配置</h3><ul>
+<li>只需确保jdk安装成功，且jar包上传成功即可</li>
+</ul>
+<h3 id="2-5-运行测试"><a href="#2-5-运行测试" class="headerlink" title="2.5 运行测试"></a>2.5 运行测试</h3><h4 id="2-5-1-运行后端jar包"><a href="#2-5-1-运行后端jar包" class="headerlink" title="2.5.1 运行后端jar包"></a>2.5.1 运行后端jar包</h4><p><strong>在Linux系统下有多种运行jar包的方式。建议使用方法d，保留项目运行日志。日志文件会生成到项目同级路径下。</strong></p>
+<ul>
+<li><p>a.当前终端被锁定，可按CTRL + C打断程序运行，或关闭窗口退出程序</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar xxx.jar</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>b.当前终端不被锁定，但是当窗口关闭时，程序中止运行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar xxx.jar &amp;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>c.不挂断运行命令,当账户退出或终端关闭时,程序仍然运行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup java -jar xxxx.jar &amp;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>d.指定输出日志文件，不挂断运行命令，退出或终端关闭时程序仍然运行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup java -jar xxx.jar &gt; project.log</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="2-5-2-查看日志文件"><a href="#2-5-2-查看日志文件" class="headerlink" title="2.5.2 查看日志文件"></a>2.5.2 查看日志文件</h4><ul>
+<li><p>建议使用动态查看命令，查看实时更新的日志，打开一个<strong>新的终端</strong>，输入如下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail -f project.log</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="2-5-2-停止运行后端jar包"><a href="#2-5-2-停止运行后端jar包" class="headerlink" title="2.5.2 停止运行后端jar包"></a>2.5.2 停止运行后端jar包</h4><ul>
+<li><p>若使用2.5.1种的方法a、b，直接关闭终端即可</p>
+</li>
+<li><p>若使用2.5.1种的方法c、d，需要查找后端使用端口（这个端口号是填写在SpringBoot项目的application.yml文件中server项中的）占用的进程号，然后关闭进程，即可停掉jar包的运行。命令如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">netstat -tunlp | grep 端口号</span><br><span class="line"></span><br><span class="line">// 得到进程号</span><br><span class="line"></span><br><span class="line"><span class="built_in">kill</span> -9 进程号</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>操作如图，8081是我的后端项目占用的端口号，13061是进程ID<br><img src="https://img-blog.csdnimg.cn/1351d53e7c244ab4a296880ca357f59e.png" alt="在这里插入图片描述"></p>
+</li>
+</ul>
+<h2 id="3、Vue项目配置"><a href="#3、Vue项目配置" class="headerlink" title="3、Vue项目配置"></a>3、Vue项目配置</h2><h3 id="3-1-配置修改"><a href="#3-1-配置修改" class="headerlink" title="3.1 配置修改"></a>3.1 配置修改</h3><ul>
+<li><p>axios.js文件的URL配置为  ==服务器公网IP:端口号==</p>
+</li>
+<li><pre><code class="javascript">axios.defaults.baseURL = <span class="string">"http://服务器公网IP:端口号"</span>
+<span class="comment">// axios.defaults.baseURL = "http://localhost:端口号" 本地使用localhost</span>
+&lt;!--￼<span class="number">12</span>--&gt;</code></pre>
+</li>
+<li><p>打包后的文件名为dist，可在项目路径下查看</p>
+</li>
+</ul>
+<h3 id="3-3-上传到服务器"><a href="#3-3-上传到服务器" class="headerlink" title="3.3 上传到服务器"></a>3.3 上传到服务器</h3><ul>
+<li>通过宝塔可直接上传dist文件夹，如果没有宝塔，可以将dist文件夹压缩后上传到服务器</li>
+<li>建议上传到与2.3节中提到的后端项目上传路径中，相同一个需求的前后端项目放到同一个文件夹中便于查找：/www/wwwroot/project_name</li>
+</ul>
+<h3 id="3-4-前端项目服务器配置"><a href="#3-4-前端项目服务器配置" class="headerlink" title="3.4 前端项目服务器配置"></a>3.4 前端项目服务器配置</h3><ul>
+<li><p>需要对服务器的Nginx进行配置，以满足前端项目的运行</p>
+</li>
+<li><p>通过宝塔安装Nginx，其默认的配置文件会被备份为 nginx.conf.default，且生成一份新的配置文件 nginx.conf。</p>
+</li>
+<li><p>如果是使用宝塔安装的Nginx，则文件存放路径为/www/server/nginx/conf</p>
+</li>
+<li><p>首先从 nginx.conf.default 中复制一份以 server 为标签的代码，如下图：<img src="https://img-blog.csdnimg.cn/9b584e70197e40bb94719568fa0227ca.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbGlxOTgy,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+</li>
+<li><p>真正需要修改文件的是 <strong>nginx.conf</strong>，此文件可以通过宝塔界面的“软件商店”—“Nginx”—“设置”—“配置修改”来修改，在此处修改时如果修改的格式有误等错误会被提示无法保存<br><img src="https://img-blog.csdnimg.cn/a6504141d322426a9436a2a751e5308b.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbGlxOTgy,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+</li>
+<li><p>将<strong>上一步复制的server代码段</strong>复制到文件中的 include 标签上方（配置文件中会有一个已经存在的server 标签，不需要覆盖，顺着它粘贴代码段A即可，不会冲突）</p>
+</li>
+<li><p>删除代码段中所有注释，保留四个未被注释的标签（listen、server_name、location / 、error_page）即可</p>
+</li>
+<li><p>修改上述四个标签</p>
+<ul>
+<li><p>(1)listen标签后填写前端项目要使用的端口号</p>
+</li>
+<li><p>(2)server_name标签填写服务器公网IP</p>
+</li>
+<li><p>(3)location标签的root标签填写vue项目的打包文件dist的路径</p>
+</li>
+<li><p>(4)location标签的添加一行代码标签防止刷新出现404</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">try_files <span class="variable">$uri</span> <span class="variable">$uri</span>/ /index.html;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>(5)error_page标签不需要变动<br><img src="https://img-blog.csdnimg.cn/1768f6d6776c4e17bd4284b28b6980d8.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbGlxOTgy,size_20,color_FFFFFF,t_70,g_se,x_16" alt="+ 修改后内容如图\[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-N1RjvpYY-1638865326076)(C:\Users\Q\Desktop\屏幕截图 2021-12-07 152729.png)\]"></p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>重载Nginx配置并重新启动即可，在宝塔的界面操作很方便<img src="https://img-blog.csdnimg.cn/0b0d6bfae871424aa9a9559eb8b01d22.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbGlxOTgy,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></li>
+</ul>
+<h3 id="3-5-运行测试"><a href="#3-5-运行测试" class="headerlink" title="3.5 运行测试"></a>3.5 运行测试</h3><ul>
+<li>确保已经重载Nginx配置并重新启动</li>
+<li>在浏览器输入<strong>服务器公网IP:端口</strong>，查看是否能够进入vue项目首页</li>
+</ul>
+<h2 id="4、部署到服务器的前后端联调测试"><a href="#4、部署到服务器的前后端联调测试" class="headerlink" title="4、部署到服务器的前后端联调测试"></a>4、部署到服务器的前后端联调测试</h2><h3 id="4-1-运行后端项目"><a href="#4-1-运行后端项目" class="headerlink" title="4.1 运行后端项目"></a>4.1 运行后端项目</h3><ul>
+<li>nohup java -jar xxx.jar &gt; project.log</li>
+</ul>
+<h3 id="4-2-运行前端项目"><a href="#4-2-运行前端项目" class="headerlink" title="4.2 运行前端项目"></a>4.2 运行前端项目</h3><ul>
+<li>启动Nginx</li>
+</ul>
+<h3 id="4-3-访问与功能测试"><a href="#4-3-访问与功能测试" class="headerlink" title="4.3 访问与功能测试"></a>4.3 访问与功能测试</h3><ul>
+<li>浏览器输入<strong>服务器公网IP:端口</strong>，测试能否进入项目</li>
+<li>测试项目功能是否完整可用</li>
+<li>测试是否有功能与本地测试效果不符</li>
+</ul>
+<h2 id="5、后续部署Docker（待完成）"><a href="#5、后续部署Docker（待完成）" class="headerlink" title="5、后续部署Docker（待完成）"></a>5、后续部署Docker（待完成）</h2><h2 id="6、可能存在的问题："><a href="#6、可能存在的问题：" class="headerlink" title="6、可能存在的问题："></a>6、可能存在的问题：</h2><h3 id="1、打包失败"><a href="#1、打包失败" class="headerlink" title="1、打包失败"></a>1、打包失败</h3><ul>
+<li><p>保错：</p>
+<p>Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.22.2:test (default-test) on project XXX: There are test failures.</p>
+<p>Please refer to D:\IDEAWorkSpace\blog\target\surefire-reports for the individual test results.<br>Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.</p>
+</li>
+<li><p>解决</p>
+<p>使用命令，跳过测试打包</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn clean package -Dmaven.test.skip=<span class="literal">true</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">云服务器</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">部署</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Nginx</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/SpringBoot-Vue//" class="article-tag-list-link color5">SpringBoot+Vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/12/08/SpringBoot+Vue%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E5%88%B0Linux%E6%9C%8D%E5%8A%A1%E5%99%A8/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-LeetCode精选TOP面试题105.从前序与中序遍历序列构造二叉树" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -687,11 +983,11 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">位运算</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数学</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数学</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">位运算</a>
         		</li>
       		
 		</ul>
@@ -796,11 +1092,11 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">矩阵</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">哈希表</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">哈希表</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">矩阵</a>
         		</li>
       		
 		</ul>
@@ -1182,110 +1478,6 @@
 
 
   
-    <article id="post-LeetCode精选TOP面试题048.旋转图像" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/11/17/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98048.%E6%97%8B%E8%BD%AC%E5%9B%BE%E5%83%8F/">LeetCode精选TOP面试题048.旋转图像.md</a>
-    </h1>
-  
-
-        
-        <a href="/2021/11/17/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98048.%E6%97%8B%E8%BD%AC%E5%9B%BE%E5%83%8F/" class="archive-article-date">
-  	<time datetime="2021-11-17T12:21:18.644Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-17</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><ul>
-<li>给定一个 n × n 的二维矩阵 matrix 表示一个图像。</li>
-<li>将图像顺时针旋转 90 度。</li>
-<li>必须在 原地 旋转图像，这意味着需要直接修改输入的二维矩阵。</li>
-<li>不能使用另一个矩阵来旋转图像。</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">example</span><br><span class="line">input  : matrix = &#123;&#123;1,2,3],[4,5,6],[7,8,9&#125;&#125;</span><br><span class="line">output : matrix = &#123;&#123;7,4,1],[8,5,2],[9,6,3&#125;&#125;</span><br><span class="line">input  : matrix = &#123;&#123;5,1,9,11],[2,4,8,10],[13,3,6,7],[15,14,12,16&#125;&#125;</span><br><span class="line">output : matrix = &#123;&#123;15,13,2,5],[14,3,4,1],[12,6,8,9],[16,7,10,11&#125;&#125;</span><br></pre></td></tr></table></figure>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数组</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/LeetCode//" class="article-tag-list-link color4">LeetCode</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/11/17/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98048.%E6%97%8B%E8%BD%AC%E5%9B%BE%E5%83%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/2/">下一页; &amp;末页</a>
@@ -1415,7 +1607,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">整数</a>
+                <a href="javascript:void(0)" class="js-tag color5">数值计算</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1427,7 +1619,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数值计算</a>
+                <a href="javascript:void(0)" class="js-tag color3">整数</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1435,11 +1627,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">字符匹配</a>
+                <a href="javascript:void(0)" class="js-tag color3">分治</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">分治</a>
+                <a href="javascript:void(0)" class="js-tag color5">字符匹配</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1451,6 +1643,42 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">二分查找</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">排序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">双指针</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">哈希表</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">矩阵</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数学</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">位运算</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">列表</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
               </li>
              
@@ -1459,19 +1687,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">排序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">列表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">二分查找</a>
+                <a href="javascript:void(0)" class="js-tag color3">迭代</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1483,7 +1699,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">迭代</a>
+                <a href="javascript:void(0)" class="js-tag color4">BFS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">队列</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1491,7 +1711,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BFS</a>
+                <a href="javascript:void(0)" class="js-tag color2">栈</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1507,11 +1727,43 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">位运算</a>
+                <a href="javascript:void(0)" class="js-tag color1">二叉搜索树</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">中序遍历</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">云服务器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">部署</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">反转</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">哈希</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1547,11 +1799,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">矩阵</a>
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">栈</a>
+                <a href="javascript:void(0)" class="js-tag color3">循环</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1563,43 +1815,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">循环</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">遍历算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">队列</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">哈希表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">双指针</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数学</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">哈希</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">二叉搜索树</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">中序遍历</a>
               </li>
             
             <div class="clearfix"></div>
