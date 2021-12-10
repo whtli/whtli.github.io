@@ -6,7 +6,7 @@
   <link href="https://hexo.flower48237.com/atom.xml" rel="self"/>
   
   <link href="https://hexo.flower48237.com/"/>
-  <updated>2021-12-10T01:39:12.782Z</updated>
+  <updated>2021-12-10T02:50:27.692Z</updated>
   <id>https://hexo.flower48237.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>D2L-d2lzh_pytorch包报错问题解决</title>
+    <link href="https://hexo.flower48237.com/2021/12/10/D2L-d2lzh_pytorch%E5%8C%85%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"/>
+    <id>https://hexo.flower48237.com/2021/12/10/D2L-d2lzh_pytorch%E5%8C%85%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</id>
+    <published>2021-12-10T02:29:08.869Z</published>
+    <updated>2021-12-10T02:50:27.692Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>title: d2lzh_pytorch包报错问题解决<br>copyright: true<br>date: 2021-12-10 11:00:00<br>toc: true<br>tags: [深度学习,PyTorch,Jupyter,Python]<br>categories: [D2L]</p><h4 id="报错："><a href="#报错：" class="headerlink" title="报错："></a>报错：</h4><ul><li>ModuleNotFoundError: No module named ‘d2lzh_pytorch’</li><li>d2lzh_pytorch包中找不到名为’xxx’的属性/函数，如  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">module <span class="string">'d2lzh_pytorch'</span> has no attribute <span class="string">'use_svg_display()'</span></span><br><span class="line">module <span class="string">'d2lzh_pytorch'</span> has no attribute <span class="string">'load_data_fashion_mnist</span></span><br></pre></td></tr></table></figure></li></ul><a id="more"></a><h4 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h4><ul><li>方法1、放到Jupyter工作目录<ul><li><a href="https://github.com/ShusenTang/Dive-into-DL-PyTorch/tree/master/code/d2lzh_pytorch" target="_blank" rel="noopener">下载d2lzh_pytorch文件夹</a>，将其放置到当前Jupyter的工作目录的根目录中即可</li></ul></li><li>方法2、放到虚拟环境的包安装目录<ul><li><a href="https://github.com/ShusenTang/Dive-into-DL-PyTorch/tree/master/code/d2lzh_pytorch" target="_blank" rel="noopener">下载d2lzh_pytorch文件夹</a>，将其放置到anaconda虚拟环境的包路径下，如：Anaconda/envs/pytorch(虚拟环境名)/Lib/site-packages/</li><li>注释代码中的sys.path.append(“..”)，使其从site-packages中找到d2lzh_pytorch包并引入</li></ul></li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;title: d2lzh_pytorch包报错问题解决&lt;br&gt;copyright: true&lt;br&gt;date: 2021-12-10 11:00:00&lt;br&gt;toc: true&lt;br&gt;tags: [深度学习,PyTorch,Jupyter,Python]&lt;br&gt;categories: [D2L]&lt;/p&gt;
+&lt;h4 id=&quot;报错：&quot;&gt;&lt;a href=&quot;#报错：&quot; class=&quot;headerlink&quot; title=&quot;报错：&quot;&gt;&lt;/a&gt;报错：&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;ModuleNotFoundError: No module named ‘d2lzh_pytorch’&lt;/li&gt;
+&lt;li&gt;d2lzh_pytorch包中找不到名为’xxx’的属性/函数，如  &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;module &lt;span class=&quot;string&quot;&gt;&#39;d2lzh_pytorch&#39;&lt;/span&gt; has no attribute &lt;span class=&quot;string&quot;&gt;&#39;use_svg_display()&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;module &lt;span class=&quot;string&quot;&gt;&#39;d2lzh_pytorch&#39;&lt;/span&gt; has no attribute &lt;span class=&quot;string&quot;&gt;&#39;load_data_fashion_mnist&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+
+&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Typora本地图片上传到图床</title>
@@ -679,37 +703,6 @@
     <category term="Java" scheme="https://hexo.flower48237.com/tags/Java/"/>
     
     <category term="LeetCode" scheme="https://hexo.flower48237.com/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode精选TOP面试题033.搜索旋转排序数组</title>
-    <link href="https://hexo.flower48237.com/2021/10/30/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98033.%E6%90%9C%E7%B4%A2%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84/"/>
-    <id>https://hexo.flower48237.com/2021/10/30/LeetCode%E7%B2%BE%E9%80%89TOP%E9%9D%A2%E8%AF%95%E9%A2%98033.%E6%90%9C%E7%B4%A2%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84/</id>
-    <published>2021-10-30T13:24:35.287Z</published>
-    <updated>2021-10-30T13:24:16.473Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>整数数组 nums 按升序排列，数组中的值 互不相同 。<br>在传递给函数之前，nums 在预先未知的某个下标 k（0 &lt;= k &lt; nums.length）上进行了 旋转，使数组变为 [nums[k], nums[k+1], …, nums[n-1], nums[0], nums[1], …, nums[k-1]]（下标 从 0 开始 计数）。例如， [0,1,2,4,5,6,7] 在下标 3 处经旋转后可能变为 [4,5,6,7,0,1,2] 。</p><p>给定 旋转后 的数组 nums 和一个整数 target ，如果 nums 中存在这个目标值 target ，则返回它的下标，否则返回 -1 。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">example</span><br><span class="line">input  : nums = &#123;4,5,6,7,0,1,2&#125;, target = 0</span><br><span class="line">output : 4</span><br><span class="line">input  : nums = &#123;4,5,6,7,0,1,2&#125;, target = 3</span><br><span class="line">output : -1</span><br><span class="line">input  : nums = &#123;3,1&#125;, target = 1</span><br><span class="line">output : 1</span><br><span class="line">input  : nums = &#123;1&#125;, target = 0</span><br><span class="line">output : -1</span><br></pre></td></tr></table></figure><a id="more"></a><h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p><strong>思路 二分查找</strong></p><ul><li>先找到数组旋转后的分界线，即前后两个有序数组的分界线</li><li>根据 target 的大小，决定在左侧有序数组还是右侧有序数组进行二分查找</li><li>执行二分查找确定目标位置</li></ul><h3 id="代码（Java）"><a href="#代码（Java）" class="headerlink" title="代码（Java）"></a>代码（Java）</h3><p><strong>代码</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">search</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> div = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[i] &gt; nums[i + <span class="number">1</span>]) &#123;</span><br><span class="line">                div = i;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// System.out.println(div);</span></span><br><span class="line">        <span class="comment">// 二分查找</span></span><br><span class="line">        <span class="keyword">int</span> left, right;</span><br><span class="line">        <span class="keyword">int</span> length = nums.length;</span><br><span class="line">        <span class="keyword">if</span> (nums[div] &gt;= target &amp;&amp; nums[<span class="number">0</span>] &lt;= target) &#123;</span><br><span class="line">            left = <span class="number">0</span>;</span><br><span class="line">            right = div;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[length - <span class="number">1</span>] &gt;= target) &#123;</span><br><span class="line">            left = div + <span class="number">1</span>;</span><br><span class="line">            right = length - <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// System.out.println(left + "," + right);</span></span><br><span class="line">        <span class="keyword">while</span> (left &lt;= right) &#123;</span><br><span class="line">            <span class="comment">// 防止溢出，通常可写作 middle = (right + left) / 2</span></span><br><span class="line">            <span class="keyword">int</span> middle = (right - left) / <span class="number">2</span> + left;</span><br><span class="line">            <span class="keyword">if</span> (target == nums[middle] &amp;&amp; left &lt;= right) &#123;</span><br><span class="line">                <span class="keyword">return</span> middle;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (target &gt; nums[middle] &amp;&amp; left &lt;= right) &#123;</span><br><span class="line">                left = middle + <span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (target &lt; nums[middle] &amp;&amp; left &lt;= right) &#123;</span><br><span class="line">                right = middle - <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-    <summary type="html">&lt;h3 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h3&gt;&lt;p&gt;整数数组 nums 按升序排列，数组中的值 互不相同 。&lt;br&gt;在传递给函数之前，nums 在预先未知的某个下标 k（0 &amp;lt;= k &amp;lt; nums.length）上进行了 旋转，使数组变为 [nums[k], nums[k+1], …, nums[n-1], nums[0], nums[1], …, nums[k-1]]（下标 从 0 开始 计数）。例如， [0,1,2,4,5,6,7] 在下标 3 处经旋转后可能变为 [4,5,6,7,0,1,2] 。&lt;/p&gt;
-&lt;p&gt;给定 旋转后 的数组 nums 和一个整数 target ，如果 nums 中存在这个目标值 target ，则返回它的下标，否则返回 -1 。&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;example&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;input  : nums = &amp;#123;4,5,6,7,0,1,2&amp;#125;, target = 0&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;output : 4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;input  : nums = &amp;#123;4,5,6,7,0,1,2&amp;#125;, target = 3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;output : -1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;input  : nums = &amp;#123;3,1&amp;#125;, target = 1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;output : 1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;input  : nums = &amp;#123;1&amp;#125;, target = 0&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;output : -1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
-    
-    
-    
-    <category term="LeetCode" scheme="https://hexo.flower48237.com/categories/LeetCode/"/>
-    
-    
-    <category term="Java" scheme="https://hexo.flower48237.com/tags/Java/"/>
-    
-    <category term="LeetCode" scheme="https://hexo.flower48237.com/tags/LeetCode/"/>
-    
-    <category term="面试" scheme="https://hexo.flower48237.com/tags/%E9%9D%A2%E8%AF%95/"/>
-    
-    <category term="数组" scheme="https://hexo.flower48237.com/tags/%E6%95%B0%E7%BB%84/"/>
-    
-    <category term="二分查找" scheme="https://hexo.flower48237.com/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/"/>
     
   </entry>
   
