@@ -6,7 +6,7 @@
   <link href="https://hexo.flower48237.com/atom.xml" rel="self"/>
   
   <link href="https://hexo.flower48237.com/"/>
-  <updated>2021-12-10T09:10:07.221Z</updated>
+  <updated>2021-12-17T14:51:48.575Z</updated>
   <id>https://hexo.flower48237.com/</id>
   
   <author>
@@ -21,14 +21,14 @@
     <link href="https://hexo.flower48237.com/2021/12/10/D2L-d2lzh_pytorch%E5%8C%85%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"/>
     <id>https://hexo.flower48237.com/2021/12/10/D2L-d2lzh_pytorch%E5%8C%85%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</id>
     <published>2021-12-10T03:00:00.000Z</published>
-    <updated>2021-12-10T09:10:07.221Z</updated>
+    <updated>2021-12-17T14:51:48.575Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="报错："><a href="#报错：" class="headerlink" title="报错："></a>报错：</h4><ul><li>ModuleNotFoundError: No module named ‘d2lzh_pytorch’</li><li>d2lzh_pytorch包中找不到名为’xxx’的属性/函数，如  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">module <span class="string">'d2lzh_pytorch'</span> has no attribute <span class="string">'use_svg_display()'</span></span><br><span class="line">module <span class="string">'d2lzh_pytorch'</span> has no attribute <span class="string">'load_data_fashion_mnist</span></span><br></pre></td></tr></table></figure></li></ul><a id="more"></a><h4 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h4><ul><li>方法1、放到Jupyter工作目录<ul><li><a href="https://github.com/ShusenTang/Dive-into-DL-PyTorch/tree/master/code/d2lzh_pytorch" target="_blank" rel="noopener">下载d2lzh_pytorch文件夹</a>，将其放置到当前Jupyter的工作目录的根目录中即可</li></ul></li><li>方法2、放到虚拟环境的包安装目录<ul><li><a href="https://github.com/ShusenTang/Dive-into-DL-PyTorch/tree/master/code/d2lzh_pytorch" target="_blank" rel="noopener">下载d2lzh_pytorch文件夹</a>，将其放置到anaconda虚拟环境的包路径下，如：Anaconda/envs/pytorch(虚拟环境名)/Lib/site-packages/</li><li>注释代码中的sys.path.append(“..”)，使其从site-packages中找到d2lzh_pytorch包并引入</li></ul></li></ul>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="报错："><a href="#报错：" class="headerlink" title="报错："></a>报错：</h4><ul><li>ModuleNotFoundError: No module named ‘d2lzh_pytorch’</li><li>d2lzh_pytorch包中找不到名为’xxx’的属性/函数，如  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">module <span class="string">'d2lzh_pytorch'</span> has no attribute <span class="string">'use_svg_display()'</span></span><br><span class="line">module <span class="string">'d2lzh_pytorch'</span> has no attribute <span class="string">'load_data_fashion_mnist</span></span><br></pre></td></tr></table></figure></li></ul><a id="more"></a><h4 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h4><ul><li>方法1、放到Jupyter工作目录<ul><li><a href="https://github.com/ShusenTang/Dive-into-DL-PyTorch/tree/master/code/d2lzh_pytorch" target="_blank" rel="noopener">下载d2lzh_pytorch文件夹</a>，将其放置到当前Jupyter的工作目录的根目录中即可</li></ul></li><li>方法2、放到虚拟环境的包安装目录<ul><li><a href="https://github.com/ShusenTang/Dive-into-DL-PyTorch/tree/master/code/d2lzh_pytorch" target="_blank" rel="noopener">下载d2lzh_pytorch文件夹</a>，将其放置到anaconda虚拟环境的包路径下，如：Anaconda/envs/pytorch(虚拟环境名)/Lib/site-packages/</li><li>注释代码中的sys.path.append(“..”)，使其从site-packages中找到d2lzh_pytorch包并引入</li></ul></li></ul>]]></content>
     
     
     <summary type="html">&lt;h4 id=&quot;报错：&quot;&gt;&lt;a href=&quot;#报错：&quot; class=&quot;headerlink&quot; title=&quot;报错：&quot;&gt;&lt;/a&gt;报错：&lt;/h4&gt;&lt;ul&gt;
 &lt;li&gt;ModuleNotFoundError: No module named ‘d2lzh_pytorch’&lt;/li&gt;
-&lt;li&gt;d2lzh_pytorch包中找不到名为’xxx’的属性/函数，如  &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;module &lt;span class=&quot;string&quot;&gt;&#39;d2lzh_pytorch&#39;&lt;/span&gt; has no attribute &lt;span class=&quot;string&quot;&gt;&#39;use_svg_display()&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;module &lt;span class=&quot;string&quot;&gt;&#39;d2lzh_pytorch&#39;&lt;/span&gt; has no attribute &lt;span class=&quot;string&quot;&gt;&#39;load_data_fashion_mnist&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;li&gt;d2lzh_pytorch包中找不到名为’xxx’的属性/函数，如  &lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;module &lt;span class=&quot;string&quot;&gt;&#39;d2lzh_pytorch&#39;&lt;/span&gt; has no attribute &lt;span class=&quot;string&quot;&gt;&#39;use_svg_display()&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;module &lt;span class=&quot;string&quot;&gt;&#39;d2lzh_pytorch&#39;&lt;/span&gt; has no attribute &lt;span class=&quot;string&quot;&gt;&#39;load_data_fashion_mnist&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 
 &lt;/li&gt;
@@ -43,9 +43,9 @@
     
     <category term="PyTorch" scheme="https://hexo.flower48237.com/tags/PyTorch/"/>
     
-    <category term="Python" scheme="https://hexo.flower48237.com/tags/Python/"/>
-    
     <category term="Jupyter" scheme="https://hexo.flower48237.com/tags/Jupyter/"/>
+    
+    <category term="Python" scheme="https://hexo.flower48237.com/tags/Python/"/>
     
   </entry>
   
@@ -124,11 +124,11 @@
     
     <category term="深度学习" scheme="https://hexo.flower48237.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
+    <category term="Jupyter" scheme="https://hexo.flower48237.com/tags/Jupyter/"/>
+    
     <category term="Anaconda" scheme="https://hexo.flower48237.com/tags/Anaconda/"/>
     
     <category term="conda" scheme="https://hexo.flower48237.com/tags/conda/"/>
-    
-    <category term="Jupyter" scheme="https://hexo.flower48237.com/tags/Jupyter/"/>
     
   </entry>
   
@@ -197,9 +197,9 @@
     
     <category term="分治" scheme="https://hexo.flower48237.com/tags/%E5%88%86%E6%B2%BB/"/>
     
-    <category term="树" scheme="https://hexo.flower48237.com/tags/%E6%A0%91/"/>
-    
     <category term="二叉树" scheme="https://hexo.flower48237.com/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
+    
+    <category term="树" scheme="https://hexo.flower48237.com/tags/%E6%A0%91/"/>
     
   </entry>
   
@@ -231,11 +231,11 @@
     
     <category term="面试" scheme="https://hexo.flower48237.com/tags/%E9%9D%A2%E8%AF%95/"/>
     
-    <category term="树" scheme="https://hexo.flower48237.com/tags/%E6%A0%91/"/>
-    
     <category term="二叉树" scheme="https://hexo.flower48237.com/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     
     <category term="DFS" scheme="https://hexo.flower48237.com/tags/DFS/"/>
+    
+    <category term="树" scheme="https://hexo.flower48237.com/tags/%E6%A0%91/"/>
     
     <category term="二叉搜索树" scheme="https://hexo.flower48237.com/tags/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/"/>
     
@@ -271,11 +271,11 @@
     
     <category term="面试" scheme="https://hexo.flower48237.com/tags/%E9%9D%A2%E8%AF%95/"/>
     
-    <category term="树" scheme="https://hexo.flower48237.com/tags/%E6%A0%91/"/>
-    
     <category term="二叉树" scheme="https://hexo.flower48237.com/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     
     <category term="BFS" scheme="https://hexo.flower48237.com/tags/BFS/"/>
+    
+    <category term="树" scheme="https://hexo.flower48237.com/tags/%E6%A0%91/"/>
     
     <category term="队列" scheme="https://hexo.flower48237.com/tags/%E9%98%9F%E5%88%97/"/>
     
