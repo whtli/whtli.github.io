@@ -264,59 +264,19 @@
   <div class="card">
     
         <article class="card card-content">
-          <a href="/archives/b9471823.html">
-            <h1 class="post-title">
-              《The Book of Why》 — Chapter2
-            </h1>
-          </a>
-          <div class="card-excerpt">
-            
-              第二章 从海盗到豚鼠：因果推断的起源
-Chapter2  — From Buccaneers to Guinea Pigs:  The Genesis of Causal Inference
-
-                
-          </div>
-          <div class="card-post-footer">
-            <div class="post-meta">
-              <time datetime="2021-09-26T03:17:00.000Z">
-                <i class="iconfont icon-calendar" style="margin-right: 2px;">
-                </i>
-                <span>
-                  2021-09-26
-                </span>
-              </time>
-              
-                
-                  
-                    
-                          
-                            <span class="dot"></span>
-                            
-                              
-                                    <a href="/categories/Causality/" class="post-meta-link">
-                                      Causality
-                                    </a>
-                                    
-                                      
-            </div>
-            <a href="/archives/b9471823.html">
-              继续阅读
-            </a>
-          </div>
-        </article>
-  </div>
-  
-  <div class="card">
-    
-        <article class="card card-content">
           <a href="/archives/38f4f5a2.html">
             <h1 class="post-title">
               SQL学习：INDEX、DROP、ALTER、 AUTO INCREMENT
             </h1>
           </a>
-          <div class="card-excerpt">
+          <!-- <div class="card-excerpt">
             
               创建索引介绍在不读取整个表的情况下，索引能更加快速地查找数据。用户无法看到索引，他们只能被用来提高查询效率。更新一个带有索引的表比更新一个不带索引的表花费更多时间，这是由于索引本身也需要更新导致的。因此，理想的做法是仅在经常被搜索的表上创建索引。
+                
+          </div> -->
+          <div class="card-excerpt">
+            
+              <h1 id="创建索引"><a href="#创建索引" class="headerlink" title="创建索引"></a>创建索引</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>在不读取整个表的情况下，索引能更加快速地查找数据。用户无法看到索引，他们只能被用来提高查询效率。更新一个带有索引的表比更新一个不带索引的表花费更多时间，这是由于索引本身也需要更新导致的。因此，理想的做法是仅在经常被搜索的表上创建索引。</p>
                 
           </div>
           <div class="card-post-footer">
@@ -357,7 +317,7 @@ Chapter2  — From Buccaneers to Guinea Pigs:  The Genesis of Causal Inference
               SQL学习：CONSTRAINTS
             </h1>
           </a>
-          <div class="card-excerpt">
+          <!-- <div class="card-excerpt">
             
               约束介绍SQL 约束用于规定表中的数据规则。
 如果存在违反约束的数据行为，行为会被约束终止。
@@ -370,6 +330,21 @@ column_name2 data_type(size) constraint_name,
 column_name3 data_type(size) constraint_name,
 ....
 );
+                
+          </div> -->
+          <div class="card-excerpt">
+            
+              <h1 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>SQL 约束用于规定表中的数据规则。</p>
+<p>如果存在违反约束的数据行为，行为会被约束终止。</p>
+<p>约束可以在创建表时规定（通过 CREATE TABLE 语句）；</p>
+<p>或者在表创建之后规定（通过 ALTER TABLE 语句）。</p>
+<h2 id="语法（CREATE-TABLE-CONSTRAINT）"><a href="#语法（CREATE-TABLE-CONSTRAINT）" class="headerlink" title="语法（CREATE TABLE + CONSTRAINT）"></a>语法（CREATE TABLE + CONSTRAINT）</h2><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> table_name
+<span class="token punctuation">(</span>
+column_name1 data_type<span class="token punctuation">(</span>size<span class="token punctuation">)</span> constraint_name<span class="token punctuation">,</span>
+column_name2 data_type<span class="token punctuation">(</span>size<span class="token punctuation">)</span> constraint_name<span class="token punctuation">,</span>
+column_name3 data_type<span class="token punctuation">(</span>size<span class="token punctuation">)</span> constraint_name<span class="token punctuation">,</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
           </div>
           <div class="card-post-footer">
@@ -410,11 +385,18 @@ column_name3 data_type(size) constraint_name,
               SQL学习：增删改查
             </h1>
           </a>
-          <div class="card-excerpt">
+          <!-- <div class="card-excerpt">
             
               SELECT简介
 SELECT 语句用于从数据库中选取数据。
 结果被存储在一个结果表中，称为结果集。
+                
+          </div> -->
+          <div class="card-excerpt">
+            
+              <h1 id="SELECT"><a href="#SELECT" class="headerlink" title="SELECT"></a>SELECT</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><ul>
+<li>SELECT 语句用于从数据库中选取数据。</li>
+<li>结果被存储在一个结果表中，称为结果集。
                 
           </div>
           <div class="card-post-footer">
@@ -455,7 +437,7 @@ SELECT 语句用于从数据库中选取数据。
               SQL学习：SELECT INTO、INSERT INTO SELECT、CREATE DATABASE、CREATE TABLE
             </h1>
           </a>
-          <div class="card-excerpt">
+          <!-- <div class="card-excerpt">
             
               SELECT INTO介绍可以从一个表复制数据，然后把数据插入到另一个新表中。
 语法SELECT * 
@@ -465,6 +447,18 @@ FROM table1
 SELECT　column_name(s)
 INTO table2 [IN externaldb]
 FROM table1
+                
+          </div> -->
+          <div class="card-excerpt">
+            
+              <h1 id="SELECT-INTO"><a href="#SELECT-INTO" class="headerlink" title="SELECT INTO"></a>SELECT INTO</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>可以从一个表复制数据，然后把数据插入到另一个新表中。</p>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token operator">*</span> 
+<span class="token keyword">INTO</span> table2 <span class="token punctuation">[</span><span class="token operator">IN</span> externable<span class="token punctuation">]</span>
+<span class="token keyword">FROM</span> table1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>或</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span>　column_name<span class="token punctuation">(</span>s<span class="token punctuation">)</span>
+<span class="token keyword">INTO</span> table2 <span class="token punctuation">[</span><span class="token operator">IN</span> externaldb<span class="token punctuation">]</span>
+<span class="token keyword">FROM</span> table1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
                 
           </div>
           <div class="card-post-footer">
@@ -505,7 +499,7 @@ FROM table1
               SQL学习：JOIN 操作符
             </h1>
           </a>
-          <div class="card-excerpt">
+          <!-- <div class="card-excerpt">
             
               JOIN（连接）总介绍把两个或多个表的行连接起来有左连接，右连接，全连接，内连接，外连接等七个
 不同的 JOIN
@@ -523,6 +517,26 @@ FULL JOIN：只要其中一个表中存在匹配，则返回行
 
 外连接就好像是为非基准表添加了一行全为空值的万能行，用来与基准表中找不到匹配的行进行匹配。假设两个没有空值的表进行左连接，左表是基准表，左表的所有行都出现在结果中，右表则可能因为无法与基准表匹配而出现是空值的字段。这部分主要涉及的是表连接的逻辑问题。
 
+                
+          </div> -->
+          <div class="card-excerpt">
+            
+              <h1 id="JOIN（连接）"><a href="#JOIN（连接）" class="headerlink" title="JOIN（连接）"></a>JOIN（连接）</h1><h2 id="总介绍"><a href="#总介绍" class="headerlink" title="总介绍"></a>总介绍</h2><p>把两个或多个表的行连接起来<br>有左连接，右连接，全连接，内连接，外连接等七个</p>
+<h2 id="不同的-JOIN"><a href="#不同的-JOIN" class="headerlink" title="不同的 JOIN"></a>不同的 JOIN</h2><ul>
+<li>INNER JOIN：如果表中有至少一个匹配，则返回行</li>
+<li>LEFT JOIN：即使右表中没有匹配，也从左表返回所有的行</li>
+<li>RIGHT JOIN：即使左表中没有匹配，也从右表返回所有的行</li>
+<li>FULL JOIN：只要其中一个表中存在匹配，则返回行</li>
+</ul>
+<blockquote>
+<p>连接的结果可以在逻辑上看作是由SELECT语句指定的列组成的新表。</p>
+</blockquote>
+<blockquote>
+<p>左连接与右连接的左右指的是以两张表中的哪一张为基准，它们都是外连接。</p>
+</blockquote>
+<blockquote>
+<p>外连接就好像是为非基准表添加了一行全为空值的万能行，用来与基准表中找不到匹配的行进行匹配。假设两个没有空值的表进行左连接，左表是基准表，左表的所有行都出现在结果中，右表则可能因为无法与基准表匹配而出现是空值的字段。<br>这部分主要涉及的是表连接的逻辑问题。</p>
+</blockquote>
                 
           </div>
           <div class="card-post-footer">
@@ -563,12 +577,20 @@ FULL JOIN：只要其中一个表中存在匹配，则返回行
               SQL学习：BETWEEN、AS、UNION 操作符
             </h1>
           </a>
-          <div class="card-excerpt">
+          <!-- <div class="card-excerpt">
             
               BETWEEN 操作符介绍sql操作符用于选取介于两个值之间的数据范围内的值。这些值可以是数值、文本或者日期。
 语法SELECT column_name(s)
 FROM table_name 
 WHERE column_name BETWEEN value1 AND value2;
+                
+          </div> -->
+          <div class="card-excerpt">
+            
+              <h1 id="BETWEEN-操作符"><a href="#BETWEEN-操作符" class="headerlink" title="BETWEEN 操作符"></a>BETWEEN 操作符</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>sql操作符用于选取介于两个值之间的数据范围内的值。<br>这些值可以是数值、文本或者日期。</p>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> column_name<span class="token punctuation">(</span>s<span class="token punctuation">)</span>
+<span class="token keyword">FROM</span> table_name 
+<span class="token keyword">WHERE</span> column_name <span class="token operator">BETWEEN</span> value1 <span class="token operator">AND</span> value2<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
                 
           </div>
           <div class="card-post-footer">
@@ -609,10 +631,16 @@ WHERE column_name BETWEEN value1 AND value2;
               SQL学习：SELECT TOP, LIMIT, ROWNUM 子句、LIKE、IN
             </h1>
           </a>
-          <div class="card-excerpt">
+          <!-- <div class="card-excerpt">
             
               SELECT TOP, LIMIT, ROWNUM 子句介绍SELECT TOP 子句用于规定要返回的记录的数目。
 SELECT TOP 子句对于拥有数千条记录的大型表来说，是非常有用的。** notes **:不是所有的数据库系统都支持 SELECT TOP 语句。MySQL 支持 LIMIT 语句来选取指定的条数数据， Oracle 可以使用 ROWNUM 来选取。
+                
+          </div> -->
+          <div class="card-excerpt">
+            
+              <h1 id="SELECT-TOP-LIMIT-ROWNUM-子句"><a href="#SELECT-TOP-LIMIT-ROWNUM-子句" class="headerlink" title="SELECT TOP, LIMIT, ROWNUM 子句"></a>SELECT TOP, LIMIT, ROWNUM 子句</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>SELECT TOP 子句用于规定要返回的记录的数目。</p>
+<p>SELECT TOP 子句对于拥有数千条记录的大型表来说，是非常有用的。<br>** notes **:<br>不是所有的数据库系统都支持 SELECT TOP 语句。<br>MySQL 支持 LIMIT 语句来选取指定的条数数据， Oracle 可以使用 ROWNUM 来选取。</p>
                 
           </div>
           <div class="card-post-footer">
@@ -653,7 +681,7 @@ SELECT TOP 子句对于拥有数千条记录的大型表来说，是非常有用
               LeetCode精选TOP面试题26.删除排序数组中的重复项
             </h1>
           </a>
-          <div class="card-excerpt">
+          <!-- <div class="card-excerpt">
             
               题目描述给定一个排序数组，你需要在 原地 删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。不要使用额外的数组空间，你必须在 原地 修改输入数组 并在使用 O(1) 额外空间的条件下完成。
 example1:
@@ -664,6 +692,19 @@ example2:
 input  : [0,0,1,1,1,2,2,3,3,4]
 output : [0,1,2,3,4]
 note   : 函数应该返回新的长度 5, 并且原数组 nums 的前五个元素被修改为 0, 1, 2, 3, 4。
+                
+          </div> -->
+          <div class="card-excerpt">
+            
+              <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>给定一个排序数组，你需要在 原地 删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。<br>不要使用额外的数组空间，你必须在 原地 修改输入数组 并在使用 O(1) 额外空间的条件下完成。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">example1:
+input  <span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token number">1,1</span>,2<span class="token punctuation">]</span> 
+output <span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token number">1,2</span><span class="token punctuation">]</span>
+note   <span class="token builtin class-name">:</span> 函数应该返回新的长度 <span class="token number">2</span>, 并且原数组 nums 的前两个元素被修改为 <span class="token number">1</span>, <span class="token number">2</span>。 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">example2:
+input  <span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token number">0,0</span>,1,1,1,2,2,3,3,4<span class="token punctuation">]</span>
+output <span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token number">0,1</span>,2,3,4<span class="token punctuation">]</span>
+note   <span class="token builtin class-name">:</span> 函数应该返回新的长度 <span class="token number">5</span>, 并且原数组 nums 的前五个元素被修改为 <span class="token number">0</span>, <span class="token number">1</span>, <span class="token number">2</span>, <span class="token number">3</span>, <span class="token number">4</span>。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
                 
           </div>
           <div class="card-post-footer">
@@ -704,13 +745,22 @@ note   : 函数应该返回新的长度 5, 并且原数组 nums 的前五个元�
               LeetCode精选TOP面试题53.最大子序和
             </h1>
           </a>
-          <div class="card-excerpt">
+          <!-- <div class="card-excerpt">
             
               题目描述给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。
 example:
 input : -2,1,-3,4,-1,2,1,-5,4
 output: 6
 note  : 连续子数组 [4,-1,2,1] 的和最大，为 6
+                
+          </div> -->
+          <div class="card-excerpt">
+            
+              <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">example:
+input <span class="token builtin class-name">:</span> -2,1,-3,4,-1,2,1,-5,4
+output: <span class="token number">6</span>
+note  <span class="token builtin class-name">:</span> 连续子数组 <span class="token punctuation">[</span><span class="token number">4</span>,-1,2,1<span class="token punctuation">]</span> 的和最大，为 <span class="token number">6</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
                 
           </div>
           <div class="card-post-footer">
@@ -737,6 +787,74 @@ note  : 连续子数组 [4,-1,2,1] 的和最大，为 6
                                       
             </div>
             <a href="/archives/4c4d07ae.html">
+              继续阅读
+            </a>
+          </div>
+        </article>
+  </div>
+  
+  <div class="card">
+    
+        <article class="card card-content">
+          <a href="/archives/ba31be9f.html">
+            <h1 class="post-title">
+              LeetCode精选TOP面试题38.外观数列
+            </h1>
+          </a>
+          <!-- <div class="card-excerpt">
+            
+              题目描述「外观数列」是一个整数序列，从数字 1 开始，序列中的每一项都是对前一项的描述。前五项如下：
+1.   1
+2.   11
+3.   21
+4.   1211
+5.   111221
+1  被读作  &#34;one 1&#34;  (&#34;一个一&#34;) , 即 11。
+11 被读作 &#34;two 1s&#34; (&#34;两个一&#34;）, 即 21。
+21 被读作 &#34;one 2&#34;,  &#34;one 1&#34; （&#34;一个二&#34; ,  &#34;一个一&#34;) , 即 1211。
+给定一个正整数 n（1 ≤ n ≤ 30），输出外观数列的第 n 项。
+注意：整数序列中的每一项将表示为一个字符串。
+                
+          </div> -->
+          <div class="card-excerpt">
+            
+              <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>「外观数列」是一个整数序列，从数字 1 开始，序列中的每一项都是对前一项的描述。前五项如下：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token number">1</span>.   <span class="token number">1</span>
+<span class="token number">2</span>.   <span class="token number">11</span>
+<span class="token number">3</span>.   <span class="token number">21</span>
+<span class="token number">4</span>.   <span class="token number">1211</span>
+<span class="token number">5</span>.   <span class="token number">111221</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token number">1</span>  被读作  <span class="token string">"one 1"</span>  <span class="token punctuation">(</span><span class="token string">"一个一"</span><span class="token punctuation">)</span> , 即 <span class="token number">11</span>。
+<span class="token number">11</span> 被读作 <span class="token string">"two 1s"</span> <span class="token punctuation">(</span><span class="token string">"两个一"</span>）, 即 <span class="token number">21</span>。
+<span class="token number">21</span> 被读作 <span class="token string">"one 2"</span>,  <span class="token string">"one 1"</span> （<span class="token string">"一个二"</span> ,  <span class="token string">"一个一"</span><span class="token punctuation">)</span> , 即 <span class="token number">1211</span>。
+给定一个正整数 n（1 ≤ n ≤ <span class="token number">30</span>），输出外观数列的第 n 项。
+注意：整数序列中的每一项将表示为一个字符串。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                
+          </div>
+          <div class="card-post-footer">
+            <div class="post-meta">
+              <time datetime="2020-03-27T06:54:51.000Z">
+                <i class="iconfont icon-calendar" style="margin-right: 2px;">
+                </i>
+                <span>
+                  2020-03-27
+                </span>
+              </time>
+              
+                
+                  
+                    
+                          
+                            <span class="dot"></span>
+                            
+                              
+                                    <a href="/categories/LeetCode/" class="post-meta-link">
+                                      LeetCode
+                                    </a>
+                                    
+                                      
+            </div>
+            <a href="/archives/ba31be9f.html">
               继续阅读
             </a>
           </div>
@@ -832,17 +950,17 @@ note  : 连续子数组 [4,-1,2,1] 的和最大，为 6
   </div>
   <div class="categories-list">
     
-      <a href="/categories/%E5%85%B6%E4%BB%96/">
-        <div class="categories-list-item">
-          其他
-          <span class="categories-list-item-badge">1</span>
-        </div>
-      </a>
-    
       <a href="/categories/D2L/">
         <div class="categories-list-item">
           D2L
           <span class="categories-list-item-badge">3</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E5%85%B6%E4%BB%96/">
+        <div class="categories-list-item">
+          其他
+          <span class="categories-list-item-badge">2</span>
         </div>
       </a>
     
@@ -853,17 +971,17 @@ note  : 连续子数组 [4,-1,2,1] 的和最大，为 6
         </div>
       </a>
     
-      <a href="/categories/SpringBoot-Vue/">
-        <div class="categories-list-item">
-          SpringBoot-Vue
-          <span class="categories-list-item-badge">1</span>
-        </div>
-      </a>
-    
       <a href="/categories/Causality/">
         <div class="categories-list-item">
           Causality
           <span class="categories-list-item-badge">10</span>
+        </div>
+      </a>
+    
+      <a href="/categories/SpringBoot-Vue/">
+        <div class="categories-list-item">
+          SpringBoot-Vue
+          <span class="categories-list-item-badge">1</span>
         </div>
       </a>
     
@@ -877,7 +995,7 @@ note  : 连续子数组 [4,-1,2,1] 的和最大，为 6
       <a href="/categories/%E5%89%91%E6%8C%87offer/">
         <div class="categories-list-item">
           剑指offer
-          <span class="categories-list-item-badge">26</span>
+          <span class="categories-list-item-badge">25</span>
         </div>
       </a>
     
@@ -1179,18 +1297,18 @@ note  : 连续子数组 [4,-1,2,1] 的和最大，为 6
     
       
         
-      
-    
-      
-        
           <a 
             href="/archives/2021" 
             class="archive-card-list-item">
             2021
-            <span class="archive-card-list-item-badge">41</span>
+            <span class="archive-card-list-item-badge">40</span>
           </a>
         
         
+        
+      
+    
+      
         
       
     
@@ -1435,7 +1553,7 @@ note  : 连续子数组 [4,-1,2,1] 的和最大，为 6
         href="/archives/2020" 
         class="archive-card-list-item">
         2020
-        <span class="archive-card-list-item-badge">60</span>
+        <span class="archive-card-list-item-badge">61</span>
       </a>
     
   </div>
@@ -1460,11 +1578,6 @@ note  : 连续子数组 [4,-1,2,1] 的和最大，为 6
   <div class="recent-posts-list">
     
       <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2021-12-21</div>
-        <a href="/archives/518103f6.html"><div class="recent-posts-item-content">【】摘要格式测试</div></a>
-      </div>
-    
-      <div class="recent-posts-item">
         <div class="recent-posts-item-title">2021-12-10</div>
         <a href="/archives/78978eb1.html"><div class="recent-posts-item-content">d2lzh_pytorch包报错问题解决</div></a>
       </div>
@@ -1477,6 +1590,11 @@ note  : 连续子数组 [4,-1,2,1] 的和最大，为 6
       <div class="recent-posts-item">
         <div class="recent-posts-item-title">2021-12-08</div>
         <a href="/archives/2abdf615.html"><div class="recent-posts-item-content">win10使用Anaconda创建可使用PyTorch虚拟环境</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2021-12-08</div>
+        <a href="/archives/39dee8e5.html"><div class="recent-posts-item-content">安装Anaconda+常用的conda命令+Anaconda换源+安装Jupyter</div></a>
       </div>
     
   </div>
@@ -1660,18 +1778,18 @@ note  : 连续子数组 [4,-1,2,1] 的和最大，为 6
     
       
         
-      
-    
-      
-        
           <a 
             href="/archives/2021" 
             class="archive-card-list-item">
             2021
-            <span class="archive-card-list-item-badge">41</span>
+            <span class="archive-card-list-item-badge">40</span>
           </a>
         
         
+        
+      
+    
+      
         
       
     
@@ -1916,7 +2034,7 @@ note  : 连续子数组 [4,-1,2,1] 的和最大，为 6
         href="/archives/2020" 
         class="archive-card-list-item">
         2020
-        <span class="archive-card-list-item-badge">60</span>
+        <span class="archive-card-list-item-badge">61</span>
       </a>
     
   </div>
