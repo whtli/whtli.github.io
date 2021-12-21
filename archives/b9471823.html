@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta 
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <meta 
+    http-equiv="X-UA-Compatible" 
+    content="ie=edge">
+  <meta 
+    name="theme-color" 
+    content="#fff" 
+    id="theme-color">
+  <meta 
+    name="description" 
+    content="鸡排大仙儿的个人博客，Java、Causality/因果推断、学习、博客">
+  <link 
+    rel="icon" 
+    href="/img/q.png">
+  <title>《The Book of Why》 — Chapter2</title>
+  
+    
+      <meta 
+        property="og:title" 
+        content="《The Book of Why》 — Chapter2">
+    
+    
+      <meta 
+        property="og:url" 
+        content="https://hexo.flower48237.com/archives/b9471823.html">
+    
+    
+      <meta 
+        property="og:img" 
+        content="/img/q.png">
+    
+    
+      <meta 
+        property="og:img" 
+        content="&lt;h3 id=&#34;第二章-从海盗到豚鼠：因果推断的起源&#34;&gt;&lt;a href=&#34;#第二章-从海盗到豚鼠：因果推断的起源&#34; class=&#34;headerlink&#34; title=&#34;第二章 从海盗到豚鼠：因果推断的起源&#34;&gt;&lt;/a&gt;第二章 从海盗到豚鼠：因果推断的起源&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;Chapter2  — From Buccaneers to Guinea Pigs:  The Genesis of Causal Inference&lt;/p&gt;
+&lt;/blockquote&gt;">
+    
+    
+      <meta 
+        property="og:type" 
+        content="article">
+      <meta 
+        property="og:article:published_time" 
+        content="2021-09-26">
+      <meta 
+        property="og:article:modified_time" 
+        content="2021-12-21">
+      <meta 
+        property="og:article:author" 
+        content="liq">
+      
+        
+          <meta 
+            property="og:article:tag" 
+            content="Causality">
+        
+          <meta 
+            property="og:article:tag" 
+            content="因果推断">
+        
+      
+    
+  
+  <script>
+    function loadScript(url, cb) {
+      var script = document.createElement('script');
+      script.src = url;
+      if (cb) script.onload = cb;
+      script.async = true;
+      document.body.appendChild(script);
+    }
+    function loadCSS(href, data, attr) {
+      var sheet = document.createElement('link');
+      sheet.ref = 'stylesheet';
+      sheet.href = href;
+      sheet.dataset[data] = attr;
+      document.head.appendChild(sheet);
+    }
+    function changeCSS(cssFile, data, attr) {
+      var oldlink = document.querySelector(data);
+      var newlink = document.createElement("link");
+      newlink.setAttribute("rel", "stylesheet");
+      newlink.setAttribute("href", cssFile);
+      newlink.dataset.prism = attr;
+      document.head.replaceChild(newlink, oldlink);
+    }
+  </script>
+  
+    
+      
+      
+      
+      
+        
+        
+        
+        <script>
+          function prismThemeChange() {
+            if(document.getElementById('theme-color').dataset.mode === 'dark') {
+              if(document.querySelector('[data-prism]')) {
+                changeCSS('/js/lib/prism/prism-tomorrow.min.css', '[data-prism]', 'prism-tomorrow');
+              } else {
+                loadCSS('/js/lib/prism/prism-tomorrow.min.css', 'prism', 'prism-tomorrow');
+              }
+            } else {
+              if(document.querySelector('[data-prism]')) {
+                changeCSS('/js/lib/prism/prism-tomorrow.min.css', '[data-prism]', 'prism-tomorrow');
+              } else {
+                loadCSS('/js/lib/prism/prism-tomorrow.min.css', 'prism', 'prism-tomorrow');
+              }
+            }
+          }
+          prismThemeChange()
+        </script>
+      
+      
+        
+        <link rel="stylesheet" href="/js/lib/prism/prism-line-numbers.min.css">
+      
+    
+  
+  <script>
+    // control reverse button
+    var reverseDarkList = {
+      dark: 'light',
+      light: 'dark'
+    };
+    var themeColor = {
+      dark: '#1c1c1e',
+      light: '#fff'
+    }
+    // get the data of css prefers-color-scheme
+    var getCssMediaQuery = function() {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    };
+    // reverse current darkmode setting function
+    var reverseDarkModeSetting = function() {
+      var setting = localStorage.getItem('user-color-scheme');
+      if(reverseDarkList[setting]) {
+        setting = reverseDarkList[setting];
+      } else if(setting === null) {
+        setting = reverseDarkList[getCssMediaQuery()];
+      } else {
+        return;
+      }
+      localStorage.setItem('user-color-scheme', setting);
+      return setting;
+    };
+    // apply current darkmode setting
+  </script>
+  
+    <script>
+      var setDarkmode = function(mode) {
+      var setting = mode || localStorage.getItem('user-color-scheme');
+      if(setting === getCssMediaQuery()) {
+        document.documentElement.removeAttribute('data-user-color-scheme');
+        localStorage.removeItem('user-color-scheme');
+        document.getElementById('theme-color').content = themeColor[setting];
+        document.getElementById('theme-color').dataset.mode = setting;
+        prismThemeChange();
+      } else if(reverseDarkList[setting]) {
+        document.documentElement.setAttribute('data-user-color-scheme', setting);
+        document.getElementById('theme-color').content = themeColor[setting];
+        document.getElementById('theme-color').dataset.mode = setting;
+        prismThemeChange();
+      } else {
+        document.documentElement.removeAttribute('data-user-color-scheme');
+        localStorage.removeItem('user-color-scheme');
+        document.getElementById('theme-color').content = themeColor[getCssMediaQuery()];
+        document.getElementById('theme-color').dataset.mode = getCssMediaQuery();
+        prismThemeChange();
+      }
+    };
+    setDarkmode();
+    </script>
+  
+  
+  <link rel="preload" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css" as="style" >
+  <link rel="preload" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css" as="style" >
+  
+  
+    <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.js" as="script">
+    <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.css" as="style" >
+  
+  
+    <link rel="preload" href="/js/lib/lozad.min.js" as="script">
+  
+  
+  
+  
+    
+    <link rel="prefetch" href="//cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-svg.js" as="script">
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css">
+  
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css">
+  
+    <link rel="stylesheet" href="/js/lib/lightbox/baguetteBox.min.css">
+  
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="鸡排大仙儿的个人博客" type="application/atom+xml">
+</head>
+
+  <body>
+    <div class="wrapper">
+       
+      <nav class="navbar" style="justify-content: space-between;">
+  <div class="navbar-logo">
+    <span class="navbar-logo-main">
+      
+        <img class="navbar-logo-img" width="32" height="32" src="/img/q.png" alt="blog logo">
+        
+          <span class="navbar-logo-dsc">
+            liq的个人博客
+          </span>
+    </span>
+  </div>
+  <div class="navbar-menu" style="margin-right: 5%;">
+
+    
+      <a href="/" class="navbar-menu-item" rel="external nofollow">
+        
+              首页
+                
+      </a>
+      
+      <a href="/archives" class="navbar-menu-item" rel="external nofollow">
+        
+              归档
+                
+      </a>
+      
+      <a href="/tags" class="navbar-menu-item" rel="external nofollow">
+        
+              标签
+                
+      </a>
+      
+      <a href="/categories" class="navbar-menu-item" rel="external nofollow">
+        
+              分类
+                
+      </a>
+      
+      <a href="/about" class="navbar-menu-item" rel="external nofollow">
+        
+              关于
+                
+      </a>
+      
+      <a href="/links" class="navbar-menu-item" rel="external nofollow">
+        
+              友链
+                
+      </a>
+      
+        <a class="navbar-menu-item darknavbar" id="dark">
+          <i class="iconfont icon-weather"></i>
+        </a>
+        <a class="navbar-menu-item searchnavbar" id="search">
+          <i class="iconfont icon-search" style="font-size: 1.2rem; font-weight: 400;">
+          </i>
+        </a>
+  </div>
+</nav> 
+      
+      <div 
+        id="local-search" 
+        style="display: none">
+        <input
+          class="navbar-menu-item"
+          id="search-input"
+          placeholder="请输入搜索内容..." />
+        <div id="search-content"></div>
+      </div>
+      
+      <div class="section-wrap">
+        <div class="container">
+          <div class="columns">
+            <main class="main-column">
+<article class="card card-content">
+  <header>
+    <h1 class="post-title">
+      《The Book of Why》 — Chapter2
+    </h1>
+  </header>
+  <div class="post-meta post-show-meta">
+    <time datetime="2021-09-26T03:17:00.000Z">
+      <i 
+        class="iconfont icon-calendar" 
+        style="margin-right: 2px;">
+      </i>
+      <span>2021-09-26</span>
+    </time>
+    
+      <span class="dot"></span>
+      
+        <a 
+          href="/categories/Causality/" 
+          class="post-meta-link">
+          Causality
+        </a>
+      
+    
+    
+      <span class="dot"></span>
+      <span>466 字</span>
+    
+  </div>
+  
+    <div 
+      class="post-meta post-show-meta" 
+      style="margin-top: -10px;">
+      <div style="display: flex; align-items: center;">
+        <i 
+          class="iconfont icon-biaoqian" 
+          style="margin-right: 2px; font-size: 1.15rem;">
+        </i>
+        
+          
+          <a 
+            href="/tags/Causality/" 
+            class="post-meta-link">
+            Causality
+          </a>
+        
+          
+            <span class="dot"></span>
+          
+          <a 
+            href="/tags/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD/" 
+            class="post-meta-link">
+            因果推断
+          </a>
+        
+      </div>
+    </div>
+  
+  </header>
+  <div 
+    id="section" 
+    class="post-content">
+    <h3 id="第二章-从海盗到豚鼠：因果推断的起源"><a href="#第二章-从海盗到豚鼠：因果推断的起源" class="headerlink" title="第二章 从海盗到豚鼠：因果推断的起源"></a>第二章 从海盗到豚鼠：因果推断的起源</h3><blockquote>
+<p>Chapter2  — From Buccaneers to Guinea Pigs:  The Genesis of Causal Inference</p>
+</blockquote>
+<span id="more"></span>
+
+<h4 id="高尔顿和被丢弃的探索"><a href="#高尔顿和被丢弃的探索" class="headerlink" title="高尔顿和被丢弃的探索"></a>高尔顿和被丢弃的探索</h4><h4 id="皮尔逊：狂热者的愤怒"><a href="#皮尔逊：狂热者的愤怒" class="headerlink" title="皮尔逊：狂热者的愤怒"></a>皮尔逊：狂热者的愤怒</h4><ul>
+<li>使用因果透镜可知在某些情况下，正确的分析只能来自于聚合数据而非来自分组数据。因果推断的逻辑能够在事实上告诉我们应该信任哪个结果。（50）</li>
+<li>休厄尔·赖特首次建立了一套根据数据回答因果关系的数学方法，被称为路径图或者路径分析。赖特首次证明了“相关关系不等于因果关系”这个判定应该让位于“某些相关关系确实意味着因果关系”。（53）</li>
+</ul>
+<h4 id="但它仍在动"><a href="#但它仍在动" class="headerlink" title="但它仍在动"></a>但它仍在动</h4><ul>
+<li>因果关系绝不仅是针对数据的关系，在因果分析中，必须将对数据生成过程的理解体现出来，并以此得出初始数据不包含的内容。（63）</li>
+<li>结构方程建模（SEM）（64）</li>
+</ul>
+<h4 id="从主观性到客观性——贝叶斯连接"><a href="#从主观性到客观性——贝叶斯连接" class="headerlink" title="从主观性到客观性——贝叶斯连接"></a>从主观性到客观性——贝叶斯连接</h4><ul>
+<li>与相关性分析和大多数主流统计学不同，因果分析要求研究者<strong>做出主观判断</strong>。绘制的因果图是对于某个研究课题所涉及的因果过程拓扑结构的定性判断，在因果关系方面，睿智的主观性比任何客观性都更能阐明我们所处的这个真实世界。（67）</li>
+<li>贝叶斯分析的原型：先验判断+新的证据-&gt;经过修正的判断。（67）</li>
+<li>许多例子已经证明，随着数据量的增加，先验判断的影响会越来越小，乃至彻底消失，这就让我们最终得到的那个结论仍然是客观的。（68）</li>
+</ul>
+<blockquote>
+<p>《THE BOOK OF WHY: THE NEW SCIENCE OF CAUSE AND EFFECT》</p>
+<p>——JUDEA PEARL AND DANA MACKENZIE</p>
+</blockquote>
+
+  </div>
+  <div>
+    
+      <div 
+        class="post-note note-warning copyright" 
+        style="margin-top: 42px">
+        <p>
+          <span style="font-weight: bold;">作者：</span><a 
+            target="_blank" 
+            rel="nofollow noopener noreferrer" 
+            href="/about">
+            liq
+          </a>
+        </p>
+        <p><span style="font-weight: bold;">文章链接：</span><a style = "text-overflow : ellipsis;display: inline-block; width: 100%; overflow: hidden;" target="_blank" rel="nofollow noopener noreferrer" href="https://hexo.flower48237.com/archives/b9471823.html">https://hexo.flower48237.com/archives/b9471823.html</a></p>
+        <p><span style="font-weight: bold;">版权声明：</span>本博客所有文章除特别声明外，均采用<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0 协议</a>。转载请注明出处！</p>
+      </div>
+    
+  </div>
+</article>
+<div class="nav">
+  
+    <div class="nav-item-prev">
+      <a 
+        href="/archives/5a47ea4c.html" 
+        class="nav-link">
+        <i class="iconfont icon-left nav-prev-icon"></i>
+        <div>
+          <div class="nav-label">上一篇</div>
+          
+            <div class="nav-title">《The Book of Why》 — Preface &amp; Chapter1 </div>
+          
+        </div>
+      </a>
+    </div>
+  
+  
+    <div class="nav-item-next">
+      <a 
+        href="/archives/38f4f5a2.html" 
+        class="nav-link">
+        <div>
+          <div class="nav-label">下一篇</div>
+          
+            <div class="nav-title">SQL学习：INDEX、DROP、ALTER、 AUTO INCREMENT </div>
+          
+        </div>
+        <i class="iconfont icon-right nav-next-icon"></i>
+      </a>
+    </div>
+  
+</div>
+
+<div 
+  class="card card-content toc-card" 
+  id="mobiletoc">
+  <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E4%BB%8E%E6%B5%B7%E7%9B%97%E5%88%B0%E8%B1%9A%E9%BC%A0%EF%BC%9A%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD%E7%9A%84%E8%B5%B7%E6%BA%90"><span class="toc-text">第二章 从海盗到豚鼠：因果推断的起源</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%AB%98%E5%B0%94%E9%A1%BF%E5%92%8C%E8%A2%AB%E4%B8%A2%E5%BC%83%E7%9A%84%E6%8E%A2%E7%B4%A2"><span class="toc-text">高尔顿和被丢弃的探索</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9A%AE%E5%B0%94%E9%80%8A%EF%BC%9A%E7%8B%82%E7%83%AD%E8%80%85%E7%9A%84%E6%84%A4%E6%80%92"><span class="toc-text">皮尔逊：狂热者的愤怒</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%86%E5%AE%83%E4%BB%8D%E5%9C%A8%E5%8A%A8"><span class="toc-text">但它仍在动</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%8E%E4%B8%BB%E8%A7%82%E6%80%A7%E5%88%B0%E5%AE%A2%E8%A7%82%E6%80%A7%E2%80%94%E2%80%94%E8%B4%9D%E5%8F%B6%E6%96%AF%E8%BF%9E%E6%8E%A5"><span class="toc-text">从主观性到客观性——贝叶斯连接</span></a></li></ol></li></ol>
+</div></main>
+            <aside class="left-column">
+              
+              <div class="card card-author">
+                
+  <img 
+    src="/img/q.png" 
+    class="author-img"
+    width="88"
+    height="88"
+    alt="author avatar">
+
+<p class="author-name">liq</p>
+<p class="author-description">记录学习过程</p>
+<div class="author-message">
+  <a 
+    class="author-posts-count" 
+    href="/archives">
+    <span>101</span>
+    <span>文章</span>
+  </a>
+  <a 
+    class="author-categories-count" 
+    href="/categories">
+    <span>8</span>
+    <span>分类</span>
+  </a>
+  <a 
+    class="author-tags-count" 
+    href="/tags">
+    <span>61</span>
+    <span>标签</span>
+  </a>
+</div>
+
+  <div class="author-card-society">
+    
+      <div class="author-card-society-icon">
+        <a target="_blank" rel="noopener" href="https://github.com/flower48237">
+          <i class="iconfont icon-github society-icon"></i>
+        </a>
+      </div>
+    
+  </div>
+
+              </div>
+               <div class="sticky-tablet">
+  
+  
+    <article class="display-when-two-columns spacer">
+      <div class="card card-content toc-card">
+        <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E4%BB%8E%E6%B5%B7%E7%9B%97%E5%88%B0%E8%B1%9A%E9%BC%A0%EF%BC%9A%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD%E7%9A%84%E8%B5%B7%E6%BA%90"><span class="toc-text">第二章 从海盗到豚鼠：因果推断的起源</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%AB%98%E5%B0%94%E9%A1%BF%E5%92%8C%E8%A2%AB%E4%B8%A2%E5%BC%83%E7%9A%84%E6%8E%A2%E7%B4%A2"><span class="toc-text">高尔顿和被丢弃的探索</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9A%AE%E5%B0%94%E9%80%8A%EF%BC%9A%E7%8B%82%E7%83%AD%E8%80%85%E7%9A%84%E6%84%A4%E6%80%92"><span class="toc-text">皮尔逊：狂热者的愤怒</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%86%E5%AE%83%E4%BB%8D%E5%9C%A8%E5%8A%A8"><span class="toc-text">但它仍在动</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%8E%E4%B8%BB%E8%A7%82%E6%80%A7%E5%88%B0%E5%AE%A2%E8%A7%82%E6%80%A7%E2%80%94%E2%80%94%E8%B4%9D%E5%8F%B6%E6%96%AF%E8%BF%9E%E6%8E%A5"><span class="toc-text">从主观性到客观性——贝叶斯连接</span></a></li></ol></li></ol>
+      </div>
+    </article>
+  
+  
+  <article class="card card-content categories-widget">
+    <div class="categories-card">
+  <div class="categories-header">
+    <i 
+      class="iconfont icon-fenlei" 
+      style="padding-right: 2px;">
+    </i>分类
+  </div>
+  <div class="categories-list">
+    
+      <a href="/categories/%E5%85%B6%E4%BB%96/">
+        <div class="categories-list-item">
+          其他
+          <span class="categories-list-item-badge">1</span>
+        </div>
+      </a>
+    
+      <a href="/categories/D2L/">
+        <div class="categories-list-item">
+          D2L
+          <span class="categories-list-item-badge">3</span>
+        </div>
+      </a>
+    
+      <a href="/categories/LeetCode/">
+        <div class="categories-list-item">
+          LeetCode
+          <span class="categories-list-item-badge">47</span>
+        </div>
+      </a>
+    
+      <a href="/categories/SpringBoot-Vue/">
+        <div class="categories-list-item">
+          SpringBoot-Vue
+          <span class="categories-list-item-badge">1</span>
+        </div>
+      </a>
+    
+      <a href="/categories/Causality/">
+        <div class="categories-list-item">
+          Causality
+          <span class="categories-list-item-badge">10</span>
+        </div>
+      </a>
+    
+      <a href="/categories/SQL/">
+        <div class="categories-list-item">
+          SQL
+          <span class="categories-list-item-badge">7</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E5%89%91%E6%8C%87offer/">
+        <div class="categories-list-item">
+          剑指offer
+          <span class="categories-list-item-badge">26</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E7%AC%94%E8%AF%95%E9%A2%98/">
+        <div class="categories-list-item">
+          笔试题
+          <span class="categories-list-item-badge">6</span>
+        </div>
+      </a>
+    
+  </div>
+</div>
+  </article>
+  
+  <article class="card card-content tags-widget">
+    <div class="tags-card">
+  <div class="tags-header">
+    <i 
+      class="iconfont icon-biaoqian" 
+      style="padding-right: 2px;">
+    </i>热门标签
+  </div>
+  <div class="tags-list">
+    
+      <a 
+        href="/tags/Java/" 
+        title="Java">
+        <div class="tags-list-item">Java</div>
+      </a>
+    
+      <a 
+        href="/tags/LeetCode/" 
+        title="LeetCode">
+        <div class="tags-list-item">LeetCode</div>
+      </a>
+    
+      <a 
+        href="/tags/%E9%9D%A2%E8%AF%95/" 
+        title="面试">
+        <div class="tags-list-item">面试</div>
+      </a>
+    
+      <a 
+        href="/tags/%E6%95%B0%E7%BB%84/" 
+        title="数组">
+        <div class="tags-list-item">数组</div>
+      </a>
+    
+      <a 
+        href="/tags/%E9%81%8D%E5%8E%86/" 
+        title="遍历">
+        <div class="tags-list-item">遍历</div>
+      </a>
+    
+      <a 
+        href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" 
+        title="字符串">
+        <div class="tags-list-item">字符串</div>
+      </a>
+    
+      <a 
+        href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" 
+        title="二叉树">
+        <div class="tags-list-item">二叉树</div>
+      </a>
+    
+      <a 
+        href="/tags/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD/" 
+        title="因果推断">
+        <div class="tags-list-item">因果推断</div>
+      </a>
+    
+      <a 
+        href="/tags/Causality/" 
+        title="Causality">
+        <div class="tags-list-item">Causality</div>
+      </a>
+    
+      <a 
+        href="/tags/%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/" 
+        title="数值计算">
+        <div class="tags-list-item">数值计算</div>
+      </a>
+    
+      <a 
+        href="/tags/%E9%93%BE%E8%A1%A8/" 
+        title="链表">
+        <div class="tags-list-item">链表</div>
+      </a>
+    
+      <a 
+        href="/tags/%E9%80%92%E5%BD%92/" 
+        title="递归">
+        <div class="tags-list-item">递归</div>
+      </a>
+    
+      <a 
+        href="/tags/SQL/" 
+        title="SQL">
+        <div class="tags-list-item">SQL</div>
+      </a>
+    
+      <a 
+        href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" 
+        title="动态规划">
+        <div class="tags-list-item">动态规划</div>
+      </a>
+    
+      <a 
+        href="/tags/%E6%A0%88/" 
+        title="栈">
+        <div class="tags-list-item">栈</div>
+      </a>
+    
+      <a 
+        href="/tags/%E6%8E%92%E5%BA%8F/" 
+        title="排序">
+        <div class="tags-list-item">排序</div>
+      </a>
+    
+  </div>
+</div>
+  </article>
+  
+  
+</div>
+            </aside>
+            <aside class="right-column">
+              <div class="sticky-widescreen">
+  
+  
+    <article class="card card-content toc-card">
+      <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E4%BB%8E%E6%B5%B7%E7%9B%97%E5%88%B0%E8%B1%9A%E9%BC%A0%EF%BC%9A%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD%E7%9A%84%E8%B5%B7%E6%BA%90"><span class="toc-text">第二章 从海盗到豚鼠：因果推断的起源</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%AB%98%E5%B0%94%E9%A1%BF%E5%92%8C%E8%A2%AB%E4%B8%A2%E5%BC%83%E7%9A%84%E6%8E%A2%E7%B4%A2"><span class="toc-text">高尔顿和被丢弃的探索</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9A%AE%E5%B0%94%E9%80%8A%EF%BC%9A%E7%8B%82%E7%83%AD%E8%80%85%E7%9A%84%E6%84%A4%E6%80%92"><span class="toc-text">皮尔逊：狂热者的愤怒</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%86%E5%AE%83%E4%BB%8D%E5%9C%A8%E5%8A%A8"><span class="toc-text">但它仍在动</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%8E%E4%B8%BB%E8%A7%82%E6%80%A7%E5%88%B0%E5%AE%A2%E8%A7%82%E6%80%A7%E2%80%94%E2%80%94%E8%B4%9D%E5%8F%B6%E6%96%AF%E8%BF%9E%E6%8E%A5"><span class="toc-text">从主观性到客观性——贝叶斯连接</span></a></li></ol></li></ol>
+    </article>
+  
+  
+  <article class="card card-content">
+    <div class="recent-posts-card">
+  <div class="recent-posts-header">
+    <i 
+      class="iconfont icon-wenzhang_huaban" 
+      style="padding-right: 2px;">
+    </i>最近文章
+  </div>
+  <div class="recent-posts-list">
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2021-12-21</div>
+        <a href="/archives/518103f6.html"><div class="recent-posts-item-content">【】摘要格式测试</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2021-12-10</div>
+        <a href="/archives/78978eb1.html"><div class="recent-posts-item-content">d2lzh_pytorch包报错问题解决</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2021-12-09</div>
+        <a href="/archives/e43ae7cd.html"><div class="recent-posts-item-content">Typora本地图片上传到图床</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2021-12-08</div>
+        <a href="/archives/2abdf615.html"><div class="recent-posts-item-content">win10使用Anaconda创建可使用PyTorch虚拟环境</div></a>
+      </div>
+    
+  </div>
+</div>
+  </article>
+  
+  
+</div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <footer class="footer">
+  <div class="footer-container">
+    <div>
+      <div class="footer-dsc">
+        <span>
+          Copyright ©
+          
+            2020 -
+          
+          2021
+        </span>
+        &nbsp;
+        <a 
+          href="/" 
+          class="footer-link">
+          liq的个人博客
+        </a>
+      </div>
+    </div>
+
+    
+      <div class="footer-dsc">
+        
+          Powered by
+          <a 
+            href="https://hexo.io/" 
+            class="footer-link" 
+            target="_blank" 
+            rel="nofollow noopener noreferrer">
+            &nbsp;Hexo
+          </a>
+        
+        
+          <span>&nbsp;|&nbsp;</span>
+        
+        
+          Theme -
+          <a 
+            href="https://github.com/theme-kaze" 
+            class="footer-link" 
+            target="_blank"
+            rel="nofollow noopener noreferrer">
+            &nbsp;Kaze
+          </a>
+        
+      </div>
+    
+    
+    
+    
+      <div class="footer-dsc">
+        
+          本站总访问量<span id="busuanzi_value_site_pv"></span>次
+        
+        
+          <span>&nbsp;|&nbsp;</span>
+        
+        
+          本站总访客数<span id="busuanzi_value_site_uv"></span>次
+        
+      </div>
+      
+    
+</footer> 
+    
+  <a 
+    role="button" 
+    id="scrollbutton" 
+    class="basebutton" 
+    aria-label="回到顶部">
+    <i class="iconfont icon-arrowleft button-icon"></i>
+  </a>
+
+<a 
+  role="button" 
+  id="menubutton"
+  aria-label="menu button"
+  class="basebutton">
+  <i class="iconfont icon-menu button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="popbutton" 
+  class="basebutton" 
+  aria-label="控制中心">
+  <i class="iconfont icon-expand button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="darkbutton" 
+  class="basebutton darkwidget" 
+  aria-label="夜色模式">
+  <i class="iconfont icon-weather button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="searchbutton" 
+  class="basebutton searchwidget" 
+  aria-label="搜索">
+  <i class="iconfont icon-search button-icon"></i>
+</a> 
+     
+     
+      
+ 
+     
+     
+      <script>
+  var addImgLayout = function () {
+    var img = document.querySelectorAll('.post-content img')
+    var i
+    for (i = 0; i < img.length; i++) {
+      var wrapper = document.createElement('a')
+      wrapper.setAttribute('href', img[i].getAttribute('data-src'))
+      wrapper.setAttribute('aria-label', 'illustration')
+      wrapper.style.cssText =
+        'width: 100%; display: flex; justify-content: center;'
+      if (img[i].alt) wrapper.dataset.caption = img[i].alt
+      wrapper.dataset.nolink = true
+      img[i].before(wrapper)
+      wrapper.append(img[i])
+      var divWrap = document.createElement('div')
+      divWrap.classList.add('gallery')
+      wrapper.before(divWrap)
+      divWrap.append(wrapper)
+    }
+    baguetteBox.run('.gallery')
+  }
+</script>
+<script>
+  loadScript(
+    "/js/lib/lightbox/baguetteBox.min.js",
+    addImgLayout
+  )
+</script>
+ 
+     
+     
+    <script src="/js/main.js"></script> 
+    
+      <script> 
+        loadScript('/js/lib/busuanzi.min.js') 
+      </script>
+     
+    
+      <script>
+        var addLazyload = function () {
+          var observer = lozad('.lozad', {
+            load: function (el) {
+              el.srcset = el.getAttribute('data-src')
+            },
+            loaded: function (el) {
+              el.classList.add('loaded')
+            },
+          })
+          observer.observe()
+        }
+      </script>
+      <script>
+        loadScript('/js/lib/lozad.min.js', addLazyload)
+      </script>
+     
+    
+    
+      <script>
+        setTimeout(() => {localSearch("search.json")}, 0)
+      </script>
+    
+  </body>
+</html>

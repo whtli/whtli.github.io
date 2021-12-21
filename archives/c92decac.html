@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta 
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <meta 
+    http-equiv="X-UA-Compatible" 
+    content="ie=edge">
+  <meta 
+    name="theme-color" 
+    content="#fff" 
+    id="theme-color">
+  <meta 
+    name="description" 
+    content="鸡排大仙儿的个人博客，Java、Causality/因果推断、学习、博客">
+  <link 
+    rel="icon" 
+    href="/img/q.png">
+  <title>《The Book of Why》 — Chapter7</title>
+  
+    
+      <meta 
+        property="og:title" 
+        content="《The Book of Why》 — Chapter7">
+    
+    
+      <meta 
+        property="og:url" 
+        content="https://hexo.flower48237.com/archives/c92decac.html">
+    
+    
+      <meta 
+        property="og:img" 
+        content="/img/q.png">
+    
+    
+      <meta 
+        property="og:img" 
+        content="&lt;h3 id=&#34;第七章-超越统计调整：征服干预之峰&#34;&gt;&lt;a href=&#34;#第七章-超越统计调整：征服干预之峰&#34; class=&#34;headerlink&#34; title=&#34;第七章 超越统计调整：征服干预之峰&#34;&gt;&lt;/a&gt;第七章 超越统计调整：征服干预之峰&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;CHAPTER 7 — Beyond Adjustment: The Conquest of  Mount Intervention&lt;/p&gt;
+&lt;/blockquote&gt;">
+    
+    
+      <meta 
+        property="og:type" 
+        content="article">
+      <meta 
+        property="og:article:published_time" 
+        content="2021-09-29">
+      <meta 
+        property="og:article:modified_time" 
+        content="2021-12-21">
+      <meta 
+        property="og:article:author" 
+        content="liq">
+      
+        
+          <meta 
+            property="og:article:tag" 
+            content="Causality">
+        
+          <meta 
+            property="og:article:tag" 
+            content="因果推断">
+        
+      
+    
+  
+  <script>
+    function loadScript(url, cb) {
+      var script = document.createElement('script');
+      script.src = url;
+      if (cb) script.onload = cb;
+      script.async = true;
+      document.body.appendChild(script);
+    }
+    function loadCSS(href, data, attr) {
+      var sheet = document.createElement('link');
+      sheet.ref = 'stylesheet';
+      sheet.href = href;
+      sheet.dataset[data] = attr;
+      document.head.appendChild(sheet);
+    }
+    function changeCSS(cssFile, data, attr) {
+      var oldlink = document.querySelector(data);
+      var newlink = document.createElement("link");
+      newlink.setAttribute("rel", "stylesheet");
+      newlink.setAttribute("href", cssFile);
+      newlink.dataset.prism = attr;
+      document.head.replaceChild(newlink, oldlink);
+    }
+  </script>
+  
+    
+      
+      
+      
+      
+        
+        
+        
+        <script>
+          function prismThemeChange() {
+            if(document.getElementById('theme-color').dataset.mode === 'dark') {
+              if(document.querySelector('[data-prism]')) {
+                changeCSS('/js/lib/prism/prism-tomorrow.min.css', '[data-prism]', 'prism-tomorrow');
+              } else {
+                loadCSS('/js/lib/prism/prism-tomorrow.min.css', 'prism', 'prism-tomorrow');
+              }
+            } else {
+              if(document.querySelector('[data-prism]')) {
+                changeCSS('/js/lib/prism/prism-tomorrow.min.css', '[data-prism]', 'prism-tomorrow');
+              } else {
+                loadCSS('/js/lib/prism/prism-tomorrow.min.css', 'prism', 'prism-tomorrow');
+              }
+            }
+          }
+          prismThemeChange()
+        </script>
+      
+      
+        
+        <link rel="stylesheet" href="/js/lib/prism/prism-line-numbers.min.css">
+      
+    
+  
+  <script>
+    // control reverse button
+    var reverseDarkList = {
+      dark: 'light',
+      light: 'dark'
+    };
+    var themeColor = {
+      dark: '#1c1c1e',
+      light: '#fff'
+    }
+    // get the data of css prefers-color-scheme
+    var getCssMediaQuery = function() {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    };
+    // reverse current darkmode setting function
+    var reverseDarkModeSetting = function() {
+      var setting = localStorage.getItem('user-color-scheme');
+      if(reverseDarkList[setting]) {
+        setting = reverseDarkList[setting];
+      } else if(setting === null) {
+        setting = reverseDarkList[getCssMediaQuery()];
+      } else {
+        return;
+      }
+      localStorage.setItem('user-color-scheme', setting);
+      return setting;
+    };
+    // apply current darkmode setting
+  </script>
+  
+    <script>
+      var setDarkmode = function(mode) {
+      var setting = mode || localStorage.getItem('user-color-scheme');
+      if(setting === getCssMediaQuery()) {
+        document.documentElement.removeAttribute('data-user-color-scheme');
+        localStorage.removeItem('user-color-scheme');
+        document.getElementById('theme-color').content = themeColor[setting];
+        document.getElementById('theme-color').dataset.mode = setting;
+        prismThemeChange();
+      } else if(reverseDarkList[setting]) {
+        document.documentElement.setAttribute('data-user-color-scheme', setting);
+        document.getElementById('theme-color').content = themeColor[setting];
+        document.getElementById('theme-color').dataset.mode = setting;
+        prismThemeChange();
+      } else {
+        document.documentElement.removeAttribute('data-user-color-scheme');
+        localStorage.removeItem('user-color-scheme');
+        document.getElementById('theme-color').content = themeColor[getCssMediaQuery()];
+        document.getElementById('theme-color').dataset.mode = getCssMediaQuery();
+        prismThemeChange();
+      }
+    };
+    setDarkmode();
+    </script>
+  
+  
+  <link rel="preload" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css" as="style" >
+  <link rel="preload" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css" as="style" >
+  
+  
+    <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.js" as="script">
+    <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.css" as="style" >
+  
+  
+    <link rel="preload" href="/js/lib/lozad.min.js" as="script">
+  
+  
+  
+  
+    
+    <link rel="prefetch" href="//cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-svg.js" as="script">
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css">
+  
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css">
+  
+    <link rel="stylesheet" href="/js/lib/lightbox/baguetteBox.min.css">
+  
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="鸡排大仙儿的个人博客" type="application/atom+xml">
+</head>
+
+  <body>
+    <div class="wrapper">
+       
+      <nav class="navbar" style="justify-content: space-between;">
+  <div class="navbar-logo">
+    <span class="navbar-logo-main">
+      
+        <img class="navbar-logo-img" width="32" height="32" src="/img/q.png" alt="blog logo">
+        
+          <span class="navbar-logo-dsc">
+            liq的个人博客
+          </span>
+    </span>
+  </div>
+  <div class="navbar-menu" style="margin-right: 5%;">
+
+    
+      <a href="/" class="navbar-menu-item" rel="external nofollow">
+        
+              首页
+                
+      </a>
+      
+      <a href="/archives" class="navbar-menu-item" rel="external nofollow">
+        
+              归档
+                
+      </a>
+      
+      <a href="/tags" class="navbar-menu-item" rel="external nofollow">
+        
+              标签
+                
+      </a>
+      
+      <a href="/categories" class="navbar-menu-item" rel="external nofollow">
+        
+              分类
+                
+      </a>
+      
+      <a href="/about" class="navbar-menu-item" rel="external nofollow">
+        
+              关于
+                
+      </a>
+      
+      <a href="/links" class="navbar-menu-item" rel="external nofollow">
+        
+              友链
+                
+      </a>
+      
+        <a class="navbar-menu-item darknavbar" id="dark">
+          <i class="iconfont icon-weather"></i>
+        </a>
+        <a class="navbar-menu-item searchnavbar" id="search">
+          <i class="iconfont icon-search" style="font-size: 1.2rem; font-weight: 400;">
+          </i>
+        </a>
+  </div>
+</nav> 
+      
+      <div 
+        id="local-search" 
+        style="display: none">
+        <input
+          class="navbar-menu-item"
+          id="search-input"
+          placeholder="请输入搜索内容..." />
+        <div id="search-content"></div>
+      </div>
+      
+      <div class="section-wrap">
+        <div class="container">
+          <div class="columns">
+            <main class="main-column">
+<article class="card card-content">
+  <header>
+    <h1 class="post-title">
+      《The Book of Why》 — Chapter7
+    </h1>
+  </header>
+  <div class="post-meta post-show-meta">
+    <time datetime="2021-09-29T07:20:00.000Z">
+      <i 
+        class="iconfont icon-calendar" 
+        style="margin-right: 2px;">
+      </i>
+      <span>2021-09-29</span>
+    </time>
+    
+      <span class="dot"></span>
+      
+        <a 
+          href="/categories/Causality/" 
+          class="post-meta-link">
+          Causality
+        </a>
+      
+    
+    
+      <span class="dot"></span>
+      <span>2.6k 字</span>
+    
+  </div>
+  
+    <div 
+      class="post-meta post-show-meta" 
+      style="margin-top: -10px;">
+      <div style="display: flex; align-items: center;">
+        <i 
+          class="iconfont icon-biaoqian" 
+          style="margin-right: 2px; font-size: 1.15rem;">
+        </i>
+        
+          
+          <a 
+            href="/tags/Causality/" 
+            class="post-meta-link">
+            Causality
+          </a>
+        
+          
+            <span class="dot"></span>
+          
+          <a 
+            href="/tags/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD/" 
+            class="post-meta-link">
+            因果推断
+          </a>
+        
+      </div>
+    </div>
+  
+  </header>
+  <div 
+    id="section" 
+    class="post-content">
+    <h3 id="第七章-超越统计调整：征服干预之峰"><a href="#第七章-超越统计调整：征服干预之峰" class="headerlink" title="第七章 超越统计调整：征服干预之峰"></a>第七章 超越统计调整：征服干预之峰</h3><blockquote>
+<p>CHAPTER 7 — Beyond Adjustment: The Conquest of  Mount Intervention</p>
+</blockquote>
+<span id="more"></span>
+
+<ul>
+<li>因果之梯的第二层：对未尝试过的行动和策略的效果进行预测。<strong>混杂因子是导致我们预测混淆的主要障碍</strong>。在用“路径阻断”工具和后门标准消除这一障碍后，就能精确而系统地绘制出登上干预之峰地路线图。（路径阻断工具是d-separation）（195）</li>
+<li>do演算允许研究者探索并绘制出通往干预之峰的所有可能的路线。（195）</li>
+</ul>
+<h4 id="最简单的路线：后门调整公式"><a href="#最简单的路线：后门调整公式" class="headerlink" title="最简单的路线：后门调整公式"></a>最简单的路线：后门调整公式</h4><ul>
+<li><p>最常用的预测干预效果的方法是使用统计调整公式“控制”混杂因子，如果确定已经掌握了变量的一个充分集（去混因子）的数据就可以用来阻断干预和结果之间的所有后门路径，就可以使用此方法。为了做到这一点，需要首先估计去混因子在每个“水平”或数据分层中产生的效应，并据此测算出干预的平均因果效应。然后需要计算这些层的因果效应的加权平均值，为此需要对每个层都按期在总体中的分布频率进行加权。（195-196）</p>
+</li>
+<li><p>后门准则在估算平均因果效应的过程中所起的作用是，保证去混因子在各层中的因果效应与我们在这一层观察到的趋势相一致。据此可以从数据中逐层估计出因果效应，若没有后门准则，研究者就无法保证所有的统计调整都是合理的。(196)</p>
+</li>
+<li><p>当有多个混杂因子和多个数据分层时，就很难将所有的可能性都罗列出来，一个补救办法是将数值分成有限并且数目可控的类别，但是这种分类方式的选择上可能存在主观性，如果需要进行统计调整的变量比较多，那么类别的数量就会呈指数增长，这将使计算过程变得难以执行，更糟糕的是，在分类完成后，很可能会发现许多层缺乏样本，因此无法对其进行任何概率估计。为应对“维度灾难”问题，设计了数据外推法，即通过一个与数据拟合的光滑函数来填充空的层所形成的洞。运用最为广泛的光滑函数是线性近似，使用时每个因果效应都可以用一个数字（因果系数）来表示，并且根据统计调整公式进行计算的过程非常简单。（197）</p>
+</li>
+<li><p>无论是否经过统计调整，回归系数只表示一种统计趋势，其自身并不能传递因果信息。（198）</p>
+<p>回归系数有时可以体现因果效应，有时则无法体现，而其中的差异无法仅依靠数据来说明。还需要具备另外两个条件才能赋予偏回归系数r<del>YXZ</del> 以因果合法性：</p>
+<p>​    （1）所绘制的相应的因果图能够合理地解释现实情况；</p>
+<p>​    （2）需要据其进行统计调整的变量Z应该满足后门准则。（198）</p>
+</li>
+<li><p>基于回归的统计调整只适用于线性模型：</p>
+<p>（1）一旦使用了线性模型，就失去了为非线性的相互作用建模的能力；（2）即使不知道图中箭头背后的函数是什么，后门调整仍有效。（199）</p>
+</li>
+<li><p>后门准则和后门调整公式的关系：</p>
+<p>后门准则用于判定哪些变量集可以用来去除数据中的混杂；</p>
+<p>后门调整公式所做的实际上就是去混杂。（199）</p>
+</li>
+<li><p>如果因缺乏必要的数据而无法阻断某条后台路径，统计调整公式就会完全失灵。（199）</p>
+</li>
+</ul>
+<h4 id="前门准则"><a href="#前门准则" class="headerlink" title="前门准则"></a>前门准则</h4><ul>
+<li><img src="C:\Users\Q\AppData\Roaming\Typora\typora-user-images\image-20210920194445099.png" alt="image-20210920194445099" style="zoom:50%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="C:\Users\Q\AppData\Roaming\Typora\typora-user-images\image-20210920194445099.png" class="lozad post-image">
+
+<p>由于缺乏混杂因子的数据，不能阻断“吸烟 &lt;— 混杂因子 —&gt; 癌症”的后门路径，因此不能使用后门调整来控制混杂因子的影响。（200）</p>
+<p>前门指的是直接的因果路径“吸烟 —&gt; 焦油沉积 —&gt; 癌症”。（201）</p>
+</li>
+<li><p>可以用纯数学的方式在不引入do算子本身（不进行实际干预）的情况下算出概率结果。（202）</p>
+</li>
+<li><p>在不引入do算子的前提下表示 <strong>P（癌症 | do （吸烟））</strong> 就被称作<strong>前门调整</strong>（202）</p>
+</li>
+<li><p>依据上图，设X代表吸烟，Y代表癌症，Z代表焦油沉积，U代表不可观测的变量（未出现在公式中），公式如下</p>
+<ul>
+<li><p>前门调整公式：</p>
+<p>​         P(Y|do(X)) = Σ<del>z</del> P(Z=z,X)Σ<del>x</del> P(Y|X=x,Z=z)P(X=x)</p>
+</li>
+<li><p>后门调整公式：</p>
+<p>​         P(Y|do(X)) = Σ<del>z</del> P(Y|X,Z=z)P(Z=z)</p>
+</li>
+<li><p>从前门公式中可知：</p>
+<p>（1）在公式的任何地方都看不到U，这是整个问题的关键；</p>
+<p>（2）将被估量视为一种针对问题中的目标量的计算方法。</p>
+</li>
+</ul>
+</li>
+<li><p>因果图的一个主要优势就算让假设变得透明，以供专家和决策者探讨和辩论。（203）</p>
+</li>
+<li><p>在假设正确的情况下，即使没有混杂因子的数据，仍然可以用数学方式消除混杂因子的影响。（203）</p>
+</li>
+<li><p>前门调整是一个强大的工具，因为：</p>
+<p>它允许我们控制混杂因子，并且这些混杂因子可以是我们无法观测（如“动机”）甚至无法命名的。也正是因为同样的原因，随机对照试验被认为是估计因果效应的黄金标准。（206）</p>
+</li>
+</ul>
+<h4 id="do演算，或者心胜于物"><a href="#do演算，或者心胜于物" class="headerlink" title="do演算，或者心胜于物"></a>do演算，或者心胜于物</h4><ul>
+<li><p>前门调整公式和后门调整公式的最终目标是根据P（Y|X,A,B,Z,……）此类不涉及do算子的数据估算干预的效果，即P（Y|do（X））。</p>
+<p>如果可以成功消除计算过程中的do概率，就可以利用观测数据来估计因果效应，就可以从因果关系之梯的第一层踏上第二层。（206）</p>
+</li>
+<li><p>三条合法的do表达式变换⭐：（209）</p>
+<ul>
+<li><p>规则1：如果我们观察到变量W和Y无关（其前提可能是以其他变量Z为条件），那么Y的概率分布就不会随W而改变。等式成立的条件是，在删除了指向X的所有箭头之后，变量集Z会阻断所有从W到Y的路径。</p>
+<p>句法解释：允许增加或删除某个观察结果。</p>
+<p>P(Y|do(X), Z, W) = P(Y|do(X),Z)</p>
+</li>
+<li><p>规则2：如果变量Z阻断了X到Y的的所有后门路径，那么以Z为条件（对Z进行变量控制），则do（X）等同于see（X）。即在控制了一个充分的去混因子之后，留下的相关性就是真正的因果效应。</p>
+<p>句法解释：允许用观察替换干预。</p>
+<p>P(Y|do(X),Z) = P(Y|X,Z)</p>
+</li>
+<li><p>规则3：如果没有从X到Y的因果路径，就可以将do(X)和从P(Y|do(X))中移除。即如果我们实施的干预行动（do）不会影响Y，那么Y的概率分布就不会改变。</p>
+<p>句法解释：允许删除或添加干预。</p>
+<p>P(Y|do(X)) = P(Y)</p>
+</li>
+</ul>
+</li>
+<li><p>有了上述三条规则，就可以推导出前门调整公式。这是一个不以控制混杂因子为手段来估计因果效应的方法。（210）</p>
+</li>
+<li><p>如果我们在规则1到3中找不到根据数据估计P(Y|do(X))的方法，那么对于这个问题，解决方案就是不存在的。</p>
+<p>在此情况下，除了进行随机对照试验别无选择。这三条规则还能告诉我们，对于某个特定的问题，什么样的额外假设或实验可以使因果效应从不可估计变为可估计。（212）</p>
+</li>
+<li><p>伊利亚·斯皮塞=&gt;发现可以用于确定某个解决方案是否存在“多项式时间”的算法。（213）</p>
+</li>
+</ul>
+<h4 id="案例：斯诺医生的离奇案例"><a href="#案例：斯诺医生的离奇案例" class="headerlink" title="案例：斯诺医生的离奇案例"></a>案例：斯诺医生的离奇案例</h4><ul>
+<li><p>工具变量（222）如图，Z就是一个工具变量：</p>
+<p>（1）Z和U之间没有箭头（二者独立）</p>
+<p>（2）Z和X之间有一个箭头</p>
+<p>（3）Z和Y之间没有直接箭头</p>
+<img src="C:\Users\Q\AppData\Roaming\Typora\typora-user-images\image-20210919171432493.png" alt="image-20210919171432493" style="zoom:50%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="C:\Users\Q\AppData\Roaming\Typora\typora-user-images\image-20210919171432493.png" class="lozad post-image">
+</li>
+<li><p>工具变量允许我们执行与前门调整相同的处理：在无法控制混杂因子或收集其数据的情况下估计X对Y的效应。（223）</p>
+</li>
+<li><p>路径图所体现的假设在本质上是因果关系。（223）</p>
+</li>
+</ul>
+<h4 id="好胆固醇与坏胆固醇"><a href="#好胆固醇与坏胆固醇" class="headerlink" title="好胆固醇与坏胆固醇"></a>好胆固醇与坏胆固醇</h4><ul>
+<li><p>“未履行问题”，如受试者虽然随机地接受了药物安排，但实际上并没有复用被分配的药物。（226）</p>
+</li>
+<li><p>当变量都是二元变量，而不是数值变量时，意味着不能使用线性模型，因此工具变量公式也不适用。在这种情况下，通常可以使用被称为“单调性”的弱相关来代替线性假设。但在这么做之前，需要先确保工具变量的三个假设都是有效的（226-227）：</p>
+<p>（1）工具变量Z独立于混杂因子</p>
+<p>（2）Z到Y无直接路径</p>
+<p>（3）Z和X之间存在强关联</p>
+</li>
+<li><p>取最好和最坏情况的做法通常会得到一个估计结果的取值范围。（228）</p>
+</li>
+<li><p>在做任何干预研究之前，都要看我们实际操作的变量（如低密度脂蛋白的终生水平）是否与我们认为自己正在操作的变量（如低密度脂蛋白的当前水平）相同。</p>
+<p>工具变量是一个重要的工具，他能我们帮助我们揭示do演算无法解释的因果信息，do演算强调的是点估计，而非不等式。</p>
+<p>相比工具变量，do演算具有更强大的灵活性，因为在do演算中，我们不需要对因果模型中函数的性质做任何假设。而如果我们的确有足够的科学依据证实类似单调性或线性这样的假设的话，那么像工具变量这种针对性更强的工具就更值得考虑。（230-231）</p>
+</li>
+</ul>
+<blockquote>
+<p>《THE BOOK OF WHY: THE NEW SCIENCE OF CAUSE AND EFFECT》</p>
+<p>——JUDEA PEARL AND DANA MACKENZIE</p>
+</blockquote>
+
+  </div>
+  <div>
+    
+      <div 
+        class="post-note note-warning copyright" 
+        style="margin-top: 42px">
+        <p>
+          <span style="font-weight: bold;">作者：</span><a 
+            target="_blank" 
+            rel="nofollow noopener noreferrer" 
+            href="/about">
+            liq
+          </a>
+        </p>
+        <p><span style="font-weight: bold;">文章链接：</span><a style = "text-overflow : ellipsis;display: inline-block; width: 100%; overflow: hidden;" target="_blank" rel="nofollow noopener noreferrer" href="https://hexo.flower48237.com/archives/c92decac.html">https://hexo.flower48237.com/archives/c92decac.html</a></p>
+        <p><span style="font-weight: bold;">版权声明：</span>本博客所有文章除特别声明外，均采用<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0 协议</a>。转载请注明出处！</p>
+      </div>
+    
+  </div>
+</article>
+<div class="nav">
+  
+    <div class="nav-item-prev">
+      <a 
+        href="/archives/2e95c1ab.html" 
+        class="nav-link">
+        <i class="iconfont icon-left nav-prev-icon"></i>
+        <div>
+          <div class="nav-label">上一篇</div>
+          
+            <div class="nav-title">《The Book of Why》 — Chapter9 </div>
+          
+        </div>
+      </a>
+    </div>
+  
+  
+    <div class="nav-item-next">
+      <a 
+        href="/archives/5992f13d.html" 
+        class="nav-link">
+        <div>
+          <div class="nav-label">下一篇</div>
+          
+            <div class="nav-title">《The Book of Why》 — Chapter8 </div>
+          
+        </div>
+        <i class="iconfont icon-right nav-next-icon"></i>
+      </a>
+    </div>
+  
+</div>
+
+<div 
+  class="card card-content toc-card" 
+  id="mobiletoc">
+  <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%83%E7%AB%A0-%E8%B6%85%E8%B6%8A%E7%BB%9F%E8%AE%A1%E8%B0%83%E6%95%B4%EF%BC%9A%E5%BE%81%E6%9C%8D%E5%B9%B2%E9%A2%84%E4%B9%8B%E5%B3%B0"><span class="toc-text">第七章 超越统计调整：征服干预之峰</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E8%B7%AF%E7%BA%BF%EF%BC%9A%E5%90%8E%E9%97%A8%E8%B0%83%E6%95%B4%E5%85%AC%E5%BC%8F"><span class="toc-text">最简单的路线：后门调整公式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%89%8D%E9%97%A8%E5%87%86%E5%88%99"><span class="toc-text">前门准则</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#do%E6%BC%94%E7%AE%97%EF%BC%8C%E6%88%96%E8%80%85%E5%BF%83%E8%83%9C%E4%BA%8E%E7%89%A9"><span class="toc-text">do演算，或者心胜于物</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A1%88%E4%BE%8B%EF%BC%9A%E6%96%AF%E8%AF%BA%E5%8C%BB%E7%94%9F%E7%9A%84%E7%A6%BB%E5%A5%87%E6%A1%88%E4%BE%8B"><span class="toc-text">案例：斯诺医生的离奇案例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A5%BD%E8%83%86%E5%9B%BA%E9%86%87%E4%B8%8E%E5%9D%8F%E8%83%86%E5%9B%BA%E9%86%87"><span class="toc-text">好胆固醇与坏胆固醇</span></a></li></ol></li></ol>
+</div></main>
+            <aside class="left-column">
+              
+              <div class="card card-author">
+                
+  <img 
+    src="/img/q.png" 
+    class="author-img"
+    width="88"
+    height="88"
+    alt="author avatar">
+
+<p class="author-name">liq</p>
+<p class="author-description">记录学习过程</p>
+<div class="author-message">
+  <a 
+    class="author-posts-count" 
+    href="/archives">
+    <span>101</span>
+    <span>文章</span>
+  </a>
+  <a 
+    class="author-categories-count" 
+    href="/categories">
+    <span>8</span>
+    <span>分类</span>
+  </a>
+  <a 
+    class="author-tags-count" 
+    href="/tags">
+    <span>61</span>
+    <span>标签</span>
+  </a>
+</div>
+
+  <div class="author-card-society">
+    
+      <div class="author-card-society-icon">
+        <a target="_blank" rel="noopener" href="https://github.com/flower48237">
+          <i class="iconfont icon-github society-icon"></i>
+        </a>
+      </div>
+    
+  </div>
+
+              </div>
+               <div class="sticky-tablet">
+  
+  
+    <article class="display-when-two-columns spacer">
+      <div class="card card-content toc-card">
+        <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%83%E7%AB%A0-%E8%B6%85%E8%B6%8A%E7%BB%9F%E8%AE%A1%E8%B0%83%E6%95%B4%EF%BC%9A%E5%BE%81%E6%9C%8D%E5%B9%B2%E9%A2%84%E4%B9%8B%E5%B3%B0"><span class="toc-text">第七章 超越统计调整：征服干预之峰</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E8%B7%AF%E7%BA%BF%EF%BC%9A%E5%90%8E%E9%97%A8%E8%B0%83%E6%95%B4%E5%85%AC%E5%BC%8F"><span class="toc-text">最简单的路线：后门调整公式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%89%8D%E9%97%A8%E5%87%86%E5%88%99"><span class="toc-text">前门准则</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#do%E6%BC%94%E7%AE%97%EF%BC%8C%E6%88%96%E8%80%85%E5%BF%83%E8%83%9C%E4%BA%8E%E7%89%A9"><span class="toc-text">do演算，或者心胜于物</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A1%88%E4%BE%8B%EF%BC%9A%E6%96%AF%E8%AF%BA%E5%8C%BB%E7%94%9F%E7%9A%84%E7%A6%BB%E5%A5%87%E6%A1%88%E4%BE%8B"><span class="toc-text">案例：斯诺医生的离奇案例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A5%BD%E8%83%86%E5%9B%BA%E9%86%87%E4%B8%8E%E5%9D%8F%E8%83%86%E5%9B%BA%E9%86%87"><span class="toc-text">好胆固醇与坏胆固醇</span></a></li></ol></li></ol>
+      </div>
+    </article>
+  
+  
+  <article class="card card-content categories-widget">
+    <div class="categories-card">
+  <div class="categories-header">
+    <i 
+      class="iconfont icon-fenlei" 
+      style="padding-right: 2px;">
+    </i>分类
+  </div>
+  <div class="categories-list">
+    
+      <a href="/categories/%E5%85%B6%E4%BB%96/">
+        <div class="categories-list-item">
+          其他
+          <span class="categories-list-item-badge">1</span>
+        </div>
+      </a>
+    
+      <a href="/categories/D2L/">
+        <div class="categories-list-item">
+          D2L
+          <span class="categories-list-item-badge">3</span>
+        </div>
+      </a>
+    
+      <a href="/categories/LeetCode/">
+        <div class="categories-list-item">
+          LeetCode
+          <span class="categories-list-item-badge">47</span>
+        </div>
+      </a>
+    
+      <a href="/categories/SpringBoot-Vue/">
+        <div class="categories-list-item">
+          SpringBoot-Vue
+          <span class="categories-list-item-badge">1</span>
+        </div>
+      </a>
+    
+      <a href="/categories/Causality/">
+        <div class="categories-list-item">
+          Causality
+          <span class="categories-list-item-badge">10</span>
+        </div>
+      </a>
+    
+      <a href="/categories/SQL/">
+        <div class="categories-list-item">
+          SQL
+          <span class="categories-list-item-badge">7</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E5%89%91%E6%8C%87offer/">
+        <div class="categories-list-item">
+          剑指offer
+          <span class="categories-list-item-badge">26</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E7%AC%94%E8%AF%95%E9%A2%98/">
+        <div class="categories-list-item">
+          笔试题
+          <span class="categories-list-item-badge">6</span>
+        </div>
+      </a>
+    
+  </div>
+</div>
+  </article>
+  
+  <article class="card card-content tags-widget">
+    <div class="tags-card">
+  <div class="tags-header">
+    <i 
+      class="iconfont icon-biaoqian" 
+      style="padding-right: 2px;">
+    </i>热门标签
+  </div>
+  <div class="tags-list">
+    
+      <a 
+        href="/tags/Java/" 
+        title="Java">
+        <div class="tags-list-item">Java</div>
+      </a>
+    
+      <a 
+        href="/tags/LeetCode/" 
+        title="LeetCode">
+        <div class="tags-list-item">LeetCode</div>
+      </a>
+    
+      <a 
+        href="/tags/%E9%9D%A2%E8%AF%95/" 
+        title="面试">
+        <div class="tags-list-item">面试</div>
+      </a>
+    
+      <a 
+        href="/tags/%E6%95%B0%E7%BB%84/" 
+        title="数组">
+        <div class="tags-list-item">数组</div>
+      </a>
+    
+      <a 
+        href="/tags/%E9%81%8D%E5%8E%86/" 
+        title="遍历">
+        <div class="tags-list-item">遍历</div>
+      </a>
+    
+      <a 
+        href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" 
+        title="字符串">
+        <div class="tags-list-item">字符串</div>
+      </a>
+    
+      <a 
+        href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" 
+        title="二叉树">
+        <div class="tags-list-item">二叉树</div>
+      </a>
+    
+      <a 
+        href="/tags/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD/" 
+        title="因果推断">
+        <div class="tags-list-item">因果推断</div>
+      </a>
+    
+      <a 
+        href="/tags/Causality/" 
+        title="Causality">
+        <div class="tags-list-item">Causality</div>
+      </a>
+    
+      <a 
+        href="/tags/%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/" 
+        title="数值计算">
+        <div class="tags-list-item">数值计算</div>
+      </a>
+    
+      <a 
+        href="/tags/%E9%93%BE%E8%A1%A8/" 
+        title="链表">
+        <div class="tags-list-item">链表</div>
+      </a>
+    
+      <a 
+        href="/tags/%E9%80%92%E5%BD%92/" 
+        title="递归">
+        <div class="tags-list-item">递归</div>
+      </a>
+    
+      <a 
+        href="/tags/SQL/" 
+        title="SQL">
+        <div class="tags-list-item">SQL</div>
+      </a>
+    
+      <a 
+        href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" 
+        title="动态规划">
+        <div class="tags-list-item">动态规划</div>
+      </a>
+    
+      <a 
+        href="/tags/%E6%A0%88/" 
+        title="栈">
+        <div class="tags-list-item">栈</div>
+      </a>
+    
+      <a 
+        href="/tags/%E6%8E%92%E5%BA%8F/" 
+        title="排序">
+        <div class="tags-list-item">排序</div>
+      </a>
+    
+  </div>
+</div>
+  </article>
+  
+  
+</div>
+            </aside>
+            <aside class="right-column">
+              <div class="sticky-widescreen">
+  
+  
+    <article class="card card-content toc-card">
+      <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%83%E7%AB%A0-%E8%B6%85%E8%B6%8A%E7%BB%9F%E8%AE%A1%E8%B0%83%E6%95%B4%EF%BC%9A%E5%BE%81%E6%9C%8D%E5%B9%B2%E9%A2%84%E4%B9%8B%E5%B3%B0"><span class="toc-text">第七章 超越统计调整：征服干预之峰</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E8%B7%AF%E7%BA%BF%EF%BC%9A%E5%90%8E%E9%97%A8%E8%B0%83%E6%95%B4%E5%85%AC%E5%BC%8F"><span class="toc-text">最简单的路线：后门调整公式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%89%8D%E9%97%A8%E5%87%86%E5%88%99"><span class="toc-text">前门准则</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#do%E6%BC%94%E7%AE%97%EF%BC%8C%E6%88%96%E8%80%85%E5%BF%83%E8%83%9C%E4%BA%8E%E7%89%A9"><span class="toc-text">do演算，或者心胜于物</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A1%88%E4%BE%8B%EF%BC%9A%E6%96%AF%E8%AF%BA%E5%8C%BB%E7%94%9F%E7%9A%84%E7%A6%BB%E5%A5%87%E6%A1%88%E4%BE%8B"><span class="toc-text">案例：斯诺医生的离奇案例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A5%BD%E8%83%86%E5%9B%BA%E9%86%87%E4%B8%8E%E5%9D%8F%E8%83%86%E5%9B%BA%E9%86%87"><span class="toc-text">好胆固醇与坏胆固醇</span></a></li></ol></li></ol>
+    </article>
+  
+  
+  <article class="card card-content">
+    <div class="recent-posts-card">
+  <div class="recent-posts-header">
+    <i 
+      class="iconfont icon-wenzhang_huaban" 
+      style="padding-right: 2px;">
+    </i>最近文章
+  </div>
+  <div class="recent-posts-list">
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2021-12-21</div>
+        <a href="/archives/518103f6.html"><div class="recent-posts-item-content">【】摘要格式测试</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2021-12-10</div>
+        <a href="/archives/78978eb1.html"><div class="recent-posts-item-content">d2lzh_pytorch包报错问题解决</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2021-12-09</div>
+        <a href="/archives/e43ae7cd.html"><div class="recent-posts-item-content">Typora本地图片上传到图床</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2021-12-08</div>
+        <a href="/archives/2abdf615.html"><div class="recent-posts-item-content">win10使用Anaconda创建可使用PyTorch虚拟环境</div></a>
+      </div>
+    
+  </div>
+</div>
+  </article>
+  
+  
+</div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <footer class="footer">
+  <div class="footer-container">
+    <div>
+      <div class="footer-dsc">
+        <span>
+          Copyright ©
+          
+            2020 -
+          
+          2021
+        </span>
+        &nbsp;
+        <a 
+          href="/" 
+          class="footer-link">
+          liq的个人博客
+        </a>
+      </div>
+    </div>
+
+    
+      <div class="footer-dsc">
+        
+          Powered by
+          <a 
+            href="https://hexo.io/" 
+            class="footer-link" 
+            target="_blank" 
+            rel="nofollow noopener noreferrer">
+            &nbsp;Hexo
+          </a>
+        
+        
+          <span>&nbsp;|&nbsp;</span>
+        
+        
+          Theme -
+          <a 
+            href="https://github.com/theme-kaze" 
+            class="footer-link" 
+            target="_blank"
+            rel="nofollow noopener noreferrer">
+            &nbsp;Kaze
+          </a>
+        
+      </div>
+    
+    
+    
+    
+      <div class="footer-dsc">
+        
+          本站总访问量<span id="busuanzi_value_site_pv"></span>次
+        
+        
+          <span>&nbsp;|&nbsp;</span>
+        
+        
+          本站总访客数<span id="busuanzi_value_site_uv"></span>次
+        
+      </div>
+      
+    
+</footer> 
+    
+  <a 
+    role="button" 
+    id="scrollbutton" 
+    class="basebutton" 
+    aria-label="回到顶部">
+    <i class="iconfont icon-arrowleft button-icon"></i>
+  </a>
+
+<a 
+  role="button" 
+  id="menubutton"
+  aria-label="menu button"
+  class="basebutton">
+  <i class="iconfont icon-menu button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="popbutton" 
+  class="basebutton" 
+  aria-label="控制中心">
+  <i class="iconfont icon-expand button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="darkbutton" 
+  class="basebutton darkwidget" 
+  aria-label="夜色模式">
+  <i class="iconfont icon-weather button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="searchbutton" 
+  class="basebutton searchwidget" 
+  aria-label="搜索">
+  <i class="iconfont icon-search button-icon"></i>
+</a> 
+     
+     
+      
+ 
+     
+     
+      <script>
+  var addImgLayout = function () {
+    var img = document.querySelectorAll('.post-content img')
+    var i
+    for (i = 0; i < img.length; i++) {
+      var wrapper = document.createElement('a')
+      wrapper.setAttribute('href', img[i].getAttribute('data-src'))
+      wrapper.setAttribute('aria-label', 'illustration')
+      wrapper.style.cssText =
+        'width: 100%; display: flex; justify-content: center;'
+      if (img[i].alt) wrapper.dataset.caption = img[i].alt
+      wrapper.dataset.nolink = true
+      img[i].before(wrapper)
+      wrapper.append(img[i])
+      var divWrap = document.createElement('div')
+      divWrap.classList.add('gallery')
+      wrapper.before(divWrap)
+      divWrap.append(wrapper)
+    }
+    baguetteBox.run('.gallery')
+  }
+</script>
+<script>
+  loadScript(
+    "/js/lib/lightbox/baguetteBox.min.js",
+    addImgLayout
+  )
+</script>
+ 
+     
+     
+    <script src="/js/main.js"></script> 
+    
+      <script> 
+        loadScript('/js/lib/busuanzi.min.js') 
+      </script>
+     
+    
+      <script>
+        var addLazyload = function () {
+          var observer = lozad('.lozad', {
+            load: function (el) {
+              el.srcset = el.getAttribute('data-src')
+            },
+            loaded: function (el) {
+              el.classList.add('loaded')
+            },
+          })
+          observer.observe()
+        }
+      </script>
+      <script>
+        loadScript('/js/lib/lozad.min.js', addLazyload)
+      </script>
+     
+    
+    
+      <script>
+        setTimeout(() => {localSearch("search.json")}, 0)
+      </script>
+    
+  </body>
+</html>

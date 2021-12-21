@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta 
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <meta 
+    http-equiv="X-UA-Compatible" 
+    content="ie=edge">
+  <meta 
+    name="theme-color" 
+    content="#fff" 
+    id="theme-color">
+  <meta 
+    name="description" 
+    content="鸡排大仙儿的个人博客，Java、Causality/因果推断、学习、博客">
+  <link 
+    rel="icon" 
+    href="/img/q.png">
+  <title>d2lzh_pytorch包报错问题解决</title>
+  
+    
+      <meta 
+        property="og:title" 
+        content="d2lzh_pytorch包报错问题解决">
+    
+    
+      <meta 
+        property="og:url" 
+        content="https://hexo.flower48237.com/archives/78978eb1.html">
+    
+    
+      <meta 
+        property="og:img" 
+        content="/img/q.png">
+    
+    
+      <meta 
+        property="og:img" 
+        content="&lt;h4 id=&#34;报错：&#34;&gt;&lt;a href=&#34;#报错：&#34; class=&#34;headerlink&#34; title=&#34;报错：&#34;&gt;&lt;/a&gt;报错：&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;ModuleNotFoundError: No module named ‘d2lzh_pytorch’&lt;/li&gt;
+&lt;li&gt;d2lzh_pytorch包中找不到名为’xxx’的属性/函数，如  &lt;pre class=&#34;line-numbers language-python&#34; data-language=&#34;python&#34;&gt;&lt;code class=&#34;language-python&#34;&gt;module &lt;span class=&#34;token string&#34;&gt;&#39;d2lzh_pytorch&#39;&lt;/span&gt; has no attribute &lt;span class=&#34;token string&#34;&gt;&#39;use_svg_display()&#39;&lt;/span&gt;
+module &lt;span class=&#34;token string&#34;&gt;&#39;d2lzh_pytorch&#39;&lt;/span&gt; has no attribute &#39;load_data_fashion_mnist&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+
+&lt;/li&gt;
+&lt;/ul&gt;">
+    
+    
+      <meta 
+        property="og:type" 
+        content="article">
+      <meta 
+        property="og:article:published_time" 
+        content="2021-12-10">
+      <meta 
+        property="og:article:modified_time" 
+        content="2021-12-21">
+      <meta 
+        property="og:article:author" 
+        content="liq">
+      
+        
+          <meta 
+            property="og:article:tag" 
+            content="深度学习">
+        
+          <meta 
+            property="og:article:tag" 
+            content="PyTorch">
+        
+          <meta 
+            property="og:article:tag" 
+            content="Jupyter">
+        
+          <meta 
+            property="og:article:tag" 
+            content="Python">
+        
+      
+    
+  
+  <script>
+    function loadScript(url, cb) {
+      var script = document.createElement('script');
+      script.src = url;
+      if (cb) script.onload = cb;
+      script.async = true;
+      document.body.appendChild(script);
+    }
+    function loadCSS(href, data, attr) {
+      var sheet = document.createElement('link');
+      sheet.ref = 'stylesheet';
+      sheet.href = href;
+      sheet.dataset[data] = attr;
+      document.head.appendChild(sheet);
+    }
+    function changeCSS(cssFile, data, attr) {
+      var oldlink = document.querySelector(data);
+      var newlink = document.createElement("link");
+      newlink.setAttribute("rel", "stylesheet");
+      newlink.setAttribute("href", cssFile);
+      newlink.dataset.prism = attr;
+      document.head.replaceChild(newlink, oldlink);
+    }
+  </script>
+  
+    
+      
+      
+      
+      
+        
+        
+        
+        <script>
+          function prismThemeChange() {
+            if(document.getElementById('theme-color').dataset.mode === 'dark') {
+              if(document.querySelector('[data-prism]')) {
+                changeCSS('/js/lib/prism/prism-tomorrow.min.css', '[data-prism]', 'prism-tomorrow');
+              } else {
+                loadCSS('/js/lib/prism/prism-tomorrow.min.css', 'prism', 'prism-tomorrow');
+              }
+            } else {
+              if(document.querySelector('[data-prism]')) {
+                changeCSS('/js/lib/prism/prism-tomorrow.min.css', '[data-prism]', 'prism-tomorrow');
+              } else {
+                loadCSS('/js/lib/prism/prism-tomorrow.min.css', 'prism', 'prism-tomorrow');
+              }
+            }
+          }
+          prismThemeChange()
+        </script>
+      
+      
+        
+        <link rel="stylesheet" href="/js/lib/prism/prism-line-numbers.min.css">
+      
+    
+  
+  <script>
+    // control reverse button
+    var reverseDarkList = {
+      dark: 'light',
+      light: 'dark'
+    };
+    var themeColor = {
+      dark: '#1c1c1e',
+      light: '#fff'
+    }
+    // get the data of css prefers-color-scheme
+    var getCssMediaQuery = function() {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    };
+    // reverse current darkmode setting function
+    var reverseDarkModeSetting = function() {
+      var setting = localStorage.getItem('user-color-scheme');
+      if(reverseDarkList[setting]) {
+        setting = reverseDarkList[setting];
+      } else if(setting === null) {
+        setting = reverseDarkList[getCssMediaQuery()];
+      } else {
+        return;
+      }
+      localStorage.setItem('user-color-scheme', setting);
+      return setting;
+    };
+    // apply current darkmode setting
+  </script>
+  
+    <script>
+      var setDarkmode = function(mode) {
+      var setting = mode || localStorage.getItem('user-color-scheme');
+      if(setting === getCssMediaQuery()) {
+        document.documentElement.removeAttribute('data-user-color-scheme');
+        localStorage.removeItem('user-color-scheme');
+        document.getElementById('theme-color').content = themeColor[setting];
+        document.getElementById('theme-color').dataset.mode = setting;
+        prismThemeChange();
+      } else if(reverseDarkList[setting]) {
+        document.documentElement.setAttribute('data-user-color-scheme', setting);
+        document.getElementById('theme-color').content = themeColor[setting];
+        document.getElementById('theme-color').dataset.mode = setting;
+        prismThemeChange();
+      } else {
+        document.documentElement.removeAttribute('data-user-color-scheme');
+        localStorage.removeItem('user-color-scheme');
+        document.getElementById('theme-color').content = themeColor[getCssMediaQuery()];
+        document.getElementById('theme-color').dataset.mode = getCssMediaQuery();
+        prismThemeChange();
+      }
+    };
+    setDarkmode();
+    </script>
+  
+  
+  <link rel="preload" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css" as="style" >
+  <link rel="preload" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css" as="style" >
+  
+  
+    <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.js" as="script">
+    <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.css" as="style" >
+  
+  
+    <link rel="preload" href="/js/lib/lozad.min.js" as="script">
+  
+  
+  
+  
+    
+    <link rel="prefetch" href="//cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-svg.js" as="script">
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css">
+  
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css">
+  
+    <link rel="stylesheet" href="/js/lib/lightbox/baguetteBox.min.css">
+  
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="鸡排大仙儿的个人博客" type="application/atom+xml">
+</head>
+
+  <body>
+    <div class="wrapper">
+       
+      <nav class="navbar" style="justify-content: space-between;">
+  <div class="navbar-logo">
+    <span class="navbar-logo-main">
+      
+        <img class="navbar-logo-img" width="32" height="32" src="/img/q.png" alt="blog logo">
+        
+          <span class="navbar-logo-dsc">
+            liq的个人博客
+          </span>
+    </span>
+  </div>
+  <div class="navbar-menu" style="margin-right: 5%;">
+
+    
+      <a href="/" class="navbar-menu-item" rel="external nofollow">
+        
+              首页
+                
+      </a>
+      
+      <a href="/archives" class="navbar-menu-item" rel="external nofollow">
+        
+              归档
+                
+      </a>
+      
+      <a href="/tags" class="navbar-menu-item" rel="external nofollow">
+        
+              标签
+                
+      </a>
+      
+      <a href="/categories" class="navbar-menu-item" rel="external nofollow">
+        
+              分类
+                
+      </a>
+      
+      <a href="/about" class="navbar-menu-item" rel="external nofollow">
+        
+              关于
+                
+      </a>
+      
+      <a href="/links" class="navbar-menu-item" rel="external nofollow">
+        
+              友链
+                
+      </a>
+      
+        <a class="navbar-menu-item darknavbar" id="dark">
+          <i class="iconfont icon-weather"></i>
+        </a>
+        <a class="navbar-menu-item searchnavbar" id="search">
+          <i class="iconfont icon-search" style="font-size: 1.2rem; font-weight: 400;">
+          </i>
+        </a>
+  </div>
+</nav> 
+      
+      <div 
+        id="local-search" 
+        style="display: none">
+        <input
+          class="navbar-menu-item"
+          id="search-input"
+          placeholder="请输入搜索内容..." />
+        <div id="search-content"></div>
+      </div>
+      
+      <div class="section-wrap">
+        <div class="container">
+          <div class="columns">
+            <main class="main-column">
+<article class="card card-content">
+  <header>
+    <h1 class="post-title">
+      d2lzh_pytorch包报错问题解决
+    </h1>
+  </header>
+  <div class="post-meta post-show-meta">
+    <time datetime="2021-12-10T03:00:00.000Z">
+      <i 
+        class="iconfont icon-calendar" 
+        style="margin-right: 2px;">
+      </i>
+      <span>2021-12-10</span>
+    </time>
+    
+      <span class="dot"></span>
+      
+        <a 
+          href="/categories/D2L/" 
+          class="post-meta-link">
+          D2L
+        </a>
+      
+    
+    
+      <span class="dot"></span>
+      <span>143 字</span>
+    
+  </div>
+  
+    <div 
+      class="post-meta post-show-meta" 
+      style="margin-top: -10px;">
+      <div style="display: flex; align-items: center;">
+        <i 
+          class="iconfont icon-biaoqian" 
+          style="margin-right: 2px; font-size: 1.15rem;">
+        </i>
+        
+          
+          <a 
+            href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" 
+            class="post-meta-link">
+            深度学习
+          </a>
+        
+          
+            <span class="dot"></span>
+          
+          <a 
+            href="/tags/PyTorch/" 
+            class="post-meta-link">
+            PyTorch
+          </a>
+        
+          
+            <span class="dot"></span>
+          
+          <a 
+            href="/tags/Jupyter/" 
+            class="post-meta-link">
+            Jupyter
+          </a>
+        
+          
+            <span class="dot"></span>
+          
+          <a 
+            href="/tags/Python/" 
+            class="post-meta-link">
+            Python
+          </a>
+        
+      </div>
+    </div>
+  
+  </header>
+  <div 
+    id="section" 
+    class="post-content">
+    <h4 id="报错："><a href="#报错：" class="headerlink" title="报错："></a>报错：</h4><ul>
+<li>ModuleNotFoundError: No module named ‘d2lzh_pytorch’</li>
+<li>d2lzh_pytorch包中找不到名为’xxx’的属性/函数，如  <pre class="line-numbers language-python" data-language="python"><code class="language-python">module <span class="token string">'d2lzh_pytorch'</span> has no attribute <span class="token string">'use_svg_display()'</span>
+module <span class="token string">'d2lzh_pytorch'</span> has no attribute 'load_data_fashion_mnist<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+</li>
+</ul>
+<span id="more"></span>
+
+<h4 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h4><ul>
+<li>方法1、放到Jupyter工作目录<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/ShusenTang/Dive-into-DL-PyTorch/tree/master/code/d2lzh_pytorch">下载d2lzh_pytorch文件夹</a>，将其放置到当前Jupyter的工作目录的根目录中即可</li>
+</ul>
+</li>
+<li>方法2、放到虚拟环境的包安装目录<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/ShusenTang/Dive-into-DL-PyTorch/tree/master/code/d2lzh_pytorch">下载d2lzh_pytorch文件夹</a>，将其放置到anaconda虚拟环境的包路径下，如：Anaconda/envs/pytorch(虚拟环境名)/Lib/site-packages/</li>
+<li>注释代码中的sys.path.append(“..”)，使其从site-packages中找到d2lzh_pytorch包并引入</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    
+      <div 
+        class="post-note note-warning copyright" 
+        style="margin-top: 42px">
+        <p>
+          <span style="font-weight: bold;">作者：</span><a 
+            target="_blank" 
+            rel="nofollow noopener noreferrer" 
+            href="/about">
+            liq
+          </a>
+        </p>
+        <p><span style="font-weight: bold;">文章链接：</span><a style = "text-overflow : ellipsis;display: inline-block; width: 100%; overflow: hidden;" target="_blank" rel="nofollow noopener noreferrer" href="https://hexo.flower48237.com/archives/78978eb1.html">https://hexo.flower48237.com/archives/78978eb1.html</a></p>
+        <p><span style="font-weight: bold;">版权声明：</span>本博客所有文章除特别声明外，均采用<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0 协议</a>。转载请注明出处！</p>
+      </div>
+    
+  </div>
+</article>
+<div class="nav">
+  
+    <div class="nav-item-prev">
+      <a 
+        href="/archives/518103f6.html" 
+        class="nav-link">
+        <i class="iconfont icon-left nav-prev-icon"></i>
+        <div>
+          <div class="nav-label">上一篇</div>
+          
+            <div class="nav-title">【】摘要格式测试 </div>
+          
+        </div>
+      </a>
+    </div>
+  
+  
+    <div class="nav-item-next">
+      <a 
+        href="/archives/e43ae7cd.html" 
+        class="nav-link">
+        <div>
+          <div class="nav-label">下一篇</div>
+          
+            <div class="nav-title">Typora本地图片上传到图床 </div>
+          
+        </div>
+        <i class="iconfont icon-right nav-next-icon"></i>
+      </a>
+    </div>
+  
+</div>
+
+<div 
+  class="card card-content toc-card" 
+  id="mobiletoc">
+  <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8A%A5%E9%94%99%EF%BC%9A"><span class="toc-text">报错：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="toc-text">解决方法：</span></a></li></ol>
+</div></main>
+            <aside class="left-column">
+              
+              <div class="card card-author">
+                
+  <img 
+    src="/img/q.png" 
+    class="author-img"
+    width="88"
+    height="88"
+    alt="author avatar">
+
+<p class="author-name">liq</p>
+<p class="author-description">记录学习过程</p>
+<div class="author-message">
+  <a 
+    class="author-posts-count" 
+    href="/archives">
+    <span>101</span>
+    <span>文章</span>
+  </a>
+  <a 
+    class="author-categories-count" 
+    href="/categories">
+    <span>8</span>
+    <span>分类</span>
+  </a>
+  <a 
+    class="author-tags-count" 
+    href="/tags">
+    <span>61</span>
+    <span>标签</span>
+  </a>
+</div>
+
+  <div class="author-card-society">
+    
+      <div class="author-card-society-icon">
+        <a target="_blank" rel="noopener" href="https://github.com/flower48237">
+          <i class="iconfont icon-github society-icon"></i>
+        </a>
+      </div>
+    
+  </div>
+
+              </div>
+               <div class="sticky-tablet">
+  
+  
+    <article class="display-when-two-columns spacer">
+      <div class="card card-content toc-card">
+        <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8A%A5%E9%94%99%EF%BC%9A"><span class="toc-text">报错：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="toc-text">解决方法：</span></a></li></ol>
+      </div>
+    </article>
+  
+  
+  <article class="card card-content categories-widget">
+    <div class="categories-card">
+  <div class="categories-header">
+    <i 
+      class="iconfont icon-fenlei" 
+      style="padding-right: 2px;">
+    </i>分类
+  </div>
+  <div class="categories-list">
+    
+      <a href="/categories/%E5%85%B6%E4%BB%96/">
+        <div class="categories-list-item">
+          其他
+          <span class="categories-list-item-badge">1</span>
+        </div>
+      </a>
+    
+      <a href="/categories/D2L/">
+        <div class="categories-list-item">
+          D2L
+          <span class="categories-list-item-badge">3</span>
+        </div>
+      </a>
+    
+      <a href="/categories/LeetCode/">
+        <div class="categories-list-item">
+          LeetCode
+          <span class="categories-list-item-badge">47</span>
+        </div>
+      </a>
+    
+      <a href="/categories/SpringBoot-Vue/">
+        <div class="categories-list-item">
+          SpringBoot-Vue
+          <span class="categories-list-item-badge">1</span>
+        </div>
+      </a>
+    
+      <a href="/categories/Causality/">
+        <div class="categories-list-item">
+          Causality
+          <span class="categories-list-item-badge">10</span>
+        </div>
+      </a>
+    
+      <a href="/categories/SQL/">
+        <div class="categories-list-item">
+          SQL
+          <span class="categories-list-item-badge">7</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E5%89%91%E6%8C%87offer/">
+        <div class="categories-list-item">
+          剑指offer
+          <span class="categories-list-item-badge">26</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E7%AC%94%E8%AF%95%E9%A2%98/">
+        <div class="categories-list-item">
+          笔试题
+          <span class="categories-list-item-badge">6</span>
+        </div>
+      </a>
+    
+  </div>
+</div>
+  </article>
+  
+  <article class="card card-content tags-widget">
+    <div class="tags-card">
+  <div class="tags-header">
+    <i 
+      class="iconfont icon-biaoqian" 
+      style="padding-right: 2px;">
+    </i>热门标签
+  </div>
+  <div class="tags-list">
+    
+      <a 
+        href="/tags/Java/" 
+        title="Java">
+        <div class="tags-list-item">Java</div>
+      </a>
+    
+      <a 
+        href="/tags/LeetCode/" 
+        title="LeetCode">
+        <div class="tags-list-item">LeetCode</div>
+      </a>
+    
+      <a 
+        href="/tags/%E9%9D%A2%E8%AF%95/" 
+        title="面试">
+        <div class="tags-list-item">面试</div>
+      </a>
+    
+      <a 
+        href="/tags/%E6%95%B0%E7%BB%84/" 
+        title="数组">
+        <div class="tags-list-item">数组</div>
+      </a>
+    
+      <a 
+        href="/tags/%E9%81%8D%E5%8E%86/" 
+        title="遍历">
+        <div class="tags-list-item">遍历</div>
+      </a>
+    
+      <a 
+        href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" 
+        title="字符串">
+        <div class="tags-list-item">字符串</div>
+      </a>
+    
+      <a 
+        href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" 
+        title="二叉树">
+        <div class="tags-list-item">二叉树</div>
+      </a>
+    
+      <a 
+        href="/tags/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD/" 
+        title="因果推断">
+        <div class="tags-list-item">因果推断</div>
+      </a>
+    
+      <a 
+        href="/tags/Causality/" 
+        title="Causality">
+        <div class="tags-list-item">Causality</div>
+      </a>
+    
+      <a 
+        href="/tags/%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/" 
+        title="数值计算">
+        <div class="tags-list-item">数值计算</div>
+      </a>
+    
+      <a 
+        href="/tags/%E9%93%BE%E8%A1%A8/" 
+        title="链表">
+        <div class="tags-list-item">链表</div>
+      </a>
+    
+      <a 
+        href="/tags/%E9%80%92%E5%BD%92/" 
+        title="递归">
+        <div class="tags-list-item">递归</div>
+      </a>
+    
+      <a 
+        href="/tags/SQL/" 
+        title="SQL">
+        <div class="tags-list-item">SQL</div>
+      </a>
+    
+      <a 
+        href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" 
+        title="动态规划">
+        <div class="tags-list-item">动态规划</div>
+      </a>
+    
+      <a 
+        href="/tags/%E6%A0%88/" 
+        title="栈">
+        <div class="tags-list-item">栈</div>
+      </a>
+    
+      <a 
+        href="/tags/%E6%8E%92%E5%BA%8F/" 
+        title="排序">
+        <div class="tags-list-item">排序</div>
+      </a>
+    
+  </div>
+</div>
+  </article>
+  
+  
+</div>
+            </aside>
+            <aside class="right-column">
+              <div class="sticky-widescreen">
+  
+  
+    <article class="card card-content toc-card">
+      <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8A%A5%E9%94%99%EF%BC%9A"><span class="toc-text">报错：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="toc-text">解决方法：</span></a></li></ol>
+    </article>
+  
+  
+  <article class="card card-content">
+    <div class="recent-posts-card">
+  <div class="recent-posts-header">
+    <i 
+      class="iconfont icon-wenzhang_huaban" 
+      style="padding-right: 2px;">
+    </i>最近文章
+  </div>
+  <div class="recent-posts-list">
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2021-12-21</div>
+        <a href="/archives/518103f6.html"><div class="recent-posts-item-content">【】摘要格式测试</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2021-12-10</div>
+        <a href="/archives/78978eb1.html"><div class="recent-posts-item-content">d2lzh_pytorch包报错问题解决</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2021-12-09</div>
+        <a href="/archives/e43ae7cd.html"><div class="recent-posts-item-content">Typora本地图片上传到图床</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2021-12-08</div>
+        <a href="/archives/2abdf615.html"><div class="recent-posts-item-content">win10使用Anaconda创建可使用PyTorch虚拟环境</div></a>
+      </div>
+    
+  </div>
+</div>
+  </article>
+  
+  
+</div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <footer class="footer">
+  <div class="footer-container">
+    <div>
+      <div class="footer-dsc">
+        <span>
+          Copyright ©
+          
+            2020 -
+          
+          2021
+        </span>
+        &nbsp;
+        <a 
+          href="/" 
+          class="footer-link">
+          liq的个人博客
+        </a>
+      </div>
+    </div>
+
+    
+      <div class="footer-dsc">
+        
+          Powered by
+          <a 
+            href="https://hexo.io/" 
+            class="footer-link" 
+            target="_blank" 
+            rel="nofollow noopener noreferrer">
+            &nbsp;Hexo
+          </a>
+        
+        
+          <span>&nbsp;|&nbsp;</span>
+        
+        
+          Theme -
+          <a 
+            href="https://github.com/theme-kaze" 
+            class="footer-link" 
+            target="_blank"
+            rel="nofollow noopener noreferrer">
+            &nbsp;Kaze
+          </a>
+        
+      </div>
+    
+    
+    
+    
+      <div class="footer-dsc">
+        
+          本站总访问量<span id="busuanzi_value_site_pv"></span>次
+        
+        
+          <span>&nbsp;|&nbsp;</span>
+        
+        
+          本站总访客数<span id="busuanzi_value_site_uv"></span>次
+        
+      </div>
+      
+    
+</footer> 
+    
+  <a 
+    role="button" 
+    id="scrollbutton" 
+    class="basebutton" 
+    aria-label="回到顶部">
+    <i class="iconfont icon-arrowleft button-icon"></i>
+  </a>
+
+<a 
+  role="button" 
+  id="menubutton"
+  aria-label="menu button"
+  class="basebutton">
+  <i class="iconfont icon-menu button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="popbutton" 
+  class="basebutton" 
+  aria-label="控制中心">
+  <i class="iconfont icon-expand button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="darkbutton" 
+  class="basebutton darkwidget" 
+  aria-label="夜色模式">
+  <i class="iconfont icon-weather button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="searchbutton" 
+  class="basebutton searchwidget" 
+  aria-label="搜索">
+  <i class="iconfont icon-search button-icon"></i>
+</a> 
+     
+     
+      
+ 
+     
+     
+      <script>
+  var addImgLayout = function () {
+    var img = document.querySelectorAll('.post-content img')
+    var i
+    for (i = 0; i < img.length; i++) {
+      var wrapper = document.createElement('a')
+      wrapper.setAttribute('href', img[i].getAttribute('data-src'))
+      wrapper.setAttribute('aria-label', 'illustration')
+      wrapper.style.cssText =
+        'width: 100%; display: flex; justify-content: center;'
+      if (img[i].alt) wrapper.dataset.caption = img[i].alt
+      wrapper.dataset.nolink = true
+      img[i].before(wrapper)
+      wrapper.append(img[i])
+      var divWrap = document.createElement('div')
+      divWrap.classList.add('gallery')
+      wrapper.before(divWrap)
+      divWrap.append(wrapper)
+    }
+    baguetteBox.run('.gallery')
+  }
+</script>
+<script>
+  loadScript(
+    "/js/lib/lightbox/baguetteBox.min.js",
+    addImgLayout
+  )
+</script>
+ 
+     
+     
+    <script src="/js/main.js"></script> 
+    
+      <script> 
+        loadScript('/js/lib/busuanzi.min.js') 
+      </script>
+     
+    
+      <script>
+        var addLazyload = function () {
+          var observer = lozad('.lozad', {
+            load: function (el) {
+              el.srcset = el.getAttribute('data-src')
+            },
+            loaded: function (el) {
+              el.classList.add('loaded')
+            },
+          })
+          observer.observe()
+        }
+      </script>
+      <script>
+        loadScript('/js/lib/lozad.min.js', addLazyload)
+      </script>
+     
+    
+    
+      <script>
+        setTimeout(() => {localSearch("search.json")}, 0)
+      </script>
+    
+  </body>
+</html>

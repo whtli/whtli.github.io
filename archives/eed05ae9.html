@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta 
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <meta 
+    http-equiv="X-UA-Compatible" 
+    content="ie=edge">
+  <meta 
+    name="theme-color" 
+    content="#fff" 
+    id="theme-color">
+  <meta 
+    name="description" 
+    content="鸡排大仙儿的个人博客，Java、Causality/因果推断、学习、博客">
+  <link 
+    rel="icon" 
+    href="/img/q.png">
+  <title>SQL学习：CONSTRAINTS</title>
+  
+    
+      <meta 
+        property="og:title" 
+        content="SQL学习：CONSTRAINTS">
+    
+    
+      <meta 
+        property="og:url" 
+        content="https://hexo.flower48237.com/archives/eed05ae9.html">
+    
+    
+      <meta 
+        property="og:img" 
+        content="/img/q.png">
+    
+    
+      <meta 
+        property="og:img" 
+        content="&lt;h1 id=&#34;约束&#34;&gt;&lt;a href=&#34;#约束&#34; class=&#34;headerlink&#34; title=&#34;约束&#34;&gt;&lt;/a&gt;约束&lt;/h1&gt;&lt;h2 id=&#34;介绍&#34;&gt;&lt;a href=&#34;#介绍&#34; class=&#34;headerlink&#34; title=&#34;介绍&#34;&gt;&lt;/a&gt;介绍&lt;/h2&gt;&lt;p&gt;SQL 约束用于规定表中的数据规则。&lt;/p&gt;
+&lt;p&gt;如果存在违反约束的数据行为，行为会被约束终止。&lt;/p&gt;
+&lt;p&gt;约束可以在创建表时规定（通过 CREATE TABLE 语句）；&lt;/p&gt;
+&lt;p&gt;或者在表创建之后规定（通过 ALTER TABLE 语句）。&lt;/p&gt;
+&lt;h2 id=&#34;语法（CREATE-TABLE-CONSTRAINT）&#34;&gt;&lt;a href=&#34;#语法（CREATE-TABLE-CONSTRAINT）&#34; class=&#34;headerlink&#34; title=&#34;语法（CREATE TABLE + CONSTRAINT）&#34;&gt;&lt;/a&gt;语法（CREATE TABLE + CONSTRAINT）&lt;/h2&gt;&lt;pre class=&#34;line-numbers language-sql&#34; data-language=&#34;sql&#34;&gt;&lt;code class=&#34;language-sql&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;CREATE&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;TABLE&lt;/span&gt; table_name
+&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;
+column_name1 data_type&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;size&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; constraint_name&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+column_name2 data_type&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;size&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; constraint_name&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+column_name3 data_type&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;size&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; constraint_name&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;">
+    
+    
+      <meta 
+        property="og:type" 
+        content="article">
+      <meta 
+        property="og:article:published_time" 
+        content="2020-07-30">
+      <meta 
+        property="og:article:modified_time" 
+        content="2021-12-21">
+      <meta 
+        property="og:article:author" 
+        content="liq">
+      
+        
+          <meta 
+            property="og:article:tag" 
+            content="SQL">
+        
+          <meta 
+            property="og:article:tag" 
+            content="操作符">
+        
+      
+    
+  
+  <script>
+    function loadScript(url, cb) {
+      var script = document.createElement('script');
+      script.src = url;
+      if (cb) script.onload = cb;
+      script.async = true;
+      document.body.appendChild(script);
+    }
+    function loadCSS(href, data, attr) {
+      var sheet = document.createElement('link');
+      sheet.ref = 'stylesheet';
+      sheet.href = href;
+      sheet.dataset[data] = attr;
+      document.head.appendChild(sheet);
+    }
+    function changeCSS(cssFile, data, attr) {
+      var oldlink = document.querySelector(data);
+      var newlink = document.createElement("link");
+      newlink.setAttribute("rel", "stylesheet");
+      newlink.setAttribute("href", cssFile);
+      newlink.dataset.prism = attr;
+      document.head.replaceChild(newlink, oldlink);
+    }
+  </script>
+  
+    
+      
+      
+      
+      
+        
+        
+        
+        <script>
+          function prismThemeChange() {
+            if(document.getElementById('theme-color').dataset.mode === 'dark') {
+              if(document.querySelector('[data-prism]')) {
+                changeCSS('/js/lib/prism/prism-tomorrow.min.css', '[data-prism]', 'prism-tomorrow');
+              } else {
+                loadCSS('/js/lib/prism/prism-tomorrow.min.css', 'prism', 'prism-tomorrow');
+              }
+            } else {
+              if(document.querySelector('[data-prism]')) {
+                changeCSS('/js/lib/prism/prism-tomorrow.min.css', '[data-prism]', 'prism-tomorrow');
+              } else {
+                loadCSS('/js/lib/prism/prism-tomorrow.min.css', 'prism', 'prism-tomorrow');
+              }
+            }
+          }
+          prismThemeChange()
+        </script>
+      
+      
+        
+        <link rel="stylesheet" href="/js/lib/prism/prism-line-numbers.min.css">
+      
+    
+  
+  <script>
+    // control reverse button
+    var reverseDarkList = {
+      dark: 'light',
+      light: 'dark'
+    };
+    var themeColor = {
+      dark: '#1c1c1e',
+      light: '#fff'
+    }
+    // get the data of css prefers-color-scheme
+    var getCssMediaQuery = function() {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    };
+    // reverse current darkmode setting function
+    var reverseDarkModeSetting = function() {
+      var setting = localStorage.getItem('user-color-scheme');
+      if(reverseDarkList[setting]) {
+        setting = reverseDarkList[setting];
+      } else if(setting === null) {
+        setting = reverseDarkList[getCssMediaQuery()];
+      } else {
+        return;
+      }
+      localStorage.setItem('user-color-scheme', setting);
+      return setting;
+    };
+    // apply current darkmode setting
+  </script>
+  
+    <script>
+      var setDarkmode = function(mode) {
+      var setting = mode || localStorage.getItem('user-color-scheme');
+      if(setting === getCssMediaQuery()) {
+        document.documentElement.removeAttribute('data-user-color-scheme');
+        localStorage.removeItem('user-color-scheme');
+        document.getElementById('theme-color').content = themeColor[setting];
+        document.getElementById('theme-color').dataset.mode = setting;
+        prismThemeChange();
+      } else if(reverseDarkList[setting]) {
+        document.documentElement.setAttribute('data-user-color-scheme', setting);
+        document.getElementById('theme-color').content = themeColor[setting];
+        document.getElementById('theme-color').dataset.mode = setting;
+        prismThemeChange();
+      } else {
+        document.documentElement.removeAttribute('data-user-color-scheme');
+        localStorage.removeItem('user-color-scheme');
+        document.getElementById('theme-color').content = themeColor[getCssMediaQuery()];
+        document.getElementById('theme-color').dataset.mode = getCssMediaQuery();
+        prismThemeChange();
+      }
+    };
+    setDarkmode();
+    </script>
+  
+  
+  <link rel="preload" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css" as="style" >
+  <link rel="preload" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css" as="style" >
+  
+  
+    <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.js" as="script">
+    <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.css" as="style" >
+  
+  
+    <link rel="preload" href="/js/lib/lozad.min.js" as="script">
+  
+  
+  
+  
+    
+    <link rel="prefetch" href="//cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-svg.js" as="script">
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css">
+  
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css">
+  
+    <link rel="stylesheet" href="/js/lib/lightbox/baguetteBox.min.css">
+  
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="鸡排大仙儿的个人博客" type="application/atom+xml">
+</head>
+
+  <body>
+    <div class="wrapper">
+       
+      <nav class="navbar" style="justify-content: space-between;">
+  <div class="navbar-logo">
+    <span class="navbar-logo-main">
+      
+        <img class="navbar-logo-img" width="32" height="32" src="/img/q.png" alt="blog logo">
+        
+          <span class="navbar-logo-dsc">
+            liq的个人博客
+          </span>
+    </span>
+  </div>
+  <div class="navbar-menu" style="margin-right: 5%;">
+
+    
+      <a href="/" class="navbar-menu-item" rel="external nofollow">
+        
+              首页
+                
+      </a>
+      
+      <a href="/archives" class="navbar-menu-item" rel="external nofollow">
+        
+              归档
+                
+      </a>
+      
+      <a href="/tags" class="navbar-menu-item" rel="external nofollow">
+        
+              标签
+                
+      </a>
+      
+      <a href="/categories" class="navbar-menu-item" rel="external nofollow">
+        
+              分类
+                
+      </a>
+      
+      <a href="/about" class="navbar-menu-item" rel="external nofollow">
+        
+              关于
+                
+      </a>
+      
+      <a href="/links" class="navbar-menu-item" rel="external nofollow">
+        
+              友链
+                
+      </a>
+      
+        <a class="navbar-menu-item darknavbar" id="dark">
+          <i class="iconfont icon-weather"></i>
+        </a>
+        <a class="navbar-menu-item searchnavbar" id="search">
+          <i class="iconfont icon-search" style="font-size: 1.2rem; font-weight: 400;">
+          </i>
+        </a>
+  </div>
+</nav> 
+      
+      <div 
+        id="local-search" 
+        style="display: none">
+        <input
+          class="navbar-menu-item"
+          id="search-input"
+          placeholder="请输入搜索内容..." />
+        <div id="search-content"></div>
+      </div>
+      
+      <div class="section-wrap">
+        <div class="container">
+          <div class="columns">
+            <main class="main-column">
+<article class="card card-content">
+  <header>
+    <h1 class="post-title">
+      SQL学习：CONSTRAINTS
+    </h1>
+  </header>
+  <div class="post-meta post-show-meta">
+    <time datetime="2020-07-30T10:02:00.000Z">
+      <i 
+        class="iconfont icon-calendar" 
+        style="margin-right: 2px;">
+      </i>
+      <span>2020-07-30</span>
+    </time>
+    
+      <span class="dot"></span>
+      
+        <a 
+          href="/categories/SQL/" 
+          class="post-meta-link">
+          SQL
+        </a>
+      
+    
+    
+      <span class="dot"></span>
+      <span>1.7k 字</span>
+    
+  </div>
+  
+    <div 
+      class="post-meta post-show-meta" 
+      style="margin-top: -10px;">
+      <div style="display: flex; align-items: center;">
+        <i 
+          class="iconfont icon-biaoqian" 
+          style="margin-right: 2px; font-size: 1.15rem;">
+        </i>
+        
+          
+          <a 
+            href="/tags/SQL/" 
+            class="post-meta-link">
+            SQL
+          </a>
+        
+          
+            <span class="dot"></span>
+          
+          <a 
+            href="/tags/%E6%93%8D%E4%BD%9C%E7%AC%A6/" 
+            class="post-meta-link">
+            操作符
+          </a>
+        
+      </div>
+    </div>
+  
+  </header>
+  <div 
+    id="section" 
+    class="post-content">
+    <h1 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>SQL 约束用于规定表中的数据规则。</p>
+<p>如果存在违反约束的数据行为，行为会被约束终止。</p>
+<p>约束可以在创建表时规定（通过 CREATE TABLE 语句）；</p>
+<p>或者在表创建之后规定（通过 ALTER TABLE 语句）。</p>
+<h2 id="语法（CREATE-TABLE-CONSTRAINT）"><a href="#语法（CREATE-TABLE-CONSTRAINT）" class="headerlink" title="语法（CREATE TABLE + CONSTRAINT）"></a>语法（CREATE TABLE + CONSTRAINT）</h2><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> table_name
+<span class="token punctuation">(</span>
+column_name1 data_type<span class="token punctuation">(</span>size<span class="token punctuation">)</span> constraint_name<span class="token punctuation">,</span>
+column_name2 data_type<span class="token punctuation">(</span>size<span class="token punctuation">)</span> constraint_name<span class="token punctuation">,</span>
+column_name3 data_type<span class="token punctuation">(</span>size<span class="token punctuation">)</span> constraint_name<span class="token punctuation">,</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span id="more"></span>
+<h2 id="在-SQL-中，有以下6个约束："><a href="#在-SQL-中，有以下6个约束：" class="headerlink" title="在 SQL 中，有以下6个约束："></a>在 SQL 中，有以下6个约束：</h2><ul>
+<li>NOT NULL          - 指示某列不能存储 NULL 值。</li>
+<li>UNIQUE            - 保证某列的每行必须有唯一的值，独一无二的值。</li>
+<li>PRIMARY KEY(主键) - NOT NULL和 UNIQUE的结合。确保某列（或两个列多个列的结合）有唯一标识，有助于更容易更快速地找到表中的一个特定的记录。</li>
+<li>FOREIGN KEY(外键) - 保证一个表中的数据匹配另一个表中的值的参照完整性。</li>
+<li>CHECK             - 保证列中的值符合指定的条件。</li>
+<li>DEFAULT           - 规定没有给列赋值时的默认值。</li>
+</ul>
+<h2 id="NOT-NULL-约束"><a href="#NOT-NULL-约束" class="headerlink" title="NOT NULL 约束"></a>NOT NULL 约束</h2><h3 id="介绍-1"><a href="#介绍-1" class="headerlink" title="介绍"></a>介绍</h3><p>在默认的情况下，表的列 是接受 NULL 值的，但NOT NULL约束强制该列不接受 NULL值，强制字段始终包含非空值。如果不向字段添加值，就无法插入或更新记录。</p>
+<h3 id="实例1-创建表时定义not-null约束"><a href="#实例1-创建表时定义not-null约束" class="headerlink" title="实例1 创建表时定义not null约束"></a>实例1 创建表时定义not null约束</h3><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">下面的 <span class="token keyword">SQL</span> 语句强制 <span class="token string">"ID"</span> 列、 <span class="token string">"LastName"</span> 列以及 <span class="token string">"FirstName"</span> 列不能为<span class="token boolean">NULL</span>。
+
+<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> Persons <span class="token punctuation">(</span>
+    ID          <span class="token keyword">int</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    LastName    <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    FirstName   <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    Age         <span class="token keyword">int</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="实例2-在已经存在的表中添加-NOT-NULL-约束"><a href="#实例2-在已经存在的表中添加-NOT-NULL-约束" class="headerlink" title="实例2 在已经存在的表中添加 NOT NULL 约束"></a>实例2 在已经存在的表中添加 NOT NULL 约束</h3><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">在已创建的Persons表的 <span class="token string">"Age"</span> 字段中 添加 <span class="token operator">NOT</span> <span class="token boolean">NULL</span> 约束
+
+<span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> Persons
+<span class="token keyword">MODIFY</span> Age <span class="token keyword">int</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="实例3-删除-NOT-NULL-约束"><a href="#实例3-删除-NOT-NULL-约束" class="headerlink" title="实例3 删除 NOT NULL 约束"></a>实例3 删除 NOT NULL 约束</h3><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">在一个已创建的表的 <span class="token string">"Age"</span> 字段中删除 <span class="token operator">NOT</span> <span class="token boolean">NULL</span> 约束
+
+<span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> Persons
+<span class="token keyword">MODIFY</span> Age <span class="token keyword">int</span> <span class="token boolean">NULL</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="UNIQUE-约束"><a href="#UNIQUE-约束" class="headerlink" title="UNIQUE 约束"></a>UNIQUE 约束</h2><h3 id="介绍-2"><a href="#介绍-2" class="headerlink" title="介绍"></a>介绍</h3><ul>
+<li><p>UNIQUE 约束唯一标识数据库表中的每条记录。</p>
+</li>
+<li><p>UNIQUE 和 PRIMARY KEY 约束均为列或列集合提供了唯一性的保证。</p>
+</li>
+<li><p>PRIMARY KEY 约束拥有自动定义的 UNIQUE 约束。</p>
+</li>
+<li><p>每个表可以有多个 UNIQUE 约束，但是每个表只能有一个 PRIMARY KEY 约束。</p>
+</li>
+</ul>
+<h3 id="实例1-创建表时的UNIQUE约束"><a href="#实例1-创建表时的UNIQUE约束" class="headerlink" title="实例1 创建表时的UNIQUE约束"></a>实例1 创建表时的UNIQUE约束</h3><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> Persons
+<span class="token punctuation">(</span>
+P_Id        <span class="token keyword">int</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">UNIQUE</span><span class="token punctuation">,</span>       <span class="token comment">-- 直接说明了是UNIQUE -- </span>
+LastName    <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+FirstName   <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+Address     <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+City        <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">命名 <span class="token keyword">UNIQUE</span> 约束，并定义多个列的 <span class="token keyword">UNIQUE</span> 约束
+
+<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> Persons
+<span class="token punctuation">(</span>
+P_Id        <span class="token keyword">int</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+LastName    <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+FirstName   <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+Address     <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+City        <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token keyword">CONSTRAINT</span>  uc_PersonID <span class="token keyword">UNIQUE</span> <span class="token punctuation">(</span>P_Id<span class="token punctuation">,</span> LastName<span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="实例2-更改表时的UNIQUE约束"><a href="#实例2-更改表时的UNIQUE约束" class="headerlink" title="实例2 更改表时的UNIQUE约束"></a>实例2 更改表时的UNIQUE约束</h3><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">表Persons已经存在，需要在P_ID列创建<span class="token keyword">UNIQUE</span>约束
+<span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> Persons
+<span class="token keyword">ADD</span> <span class="token keyword">UNIQUE</span> <span class="token punctuation">(</span>P_ID<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">表Persons已经存在，需要重命名UNIQE 约束，并定义多个列的约束
+<span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> Persons
+<span class="token keyword">ADD</span> <span class="token keyword">CONSTRAINT</span> uc_PersonID <span class="token punctuation">(</span>P_ID<span class="token punctuation">,</span> LastName<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="实例3-撤销UNIQUE约束"><a href="#实例3-撤销UNIQUE约束" class="headerlink" title="实例3 撤销UNIQUE约束"></a>实例3 撤销UNIQUE约束</h3><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> Persons
+<span class="token keyword">DROP</span> <span class="token keyword">CONSTRAINT</span> uc_Person_ID<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="PRIMARY-KEY-主键-约束"><a href="#PRIMARY-KEY-主键-约束" class="headerlink" title="PRIMARY KEY (主键) 约束"></a>PRIMARY KEY (主键) 约束</h2><h3 id="介绍-3"><a href="#介绍-3" class="headerlink" title="介绍"></a>介绍</h3><ul>
+<li>PRIMARY KEY约束 唯一标识数据库表中的每条记录。</li>
+<li>主键必须包含唯一的值。</li>
+<li>主键列不能包含 NULL 值。</li>
+<li>每个表都有且只能有一个主键。</li>
+</ul>
+<h3 id="实例1-创建表时的PRIMARY-约束"><a href="#实例1-创建表时的PRIMARY-约束" class="headerlink" title="实例1 创建表时的PRIMARY 约束"></a>实例1 创建表时的PRIMARY 约束</h3><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">在 <span class="token string">"Persons"</span> 表创建时在 <span class="token string">"P_Id"</span> 列上创建 <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> 约束
+<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> Persons<span class="token punctuation">(</span>
+P_Id        <span class="token keyword">int</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">,</span>  <span class="token comment">-- 主键定义 -- </span>
+LastName    <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+FirstName   <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+Address     <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+City        <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">在建表的同时命名 <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> 约束，并定义多个列的 <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> 约束
+<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> Persons
+<span class="token punctuation">(</span>
+P_Id        <span class="token keyword">int</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+LastName    <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+FirstName   <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+Address     <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+City        <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token keyword">CONSTRAINT</span>  pk_PersonID <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span>P_Id<span class="token punctuation">,</span>LastName<span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="实例2-更改表时的-PRIMARY-约束"><a href="#实例2-更改表时的-PRIMARY-约束" class="headerlink" title="实例2 更改表时的 PRIMARY 约束"></a>实例2 更改表时的 PRIMARY 约束</h3><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">表Persons 已经被创建，需在 <span class="token string">"P_Id"</span> 列创建 <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> 约束
+<span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> Persons
+<span class="token keyword">ADD</span> <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span>P_Id<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">需要命名 <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> 约束，并定义多个列的 <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> 约束
+<span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> Persons
+<span class="token keyword">ADD</span> <span class="token keyword">CONSTRAINT</span> pk_PersonID <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span>P_Id<span class="token punctuation">,</span>LastName<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>注意事项：使用 ALTER TABLE 语句添加主键的时候，必须把主键列声明为不包含 NULL 值（在表首次创建时）。</p>
+</blockquote>
+<h3 id="实例3-撤销-PRIMARY-KEY-约束"><a href="#实例3-撤销-PRIMARY-KEY-约束" class="headerlink" title="实例3 撤销 PRIMARY KEY 约束"></a>实例3 撤销 PRIMARY KEY 约束</h3><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> Persons
+<span class="token keyword">DROP</span> <span class="token keyword">CONSTRAINT</span> pk_PersonID<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="FOREIGN-KEY-外键约束"><a href="#FOREIGN-KEY-外键约束" class="headerlink" title="FOREIGN KEY (外键约束)"></a>FOREIGN KEY (外键约束)</h2><h3 id="介绍-4"><a href="#介绍-4" class="headerlink" title="介绍"></a>介绍</h3><ul>
+<li>一个表中的 FOREIGN KEY 指向另一个表中的 UNIQUE KEY。</li>
+<li>FOREIGN KEY 约束用于预防破坏表之间连接的行为。</li>
+<li>FOREIGN KEY 约束能防止非法数据插入外键列，因为它必须是它指向的那个表中的值之一。</li>
+</ul>
+<h3 id="实例1-创建表时的-FOREIGN-KEY-约束"><a href="#实例1-创建表时的-FOREIGN-KEY-约束" class="headerlink" title="实例1 创建表时的 FOREIGN KEY 约束"></a>实例1 创建表时的 FOREIGN KEY 约束</h3><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">下面的 <span class="token keyword">SQL</span> 在 <span class="token string">"Orders"</span> 表创建时在 <span class="token string">"P_Id"</span> 列上创建 <span class="token keyword">FOREIGN</span> <span class="token keyword">KEY</span> 约束
+
+<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> Orders
+<span class="token punctuation">(</span>
+O_Id    <span class="token keyword">int</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">,</span>
+OrderNo <span class="token keyword">int</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+P_Id    <span class="token keyword">int</span> <span class="token keyword">FOREIGN</span> <span class="token keyword">KEY</span> <span class="token keyword">REFERENCES</span> Persons<span class="token punctuation">(</span>P_Id<span class="token punctuation">)</span> <span class="token comment">-- 外键定义 -- </span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">命名 <span class="token keyword">FOREIGN</span> <span class="token keyword">KEY</span> 约束，并定义多个列的 <span class="token keyword">FOREIGN</span> <span class="token keyword">KEY</span> 约束
+
+<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> Orders
+<span class="token punctuation">(</span>
+O_Id    <span class="token keyword">int</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+OrderNo <span class="token keyword">int</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+P_Id    <span class="token keyword">int</span><span class="token punctuation">,</span>
+<span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span>O_Id<span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token keyword">CONSTRAINT</span> fk_PerOrders <span class="token keyword">FOREIGN</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span>P_Id<span class="token punctuation">)</span> <span class="token keyword">REFERENCES</span> Persons<span class="token punctuation">(</span>P_Id<span class="token punctuation">)</span> 
+<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="实例2-修改表时的-FOREIGN-KEY-约束"><a href="#实例2-修改表时的-FOREIGN-KEY-约束" class="headerlink" title="实例2 修改表时的 FOREIGN KEY 约束"></a>实例2 修改表时的 FOREIGN KEY 约束</h3><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">已经创建<span class="token string">"Orders"</span>表，如果需要在 <span class="token string">"P_Id"</span> 列创建 <span class="token keyword">FOREIGN</span> <span class="token keyword">KEY</span> 约束
+
+<span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> Orders
+<span class="token keyword">ADD</span> <span class="token keyword">FOREIGN</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span>P_Id<span class="token punctuation">)</span> <span class="token keyword">REFERENCES</span> Persons<span class="token punctuation">(</span>P_Id<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">-- 外键定义 -- </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">命名 <span class="token keyword">FOREIGN</span> <span class="token keyword">KEY</span> 约束，并定义多个列的 <span class="token keyword">FOREIGN</span> <span class="token keyword">KEY</span> 约束
+
+<span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> Orders
+<span class="token keyword">ADD</span> <span class="token keyword">CONSTRAINT</span> fk_PerOrders <span class="token keyword">FOREIGN</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span>P_Id<span class="token punctuation">)</span> <span class="token keyword">REFERENCES</span> Persons<span class="token punctuation">(</span>P_Id<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="实例3-撤销-FOREIGN-KEY-约束"><a href="#实例3-撤销-FOREIGN-KEY-约束" class="headerlink" title="实例3 撤销 FOREIGN KEY 约束"></a>实例3 撤销 FOREIGN KEY 约束</h3><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> Orders
+<span class="token keyword">DROP</span> <span class="token keyword">CONSTRAINT</span> fk_PerOrders<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<blockquote>
+<p>在创建外键约束时，必须先创建外键约束所依赖的表，并且该列为该表的主键</p>
+</blockquote>
+<h2 id="notes："><a href="#notes：" class="headerlink" title="notes："></a>notes：</h2><ul>
+<li><p>子表：谁创建外键谁就是子表</p>
+</li>
+<li><p>父表：这个外键所依赖的表</p>
+</li>
+</ul>
+<h2 id="CHECK-约束"><a href="#CHECK-约束" class="headerlink" title="CHECK 约束"></a>CHECK 约束</h2><h3 id="介绍-5"><a href="#介绍-5" class="headerlink" title="介绍"></a>介绍</h3><p>CHECK 约束用于限制列中的值的范围。</p>
+<p>如果对单个列定义CHECK约束，那么该列只允许存在特定的值。</p>
+<p>如果对一个表定义CHECK约束，那么此约束会基于行中其他列的值在特定的列中对值进行限制。</p>
+<h3 id="实例1-创建表时的-CHECK-约束"><a href="#实例1-创建表时的-CHECK-约束" class="headerlink" title="实例1 创建表时的 CHECK 约束"></a>实例1 创建表时的 CHECK 约束</h3><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">要求： 创建<span class="token string">"Persons"</span> 时，在 <span class="token string">"P_Id"</span> 列上创建 <span class="token keyword">CHECK</span> 约束。
+<span class="token keyword">CHECK</span> 约束规定 <span class="token string">"P_Id"</span> 列只能存在大于 <span class="token number">0</span> 的整数。
+<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> Persons
+<span class="token punctuation">(</span>
+P_Id        <span class="token keyword">int</span>             <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">CHECK</span> <span class="token punctuation">(</span>P_Id <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment">-- check定义 --</span>
+LastName    <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span>    <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+FirstName   <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+Address     <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+City        <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">命名 <span class="token keyword">CHECK</span> 约束，并定义多个列的 <span class="token keyword">CHECK</span> 约束
+<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> Persons
+<span class="token punctuation">(</span>
+P_Id        <span class="token keyword">int</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+LastName    <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span>    <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+FirstName   <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+Address     <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+City        <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token keyword">CONSTRAINT</span>  chk_Person <span class="token keyword">CHECK</span> <span class="token punctuation">(</span>P_Id <span class="token operator">></span> <span class="token number">0</span> <span class="token operator">AND</span> City <span class="token operator">=</span> <span class="token string">'QingDao'</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="实例2-修改表时的-CHECK-约束"><a href="#实例2-修改表时的-CHECK-约束" class="headerlink" title="实例2 修改表时的 CHECK 约束"></a>实例2 修改表时的 CHECK 约束</h3><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">Person表已创建，在 <span class="token string">"P_Id"</span> 列创建 <span class="token keyword">CHECK</span> 约束
+<span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> Persons
+<span class="token keyword">ADD</span> <span class="token keyword">CHECK</span> <span class="token punctuation">(</span>P_Id <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">命名 <span class="token keyword">CHECK</span> 约束，并定义多个列的 <span class="token keyword">CHECK</span> 约束
+<span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> Persons
+<span class="token keyword">ADD</span> <span class="token keyword">CHECK</span> chk_Person <span class="token keyword">CHECK</span> <span class="token punctuation">(</span>P_Id <span class="token operator">></span> <span class="token number">0</span> <span class="token operator">AND</span> City <span class="token operator">=</span> <span class="token string">'Sandnes'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="实例3-撤销-CHECK-约束"><a href="#实例3-撤销-CHECK-约束" class="headerlink" title="实例3 撤销 CHECK 约束"></a>实例3 撤销 CHECK 约束</h3><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> Persons
+<span class="token keyword">DROP</span> <span class="token keyword">CONSTRAINT</span> chk_Person<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="DEFAULT-约束"><a href="#DEFAULT-约束" class="headerlink" title="DEFAULT 约束"></a>DEFAULT 约束</h2><h3 id="介绍-6"><a href="#介绍-6" class="headerlink" title="介绍"></a>介绍</h3><p>DEFAULT 约束用于向列中插入默认值。如果没有规定其他的值，那么会将默认值添加到所有的新记录。</p>
+<h3 id="实例1-创建表时的DEFAULT约束"><a href="#实例1-创建表时的DEFAULT约束" class="headerlink" title="实例1 创建表时的DEFAULT约束"></a>实例1 创建表时的DEFAULT约束</h3><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">创建<span class="token string">"Persons"</span> 表时，在 <span class="token string">"City"</span> 列上创建 <span class="token keyword">DEFAULT</span> 约束
+<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> Persons
+<span class="token punctuation">(</span>
+    P_Id        <span class="token keyword">int</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    LastName    <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span>    <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    FirstName   <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    Address     <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    City        <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span>    <span class="token keyword">DEFAULT</span> <span class="token string">'QingDao'</span> <span class="token comment">-- DEFAULT约束定义 -- </span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="实例2-创建表时的DEFAULT约束"><a href="#实例2-创建表时的DEFAULT约束" class="headerlink" title="实例2 创建表时的DEFAULT约束"></a>实例2 创建表时的DEFAULT约束</h3><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">Persons表已经被创建，在 <span class="token string">"City"</span> 列创建 <span class="token keyword">DEFAULT</span> 约束
+
+<span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> Person
+<span class="token keyword">MODIFY</span> City <span class="token keyword">DEFAULT</span> <span class="token string">'QingDao'</span><span class="token punctuation">;</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="实例3-创建表时的DEFAULT约束"><a href="#实例3-创建表时的DEFAULT约束" class="headerlink" title="实例3 创建表时的DEFAULT约束"></a>实例3 创建表时的DEFAULT约束</h3><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> Persons
+<span class="token keyword">ALTER</span> <span class="token keyword">COLUMN</span> City <span class="token keyword">DROP</span> <span class="token keyword">DEFAULT</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+  </div>
+  <div>
+    
+      <div 
+        class="post-note note-warning copyright" 
+        style="margin-top: 42px">
+        <p>
+          <span style="font-weight: bold;">作者：</span><a 
+            target="_blank" 
+            rel="nofollow noopener noreferrer" 
+            href="/about">
+            liq
+          </a>
+        </p>
+        <p><span style="font-weight: bold;">文章链接：</span><a style = "text-overflow : ellipsis;display: inline-block; width: 100%; overflow: hidden;" target="_blank" rel="nofollow noopener noreferrer" href="https://hexo.flower48237.com/archives/eed05ae9.html">https://hexo.flower48237.com/archives/eed05ae9.html</a></p>
+        <p><span style="font-weight: bold;">版权声明：</span>本博客所有文章除特别声明外，均采用<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0 协议</a>。转载请注明出处！</p>
+      </div>
+    
+  </div>
+</article>
+<div class="nav">
+  
+    <div class="nav-item-prev">
+      <a 
+        href="/archives/38f4f5a2.html" 
+        class="nav-link">
+        <i class="iconfont icon-left nav-prev-icon"></i>
+        <div>
+          <div class="nav-label">上一篇</div>
+          
+            <div class="nav-title">SQL学习：INDEX、DROP、ALTER、 AUTO INCREMENT </div>
+          
+        </div>
+      </a>
+    </div>
+  
+  
+    <div class="nav-item-next">
+      <a 
+        href="/archives/df88b555.html" 
+        class="nav-link">
+        <div>
+          <div class="nav-label">下一篇</div>
+          
+            <div class="nav-title">SQL学习：增删改查 </div>
+          
+        </div>
+        <i class="iconfont icon-right nav-next-icon"></i>
+      </a>
+    </div>
+  
+</div>
+
+<div 
+  class="card card-content toc-card" 
+  id="mobiletoc">
+  <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BA%A6%E6%9D%9F"><span class="toc-text">约束</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95%EF%BC%88CREATE-TABLE-CONSTRAINT%EF%BC%89"><span class="toc-text">语法（CREATE TABLE + CONSTRAINT）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8-SQL-%E4%B8%AD%EF%BC%8C%E6%9C%89%E4%BB%A5%E4%B8%8B6%E4%B8%AA%E7%BA%A6%E6%9D%9F%EF%BC%9A"><span class="toc-text">在 SQL 中，有以下6个约束：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NOT-NULL-%E7%BA%A6%E6%9D%9F"><span class="toc-text">NOT NULL 约束</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D-1"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B1-%E5%88%9B%E5%BB%BA%E8%A1%A8%E6%97%B6%E5%AE%9A%E4%B9%89not-null%E7%BA%A6%E6%9D%9F"><span class="toc-text">实例1 创建表时定义not null约束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B2-%E5%9C%A8%E5%B7%B2%E7%BB%8F%E5%AD%98%E5%9C%A8%E7%9A%84%E8%A1%A8%E4%B8%AD%E6%B7%BB%E5%8A%A0-NOT-NULL-%E7%BA%A6%E6%9D%9F"><span class="toc-text">实例2 在已经存在的表中添加 NOT NULL 约束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B3-%E5%88%A0%E9%99%A4-NOT-NULL-%E7%BA%A6%E6%9D%9F"><span class="toc-text">实例3 删除 NOT NULL 约束</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#UNIQUE-%E7%BA%A6%E6%9D%9F"><span class="toc-text">UNIQUE 约束</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D-2"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B1-%E5%88%9B%E5%BB%BA%E8%A1%A8%E6%97%B6%E7%9A%84UNIQUE%E7%BA%A6%E6%9D%9F"><span class="toc-text">实例1 创建表时的UNIQUE约束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B2-%E6%9B%B4%E6%94%B9%E8%A1%A8%E6%97%B6%E7%9A%84UNIQUE%E7%BA%A6%E6%9D%9F"><span class="toc-text">实例2 更改表时的UNIQUE约束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B3-%E6%92%A4%E9%94%80UNIQUE%E7%BA%A6%E6%9D%9F"><span class="toc-text">实例3 撤销UNIQUE约束</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PRIMARY-KEY-%E4%B8%BB%E9%94%AE-%E7%BA%A6%E6%9D%9F"><span class="toc-text">PRIMARY KEY (主键) 约束</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D-3"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B1-%E5%88%9B%E5%BB%BA%E8%A1%A8%E6%97%B6%E7%9A%84PRIMARY-%E7%BA%A6%E6%9D%9F"><span class="toc-text">实例1 创建表时的PRIMARY 约束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B2-%E6%9B%B4%E6%94%B9%E8%A1%A8%E6%97%B6%E7%9A%84-PRIMARY-%E7%BA%A6%E6%9D%9F"><span class="toc-text">实例2 更改表时的 PRIMARY 约束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B3-%E6%92%A4%E9%94%80-PRIMARY-KEY-%E7%BA%A6%E6%9D%9F"><span class="toc-text">实例3 撤销 PRIMARY KEY 约束</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#FOREIGN-KEY-%E5%A4%96%E9%94%AE%E7%BA%A6%E6%9D%9F"><span class="toc-text">FOREIGN KEY (外键约束)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D-4"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B1-%E5%88%9B%E5%BB%BA%E8%A1%A8%E6%97%B6%E7%9A%84-FOREIGN-KEY-%E7%BA%A6%E6%9D%9F"><span class="toc-text">实例1 创建表时的 FOREIGN KEY 约束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B2-%E4%BF%AE%E6%94%B9%E8%A1%A8%E6%97%B6%E7%9A%84-FOREIGN-KEY-%E7%BA%A6%E6%9D%9F"><span class="toc-text">实例2 修改表时的 FOREIGN KEY 约束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B3-%E6%92%A4%E9%94%80-FOREIGN-KEY-%E7%BA%A6%E6%9D%9F"><span class="toc-text">实例3 撤销 FOREIGN KEY 约束</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#notes%EF%BC%9A"><span class="toc-text">notes：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CHECK-%E7%BA%A6%E6%9D%9F"><span class="toc-text">CHECK 约束</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D-5"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B1-%E5%88%9B%E5%BB%BA%E8%A1%A8%E6%97%B6%E7%9A%84-CHECK-%E7%BA%A6%E6%9D%9F"><span class="toc-text">实例1 创建表时的 CHECK 约束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B2-%E4%BF%AE%E6%94%B9%E8%A1%A8%E6%97%B6%E7%9A%84-CHECK-%E7%BA%A6%E6%9D%9F"><span class="toc-text">实例2 修改表时的 CHECK 约束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B3-%E6%92%A4%E9%94%80-CHECK-%E7%BA%A6%E6%9D%9F"><span class="toc-text">实例3 撤销 CHECK 约束</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DEFAULT-%E7%BA%A6%E6%9D%9F"><span class="toc-text">DEFAULT 约束</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D-6"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B1-%E5%88%9B%E5%BB%BA%E8%A1%A8%E6%97%B6%E7%9A%84DEFAULT%E7%BA%A6%E6%9D%9F"><span class="toc-text">实例1 创建表时的DEFAULT约束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B2-%E5%88%9B%E5%BB%BA%E8%A1%A8%E6%97%B6%E7%9A%84DEFAULT%E7%BA%A6%E6%9D%9F"><span class="toc-text">实例2 创建表时的DEFAULT约束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B3-%E5%88%9B%E5%BB%BA%E8%A1%A8%E6%97%B6%E7%9A%84DEFAULT%E7%BA%A6%E6%9D%9F"><span class="toc-text">实例3 创建表时的DEFAULT约束</span></a></li></ol></li></ol></li></ol>
+</div></main>
+            <aside class="left-column">
+              
+              <div class="card card-author">
+                
+  <img 
+    src="/img/q.png" 
+    class="author-img"
+    width="88"
+    height="88"
+    alt="author avatar">
+
+<p class="author-name">liq</p>
+<p class="author-description">记录学习过程</p>
+<div class="author-message">
+  <a 
+    class="author-posts-count" 
+    href="/archives">
+    <span>101</span>
+    <span>文章</span>
+  </a>
+  <a 
+    class="author-categories-count" 
+    href="/categories">
+    <span>8</span>
+    <span>分类</span>
+  </a>
+  <a 
+    class="author-tags-count" 
+    href="/tags">
+    <span>61</span>
+    <span>标签</span>
+  </a>
+</div>
+
+  <div class="author-card-society">
+    
+      <div class="author-card-society-icon">
+        <a target="_blank" rel="noopener" href="https://github.com/flower48237">
+          <i class="iconfont icon-github society-icon"></i>
+        </a>
+      </div>
+    
+  </div>
+
+              </div>
+               <div class="sticky-tablet">
+  
+  
+    <article class="display-when-two-columns spacer">
+      <div class="card card-content toc-card">
+        <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BA%A6%E6%9D%9F"><span class="toc-text">约束</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95%EF%BC%88CREATE-TABLE-CONSTRAINT%EF%BC%89"><span class="toc-text">语法（CREATE TABLE + CONSTRAINT）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8-SQL-%E4%B8%AD%EF%BC%8C%E6%9C%89%E4%BB%A5%E4%B8%8B6%E4%B8%AA%E7%BA%A6%E6%9D%9F%EF%BC%9A"><span class="toc-text">在 SQL 中，有以下6个约束：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NOT-NULL-%E7%BA%A6%E6%9D%9F"><span class="toc-text">NOT NULL 约束</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D-1"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B1-%E5%88%9B%E5%BB%BA%E8%A1%A8%E6%97%B6%E5%AE%9A%E4%B9%89not-null%E7%BA%A6%E6%9D%9F"><span class="toc-text">实例1 创建表时定义not null约束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B2-%E5%9C%A8%E5%B7%B2%E7%BB%8F%E5%AD%98%E5%9C%A8%E7%9A%84%E8%A1%A8%E4%B8%AD%E6%B7%BB%E5%8A%A0-NOT-NULL-%E7%BA%A6%E6%9D%9F"><span class="toc-text">实例2 在已经存在的表中添加 NOT NULL 约束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B3-%E5%88%A0%E9%99%A4-NOT-NULL-%E7%BA%A6%E6%9D%9F"><span class="toc-text">实例3 删除 NOT NULL 约束</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#UNIQUE-%E7%BA%A6%E6%9D%9F"><span class="toc-text">UNIQUE 约束</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D-2"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B1-%E5%88%9B%E5%BB%BA%E8%A1%A8%E6%97%B6%E7%9A%84UNIQUE%E7%BA%A6%E6%9D%9F"><span class="toc-text">实例1 创建表时的UNIQUE约束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B2-%E6%9B%B4%E6%94%B9%E8%A1%A8%E6%97%B6%E7%9A%84UNIQUE%E7%BA%A6%E6%9D%9F"><span class="toc-text">实例2 更改表时的UNIQUE约束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B3-%E6%92%A4%E9%94%80UNIQUE%E7%BA%A6%E6%9D%9F"><span class="toc-text">实例3 撤销UNIQUE约束</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PRIMARY-KEY-%E4%B8%BB%E9%94%AE-%E7%BA%A6%E6%9D%9F"><span class="toc-text">PRIMARY KEY (主键) 约束</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D-3"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B1-%E5%88%9B%E5%BB%BA%E8%A1%A8%E6%97%B6%E7%9A%84PRIMARY-%E7%BA%A6%E6%9D%9F"><span class="toc-text">实例1 创建表时的PRIMARY 约束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B2-%E6%9B%B4%E6%94%B9%E8%A1%A8%E6%97%B6%E7%9A%84-PRIMARY-%E7%BA%A6%E6%9D%9F"><span class="toc-text">实例2 更改表时的 PRIMARY 约束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B3-%E6%92%A4%E9%94%80-PRIMARY-KEY-%E7%BA%A6%E6%9D%9F"><span class="toc-text">实例3 撤销 PRIMARY KEY 约束</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#FOREIGN-KEY-%E5%A4%96%E9%94%AE%E7%BA%A6%E6%9D%9F"><span class="toc-text">FOREIGN KEY (外键约束)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D-4"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B1-%E5%88%9B%E5%BB%BA%E8%A1%A8%E6%97%B6%E7%9A%84-FOREIGN-KEY-%E7%BA%A6%E6%9D%9F"><span class="toc-text">实例1 创建表时的 FOREIGN KEY 约束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B2-%E4%BF%AE%E6%94%B9%E8%A1%A8%E6%97%B6%E7%9A%84-FOREIGN-KEY-%E7%BA%A6%E6%9D%9F"><span class="toc-text">实例2 修改表时的 FOREIGN KEY 约束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B3-%E6%92%A4%E9%94%80-FOREIGN-KEY-%E7%BA%A6%E6%9D%9F"><span class="toc-text">实例3 撤销 FOREIGN KEY 约束</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#notes%EF%BC%9A"><span class="toc-text">notes：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CHECK-%E7%BA%A6%E6%9D%9F"><span class="toc-text">CHECK 约束</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D-5"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B1-%E5%88%9B%E5%BB%BA%E8%A1%A8%E6%97%B6%E7%9A%84-CHECK-%E7%BA%A6%E6%9D%9F"><span class="toc-text">实例1 创建表时的 CHECK 约束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B2-%E4%BF%AE%E6%94%B9%E8%A1%A8%E6%97%B6%E7%9A%84-CHECK-%E7%BA%A6%E6%9D%9F"><span class="toc-text">实例2 修改表时的 CHECK 约束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B3-%E6%92%A4%E9%94%80-CHECK-%E7%BA%A6%E6%9D%9F"><span class="toc-text">实例3 撤销 CHECK 约束</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DEFAULT-%E7%BA%A6%E6%9D%9F"><span class="toc-text">DEFAULT 约束</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D-6"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B1-%E5%88%9B%E5%BB%BA%E8%A1%A8%E6%97%B6%E7%9A%84DEFAULT%E7%BA%A6%E6%9D%9F"><span class="toc-text">实例1 创建表时的DEFAULT约束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B2-%E5%88%9B%E5%BB%BA%E8%A1%A8%E6%97%B6%E7%9A%84DEFAULT%E7%BA%A6%E6%9D%9F"><span class="toc-text">实例2 创建表时的DEFAULT约束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B3-%E5%88%9B%E5%BB%BA%E8%A1%A8%E6%97%B6%E7%9A%84DEFAULT%E7%BA%A6%E6%9D%9F"><span class="toc-text">实例3 创建表时的DEFAULT约束</span></a></li></ol></li></ol></li></ol>
+      </div>
+    </article>
+  
+  
+  <article class="card card-content categories-widget">
+    <div class="categories-card">
+  <div class="categories-header">
+    <i 
+      class="iconfont icon-fenlei" 
+      style="padding-right: 2px;">
+    </i>分类
+  </div>
+  <div class="categories-list">
+    
+      <a href="/categories/%E5%85%B6%E4%BB%96/">
+        <div class="categories-list-item">
+          其他
+          <span class="categories-list-item-badge">1</span>
+        </div>
+      </a>
+    
+      <a href="/categories/D2L/">
+        <div class="categories-list-item">
+          D2L
+          <span class="categories-list-item-badge">3</span>
+        </div>
+      </a>
+    
+      <a href="/categories/LeetCode/">
+        <div class="categories-list-item">
+          LeetCode
+          <span class="categories-list-item-badge">47</span>
+        </div>
+      </a>
+    
+      <a href="/categories/SpringBoot-Vue/">
+        <div class="categories-list-item">
+          SpringBoot-Vue
+          <span class="categories-list-item-badge">1</span>
+        </div>
+      </a>
+    
+      <a href="/categories/Causality/">
+        <div class="categories-list-item">
+          Causality
+          <span class="categories-list-item-badge">10</span>
+        </div>
+      </a>
+    
+      <a href="/categories/SQL/">
+        <div class="categories-list-item">
+          SQL
+          <span class="categories-list-item-badge">7</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E5%89%91%E6%8C%87offer/">
+        <div class="categories-list-item">
+          剑指offer
+          <span class="categories-list-item-badge">26</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E7%AC%94%E8%AF%95%E9%A2%98/">
+        <div class="categories-list-item">
+          笔试题
+          <span class="categories-list-item-badge">6</span>
+        </div>
+      </a>
+    
+  </div>
+</div>
+  </article>
+  
+  <article class="card card-content tags-widget">
+    <div class="tags-card">
+  <div class="tags-header">
+    <i 
+      class="iconfont icon-biaoqian" 
+      style="padding-right: 2px;">
+    </i>热门标签
+  </div>
+  <div class="tags-list">
+    
+      <a 
+        href="/tags/Java/" 
+        title="Java">
+        <div class="tags-list-item">Java</div>
+      </a>
+    
+      <a 
+        href="/tags/LeetCode/" 
+        title="LeetCode">
+        <div class="tags-list-item">LeetCode</div>
+      </a>
+    
+      <a 
+        href="/tags/%E9%9D%A2%E8%AF%95/" 
+        title="面试">
+        <div class="tags-list-item">面试</div>
+      </a>
+    
+      <a 
+        href="/tags/%E6%95%B0%E7%BB%84/" 
+        title="数组">
+        <div class="tags-list-item">数组</div>
+      </a>
+    
+      <a 
+        href="/tags/%E9%81%8D%E5%8E%86/" 
+        title="遍历">
+        <div class="tags-list-item">遍历</div>
+      </a>
+    
+      <a 
+        href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" 
+        title="字符串">
+        <div class="tags-list-item">字符串</div>
+      </a>
+    
+      <a 
+        href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" 
+        title="二叉树">
+        <div class="tags-list-item">二叉树</div>
+      </a>
+    
+      <a 
+        href="/tags/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD/" 
+        title="因果推断">
+        <div class="tags-list-item">因果推断</div>
+      </a>
+    
+      <a 
+        href="/tags/Causality/" 
+        title="Causality">
+        <div class="tags-list-item">Causality</div>
+      </a>
+    
+      <a 
+        href="/tags/%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/" 
+        title="数值计算">
+        <div class="tags-list-item">数值计算</div>
+      </a>
+    
+      <a 
+        href="/tags/%E9%93%BE%E8%A1%A8/" 
+        title="链表">
+        <div class="tags-list-item">链表</div>
+      </a>
+    
+      <a 
+        href="/tags/%E9%80%92%E5%BD%92/" 
+        title="递归">
+        <div class="tags-list-item">递归</div>
+      </a>
+    
+      <a 
+        href="/tags/SQL/" 
+        title="SQL">
+        <div class="tags-list-item">SQL</div>
+      </a>
+    
+      <a 
+        href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" 
+        title="动态规划">
+        <div class="tags-list-item">动态规划</div>
+      </a>
+    
+      <a 
+        href="/tags/%E6%A0%88/" 
+        title="栈">
+        <div class="tags-list-item">栈</div>
+      </a>
+    
+      <a 
+        href="/tags/%E6%8E%92%E5%BA%8F/" 
+        title="排序">
+        <div class="tags-list-item">排序</div>
+      </a>
+    
+  </div>
+</div>
+  </article>
+  
+  
+</div>
+            </aside>
+            <aside class="right-column">
+              <div class="sticky-widescreen">
+  
+  
+    <article class="card card-content toc-card">
+      <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BA%A6%E6%9D%9F"><span class="toc-text">约束</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95%EF%BC%88CREATE-TABLE-CONSTRAINT%EF%BC%89"><span class="toc-text">语法（CREATE TABLE + CONSTRAINT）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8-SQL-%E4%B8%AD%EF%BC%8C%E6%9C%89%E4%BB%A5%E4%B8%8B6%E4%B8%AA%E7%BA%A6%E6%9D%9F%EF%BC%9A"><span class="toc-text">在 SQL 中，有以下6个约束：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NOT-NULL-%E7%BA%A6%E6%9D%9F"><span class="toc-text">NOT NULL 约束</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D-1"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B1-%E5%88%9B%E5%BB%BA%E8%A1%A8%E6%97%B6%E5%AE%9A%E4%B9%89not-null%E7%BA%A6%E6%9D%9F"><span class="toc-text">实例1 创建表时定义not null约束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B2-%E5%9C%A8%E5%B7%B2%E7%BB%8F%E5%AD%98%E5%9C%A8%E7%9A%84%E8%A1%A8%E4%B8%AD%E6%B7%BB%E5%8A%A0-NOT-NULL-%E7%BA%A6%E6%9D%9F"><span class="toc-text">实例2 在已经存在的表中添加 NOT NULL 约束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B3-%E5%88%A0%E9%99%A4-NOT-NULL-%E7%BA%A6%E6%9D%9F"><span class="toc-text">实例3 删除 NOT NULL 约束</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#UNIQUE-%E7%BA%A6%E6%9D%9F"><span class="toc-text">UNIQUE 约束</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D-2"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B1-%E5%88%9B%E5%BB%BA%E8%A1%A8%E6%97%B6%E7%9A%84UNIQUE%E7%BA%A6%E6%9D%9F"><span class="toc-text">实例1 创建表时的UNIQUE约束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B2-%E6%9B%B4%E6%94%B9%E8%A1%A8%E6%97%B6%E7%9A%84UNIQUE%E7%BA%A6%E6%9D%9F"><span class="toc-text">实例2 更改表时的UNIQUE约束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B3-%E6%92%A4%E9%94%80UNIQUE%E7%BA%A6%E6%9D%9F"><span class="toc-text">实例3 撤销UNIQUE约束</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PRIMARY-KEY-%E4%B8%BB%E9%94%AE-%E7%BA%A6%E6%9D%9F"><span class="toc-text">PRIMARY KEY (主键) 约束</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D-3"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B1-%E5%88%9B%E5%BB%BA%E8%A1%A8%E6%97%B6%E7%9A%84PRIMARY-%E7%BA%A6%E6%9D%9F"><span class="toc-text">实例1 创建表时的PRIMARY 约束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B2-%E6%9B%B4%E6%94%B9%E8%A1%A8%E6%97%B6%E7%9A%84-PRIMARY-%E7%BA%A6%E6%9D%9F"><span class="toc-text">实例2 更改表时的 PRIMARY 约束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B3-%E6%92%A4%E9%94%80-PRIMARY-KEY-%E7%BA%A6%E6%9D%9F"><span class="toc-text">实例3 撤销 PRIMARY KEY 约束</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#FOREIGN-KEY-%E5%A4%96%E9%94%AE%E7%BA%A6%E6%9D%9F"><span class="toc-text">FOREIGN KEY (外键约束)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D-4"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B1-%E5%88%9B%E5%BB%BA%E8%A1%A8%E6%97%B6%E7%9A%84-FOREIGN-KEY-%E7%BA%A6%E6%9D%9F"><span class="toc-text">实例1 创建表时的 FOREIGN KEY 约束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B2-%E4%BF%AE%E6%94%B9%E8%A1%A8%E6%97%B6%E7%9A%84-FOREIGN-KEY-%E7%BA%A6%E6%9D%9F"><span class="toc-text">实例2 修改表时的 FOREIGN KEY 约束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B3-%E6%92%A4%E9%94%80-FOREIGN-KEY-%E7%BA%A6%E6%9D%9F"><span class="toc-text">实例3 撤销 FOREIGN KEY 约束</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#notes%EF%BC%9A"><span class="toc-text">notes：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CHECK-%E7%BA%A6%E6%9D%9F"><span class="toc-text">CHECK 约束</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D-5"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B1-%E5%88%9B%E5%BB%BA%E8%A1%A8%E6%97%B6%E7%9A%84-CHECK-%E7%BA%A6%E6%9D%9F"><span class="toc-text">实例1 创建表时的 CHECK 约束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B2-%E4%BF%AE%E6%94%B9%E8%A1%A8%E6%97%B6%E7%9A%84-CHECK-%E7%BA%A6%E6%9D%9F"><span class="toc-text">实例2 修改表时的 CHECK 约束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B3-%E6%92%A4%E9%94%80-CHECK-%E7%BA%A6%E6%9D%9F"><span class="toc-text">实例3 撤销 CHECK 约束</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DEFAULT-%E7%BA%A6%E6%9D%9F"><span class="toc-text">DEFAULT 约束</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D-6"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B1-%E5%88%9B%E5%BB%BA%E8%A1%A8%E6%97%B6%E7%9A%84DEFAULT%E7%BA%A6%E6%9D%9F"><span class="toc-text">实例1 创建表时的DEFAULT约束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B2-%E5%88%9B%E5%BB%BA%E8%A1%A8%E6%97%B6%E7%9A%84DEFAULT%E7%BA%A6%E6%9D%9F"><span class="toc-text">实例2 创建表时的DEFAULT约束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B3-%E5%88%9B%E5%BB%BA%E8%A1%A8%E6%97%B6%E7%9A%84DEFAULT%E7%BA%A6%E6%9D%9F"><span class="toc-text">实例3 创建表时的DEFAULT约束</span></a></li></ol></li></ol></li></ol>
+    </article>
+  
+  
+  <article class="card card-content">
+    <div class="recent-posts-card">
+  <div class="recent-posts-header">
+    <i 
+      class="iconfont icon-wenzhang_huaban" 
+      style="padding-right: 2px;">
+    </i>最近文章
+  </div>
+  <div class="recent-posts-list">
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2021-12-21</div>
+        <a href="/archives/518103f6.html"><div class="recent-posts-item-content">【】摘要格式测试</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2021-12-10</div>
+        <a href="/archives/78978eb1.html"><div class="recent-posts-item-content">d2lzh_pytorch包报错问题解决</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2021-12-09</div>
+        <a href="/archives/e43ae7cd.html"><div class="recent-posts-item-content">Typora本地图片上传到图床</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2021-12-08</div>
+        <a href="/archives/2abdf615.html"><div class="recent-posts-item-content">win10使用Anaconda创建可使用PyTorch虚拟环境</div></a>
+      </div>
+    
+  </div>
+</div>
+  </article>
+  
+  
+</div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <footer class="footer">
+  <div class="footer-container">
+    <div>
+      <div class="footer-dsc">
+        <span>
+          Copyright ©
+          
+            2020 -
+          
+          2021
+        </span>
+        &nbsp;
+        <a 
+          href="/" 
+          class="footer-link">
+          liq的个人博客
+        </a>
+      </div>
+    </div>
+
+    
+      <div class="footer-dsc">
+        
+          Powered by
+          <a 
+            href="https://hexo.io/" 
+            class="footer-link" 
+            target="_blank" 
+            rel="nofollow noopener noreferrer">
+            &nbsp;Hexo
+          </a>
+        
+        
+          <span>&nbsp;|&nbsp;</span>
+        
+        
+          Theme -
+          <a 
+            href="https://github.com/theme-kaze" 
+            class="footer-link" 
+            target="_blank"
+            rel="nofollow noopener noreferrer">
+            &nbsp;Kaze
+          </a>
+        
+      </div>
+    
+    
+    
+    
+      <div class="footer-dsc">
+        
+          本站总访问量<span id="busuanzi_value_site_pv"></span>次
+        
+        
+          <span>&nbsp;|&nbsp;</span>
+        
+        
+          本站总访客数<span id="busuanzi_value_site_uv"></span>次
+        
+      </div>
+      
+    
+</footer> 
+    
+  <a 
+    role="button" 
+    id="scrollbutton" 
+    class="basebutton" 
+    aria-label="回到顶部">
+    <i class="iconfont icon-arrowleft button-icon"></i>
+  </a>
+
+<a 
+  role="button" 
+  id="menubutton"
+  aria-label="menu button"
+  class="basebutton">
+  <i class="iconfont icon-menu button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="popbutton" 
+  class="basebutton" 
+  aria-label="控制中心">
+  <i class="iconfont icon-expand button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="darkbutton" 
+  class="basebutton darkwidget" 
+  aria-label="夜色模式">
+  <i class="iconfont icon-weather button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="searchbutton" 
+  class="basebutton searchwidget" 
+  aria-label="搜索">
+  <i class="iconfont icon-search button-icon"></i>
+</a> 
+     
+     
+      
+ 
+     
+     
+      <script>
+  var addImgLayout = function () {
+    var img = document.querySelectorAll('.post-content img')
+    var i
+    for (i = 0; i < img.length; i++) {
+      var wrapper = document.createElement('a')
+      wrapper.setAttribute('href', img[i].getAttribute('data-src'))
+      wrapper.setAttribute('aria-label', 'illustration')
+      wrapper.style.cssText =
+        'width: 100%; display: flex; justify-content: center;'
+      if (img[i].alt) wrapper.dataset.caption = img[i].alt
+      wrapper.dataset.nolink = true
+      img[i].before(wrapper)
+      wrapper.append(img[i])
+      var divWrap = document.createElement('div')
+      divWrap.classList.add('gallery')
+      wrapper.before(divWrap)
+      divWrap.append(wrapper)
+    }
+    baguetteBox.run('.gallery')
+  }
+</script>
+<script>
+  loadScript(
+    "/js/lib/lightbox/baguetteBox.min.js",
+    addImgLayout
+  )
+</script>
+ 
+     
+     
+    <script src="/js/main.js"></script> 
+    
+      <script> 
+        loadScript('/js/lib/busuanzi.min.js') 
+      </script>
+     
+    
+      <script>
+        var addLazyload = function () {
+          var observer = lozad('.lozad', {
+            load: function (el) {
+              el.srcset = el.getAttribute('data-src')
+            },
+            loaded: function (el) {
+              el.classList.add('loaded')
+            },
+          })
+          observer.observe()
+        }
+      </script>
+      <script>
+        loadScript('/js/lib/lozad.min.js', addLazyload)
+      </script>
+     
+    
+    
+      <script>
+        setTimeout(() => {localSearch("search.json")}, 0)
+      </script>
+    
+  </body>
+</html>
