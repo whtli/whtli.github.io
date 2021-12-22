@@ -424,15 +424,15 @@ pre[class*='highlight'] {
 }
 .archive-card-header {
   margin-bottom: 6px;
-  font-size: 16px;
+  font-size: 20px;
 }
 .archive-card-header .iconfont {
-  font-size: 16px;
+  font-size: 20px;
 }
 .archive-card-list-item {
   display: block;
   color: var(--text-color);
-  font-size: 1.15rem;
+  font-size: 1rem;
   padding: 6px 8px;
   transition: all 0.4s;
 }
@@ -560,7 +560,7 @@ pre[class*='highlight'] {
   right: 32px;
 }
 #menubutton .button-icon {
-  font-size: 1.15rem;
+  font-size: 1rem;
   font-weight: bold;
 }
 #popbutton {
@@ -630,7 +630,7 @@ pre[class*='highlight'] {
   margin-bottom: 0.85rem;
 }
 .post-title {
-  font-size: 1.85rem;
+  font-size: 1.8rem;
   font-weight: 500;
   margin: 0.5rem 0;
   padding-bottom: 0.4rem;
@@ -663,15 +663,15 @@ pre[class*='highlight'] {
 }
 .categories-header {
   margin-bottom: 6px;
-  font-size: 16px;
+  font-size: 20px;
 }
 .categories-header .iconfont {
-  font-size: 16px;
+  font-size: 20px;
 }
 .categories-list-item {
   color: var(--text-color);
   padding: 6px 8px;
-  font-size: 1.15rem;
+  font-size: 1rem;
   transition: all 0.4s;
 }
 .categories-list-item:hover {
@@ -907,7 +907,7 @@ pre[class*='highlight'] {
   text-overflow: ellipsis;
   white-space: nowrap;
   color: var(--text-strong-color);
-  font-size: 1.15rem;
+  font-size: 1rem;
   max-height: 24.8px;
 }
 .friend-dsc {
@@ -1200,10 +1200,10 @@ mjx-container svg:focus {
 }
 .recent-posts-header {
   margin-bottom: 16px;
-  font-size: 16px;
+  font-size: 20px;
 }
 .recent-posts-header .iconfont {
-  font-size: 16px;
+  font-size: 20px;
 }
 .recent-posts-item {
   padding-left: 6px;
@@ -1220,7 +1220,7 @@ mjx-container svg:focus {
 .recent-posts-item-content {
   color: var(--text-color);
   margin-top: 6px;
-  font-size: 1.15rem;
+  font-size: 1rem;
   padding: 6px 0;
   padding-left: 8px;
   transition: all 0.4s;
@@ -1320,10 +1320,10 @@ mjx-container svg:focus {
 }
 .tags-header {
   margin-bottom: 16px;
-  font-size: 16px;
+  font-size: 20px;
 }
 .tags-header .iconfont {
-  font-size: 16px;
+  font-size: 20px;
 }
 .tags-list {
   overflow: hidden;
@@ -1364,7 +1364,7 @@ mjx-container svg:focus {
   font-size: 16px;
 }
 .toc-header .iconfont {
-  font-size: 1.15rem;
+  font-size: 1rem;
 }
 .toc {
   overflow: auto;
@@ -1451,7 +1451,7 @@ mjx-container svg:focus {
 }
 .archive-timeline-post-content {
   margin-top: 12px;
-  font-size: 1.15rem;
+  font-size: 1rem;
 }
 .archive-timeline-post-item {
   color: var(--text-font-color);
@@ -1560,7 +1560,7 @@ mjx-container svg:focus {
   }
 }
 .comment-card-title {
-  font-size: 1.15rem;
+  font-size: 1rem;
   margin-bottom: 16px;
 }
 .widget-title {
