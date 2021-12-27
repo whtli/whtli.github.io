@@ -40,13 +40,13 @@ module &lt;span class=&quot;token string&quot;&gt;&#39;d2lzh_pytorch&#39;&lt;/sp
     <category term="D2L" scheme="https://hexo.flower48237.com/categories/D2L/"/>
     
     
+    <category term="Jupyter" scheme="https://hexo.flower48237.com/tags/Jupyter/"/>
+    
     <category term="深度学习" scheme="https://hexo.flower48237.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
     <category term="PyTorch" scheme="https://hexo.flower48237.com/tags/PyTorch/"/>
     
     <category term="Python" scheme="https://hexo.flower48237.com/tags/Python/"/>
-    
-    <category term="Jupyter" scheme="https://hexo.flower48237.com/tags/Jupyter/"/>
     
   </entry>
   
@@ -147,13 +147,13 @@ conda list&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&qu
     <category term="D2L" scheme="https://hexo.flower48237.com/categories/D2L/"/>
     
     
-    <category term="深度学习" scheme="https://hexo.flower48237.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    <category term="Jupyter" scheme="https://hexo.flower48237.com/tags/Jupyter/"/>
-    
     <category term="Anaconda" scheme="https://hexo.flower48237.com/tags/Anaconda/"/>
     
     <category term="conda" scheme="https://hexo.flower48237.com/tags/conda/"/>
+    
+    <category term="Jupyter" scheme="https://hexo.flower48237.com/tags/Jupyter/"/>
+    
+    <category term="深度学习" scheme="https://hexo.flower48237.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   

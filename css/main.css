@@ -790,11 +790,11 @@ pre[class*='highlight'] {
     display: none;
   }
   .main-column {
-    width: 52%;
+    width: 56%;
   }
   .left-column,
   .right-column {
-    width: 24%;
+    width: 22%;
   }
   .right-column {
     order: 3;
