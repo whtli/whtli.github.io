@@ -985,7 +985,7 @@ pre[class*='highlight'] {
     justify-content: center;
   }
   .navbar-menu {
-    width: 100%;
+    width: 90%;
     display: flex;
     margin-right: 0;
     justify-content: center;
