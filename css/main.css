@@ -630,8 +630,8 @@ pre[class*='highlight'] {
   margin-bottom: 0.85rem;
 }
 .post-title {
-  font-size: 1.8rem;
-  font-weight: 500;
+  font-size: 1.6rem;
+  font-weight: bold;
   margin: 0.5rem 0;
   padding-bottom: 0.4rem;
   color: var(--title-color);

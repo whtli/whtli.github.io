@@ -929,21 +929,7 @@
 
   
   <url>
-    <loc>https://hexo.flower48237.com/tags/Anaconda/</loc>
-    <lastmod>2021-12-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://hexo.flower48237.com/tags/conda/</loc>
-    <lastmod>2021-12-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://hexo.flower48237.com/tags/Jupyter/</loc>
+    <loc>https://hexo.flower48237.com/tags/%E5%85%B6%E4%BB%96/</loc>
     <lastmod>2021-12-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -957,7 +943,35 @@
   </url>
   
   <url>
-    <loc>https://hexo.flower48237.com/tags/%E5%85%B6%E4%BB%96/</loc>
+    <loc>https://hexo.flower48237.com/tags/PyTorch/</loc>
+    <lastmod>2021-12-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://hexo.flower48237.com/tags/Jupyter/</loc>
+    <lastmod>2021-12-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://hexo.flower48237.com/tags/Python/</loc>
+    <lastmod>2021-12-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://hexo.flower48237.com/tags/Anaconda/</loc>
+    <lastmod>2021-12-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://hexo.flower48237.com/tags/conda/</loc>
     <lastmod>2021-12-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -992,20 +1006,6 @@
   </url>
   
   <url>
-    <loc>https://hexo.flower48237.com/tags/PyTorch/</loc>
-    <lastmod>2021-12-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://hexo.flower48237.com/tags/Python/</loc>
-    <lastmod>2021-12-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://hexo.flower48237.com/tags/%E6%95%B4%E6%95%B0/</loc>
     <lastmod>2021-12-27</lastmod>
     <changefreq>weekly</changefreq>
@@ -1014,6 +1014,13 @@
   
   <url>
     <loc>https://hexo.flower48237.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/</loc>
+    <lastmod>2021-12-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://hexo.flower48237.com/tags/%E5%88%86%E6%B2%BB/</loc>
     <lastmod>2021-12-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1041,7 +1048,14 @@
   </url>
   
   <url>
-    <loc>https://hexo.flower48237.com/tags/%E5%88%86%E6%B2%BB/</loc>
+    <loc>https://hexo.flower48237.com/tags/%E9%81%8D%E5%8E%86/</loc>
+    <lastmod>2021-12-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://hexo.flower48237.com/tags/%E5%AD%97%E7%AC%A6%E5%8C%B9%E9%85%8D/</loc>
     <lastmod>2021-12-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1062,21 +1076,7 @@
   </url>
   
   <url>
-    <loc>https://hexo.flower48237.com/tags/%E5%AD%97%E7%AC%A6%E5%8C%B9%E9%85%8D/</loc>
-    <lastmod>2021-12-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://hexo.flower48237.com/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/</loc>
-    <lastmod>2021-12-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://hexo.flower48237.com/tags/%E9%81%8D%E5%8E%86/</loc>
     <lastmod>2021-12-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1097,14 +1097,7 @@
   </url>
   
   <url>
-    <loc>https://hexo.flower48237.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</loc>
-    <lastmod>2021-12-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://hexo.flower48237.com/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/</loc>
+    <loc>https://hexo.flower48237.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
     <lastmod>2021-12-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1118,7 +1111,14 @@
   </url>
   
   <url>
-    <loc>https://hexo.flower48237.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
+    <loc>https://hexo.flower48237.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</loc>
+    <lastmod>2021-12-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://hexo.flower48237.com/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2021-12-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1358,14 +1358,14 @@
 
   
   <url>
-    <loc>https://hexo.flower48237.com/categories/D2L/</loc>
+    <loc>https://hexo.flower48237.com/categories/%E5%85%B6%E4%BB%96/</loc>
     <lastmod>2021-12-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://hexo.flower48237.com/categories/%E5%85%B6%E4%BB%96/</loc>
+    <loc>https://hexo.flower48237.com/categories/D2L/</loc>
     <lastmod>2021-12-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
