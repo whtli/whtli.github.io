@@ -499,7 +499,7 @@ pre[class*='highlight'] {
   align-items: center;
 }
 .author-message > a > span {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 .author-message > a > span + span {
   font-size: 0.9rem;
@@ -521,7 +521,7 @@ pre[class*='highlight'] {
   color: var(--link-hover-color);
 }
 .author-card-society .author-card-society-icon a .iconfont {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 @media (max-width: 862px) {
   .card-author {
@@ -953,7 +953,7 @@ pre[class*='highlight'] {
   padding: 0.7rem 0.6rem;
 }
 .navbar-logo-dsc {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 .navbar-logo-img {
   margin-right: 10px;
@@ -985,7 +985,7 @@ pre[class*='highlight'] {
     justify-content: center;
   }
   .navbar-menu {
-    width: 90%;
+    width: 100%;
     display: flex;
     margin-right: 0;
     justify-content: center;
@@ -994,7 +994,7 @@ pre[class*='highlight'] {
 @media (max-width: 586px) {
   .navbar-menu {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
   }
 }
 .nav {
@@ -1465,7 +1465,7 @@ mjx-container svg:focus {
   }
 }
 .categories-page-title {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 .category-page-card {
   margin-bottom: 24px;
@@ -1478,7 +1478,7 @@ mjx-container svg:focus {
   float: left;
   display: flex;
   color: var(--text-color);
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -1512,7 +1512,7 @@ mjx-container svg:focus {
   }
 }
 .tags-page-title {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 .about-card {
   display: flex;
@@ -1564,7 +1564,7 @@ mjx-container svg:focus {
   margin-bottom: 16px;
 }
 .widget-title {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: bold;
 }
 .token.operator,
