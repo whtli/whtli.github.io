@@ -254,6 +254,54 @@
   <div class="card">
     
         <article class="card card-content">
+          <a href="/archives/900c1741.html">
+            <h1 class="post-title">
+              【剑指offer】面试题29-顺时针打印矩阵
+            </h1>
+          </a>
+          <!-- <div class="card-excerpt">
+            
+              题目描述输入一个矩阵，按照从外向里以顺时针的顺序依次打印出每一个数字，例如，如果输入如下4 X 4矩阵： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 则依次打印出数字1,2,3,4,8,12,16,15,14,13,9,5,6,7,11,10.
+                
+          </div> -->
+          <div class="card-excerpt">
+            
+              <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>输入一个矩阵，按照从外向里以顺时针的顺序依次打印出每一个数字，例如，如果输入如下4 X 4矩阵： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 则依次打印出数字1,2,3,4,8,12,16,15,14,13,9,5,6,7,11,10.</p>
+                
+          </div>
+          <div class="card-post-footer">
+            <div class="post-meta">
+              <time datetime="2020-02-16T05:18:48.000Z">
+                <i class="iconfont icon-calendar" style="margin-right: 2px;">
+                </i>
+                <span>
+                  2020-02-16
+                </span>
+              </time>
+              
+                
+                  
+                    
+                          
+                            <span class="dot"></span>
+                            
+                              
+                                    <a href="/categories/%E5%89%91%E6%8C%87offer/" class="post-meta-link">
+                                      剑指offer
+                                    </a>
+                                    
+                                      
+            </div>
+            <a href="/archives/900c1741.html">
+              继续阅读
+            </a>
+          </div>
+        </article>
+  </div>
+  
+  <div class="card">
+    
+        <article class="card card-content">
           <a href="/archives/394445a5.html">
             <h1 class="post-title">
               【剑指offer】面试题32-从上到下打印二叉树
@@ -719,84 +767,6 @@
         </article>
   </div>
   
-  <div class="card">
-    
-        <article class="card card-content">
-          <a href="/archives/cee74ffa.html">
-            <h1 class="post-title">
-              笔试题1-根据投资关系确定股东和股东之间是否有关联
-            </h1>
-          </a>
-          <!-- <div class="card-excerpt">
-            
-              
-题目来源：2020年2月某国企校招其中一道编程笔试题回忆。备注：笔试的时候并没有做出来，现在的代码不能保证没有逻辑错误，请各位大佬批评指正，感谢！
-
-题目回忆Pi代表股东，Ej代表公司（其中 i 和 j 代表正整数），Pi可以投资不同的Ej，这样就导致Pi和Ej之间是多对多的关系。  股东之间有关联 的定义如下：①Pi与其本身有关联；②如果Px投资了Ej，并且Py也投资了Ej，则Px和Py有关联。
-输入样例
-P2；P1，E1；P2，E1，E2；P3，E3
-其中第一个分号之前只有一个Pi，是目标股东；
-我们要做的就是找出所有和Pi有关联的股东；
-之后的每一个分号，分割了每个股东及其投资的公司。
-
-对输入样例就可以解释为：
-已知P1投资了E1；P2投资了E1、E2；P3投资了E3；
-求所有和股东P2有关联的股东。
-输出结果：
-P1，P2
-输出结果要按照字典序从小到大的顺序输出，相邻两个股东之间用逗号分隔。
-                
-          </div> -->
-          <div class="card-excerpt">
-            
-              <blockquote>
-<p>题目来源：2020年2月某国企校招其中一道编程笔试题回忆。<br>备注：笔试的时候并没有做出来，现在的代码不能保证没有逻辑错误，请各位大佬批评指正，感谢！</p>
-</blockquote>
-<h3 id="题目回忆"><a href="#题目回忆" class="headerlink" title="题目回忆"></a>题目回忆</h3><p>Pi代表股东，Ej代表公司（其中 <strong>i</strong> 和 <strong>j</strong> 代表正整数），Pi可以投资不同的Ej，这样就导致Pi和Ej之间是多对多的关系。  <strong>股东之间有关联</strong> 的定义如下：<br>①Pi与其本身有关联；<br>②如果<strong>Px</strong>投资了<strong>Ej</strong>，并且<strong>Py</strong>也投资了<strong>Ej</strong>，则Px和Py有关联。</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">输入样例
-P2；P1，E1；P2，E1，E2；P3，E3
-其中第一个分号之前只有一个Pi，是目标股东；
-我们要做的就是找出所有和Pi有关联的股东；
-之后的每一个分号，分割了每个股东及其投资的公司。
-
-对输入样例就可以解释为：
-已知P1投资了E1；P2投资了E1、E2；P3投资了E3；
-求所有和股东P2有关联的股东。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">输出结果：
-P1，P2
-输出结果要按照字典序从小到大的顺序输出，相邻两个股东之间用逗号分隔。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-                
-          </div>
-          <div class="card-post-footer">
-            <div class="post-meta">
-              <time datetime="2020-02-11T09:42:56.000Z">
-                <i class="iconfont icon-calendar" style="margin-right: 2px;">
-                </i>
-                <span>
-                  2020-02-11
-                </span>
-              </time>
-              
-                
-                  
-                    
-                          
-                            <span class="dot"></span>
-                            
-                              
-                                    <a href="/categories/%E7%AC%94%E8%AF%95%E9%A2%98/" class="post-meta-link">
-                                      笔试题
-                                    </a>
-                                    
-                                      
-            </div>
-            <a href="/archives/cee74ffa.html">
-              继续阅读
-            </a>
-          </div>
-        </article>
-  </div>
-  
     
       <div class="nav">
   
@@ -844,7 +814,7 @@ P1，P2
   <a 
     class="author-posts-count" 
     href="/archives">
-    <span>101</span>
+    <span>102</span>
     <span>文章</span>
   </a>
   <a 
@@ -909,7 +879,7 @@ P1，P2
       <a href="/categories/LeetCode/">
         <div class="categories-list-item">
           LeetCode
-          <span class="categories-list-item-badge">47</span>
+          <span class="categories-list-item-badge">48</span>
         </div>
       </a>
     
@@ -1239,11 +1209,15 @@ P1，P2
     
       
         
+      
+    
+      
+        
           <a 
             href="/archives/2021" 
             class="archive-card-list-item">
             2021
-            <span class="archive-card-list-item-badge">40</span>
+            <span class="archive-card-list-item-badge">41</span>
           </a>
         
         
@@ -1520,6 +1494,11 @@ P1，P2
   <div class="recent-posts-list">
     
       <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2021-12-30</div>
+        <a href="/archives/4fc659f0.html"><div class="recent-posts-item-content">LeetCode精选TOP面试题073.矩阵置0</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
         <div class="recent-posts-item-title">2021-12-10</div>
         <a href="/archives/78978eb1.html"><div class="recent-posts-item-content">d2lzh_pytorch包报错问题解决</div></a>
       </div>
@@ -1532,11 +1511,6 @@ P1，P2
       <div class="recent-posts-item">
         <div class="recent-posts-item-title">2021-12-08</div>
         <a href="/archives/2abdf615.html"><div class="recent-posts-item-content">win10使用Anaconda创建可使用PyTorch虚拟环境</div></a>
-      </div>
-    
-      <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2021-12-08</div>
-        <a href="/archives/39dee8e5.html"><div class="recent-posts-item-content">安装Anaconda+常用的conda命令+Anaconda换源+安装Jupyter</div></a>
       </div>
     
   </div>
@@ -1720,11 +1694,15 @@ P1，P2
     
       
         
+      
+    
+      
+        
           <a 
             href="/archives/2021" 
             class="archive-card-list-item">
             2021
-            <span class="archive-card-list-item-badge">40</span>
+            <span class="archive-card-list-item-badge">41</span>
           </a>
         
         
