@@ -18,17 +18,17 @@
   <link 
     rel="icon" 
     href="/img/q.png">
-  <title>LeetCode精选TOP面试题202.快乐数</title>
+  <title>LeetCode精选TOP面试题172.阶乘后的零</title>
   
     
       <meta 
         property="og:title" 
-        content="LeetCode精选TOP面试题202.快乐数">
+        content="LeetCode精选TOP面试题172.阶乘后的零">
     
     
       <meta 
         property="og:url" 
-        content="https://hexo.flower48237.com/archives/f2d7b9d0.html">
+        content="https://hexo.flower48237.com/archives/9149f718.html">
     
     
       <meta 
@@ -38,7 +38,19 @@
     
       <meta 
         property="og:img" 
-        content="&lt;h3 id=&#34;题目描述&#34;&gt;&lt;a href=&#34;#题目描述&#34; class=&#34;headerlink&#34; title=&#34;题目描述&#34;&gt;&lt;/a&gt;题目描述&lt;/h3&gt;&lt;p&gt;编写一个算法来判断一个数是不是“快乐数”。&lt;br&gt;题目来源：&lt;a href=&#34;https://leetcode-cn.com/problems/happy-number&#34;&gt;LeetCode&lt;/a&gt;&lt;br&gt;一个“快乐数”定义为：对于一个正整数，每一次将该数替换为它每个位置上的数字的平方和，然后重复这个过程直到这个数变为 1，也可能是无限循环但始终变不到 1。如果可以变为 1，那么这个数就是快乐数。&lt;/p&gt;">
+        content="&lt;h3 id=&#34;题目描述&#34;&gt;&lt;a href=&#34;#题目描述&#34; class=&#34;headerlink&#34; title=&#34;题目描述&#34;&gt;&lt;/a&gt;题目描述&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;给定一个整数 n ，返回 n! 结果中尾随零的数量。&lt;/li&gt;
+&lt;li&gt;提示 n! = n * (n - 1) * (n - 2) * … * 3 * 2 * 1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;example
+input  &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; n &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt;
+output &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;
+note   &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;!&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;6&lt;/span&gt; ，不含尾随 &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;
+input  &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; n &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;5&lt;/span&gt;
+output &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;
+note   &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;!&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;120&lt;/span&gt; ，有一个尾随 &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;
+input  &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; n &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;
+output &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;">
     
     
       <meta 
@@ -46,10 +58,10 @@
         content="article">
       <meta 
         property="og:article:published_time" 
-        content="2020-03-17">
+        content="2022-01-06">
       <meta 
         property="og:article:modified_time" 
-        content="2021-12-21">
+        content="2022-01-06">
       <meta 
         property="og:article:author" 
         content="鸡排大仙儿">
@@ -61,15 +73,15 @@
         
           <meta 
             property="og:article:tag" 
-            content="数值计算">
-        
-          <meta 
-            property="og:article:tag" 
             content="LeetCode">
         
           <meta 
             property="og:article:tag" 
-            content="面试">
+            content="数学">
+        
+          <meta 
+            property="og:article:tag" 
+            content="递归">
         
       
     
@@ -288,16 +300,16 @@
 <article class="card card-content">
   <header>
     <h1 class="post-title">
-      LeetCode精选TOP面试题202.快乐数
+      LeetCode精选TOP面试题172.阶乘后的零
     </h1>
   </header>
   <div class="post-meta post-show-meta">
-    <time datetime="2020-03-17T03:14:50.000Z">
+    <time datetime="2022-01-06T04:00:00.000Z">
       <i 
         class="iconfont icon-calendar" 
         style="margin-right: 2px;">
       </i>
-      <span>2020-03-17</span>
+      <span>2022-01-06</span>
     </time>
     
       <span class="dot"></span>
@@ -311,7 +323,7 @@
     
     
       <span class="dot"></span>
-      <span>753 字</span>
+      <span>602 字</span>
     
   </div>
   
@@ -335,15 +347,6 @@
             <span class="dot"></span>
           
           <a 
-            href="/tags/%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/" 
-            class="post-meta-link">
-            数值计算
-          </a>
-        
-          
-            <span class="dot"></span>
-          
-          <a 
             href="/tags/LeetCode/" 
             class="post-meta-link">
             LeetCode
@@ -353,9 +356,18 @@
             <span class="dot"></span>
           
           <a 
-            href="/tags/%E9%9D%A2%E8%AF%95/" 
+            href="/tags/%E6%95%B0%E5%AD%A6/" 
             class="post-meta-link">
-            面试
+            数学
+          </a>
+        
+          
+            <span class="dot"></span>
+          
+          <a 
+            href="/tags/%E9%80%92%E5%BD%92/" 
+            class="post-meta-link">
+            递归
           </a>
         
       </div>
@@ -365,89 +377,92 @@
   <div 
     id="section" 
     class="post-content">
-    <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>编写一个算法来判断一个数是不是“快乐数”。<br>题目来源：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/happy-number">LeetCode</a><br>一个“快乐数”定义为：对于一个正整数，每一次将该数替换为它每个位置上的数字的平方和，然后重复这个过程直到这个数变为 1，也可能是无限循环但始终变不到 1。如果可以变为 1，那么这个数就是快乐数。</p>
-<span id="more"></span>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">示例: 
-输入: <span class="token number">19</span>
-输出: <span class="token boolean">true</span>
-解释: 
-<span class="token number">12</span> + <span class="token number">92</span> <span class="token operator">=</span> <span class="token number">82</span>
-<span class="token number">82</span> + <span class="token number">22</span> <span class="token operator">=</span> <span class="token number">68</span>
-<span class="token number">62</span> + <span class="token number">82</span> <span class="token operator">=</span> <span class="token number">100</span>
-<span class="token number">12</span> + 02 + 02 <span class="token operator">=</span> <span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><ul>
+<li>给定一个整数 n ，返回 n! 结果中尾随零的数量。</li>
+<li>提示 n! = n * (n - 1) * (n - 2) * … * 3 * 2 * 1</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">example
+input  <span class="token builtin class-name">:</span> n <span class="token operator">=</span> <span class="token number">3</span>
+output <span class="token builtin class-name">:</span> <span class="token number">0</span>
+note   <span class="token builtin class-name">:</span> <span class="token number">3</span><span class="token operator">!</span> <span class="token operator">=</span> <span class="token number">6</span> ，不含尾随 <span class="token number">0</span>
+input  <span class="token builtin class-name">:</span> n <span class="token operator">=</span> <span class="token number">5</span>
+output <span class="token builtin class-name">:</span> <span class="token number">1</span>
+note   <span class="token builtin class-name">:</span> <span class="token number">5</span><span class="token operator">!</span> <span class="token operator">=</span> <span class="token number">120</span> ，有一个尾随 <span class="token number">0</span>
+input  <span class="token builtin class-name">:</span> n <span class="token operator">=</span> <span class="token number">0</span>
+output <span class="token builtin class-name">:</span> <span class="token number">0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>这是一个在编程的时候会出现死循环的问题，个人认为重点工作其实倒不是怎么判断是不是快乐数，而是找到打破循环的方法或者条件。</p>
-<ul>
-<li>思路1 ：快慢指针<br>慢指针slower每次前进一步（进行一次平方计算），快指针faster每次前进两步（进行两次平方计算），当slower和faster不相等的时候，就一直循环。那为啥还说能打破循环呢？<br>这是因为当快慢指针相等的时候会停止循环，相等的有两种情况：<ul>
-<li>当慢指针和快指针都通过计算变成了1；</li>
-<li>当慢指针走过一圈之后，快指针肯定恰好走过了两圈，如果不是快乐数，快慢指针的值肯定是相同的；<blockquote>
-<p>之所以选择快指针走两步而不是三步四步，是因为1，2公倍数最小，公约数最多，这样最节省空间和时间</p>
+<span id="more"></span>
+
+<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><ul>
+<li>基本思路：n中包含多少个5，其阶乘值就有多少个尾随的0</li>
+<li>n的阶乘尾随0，可以理解为不断乘10得到的，所以找到n中包含多少因数10，就可以知道阶乘值有多少尾随0</li>
+<li>将因数10拆分，是由因数5和因素2得到的，而因数2每隔两个数出现一次，因数5每隔5个数出现一次，故因数2的个数远多于因数5</li>
+<li>所以，有多少个因数5，就有多少个尾随0</li>
+<li>除了每隔5个数出现一次因数5之外，每隔25个数也会多出现一次因数5，因为25 = 5 × 5，即n中有多少个25，就多包含了几个因数5；以此类推，每隔125个数……</li>
+<li>因此，n中包含的因数5的个数应当为： <ul>
+<li><blockquote>
+<p>n / 5 + n / 25 + n / 125 + ……</p>
 </blockquote>
 </li>
 </ul>
 </li>
-<li>思路2 ：借助HashSet<br>哈希Set特点就是不允许重复，那只要每次求和之后，判断当前的值n是否已经存在于hashset中就好啦，存在就不是快乐数，直接return false，不存在就添加进hashset，直到n 变成1跳出循环，或者返回false。</li>
-<li>思路3 ：投机取巧<br>小于10的数中，只有1和7是快乐数，借鉴<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/happy-number/solution/cyu-yan-by-hui-fei-de-xiao-hou/">leetcode上大神的思路</a>，所以，投机取巧就很简单了:<ul>
-<li>只要每次计算得到的n大于10，那么就继续计算;</li>
-<li>每次计算得到的n小于10，如果等于1或者7，就是快乐数，不等就不是。</li>
+<li>时间复杂度： O(log n)</li>
+<li>空间复杂度：O(1)</li>
 </ul>
-</li>
+<p>作者：LeetCode<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/factorial-trailing-zeroes/solution/jie-cheng-hou-de-ling-by-leetcode/">https://leetcode-cn.com/problems/factorial-trailing-zeroes/solution/jie-cheng-hou-de-ling-by-leetcode/</a><br>来源：力扣（LeetCode）<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+<p><strong>思路1 循环</strong></p>
+<ul>
+<li>循环，用n累除5，并把每次除以5的数量累加到结果上</li>
 </ul>
-<h3 id="代码实现-Java"><a href="#代码实现-Java" class="headerlink" title="代码实现(Java)"></a>代码实现(Java)</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">/**
- * @author : flower48237
- * @2020/3/16 20:38
- * title : LeetCode精选TOP面试题202.快乐数
- */</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Solution3</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">isHappy</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    	<span class="token comment">// 法 1 -- 快慢指针</span>
-        <span class="token keyword">int</span> slower <span class="token operator">=</span> n<span class="token punctuation">;</span>
-        <span class="token keyword">int</span> faster <span class="token operator">=</span> n<span class="token punctuation">;</span>
-        <span class="token keyword">do</span> <span class="token punctuation">&#123;</span>
-            slower <span class="token operator">=</span> <span class="token function">getSqrtSum</span><span class="token punctuation">(</span>slower<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            faster <span class="token operator">=</span> <span class="token function">getSqrtSum</span><span class="token punctuation">(</span>faster<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            faster <span class="token operator">=</span> <span class="token function">getSqrtSum</span><span class="token punctuation">(</span>faster<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span><span class="token keyword">while</span> <span class="token punctuation">(</span>slower <span class="token operator">!=</span> faster<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> slower <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">;</span><span class="token comment">// 返回slower和1是否相等的判定值</span>
-        
-    	<span class="token comment">// 法 2 -- 借助HashSet</span>
-        <span class="token class-name">HashSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">></span></span> hashset <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        hashset<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-            <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+<p><strong>思路2 递归</strong></p>
+<ul>
+<li>每次把 n / 5 作为新的参数投入到新一轮递归计算中</li>
+<li>递归边界为 n = 0</li>
+</ul>
+<p><strong>思路3 BigInteger</strong></p>
+<ul>
+<li>借助Java的大数，先计算阶乘，再不断取余判断是否余数为0，若为0则结果加1，阶乘值除10</li>
+<li>会超出时间限制</li>
+</ul>
+<h3 id="代码（Java）"><a href="#代码（Java）" class="headerlink" title="代码（Java）"></a>代码（Java）</h3><p><strong>思路1代码</strong></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Solution1</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">trailingZeroes</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">int</span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>n <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            n <span class="token operator">=</span> n <span class="token operator">/</span> <span class="token number">5</span><span class="token punctuation">;</span>
+            count <span class="token operator">+=</span> n<span class="token punctuation">;</span>
         <span class="token punctuation">&#125;</span>
-        <span class="token keyword">while</span> <span class="token punctuation">(</span>n <span class="token operator">!=</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-            n <span class="token operator">=</span> <span class="token function">getSqrtSum</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>hashset<span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-                <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-            <span class="token punctuation">&#125;</span>
-            hashset<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span>
-        <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-        
-        <span class="token comment">// 法 3 -- 投机取巧</span>
-        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-                <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">==</span> <span class="token number">1</span> <span class="token operator">||</span> n <span class="token operator">==</span> <span class="token number">7</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-                    <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-                <span class="token punctuation">&#125;</span><span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
-                    <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-                <span class="token punctuation">&#125;</span>
-            <span class="token punctuation">&#125;</span>
-            n <span class="token operator">=</span> <span class="token function">getSqrtSum</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> count<span class="token punctuation">;</span>
+
     <span class="token punctuation">&#125;</span>
-    <span class="token comment">// 三个方法都会用到的计算平方的步骤</span>
-    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">getSqrtSum</span><span class="token punctuation">(</span><span class="token keyword">int</span> num<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-        <span class="token keyword">int</span> sum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token keyword">while</span> <span class="token punctuation">(</span>num <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-            <span class="token keyword">int</span> item <span class="token operator">=</span> num <span class="token operator">%</span> <span class="token number">10</span><span class="token punctuation">;</span>
-            sum <span class="token operator">+=</span> item <span class="token operator">*</span> item<span class="token punctuation">;</span>
-            num <span class="token operator">/=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>思路2代码</strong></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Solution2</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">trailingZeroes</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
         <span class="token punctuation">&#125;</span>
-        <span class="token keyword">return</span> sum<span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>n <span class="token operator">/</span> <span class="token number">5</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token function">trailingZeroes</span><span class="token punctuation">(</span>n <span class="token operator">/</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>思路2代码</strong></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Solution3</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">trailingZeroes</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">int</span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token class-name">BigInteger</span> x <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BigInteger</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">></span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            x <span class="token operator">=</span> x<span class="token punctuation">.</span><span class="token function">multiply</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">BigInteger</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>x<span class="token punctuation">.</span><span class="token function">mod</span><span class="token punctuation">(</span><span class="token class-name">BigInteger</span><span class="token punctuation">.</span>TEN<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span><span class="token class-name">BigInteger</span><span class="token punctuation">.</span>ZERO<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            count <span class="token operator">++</span><span class="token punctuation">;</span>
+            x <span class="token operator">=</span> x<span class="token punctuation">.</span><span class="token function">divide</span><span class="token punctuation">(</span><span class="token class-name">BigInteger</span><span class="token punctuation">.</span>TEN<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+
+        <span class="token keyword">return</span> count<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
   </div>
   <div>
@@ -463,7 +478,7 @@
             鸡排大仙儿
           </a>
         </p>
-        <p><span style="font-weight: bold;">文章链接：</span><a style = "text-overflow : ellipsis;display: inline-block; width: 100%; overflow: hidden;" target="_blank" rel="nofollow noopener noreferrer" href="https://hexo.flower48237.com/archives/f2d7b9d0.html">https://hexo.flower48237.com/archives/f2d7b9d0.html</a></p>
+        <p><span style="font-weight: bold;">文章链接：</span><a style = "text-overflow : ellipsis;display: inline-block; width: 100%; overflow: hidden;" target="_blank" rel="nofollow noopener noreferrer" href="https://hexo.flower48237.com/archives/9149f718.html">https://hexo.flower48237.com/archives/9149f718.html</a></p>
         <p><span style="font-weight: bold;">版权声明：</span>本博客所有文章除特别声明外，均采用<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0 协议</a>。转载请注明出处！</p>
       </div>
     
@@ -471,29 +486,15 @@
 </article>
 <div class="nav">
   
-    <div class="nav-item-prev">
-      <a 
-        href="/archives/577c36e6.html" 
-        class="nav-link">
-        <i class="iconfont icon-left nav-prev-icon"></i>
-        <div>
-          <div class="nav-label">上一篇</div>
-          
-            <div class="nav-title">LeetCode精选TOP面试题121.买卖股票的最佳时机 </div>
-          
-        </div>
-      </a>
-    </div>
-  
   
     <div class="nav-item-next">
       <a 
-        href="/archives/bbd4b07b.html" 
+        href="/archives/2565682e.html" 
         class="nav-link">
         <div>
           <div class="nav-label">下一篇</div>
           
-            <div class="nav-title">LeetCode精选TOP面试题122.买卖股票的最佳时机II </div>
+            <div class="nav-title">LeetCode精选TOP面试题454.四数相加II </div>
           
         </div>
         <i class="iconfont icon-right nav-next-icon"></i>
@@ -511,7 +512,7 @@
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0-Java"><span class="toc-text">代码实现(Java)</span></a></li></ol>
+<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%EF%BC%88Java%EF%BC%89"><span class="toc-text">代码（Java）</span></a></li></ol>
 </div></main>
             <aside class="left-column">
               
@@ -575,7 +576,7 @@
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0-Java"><span class="toc-text">代码实现(Java)</span></a></li></ol>
+<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%EF%BC%88Java%EF%BC%89"><span class="toc-text">代码（Java）</span></a></li></ol>
       </div>
     </article>
   
@@ -774,7 +775,7 @@
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0-Java"><span class="toc-text">代码实现(Java)</span></a></li></ol>
+<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%EF%BC%88Java%EF%BC%89"><span class="toc-text">代码（Java）</span></a></li></ol>
     </article>
   
   
