@@ -254,6 +254,134 @@
   <div class="card">
     
         <article class="card card-content">
+          <a href="/archives/198edf56.html">
+            <h1 class="post-title">
+              LeetCode精选TOP面试题69.Sqrt(x)
+            </h1>
+          </a>
+          <!-- <div class="card-excerpt">
+            
+              题目描述给定一个非负整数 x ，计算并返回 x 的 算术平方根 。由于返回类型是整数，结果只保留 整数部分 ，小数部分将被舍去 。不允许使用任何内置指数函数和算符，例如 pow(x, 0.5) 或者 x ** 0.5 。
+example
+input  : x = 4
+output : 2
+input  : x = 8
+output : 2
+note   : 8 的算术平方根是 2.82842..., 由于返回类型是整数，小数部分将被舍去。
+input  : x = 2147483647
+output : 46340
+note   : 可能会存在溢出情况的计算边界，需要注意
+                
+          </div> -->
+          <div class="card-excerpt">
+            
+              <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>给定一个非负整数 x ，计算并返回 x 的 算术平方根 。<br>由于返回类型是整数，结果只保留 整数部分 ，小数部分将被舍去 。<br>不允许使用任何内置指数函数和算符，例如 pow(x, 0.5) 或者 x ** 0.5 。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">example
+input  <span class="token builtin class-name">:</span> x <span class="token operator">=</span> <span class="token number">4</span>
+output <span class="token builtin class-name">:</span> <span class="token number">2</span>
+input  <span class="token builtin class-name">:</span> x <span class="token operator">=</span> <span class="token number">8</span>
+output <span class="token builtin class-name">:</span> <span class="token number">2</span>
+note   <span class="token builtin class-name">:</span> <span class="token number">8</span> 的算术平方根是 <span class="token number">2.82842</span><span class="token punctuation">..</span>., 由于返回类型是整数，小数部分将被舍去。
+input  <span class="token builtin class-name">:</span> x <span class="token operator">=</span> <span class="token number">2147483647</span>
+output <span class="token builtin class-name">:</span> <span class="token number">46340</span>
+note   <span class="token builtin class-name">:</span> 可能会存在溢出情况的计算边界，需要注意<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                
+          </div>
+          <div class="card-post-footer">
+            <div class="post-meta">
+              <time datetime="2021-10-22T06:54:24.951Z">
+                <i class="iconfont icon-calendar" style="margin-right: 2px;">
+                </i>
+                <span>
+                  2021-10-22
+                </span>
+              </time>
+              
+                
+                  
+                    
+                          
+                            <span class="dot"></span>
+                            
+                              
+                                    <a href="/categories/LeetCode/" class="post-meta-link">
+                                      LeetCode
+                                    </a>
+                                    
+                                      
+            </div>
+            <a href="/archives/198edf56.html">
+              继续阅读
+            </a>
+          </div>
+        </article>
+  </div>
+  
+  <div class="card">
+    
+        <article class="card card-content">
+          <a href="/archives/74bdedc7.html">
+            <h1 class="post-title">
+              LeetCode精选TOP面试题66.加一
+            </h1>
+          </a>
+          <!-- <div class="card-excerpt">
+            
+              题目描述给定一个由 整数 组成的 非空 数组所表示的非负整数，在该数的基础上加一。最高位数字存放在数组的首位， 数组中每个元素只存储单个数字。假设除了整数 0 之外，这个整数不会以零开头
+example
+input  : &amp;#123;0&amp;#125;
+output : &amp;#123;1&amp;#125;
+input  : &amp;#123;1,9&amp;#125;
+output : &amp;#123;2,0&amp;#125;
+input  : &amp;#123;9,9,9&amp;#125;
+output : &amp;#123;1,0,0,0&amp;#125;
+                
+          </div> -->
+          <div class="card-excerpt">
+            
+              <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>给定一个由 整数 组成的 非空 数组所表示的非负整数，在该数的基础上加一。<br>最高位数字存放在数组的首位， 数组中每个元素只存储单个数字。<br>假设除了整数 0 之外，这个整数不会以零开头</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">example
+input  <span class="token builtin class-name">:</span> <span class="token punctuation">&#123;</span><span class="token number">0</span><span class="token punctuation">&#125;</span>
+output <span class="token builtin class-name">:</span> <span class="token punctuation">&#123;</span><span class="token number">1</span><span class="token punctuation">&#125;</span>
+input  <span class="token builtin class-name">:</span> <span class="token punctuation">&#123;</span><span class="token number">1,9</span><span class="token punctuation">&#125;</span>
+output <span class="token builtin class-name">:</span> <span class="token punctuation">&#123;</span><span class="token number">2,0</span><span class="token punctuation">&#125;</span>
+input  <span class="token builtin class-name">:</span> <span class="token punctuation">&#123;</span><span class="token number">9,9</span>,9<span class="token punctuation">&#125;</span>
+output <span class="token builtin class-name">:</span> <span class="token punctuation">&#123;</span><span class="token number">1,0</span>,0,0<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                
+          </div>
+          <div class="card-post-footer">
+            <div class="post-meta">
+              <time datetime="2021-10-21T12:55:58.020Z">
+                <i class="iconfont icon-calendar" style="margin-right: 2px;">
+                </i>
+                <span>
+                  2021-10-21
+                </span>
+              </time>
+              
+                
+                  
+                    
+                          
+                            <span class="dot"></span>
+                            
+                              
+                                    <a href="/categories/LeetCode/" class="post-meta-link">
+                                      LeetCode
+                                    </a>
+                                    
+                                      
+            </div>
+            <a href="/archives/74bdedc7.html">
+              继续阅读
+            </a>
+          </div>
+        </article>
+  </div>
+  
+  <div class="card">
+    
+        <article class="card card-content">
           <a href="/archives/fb6a9bed.html">
             <h1 class="post-title">
               LeetCode精选面试题326.3的幂
@@ -689,110 +817,6 @@ CHAPTER 5 The Smoke-Filled Debate:  Clearing the Air
         </article>
   </div>
   
-  <div class="card">
-    
-        <article class="card card-content">
-          <a href="/archives/be2adc3a.html">
-            <h1 class="post-title">
-              《The Book of Why》 — Chapter6
-            </h1>
-          </a>
-          <!-- <div class="card-excerpt">
-            
-              第六章 大量的悖论⭐（实例）
-CHAPTER 6 — Paradoxes Galore!
-
-                
-          </div> -->
-          <div class="card-excerpt">
-            
-              <h3 id="第六章-大量的悖论⭐（实例）"><a href="#第六章-大量的悖论⭐（实例）" class="headerlink" title="第六章 大量的悖论⭐（实例）"></a>第六章 大量的悖论⭐（实例）</h3><blockquote>
-<p>CHAPTER 6 — Paradoxes Galore!</p>
-</blockquote>
-                
-          </div>
-          <div class="card-post-footer">
-            <div class="post-meta">
-              <time datetime="2021-09-28T12:50:00.000Z">
-                <i class="iconfont icon-calendar" style="margin-right: 2px;">
-                </i>
-                <span>
-                  2021-09-28
-                </span>
-              </time>
-              
-                
-                  
-                    
-                          
-                            <span class="dot"></span>
-                            
-                              
-                                    <a href="/categories/Causality/" class="post-meta-link">
-                                      Causality
-                                    </a>
-                                    
-                                      
-            </div>
-            <a href="/archives/be2adc3a.html">
-              继续阅读
-            </a>
-          </div>
-        </article>
-  </div>
-  
-  <div class="card">
-    
-        <article class="card card-content">
-          <a href="/archives/ce4028b5.html">
-            <h1 class="post-title">
-              《The Book of Why》 — Chapter3
-            </h1>
-          </a>
-          <!-- <div class="card-excerpt">
-            
-              第三章 从证据到因：当贝叶斯牧师遇见福尔摩斯先生
-CHAPTER 3 — From Evidence to Causes: Reverend  Bayes Meets Mr. Holmes
-
-                
-          </div> -->
-          <div class="card-excerpt">
-            
-              <h3 id="第三章-从证据到因：当贝叶斯牧师遇见福尔摩斯先生"><a href="#第三章-从证据到因：当贝叶斯牧师遇见福尔摩斯先生" class="headerlink" title="第三章 从证据到因：当贝叶斯牧师遇见福尔摩斯先生"></a>第三章 从证据到因：当贝叶斯牧师遇见福尔摩斯先生</h3><blockquote>
-<p>CHAPTER 3 — From Evidence to Causes: Reverend  Bayes Meets Mr. Holmes</p>
-</blockquote>
-                
-          </div>
-          <div class="card-post-footer">
-            <div class="post-meta">
-              <time datetime="2021-09-27T12:21:00.000Z">
-                <i class="iconfont icon-calendar" style="margin-right: 2px;">
-                </i>
-                <span>
-                  2021-09-27
-                </span>
-              </time>
-              
-                
-                  
-                    
-                          
-                            <span class="dot"></span>
-                            
-                              
-                                    <a href="/categories/Causality/" class="post-meta-link">
-                                      Causality
-                                    </a>
-                                    
-                                      
-            </div>
-            <a href="/archives/ce4028b5.html">
-              继续阅读
-            </a>
-          </div>
-        </article>
-  </div>
-  
     
       <div class="nav">
   
@@ -840,7 +864,7 @@ CHAPTER 3 — From Evidence to Causes: Reverend  Bayes Meets Mr. Holmes
   <a 
     class="author-posts-count" 
     href="/archives">
-    <span>104</span>
+    <span>106</span>
     <span>文章</span>
   </a>
   <a 
@@ -905,7 +929,7 @@ CHAPTER 3 — From Evidence to Causes: Reverend  Bayes Meets Mr. Holmes
       <a href="/categories/LeetCode/">
         <div class="categories-list-item">
           LeetCode
-          <span class="categories-list-item-badge">50</span>
+          <span class="categories-list-item-badge">52</span>
         </div>
       </a>
     
@@ -959,57 +983,9 @@ CHAPTER 3 — From Evidence to Causes: Reverend  Bayes Meets Mr. Holmes
   <div class="tags-list">
     
       <a 
-        href="/tags/%E5%85%B6%E4%BB%96/" 
-        title="其他">
-        <div class="tags-list-item">其他</div>
-      </a>
-    
-      <a 
-        href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" 
-        title="深度学习">
-        <div class="tags-list-item">深度学习</div>
-      </a>
-    
-      <a 
-        href="/tags/PyTorch/" 
-        title="PyTorch">
-        <div class="tags-list-item">PyTorch</div>
-      </a>
-    
-      <a 
-        href="/tags/Jupyter/" 
-        title="Jupyter">
-        <div class="tags-list-item">Jupyter</div>
-      </a>
-    
-      <a 
-        href="/tags/Python/" 
-        title="Python">
-        <div class="tags-list-item">Python</div>
-      </a>
-    
-      <a 
-        href="/tags/Anaconda/" 
-        title="Anaconda">
-        <div class="tags-list-item">Anaconda</div>
-      </a>
-    
-      <a 
-        href="/tags/conda/" 
-        title="conda">
-        <div class="tags-list-item">conda</div>
-      </a>
-    
-      <a 
         href="/tags/Java/" 
         title="Java">
         <div class="tags-list-item">Java</div>
-      </a>
-    
-      <a 
-        href="/tags/%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/" 
-        title="数值计算">
-        <div class="tags-list-item">数值计算</div>
       </a>
     
       <a 
@@ -1025,9 +1001,15 @@ CHAPTER 3 — From Evidence to Causes: Reverend  Bayes Meets Mr. Holmes
       </a>
     
       <a 
-        href="/tags/%E6%95%B4%E6%95%B0/" 
-        title="整数">
-        <div class="tags-list-item">整数</div>
+        href="/tags/%E6%95%B0%E7%BB%84/" 
+        title="数组">
+        <div class="tags-list-item">数组</div>
+      </a>
+    
+      <a 
+        href="/tags/%E9%81%8D%E5%8E%86/" 
+        title="遍历">
+        <div class="tags-list-item">遍历</div>
       </a>
     
       <a 
@@ -1037,21 +1019,63 @@ CHAPTER 3 — From Evidence to Causes: Reverend  Bayes Meets Mr. Holmes
       </a>
     
       <a 
-        href="/tags/%E5%88%86%E6%B2%BB/" 
-        title="分治">
-        <div class="tags-list-item">分治</div>
+        href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" 
+        title="二叉树">
+        <div class="tags-list-item">二叉树</div>
       </a>
     
       <a 
-        href="/tags/%E6%95%B0%E7%BB%84/" 
-        title="数组">
-        <div class="tags-list-item">数组</div>
+        href="/tags/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD/" 
+        title="因果推断">
+        <div class="tags-list-item">因果推断</div>
+      </a>
+    
+      <a 
+        href="/tags/Causality/" 
+        title="Causality">
+        <div class="tags-list-item">Causality</div>
+      </a>
+    
+      <a 
+        href="/tags/%E9%93%BE%E8%A1%A8/" 
+        title="链表">
+        <div class="tags-list-item">链表</div>
+      </a>
+    
+      <a 
+        href="/tags/%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/" 
+        title="数值计算">
+        <div class="tags-list-item">数值计算</div>
+      </a>
+    
+      <a 
+        href="/tags/%E9%80%92%E5%BD%92/" 
+        title="递归">
+        <div class="tags-list-item">递归</div>
+      </a>
+    
+      <a 
+        href="/tags/SQL/" 
+        title="SQL">
+        <div class="tags-list-item">SQL</div>
+      </a>
+    
+      <a 
+        href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" 
+        title="动态规划">
+        <div class="tags-list-item">动态规划</div>
       </a>
     
       <a 
         href="/tags/%E6%8E%92%E5%BA%8F/" 
         title="排序">
         <div class="tags-list-item">排序</div>
+      </a>
+    
+      <a 
+        href="/tags/%E6%A0%88/" 
+        title="栈">
+        <div class="tags-list-item">栈</div>
       </a>
     
   </div>
@@ -1083,11 +1107,19 @@ CHAPTER 3 — From Evidence to Causes: Reverend  Bayes Meets Mr. Holmes
     
       
         
+      
+    
+      
+        
+      
+    
+      
+        
           <a 
             href="/archives/2022" 
             class="archive-card-list-item">
             2022
-            <span class="archive-card-list-item-badge">2</span>
+            <span class="archive-card-list-item-badge">4</span>
           </a>
         
         
@@ -1537,6 +1569,16 @@ CHAPTER 3 — From Evidence to Causes: Reverend  Bayes Meets Mr. Holmes
   <div class="recent-posts-list">
     
       <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2022-01-14</div>
+        <a href="/archives/6443ff3e.html"><div class="recent-posts-item-content">LeetCode精选TOP面试题378.有序矩阵中第 K 小的元素</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2022-01-07</div>
+        <a href="/archives/298e7cdd.html"><div class="recent-posts-item-content">LeetCode精选TOP面试题328.奇偶链表</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
         <div class="recent-posts-item-title">2022-01-06</div>
         <a href="/archives/9149f718.html"><div class="recent-posts-item-content">LeetCode精选TOP面试题172.阶乘后的零</div></a>
       </div>
@@ -1544,16 +1586,6 @@ CHAPTER 3 — From Evidence to Causes: Reverend  Bayes Meets Mr. Holmes
       <div class="recent-posts-item">
         <div class="recent-posts-item-title">2022-01-01</div>
         <a href="/archives/2565682e.html"><div class="recent-posts-item-content">LeetCode精选TOP面试题454.四数相加II</div></a>
-      </div>
-    
-      <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2021-12-30</div>
-        <a href="/archives/4fc659f0.html"><div class="recent-posts-item-content">LeetCode精选TOP面试题073.矩阵置零</div></a>
-      </div>
-    
-      <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2021-12-10</div>
-        <a href="/archives/78978eb1.html"><div class="recent-posts-item-content">d2lzh_pytorch包报错问题解决</div></a>
       </div>
     
   </div>
@@ -1585,11 +1617,19 @@ CHAPTER 3 — From Evidence to Causes: Reverend  Bayes Meets Mr. Holmes
     
       
         
+      
+    
+      
+        
+      
+    
+      
+        
           <a 
             href="/archives/2022" 
             class="archive-card-list-item">
             2022
-            <span class="archive-card-list-item-badge">2</span>
+            <span class="archive-card-list-item-badge">4</span>
           </a>
         
         

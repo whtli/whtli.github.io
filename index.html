@@ -254,6 +254,136 @@
   <div class="card">
     
         <article class="card card-content">
+          <a href="/archives/6443ff3e.html">
+            <h1 class="post-title">
+              LeetCode精选TOP面试题378.有序矩阵中第 K 小的元素
+            </h1>
+          </a>
+          <!-- <div class="card-excerpt">
+            
+              题目描述
+给定一个 n x n 矩阵 matrix ，其中每行和每列元素均按升序排序，找到矩阵中第 k 小的元素。
+是 排序后 的第 k 小元素，而不是第 k 个 不同 的元素。
+
+example
+input  : matrix = [[1,5,9],[10,11,13],[12,13,15]], k = 8
+output : 13
+input  : matrix = [[-5]], k = 1
+output : -5
+                
+          </div> -->
+          <div class="card-excerpt">
+            
+              <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><ul>
+<li>给定一个 n x n 矩阵 matrix ，其中每行和每列元素均按升序排序，找到矩阵中第 k 小的元素。</li>
+<li>是 排序后 的第 k 小元素，而不是第 k 个 不同 的元素。</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">example
+input  <span class="token builtin class-name">:</span> matrix <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1,5</span>,9<span class="token punctuation">]</span>,<span class="token punctuation">[</span><span class="token number">10,11</span>,13<span class="token punctuation">]</span>,<span class="token punctuation">[</span><span class="token number">12,13</span>,15<span class="token punctuation">]</span><span class="token punctuation">]</span>, k <span class="token operator">=</span> <span class="token number">8</span>
+output <span class="token builtin class-name">:</span> <span class="token number">13</span>
+input  <span class="token builtin class-name">:</span> matrix <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span>-5<span class="token punctuation">]</span><span class="token punctuation">]</span>, k <span class="token operator">=</span> <span class="token number">1</span>
+output <span class="token builtin class-name">:</span> -5<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                
+          </div>
+          <div class="card-post-footer">
+            <div class="post-meta">
+              <time datetime="2022-01-14T13:00:00.000Z">
+                <i class="iconfont icon-calendar" style="margin-right: 2px;">
+                </i>
+                <span>
+                  2022-01-14
+                </span>
+              </time>
+              
+                
+                  
+                    
+                          
+                            <span class="dot"></span>
+                            
+                              
+                                    <a href="/categories/LeetCode/" class="post-meta-link">
+                                      LeetCode
+                                    </a>
+                                    
+                                      
+            </div>
+            <a href="/archives/6443ff3e.html">
+              继续阅读
+            </a>
+          </div>
+        </article>
+  </div>
+  
+  <div class="card">
+    
+        <article class="card card-content">
+          <a href="/archives/298e7cdd.html">
+            <h1 class="post-title">
+              LeetCode精选TOP面试题328.奇偶链表
+            </h1>
+          </a>
+          <!-- <div class="card-excerpt">
+            
+              题目描述
+给定一个单链表，把所有的奇数节点和偶数节点分别排在一起。
+这里的奇数节点和偶数节点指的是节点编号的奇偶性，而不是节点的值的奇偶性。
+使用原地算法完成。空间复杂度应为 O(1)，时间复杂度应为 O(nodes)，nodes 为节点总数。
+
+example
+input  : 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL
+output : 1-&gt;3-&gt;5-&gt;2-&gt;4-&gt;NULL
+input  : 2-&gt;1-&gt;3-&gt;5-&gt;6-&gt;4-&gt;7-&gt;NULL 
+output : 2-&gt;3-&gt;6-&gt;7-&gt;1-&gt;5-&gt;4-&gt;NULL
+                
+          </div> -->
+          <div class="card-excerpt">
+            
+              <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><ul>
+<li>给定一个单链表，把所有的奇数节点和偶数节点分别排在一起。</li>
+<li>这里的奇数节点和偶数节点指的是节点编号的奇偶性，而不是节点的值的奇偶性。</li>
+<li>使用原地算法完成。空间复杂度应为 O(1)，时间复杂度应为 O(nodes)，nodes 为节点总数。</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">example
+input  <span class="token builtin class-name">:</span> <span class="token number">1</span>-<span class="token operator">></span><span class="token number">2</span>-<span class="token operator">></span><span class="token number">3</span>-<span class="token operator">></span><span class="token number">4</span>-<span class="token operator">></span><span class="token number">5</span>-<span class="token operator">></span>NULL
+output <span class="token builtin class-name">:</span> <span class="token number">1</span>-<span class="token operator">></span><span class="token number">3</span>-<span class="token operator">></span><span class="token number">5</span>-<span class="token operator">></span><span class="token number">2</span>-<span class="token operator">></span><span class="token number">4</span>-<span class="token operator">></span>NULL
+input  <span class="token builtin class-name">:</span> <span class="token number">2</span>-<span class="token operator">></span><span class="token number">1</span>-<span class="token operator">></span><span class="token number">3</span>-<span class="token operator">></span><span class="token number">5</span>-<span class="token operator">></span><span class="token number">6</span>-<span class="token operator">></span><span class="token number">4</span>-<span class="token operator">></span><span class="token number">7</span>-<span class="token operator">></span>NULL 
+output <span class="token builtin class-name">:</span> <span class="token number">2</span>-<span class="token operator">></span><span class="token number">3</span>-<span class="token operator">></span><span class="token number">6</span>-<span class="token operator">></span><span class="token number">7</span>-<span class="token operator">></span><span class="token number">1</span>-<span class="token operator">></span><span class="token number">5</span>-<span class="token operator">></span><span class="token number">4</span>-<span class="token operator">></span>NULL<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                
+          </div>
+          <div class="card-post-footer">
+            <div class="post-meta">
+              <time datetime="2022-01-07T04:00:00.000Z">
+                <i class="iconfont icon-calendar" style="margin-right: 2px;">
+                </i>
+                <span>
+                  2022-01-07
+                </span>
+              </time>
+              
+                
+                  
+                    
+                          
+                            <span class="dot"></span>
+                            
+                              
+                                    <a href="/categories/LeetCode/" class="post-meta-link">
+                                      LeetCode
+                                    </a>
+                                    
+                                      
+            </div>
+            <a href="/archives/298e7cdd.html">
+              继续阅读
+            </a>
+          </div>
+        </article>
+  </div>
+  
+  <div class="card">
+    
+        <article class="card card-content">
           <a href="/archives/9149f718.html">
             <h1 class="post-title">
               LeetCode精选TOP面试题172.阶乘后的零
@@ -783,160 +913,6 @@ Note:1、Linux服务器选用的是CentOS7.7，其他类型也可以2、需要�
         </article>
   </div>
   
-  <div class="card">
-    
-        <article class="card card-content">
-          <a href="/archives/5cd56a60.html">
-            <h1 class="post-title">
-              LeetCode精选TOP面试题105.从前序与中序遍历序列构造二叉树
-            </h1>
-          </a>
-          <!-- <div class="card-excerpt">
-            
-              题目描述
-给定一棵树的前序遍历 preorder 与中序遍历  inorder 。请构造二叉树并返回其根节点。
-preorder 和 inorder 均无重复元素
-
-example
-input  : preorder = [3,9,20,15,7], inorder = [9,3,15,20,7]
-output : [3,9,20,null,null,15,7]
-input  : preorder = [-1], inorder = [-1]
-output : [-1]
-                
-          </div> -->
-          <div class="card-excerpt">
-            
-              <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><ul>
-<li>给定一棵树的前序遍历 preorder 与中序遍历  inorder 。请构造二叉树并返回其根节点。</li>
-<li>preorder 和 inorder 均无重复元素</li>
-</ul>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">example
-input  <span class="token builtin class-name">:</span> preorder <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3,9</span>,20,15,7<span class="token punctuation">]</span>, inorder <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">9,3</span>,15,20,7<span class="token punctuation">]</span>
-output <span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token number">3,9</span>,20,null,null,15,7<span class="token punctuation">]</span>
-input  <span class="token builtin class-name">:</span> preorder <span class="token operator">=</span> <span class="token punctuation">[</span>-1<span class="token punctuation">]</span>, inorder <span class="token operator">=</span> <span class="token punctuation">[</span>-1<span class="token punctuation">]</span>
-output <span class="token builtin class-name">:</span> <span class="token punctuation">[</span>-1<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-                
-          </div>
-          <div class="card-post-footer">
-            <div class="post-meta">
-              <time datetime="2021-11-30T14:51:56.186Z">
-                <i class="iconfont icon-calendar" style="margin-right: 2px;">
-                </i>
-                <span>
-                  2021-11-30
-                </span>
-              </time>
-              
-                
-                  
-                    
-                          
-                            <span class="dot"></span>
-                            
-                              
-                                    <a href="/categories/LeetCode/" class="post-meta-link">
-                                      LeetCode
-                                    </a>
-                                    
-                                      
-            </div>
-            <a href="/archives/5cd56a60.html">
-              继续阅读
-            </a>
-          </div>
-        </article>
-  </div>
-  
-  <div class="card">
-    
-        <article class="card card-content">
-          <a href="/archives/db6ffafa.html">
-            <h1 class="post-title">
-              LeetCode精选TOP面试题230.二叉搜索树中第K小的元素
-            </h1>
-          </a>
-          <!-- <div class="card-excerpt">
-            
-              题目描述
-给定一个二叉搜索树的根节点 root ，和一个整数 k
-设计一个算法查找其中第 k 个最小元素（从 1 开始计数）。example
-input  : root = [3,1,4,null,2], k = 1
-output : 1
-note   :    3
-           / \
-          1   4
-           \
-            2
-input  : root = [5,3,6,2,4,null,null,1], k = 3
-output : 3
-note   :         5
-                / \
-               3   6
-              /  \
-             2    4
-            /
-           1
-
-
-
-                
-          </div> -->
-          <div class="card-excerpt">
-            
-              <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><ul>
-<li>给定一个二叉搜索树的根节点 root ，和一个整数 k</li>
-<li>设计一个算法查找其中第 k 个最小元素（从 1 开始计数）。<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">example
-input  <span class="token builtin class-name">:</span> root <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3,1</span>,4,null,2<span class="token punctuation">]</span>, k <span class="token operator">=</span> <span class="token number">1</span>
-output <span class="token builtin class-name">:</span> <span class="token number">1</span>
-note   <span class="token builtin class-name">:</span>    <span class="token number">3</span>
-           / <span class="token punctuation">\</span>
-          <span class="token number">1</span>   <span class="token number">4</span>
-           <span class="token punctuation">\</span>
-            <span class="token number">2</span>
-input  <span class="token builtin class-name">:</span> root <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">5,3</span>,6,2,4,null,null,1<span class="token punctuation">]</span>, k <span class="token operator">=</span> <span class="token number">3</span>
-output <span class="token builtin class-name">:</span> <span class="token number">3</span>
-note   <span class="token builtin class-name">:</span>         <span class="token number">5</span>
-                / <span class="token punctuation">\</span>
-               <span class="token number">3</span>   <span class="token number">6</span>
-              /  <span class="token punctuation">\</span>
-             <span class="token number">2</span>    <span class="token number">4</span>
-            /
-           <span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-</li>
-</ul>
-                
-          </div>
-          <div class="card-post-footer">
-            <div class="post-meta">
-              <time datetime="2021-11-29T15:44:19.880Z">
-                <i class="iconfont icon-calendar" style="margin-right: 2px;">
-                </i>
-                <span>
-                  2021-11-29
-                </span>
-              </time>
-              
-                
-                  
-                    
-                          
-                            <span class="dot"></span>
-                            
-                              
-                                    <a href="/categories/LeetCode/" class="post-meta-link">
-                                      LeetCode
-                                    </a>
-                                    
-                                      
-            </div>
-            <a href="/archives/db6ffafa.html">
-              继续阅读
-            </a>
-          </div>
-        </article>
-  </div>
-  
     
       <div class="nav">
   
@@ -972,7 +948,7 @@ note   <span class="token builtin class-name">:</span>         <span class="toke
   <a 
     class="author-posts-count" 
     href="/archives">
-    <span>104</span>
+    <span>106</span>
     <span>文章</span>
   </a>
   <a 
@@ -1037,7 +1013,7 @@ note   <span class="token builtin class-name">:</span>         <span class="toke
       <a href="/categories/LeetCode/">
         <div class="categories-list-item">
           LeetCode
-          <span class="categories-list-item-badge">50</span>
+          <span class="categories-list-item-badge">52</span>
         </div>
       </a>
     
@@ -1091,57 +1067,9 @@ note   <span class="token builtin class-name">:</span>         <span class="toke
   <div class="tags-list">
     
       <a 
-        href="/tags/%E5%85%B6%E4%BB%96/" 
-        title="其他">
-        <div class="tags-list-item">其他</div>
-      </a>
-    
-      <a 
-        href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" 
-        title="深度学习">
-        <div class="tags-list-item">深度学习</div>
-      </a>
-    
-      <a 
-        href="/tags/PyTorch/" 
-        title="PyTorch">
-        <div class="tags-list-item">PyTorch</div>
-      </a>
-    
-      <a 
-        href="/tags/Jupyter/" 
-        title="Jupyter">
-        <div class="tags-list-item">Jupyter</div>
-      </a>
-    
-      <a 
-        href="/tags/Python/" 
-        title="Python">
-        <div class="tags-list-item">Python</div>
-      </a>
-    
-      <a 
-        href="/tags/Anaconda/" 
-        title="Anaconda">
-        <div class="tags-list-item">Anaconda</div>
-      </a>
-    
-      <a 
-        href="/tags/conda/" 
-        title="conda">
-        <div class="tags-list-item">conda</div>
-      </a>
-    
-      <a 
         href="/tags/Java/" 
         title="Java">
         <div class="tags-list-item">Java</div>
-      </a>
-    
-      <a 
-        href="/tags/%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/" 
-        title="数值计算">
-        <div class="tags-list-item">数值计算</div>
       </a>
     
       <a 
@@ -1157,9 +1085,15 @@ note   <span class="token builtin class-name">:</span>         <span class="toke
       </a>
     
       <a 
-        href="/tags/%E6%95%B4%E6%95%B0/" 
-        title="整数">
-        <div class="tags-list-item">整数</div>
+        href="/tags/%E6%95%B0%E7%BB%84/" 
+        title="数组">
+        <div class="tags-list-item">数组</div>
+      </a>
+    
+      <a 
+        href="/tags/%E9%81%8D%E5%8E%86/" 
+        title="遍历">
+        <div class="tags-list-item">遍历</div>
       </a>
     
       <a 
@@ -1169,21 +1103,63 @@ note   <span class="token builtin class-name">:</span>         <span class="toke
       </a>
     
       <a 
-        href="/tags/%E5%88%86%E6%B2%BB/" 
-        title="分治">
-        <div class="tags-list-item">分治</div>
+        href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" 
+        title="二叉树">
+        <div class="tags-list-item">二叉树</div>
       </a>
     
       <a 
-        href="/tags/%E6%95%B0%E7%BB%84/" 
-        title="数组">
-        <div class="tags-list-item">数组</div>
+        href="/tags/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD/" 
+        title="因果推断">
+        <div class="tags-list-item">因果推断</div>
+      </a>
+    
+      <a 
+        href="/tags/Causality/" 
+        title="Causality">
+        <div class="tags-list-item">Causality</div>
+      </a>
+    
+      <a 
+        href="/tags/%E9%93%BE%E8%A1%A8/" 
+        title="链表">
+        <div class="tags-list-item">链表</div>
+      </a>
+    
+      <a 
+        href="/tags/%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/" 
+        title="数值计算">
+        <div class="tags-list-item">数值计算</div>
+      </a>
+    
+      <a 
+        href="/tags/%E9%80%92%E5%BD%92/" 
+        title="递归">
+        <div class="tags-list-item">递归</div>
+      </a>
+    
+      <a 
+        href="/tags/SQL/" 
+        title="SQL">
+        <div class="tags-list-item">SQL</div>
+      </a>
+    
+      <a 
+        href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" 
+        title="动态规划">
+        <div class="tags-list-item">动态规划</div>
       </a>
     
       <a 
         href="/tags/%E6%8E%92%E5%BA%8F/" 
         title="排序">
         <div class="tags-list-item">排序</div>
+      </a>
+    
+      <a 
+        href="/tags/%E6%A0%88/" 
+        title="栈">
+        <div class="tags-list-item">栈</div>
       </a>
     
   </div>
@@ -1215,11 +1191,19 @@ note   <span class="token builtin class-name">:</span>         <span class="toke
     
       
         
+      
+    
+      
+        
+      
+    
+      
+        
           <a 
             href="/archives/2022" 
             class="archive-card-list-item">
             2022
-            <span class="archive-card-list-item-badge">2</span>
+            <span class="archive-card-list-item-badge">4</span>
           </a>
         
         
@@ -1669,6 +1653,16 @@ note   <span class="token builtin class-name">:</span>         <span class="toke
   <div class="recent-posts-list">
     
       <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2022-01-14</div>
+        <a href="/archives/6443ff3e.html"><div class="recent-posts-item-content">LeetCode精选TOP面试题378.有序矩阵中第 K 小的元素</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2022-01-07</div>
+        <a href="/archives/298e7cdd.html"><div class="recent-posts-item-content">LeetCode精选TOP面试题328.奇偶链表</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
         <div class="recent-posts-item-title">2022-01-06</div>
         <a href="/archives/9149f718.html"><div class="recent-posts-item-content">LeetCode精选TOP面试题172.阶乘后的零</div></a>
       </div>
@@ -1676,16 +1670,6 @@ note   <span class="token builtin class-name">:</span>         <span class="toke
       <div class="recent-posts-item">
         <div class="recent-posts-item-title">2022-01-01</div>
         <a href="/archives/2565682e.html"><div class="recent-posts-item-content">LeetCode精选TOP面试题454.四数相加II</div></a>
-      </div>
-    
-      <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2021-12-30</div>
-        <a href="/archives/4fc659f0.html"><div class="recent-posts-item-content">LeetCode精选TOP面试题073.矩阵置零</div></a>
-      </div>
-    
-      <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2021-12-10</div>
-        <a href="/archives/78978eb1.html"><div class="recent-posts-item-content">d2lzh_pytorch包报错问题解决</div></a>
       </div>
     
   </div>
@@ -1717,11 +1701,19 @@ note   <span class="token builtin class-name">:</span>         <span class="toke
     
       
         
+      
+    
+      
+        
+      
+    
+      
+        
           <a 
             href="/archives/2022" 
             class="archive-card-list-item">
             2022
-            <span class="archive-card-list-item-badge">2</span>
+            <span class="archive-card-list-item-badge">4</span>
           </a>
         
         
