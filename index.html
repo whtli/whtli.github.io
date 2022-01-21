@@ -254,6 +254,76 @@
   <div class="card">
     
         <article class="card card-content">
+          <a href="/archives/6cb8f3c5.html">
+            <h1 class="post-title">
+              router-link跳转失败（Vue router命名路由）
+            </h1>
+          </a>
+          <!-- <div class="card-excerpt">
+            
+                  
+                    
+          </div> -->
+          <div class="card-excerpt">
+            
+                  <h2 id="问题及解决办法"><a href="#问题及解决办法" class="headerlink" title="问题及解决办法"></a>问题及解决办法</h2><ul>
+<li>在.vue文件中，使用<code>router-link</code>并指定命名路由时跳转失败</li>
+<li>router-link的:to后指定的命名路由参数name，需要和<code>src/router/index.js</code>文件中定义的路由的name和对应。例如想跳转到index.js文件中已定义好的命名路由A中，:to后的name就需要写成A。</li>
+</ul>
+<h2 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a><a target="_blank" rel="noopener" href="https://router.vuejs.org/zh/guide/essentials/named-routes.html">官方文档</a></h2><h2 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h2><p>创建 Router 实例的时候，在 <code>routes</code> 配置中给某个路由设置名称。如在<code>src/router/index.js</code>文件中定义以下路由</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span>
+<span class="token keyword">import</span> VueRouter <span class="token keyword">from</span> <span class="token string">'vue-router'</span>
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>VueRouter<span class="token punctuation">)</span>
+<span class="token keyword">const</span> routes <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">&#123;</span>
+        path<span class="token operator">:</span> <span class="token string">'/blog/:blogId'</span><span class="token punctuation">,</span>
+        name<span class="token operator">:</span> <span class="token string">'BlogDetail'</span><span class="token punctuation">,</span>
+        component<span class="token operator">:</span> BlogDetail<span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在.vue文件中链接到命名路由时，可以给 <code>router-link</code> 的 <code>to</code> 属性传一个对象：</p>
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;router-link :to&#x3D;&quot;&#123; name: &#39;BlogDetail&#39;, params: &#123; blogId: 123 &#125;&#125;&quot;&gt;文章标题&lt;&#x2F;router-link&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>与代码调用 <code>router.push()</code> 等价：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> name<span class="token operator">:</span> <span class="token string">'BlogDetail'</span><span class="token punctuation">,</span> params<span class="token operator">:</span> <span class="token punctuation">&#123;</span> blogId<span class="token operator">:</span> <span class="token number">123</span> <span class="token punctuation">&#125;</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+                    
+          </div>
+          <div class="card-post-footer">
+            <div class="post-meta">
+              <time datetime="2022-01-19T14:00:00.000Z">
+                <i class="iconfont icon-calendar" style="margin-right: 2px;">
+                </i>
+                <span>
+                  2022-01-19
+                </span>
+              </time>
+              
+                
+                  
+                    
+                          
+                            <span class="dot"></span>
+                            
+                              
+                                    <a href="/categories/SpringBoot-Vue/" class="post-meta-link">
+                                      SpringBoot-Vue
+                                    </a>
+                                    
+                                      
+            </div>
+            <a href="/archives/6cb8f3c5.html">
+              继续阅读
+            </a>
+          </div>
+        </article>
+  </div>
+  
+  <div class="card">
+    
+        <article class="card card-content">
           <a href="/archives/6443ff3e.html">
             <h1 class="post-title">
               LeetCode精选TOP面试题378.有序矩阵中第 K 小的元素
@@ -861,58 +931,6 @@ conda list<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
         </article>
   </div>
   
-  <div class="card">
-    
-        <article class="card card-content">
-          <a href="/archives/b51853f8.html">
-            <h1 class="post-title">
-              SpringBoot+Vue项目部署到Linux服务器
-            </h1>
-          </a>
-          <!-- <div class="card-excerpt">
-            
-              
-Note:1、Linux服务器选用的是CentOS7.7，其他类型也可以2、需要在服务器配置jdk和Nginx3、后端打包类型为jar包，war包需要自行修改后端配置4、暂未部署Docker，后续更新
-
-                
-          </div> -->
-          <div class="card-excerpt">
-            
-              <blockquote>
-<p>Note:<br>1、Linux服务器选用的是CentOS7.7，其他类型也可以<br>2、需要在服务器配置jdk和Nginx<br>3、后端打包类型为jar包，war包需要自行修改后端配置<br>4、暂未部署Docker，后续更新</p>
-</blockquote>
-                
-          </div>
-          <div class="card-post-footer">
-            <div class="post-meta">
-              <time datetime="2021-12-08T01:00:00.000Z">
-                <i class="iconfont icon-calendar" style="margin-right: 2px;">
-                </i>
-                <span>
-                  2021-12-08
-                </span>
-              </time>
-              
-                
-                  
-                    
-                          
-                            <span class="dot"></span>
-                            
-                              
-                                    <a href="/categories/SpringBoot-Vue/" class="post-meta-link">
-                                      SpringBoot-Vue
-                                    </a>
-                                    
-                                      
-            </div>
-            <a href="/archives/b51853f8.html">
-              继续阅读
-            </a>
-          </div>
-        </article>
-  </div>
-  
     
       <div class="nav">
   
@@ -948,7 +966,7 @@ Note:1、Linux服务器选用的是CentOS7.7，其他类型也可以2、需要�
   <a 
     class="author-posts-count" 
     href="/archives">
-    <span>106</span>
+    <span>107</span>
     <span>文章</span>
   </a>
   <a 
@@ -960,7 +978,7 @@ Note:1、Linux服务器选用的是CentOS7.7，其他类型也可以2、需要�
   <a 
     class="author-tags-count" 
     href="/tags">
-    <span>61</span>
+    <span>62</span>
     <span>标签</span>
   </a>
 </div>
@@ -1020,7 +1038,7 @@ Note:1、Linux服务器选用的是CentOS7.7，其他类型也可以2、需要�
       <a href="/categories/SpringBoot-Vue/">
         <div class="categories-list-item">
           SpringBoot-Vue
-          <span class="categories-list-item-badge">1</span>
+          <span class="categories-list-item-badge">2</span>
         </div>
       </a>
     
@@ -1199,11 +1217,15 @@ Note:1、Linux服务器选用的是CentOS7.7，其他类型也可以2、需要�
     
       
         
+      
+    
+      
+        
           <a 
             href="/archives/2022" 
             class="archive-card-list-item">
             2022
-            <span class="archive-card-list-item-badge">4</span>
+            <span class="archive-card-list-item-badge">5</span>
           </a>
         
         
@@ -1653,6 +1675,11 @@ Note:1、Linux服务器选用的是CentOS7.7，其他类型也可以2、需要�
   <div class="recent-posts-list">
     
       <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2022-01-19</div>
+        <a href="/archives/6cb8f3c5.html"><div class="recent-posts-item-content">router-link跳转失败（Vue router命名路由）</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
         <div class="recent-posts-item-title">2022-01-14</div>
         <a href="/archives/6443ff3e.html"><div class="recent-posts-item-content">LeetCode精选TOP面试题378.有序矩阵中第 K 小的元素</div></a>
       </div>
@@ -1665,11 +1692,6 @@ Note:1、Linux服务器选用的是CentOS7.7，其他类型也可以2、需要�
       <div class="recent-posts-item">
         <div class="recent-posts-item-title">2022-01-06</div>
         <a href="/archives/9149f718.html"><div class="recent-posts-item-content">LeetCode精选TOP面试题172.阶乘后的零</div></a>
-      </div>
-    
-      <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2022-01-01</div>
-        <a href="/archives/2565682e.html"><div class="recent-posts-item-content">LeetCode精选TOP面试题454.四数相加II</div></a>
       </div>
     
   </div>
@@ -1709,11 +1731,15 @@ Note:1、Linux服务器选用的是CentOS7.7，其他类型也可以2、需要�
     
       
         
+      
+    
+      
+        
           <a 
             href="/archives/2022" 
             class="archive-card-list-item">
             2022
-            <span class="archive-card-list-item-badge">4</span>
+            <span class="archive-card-list-item-badge">5</span>
           </a>
         
         
