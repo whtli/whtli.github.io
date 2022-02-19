@@ -18,17 +18,17 @@
   <link 
     rel="icon" 
     href="/img/q.png">
-  <title>笔试题5-十六进制转十进制</title>
+  <title>LeetCode精选TOP面试题103.二叉树的锯齿形层序遍历</title>
   
     
       <meta 
         property="og:title" 
-        content="笔试题5-十六进制转十进制">
+        content="LeetCode精选TOP面试题103.二叉树的锯齿形层序遍历">
     
     
       <meta 
         property="og:url" 
-        content="https://hexo.flower48237.com/archives/5071d281.html">
+        content="https://hexo.flower48237.com/archives/909ffbac.html">
     
     
       <meta 
@@ -38,8 +38,20 @@
     
       <meta 
         property="og:img" 
-        content="&lt;h3 id=&#34;题目回顾&#34;&gt;&lt;a href=&#34;#题目回顾&#34; class=&#34;headerlink&#34; title=&#34;题目回顾&#34;&gt;&lt;/a&gt;题目回顾&lt;/h3&gt;&lt;p&gt;十六进制与十进制的转换，输入一个十六进制字符串，转换成十进制数输出。&lt;/p&gt;
-&lt;h3 id=&#34;解题思路&#34;&gt;&lt;a href=&#34;#解题思路&#34; class=&#34;headerlink&#34; title=&#34;解题思路&#34;&gt;&lt;/a&gt;解题思路&lt;/h3&gt;&lt;p&gt;需要思路么？大概不需要，遍历字符串，把字符0~9的当做一类处理，字符A ~ F的当做一类处理，转成整数后按照转换规则对每一位进行指数、乘法操作并累加就好啦。&lt;/p&gt;">
+        content="&lt;h3 id=&#34;题目描述&#34;&gt;&lt;a href=&#34;#题目描述&#34; class=&#34;headerlink&#34; title=&#34;题目描述&#34;&gt;&lt;/a&gt;题目描述&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;给定二叉树的根节点 root ，返回其节点值的 锯齿形层序遍历 。&lt;/li&gt;
+&lt;li&gt;即先从左往右，再从右往左进行下一层遍历，以此类推，层与层之间交替进行。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;example
+input  &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; root &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;3,9&lt;/span&gt;,20,null,null,15,7&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;
+output &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;,&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;20,9&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;,&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;15,7&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;
+note   &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt;     &lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt;
+            / &lt;span class=&#34;token punctuation&#34;&gt;\&lt;/span&gt;
+           &lt;span class=&#34;token number&#34;&gt;9&lt;/span&gt;  &lt;span class=&#34;token number&#34;&gt;20&lt;/span&gt;
+             /  &lt;span class=&#34;token punctuation&#34;&gt;\&lt;/span&gt;
+            &lt;span class=&#34;token number&#34;&gt;15&lt;/span&gt;   &lt;span class=&#34;token number&#34;&gt;7&lt;/span&gt;
+input  &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; root &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;
+output &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;">
     
     
       <meta 
@@ -47,10 +59,10 @@
         content="article">
       <meta 
         property="og:article:published_time" 
-        content="2020-03-11">
+        content="2022-02-19">
       <meta 
         property="og:article:modified_time" 
-        content="2021-12-21">
+        content="2022-02-19">
       <meta 
         property="og:article:author" 
         content="鸡排大仙儿">
@@ -62,11 +74,23 @@
         
           <meta 
             property="og:article:tag" 
-            content="字符串">
+            content="LeetCode">
         
           <meta 
             property="og:article:tag" 
-            content="进制转换">
+            content="树">
+        
+          <meta 
+            property="og:article:tag" 
+            content="二叉树">
+        
+          <meta 
+            property="og:article:tag" 
+            content="BFS">
+        
+          <meta 
+            property="og:article:tag" 
+            content="队列">
         
       
     
@@ -285,30 +309,30 @@
 <article class="card card-content">
   <header>
     <h1 class="post-title">
-      笔试题5-十六进制转十进制
+      LeetCode精选TOP面试题103.二叉树的锯齿形层序遍历
     </h1>
   </header>
   <div class="post-meta post-show-meta">
-    <time datetime="2020-03-11T15:00:52.000Z">
+    <time datetime="2022-02-19T07:00:00.000Z">
       <i 
         class="iconfont icon-calendar" 
         style="margin-right: 2px;">
       </i>
-      <span>2020-03-11</span>
+      <span>2022-02-19</span>
     </time>
     
       <span class="dot"></span>
       
         <a 
-          href="/categories/%E7%AC%94%E8%AF%95%E9%A2%98/" 
+          href="/categories/LeetCode/" 
           class="post-meta-link">
-          笔试题
+          LeetCode
         </a>
       
     
     
       <span class="dot"></span>
-      <span>312 字</span>
+      <span>497 字</span>
     
   </div>
   
@@ -332,18 +356,45 @@
             <span class="dot"></span>
           
           <a 
-            href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" 
+            href="/tags/LeetCode/" 
             class="post-meta-link">
-            字符串
+            LeetCode
           </a>
         
           
             <span class="dot"></span>
           
           <a 
-            href="/tags/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/" 
+            href="/tags/%E6%A0%91/" 
             class="post-meta-link">
-            进制转换
+            树
+          </a>
+        
+          
+            <span class="dot"></span>
+          
+          <a 
+            href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" 
+            class="post-meta-link">
+            二叉树
+          </a>
+        
+          
+            <span class="dot"></span>
+          
+          <a 
+            href="/tags/BFS/" 
+            class="post-meta-link">
+            BFS
+          </a>
+        
+          
+            <span class="dot"></span>
+          
+          <a 
+            href="/tags/%E9%98%9F%E5%88%97/" 
+            class="post-meta-link">
+            队列
           </a>
         
       </div>
@@ -353,52 +404,90 @@
   <div 
     id="section" 
     class="post-content">
-    <h3 id="题目回顾"><a href="#题目回顾" class="headerlink" title="题目回顾"></a>题目回顾</h3><p>十六进制与十进制的转换，输入一个十六进制字符串，转换成十进制数输出。</p>
-<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>需要思路么？大概不需要，遍历字符串，把字符0~9的当做一类处理，字符A ~ F的当做一类处理，转成整数后按照转换规则对每一位进行指数、乘法操作并累加就好啦。</p>
+    <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><ul>
+<li>给定二叉树的根节点 root ，返回其节点值的 锯齿形层序遍历 。</li>
+<li>即先从左往右，再从右往左进行下一层遍历，以此类推，层与层之间交替进行。</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">example
+input  <span class="token builtin class-name">:</span> root <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3,9</span>,20,null,null,15,7<span class="token punctuation">]</span>
+output <span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span>,<span class="token punctuation">[</span><span class="token number">20,9</span><span class="token punctuation">]</span>,<span class="token punctuation">[</span><span class="token number">15,7</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+note   <span class="token builtin class-name">:</span>     <span class="token number">3</span>
+            / <span class="token punctuation">\</span>
+           <span class="token number">9</span>  <span class="token number">20</span>
+             /  <span class="token punctuation">\</span>
+            <span class="token number">15</span>   <span class="token number">7</span>
+input  <span class="token builtin class-name">:</span> root <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+output <span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <span id="more"></span>
-<h3 id="代码（Java）"><a href="#代码（Java）" class="headerlink" title="代码（Java）"></a>代码（Java）</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util</span><span class="token punctuation">.</span><span class="token class-name">Scanner</span><span class="token punctuation">;</span>
-<span class="token comment">/**
- *	@author : flower48237
- *	@version: 2020年3月11日 下午9:12:13 
- *	@note : OX to Ten
- */</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token punctuation">&#123;</span>
 
-	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-		<span class="token comment">// TODO Auto-generated method stub</span>
-		<span class="token class-name">Scanner</span> in <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Scanner</span><span class="token punctuation">(</span><span class="token class-name">System</span><span class="token punctuation">.</span>in<span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token class-name">String</span> str <span class="token operator">=</span> in<span class="token punctuation">.</span><span class="token function">nextLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token comment">//用long定义sum是为了防止溢出</span>
-		<span class="token keyword">long</span> sum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>	
-		<span class="token keyword">int</span> len <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> len<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-			 <span class="token keyword">char</span> ch <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
-			 <span class="token keyword">int</span> chval <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span>ch<span class="token punctuation">;</span>
-			 <span class="token keyword">if</span><span class="token punctuation">(</span>chval <span class="token operator">-</span> <span class="token number">48</span> <span class="token operator">></span> <span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-                 <span class="token keyword">if</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">'a'</span><span class="token punctuation">)</span>
-                     sum <span class="token operator">+=</span> <span class="token number">10</span> <span class="token operator">*</span> <span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">,</span>len<span class="token operator">-</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                 <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>ch <span class="token operator">==</span> <span class="token string">'b'</span><span class="token punctuation">)</span>
-                     sum <span class="token operator">+=</span> <span class="token number">11</span><span class="token operator">*</span><span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">,</span>len<span class="token operator">-</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                 <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>ch <span class="token operator">==</span> <span class="token string">'c'</span><span class="token punctuation">)</span>
-                     sum <span class="token operator">+=</span> <span class="token number">12</span><span class="token operator">*</span><span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">,</span>len<span class="token operator">-</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                 <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>ch <span class="token operator">==</span> <span class="token string">'d'</span><span class="token punctuation">)</span>
-                     sum <span class="token operator">+=</span> <span class="token number">13</span><span class="token operator">*</span><span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">,</span>len<span class="token operator">-</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                 <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>ch <span class="token operator">==</span> <span class="token string">'e'</span><span class="token punctuation">)</span>
-                     sum <span class="token operator">+=</span> <span class="token number">14</span><span class="token operator">*</span><span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">,</span>len<span class="token operator">-</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                 <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>ch <span class="token operator">==</span> <span class="token string">'f'</span><span class="token punctuation">)</span>
-                     sum <span class="token operator">+=</span> <span class="token number">15</span><span class="token operator">*</span><span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">,</span>len<span class="token operator">-</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-             <span class="token punctuation">&#125;</span>
-             <span class="token keyword">else</span><span class="token punctuation">&#123;</span>
-                 sum<span class="token operator">+=</span><span class="token punctuation">(</span>chval <span class="token operator">-</span> <span class="token number">48</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">,</span>len<span class="token operator">-</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-             <span class="token punctuation">&#125;</span>
-		<span class="token punctuation">&#125;</span>
-		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>sum<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token punctuation">&#125;</span>
+<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><ul>
+<li><p>原理仍然是二叉树的层次遍历，见题目 102.二叉树的层次遍历</p>
+</li>
+<li><p>借助队列 queue 实现二叉树的层次遍历（广度优先搜索）</p>
+</li>
+<li><p>根节点入队</p>
+</li>
+<li><p>使用循环判断队列是否为空</p>
+<ul>
+<li>每次循环时，队列的长度 queue.size()，即为当前层的节点数量<ul>
+<li>使用for循环，把队列中当前层的节点 treeNode 逐个移除队列并访问</li>
+<li>把每个 treeNode 的值逐个添加到每一层的列表中</li>
+<li>当前被访问的节点 treeNode 若有左子树（treeNode.left != null），则左子树入队</li>
+<li>当前被访问的节点 treeNode 若有右子树（treeNode.right != null），则右子树入队</li>
+</ul>
+</li>
+<li>把每层的节点值列表，添加到结果列表 lists 中</li>
+</ul>
+</li>
+<li><p>队列为空时，说明遍历结束</p>
+</li>
+<li><p>然后遍历lists，将奇数下标的子列表中元素顺序反转，即可满足锯齿遍历的要求</p>
+</li>
+<li><p>时间复杂度：O(n) </p>
+</li>
+<li><p>空间复杂度：O(n)</p>
+</li>
+</ul>
+<h3 id="代码（Java）"><a href="#代码（Java）" class="headerlink" title="代码（Java）"></a>代码（Java）</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">List</span><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">></span><span class="token punctuation">></span></span> <span class="token function">zigzagLevelOrder</span><span class="token punctuation">(</span><span class="token class-name">TreeNode</span> root<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">// 空树直接返回空列表</span>
+        <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">List</span><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">></span><span class="token punctuation">></span></span> lists <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>root <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">return</span> lists<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token class-name">Queue</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">TreeNode</span><span class="token punctuation">></span></span> queue <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LinkedList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 根节点先入队</span>
+        queue<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">!</span>queue<span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">int</span> currentSize <span class="token operator">=</span> queue<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">></span></span> list <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> currentSize<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                <span class="token class-name">TreeNode</span> treeNode <span class="token operator">=</span> queue<span class="token punctuation">.</span><span class="token function">poll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>treeNode<span class="token punctuation">.</span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>treeNode<span class="token punctuation">.</span>left <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                    queue<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>treeNode<span class="token punctuation">.</span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">&#125;</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>treeNode<span class="token punctuation">.</span>right <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                    queue<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>treeNode<span class="token punctuation">.</span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">&#125;</span>
+            <span class="token punctuation">&#125;</span>
+            lists<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>list<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> lists<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                <span class="token class-name">Collections</span><span class="token punctuation">.</span><span class="token function">reverse</span><span class="token punctuation">(</span>lists<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+            <span class="token comment">/* 输出检查
+            for (Integer item : lists.get(i)) &#123;
+                System.out.print(item + " ");
+            &#125;
+            System.out.println();
+            */</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> lists<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<blockquote>
-<p>联通软件研究院笔试编程题之一，感觉考的很重视基础。</p>
-</blockquote>
-
   </div>
   <div>
     
@@ -413,7 +502,7 @@
             鸡排大仙儿
           </a>
         </p>
-        <p><span style="font-weight: bold;">文章链接：</span><a style = "text-overflow : ellipsis;display: inline-block; width: 100%; overflow: hidden;" target="_blank" rel="nofollow noopener noreferrer" href="https://hexo.flower48237.com/archives/5071d281.html">https://hexo.flower48237.com/archives/5071d281.html</a></p>
+        <p><span style="font-weight: bold;">文章链接：</span><a style = "text-overflow : ellipsis;display: inline-block; width: 100%; overflow: hidden;" target="_blank" rel="nofollow noopener noreferrer" href="https://hexo.flower48237.com/archives/909ffbac.html">https://hexo.flower48237.com/archives/909ffbac.html</a></p>
         <p><span style="font-weight: bold;">版权声明：</span>本博客所有文章除特别声明外，均采用<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0 协议</a>。转载请注明出处！</p>
       </div>
     
@@ -421,29 +510,15 @@
 </article>
 <div class="nav">
   
-    <div class="nav-item-prev">
-      <a 
-        href="/archives/ff9dabc7.html" 
-        class="nav-link">
-        <i class="iconfont icon-left nav-prev-icon"></i>
-        <div>
-          <div class="nav-label">上一篇</div>
-          
-            <div class="nav-title">笔试题6-数值统计 </div>
-          
-        </div>
-      </a>
-    </div>
-  
   
     <div class="nav-item-next">
       <a 
-        href="/archives/63e5cd3d.html" 
+        href="/archives/1f6759ea.html" 
         class="nav-link">
         <div>
           <div class="nav-label">下一篇</div>
           
-            <div class="nav-title">LeetCode精选TOP面试题283. 移动零 </div>
+            <div class="nav-title">LeetCode精选TOP面试题098.验证二叉搜索树 </div>
           
         </div>
         <i class="iconfont icon-right nav-next-icon"></i>
@@ -461,7 +536,7 @@
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E5%9B%9E%E9%A1%BE"><span class="toc-text">题目回顾</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%EF%BC%88Java%EF%BC%89"><span class="toc-text">代码（Java）</span></a></li></ol>
+<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%EF%BC%88Java%EF%BC%89"><span class="toc-text">代码（Java）</span></a></li></ol>
 </div></main>
             <aside class="left-column">
               
@@ -525,7 +600,7 @@
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E5%9B%9E%E9%A1%BE"><span class="toc-text">题目回顾</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%EF%BC%88Java%EF%BC%89"><span class="toc-text">代码（Java）</span></a></li></ol>
+<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%EF%BC%88Java%EF%BC%89"><span class="toc-text">代码（Java）</span></a></li></ol>
       </div>
     </article>
   
@@ -724,7 +799,7 @@
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E5%9B%9E%E9%A1%BE"><span class="toc-text">题目回顾</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%EF%BC%88Java%EF%BC%89"><span class="toc-text">代码（Java）</span></a></li></ol>
+<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%EF%BC%88Java%EF%BC%89"><span class="toc-text">代码（Java）</span></a></li></ol>
     </article>
   
   
