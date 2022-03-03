@@ -254,6 +254,84 @@
   <div class="card">
     
         <article class="card card-content">
+          <a href="/archives/952dea56.html">
+            <h1 class="post-title">
+              LeetCode精选TOP面试题138. 复制带随机指针的链表
+            </h1>
+          </a>
+          <!-- <div class="card-excerpt">
+            
+              题目描述
+给定一个长度为 n 的链表，每个节点包含一个额外增加的随机指针 random ，该指针可以指向链表中的任何节点或空节点。
+构造这个链表的 深拷贝。 深拷贝应该正好由 n 个 全新 节点组成，其中每个新节点的值都设为其对应的原节点的值。新节点的 next 指针和 random 指针也都应指向复制链表中的新节点，并使原链表和复制链表中的这些指针能够表示相同的链表状态。复制链表中的指针都不应指向原链表中的节点 。
+例如，如果原链表中有 X 和 Y 两个节点，其中 X.random –&amp;gt; Y 。那么在复制链表中对应的两个节点 x 和 y ，同样有 x.random –&amp;gt; y 。
+返回复制链表的头节点。
+
+用一个由 n 个节点组成的链表来表示输入/输出中的链表。每个节点用一个 [val, random_index] 表示：
+val：一个表示 Node.val 的整数。
+random_index：随机指针指向的节点索引（范围从 0 到 n-1）；如果不指向任何节点，则为  null 。
+代码 只 接受原链表的头节点 head 作为传入参数。
+
+example
+input  : head = [[7,null],[13,0],[11,4],[10,2],[1,0]]
+output : [[7,null],[13,0],[11,4],[10,2],[1,0]]  
+input  : head = [[3,null],[3,0],[3,null]]
+output : [[3,null],[3,0],[3,null]]
+                
+          </div> -->
+          <div class="card-excerpt">
+            
+              <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><ul>
+<li>给定一个长度为 n 的链表，每个节点包含一个额外增加的随机指针 random ，该指针可以指向链表中的任何节点或空节点。</li>
+<li>构造这个链表的 深拷贝。 深拷贝应该正好由 n 个 全新 节点组成，其中每个新节点的值都设为其对应的原节点的值。新节点的 next 指针和 random 指针也都应指向复制链表中的新节点，并使原链表和复制链表中的这些指针能够表示相同的链表状态。复制链表中的指针都不应指向原链表中的节点 。</li>
+<li>例如，如果原链表中有 X 和 Y 两个节点，其中 X.random –&gt; Y 。那么在复制链表中对应的两个节点 x 和 y ，同样有 x.random –&gt; y 。</li>
+<li>返回复制链表的头节点。</li>
+<li></li>
+<li>用一个由 n 个节点组成的链表来表示输入/输出中的链表。每个节点用一个 [val, random_index] 表示：</li>
+<li>val：一个表示 Node.val 的整数。</li>
+<li>random_index：随机指针指向的节点索引（范围从 0 到 n-1）；如果不指向任何节点，则为  null 。</li>
+<li>代码 只 接受原链表的头节点 head 作为传入参数。</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">example
+input  <span class="token builtin class-name">:</span> <span class="token function">head</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">7</span>,null<span class="token punctuation">]</span>,<span class="token punctuation">[</span><span class="token number">13,0</span><span class="token punctuation">]</span>,<span class="token punctuation">[</span><span class="token number">11,4</span><span class="token punctuation">]</span>,<span class="token punctuation">[</span><span class="token number">10,2</span><span class="token punctuation">]</span>,<span class="token punctuation">[</span><span class="token number">1,0</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+output <span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">7</span>,null<span class="token punctuation">]</span>,<span class="token punctuation">[</span><span class="token number">13,0</span><span class="token punctuation">]</span>,<span class="token punctuation">[</span><span class="token number">11,4</span><span class="token punctuation">]</span>,<span class="token punctuation">[</span><span class="token number">10,2</span><span class="token punctuation">]</span>,<span class="token punctuation">[</span><span class="token number">1,0</span><span class="token punctuation">]</span><span class="token punctuation">]</span>  
+input  <span class="token builtin class-name">:</span> <span class="token function">head</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">3</span>,null<span class="token punctuation">]</span>,<span class="token punctuation">[</span><span class="token number">3,0</span><span class="token punctuation">]</span>,<span class="token punctuation">[</span><span class="token number">3</span>,null<span class="token punctuation">]</span><span class="token punctuation">]</span>
+output <span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">3</span>,null<span class="token punctuation">]</span>,<span class="token punctuation">[</span><span class="token number">3,0</span><span class="token punctuation">]</span>,<span class="token punctuation">[</span><span class="token number">3</span>,null<span class="token punctuation">]</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                
+          </div>
+          <div class="card-post-footer">
+            <div class="post-meta">
+              <time datetime="2022-03-03T08:00:00.000Z">
+                <i class="iconfont icon-calendar" style="margin-right: 2px;">
+                </i>
+                <span>
+                  2022-03-03
+                </span>
+              </time>
+              
+                
+                  
+                    
+                          
+                            <span class="dot"></span>
+                            
+                              
+                                    <a href="/categories/LeetCode/" class="post-meta-link">
+                                      LeetCode
+                                    </a>
+                                    
+                                      
+            </div>
+            <a href="/archives/952dea56.html">
+              继续阅读
+            </a>
+          </div>
+        </article>
+  </div>
+  
+  <div class="card">
+    
+        <article class="card card-content">
           <a href="/archives/6ffca0a6.html">
             <h1 class="post-title">
               LeetCode精选TOP面试题341.扁平化嵌套列表迭代器
@@ -875,72 +953,6 @@ output <span class="token builtin class-name">:</span> -5<span aria-hidden="true
         </article>
   </div>
   
-  <div class="card">
-    
-        <article class="card card-content">
-          <a href="/archives/298e7cdd.html">
-            <h1 class="post-title">
-              LeetCode精选TOP面试题328.奇偶链表
-            </h1>
-          </a>
-          <!-- <div class="card-excerpt">
-            
-              题目描述
-给定一个单链表，把所有的奇数节点和偶数节点分别排在一起。
-这里的奇数节点和偶数节点指的是节点编号的奇偶性，而不是节点的值的奇偶性。
-使用原地算法完成。空间复杂度应为 O(1)，时间复杂度应为 O(nodes)，nodes 为节点总数。
-
-example
-input  : 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL
-output : 1-&gt;3-&gt;5-&gt;2-&gt;4-&gt;NULL
-input  : 2-&gt;1-&gt;3-&gt;5-&gt;6-&gt;4-&gt;7-&gt;NULL 
-output : 2-&gt;3-&gt;6-&gt;7-&gt;1-&gt;5-&gt;4-&gt;NULL
-                
-          </div> -->
-          <div class="card-excerpt">
-            
-              <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><ul>
-<li>给定一个单链表，把所有的奇数节点和偶数节点分别排在一起。</li>
-<li>这里的奇数节点和偶数节点指的是节点编号的奇偶性，而不是节点的值的奇偶性。</li>
-<li>使用原地算法完成。空间复杂度应为 O(1)，时间复杂度应为 O(nodes)，nodes 为节点总数。</li>
-</ul>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">example
-input  <span class="token builtin class-name">:</span> <span class="token number">1</span>-<span class="token operator">></span><span class="token number">2</span>-<span class="token operator">></span><span class="token number">3</span>-<span class="token operator">></span><span class="token number">4</span>-<span class="token operator">></span><span class="token number">5</span>-<span class="token operator">></span>NULL
-output <span class="token builtin class-name">:</span> <span class="token number">1</span>-<span class="token operator">></span><span class="token number">3</span>-<span class="token operator">></span><span class="token number">5</span>-<span class="token operator">></span><span class="token number">2</span>-<span class="token operator">></span><span class="token number">4</span>-<span class="token operator">></span>NULL
-input  <span class="token builtin class-name">:</span> <span class="token number">2</span>-<span class="token operator">></span><span class="token number">1</span>-<span class="token operator">></span><span class="token number">3</span>-<span class="token operator">></span><span class="token number">5</span>-<span class="token operator">></span><span class="token number">6</span>-<span class="token operator">></span><span class="token number">4</span>-<span class="token operator">></span><span class="token number">7</span>-<span class="token operator">></span>NULL 
-output <span class="token builtin class-name">:</span> <span class="token number">2</span>-<span class="token operator">></span><span class="token number">3</span>-<span class="token operator">></span><span class="token number">6</span>-<span class="token operator">></span><span class="token number">7</span>-<span class="token operator">></span><span class="token number">1</span>-<span class="token operator">></span><span class="token number">5</span>-<span class="token operator">></span><span class="token number">4</span>-<span class="token operator">></span>NULL<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-                
-          </div>
-          <div class="card-post-footer">
-            <div class="post-meta">
-              <time datetime="2022-01-07T04:00:00.000Z">
-                <i class="iconfont icon-calendar" style="margin-right: 2px;">
-                </i>
-                <span>
-                  2022-01-07
-                </span>
-              </time>
-              
-                
-                  
-                    
-                          
-                            <span class="dot"></span>
-                            
-                              
-                                    <a href="/categories/LeetCode/" class="post-meta-link">
-                                      LeetCode
-                                    </a>
-                                    
-                                      
-            </div>
-            <a href="/archives/298e7cdd.html">
-              继续阅读
-            </a>
-          </div>
-        </article>
-  </div>
-  
     
       <div class="nav">
   
@@ -976,7 +988,7 @@ output <span class="token builtin class-name">:</span> <span class="token number
   <a 
     class="author-posts-count" 
     href="/archives">
-    <span>114</span>
+    <span>115</span>
     <span>文章</span>
   </a>
   <a 
@@ -988,7 +1000,7 @@ output <span class="token builtin class-name">:</span> <span class="token number
   <a 
     class="author-tags-count" 
     href="/tags">
-    <span>63</span>
+    <span>65</span>
     <span>标签</span>
   </a>
 </div>
@@ -1041,7 +1053,7 @@ output <span class="token builtin class-name">:</span> <span class="token number
       <a href="/categories/LeetCode/">
         <div class="categories-list-item">
           LeetCode
-          <span class="categories-list-item-badge">59</span>
+          <span class="categories-list-item-badge">60</span>
         </div>
       </a>
     
@@ -1095,9 +1107,57 @@ output <span class="token builtin class-name">:</span> <span class="token number
   <div class="tags-list">
     
       <a 
+        href="/tags/%E5%85%B6%E4%BB%96/" 
+        title="其他">
+        <div class="tags-list-item">其他</div>
+      </a>
+    
+      <a 
+        href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" 
+        title="深度学习">
+        <div class="tags-list-item">深度学习</div>
+      </a>
+    
+      <a 
+        href="/tags/PyTorch/" 
+        title="PyTorch">
+        <div class="tags-list-item">PyTorch</div>
+      </a>
+    
+      <a 
+        href="/tags/Python/" 
+        title="Python">
+        <div class="tags-list-item">Python</div>
+      </a>
+    
+      <a 
+        href="/tags/Jupyter/" 
+        title="Jupyter">
+        <div class="tags-list-item">Jupyter</div>
+      </a>
+    
+      <a 
+        href="/tags/Anaconda/" 
+        title="Anaconda">
+        <div class="tags-list-item">Anaconda</div>
+      </a>
+    
+      <a 
+        href="/tags/conda/" 
+        title="conda">
+        <div class="tags-list-item">conda</div>
+      </a>
+    
+      <a 
         href="/tags/Java/" 
         title="Java">
         <div class="tags-list-item">Java</div>
+      </a>
+    
+      <a 
+        href="/tags/%E6%95%B4%E6%95%B0/" 
+        title="整数">
+        <div class="tags-list-item">整数</div>
       </a>
     
       <a 
@@ -1113,51 +1173,9 @@ output <span class="token builtin class-name">:</span> <span class="token number
       </a>
     
       <a 
-        href="/tags/%E6%95%B0%E7%BB%84/" 
-        title="数组">
-        <div class="tags-list-item">数组</div>
-      </a>
-    
-      <a 
-        href="/tags/%E9%81%8D%E5%8E%86/" 
-        title="遍历">
-        <div class="tags-list-item">遍历</div>
-      </a>
-    
-      <a 
         href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" 
         title="字符串">
         <div class="tags-list-item">字符串</div>
-      </a>
-    
-      <a 
-        href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" 
-        title="二叉树">
-        <div class="tags-list-item">二叉树</div>
-      </a>
-    
-      <a 
-        href="/tags/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD/" 
-        title="因果推断">
-        <div class="tags-list-item">因果推断</div>
-      </a>
-    
-      <a 
-        href="/tags/Causality/" 
-        title="Causality">
-        <div class="tags-list-item">Causality</div>
-      </a>
-    
-      <a 
-        href="/tags/%E9%80%92%E5%BD%92/" 
-        title="递归">
-        <div class="tags-list-item">递归</div>
-      </a>
-    
-      <a 
-        href="/tags/%E9%93%BE%E8%A1%A8/" 
-        title="链表">
-        <div class="tags-list-item">链表</div>
       </a>
     
       <a 
@@ -1167,9 +1185,9 @@ output <span class="token builtin class-name">:</span> <span class="token number
       </a>
     
       <a 
-        href="/tags/SQL/" 
-        title="SQL">
-        <div class="tags-list-item">SQL</div>
+        href="/tags/%E6%95%B0%E7%BB%84/" 
+        title="数组">
+        <div class="tags-list-item">数组</div>
       </a>
     
       <a 
@@ -1179,15 +1197,9 @@ output <span class="token builtin class-name">:</span> <span class="token number
       </a>
     
       <a 
-        href="/tags/%E6%A0%88/" 
-        title="栈">
-        <div class="tags-list-item">栈</div>
-      </a>
-    
-      <a 
-        href="/tags/DFS/" 
-        title="DFS">
-        <div class="tags-list-item">DFS</div>
+        href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/" 
+        title="双指针">
+        <div class="tags-list-item">双指针</div>
       </a>
     
   </div>
@@ -1259,11 +1271,15 @@ output <span class="token builtin class-name">:</span> <span class="token number
     
       
         
+      
+    
+      
+        
           <a 
             href="/archives/2022" 
             class="archive-card-list-item">
             2022
-            <span class="archive-card-list-item-badge">12</span>
+            <span class="archive-card-list-item-badge">13</span>
           </a>
         
         
@@ -1713,6 +1729,11 @@ output <span class="token builtin class-name">:</span> <span class="token number
   <div class="recent-posts-list">
     
       <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2022-03-03</div>
+        <a href="/archives/952dea56.html"><div class="recent-posts-item-content">LeetCode精选TOP面试题138. 复制带随机指针的链表</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
         <div class="recent-posts-item-title">2022-03-01</div>
         <a href="/archives/6ffca0a6.html"><div class="recent-posts-item-content">LeetCode精选TOP面试题341.扁平化嵌套列表迭代器</div></a>
       </div>
@@ -1725,11 +1746,6 @@ output <span class="token builtin class-name">:</span> <span class="token number
       <div class="recent-posts-item">
         <div class="recent-posts-item-title">2022-02-19</div>
         <a href="/archives/909ffbac.html"><div class="recent-posts-item-content">LeetCode精选TOP面试题103.二叉树的锯齿形层序遍历</div></a>
-      </div>
-    
-      <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2022-02-17</div>
-        <a href="/archives/1f6759ea.html"><div class="recent-posts-item-content">LeetCode精选TOP面试题098.验证二叉搜索树</div></a>
       </div>
     
   </div>
@@ -1801,11 +1817,15 @@ output <span class="token builtin class-name">:</span> <span class="token number
     
       
         
+      
+    
+      
+        
           <a 
             href="/archives/2022" 
             class="archive-card-list-item">
             2022
-            <span class="archive-card-list-item-badge">12</span>
+            <span class="archive-card-list-item-badge">13</span>
           </a>
         
         
