@@ -42,18 +42,10 @@
 &lt;li&gt;给定一个嵌套的整数列表 nestedList 。&lt;/li&gt;
 &lt;li&gt;每个元素要么是一个整数，要么是一个列表；该列表的元素也可能是整数或者是其他列表。&lt;/li&gt;
 &lt;li&gt;实现一个迭代器将其扁平化，使之能够遍历这个列表中的所有整数。&lt;/li&gt;
-&lt;li&gt;&lt;/li&gt;
 &lt;li&gt;实现扁平迭代器类 NestedIterator ：&lt;/li&gt;
 &lt;li&gt;NestedIterator(List&lt;NestedInteger&gt; nestedList) 用嵌套列表 nestedList 初始化迭代器。&lt;/li&gt;
 &lt;li&gt;int next() 返回嵌套列表的下一个整数。&lt;/li&gt;
 &lt;li&gt;boolean hasNext() 如果仍然存在待迭代的整数，返回 true ；否则，返回 false 。&lt;/li&gt;
-&lt;li&gt;&lt;/li&gt;
-&lt;li&gt;代码将会用下述伪代码检测：&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;initialize iterator with nestedList
-res &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;
-&lt;span class=&#34;token keyword&#34;&gt;while&lt;/span&gt; iterator.hasNext&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
-    append iterator.next&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; to the end of res
-&lt;span class=&#34;token builtin class-name&#34;&gt;return&lt;/span&gt; res&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;li&gt;如果 res 与预期的扁平化列表匹配，那么你的代码将会被判为正确。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;example
 input  &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; nestedList &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1,1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;,2,&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1,1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;
@@ -70,7 +62,7 @@ output &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; &lt;s
         content="2022-03-01">
       <meta 
         property="og:article:modified_time" 
-        content="2022-03-01">
+        content="2022-03-18">
       <meta 
         property="og:article:author" 
         content="李强">
@@ -86,11 +78,11 @@ output &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; &lt;s
         
           <meta 
             property="og:article:tag" 
-            content="DFS">
+            content="队列">
         
           <meta 
             property="og:article:tag" 
-            content="队列">
+            content="DFS">
         
           <meta 
             property="og:article:tag" 
@@ -336,7 +328,7 @@ output &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; &lt;s
     
     
       <span class="dot"></span>
-      <span>828 字</span>
+      <span>826 字</span>
     
   </div>
   
@@ -369,18 +361,18 @@ output &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; &lt;s
             <span class="dot"></span>
           
           <a 
-            href="/tags/DFS/" 
+            href="/tags/%E9%98%9F%E5%88%97/" 
             class="post-meta-link">
-            DFS
+            队列
           </a>
         
           
             <span class="dot"></span>
           
           <a 
-            href="/tags/%E9%98%9F%E5%88%97/" 
+            href="/tags/DFS/" 
             class="post-meta-link">
-            队列
+            DFS
           </a>
         
           
@@ -403,18 +395,10 @@ output &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; &lt;s
 <li>给定一个嵌套的整数列表 nestedList 。</li>
 <li>每个元素要么是一个整数，要么是一个列表；该列表的元素也可能是整数或者是其他列表。</li>
 <li>实现一个迭代器将其扁平化，使之能够遍历这个列表中的所有整数。</li>
-<li></li>
 <li>实现扁平迭代器类 NestedIterator ：</li>
 <li>NestedIterator(List<NestedInteger> nestedList) 用嵌套列表 nestedList 初始化迭代器。</li>
 <li>int next() 返回嵌套列表的下一个整数。</li>
 <li>boolean hasNext() 如果仍然存在待迭代的整数，返回 true ；否则，返回 false 。</li>
-<li></li>
-<li>代码将会用下述伪代码检测：<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">initialize iterator with nestedList
-res <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-<span class="token keyword">while</span> iterator.hasNext<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    append iterator.next<span class="token punctuation">(</span><span class="token punctuation">)</span> to the end of res
-<span class="token builtin class-name">return</span> res<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li>如果 res 与预期的扁平化列表匹配，那么你的代码将会被判为正确。</li>
 </ul>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">example
 input  <span class="token builtin class-name">:</span> nestedList <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1,1</span><span class="token punctuation">]</span>,2,<span class="token punctuation">[</span><span class="token number">1,1</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
@@ -424,6 +408,14 @@ output <span class="token builtin class-name">:</span> <span class="token punctu
 
 <span id="more"></span>
 
+<ul>
+<li>代码将会用下述伪代码检测：<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">initialize iterator with nestedList
+res <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">while</span> iterator.hasNext<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    append iterator.next<span class="token punctuation">(</span><span class="token punctuation">)</span> to the end of res
+<span class="token builtin class-name">return</span> res<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>如果 res 与预期的扁平化列表匹配，那么代码将会被判为正确。</li>
+</ul>
 <h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><ul>
 <li>本质上与树的遍历相同，嵌套列表可看作一棵树，其中数值元素就是叶子节点，列表元素就是非叶子节点</li>
 <li>nestedList = [[1,1],2,[1,1]] 可画图为  <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">  nestedList
@@ -768,9 +760,57 @@ list1  <span class="token number">2</span>   list2
   <div class="tags-list">
     
       <a 
+        href="/tags/Anaconda/" 
+        title="Anaconda">
+        <div class="tags-list-item">Anaconda</div>
+      </a>
+    
+      <a 
+        href="/tags/conda/" 
+        title="conda">
+        <div class="tags-list-item">conda</div>
+      </a>
+    
+      <a 
+        href="/tags/Jupyter/" 
+        title="Jupyter">
+        <div class="tags-list-item">Jupyter</div>
+      </a>
+    
+      <a 
+        href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" 
+        title="深度学习">
+        <div class="tags-list-item">深度学习</div>
+      </a>
+    
+      <a 
+        href="/tags/PyTorch/" 
+        title="PyTorch">
+        <div class="tags-list-item">PyTorch</div>
+      </a>
+    
+      <a 
+        href="/tags/Python/" 
+        title="Python">
+        <div class="tags-list-item">Python</div>
+      </a>
+    
+      <a 
+        href="/tags/%E5%85%B6%E4%BB%96/" 
+        title="其他">
+        <div class="tags-list-item">其他</div>
+      </a>
+    
+      <a 
         href="/tags/Java/" 
         title="Java">
         <div class="tags-list-item">Java</div>
+      </a>
+    
+      <a 
+        href="/tags/%E6%95%B4%E6%95%B0/" 
+        title="整数">
+        <div class="tags-list-item">整数</div>
       </a>
     
       <a 
@@ -786,51 +826,9 @@ list1  <span class="token number">2</span>   list2
       </a>
     
       <a 
-        href="/tags/%E6%95%B0%E7%BB%84/" 
-        title="数组">
-        <div class="tags-list-item">数组</div>
-      </a>
-    
-      <a 
-        href="/tags/%E9%81%8D%E5%8E%86/" 
-        title="遍历">
-        <div class="tags-list-item">遍历</div>
-      </a>
-    
-      <a 
         href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" 
         title="字符串">
         <div class="tags-list-item">字符串</div>
-      </a>
-    
-      <a 
-        href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" 
-        title="二叉树">
-        <div class="tags-list-item">二叉树</div>
-      </a>
-    
-      <a 
-        href="/tags/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD/" 
-        title="因果推断">
-        <div class="tags-list-item">因果推断</div>
-      </a>
-    
-      <a 
-        href="/tags/Causality/" 
-        title="Causality">
-        <div class="tags-list-item">Causality</div>
-      </a>
-    
-      <a 
-        href="/tags/%E9%93%BE%E8%A1%A8/" 
-        title="链表">
-        <div class="tags-list-item">链表</div>
-      </a>
-    
-      <a 
-        href="/tags/%E9%80%92%E5%BD%92/" 
-        title="递归">
-        <div class="tags-list-item">递归</div>
       </a>
     
       <a 
@@ -840,27 +838,21 @@ list1  <span class="token number">2</span>   list2
       </a>
     
       <a 
-        href="/tags/SQL/" 
-        title="SQL">
-        <div class="tags-list-item">SQL</div>
+        href="/tags/%E5%88%86%E6%B2%BB/" 
+        title="分治">
+        <div class="tags-list-item">分治</div>
+      </a>
+    
+      <a 
+        href="/tags/%E6%95%B0%E7%BB%84/" 
+        title="数组">
+        <div class="tags-list-item">数组</div>
       </a>
     
       <a 
         href="/tags/%E6%8E%92%E5%BA%8F/" 
         title="排序">
         <div class="tags-list-item">排序</div>
-      </a>
-    
-      <a 
-        href="/tags/%E6%A0%88/" 
-        title="栈">
-        <div class="tags-list-item">栈</div>
-      </a>
-    
-      <a 
-        href="/tags/DFS/" 
-        title="DFS">
-        <div class="tags-list-item">DFS</div>
       </a>
     
   </div>
