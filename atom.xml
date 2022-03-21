@@ -6,7 +6,7 @@
   <link href="https://hexo.li98.cn/atom.xml" rel="self"/>
   
   <link href="https://hexo.li98.cn/"/>
-  <updated>2022-03-17T05:56:35.602Z</updated>
+  <updated>2022-03-21T14:53:30.944Z</updated>
   <id>https://hexo.li98.cn/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python使用Pandas计算相关系数</title>
+    <link href="https://hexo.li98.cn/archives/4e858b60.html"/>
+    <id>https://hexo.li98.cn/archives/4e858b60.html</id>
+    <published>2022-03-21T15:00:00.000Z</published>
+    <updated>2022-03-21T14:53:30.944Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h3><ul><li>给定成分数据，使用Pandas计算各成分之间的相关系数</li></ul><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><ul><li>调用函数：pandas.corr()</li></ul><span id="more"></span><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pdfile_name_1 <span class="token operator">=</span> <span class="token string">'../dic1/dic2/name1.csv'</span>file_name_2 <span class="token operator">=</span> <span class="token string">'../dic1/dic2/name2.csv'</span>file_name_3 <span class="token operator">=</span> <span class="token string">'../dic1/dic2/name3.csv'</span>file_name_4 <span class="token operator">=</span> <span class="token string">'../dic1/dic2/name4.csv'</span>lists <span class="token operator">=</span> <span class="token punctuation">&#123;</span>file_name_1<span class="token punctuation">,</span> file_name_2<span class="token punctuation">,</span> file_name_3<span class="token punctuation">,</span> file_name_4<span class="token punctuation">&#125;</span><span class="token keyword">for</span> file_name <span class="token keyword">in</span> lists<span class="token punctuation">:</span>    data <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span>file_name<span class="token punctuation">)</span>    corr <span class="token operator">=</span> data<span class="token punctuation">.</span>corr<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    out_name <span class="token operator">=</span> file_name<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span>    corr<span class="token punctuation">.</span>to_csv<span class="token punctuation">(</span><span class="token string">'./correlation_'</span> <span class="token operator">+</span> out_name<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;问题：&quot;&gt;&lt;a href=&quot;#问题：&quot; class=&quot;headerlink&quot; title=&quot;问题：&quot;&gt;&lt;/a&gt;问题：&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;给定成分数据，使用Pandas计算各成分之间的相关系数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;代码&quot;&gt;&lt;a href=&quot;#代码&quot; class=&quot;headerlink&quot; title=&quot;代码&quot;&gt;&lt;/a&gt;代码&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;调用函数：pandas.corr()&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="其他" scheme="https://hexo.li98.cn/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+    <category term="Python" scheme="https://hexo.li98.cn/tags/Python/"/>
+    
+    <category term="其他" scheme="https://hexo.li98.cn/tags/%E5%85%B6%E4%BB%96/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode精选TOP面试题50.Pow(x, n)</title>
@@ -460,9 +488,9 @@ output &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; -5&
     
     <category term="排序" scheme="https://hexo.li98.cn/tags/%E6%8E%92%E5%BA%8F/"/>
     
-    <category term="矩阵" scheme="https://hexo.li98.cn/tags/%E7%9F%A9%E9%98%B5/"/>
-    
     <category term="二分查找" scheme="https://hexo.li98.cn/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/"/>
+    
+    <category term="矩阵" scheme="https://hexo.li98.cn/tags/%E7%9F%A9%E9%98%B5/"/>
     
   </entry>
   
@@ -634,11 +662,11 @@ module &lt;span class=&quot;token string&quot;&gt;&#39;d2lzh_pytorch&#39;&lt;/sp
     <category term="D2L" scheme="https://hexo.li98.cn/categories/D2L/"/>
     
     
-    <category term="Jupyter" scheme="https://hexo.li98.cn/tags/Jupyter/"/>
-    
     <category term="深度学习" scheme="https://hexo.li98.cn/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
     <category term="PyTorch" scheme="https://hexo.li98.cn/tags/PyTorch/"/>
+    
+    <category term="Jupyter" scheme="https://hexo.li98.cn/tags/Jupyter/"/>
     
     <category term="Python" scheme="https://hexo.li98.cn/tags/Python/"/>
     
@@ -697,57 +725,6 @@ conda activate pytorch&lt;span aria-hidden=&quot;true&quot; class=&quot;line-num
     <category term="PyTorch" scheme="https://hexo.li98.cn/tags/PyTorch/"/>
     
     <category term="Python" scheme="https://hexo.li98.cn/tags/Python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>安装Anaconda+常用的conda命令+Anaconda换源+安装Jupyter</title>
-    <link href="https://hexo.li98.cn/archives/39dee8e5.html"/>
-    <id>https://hexo.li98.cn/archives/39dee8e5.html</id>
-    <published>2021-12-08T13:00:00.000Z</published>
-    <updated>2021-12-21T14:40:39.279Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="安装Anaconda"><a href="#安装Anaconda" class="headerlink" title="安装Anaconda"></a>安装Anaconda</h2><ul><li><a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/">下载并安装Anaconda</a></li></ul><h2 id="常用的conda命令"><a href="#常用的conda命令" class="headerlink" title="常用的conda命令"></a>常用的conda命令</h2>  <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 创建虚拟环境</span>conda create -n pytorch <span class="token assign-left variable">python</span><span class="token operator">=</span><span class="token number">3.6</span><span class="token comment"># 删除虚拟环境</span>conda <span class="token function">env</span> remove -n pytorch<span class="token comment"># 激活指定虚拟环境</span>conda activate pytorch<span class="token comment"># 退出当前虚拟环境</span>conda deactivate<span class="token comment"># 安装包，如numpy（提前进入目标环境）</span>conda <span class="token function">install</span> numpy或pip <span class="token function">install</span> numpy<span class="token comment"># 安装指定版本的包，如numpy</span>pip <span class="token function">install</span> <span class="token assign-left variable">numpy</span><span class="token operator">==</span><span class="token number">1.6</span>.0<span class="token comment"># 升级包</span>pip <span class="token function">install</span> --upgrade numpy<span class="token comment"># 卸载包</span>pip uninstall numpy<span class="token comment"># 查看conda中所有环境</span>conda info -e<span class="token comment"># 查看某个环境中安装的所有包（提前进入目标环境）</span>conda list<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><span id="more"></span><h2 id="Anaconda换源"><a href="#Anaconda换源" class="headerlink" title="Anaconda换源"></a>Anaconda换源</h2><ul><li>修改镜像为国内源，如<a href="https://mirror.tuna.tsinghua.edu.cn/help/anaconda/">清华源</a></li></ul><h2 id="安装Jupyter"><a href="#安装Jupyter" class="headerlink" title="安装Jupyter"></a>安装Jupyter</h2><ul><li><p>安装Anaconda软件之后，在首页找到Jupyter点击Install。</p></li><li><p>不同虚拟环境下各自的Jupyter，只需提前在Anaconda软件界面切换虚拟环境。<img src="https://img-blog.csdnimg.cn/924a3454cffd4f64b270843cf8e0a9f1.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbGlxOTgy,size_20,color_FFFFFF,t_70,g_se,x_16" alt="\[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-ZeDiUbNm-1638962174624)(C:\Users\Q\AppData\Roaming\Typora\typora-user-images\image-20211208170503225.png)\]" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://img-blog.csdnimg.cn/924a3454cffd4f64b270843cf8e0a9f1.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbGlxOTgy,size_20,color_FFFFFF,t_70,g_se,x_16" class="lozad post-image"></p></li><li><p>为不同的jupyter指定不同的工作路径，首先为这个jupyter新增一个本地工作路径<code>path</code>，找到“开始”处新增的快捷方式：Jupyter Notebook (pytorch)，右键打开文件路径，再右键属性，修改<strong>目标(T)</strong>，把<code>&quot;%USERPROFILE&quot;</code>修改为指定路径path，如图。<br><img src="https://img-blog.csdnimg.cn/b46cec417d1e454ea23d617f1bc9755d.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbGlxOTgy,size_20,color_FFFFFF,t_70,g_se,x_16" alt="&lt;img src=&quot;C:\Users\Q\AppData\Roaming\Typora\typora-user-images\image-20211208170823226.png&quot; alt=&quot;image-20211208170823226&quot; style=&quot;zoom: 33%;&quot; /&gt;" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://img-blog.csdnimg.cn/b46cec417d1e454ea23d617f1bc9755d.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbGlxOTgy,size_20,color_FFFFFF,t_70,g_se,x_16" class="lozad post-image"><br><img src="https://img-blog.csdnimg.cn/35e6df5b53eb40ffa276e2b3f52eece8.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbGlxOTgy,size_20,color_FFFFFF,t_70,g_se,x_16" alt="&lt;img src=&quot;C:\Users\Q\AppData\Roaming\Typora\typora-user-images\image-20211208171047220.png&quot; alt=&quot;image-20211208171047220&quot; style=&quot;zoom:33%;&quot; /&gt;" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://img-blog.csdnimg.cn/35e6df5b53eb40ffa276e2b3f52eece8.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbGlxOTgy,size_20,color_FFFFFF,t_70,g_se,x_16" class="lozad post-image"></p></li></ul><ul><li>修改后单击该快捷方式即可进入网页使用JupyterNoteBook</li></ul>]]></content>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;安装Anaconda&quot;&gt;&lt;a href=&quot;#安装Anaconda&quot; class=&quot;headerlink&quot; title=&quot;安装Anaconda&quot;&gt;&lt;/a&gt;安装Anaconda&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/&quot;&gt;下载并安装Anaconda&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;常用的conda命令&quot;&gt;&lt;a href=&quot;#常用的conda命令&quot; class=&quot;headerlink&quot; title=&quot;常用的conda命令&quot;&gt;&lt;/a&gt;常用的conda命令&lt;/h2&gt;  &lt;pre class=&quot;line-numbers language-bash&quot; data-language=&quot;bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# 创建虚拟环境&lt;/span&gt;
-conda create -n pytorch &lt;span class=&quot;token assign-left variable&quot;&gt;python&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;3.6&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;# 删除虚拟环境&lt;/span&gt;
-conda &lt;span class=&quot;token function&quot;&gt;env&lt;/span&gt; remove -n pytorch
-&lt;span class=&quot;token comment&quot;&gt;# 激活指定虚拟环境&lt;/span&gt;
-conda activate pytorch
-&lt;span class=&quot;token comment&quot;&gt;# 退出当前虚拟环境&lt;/span&gt;
-conda deactivate
-&lt;span class=&quot;token comment&quot;&gt;# 安装包，如numpy（提前进入目标环境）&lt;/span&gt;
-conda &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; numpy
-或
-pip &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; numpy
-&lt;span class=&quot;token comment&quot;&gt;# 安装指定版本的包，如numpy&lt;/span&gt;
-pip &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;token assign-left variable&quot;&gt;numpy&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1.6&lt;/span&gt;.0
-&lt;span class=&quot;token comment&quot;&gt;# 升级包&lt;/span&gt;
-pip &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; --upgrade numpy
-&lt;span class=&quot;token comment&quot;&gt;# 卸载包&lt;/span&gt;
-pip uninstall numpy
-&lt;span class=&quot;token comment&quot;&gt;# 查看conda中所有环境&lt;/span&gt;
-conda info -e
-&lt;span class=&quot;token comment&quot;&gt;# 查看某个环境中安装的所有包（提前进入目标环境）&lt;/span&gt;
-conda list&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;</summary>
-    
-    
-    
-    <category term="D2L" scheme="https://hexo.li98.cn/categories/D2L/"/>
-    
-    
-    <category term="Anaconda" scheme="https://hexo.li98.cn/tags/Anaconda/"/>
-    
-    <category term="conda" scheme="https://hexo.li98.cn/tags/conda/"/>
-    
-    <category term="Jupyter" scheme="https://hexo.li98.cn/tags/Jupyter/"/>
-    
-    <category term="深度学习" scheme="https://hexo.li98.cn/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   

@@ -18,17 +18,17 @@
   <link 
     rel="icon" 
     href="/img/q.png">
-  <title>LeetCode精选TOP面试题38.外观数列</title>
+  <title>Python使用Pandas计算相关系数</title>
   
     
       <meta 
         property="og:title" 
-        content="LeetCode精选TOP面试题38.外观数列">
+        content="Python使用Pandas计算相关系数">
     
     
       <meta 
         property="og:url" 
-        content="https://hexo.li98.cn/archives/ba31be9f.html">
+        content="https://hexo.li98.cn/archives/4e858b60.html">
     
     
       <meta 
@@ -38,17 +38,12 @@
     
       <meta 
         property="og:img" 
-        content="&lt;h3 id=&#34;题目描述&#34;&gt;&lt;a href=&#34;#题目描述&#34; class=&#34;headerlink&#34; title=&#34;题目描述&#34;&gt;&lt;/a&gt;题目描述&lt;/h3&gt;&lt;p&gt;「外观数列」是一个整数序列，从数字 1 开始，序列中的每一项都是对前一项的描述。前五项如下：&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;.   &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;
-&lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;.   &lt;span class=&#34;token number&#34;&gt;11&lt;/span&gt;
-&lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt;.   &lt;span class=&#34;token number&#34;&gt;21&lt;/span&gt;
-&lt;span class=&#34;token number&#34;&gt;4&lt;/span&gt;.   &lt;span class=&#34;token number&#34;&gt;1211&lt;/span&gt;
-&lt;span class=&#34;token number&#34;&gt;5&lt;/span&gt;.   &lt;span class=&#34;token number&#34;&gt;111221&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;  被读作  &lt;span class=&#34;token string&#34;&gt;&#34;one 1&#34;&lt;/span&gt;  &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;一个一&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; , 即 &lt;span class=&#34;token number&#34;&gt;11&lt;/span&gt;。
-&lt;span class=&#34;token number&#34;&gt;11&lt;/span&gt; 被读作 &lt;span class=&#34;token string&#34;&gt;&#34;two 1s&#34;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;两个一&#34;&lt;/span&gt;）, 即 &lt;span class=&#34;token number&#34;&gt;21&lt;/span&gt;。
-&lt;span class=&#34;token number&#34;&gt;21&lt;/span&gt; 被读作 &lt;span class=&#34;token string&#34;&gt;&#34;one 2&#34;&lt;/span&gt;,  &lt;span class=&#34;token string&#34;&gt;&#34;one 1&#34;&lt;/span&gt; （&lt;span class=&#34;token string&#34;&gt;&#34;一个二&#34;&lt;/span&gt; ,  &lt;span class=&#34;token string&#34;&gt;&#34;一个一&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; , 即 &lt;span class=&#34;token number&#34;&gt;1211&lt;/span&gt;。
-给定一个正整数 n（1 ≤ n ≤ &lt;span class=&#34;token number&#34;&gt;30&lt;/span&gt;），输出外观数列的第 n 项。
-注意：整数序列中的每一项将表示为一个字符串。&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;">
+        content="&lt;h3 id=&#34;问题：&#34;&gt;&lt;a href=&#34;#问题：&#34; class=&#34;headerlink&#34; title=&#34;问题：&#34;&gt;&lt;/a&gt;问题：&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;给定成分数据，使用Pandas计算各成分之间的相关系数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;代码&#34;&gt;&lt;a href=&#34;#代码&#34; class=&#34;headerlink&#34; title=&#34;代码&#34;&gt;&lt;/a&gt;代码&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;调用函数：pandas.corr()&lt;/li&gt;
+&lt;/ul&gt;">
     
     
       <meta 
@@ -56,10 +51,10 @@
         content="article">
       <meta 
         property="og:article:published_time" 
-        content="2020-03-27">
+        content="2022-03-21">
       <meta 
         property="og:article:modified_time" 
-        content="2021-12-21">
+        content="2022-03-21">
       <meta 
         property="og:article:author" 
         content="李强">
@@ -67,23 +62,11 @@
         
           <meta 
             property="og:article:tag" 
-            content="Java">
+            content="Python">
         
           <meta 
             property="og:article:tag" 
-            content="LeetCode">
-        
-          <meta 
-            property="og:article:tag" 
-            content="面试">
-        
-          <meta 
-            property="og:article:tag" 
-            content="字符串">
-        
-          <meta 
-            property="og:article:tag" 
-            content="数据结构">
+            content="其他">
         
       
     
@@ -302,30 +285,30 @@
 <article class="card card-content">
   <header>
     <h1 class="post-title">
-      LeetCode精选TOP面试题38.外观数列
+      Python使用Pandas计算相关系数
     </h1>
   </header>
   <div class="post-meta post-show-meta">
-    <time datetime="2020-03-27T06:54:51.000Z">
+    <time datetime="2022-03-21T15:00:00.000Z">
       <i 
         class="iconfont icon-calendar" 
         style="margin-right: 2px;">
       </i>
-      <span>2020-03-27</span>
+      <span>2022-03-21</span>
     </time>
     
       <span class="dot"></span>
       
         <a 
-          href="/categories/LeetCode/" 
+          href="/categories/%E5%85%B6%E4%BB%96/" 
           class="post-meta-link">
-          LeetCode
+          其他
         </a>
       
     
     
       <span class="dot"></span>
-      <span>600 字</span>
+      <span>81 字</span>
     
   </div>
   
@@ -340,45 +323,18 @@
         
           
           <a 
-            href="/tags/Java/" 
+            href="/tags/Python/" 
             class="post-meta-link">
-            Java
+            Python
           </a>
         
           
             <span class="dot"></span>
           
           <a 
-            href="/tags/LeetCode/" 
+            href="/tags/%E5%85%B6%E4%BB%96/" 
             class="post-meta-link">
-            LeetCode
-          </a>
-        
-          
-            <span class="dot"></span>
-          
-          <a 
-            href="/tags/%E9%9D%A2%E8%AF%95/" 
-            class="post-meta-link">
-            面试
-          </a>
-        
-          
-            <span class="dot"></span>
-          
-          <a 
-            href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" 
-            class="post-meta-link">
-            字符串
-          </a>
-        
-          
-            <span class="dot"></span>
-          
-          <a 
-            href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" 
-            class="post-meta-link">
-            数据结构
+            其他
           </a>
         
       </div>
@@ -388,65 +344,28 @@
   <div 
     id="section" 
     class="post-content">
-    <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>「外观数列」是一个整数序列，从数字 1 开始，序列中的每一项都是对前一项的描述。前五项如下：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token number">1</span>.   <span class="token number">1</span>
-<span class="token number">2</span>.   <span class="token number">11</span>
-<span class="token number">3</span>.   <span class="token number">21</span>
-<span class="token number">4</span>.   <span class="token number">1211</span>
-<span class="token number">5</span>.   <span class="token number">111221</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token number">1</span>  被读作  <span class="token string">"one 1"</span>  <span class="token punctuation">(</span><span class="token string">"一个一"</span><span class="token punctuation">)</span> , 即 <span class="token number">11</span>。
-<span class="token number">11</span> 被读作 <span class="token string">"two 1s"</span> <span class="token punctuation">(</span><span class="token string">"两个一"</span>）, 即 <span class="token number">21</span>。
-<span class="token number">21</span> 被读作 <span class="token string">"one 2"</span>,  <span class="token string">"one 1"</span> （<span class="token string">"一个二"</span> ,  <span class="token string">"一个一"</span><span class="token punctuation">)</span> , 即 <span class="token number">1211</span>。
-给定一个正整数 n（1 ≤ n ≤ <span class="token number">30</span>），输出外观数列的第 n 项。
-注意：整数序列中的每一项将表示为一个字符串。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <h3 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h3><ul>
+<li>给定成分数据，使用Pandas计算各成分之间的相关系数</li>
+</ul>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><ul>
+<li>调用函数：pandas.corr()</li>
+</ul>
 <span id="more"></span>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">示例 <span class="token number">1</span>:
-输入: <span class="token number">1</span>
-输出: <span class="token string">"1"</span>
-解释：这是一个基本样例。
 
-示例 <span class="token number">2</span>:
-输入: <span class="token number">4</span>
-输出: <span class="token string">"1211"</span>
-解释：当 n <span class="token operator">=</span> <span class="token number">3</span> 时，序列是 <span class="token string">"21"</span>，其中我们有 <span class="token string">"2"</span> 和 <span class="token string">"1"</span> 两组，<span class="token string">"2"</span> 可以读作 <span class="token string">"12"</span>，也就是出现频次 <span class="token operator">=</span> <span class="token number">1</span> 而 值 <span class="token operator">=</span> <span class="token number">2</span>；类似 <span class="token string">"1"</span> 可以读作 <span class="token string">"11"</span>。所以答案是 <span class="token string">"12"</span> 和 <span class="token string">"11"</span> 组合在一起，也就是 <span class="token string">"1211"</span>。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><ul>
-<li>借助StringBuilder ，方便在循环中进行拼接操作，初始化一个StringBuilder类型的对象为 “ 1 “；</li>
-<li>当输入的整数n &gt; 1 时，进行第一层循环，次数为 n - 1 次，每次循环得到的StringBuilder类型的临时结果，即对上一层数字解释；</li>
-<li>嵌套的第二层循环需要完成对上一层数值的统计工作<ul>
-<li>初始化获取当前字符串的首字符 ch，向后遍历，相等则计数器count + 1 ， 不相等则将计数器count 和 字符 ch 追加到临时StringBuilder对象temp中，然后 ch 更新为当前字符，计数器count 重置为1；</li>
-<li>每次内层循环结束时，计数器 count 和 字符 ch 追加到临时StringBuilder对象temp中，然后将temp赋值给初始的str；</li>
-</ul>
-</li>
-<li>最后返回的str.toString()就是想要的结果。<h3 id="代码实现（Java）"><a href="#代码实现（Java）" class="headerlink" title="代码实现（Java）"></a>代码实现（Java）</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">/**
- * @author : flower48237
- * @2020/3/25 21:20
- * @title : LeetCode精选TOP面试题38.外观数列
- */</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">countAndSay</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-        <span class="token class-name">StringBuilder</span> str <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuilder</span><span class="token punctuation">(</span><span class="token string">"1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i <span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-            <span class="token class-name">StringBuilder</span> temp <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token keyword">int</span> count <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-            <span class="token keyword">char</span> ch <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> str<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> j <span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-                <span class="token keyword">if</span> <span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>j<span class="token punctuation">)</span> <span class="token operator">==</span> ch<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-                    count<span class="token operator">++</span><span class="token punctuation">;</span>	<span class="token comment">// 计数器加一</span>
-                <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
-                    temp<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">""</span> <span class="token operator">+</span> count <span class="token operator">+</span> ch<span class="token punctuation">)</span><span class="token punctuation">;</span>	<span class="token comment">// 追加对上一串数值的部分描述</span>
-                    ch <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>j<span class="token punctuation">)</span><span class="token punctuation">;</span>				<span class="token comment">// 更新ch</span>
-                    count <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>						<span class="token comment">// 重制计数器count 为 1</span>
-                <span class="token punctuation">&#125;</span>
-            <span class="token punctuation">&#125;</span>
-            temp<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">""</span> <span class="token operator">+</span> count <span class="token operator">+</span> ch<span class="token punctuation">)</span><span class="token punctuation">;</span>	<span class="token comment">// 追加对上一串数值的最后一部分描述</span>
-            str <span class="token operator">=</span> temp<span class="token punctuation">;</span>						<span class="token comment">// 将每次的描述结果赋值给str</span>
-        <span class="token punctuation">&#125;</span>
-        <span class="token keyword">return</span> str<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-</ul>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
 
+file_name_1 <span class="token operator">=</span> <span class="token string">'../dic1/dic2/name1.csv'</span>
+file_name_2 <span class="token operator">=</span> <span class="token string">'../dic1/dic2/name2.csv'</span>
+file_name_3 <span class="token operator">=</span> <span class="token string">'../dic1/dic2/name3.csv'</span>
+file_name_4 <span class="token operator">=</span> <span class="token string">'../dic1/dic2/name4.csv'</span>
+
+lists <span class="token operator">=</span> <span class="token punctuation">&#123;</span>file_name_1<span class="token punctuation">,</span> file_name_2<span class="token punctuation">,</span> file_name_3<span class="token punctuation">,</span> file_name_4<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">for</span> file_name <span class="token keyword">in</span> lists<span class="token punctuation">:</span>
+    data <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span>file_name<span class="token punctuation">)</span>
+    corr <span class="token operator">=</span> data<span class="token punctuation">.</span>corr<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    out_name <span class="token operator">=</span> file_name<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span>
+    corr<span class="token punctuation">.</span>to_csv<span class="token punctuation">(</span><span class="token string">'./correlation_'</span> <span class="token operator">+</span> out_name<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
   </div>
   <div>
     
@@ -461,7 +380,7 @@
             李强
           </a>
         </p>
-        <p><span style="font-weight: bold;">文章链接：</span><a style = "text-overflow : ellipsis;display: inline-block; width: 100%; overflow: hidden;" target="_blank" rel="nofollow noopener noreferrer" href="https://hexo.li98.cn/archives/ba31be9f.html">https://hexo.li98.cn/archives/ba31be9f.html</a></p>
+        <p><span style="font-weight: bold;">文章链接：</span><a style = "text-overflow : ellipsis;display: inline-block; width: 100%; overflow: hidden;" target="_blank" rel="nofollow noopener noreferrer" href="https://hexo.li98.cn/archives/4e858b60.html">https://hexo.li98.cn/archives/4e858b60.html</a></p>
         <p><span style="font-weight: bold;">版权声明：</span>本博客所有文章除特别声明外，均采用<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0 协议</a>。转载请注明出处！</p>
       </div>
     
@@ -469,29 +388,15 @@
 </article>
 <div class="nav">
   
-    <div class="nav-item-prev">
-      <a 
-        href="/archives/4c4d07ae.html" 
-        class="nav-link">
-        <i class="iconfont icon-left nav-prev-icon"></i>
-        <div>
-          <div class="nav-label">上一篇</div>
-          
-            <div class="nav-title">LeetCode精选TOP面试题53.最大子序和 </div>
-          
-        </div>
-      </a>
-    </div>
-  
   
     <div class="nav-item-next">
       <a 
-        href="/archives/2749d354.html" 
+        href="/archives/42e9890.html" 
         class="nav-link">
         <div>
           <div class="nav-label">下一篇</div>
           
-            <div class="nav-title">LeetCode精选TOP面试题160.相交链表 </div>
+            <div class="nav-title">LeetCode精选TOP面试题50.Pow(x, n) </div>
           
         </div>
         <i class="iconfont icon-right nav-next-icon"></i>
@@ -509,7 +414,7 @@
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0%EF%BC%88Java%EF%BC%89"><span class="toc-text">代码实现（Java）</span></a></li></ol>
+<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%EF%BC%9A"><span class="toc-text">问题：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-text">代码</span></a></li></ol>
 </div></main>
             <aside class="left-column">
               
@@ -573,7 +478,7 @@
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0%EF%BC%88Java%EF%BC%89"><span class="toc-text">代码实现（Java）</span></a></li></ol>
+<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%EF%BC%9A"><span class="toc-text">问题：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-text">代码</span></a></li></ol>
       </div>
     </article>
   
@@ -772,7 +677,7 @@
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0%EF%BC%88Java%EF%BC%89"><span class="toc-text">代码实现（Java）</span></a></li></ol>
+<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%EF%BC%9A"><span class="toc-text">问题：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-text">代码</span></a></li></ol>
     </article>
   
   
