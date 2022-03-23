@@ -223,9 +223,9 @@ output &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; &lt
     
     <category term="递归" scheme="https://hexo.li98.cn/tags/%E9%80%92%E5%BD%92/"/>
     
-    <category term="二叉树" scheme="https://hexo.li98.cn/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
-    
     <category term="树" scheme="https://hexo.li98.cn/tags/%E6%A0%91/"/>
+    
+    <category term="二叉树" scheme="https://hexo.li98.cn/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     
     <category term="DFS" scheme="https://hexo.li98.cn/tags/DFS/"/>
     
@@ -265,11 +265,11 @@ output &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; &lt
     
     <category term="LeetCode" scheme="https://hexo.li98.cn/tags/LeetCode/"/>
     
+    <category term="树" scheme="https://hexo.li98.cn/tags/%E6%A0%91/"/>
+    
     <category term="二叉树" scheme="https://hexo.li98.cn/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     
     <category term="BFS" scheme="https://hexo.li98.cn/tags/BFS/"/>
-    
-    <category term="树" scheme="https://hexo.li98.cn/tags/%E6%A0%91/"/>
     
     <category term="队列" scheme="https://hexo.li98.cn/tags/%E9%98%9F%E5%88%97/"/>
     
@@ -666,9 +666,9 @@ module &lt;span class=&quot;token string&quot;&gt;&#39;d2lzh_pytorch&#39;&lt;/sp
     
     <category term="PyTorch" scheme="https://hexo.li98.cn/tags/PyTorch/"/>
     
-    <category term="Python" scheme="https://hexo.li98.cn/tags/Python/"/>
-    
     <category term="Jupyter" scheme="https://hexo.li98.cn/tags/Jupyter/"/>
+    
+    <category term="Python" scheme="https://hexo.li98.cn/tags/Python/"/>
     
   </entry>
   
