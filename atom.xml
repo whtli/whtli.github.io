@@ -6,7 +6,7 @@
   <link href="https://hexo.li98.cn/atom.xml" rel="self"/>
   
   <link href="https://hexo.li98.cn/"/>
-  <updated>2022-03-21T14:53:30.944Z</updated>
+  <updated>2022-03-21T15:01:20.790Z</updated>
   <id>https://hexo.li98.cn/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://hexo.li98.cn/archives/4e858b60.html"/>
     <id>https://hexo.li98.cn/archives/4e858b60.html</id>
     <published>2022-03-21T15:00:00.000Z</published>
-    <updated>2022-03-21T14:53:30.944Z</updated>
+    <updated>2022-03-21T15:01:20.790Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h3><ul><li>给定成分数据，使用Pandas计算各成分之间的相关系数</li></ul><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><ul><li>调用函数：pandas.corr()</li></ul><span id="more"></span><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pdfile_name_1 <span class="token operator">=</span> <span class="token string">'../dic1/dic2/name1.csv'</span>file_name_2 <span class="token operator">=</span> <span class="token string">'../dic1/dic2/name2.csv'</span>file_name_3 <span class="token operator">=</span> <span class="token string">'../dic1/dic2/name3.csv'</span>file_name_4 <span class="token operator">=</span> <span class="token string">'../dic1/dic2/name4.csv'</span>lists <span class="token operator">=</span> <span class="token punctuation">&#123;</span>file_name_1<span class="token punctuation">,</span> file_name_2<span class="token punctuation">,</span> file_name_3<span class="token punctuation">,</span> file_name_4<span class="token punctuation">&#125;</span><span class="token keyword">for</span> file_name <span class="token keyword">in</span> lists<span class="token punctuation">:</span>    data <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span>file_name<span class="token punctuation">)</span>    corr <span class="token operator">=</span> data<span class="token punctuation">.</span>corr<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    out_name <span class="token operator">=</span> file_name<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span>    corr<span class="token punctuation">.</span>to_csv<span class="token punctuation">(</span><span class="token string">'./correlation_'</span> <span class="token operator">+</span> out_name<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
     
@@ -223,9 +223,9 @@ output &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; &lt
     
     <category term="递归" scheme="https://hexo.li98.cn/tags/%E9%80%92%E5%BD%92/"/>
     
-    <category term="树" scheme="https://hexo.li98.cn/tags/%E6%A0%91/"/>
-    
     <category term="二叉树" scheme="https://hexo.li98.cn/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
+    
+    <category term="树" scheme="https://hexo.li98.cn/tags/%E6%A0%91/"/>
     
     <category term="DFS" scheme="https://hexo.li98.cn/tags/DFS/"/>
     
@@ -265,11 +265,11 @@ output &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; &lt
     
     <category term="LeetCode" scheme="https://hexo.li98.cn/tags/LeetCode/"/>
     
-    <category term="树" scheme="https://hexo.li98.cn/tags/%E6%A0%91/"/>
-    
     <category term="二叉树" scheme="https://hexo.li98.cn/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     
     <category term="BFS" scheme="https://hexo.li98.cn/tags/BFS/"/>
+    
+    <category term="树" scheme="https://hexo.li98.cn/tags/%E6%A0%91/"/>
     
     <category term="队列" scheme="https://hexo.li98.cn/tags/%E9%98%9F%E5%88%97/"/>
     
@@ -666,9 +666,9 @@ module &lt;span class=&quot;token string&quot;&gt;&#39;d2lzh_pytorch&#39;&lt;/sp
     
     <category term="PyTorch" scheme="https://hexo.li98.cn/tags/PyTorch/"/>
     
-    <category term="Jupyter" scheme="https://hexo.li98.cn/tags/Jupyter/"/>
-    
     <category term="Python" scheme="https://hexo.li98.cn/tags/Python/"/>
+    
+    <category term="Jupyter" scheme="https://hexo.li98.cn/tags/Jupyter/"/>
     
   </entry>
   
