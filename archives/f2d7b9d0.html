@@ -49,7 +49,7 @@
         content="2020-03-17">
       <meta 
         property="og:article:modified_time" 
-        content="2021-12-21">
+        content="2022-04-06">
       <meta 
         property="og:article:author" 
         content="李强">
@@ -66,10 +66,6 @@
           <meta 
             property="og:article:tag" 
             content="LeetCode">
-        
-          <meta 
-            property="og:article:tag" 
-            content="面试">
         
       
     
@@ -308,6 +304,12 @@
           LeetCode
         </a>
       
+        <a 
+          href="/categories/LeetCode/InterviewTop/" 
+          class="post-meta-link">
+          InterviewTop
+        </a>
+      
     
     
       <span class="dot"></span>
@@ -349,15 +351,6 @@
             LeetCode
           </a>
         
-          
-            <span class="dot"></span>
-          
-          <a 
-            href="/tags/%E9%9D%A2%E8%AF%95/" 
-            class="post-meta-link">
-            面试
-          </a>
-        
       </div>
     </div>
   
@@ -378,7 +371,7 @@
 
 <h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>这是一个在编程的时候会出现死循环的问题，个人认为重点工作其实倒不是怎么判断是不是快乐数，而是找到打破循环的方法或者条件。</p>
 <ul>
-<li>思路1 ：快慢指针<br>慢指针slower每次前进一步（进行一次平方计算），快指针faster每次前进两步（进行两次平方计算），当slower和faster不相等的时候，就一直循环。那为啥还说能打破循环呢？<br>这是因为当快慢指针相等的时候会停止循环，相等的有两种情况：<ul>
+<li>思路1 ：快慢指针<br>  慢指针slower每次前进一步（进行一次平方计算），快指针faster每次前进两步（进行两次平方计算），当slower和faster不相等的时候，就一直循环。那为啥还说能打破循环呢？<br>  这是因为当快慢指针相等的时候会停止循环，相等的有两种情况：<ul>
 <li>当慢指针和快指针都通过计算变成了1；</li>
 <li>当慢指针走过一圈之后，快指针肯定恰好走过了两圈，如果不是快乐数，快慢指针的值肯定是相同的；<blockquote>
 <p>之所以选择快指针走两步而不是三步四步，是因为1，2公倍数最小，公约数最多，这样最节省空间和时间</p>
@@ -387,7 +380,7 @@
 </ul>
 </li>
 <li>思路2 ：借助HashSet<br>哈希Set特点就是不允许重复，那只要每次求和之后，判断当前的值n是否已经存在于hashset中就好啦，存在就不是快乐数，直接return false，不存在就添加进hashset，直到n 变成1跳出循环，或者返回false。</li>
-<li>思路3 ：投机取巧<br>小于10的数中，只有1和7是快乐数，借鉴<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/happy-number/solution/cyu-yan-by-hui-fei-de-xiao-hou/">leetcode上大神的思路</a>，所以，投机取巧就很简单了:<ul>
+<li>思路3 ：投机取巧<br>  小于10的数中，只有1和7是快乐数，借鉴<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/happy-number/solution/cyu-yan-by-hui-fei-de-xiao-hou/">leetcode上大神的思路</a>，所以，投机取巧就很简单了:<ul>
 <li>只要每次计算得到的n大于10，那么就继续计算;</li>
 <li>每次计算得到的n小于10，如果等于1或者7，就是快乐数，不等就不是。</li>
 </ul>
@@ -536,7 +529,7 @@
   <a 
     class="author-categories-count" 
     href="/categories">
-    <span>9</span>
+    <span>10</span>
     <span>分类</span>
   </a>
   <a 
@@ -608,6 +601,13 @@
         <div class="categories-list-item">
           LeetCode
           <span class="categories-list-item-badge">62</span>
+        </div>
+      </a>
+    
+      <a href="/categories/LeetCode/InterviewTop/">
+        <div class="categories-list-item">
+          LeetCode/InterviewTop
+          <span class="categories-list-item-badge">59</span>
         </div>
       </a>
     
@@ -692,6 +692,12 @@
       </a>
     
       <a 
+        href="/tags/%E5%85%B6%E4%BB%96/" 
+        title="其他">
+        <div class="tags-list-item">其他</div>
+      </a>
+    
+      <a 
         href="/tags/Anaconda/" 
         title="Anaconda">
         <div class="tags-list-item">Anaconda</div>
@@ -701,12 +707,6 @@
         href="/tags/conda/" 
         title="conda">
         <div class="tags-list-item">conda</div>
-      </a>
-    
-      <a 
-        href="/tags/%E5%85%B6%E4%BB%96/" 
-        title="其他">
-        <div class="tags-list-item">其他</div>
       </a>
     
       <a 

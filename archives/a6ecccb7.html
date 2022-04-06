@@ -49,7 +49,7 @@
         content="2020-02-28">
       <meta 
         property="og:article:modified_time" 
-        content="2021-12-21">
+        content="2022-04-06">
       <meta 
         property="og:article:author" 
         content="李强">
@@ -62,10 +62,6 @@
           <meta 
             property="og:article:tag" 
             content="LeetCode">
-        
-          <meta 
-            property="og:article:tag" 
-            content="面试">
         
           <meta 
             property="og:article:tag" 
@@ -320,10 +316,16 @@
           LeetCode
         </a>
       
+        <a 
+          href="/categories/LeetCode/InterviewTop/" 
+          class="post-meta-link">
+          InterviewTop
+        </a>
+      
     
     
       <span class="dot"></span>
-      <span>439 字</span>
+      <span>440 字</span>
     
   </div>
   
@@ -350,15 +352,6 @@
             href="/tags/LeetCode/" 
             class="post-meta-link">
             LeetCode
-          </a>
-        
-          
-            <span class="dot"></span>
-          
-          <a 
-            href="/tags/%E9%9D%A2%E8%AF%95/" 
-            class="post-meta-link">
-            面试
           </a>
         
           
@@ -421,7 +414,7 @@
 <h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><ul>
 <li>思路1<br>转换成二进制字符串，for循环统计<strong>字符1</strong>出现的次数，并返回    最终的和；</li>
 <li>思路2<br>遍历数字的 32 位，进行<strong>按位与</strong>运算，如果某一位是 1 ，计数器就加       1，在此过程中让辅助的与运算对象不断左移，这样来保证<strong>按位与</strong>；</li>
-<li>思路3<br>在思路2按位与的基础上进行优化，让n不断和和n - 1 进行与运算，并把每次与运算的结果赋值给n，这样能保证只要n 等于 0，那么统计就结束了，每进行一次与运算，就说明当前n的二进制中还有1存在。</li>
+<li>思路3<br> 在思路2按位与的基础上进行优化，让n不断和和n - 1 进行与运算，并把每次与运算的结果赋值给n，这样能保证只要n 等于 0，那么统计就结束了，每进行一次与运算，就说明当前n的二进制中还有1存在。</li>
 </ul>
 <h3 id="代码（Java）"><a href="#代码（Java）" class="headerlink" title="代码（Java）"></a>代码（Java）</h3><ul>
 <li><p>思路1  </p>
@@ -470,6 +463,7 @@
 
 </li>
 </ul>
+<p>​    </p>
 
   </div>
   <div>
@@ -558,7 +552,7 @@
   <a 
     class="author-categories-count" 
     href="/categories">
-    <span>9</span>
+    <span>10</span>
     <span>分类</span>
   </a>
   <a 
@@ -630,6 +624,13 @@
         <div class="categories-list-item">
           LeetCode
           <span class="categories-list-item-badge">62</span>
+        </div>
+      </a>
+    
+      <a href="/categories/LeetCode/InterviewTop/">
+        <div class="categories-list-item">
+          LeetCode/InterviewTop
+          <span class="categories-list-item-badge">59</span>
         </div>
       </a>
     
@@ -714,6 +715,12 @@
       </a>
     
       <a 
+        href="/tags/%E5%85%B6%E4%BB%96/" 
+        title="其他">
+        <div class="tags-list-item">其他</div>
+      </a>
+    
+      <a 
         href="/tags/Anaconda/" 
         title="Anaconda">
         <div class="tags-list-item">Anaconda</div>
@@ -723,12 +730,6 @@
         href="/tags/conda/" 
         title="conda">
         <div class="tags-list-item">conda</div>
-      </a>
-    
-      <a 
-        href="/tags/%E5%85%B6%E4%BB%96/" 
-        title="其他">
-        <div class="tags-list-item">其他</div>
       </a>
     
       <a 
