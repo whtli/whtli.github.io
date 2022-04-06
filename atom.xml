@@ -6,7 +6,7 @@
   <link href="https://hexo.li98.cn/atom.xml" rel="self"/>
   
   <link href="https://hexo.li98.cn/"/>
-  <updated>2022-03-25T14:39:21.784Z</updated>
+  <updated>2022-04-06T12:38:31.238Z</updated>
   <id>https://hexo.li98.cn/</id>
   
   <author>
@@ -15,6 +15,46 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>腾讯精选练习50题-009.回文数</title>
+    <link href="https://hexo.li98.cn/archives/688ebbf7.html"/>
+    <id>https://hexo.li98.cn/archives/688ebbf7.html</id>
+    <published>2022-04-06T13:00:00.000Z</published>
+    <updated>2022-04-06T12:38:31.238Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><ul><li>给定一个整数 x ，如果 x 是一个回文整数，返回 true ；否则，返回 false 。</li><li>回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。</li><li>进阶：不将整数转为字符串来解决这个问题</li></ul><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">exampleinput  <span class="token builtin class-name">:</span> <span class="token number">121</span>output <span class="token builtin class-name">:</span> <span class="token boolean">true</span>input  <span class="token builtin class-name">:</span> -121output <span class="token builtin class-name">:</span> <span class="token boolean">false</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><span id="more"></span><h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><ul><li>先把一些很明确的情况排除掉</li><li>负数直接返回false即可，肯定不是回文数</li><li>[1, 10]内的数和10的倍数都肯定不是回文数</li></ul><p><strong>思路1 借助字符串</strong></p><ul><li>转成字符串后取其反转，再使用equals()函数做对比</li><li>时间复杂度：O(n)</li><li>空间复杂度：O(1)</li></ul><p><strong>思路2 同时取前后对比</strong></p><ul><li>先计算出x的长度len</li><li>借助循环，每一步都取出当前x的首位和末尾做对比<ul><li>只要有一组不想等则直接返回false</li><li>每一步中若相等则将x先去掉首位再除以10获取新的x，并将len除以100，对应于新的x长度</li></ul></li><li>时间复杂度：O(log(n))</li><li>空间复杂度：O(1)</li></ul><p><strong>思路3 反转一半后对比</strong></p><ul><li>将x的后半部分逐步取下，并通过数学运算不断拼接成新的整数 half</li><li>当x不再大于后半部分（x的长度比half短，或者长度相等但是x&lt;=half）时结束拼接</li><li>判断以下两种情况是否成立，有一个成立则证明是回文数，可以返回true；两组都不成立则不是回文数<ul><li>当前x 和 half 相等 （原 x 长度为偶数）</li><li>当前x 和 half / 10 相等 （原 x 长度为奇数；中间的数值x不论是几，x都是回文数）</li></ul></li><li>时间复杂度：O(log(n))</li><li>空间复杂度：O(1)</li></ul><h3 id="代码（Java）"><a href="#代码（Java）" class="headerlink" title="代码（Java）"></a>代码（Java）</h3><p><strong>思路1代码</strong></p><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Solution1</span> <span class="token punctuation">&#123;</span>    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">isPalindrome</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>        <span class="token keyword">if</span> <span class="token punctuation">(</span>x <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token operator">||</span> <span class="token punctuation">(</span>x <span class="token operator">%</span> <span class="token number">10</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> x <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>            <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>        <span class="token punctuation">&#125;</span>        <span class="token class-name">String</span> sb <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuffer</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">reverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token keyword">return</span> sb<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>x <span class="token operator">+</span> <span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><strong>思路2代码</strong></p><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Solution2</span> <span class="token punctuation">&#123;</span>    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">isPalindrome</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>        <span class="token keyword">if</span> <span class="token punctuation">(</span>x <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token operator">||</span> <span class="token punctuation">(</span>x <span class="token operator">%</span> <span class="token number">10</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> x <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>            <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>        <span class="token punctuation">&#125;</span>        <span class="token keyword">int</span> len <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>        <span class="token keyword">int</span> y <span class="token operator">=</span> x<span class="token punctuation">;</span>        <span class="token keyword">while</span> <span class="token punctuation">(</span>y <span class="token operator">>=</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>            len <span class="token operator">*=</span> <span class="token number">10</span><span class="token punctuation">;</span>            y <span class="token operator">/=</span> <span class="token number">10</span><span class="token punctuation">;</span>        <span class="token punctuation">&#125;</span>        y <span class="token operator">=</span> x<span class="token punctuation">;</span>        <span class="token keyword">while</span> <span class="token punctuation">(</span>y <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>            <span class="token keyword">if</span> <span class="token punctuation">(</span>y <span class="token operator">/</span> len <span class="token operator">!=</span> y <span class="token operator">%</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>                <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>            <span class="token punctuation">&#125;</span>            y <span class="token operator">=</span> <span class="token punctuation">(</span>y <span class="token operator">%</span> len<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">10</span><span class="token punctuation">;</span>            len <span class="token operator">/=</span> <span class="token number">100</span><span class="token punctuation">;</span>        <span class="token punctuation">&#125;</span>        <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>    <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><strong>思路3代码</strong></p><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Solution3</span> <span class="token punctuation">&#123;</span>    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">isPalindrome</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>        <span class="token keyword">if</span> <span class="token punctuation">(</span>x <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token operator">||</span> <span class="token punctuation">(</span>x <span class="token operator">%</span> <span class="token number">10</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> x <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>            <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>        <span class="token punctuation">&#125;</span>        <span class="token keyword">int</span> rightHalf <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>        <span class="token keyword">int</span> y <span class="token operator">=</span> x<span class="token punctuation">;</span>        <span class="token keyword">while</span> <span class="token punctuation">(</span>y <span class="token operator">></span> rightHalf<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>            rightHalf <span class="token operator">=</span> rightHalf <span class="token operator">*</span> <span class="token number">10</span> <span class="token operator">+</span> y <span class="token operator">%</span> <span class="token number">10</span><span class="token punctuation">;</span>            y <span class="token operator">/=</span> <span class="token number">10</span><span class="token punctuation">;</span>        <span class="token punctuation">&#125;</span>        <span class="token comment">// 前者是偶数位数，后者是奇数位数</span>        <span class="token keyword">return</span> y <span class="token operator">==</span> rightHalf <span class="token operator">||</span> y <span class="token operator">==</span> rightHalf <span class="token operator">/</span> <span class="token number">10</span><span class="token punctuation">;</span>    <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;给定一个整数 x ，如果 x 是一个回文整数，返回 true ；否则，返回 false 。&lt;/li&gt;
+&lt;li&gt;回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。&lt;/li&gt;
+&lt;li&gt;进阶：不将整数转为字符串来解决这个问题&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&quot;line-numbers language-bash&quot; data-language=&quot;bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;example
+input  &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;121&lt;/span&gt;
+output &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;
+input  &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; -121
+output &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;</summary>
+    
+    
+    
+    <category term="LeetCode" scheme="https://hexo.li98.cn/categories/LeetCode/"/>
+    
+    <category term="Tecent50" scheme="https://hexo.li98.cn/categories/LeetCode/Tecent50/"/>
+    
+    
+    <category term="Java" scheme="https://hexo.li98.cn/tags/Java/"/>
+    
+    <category term="LeetCode" scheme="https://hexo.li98.cn/tags/LeetCode/"/>
+    
+    <category term="字符串" scheme="https://hexo.li98.cn/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    
+    <category term="数学" scheme="https://hexo.li98.cn/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+    <category term="回文" scheme="https://hexo.li98.cn/tags/%E5%9B%9E%E6%96%87/"/>
+    
+  </entry>
   
   <entry>
     <title>Python使用Pandas计算相关系数</title>
@@ -181,9 +221,9 @@ output &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; &lt
     
     <category term="LeetCode" scheme="https://hexo.li98.cn/tags/LeetCode/"/>
     
-    <category term="DFS" scheme="https://hexo.li98.cn/tags/DFS/"/>
-    
     <category term="队列" scheme="https://hexo.li98.cn/tags/%E9%98%9F%E5%88%97/"/>
+    
+    <category term="DFS" scheme="https://hexo.li98.cn/tags/DFS/"/>
     
     <category term="栈" scheme="https://hexo.li98.cn/tags/%E6%A0%88/"/>
     
@@ -223,11 +263,11 @@ output &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; &lt
     
     <category term="递归" scheme="https://hexo.li98.cn/tags/%E9%80%92%E5%BD%92/"/>
     
+    <category term="树" scheme="https://hexo.li98.cn/tags/%E6%A0%91/"/>
+    
     <category term="二叉树" scheme="https://hexo.li98.cn/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     
     <category term="DFS" scheme="https://hexo.li98.cn/tags/DFS/"/>
-    
-    <category term="树" scheme="https://hexo.li98.cn/tags/%E6%A0%91/"/>
     
   </entry>
   
@@ -265,9 +305,9 @@ output &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; &lt
     
     <category term="LeetCode" scheme="https://hexo.li98.cn/tags/LeetCode/"/>
     
-    <category term="二叉树" scheme="https://hexo.li98.cn/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
-    
     <category term="树" scheme="https://hexo.li98.cn/tags/%E6%A0%91/"/>
+    
+    <category term="二叉树" scheme="https://hexo.li98.cn/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     
     <category term="BFS" scheme="https://hexo.li98.cn/tags/BFS/"/>
     
@@ -307,9 +347,9 @@ output &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; &lt
     
     <category term="LeetCode" scheme="https://hexo.li98.cn/tags/LeetCode/"/>
     
-    <category term="中序遍历" scheme="https://hexo.li98.cn/tags/%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86/"/>
-    
     <category term="二叉树" scheme="https://hexo.li98.cn/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
+    
+    <category term="中序遍历" scheme="https://hexo.li98.cn/tags/%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86/"/>
     
     <category term="二叉搜索树" scheme="https://hexo.li98.cn/tags/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/"/>
     
@@ -666,9 +706,9 @@ module &lt;span class=&quot;token string&quot;&gt;&#39;d2lzh_pytorch&#39;&lt;/sp
     
     <category term="PyTorch" scheme="https://hexo.li98.cn/tags/PyTorch/"/>
     
-    <category term="Python" scheme="https://hexo.li98.cn/tags/Python/"/>
-    
     <category term="Jupyter" scheme="https://hexo.li98.cn/tags/Jupyter/"/>
+    
+    <category term="Python" scheme="https://hexo.li98.cn/tags/Python/"/>
     
   </entry>
   
@@ -690,41 +730,6 @@ module &lt;span class=&quot;token string&quot;&gt;&#39;d2lzh_pytorch&#39;&lt;/sp
     
     
     <category term="其他" scheme="https://hexo.li98.cn/tags/%E5%85%B6%E4%BB%96/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>win10使用Anaconda创建可使用PyTorch虚拟环境</title>
-    <link href="https://hexo.li98.cn/archives/2abdf615.html"/>
-    <id>https://hexo.li98.cn/archives/2abdf615.html</id>
-    <published>2021-12-08T14:00:00.000Z</published>
-    <updated>2021-12-21T14:40:39.280Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="1、安装Anaconda"><a href="#1、安装Anaconda" class="headerlink" title="1、安装Anaconda"></a>1、安装Anaconda</h2><ul><li>可参考<a href="https://blog.csdn.net/flower_48237/article/details/121798811">安装Anaconda+常用的conda命令+Anaconda换源+安装Jupyter</a></li></ul><h2 id="2、创建虚拟环境"><a href="#2、创建虚拟环境" class="headerlink" title="2、创建虚拟环境"></a>2、创建虚拟环境</h2><ul><li>win10系统，进入cmd</li></ul><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 创建名为pytorch的虚拟环境</span>conda create --name pytorch <span class="token assign-left variable">python</span><span class="token operator">=</span><span class="token number">3.6</span><span class="token comment"># 激活名为pytorch的虚拟环境</span>conda activate pytorch<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><h2 id="安装PyTorch包"><a href="#安装PyTorch包" class="headerlink" title="安装PyTorch包"></a>安装PyTorch包</h2><span id="more"></span><ul><li><p>进入<a href="https://pytorch.org/get-started/locally/">PyTorch官网</a>，根据提示选择适合自己电脑配置的安装命令，如图，蓝色不跟需要注意选择<img src="https://img-blog.csdnimg.cn/0e5dd92a795040e0a6daab5dc56ac70f.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbGlxOTgy,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://img-blog.csdnimg.cn/0e5dd92a795040e0a6daab5dc56ac70f.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbGlxOTgy,size_20,color_FFFFFF,t_70,g_se,x_16" class="lozad post-image"></p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 在pytorch虚拟环境中使用官网提示的命令安装PyTorch，以仅使用cpu为例：</span>conda <span class="token function">install</span> pytorch torchvision torchaudio cpuonly -c pytorch<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li><li><p>命令行输入<code>python</code>进入python，并输入下面代码可查看pytorch是否安装成功：</p></li></ul><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> torch<span class="token keyword">import</span> torchvision<span class="token keyword">print</span><span class="token punctuation">(</span>torch<span class="token punctuation">.</span>__version<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><ul><li>安装成功提示如图 <img src="https://img-blog.csdnimg.cn/2a045f0e3c5245c4924820c79ee3b50b.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbGlxOTgy,size_20,color_FFFFFF,t_70,g_se,x_16" alt="\[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-luSHFDuQ-1638969271298)(C:\Users\Q\AppData\Roaming\Typora\typora-user-images\image-20211208164303307.png)\]" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://img-blog.csdnimg.cn/2a045f0e3c5245c4924820c79ee3b50b.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbGlxOTgy,size_20,color_FFFFFF,t_70,g_se,x_16" class="lozad post-image"></li></ul>]]></content>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;1、安装Anaconda&quot;&gt;&lt;a href=&quot;#1、安装Anaconda&quot; class=&quot;headerlink&quot; title=&quot;1、安装Anaconda&quot;&gt;&lt;/a&gt;1、安装Anaconda&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;可参考&lt;a href=&quot;https://blog.csdn.net/flower_48237/article/details/121798811&quot;&gt;安装Anaconda+常用的conda命令+Anaconda换源+安装Jupyter&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;2、创建虚拟环境&quot;&gt;&lt;a href=&quot;#2、创建虚拟环境&quot; class=&quot;headerlink&quot; title=&quot;2、创建虚拟环境&quot;&gt;&lt;/a&gt;2、创建虚拟环境&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;win10系统，进入cmd&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre class=&quot;line-numbers language-bash&quot; data-language=&quot;bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# 创建名为pytorch的虚拟环境&lt;/span&gt;
-conda create --name pytorch &lt;span class=&quot;token assign-left variable&quot;&gt;python&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;3.6&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;# 激活名为pytorch的虚拟环境&lt;/span&gt;
-conda activate pytorch&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&quot;安装PyTorch包&quot;&gt;&lt;a href=&quot;#安装PyTorch包&quot; class=&quot;headerlink&quot; title=&quot;安装PyTorch包&quot;&gt;&lt;/a&gt;安装PyTorch包&lt;/h2&gt;</summary>
-    
-    
-    
-    <category term="D2L" scheme="https://hexo.li98.cn/categories/D2L/"/>
-    
-    
-    <category term="深度学习" scheme="https://hexo.li98.cn/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    <category term="PyTorch" scheme="https://hexo.li98.cn/tags/PyTorch/"/>
-    
-    <category term="Python" scheme="https://hexo.li98.cn/tags/Python/"/>
     
   </entry>
   
