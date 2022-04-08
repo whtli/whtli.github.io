@@ -6,7 +6,7 @@
   <link href="https://hexo.li98.cn/atom.xml" rel="self"/>
   
   <link href="https://hexo.li98.cn/"/>
-  <updated>2022-04-06T13:53:40.878Z</updated>
+  <updated>2022-04-08T02:56:51.985Z</updated>
   <id>https://hexo.li98.cn/</id>
   
   <author>
@@ -15,6 +15,52 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode腾讯精选练习50题-292.Nim游戏</title>
+    <link href="https://hexo.li98.cn/archives/5b7d327e.html"/>
+    <id>https://hexo.li98.cn/archives/5b7d327e.html</id>
+    <published>2022-04-08T03:00:00.000Z</published>
+    <updated>2022-04-08T02:56:51.985Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><ul><li>两个人一起玩 Nim 游戏：</li><li>桌子上有一堆石头。你们轮流进行自己的回合， 你作为先手。</li><li>每一回合，轮到的人拿掉 1 - 3 块石头。拿掉最后一块石头的人就是获胜者。</li><li>假设你们每一步都是最优解。请编写一个函数，来判断你是否可以在给定石头数量为 n 的情况下赢得游戏。</li><li>如果可以赢，返回 true；否则，返回 false。</li></ul><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">exampleinput  <span class="token builtin class-name">:</span> n <span class="token operator">=</span> <span class="token number">4</span>output <span class="token builtin class-name">:</span> <span class="token boolean">false</span>note   <span class="token builtin class-name">:</span> <span class="token number">1</span>. 你移除1颗石头；你的朋友移走了3块石头，包括最后一块。你的朋友赢了。         <span class="token number">2</span>. 你移除2颗石头；你的朋友移走2块石头，包括最后一块。你的朋友赢了。         <span class="token number">3</span>. 你移走3颗石头；你的朋友移走了最后一块石头。你的朋友赢了。         <span class="token operator">=</span><span class="token operator">></span> 在所有结果中，你的朋友是赢家。input  <span class="token builtin class-name">:</span> n <span class="token operator">=</span> <span class="token number">1</span>output <span class="token builtin class-name">:</span> <span class="token boolean">true</span>note   <span class="token builtin class-name">:</span> 你移除1颗石头。你赢了。input  <span class="token builtin class-name">:</span> n <span class="token operator">=</span> <span class="token number">2</span>output <span class="token builtin class-name">:</span> <span class="token boolean">true</span>note   <span class="token builtin class-name">:</span> 你移除2个石头。你赢了。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><span id="more"></span><h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><ul><li>逐步增加石头数量来做分析</li><li>明确条件：你作为先手，你们每一步都是最优解（对于自己来说是最优解，目的是让对方输掉游戏）</li><li>1、石头数量在[1,3]之间，你可以直接取走所有的石头，你胜定。</li><li>2、石头数量恰好为 4 颗，参考 example 中的第一个例子，不论你取走几颗（1~3颗），按对自身最优解的原则，对手肯定会取走剩下的所有石头，对手胜定；<ul><li>同理，反过来思考，如果轮到对手时，只剩4颗石头，那不论对手取走几颗，按对自身最优解的原则，你肯定会取走剩下所有的石头，你胜定。</li></ul></li><li>3、石头数量在[5,7]之间，你如果想取胜，参考上一条的思路，就要保证让对手面临4颗石头（如，5颗的时候你取走1颗，7颗的时候你取走3颗）你胜定</li><li>4、石头数量恰好为 8 颗，参考上述分析1和分析2，不论你取走几颗（1~3颗），剩下的石头数量必然大于4，按对自身最优解的原则，对手只需要且肯定会让你下一次取的时候面对4颗石头，对手胜定。</li><li>5、拓展到[9,+∞)范围中，参考上述分析 1 — 4<ul><li>只要轮到你取的时候，面临的是 4的倍数 颗石头，不论你取几颗，按对自身最优解的原则，对手只需要让你接下来每一次都继续面临 4 或 4的倍数颗石头，对手胜定。</li><li>反之，只要你能让对方先面临 4的倍数 颗石头，你胜定。</li></ul></li><li>总结：在你先手的情况下，<ul><li>如果游戏开始的时候是 4 或 4的倍数 颗石头，不论你怎么取，输定。</li><li>如果游戏开始的时候不是 4 或 4的倍数 颗石头，一定可以做到在你取了之后，马上让对手面对 4 或 4 的倍数颗石头，胜定。</li></ul></li></ul><h3 id="代码（Java）"><a href="#代码（Java）" class="headerlink" title="代码（Java）"></a>代码（Java）</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">canWinNim</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>        <span class="token comment">// 代码只需要判断先手面对的石头数，是不是4的倍数就好了。</span>        <span class="token comment">// 不是则返回 true，是则返回 false。</span>        <span class="token keyword">return</span> <span class="token punctuation">(</span>n <span class="token operator">%</span> <span class="token number">4</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">;</span>    <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;两个人一起玩 Nim 游戏：&lt;/li&gt;
+&lt;li&gt;桌子上有一堆石头。你们轮流进行自己的回合， 你作为先手。&lt;/li&gt;
+&lt;li&gt;每一回合，轮到的人拿掉 1 - 3 块石头。拿掉最后一块石头的人就是获胜者。&lt;/li&gt;
+&lt;li&gt;假设你们每一步都是最优解。请编写一个函数，来判断你是否可以在给定石头数量为 n 的情况下赢得游戏。&lt;/li&gt;
+&lt;li&gt;如果可以赢，返回 true；否则，返回 false。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&quot;line-numbers language-bash&quot; data-language=&quot;bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;example
+input  &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; n &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;
+output &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;
+note   &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;. 你移除1颗石头；你的朋友移走了3块石头，包括最后一块。你的朋友赢了。
+         &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;. 你移除2颗石头；你的朋友移走2块石头，包括最后一块。你的朋友赢了。
+         &lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;. 你移走3颗石头；你的朋友移走了最后一块石头。你的朋友赢了。
+         &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; 在所有结果中，你的朋友是赢家。
+input  &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; n &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;
+output &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;
+note   &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; 你移除1颗石头。你赢了。
+input  &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; n &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;
+output &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;
+note   &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; 你移除2个石头。你赢了。&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;</summary>
+    
+    
+    
+    <category term="LeetCode" scheme="https://hexo.li98.cn/categories/LeetCode/"/>
+    
+    
+    <category term="Java" scheme="https://hexo.li98.cn/tags/Java/"/>
+    
+    <category term="LeetCode" scheme="https://hexo.li98.cn/tags/LeetCode/"/>
+    
+    <category term="数学" scheme="https://hexo.li98.cn/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+    <category term="博弈" scheme="https://hexo.li98.cn/tags/%E5%8D%9A%E5%BC%88/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode腾讯精选练习50题-009.回文数</title>
@@ -76,9 +122,9 @@ output &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; &lt
     <category term="其他" scheme="https://hexo.li98.cn/categories/%E5%85%B6%E4%BB%96/"/>
     
     
-    <category term="其他" scheme="https://hexo.li98.cn/tags/%E5%85%B6%E4%BB%96/"/>
-    
     <category term="Python" scheme="https://hexo.li98.cn/tags/Python/"/>
+    
+    <category term="其他" scheme="https://hexo.li98.cn/tags/%E5%85%B6%E4%BB%96/"/>
     
   </entry>
   
@@ -261,11 +307,11 @@ output &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; &lt
     
     <category term="递归" scheme="https://hexo.li98.cn/tags/%E9%80%92%E5%BD%92/"/>
     
-    <category term="树" scheme="https://hexo.li98.cn/tags/%E6%A0%91/"/>
-    
     <category term="二叉树" scheme="https://hexo.li98.cn/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     
     <category term="DFS" scheme="https://hexo.li98.cn/tags/DFS/"/>
+    
+    <category term="树" scheme="https://hexo.li98.cn/tags/%E6%A0%91/"/>
     
   </entry>
   
@@ -303,9 +349,9 @@ output &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; &lt
     
     <category term="LeetCode" scheme="https://hexo.li98.cn/tags/LeetCode/"/>
     
-    <category term="树" scheme="https://hexo.li98.cn/tags/%E6%A0%91/"/>
-    
     <category term="二叉树" scheme="https://hexo.li98.cn/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
+    
+    <category term="树" scheme="https://hexo.li98.cn/tags/%E6%A0%91/"/>
     
     <category term="BFS" scheme="https://hexo.li98.cn/tags/BFS/"/>
     
@@ -700,34 +746,13 @@ module &lt;span class=&quot;token string&quot;&gt;&#39;d2lzh_pytorch&#39;&lt;/sp
     <category term="D2L" scheme="https://hexo.li98.cn/categories/D2L/"/>
     
     
-    <category term="Python" scheme="https://hexo.li98.cn/tags/Python/"/>
-    
     <category term="深度学习" scheme="https://hexo.li98.cn/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
     <category term="PyTorch" scheme="https://hexo.li98.cn/tags/PyTorch/"/>
     
     <category term="Jupyter" scheme="https://hexo.li98.cn/tags/Jupyter/"/>
     
-  </entry>
-  
-  <entry>
-    <title>Typora本地图片上传到图床</title>
-    <link href="https://hexo.li98.cn/archives/e43ae7cd.html"/>
-    <id>https://hexo.li98.cn/archives/e43ae7cd.html</id>
-    <published>2021-12-09T12:00:00.000Z</published>
-    <updated>2021-12-21T14:40:39.272Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h3><p>使用Typora写文档时上传图片的路径默认是本地磁盘的路径。导致文档上传到csdn等博客网站时，出现图片失效无法识别的问题。<br>设置Typora使用PicGo-Core将本地图片上传到图床，可以解决此问题（<a href="https://picgo.github.io/PicGo-Core-Doc/zh/guide/">PicGo-Core</a>，<a href="https://support.typora.io/Upload-Image/#picgo-core-command-line-opensource">Typora Upload Images</a>）。</p><span id="more"></span><p>步骤如下：</p><h3 id="1-修改插入图片设置"><a href="#1-修改插入图片设置" class="headerlink" title="1.修改插入图片设置"></a>1.修改插入图片设置</h3><ul><li>进入“文件 –&gt; 偏好设置 –&gt; 图像 –&gt;”</li><li>将 <strong>插入图片时的操作</strong> 修改为“==上传图片==”<img src="https://img-blog.csdnimg.cn/img_convert/bd8818aad79d16b3dadbdc422238ccf9.png" alt="image-20211209165704146" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://img-blog.csdnimg.cn/img_convert/bd8818aad79d16b3dadbdc422238ccf9.png" class="lozad post-image"></li></ul><h3 id="2-下载PicGo-Core"><a href="#2-下载PicGo-Core" class="headerlink" title="2.下载PicGo-Core"></a>2.下载PicGo-Core</h3><h4 id="2-1-选择上传服务"><a href="#2-1-选择上传服务" class="headerlink" title="2.1 选择上传服务"></a>2.1 选择上传服务</h4><ul><li>在偏好设置——图像中，选择上传服务为“==PicGo-Core(command line)==”<br><img src="https://img-blog.csdnimg.cn/img_convert/2041698e0d1741bb0d801a4401809123.png" alt="image-20211209165735991" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://img-blog.csdnimg.cn/img_convert/2041698e0d1741bb0d801a4401809123.png" class="lozad post-image"><h4 id="2-2-点击下载或更新"><a href="#2-2-点击下载或更新" class="headerlink" title="2.2 点击下载或更新"></a>2.2 点击下载或更新</h4></li><li>系统检测后会提示是否同意下载，同意下载即可<br><img src="https://img-blog.csdnimg.cn/img_convert/0bffb31e4ad60e8c2ad55749b60cae34.png" alt="image-20211209165926187" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://img-blog.csdnimg.cn/img_convert/0bffb31e4ad60e8c2ad55749b60cae34.png" class="lozad post-image"><h3 id="3-配置SM-MS"><a href="#3-配置SM-MS" class="headerlink" title="3.配置SM.MS"></a>3.配置SM.MS</h3><h4 id="3-1-在smms官网注册免费账号"><a href="#3-1-在smms官网注册免费账号" class="headerlink" title="3.1 在smms官网注册免费账号"></a>3.1 在smms官网注册免费账号</h4></li><li><a href="https://sm.ms/home/">smms官网链接</a></li><li>注册免费账号，会有5G免费内存<br><img src="https://img-blog.csdnimg.cn/img_convert/5eabcec973a5e253b7bb715225ba4a53.png" alt="image-20211209170201012" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://img-blog.csdnimg.cn/img_convert/5eabcec973a5e253b7bb715225ba4a53.png" class="lozad post-image"></li></ul><h4 id="3-2-获取token"><a href="#3-2-获取token" class="headerlink" title="3.2 获取token"></a>3.2 获取token</h4><ul><li>从dashboard的api token中复制token<img src="https://img-blog.csdnimg.cn/img_convert/b394a01e1f850d18761b44c3db747e50.png" alt="image-20211209170306173" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://img-blog.csdnimg.cn/img_convert/b394a01e1f850d18761b44c3db747e50.png" class="lozad post-image"><br><img src="https://img-blog.csdnimg.cn/img_convert/69edd6085a844eace1848d50052ac2ad.png" alt="image-20211209170408404" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://img-blog.csdnimg.cn/img_convert/69edd6085a844eace1848d50052ac2ad.png" class="lozad post-image"><h3 id="4-修改PicGo-Core配置文件"><a href="#4-修改PicGo-Core配置文件" class="headerlink" title="4.修改PicGo-Core配置文件"></a>4.修改PicGo-Core配置文件</h3></li></ul><h4 id="4-1-打开配置文件"><a href="#4-1-打开配置文件" class="headerlink" title="4.1 打开配置文件"></a>4.1 打开配置文件</h4><ul><li><p>图像设置界面“==打开配置文件==”<img src="https://img-blog.csdnimg.cn/img_convert/be64139ac3895414027733c778372d2d.png" alt="image-20211209170443384" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://img-blog.csdnimg.cn/img_convert/be64139ac3895414027733c778372d2d.png" class="lozad post-image"></p><h4 id="4-2-填写token"><a href="#4-2-填写token" class="headerlink" title="4.2 填写token"></a>4.2 填写token</h4></li><li><p>将以下代码和刚才复制的token填写到配置文件中</p><pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>  <span class="token property">"picBed"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>    <span class="token property">"current"</span><span class="token operator">:</span> <span class="token string">"smms"</span><span class="token punctuation">,</span>    <span class="token property">"smms"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>      <span class="token property">"token"</span><span class="token operator">:</span> <span class="token string">"刚才复制的token"</span>    <span class="token punctuation">&#125;</span>  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>  <span class="token property">"picgoPlugins"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li></ul><h3 id="5-图片上传测试"><a href="#5-图片上传测试" class="headerlink" title="5.图片上传测试"></a>5.图片上传测试</h3><ul><li>在Typora的操作界面新建.md文件并粘贴图片测试是否能够上传</li><li>本文所有图片均为使用PicGo-Core上传的</li></ul>]]></content>
-    
-    
-    <summary type="html">&lt;h3 id=&quot;问题：&quot;&gt;&lt;a href=&quot;#问题：&quot; class=&quot;headerlink&quot; title=&quot;问题：&quot;&gt;&lt;/a&gt;问题：&lt;/h3&gt;&lt;p&gt;使用Typora写文档时上传图片的路径默认是本地磁盘的路径。导致文档上传到csdn等博客网站时，出现图片失效无法识别的问题。&lt;br&gt;设置Typora使用PicGo-Core将本地图片上传到图床，可以解决此问题（&lt;a href=&quot;https://picgo.github.io/PicGo-Core-Doc/zh/guide/&quot;&gt;PicGo-Core&lt;/a&gt;，&lt;a href=&quot;https://support.typora.io/Upload-Image/#picgo-core-command-line-opensource&quot;&gt;Typora Upload Images&lt;/a&gt;）。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="其他" scheme="https://hexo.li98.cn/categories/%E5%85%B6%E4%BB%96/"/>
-    
-    
-    <category term="其他" scheme="https://hexo.li98.cn/tags/%E5%85%B6%E4%BB%96/"/>
+    <category term="Python" scheme="https://hexo.li98.cn/tags/Python/"/>
     
   </entry>
   

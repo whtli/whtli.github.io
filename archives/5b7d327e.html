@@ -18,17 +18,17 @@
   <link 
     rel="icon" 
     href="/img/q.png">
-  <title>LeetCode精选TOP面试题015.三数之和</title>
+  <title>LeetCode腾讯精选练习50题-292.Nim游戏</title>
   
     
       <meta 
         property="og:title" 
-        content="LeetCode精选TOP面试题015.三数之和">
+        content="LeetCode腾讯精选练习50题-292.Nim游戏">
     
     
       <meta 
         property="og:url" 
-        content="https://hexo.li98.cn/archives/d4c92f69.html">
+        content="https://hexo.li98.cn/archives/5b7d327e.html">
     
     
       <meta 
@@ -39,19 +39,25 @@
       <meta 
         property="og:img" 
         content="&lt;h3 id=&#34;题目描述&#34;&gt;&lt;a href=&#34;#题目描述&#34; class=&#34;headerlink&#34; title=&#34;题目描述&#34;&gt;&lt;/a&gt;题目描述&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;给定一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？&lt;/li&gt;
-&lt;li&gt;找出所有和为 0 且不重复的三元组。&lt;/li&gt;
-&lt;li&gt;0 &amp;lt;= nums.length &amp;lt;= 3000&lt;/li&gt;
-&lt;li&gt;-105 &amp;lt;= nums[i] &amp;lt;= 105&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;example
-input  &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; nums &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;-1,0,1,2,-1,-4&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;
-output &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;-1,-1,2&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;,&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;-1,0,1&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;
-input  &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; nums &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;
-output &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;
-input  &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; nums &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;
-output &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-
-&lt;/li&gt;
-&lt;/ul&gt;">
+&lt;li&gt;两个人一起玩 Nim 游戏：&lt;/li&gt;
+&lt;li&gt;桌子上有一堆石头。你们轮流进行自己的回合， 你作为先手。&lt;/li&gt;
+&lt;li&gt;每一回合，轮到的人拿掉 1 - 3 块石头。拿掉最后一块石头的人就是获胜者。&lt;/li&gt;
+&lt;li&gt;假设你们每一步都是最优解。请编写一个函数，来判断你是否可以在给定石头数量为 n 的情况下赢得游戏。&lt;/li&gt;
+&lt;li&gt;如果可以赢，返回 true；否则，返回 false。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;example
+input  &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; n &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;4&lt;/span&gt;
+output &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token boolean&#34;&gt;false&lt;/span&gt;
+note   &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;. 你移除1颗石头；你的朋友移走了3块石头，包括最后一块。你的朋友赢了。
+         &lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;. 你移除2颗石头；你的朋友移走2块石头，包括最后一块。你的朋友赢了。
+         &lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt;. 你移走3颗石头；你的朋友移走了最后一块石头。你的朋友赢了。
+         &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt; 在所有结果中，你的朋友是赢家。
+input  &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; n &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;
+output &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token boolean&#34;&gt;true&lt;/span&gt;
+note   &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; 你移除1颗石头。你赢了。
+input  &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; n &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;
+output &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token boolean&#34;&gt;true&lt;/span&gt;
+note   &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; 你移除2个石头。你赢了。&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;">
     
     
       <meta 
@@ -59,10 +65,10 @@ output &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; &lt;s
         content="article">
       <meta 
         property="og:article:published_time" 
-        content="2021-11-18">
+        content="2022-04-08">
       <meta 
         property="og:article:modified_time" 
-        content="2022-04-06">
+        content="2022-04-08">
       <meta 
         property="og:article:author" 
         content="李强">
@@ -78,19 +84,11 @@ output &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; &lt;s
         
           <meta 
             property="og:article:tag" 
-            content="面试">
+            content="数学">
         
           <meta 
             property="og:article:tag" 
-            content="数组">
-        
-          <meta 
-            property="og:article:tag" 
-            content="排序">
-        
-          <meta 
-            property="og:article:tag" 
-            content="双指针">
+            content="博弈">
         
       
     
@@ -309,16 +307,16 @@ output &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; &lt;s
 <article class="card card-content">
   <header>
     <h1 class="post-title">
-      LeetCode精选TOP面试题015.三数之和
+      LeetCode腾讯精选练习50题-292.Nim游戏
     </h1>
   </header>
   <div class="post-meta post-show-meta">
-    <time datetime="2021-11-18T12:33:17.234Z">
+    <time datetime="2022-04-08T03:00:00.000Z">
       <i 
         class="iconfont icon-calendar" 
         style="margin-right: 2px;">
       </i>
-      <span>2021-11-18</span>
+      <span>2022-04-08</span>
     </time>
     
       <span class="dot"></span>
@@ -332,7 +330,7 @@ output &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; &lt;s
     
     
       <span class="dot"></span>
-      <span>1.1k 字</span>
+      <span>843 字</span>
     
   </div>
   
@@ -365,36 +363,18 @@ output &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; &lt;s
             <span class="dot"></span>
           
           <a 
-            href="/tags/%E9%9D%A2%E8%AF%95/" 
+            href="/tags/%E6%95%B0%E5%AD%A6/" 
             class="post-meta-link">
-            面试
+            数学
           </a>
         
           
             <span class="dot"></span>
           
           <a 
-            href="/tags/%E6%95%B0%E7%BB%84/" 
+            href="/tags/%E5%8D%9A%E5%BC%88/" 
             class="post-meta-link">
-            数组
-          </a>
-        
-          
-            <span class="dot"></span>
-          
-          <a 
-            href="/tags/%E6%8E%92%E5%BA%8F/" 
-            class="post-meta-link">
-            排序
-          </a>
-        
-          
-            <span class="dot"></span>
-          
-          <a 
-            href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/" 
-            class="post-meta-link">
-            双指针
+            博弈
           </a>
         
       </div>
@@ -405,105 +385,56 @@ output &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; &lt;s
     id="section" 
     class="post-content">
     <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><ul>
-<li>给定一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？</li>
-<li>找出所有和为 0 且不重复的三元组。</li>
-<li>0 &lt;= nums.length &lt;= 3000</li>
-<li>-105 &lt;= nums[i] &lt;= 105<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">example
-input  <span class="token builtin class-name">:</span> nums <span class="token operator">=</span> <span class="token punctuation">[</span>-1,0,1,2,-1,-4<span class="token punctuation">]</span>
-output <span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token punctuation">[</span>-1,-1,2<span class="token punctuation">]</span>,<span class="token punctuation">[</span>-1,0,1<span class="token punctuation">]</span><span class="token punctuation">]</span>
-input  <span class="token builtin class-name">:</span> nums <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-output <span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-input  <span class="token builtin class-name">:</span> nums <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-output <span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-</li>
+<li>两个人一起玩 Nim 游戏：</li>
+<li>桌子上有一堆石头。你们轮流进行自己的回合， 你作为先手。</li>
+<li>每一回合，轮到的人拿掉 1 - 3 块石头。拿掉最后一块石头的人就是获胜者。</li>
+<li>假设你们每一步都是最优解。请编写一个函数，来判断你是否可以在给定石头数量为 n 的情况下赢得游戏。</li>
+<li>如果可以赢，返回 true；否则，返回 false。</li>
 </ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">example
+input  <span class="token builtin class-name">:</span> n <span class="token operator">=</span> <span class="token number">4</span>
+output <span class="token builtin class-name">:</span> <span class="token boolean">false</span>
+note   <span class="token builtin class-name">:</span> <span class="token number">1</span>. 你移除1颗石头；你的朋友移走了3块石头，包括最后一块。你的朋友赢了。
+         <span class="token number">2</span>. 你移除2颗石头；你的朋友移走2块石头，包括最后一块。你的朋友赢了。
+         <span class="token number">3</span>. 你移走3颗石头；你的朋友移走了最后一块石头。你的朋友赢了。
+         <span class="token operator">=</span><span class="token operator">></span> 在所有结果中，你的朋友是赢家。
+input  <span class="token builtin class-name">:</span> n <span class="token operator">=</span> <span class="token number">1</span>
+output <span class="token builtin class-name">:</span> <span class="token boolean">true</span>
+note   <span class="token builtin class-name">:</span> 你移除1颗石头。你赢了。
+input  <span class="token builtin class-name">:</span> n <span class="token operator">=</span> <span class="token number">2</span>
+output <span class="token builtin class-name">:</span> <span class="token boolean">true</span>
+note   <span class="token builtin class-name">:</span> 你移除2个石头。你赢了。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <span id="more"></span>
 
-<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p><strong>思路： 排序+双指针</strong></p>
-<ul>
-<li>若数组为空，返回空列表</li>
-<li>将数组进行排序</li>
-<li>若数组长度小于3，不满足题意，返回空列表</li>
-<li>遍历数组查找是否存在三数之和为 0 ，外层循环<ul>
-<li>若当前元素nums[i] &gt; 0，说明该元素和其后任意两个元素之和肯定不可能为0，则直接返回当前结果列表即可；之所以不使用nums[i] &gt;= 0作为返回条件，是因为存在数组为{0,0,0}的情况也满足题意，若添加了等号为返回条件，则会返回空，不满足题意</li>
-<li>若当前访问元素和其前一个元素值相同，不进行求和判断，防止出现重复的结果</li>
-<li>固定i，令指针left和指针right移动，求和并判断；其中left初始化为i + 1，right初始化为length - 1；开始内层循环</li>
-<li>内层循环以 left &lt; right 为结束条件，若相等，则说明访问到了同一个元素，不满足三数的要求，可作为循环结束的条件<ul>
-<li>三数之和为0，将这三个数组成的列表添加进结果列表，且移动左右指针；然后判断左右指针移动后访问的元素值，是否和其移动前的元素值相等，相等则继续移动，防止重复结果</li>
-<li>三数之和 &gt; 0，右指针左移，使下一次求和结果变小，向0趋近</li>
-<li>三数之和 &lt; 0，左指针右移，使下一次求和结果变大，向0趋近</li>
+<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><ul>
+<li>逐步增加石头数量来做分析</li>
+<li>明确条件：你作为先手，你们每一步都是最优解（对于自己来说是最优解，目的是让对方输掉游戏）</li>
+<li>1、石头数量在[1,3]之间，你可以直接取走所有的石头，你胜定。</li>
+<li>2、石头数量恰好为 4 颗，参考 example 中的第一个例子，不论你取走几颗（1~3颗），按对自身最优解的原则，对手肯定会取走剩下的所有石头，对手胜定；<ul>
+<li>同理，反过来思考，如果轮到对手时，只剩4颗石头，那不论对手取走几颗，按对自身最优解的原则，你肯定会取走剩下所有的石头，你胜定。</li>
+</ul>
+</li>
+<li>3、石头数量在[5,7]之间，你如果想取胜，参考上一条的思路，就要保证让对手面临4颗石头（如，5颗的时候你取走1颗，7颗的时候你取走3颗）你胜定</li>
+<li>4、石头数量恰好为 8 颗，参考上述分析1和分析2，不论你取走几颗（1~3颗），剩下的石头数量必然大于4，按对自身最优解的原则，对手只需要且肯定会让你下一次取的时候面对4颗石头，对手胜定。</li>
+<li>5、拓展到[9,+∞)范围中，参考上述分析 1 — 4<ul>
+<li>只要轮到你取的时候，面临的是 4的倍数 颗石头，不论你取几颗，按对自身最优解的原则，对手只需要让你接下来每一次都继续面临 4 或 4的倍数颗石头，对手胜定。</li>
+<li>反之，只要你能让对方先面临 4的倍数 颗石头，你胜定。</li>
+</ul>
+</li>
+<li>总结：在你先手的情况下，<ul>
+<li>如果游戏开始的时候是 4 或 4的倍数 颗石头，不论你怎么取，输定。</li>
+<li>如果游戏开始的时候不是 4 或 4的倍数 颗石头，一定可以做到在你取了之后，马上让对手面对 4 或 4 的倍数颗石头，胜定。</li>
 </ul>
 </li>
 </ul>
-</li>
-<li>时间复杂度：O(n^2)<br>  排序 O(N logN)，<br>  遍历数组 O(n)，<br>  双指针遍历 O(n)，<br>  总体 O(N logN)+O(n)∗O(n)，O(n^2)</li>
-<li>空间复杂度：O(1)</li>
-</ul>
-<h3 id="代码（Java）"><a href="#代码（Java）" class="headerlink" title="代码（Java）"></a>代码（Java）</h3><p><strong>代码</strong></p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">public</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">List</span><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">></span><span class="token punctuation">></span></span> <span class="token function">threeSum</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> nums<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">List</span><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">></span><span class="token punctuation">></span></span> lists <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment">// 数组为空，返回空列表</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>nums <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-            <span class="token keyword">return</span> lists<span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span>
-        <span class="token comment">// 数组排序</span>
-        <span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment">// 数组长度小于3，不满足题意，返回空列表</span>
-        <span class="token keyword">int</span> length <span class="token operator">=</span> nums<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>nums<span class="token punctuation">.</span>length <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-            <span class="token keyword">return</span> lists<span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span>
-
-        <span class="token comment">// 遍历数组查找是否存在三数之和为0</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-            <span class="token comment">// 当前元素大于零，说明该元素和其后任意两个元素之和肯定不可能为0，则直接返回当前结果即可</span>
-            <span class="token comment">// 之所以不使用nums[i] >= 0作为返回条件，是因为存在数组为&#123;0,0,0&#125;的情况也满足题意，若添加了等号为返回条件，则会返回空，不满足题意</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-                <span class="token keyword">return</span> lists<span class="token punctuation">;</span>
-            <span class="token punctuation">&#125;</span>
-            <span class="token comment">// 当前访问元素和其前一个元素值相同，不进行求和判断，防止出现重复的结果</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">></span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> nums<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-                <span class="token keyword">continue</span><span class="token punctuation">;</span>
-            <span class="token punctuation">&#125;</span>
-            <span class="token comment">// 固定i，令指针left和指针right移动，求和并判断；其中left初始化为i + 1，right初始化为length - 1</span>
-            <span class="token keyword">int</span> left <span class="token operator">=</span> i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
-            <span class="token keyword">int</span> right <span class="token operator">=</span> length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
-            <span class="token comment">// left 和 right 相等时，访问到了同一个元素，不满足三数的要求，可作为循环结束的条件</span>
-            <span class="token keyword">while</span> <span class="token punctuation">(</span>left <span class="token operator">&lt;</span> right<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-                <span class="token keyword">int</span> sum <span class="token operator">=</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+</span> nums<span class="token punctuation">[</span>left<span class="token punctuation">]</span> <span class="token operator">+</span> nums<span class="token punctuation">[</span>right<span class="token punctuation">]</span><span class="token punctuation">;</span>
-                <span class="token keyword">if</span> <span class="token punctuation">(</span>sum <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-                    <span class="token comment">// 三数之和为0</span>
-                    <span class="token comment">// 将这三个数组成的列表添加进结果列表</span>
-                    <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">></span></span> tmp <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                    tmp<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                    tmp<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>nums<span class="token punctuation">[</span>left<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                    tmp<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>nums<span class="token punctuation">[</span>right<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                    lists<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>tmp<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                    <span class="token comment">// 左右指针移动</span>
-                    left<span class="token operator">++</span><span class="token punctuation">;</span>
-                    right<span class="token operator">--</span><span class="token punctuation">;</span>
-                    <span class="token comment">// 判断左右指针移动后访问的元素值，是否和其移动前的元素值相等，相等则继续移动，防止重复结果</span>
-                    <span class="token keyword">while</span> <span class="token punctuation">(</span>left <span class="token operator">&lt;=</span> right <span class="token operator">&amp;&amp;</span> nums<span class="token punctuation">[</span>left<span class="token punctuation">]</span> <span class="token operator">==</span> nums<span class="token punctuation">[</span>left <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-                        left<span class="token operator">++</span><span class="token punctuation">;</span>
-                    <span class="token punctuation">&#125;</span>
-                    <span class="token keyword">while</span> <span class="token punctuation">(</span>right <span class="token operator">>=</span> left <span class="token operator">&amp;&amp;</span> nums<span class="token punctuation">[</span>right<span class="token punctuation">]</span> <span class="token operator">==</span> nums<span class="token punctuation">[</span>right <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-                        right<span class="token operator">--</span><span class="token punctuation">;</span>
-                    <span class="token punctuation">&#125;</span>
-                <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>sum <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-                    <span class="token comment">// 三数之和 > 0，右指针左移，使下一次求和结果变小，向0趋近</span>
-                    right<span class="token operator">--</span><span class="token punctuation">;</span>
-                <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
-                    <span class="token comment">// 三数之和 &lt; 0，左指针右移，使下一次求和结果变大，向0趋近</span>
-                    left<span class="token operator">++</span><span class="token punctuation">;</span>
-                <span class="token punctuation">&#125;</span>
-            <span class="token punctuation">&#125;</span>
-        <span class="token punctuation">&#125;</span>
-        <span class="token keyword">return</span> lists<span class="token punctuation">;</span>
+<h3 id="代码（Java）"><a href="#代码（Java）" class="headerlink" title="代码（Java）"></a>代码（Java）</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">canWinNim</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">// 代码只需要判断先手面对的石头数，是不是4的倍数就好了。</span>
+        <span class="token comment">// 不是则返回 true，是则返回 false。</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>n <span class="token operator">%</span> <span class="token number">4</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
   </div>
   <div>
     
@@ -518,7 +449,7 @@ output <span class="token builtin class-name">:</span> <span class="token punctu
             李强
           </a>
         </p>
-        <p><span style="font-weight: bold;">文章链接：</span><a style = "text-overflow : ellipsis;display: inline-block; width: 100%; overflow: hidden;" target="_blank" rel="nofollow noopener noreferrer" href="https://hexo.li98.cn/archives/d4c92f69.html">https://hexo.li98.cn/archives/d4c92f69.html</a></p>
+        <p><span style="font-weight: bold;">文章链接：</span><a style = "text-overflow : ellipsis;display: inline-block; width: 100%; overflow: hidden;" target="_blank" rel="nofollow noopener noreferrer" href="https://hexo.li98.cn/archives/5b7d327e.html">https://hexo.li98.cn/archives/5b7d327e.html</a></p>
         <p><span style="font-weight: bold;">版权声明：</span>本博客所有文章除特别声明外，均采用<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0 协议</a>。转载请注明出处！</p>
       </div>
     
@@ -526,29 +457,15 @@ output <span class="token builtin class-name">:</span> <span class="token punctu
 </article>
 <div class="nav">
   
-    <div class="nav-item-prev">
-      <a 
-        href="/archives/b7aa63f2.html" 
-        class="nav-link">
-        <i class="iconfont icon-left nav-prev-icon"></i>
-        <div>
-          <div class="nav-label">上一篇</div>
-          
-            <div class="nav-title">LeetCode精选TOP面试题150.逆波兰表达式求值 </div>
-          
-        </div>
-      </a>
-    </div>
-  
   
     <div class="nav-item-next">
       <a 
-        href="/archives/b4688cfb.html" 
+        href="/archives/688ebbf7.html" 
         class="nav-link">
         <div>
           <div class="nav-label">下一篇</div>
           
-            <div class="nav-title">LeetCode精选TOP面试题048.旋转图像.md </div>
+            <div class="nav-title">LeetCode腾讯精选练习50题-009.回文数 </div>
           
         </div>
         <i class="iconfont icon-right nav-next-icon"></i>
