@@ -254,6 +254,68 @@
   <div class="card">
     
         <article class="card card-content">
+          <a href="/archives/78978eb1.html">
+            <h1 class="post-title">
+              d2lzh_pytorch包报错问题解决
+            </h1>
+          </a>
+          <!-- <div class="card-excerpt">
+            
+              报错：
+ModuleNotFoundError: No module named ‘d2lzh_pytorch’
+d2lzh_pytorch包中找不到名为’xxx’的属性/函数，如  module &#39;d2lzh_pytorch&#39; has no attribute &#39;use_svg_display()&#39;
+module &#39;d2lzh_pytorch&#39; has no attribute &#39;load_data_fashion_mnist
+
+
+
+
+                
+          </div> -->
+          <div class="card-excerpt">
+            
+              <h4 id="报错："><a href="#报错：" class="headerlink" title="报错："></a>报错：</h4><ul>
+<li>ModuleNotFoundError: No module named ‘d2lzh_pytorch’</li>
+<li>d2lzh_pytorch包中找不到名为’xxx’的属性/函数，如  <pre class="line-numbers language-python" data-language="python"><code class="language-python">module <span class="token string">'d2lzh_pytorch'</span> has no attribute <span class="token string">'use_svg_display()'</span>
+module <span class="token string">'d2lzh_pytorch'</span> has no attribute 'load_data_fashion_mnist<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+</li>
+</ul>
+                
+          </div>
+          <div class="card-post-footer">
+            <div class="post-meta">
+              <time datetime="2021-12-10T03:00:00.000Z">
+                <i class="iconfont icon-calendar" style="margin-right: 2px;">
+                </i>
+                <span>
+                  2021-12-10
+                </span>
+              </time>
+              
+                
+                  
+                    
+                          
+                            <span class="dot"></span>
+                            
+                              
+                                    <a href="/categories/D2L/" class="post-meta-link">
+                                      D2L
+                                    </a>
+                                    
+                                      
+            </div>
+            <a href="/archives/78978eb1.html">
+              继续阅读
+            </a>
+          </div>
+        </article>
+  </div>
+  
+  <div class="card">
+    
+        <article class="card card-content">
           <a href="/archives/e43ae7cd.html">
             <h1 class="post-title">
               Typora本地图片上传到图床
@@ -907,108 +969,6 @@ note   <span class="token builtin class-name">:</span> 若无限制，除法后�
         </article>
   </div>
   
-  <div class="card">
-    
-        <article class="card card-content">
-          <a href="/archives/840877d1.html">
-            <h1 class="post-title">
-              LeetCode精选TOP面试题036.有效的数独
-            </h1>
-          </a>
-          <!-- <div class="card-excerpt">
-            
-              题目描述
-判断一个 9 x 9 的数独是否有效。一个有效的数独（部分已被填充，空白格用 ‘.’ 表示）不一定是可解的，只需要根据以下规则，验证已经填入的数字是否有效即可。
-(1)数字 1-9 在每一行只能出现一次。
-(2)数字 1-9 在每一列只能出现一次。
-(3)数字 1-9 在每一个以粗实线分隔的 3x3 宫内只能出现一次。
-board.length == 9; board[i].length == 9; board[i][j]是数字（1-9）或 ‘.’
-
-example
-input  : board =     &amp;#123;&amp;#123;&#39;8&#39;, &#39;3&#39;, &#39;.&#39;, &#39;.&#39;, &#39;7&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;&amp;#125;
-                     ,&amp;#123;&#39;6&#39;, &#39;.&#39;, &#39;.&#39;, &#39;1&#39;, &#39;9&#39;, &#39;5&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;&amp;#125;
-                     ,&amp;#123;&#39;.&#39;, &#39;9&#39;, &#39;8&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;6&#39;, &#39;.&#39;&amp;#125;
-                     ,&amp;#123;&#39;8&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;6&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;3&#39;&amp;#125;
-                     ,&amp;#123;&#39;4&#39;, &#39;.&#39;, &#39;.&#39;, &#39;8&#39;, &#39;.&#39;, &#39;3&#39;, &#39;.&#39;, &#39;.&#39;, &#39;1&#39;&amp;#125;
-                     ,&amp;#123;&#39;7&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;2&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;6&#39;&amp;#125;
-                     ,&amp;#123;&#39;.&#39;, &#39;6&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;2&#39;, &#39;8&#39;, &#39;.&#39;&amp;#125;
-                     ,&amp;#123;&#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;4&#39;, &#39;1&#39;, &#39;9&#39;, &#39;.&#39;, &#39;.&#39;, &#39;5&#39;&amp;#125;
-                     ,&amp;#123;&#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;8&#39;, &#39;.&#39;, &#39;.&#39;, &#39;7&#39;, &#39;9&#39;&amp;#125;&amp;#125;;                                                                                                                               
-output : true
-input  : board =     &amp;#123;&amp;#123;&#39;8&#39;, &#39;3&#39;, &#39;.&#39;, &#39;.&#39;, &#39;7&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;&amp;#125;
-                     ,&amp;#123;&#39;6&#39;, &#39;.&#39;, &#39;.&#39;, &#39;1&#39;, &#39;9&#39;, &#39;5&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;&amp;#125;
-                     ,&amp;#123;&#39;.&#39;, &#39;9&#39;, &#39;8&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;6&#39;, &#39;.&#39;&amp;#125;
-                     ,&amp;#123;&#39;8&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;6&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;3&#39;&amp;#125;
-                     ,&amp;#123;&#39;4&#39;, &#39;.&#39;, &#39;.&#39;, &#39;8&#39;, &#39;.&#39;, &#39;3&#39;, &#39;.&#39;, &#39;.&#39;, &#39;1&#39;&amp;#125;
-                     ,&amp;#123;&#39;7&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;2&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;6&#39;&amp;#125;
-                     ,&amp;#123;&#39;.&#39;, &#39;6&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;2&#39;, &#39;8&#39;, &#39;.&#39;&amp;#125;
-                     ,&amp;#123;&#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;4&#39;, &#39;1&#39;, &#39;9&#39;, &#39;.&#39;, &#39;.&#39;, &#39;5&#39;&amp;#125;
-                     ,&amp;#123;&#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;8&#39;, &#39;.&#39;, &#39;.&#39;, &#39;7&#39;, &#39;9&#39;&amp;#125;&amp;#125;;   
-output : false
-                
-          </div> -->
-          <div class="card-excerpt">
-            
-              <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><ul>
-<li>判断一个 9 x 9 的数独是否有效。一个有效的数独（部分已被填充，空白格用 ‘.’ 表示）不一定是可解的，只需要根据以下规则，验证已经填入的数字是否有效即可。</li>
-<li>(1)数字 1-9 在每一行只能出现一次。</li>
-<li>(2)数字 1-9 在每一列只能出现一次。</li>
-<li>(3)数字 1-9 在每一个以粗实线分隔的 3x3 宫内只能出现一次。</li>
-<li>board.length == 9; board[i].length == 9; board[i][j]是数字（1-9）或 ‘.’</li>
-</ul>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">example
-input  <span class="token builtin class-name">:</span> board <span class="token operator">=</span>     <span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span><span class="token string">'8'</span>, <span class="token string">'3'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'7'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span><span class="token punctuation">&#125;</span>
-                     ,<span class="token punctuation">&#123;</span><span class="token string">'6'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'1'</span>, <span class="token string">'9'</span>, <span class="token string">'5'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span><span class="token punctuation">&#125;</span>
-                     ,<span class="token punctuation">&#123;</span><span class="token string">'.'</span>, <span class="token string">'9'</span>, <span class="token string">'8'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'6'</span>, <span class="token string">'.'</span><span class="token punctuation">&#125;</span>
-                     ,<span class="token punctuation">&#123;</span><span class="token string">'8'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'6'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'3'</span><span class="token punctuation">&#125;</span>
-                     ,<span class="token punctuation">&#123;</span><span class="token string">'4'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'8'</span>, <span class="token string">'.'</span>, <span class="token string">'3'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'1'</span><span class="token punctuation">&#125;</span>
-                     ,<span class="token punctuation">&#123;</span><span class="token string">'7'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'2'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'6'</span><span class="token punctuation">&#125;</span>
-                     ,<span class="token punctuation">&#123;</span><span class="token string">'.'</span>, <span class="token string">'6'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'2'</span>, <span class="token string">'8'</span>, <span class="token string">'.'</span><span class="token punctuation">&#125;</span>
-                     ,<span class="token punctuation">&#123;</span><span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'4'</span>, <span class="token string">'1'</span>, <span class="token string">'9'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'5'</span><span class="token punctuation">&#125;</span>
-                     ,<span class="token punctuation">&#123;</span><span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'8'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'7'</span>, <span class="token string">'9'</span><span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>                                                                                                                               
-output <span class="token builtin class-name">:</span> <span class="token boolean">true</span>
-input  <span class="token builtin class-name">:</span> board <span class="token operator">=</span>     <span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span><span class="token string">'8'</span>, <span class="token string">'3'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'7'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span><span class="token punctuation">&#125;</span>
-                     ,<span class="token punctuation">&#123;</span><span class="token string">'6'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'1'</span>, <span class="token string">'9'</span>, <span class="token string">'5'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span><span class="token punctuation">&#125;</span>
-                     ,<span class="token punctuation">&#123;</span><span class="token string">'.'</span>, <span class="token string">'9'</span>, <span class="token string">'8'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'6'</span>, <span class="token string">'.'</span><span class="token punctuation">&#125;</span>
-                     ,<span class="token punctuation">&#123;</span><span class="token string">'8'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'6'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'3'</span><span class="token punctuation">&#125;</span>
-                     ,<span class="token punctuation">&#123;</span><span class="token string">'4'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'8'</span>, <span class="token string">'.'</span>, <span class="token string">'3'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'1'</span><span class="token punctuation">&#125;</span>
-                     ,<span class="token punctuation">&#123;</span><span class="token string">'7'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'2'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'6'</span><span class="token punctuation">&#125;</span>
-                     ,<span class="token punctuation">&#123;</span><span class="token string">'.'</span>, <span class="token string">'6'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'2'</span>, <span class="token string">'8'</span>, <span class="token string">'.'</span><span class="token punctuation">&#125;</span>
-                     ,<span class="token punctuation">&#123;</span><span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'4'</span>, <span class="token string">'1'</span>, <span class="token string">'9'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'5'</span><span class="token punctuation">&#125;</span>
-                     ,<span class="token punctuation">&#123;</span><span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'8'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'7'</span>, <span class="token string">'9'</span><span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>   
-output <span class="token builtin class-name">:</span> <span class="token boolean">false</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-                
-          </div>
-          <div class="card-post-footer">
-            <div class="post-meta">
-              <time datetime="2021-11-23T14:53:57.685Z">
-                <i class="iconfont icon-calendar" style="margin-right: 2px;">
-                </i>
-                <span>
-                  2021-11-23
-                </span>
-              </time>
-              
-                
-                  
-                    
-                          
-                            <span class="dot"></span>
-                            
-                              
-                                    <a href="/categories/LeetCode/" class="post-meta-link">
-                                      LeetCode
-                                    </a>
-                                    
-                                      
-            </div>
-            <a href="/archives/840877d1.html">
-              继续阅读
-            </a>
-          </div>
-        </article>
-  </div>
-  
     
       <div class="nav">
   
@@ -1056,7 +1016,7 @@ output <span class="token builtin class-name">:</span> <span class="token boolea
   <a 
     class="author-posts-count" 
     href="/archives">
-    <span>120</span>
+    <span>121</span>
     <span>文章</span>
   </a>
   <a 
@@ -1121,7 +1081,7 @@ output <span class="token builtin class-name">:</span> <span class="token boolea
       <a href="/categories/LeetCode/">
         <div class="categories-list-item">
           LeetCode
-          <span class="categories-list-item-badge">63</span>
+          <span class="categories-list-item-badge">64</span>
         </div>
       </a>
     
@@ -1199,12 +1159,6 @@ output <span class="token builtin class-name">:</span> <span class="token boolea
       </a>
     
       <a 
-        href="/tags/%E5%85%B6%E4%BB%96/" 
-        title="其他">
-        <div class="tags-list-item">其他</div>
-      </a>
-    
-      <a 
         href="/tags/Anaconda/" 
         title="Anaconda">
         <div class="tags-list-item">Anaconda</div>
@@ -1214,6 +1168,12 @@ output <span class="token builtin class-name">:</span> <span class="token boolea
         href="/tags/conda/" 
         title="conda">
         <div class="tags-list-item">conda</div>
+      </a>
+    
+      <a 
+        href="/tags/%E5%85%B6%E4%BB%96/" 
+        title="其他">
+        <div class="tags-list-item">其他</div>
       </a>
     
       <a 
@@ -1241,15 +1201,15 @@ output <span class="token builtin class-name">:</span> <span class="token boolea
       </a>
     
       <a 
-        href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" 
-        title="字符串">
-        <div class="tags-list-item">字符串</div>
-      </a>
-    
-      <a 
         href="/tags/%E6%95%B4%E6%95%B0/" 
         title="整数">
         <div class="tags-list-item">整数</div>
+      </a>
+    
+      <a 
+        href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" 
+        title="字符串">
+        <div class="tags-list-item">字符串</div>
       </a>
     
       <a 
@@ -1363,11 +1323,15 @@ output <span class="token builtin class-name">:</span> <span class="token boolea
     
       
         
+      
+    
+      
+        
           <a 
             href="/archives/2022" 
             class="archive-card-list-item">
             2022
-            <span class="archive-card-list-item-badge">18</span>
+            <span class="archive-card-list-item-badge">19</span>
           </a>
         
         
@@ -1817,6 +1781,11 @@ output <span class="token builtin class-name">:</span> <span class="token boolea
   <div class="recent-posts-list">
     
       <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2022-04-09</div>
+        <a href="/archives/92cb0ef2.html"><div class="recent-posts-item-content">LeetCode腾讯精选练习50题-235.二叉搜索树的最近公共祖先</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
         <div class="recent-posts-item-title">2022-04-08</div>
         <a href="/archives/5b7d327e.html"><div class="recent-posts-item-content">LeetCode腾讯精选练习50题-292.Nim游戏</div></a>
       </div>
@@ -1829,11 +1798,6 @@ output <span class="token builtin class-name">:</span> <span class="token boolea
       <div class="recent-posts-item">
         <div class="recent-posts-item-title">2022-03-21</div>
         <a href="/archives/4e858b60.html"><div class="recent-posts-item-content">Python使用Pandas计算相关系数</div></a>
-      </div>
-    
-      <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2022-03-17</div>
-        <a href="/archives/42e9890.html"><div class="recent-posts-item-content">LeetCode精选TOP面试题50.Pow(x, n)</div></a>
       </div>
     
   </div>
@@ -1929,11 +1893,15 @@ output <span class="token builtin class-name">:</span> <span class="token boolea
     
       
         
+      
+    
+      
+        
           <a 
             href="/archives/2022" 
             class="archive-card-list-item">
             2022
-            <span class="archive-card-list-item-badge">18</span>
+            <span class="archive-card-list-item-badge">19</span>
           </a>
         
         
