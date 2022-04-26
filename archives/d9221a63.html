@@ -18,17 +18,17 @@
   <link 
     rel="icon" 
     href="/img/q.png">
-  <title>LeetCode精选TOP面试题344.反转字符串</title>
+  <title>LeetCode其他-1629.按键持续时间最长的键</title>
   
     
       <meta 
         property="og:title" 
-        content="LeetCode精选TOP面试题344.反转字符串">
+        content="LeetCode其他-1629.按键持续时间最长的键">
     
     
       <meta 
         property="og:url" 
-        content="https://hexo.li98.cn/archives/a3767f0f.html">
+        content="https://hexo.li98.cn/archives/d9221a63.html">
     
     
       <meta 
@@ -39,14 +39,28 @@
       <meta 
         property="og:img" 
         content="&lt;h3 id=&#34;题目描述&#34;&gt;&lt;a href=&#34;#题目描述&#34; class=&#34;headerlink&#34; title=&#34;题目描述&#34;&gt;&lt;/a&gt;题目描述&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;编写一个函数，其作用是将输入的字符串反转过来。输入字符串以字符数组 s 的形式给出。&lt;/li&gt;
-&lt;li&gt;不要给另外的数组分配额外的空间，必须原地修改输入数组、使用 O(1) 的额外空间解决这一问题。&lt;/li&gt;
+&lt;li&gt;LeetCode 设计了一款新式键盘，正在测试其可用性。&lt;/li&gt;
+&lt;li&gt;测试人员将会点击一系列键（总计 n 个），每次一个。&lt;/li&gt;
+&lt;li&gt;给你一个长度为 n 的字符串 keysPressed ，其中 keysPressed[i] 表示测试序列中第 i 个被按下的键。&lt;/li&gt;
+&lt;li&gt;releaseTimes 是一个升序排列的列表，其中 releaseTimes[i] 表示松开第 i 个键的时间。&lt;/li&gt;
+&lt;li&gt;字符串和数组的 下标都从 0 开始 。第 0 个键在时间为 0 时被按下，接下来每个键都 恰好 在前一个键松开时被按下。&lt;/li&gt;
+&lt;li&gt;测试人员想要找出按键 持续时间最长 的键。&lt;/li&gt;
+&lt;li&gt;第 i 次按键的持续时间为 releaseTimes[i] - releaseTimes[i - 1] ，第 0 次按键的持续时间为 releaseTimes[0] 。&lt;/li&gt;
+&lt;li&gt;注意，测试期间，同一个键可以在不同时刻被多次按下，而每次的持续时间都可能不同。&lt;/li&gt;
+&lt;li&gt;请返回单次按键 持续时间最长 的键，如果有多个这样的键，则返回 按字母顺序排列最大 的那个键。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;example
-input  &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; s &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;h&#34;&lt;/span&gt;,&lt;span class=&#34;token string&#34;&gt;&#34;e&#34;&lt;/span&gt;,&lt;span class=&#34;token string&#34;&gt;&#34;l&#34;&lt;/span&gt;,&lt;span class=&#34;token string&#34;&gt;&#34;l&#34;&lt;/span&gt;,&lt;span class=&#34;token string&#34;&gt;&#34;o&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;
-output &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;o&#34;&lt;/span&gt;,&lt;span class=&#34;token string&#34;&gt;&#34;l&#34;&lt;/span&gt;,&lt;span class=&#34;token string&#34;&gt;&#34;l&#34;&lt;/span&gt;,&lt;span class=&#34;token string&#34;&gt;&#34;e&#34;&lt;/span&gt;,&lt;span class=&#34;token string&#34;&gt;&#34;h&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;
-input  &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; s &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;H&#34;&lt;/span&gt;,&lt;span class=&#34;token string&#34;&gt;&#34;a&#34;&lt;/span&gt;,&lt;span class=&#34;token string&#34;&gt;&#34;n&#34;&lt;/span&gt;,&lt;span class=&#34;token string&#34;&gt;&#34;n&#34;&lt;/span&gt;,&lt;span class=&#34;token string&#34;&gt;&#34;a&#34;&lt;/span&gt;,&lt;span class=&#34;token string&#34;&gt;&#34;h&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;
-output &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;h&#34;&lt;/span&gt;,&lt;span class=&#34;token string&#34;&gt;&#34;a&#34;&lt;/span&gt;,&lt;span class=&#34;token string&#34;&gt;&#34;n&#34;&lt;/span&gt;,&lt;span class=&#34;token string&#34;&gt;&#34;n&#34;&lt;/span&gt;,&lt;span class=&#34;token string&#34;&gt;&#34;a&#34;&lt;/span&gt;,&lt;span class=&#34;token string&#34;&gt;&#34;H&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;">
+input  &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; releaseTimes &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;9,29&lt;/span&gt;,49,50&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;, keysPressed &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;cbcd&#34;&lt;/span&gt;
+output &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;c&#39;&lt;/span&gt;
+note   &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; 按键顺序和持续时间如下：
+         按下 &lt;span class=&#34;token string&#34;&gt;&#39;c&#39;&lt;/span&gt; ，持续时间 &lt;span class=&#34;token number&#34;&gt;9&lt;/span&gt;（时间 &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt; 按下，时间 &lt;span class=&#34;token number&#34;&gt;9&lt;/span&gt; 松开）
+         按下 &lt;span class=&#34;token string&#34;&gt;&#39;b&#39;&lt;/span&gt; ，持续时间 &lt;span class=&#34;token number&#34;&gt;29&lt;/span&gt; - &lt;span class=&#34;token number&#34;&gt;9&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;20&lt;/span&gt;（松开上一个键的时间 &lt;span class=&#34;token number&#34;&gt;9&lt;/span&gt; 按下，时间 &lt;span class=&#34;token number&#34;&gt;29&lt;/span&gt; 松开）
+         按下 &lt;span class=&#34;token string&#34;&gt;&#39;c&#39;&lt;/span&gt; ，持续时间 &lt;span class=&#34;token number&#34;&gt;49&lt;/span&gt; - &lt;span class=&#34;token number&#34;&gt;29&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;20&lt;/span&gt;（松开上一个键的时间 &lt;span class=&#34;token number&#34;&gt;29&lt;/span&gt; 按下，时间 &lt;span class=&#34;token number&#34;&gt;49&lt;/span&gt; 松开）
+         按下 &lt;span class=&#34;token string&#34;&gt;&#39;d&#39;&lt;/span&gt; ，持续时间 &lt;span class=&#34;token number&#34;&gt;50&lt;/span&gt; - &lt;span class=&#34;token number&#34;&gt;49&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;（松开上一个键的时间 &lt;span class=&#34;token number&#34;&gt;49&lt;/span&gt; 按下，时间 &lt;span class=&#34;token number&#34;&gt;50&lt;/span&gt; 松开）
+         按键持续时间最长的键是 &lt;span class=&#34;token string&#34;&gt;&#39;b&#39;&lt;/span&gt; 和 &lt;span class=&#34;token string&#34;&gt;&#39;c&#39;&lt;/span&gt;（第二次按下时），持续时间都是 &lt;span class=&#34;token number&#34;&gt;20&lt;/span&gt;
+         &lt;span class=&#34;token string&#34;&gt;&#39;c&#39;&lt;/span&gt; 按字母顺序排列比 &lt;span class=&#34;token string&#34;&gt;&#39;b&#39;&lt;/span&gt; 大，所以答案是 &lt;span class=&#34;token string&#34;&gt;&#39;c&#39;&lt;/span&gt;
+input  &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; releaseTimes &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;12,23&lt;/span&gt;,36,46,62&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;, keysPressed &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;spuda&#34;&lt;/span&gt;
+output &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;a&#39;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;">
     
     
       <meta 
@@ -54,14 +68,18 @@ output &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; &lt;s
         content="article">
       <meta 
         property="og:article:published_time" 
-        content="2020-03-08">
+        content="2022-04-26">
       <meta 
         property="og:article:modified_time" 
-        content="2022-04-13">
+        content="2022-04-26">
       <meta 
         property="og:article:author" 
         content="李强">
       
+        
+          <meta 
+            property="og:article:tag" 
+            content="其他">
         
           <meta 
             property="og:article:tag" 
@@ -70,18 +88,6 @@ output &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; &lt;s
           <meta 
             property="og:article:tag" 
             content="LeetCode">
-        
-          <meta 
-            property="og:article:tag" 
-            content="字符串">
-        
-          <meta 
-            property="og:article:tag" 
-            content="双指针">
-        
-          <meta 
-            property="og:article:tag" 
-            content="递归">
         
       
     
@@ -300,16 +306,16 @@ output &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; &lt;s
 <article class="card card-content">
   <header>
     <h1 class="post-title">
-      LeetCode精选TOP面试题344.反转字符串
+      LeetCode其他-1629.按键持续时间最长的键
     </h1>
   </header>
   <div class="post-meta post-show-meta">
-    <time datetime="2020-03-08T13:00:00.000Z">
+    <time datetime="2022-04-26T15:00:00.000Z">
       <i 
         class="iconfont icon-calendar" 
         style="margin-right: 2px;">
       </i>
-      <span>2020-03-08</span>
+      <span>2022-04-26</span>
     </time>
     
       <span class="dot"></span>
@@ -323,7 +329,7 @@ output &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; &lt;s
     
     
       <span class="dot"></span>
-      <span>447 字</span>
+      <span>768 字</span>
     
   </div>
   
@@ -336,6 +342,15 @@ output &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; &lt;s
           style="margin-right: 2px; font-size: 1.15rem;">
         </i>
         
+          
+          <a 
+            href="/tags/%E5%85%B6%E4%BB%96/" 
+            class="post-meta-link">
+            其他
+          </a>
+        
+          
+            <span class="dot"></span>
           
           <a 
             href="/tags/Java/" 
@@ -352,33 +367,6 @@ output &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; &lt;s
             LeetCode
           </a>
         
-          
-            <span class="dot"></span>
-          
-          <a 
-            href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" 
-            class="post-meta-link">
-            字符串
-          </a>
-        
-          
-            <span class="dot"></span>
-          
-          <a 
-            href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/" 
-            class="post-meta-link">
-            双指针
-          </a>
-        
-          
-            <span class="dot"></span>
-          
-          <a 
-            href="/tags/%E9%80%92%E5%BD%92/" 
-            class="post-meta-link">
-            递归
-          </a>
-        
       </div>
     </div>
   
@@ -387,73 +375,73 @@ output &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; &lt;s
     id="section" 
     class="post-content">
     <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><ul>
-<li>编写一个函数，其作用是将输入的字符串反转过来。输入字符串以字符数组 s 的形式给出。</li>
-<li>不要给另外的数组分配额外的空间，必须原地修改输入数组、使用 O(1) 的额外空间解决这一问题。</li>
+<li>LeetCode 设计了一款新式键盘，正在测试其可用性。</li>
+<li>测试人员将会点击一系列键（总计 n 个），每次一个。</li>
+<li>给你一个长度为 n 的字符串 keysPressed ，其中 keysPressed[i] 表示测试序列中第 i 个被按下的键。</li>
+<li>releaseTimes 是一个升序排列的列表，其中 releaseTimes[i] 表示松开第 i 个键的时间。</li>
+<li>字符串和数组的 下标都从 0 开始 。第 0 个键在时间为 0 时被按下，接下来每个键都 恰好 在前一个键松开时被按下。</li>
+<li>测试人员想要找出按键 持续时间最长 的键。</li>
+<li>第 i 次按键的持续时间为 releaseTimes[i] - releaseTimes[i - 1] ，第 0 次按键的持续时间为 releaseTimes[0] 。</li>
+<li>注意，测试期间，同一个键可以在不同时刻被多次按下，而每次的持续时间都可能不同。</li>
+<li>请返回单次按键 持续时间最长 的键，如果有多个这样的键，则返回 按字母顺序排列最大 的那个键。</li>
 </ul>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">example
-input  <span class="token builtin class-name">:</span> s <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"h"</span>,<span class="token string">"e"</span>,<span class="token string">"l"</span>,<span class="token string">"l"</span>,<span class="token string">"o"</span><span class="token punctuation">]</span>
-output <span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token string">"o"</span>,<span class="token string">"l"</span>,<span class="token string">"l"</span>,<span class="token string">"e"</span>,<span class="token string">"h"</span><span class="token punctuation">]</span>
-input  <span class="token builtin class-name">:</span> s <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"H"</span>,<span class="token string">"a"</span>,<span class="token string">"n"</span>,<span class="token string">"n"</span>,<span class="token string">"a"</span>,<span class="token string">"h"</span><span class="token punctuation">]</span>
-output <span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token string">"h"</span>,<span class="token string">"a"</span>,<span class="token string">"n"</span>,<span class="token string">"n"</span>,<span class="token string">"a"</span>,<span class="token string">"H"</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+input  <span class="token builtin class-name">:</span> releaseTimes <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">9,29</span>,49,50<span class="token punctuation">]</span>, keysPressed <span class="token operator">=</span> <span class="token string">"cbcd"</span>
+output <span class="token builtin class-name">:</span> <span class="token string">'c'</span>
+note   <span class="token builtin class-name">:</span> 按键顺序和持续时间如下：
+         按下 <span class="token string">'c'</span> ，持续时间 <span class="token number">9</span>（时间 <span class="token number">0</span> 按下，时间 <span class="token number">9</span> 松开）
+         按下 <span class="token string">'b'</span> ，持续时间 <span class="token number">29</span> - <span class="token number">9</span> <span class="token operator">=</span> <span class="token number">20</span>（松开上一个键的时间 <span class="token number">9</span> 按下，时间 <span class="token number">29</span> 松开）
+         按下 <span class="token string">'c'</span> ，持续时间 <span class="token number">49</span> - <span class="token number">29</span> <span class="token operator">=</span> <span class="token number">20</span>（松开上一个键的时间 <span class="token number">29</span> 按下，时间 <span class="token number">49</span> 松开）
+         按下 <span class="token string">'d'</span> ，持续时间 <span class="token number">50</span> - <span class="token number">49</span> <span class="token operator">=</span> <span class="token number">1</span>（松开上一个键的时间 <span class="token number">49</span> 按下，时间 <span class="token number">50</span> 松开）
+         按键持续时间最长的键是 <span class="token string">'b'</span> 和 <span class="token string">'c'</span>（第二次按下时），持续时间都是 <span class="token number">20</span>
+         <span class="token string">'c'</span> 按字母顺序排列比 <span class="token string">'b'</span> 大，所以答案是 <span class="token string">'c'</span>
+input  <span class="token builtin class-name">:</span> releaseTimes <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">12,23</span>,36,46,62<span class="token punctuation">]</span>, keysPressed <span class="token operator">=</span> <span class="token string">"spuda"</span>
+output <span class="token builtin class-name">:</span> <span class="token string">'a'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <span id="more"></span>
 
-<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p><strong>思路1 双指针</strong></p>
-<ul>
-<li>左右同时向内遍历</li>
-<li>遍历的同时交换左右指针的元素值</li>
-<li>时间复杂度：O(n)，其中 n 为字符数组的长度，只需要执行n/2次交换即可完成反转</li>
-<li>空间复杂度：O(1)，只使用了常数空间来存放若干变量</li>
-</ul>
-<p><strong>思路2 递归</strong></p>
-<ul>
-<li>递归需要使用栈空间，所以用递归不符合题目的空间复杂度要求</li>
-<li>还是双指针的路子，只不过换成了递归的写法</li>
-<li>初始传参为：数组s，left = 0，right = s.length - 1</li>
-<li>递归的退出边界：left &gt;= right</li>
-<li>交换left和right位置处的元素值</li>
-<li>递归调用，参数为 数组s，++left，–right；即左右指针向内移动，进行下一次交换</li>
+<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><ul>
+<li>一次遍历，对比并记录最大持续时间，同时按字母序要求更新对应的字符即可</li>
 <li>时间复杂度：O(n)</li>
-<li>空间复杂度：O(n)</li>
+<li>空间复杂度：O(1)</li>
 </ul>
-<h3 id="代码（Java）"><a href="#代码（Java）" class="headerlink" title="代码（Java）"></a>代码（Java）</h3><p><strong>思路1代码</strong></p>
+<h3 id="代码（Java）"><a href="#代码（Java）" class="headerlink" title="代码（Java）"></a>代码（Java）</h3><p><strong>代码1</strong></p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Solution1</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">reverseString</span><span class="token punctuation">(</span><span class="token keyword">char</span><span class="token punctuation">[</span><span class="token punctuation">]</span> s<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">int</span> len <span class="token operator">=</span> s<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>len <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-            <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">char</span> <span class="token function">slowestKey</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> releaseTimes<span class="token punctuation">,</span> <span class="token class-name">String</span> keysPressed<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">char</span> resKey <span class="token operator">=</span> keysPressed<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> maxTime <span class="token operator">=</span> releaseTimes<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> len <span class="token operator">=</span> releaseTimes<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> len<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">int</span> time <span class="token operator">=</span> releaseTimes<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-</span> releaseTimes<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token comment">// if的后半段，比较当前字符与当前最长持续时间字符的字母序大小的时候</span>
+            <span class="token comment">// 为了美观可以提前把当前字符定义在if前面，然后放到if的后半段比较，但是这样会浪费测试时间</span>
+            <span class="token comment">// 测试结果表明，提前定义运行时间为1s，不定义运行时间为0s</span>
+            <span class="token comment">// 用到的时候才比较字母序，取当前字符，用不到的时候提前定义就是浪费资源</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>time <span class="token operator">></span> maxTime <span class="token operator">||</span> <span class="token punctuation">(</span>time <span class="token operator">==</span> maxTime <span class="token operator">&amp;&amp;</span> keysPressed<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token operator">></span> resKey<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                resKey <span class="token operator">=</span> keysPressed<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                maxTime <span class="token operator">=</span> time<span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
         <span class="token punctuation">&#125;</span>
-        <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> len <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-            <span class="token keyword">char</span> temp <span class="token operator">=</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-            s<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> s<span class="token punctuation">[</span>len <span class="token operator">-</span> i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-            s<span class="token punctuation">[</span>len <span class="token operator">-</span> i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> temp<span class="token punctuation">;</span>
-            i <span class="token operator">++</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> resKey<span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><strong>思路2代码</strong></p>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>代码2</strong></p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Solution2</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">reverseString</span><span class="token punctuation">(</span><span class="token keyword">char</span><span class="token punctuation">[</span><span class="token punctuation">]</span> s<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">int</span> len <span class="token operator">=</span> s<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>len <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-            <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">char</span> <span class="token function">slowestKey</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> releaseTimes<span class="token punctuation">,</span> <span class="token class-name">String</span> keysPressed<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">int</span> resKey <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> maxTime <span class="token operator">=</span> releaseTimes<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> len <span class="token operator">=</span> releaseTimes<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> len<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">int</span> time <span class="token operator">=</span> releaseTimes<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-</span> releaseTimes<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span> sub <span class="token operator">=</span> keysPressed<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token operator">-</span> keysPressed<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>resKey<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>time <span class="token operator">></span> maxTime <span class="token operator">||</span> <span class="token punctuation">(</span>time <span class="token operator">==</span> maxTime <span class="token operator">&amp;&amp;</span> sub <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                resKey <span class="token operator">=</span> i<span class="token punctuation">;</span>
+                maxTime <span class="token operator">=</span> time<span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
         <span class="token punctuation">&#125;</span>
-        <span class="token function">loop</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> len <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> keysPressed<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>resKey<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
-
-    <span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">loop</span><span class="token punctuation">(</span><span class="token keyword">char</span><span class="token punctuation">[</span><span class="token punctuation">]</span> s<span class="token punctuation">,</span> <span class="token keyword">int</span> left<span class="token punctuation">,</span> <span class="token keyword">int</span> right<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>left <span class="token operator">>=</span> right<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-            <span class="token keyword">return</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span>
-
-        <span class="token keyword">char</span> tmp <span class="token operator">=</span> s<span class="token punctuation">[</span>left<span class="token punctuation">]</span><span class="token punctuation">;</span>
-        s<span class="token punctuation">[</span>left<span class="token punctuation">]</span> <span class="token operator">=</span> s<span class="token punctuation">[</span>right<span class="token punctuation">]</span><span class="token punctuation">;</span>
-        s<span class="token punctuation">[</span>right<span class="token punctuation">]</span> <span class="token operator">=</span> tmp<span class="token punctuation">;</span>
-
-        <span class="token function">loop</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span> <span class="token operator">++</span>left<span class="token punctuation">,</span> <span class="token operator">--</span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
   </div>
   <div>
     
@@ -468,7 +456,7 @@ output <span class="token builtin class-name">:</span> <span class="token punctu
             李强
           </a>
         </p>
-        <p><span style="font-weight: bold;">文章链接：</span><a style = "text-overflow : ellipsis;display: inline-block; width: 100%; overflow: hidden;" target="_blank" rel="nofollow noopener noreferrer" href="https://hexo.li98.cn/archives/a3767f0f.html">https://hexo.li98.cn/archives/a3767f0f.html</a></p>
+        <p><span style="font-weight: bold;">文章链接：</span><a style = "text-overflow : ellipsis;display: inline-block; width: 100%; overflow: hidden;" target="_blank" rel="nofollow noopener noreferrer" href="https://hexo.li98.cn/archives/d9221a63.html">https://hexo.li98.cn/archives/d9221a63.html</a></p>
         <p><span style="font-weight: bold;">版权声明：</span>本博客所有文章除特别声明外，均采用<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0 协议</a>。转载请注明出处！</p>
       </div>
     
@@ -476,29 +464,15 @@ output <span class="token builtin class-name">:</span> <span class="token punctu
 </article>
 <div class="nav">
   
-    <div class="nav-item-prev">
-      <a 
-        href="/archives/63e5cd3d.html" 
-        class="nav-link">
-        <i class="iconfont icon-left nav-prev-icon"></i>
-        <div>
-          <div class="nav-label">上一篇</div>
-          
-            <div class="nav-title">LeetCode精选TOP面试题283. 移动零 </div>
-          
-        </div>
-      </a>
-    </div>
-  
   
     <div class="nav-item-next">
       <a 
-        href="/archives/2e2e399.html" 
+        href="/archives/c7b84ffe.html" 
         class="nav-link">
         <div>
           <div class="nav-label">下一篇</div>
           
-            <div class="nav-title">LeetCode精选TOP面试题13.罗马数字转整数 </div>
+            <div class="nav-title">LeetCode腾讯精选练习50题-104.二叉树的最大深度 </div>
           
         </div>
         <i class="iconfont icon-right nav-next-icon"></i>

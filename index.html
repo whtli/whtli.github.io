@@ -254,6 +254,98 @@
   <div class="card">
     
         <article class="card card-content">
+          <a href="/archives/d9221a63.html">
+            <h1 class="post-title">
+              LeetCode其他-1629.按键持续时间最长的键
+            </h1>
+          </a>
+          <!-- <div class="card-excerpt">
+            
+              题目描述
+LeetCode 设计了一款新式键盘，正在测试其可用性。
+测试人员将会点击一系列键（总计 n 个），每次一个。
+给你一个长度为 n 的字符串 keysPressed ，其中 keysPressed[i] 表示测试序列中第 i 个被按下的键。
+releaseTimes 是一个升序排列的列表，其中 releaseTimes[i] 表示松开第 i 个键的时间。
+字符串和数组的 下标都从 0 开始 。第 0 个键在时间为 0 时被按下，接下来每个键都 恰好 在前一个键松开时被按下。
+测试人员想要找出按键 持续时间最长 的键。
+第 i 次按键的持续时间为 releaseTimes[i] - releaseTimes[i - 1] ，第 0 次按键的持续时间为 releaseTimes[0] 。
+注意，测试期间，同一个键可以在不同时刻被多次按下，而每次的持续时间都可能不同。
+请返回单次按键 持续时间最长 的键，如果有多个这样的键，则返回 按字母顺序排列最大 的那个键。
+
+example
+input  : releaseTimes = [9,29,49,50], keysPressed = &#34;cbcd&#34;
+output : &#39;c&#39;
+note   : 按键顺序和持续时间如下：
+         按下 &#39;c&#39; ，持续时间 9（时间 0 按下，时间 9 松开）
+         按下 &#39;b&#39; ，持续时间 29 - 9 = 20（松开上一个键的时间 9 按下，时间 29 松开）
+         按下 &#39;c&#39; ，持续时间 49 - 29 = 20（松开上一个键的时间 29 按下，时间 49 松开）
+         按下 &#39;d&#39; ，持续时间 50 - 49 = 1（松开上一个键的时间 49 按下，时间 50 松开）
+         按键持续时间最长的键是 &#39;b&#39; 和 &#39;c&#39;（第二次按下时），持续时间都是 20
+         &#39;c&#39; 按字母顺序排列比 &#39;b&#39; 大，所以答案是 &#39;c&#39;
+input  : releaseTimes = [12,23,36,46,62], keysPressed = &#34;spuda&#34;
+output : &#39;a&#39;
+                
+          </div> -->
+          <div class="card-excerpt">
+            
+              <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><ul>
+<li>LeetCode 设计了一款新式键盘，正在测试其可用性。</li>
+<li>测试人员将会点击一系列键（总计 n 个），每次一个。</li>
+<li>给你一个长度为 n 的字符串 keysPressed ，其中 keysPressed[i] 表示测试序列中第 i 个被按下的键。</li>
+<li>releaseTimes 是一个升序排列的列表，其中 releaseTimes[i] 表示松开第 i 个键的时间。</li>
+<li>字符串和数组的 下标都从 0 开始 。第 0 个键在时间为 0 时被按下，接下来每个键都 恰好 在前一个键松开时被按下。</li>
+<li>测试人员想要找出按键 持续时间最长 的键。</li>
+<li>第 i 次按键的持续时间为 releaseTimes[i] - releaseTimes[i - 1] ，第 0 次按键的持续时间为 releaseTimes[0] 。</li>
+<li>注意，测试期间，同一个键可以在不同时刻被多次按下，而每次的持续时间都可能不同。</li>
+<li>请返回单次按键 持续时间最长 的键，如果有多个这样的键，则返回 按字母顺序排列最大 的那个键。</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">example
+input  <span class="token builtin class-name">:</span> releaseTimes <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">9,29</span>,49,50<span class="token punctuation">]</span>, keysPressed <span class="token operator">=</span> <span class="token string">"cbcd"</span>
+output <span class="token builtin class-name">:</span> <span class="token string">'c'</span>
+note   <span class="token builtin class-name">:</span> 按键顺序和持续时间如下：
+         按下 <span class="token string">'c'</span> ，持续时间 <span class="token number">9</span>（时间 <span class="token number">0</span> 按下，时间 <span class="token number">9</span> 松开）
+         按下 <span class="token string">'b'</span> ，持续时间 <span class="token number">29</span> - <span class="token number">9</span> <span class="token operator">=</span> <span class="token number">20</span>（松开上一个键的时间 <span class="token number">9</span> 按下，时间 <span class="token number">29</span> 松开）
+         按下 <span class="token string">'c'</span> ，持续时间 <span class="token number">49</span> - <span class="token number">29</span> <span class="token operator">=</span> <span class="token number">20</span>（松开上一个键的时间 <span class="token number">29</span> 按下，时间 <span class="token number">49</span> 松开）
+         按下 <span class="token string">'d'</span> ，持续时间 <span class="token number">50</span> - <span class="token number">49</span> <span class="token operator">=</span> <span class="token number">1</span>（松开上一个键的时间 <span class="token number">49</span> 按下，时间 <span class="token number">50</span> 松开）
+         按键持续时间最长的键是 <span class="token string">'b'</span> 和 <span class="token string">'c'</span>（第二次按下时），持续时间都是 <span class="token number">20</span>
+         <span class="token string">'c'</span> 按字母顺序排列比 <span class="token string">'b'</span> 大，所以答案是 <span class="token string">'c'</span>
+input  <span class="token builtin class-name">:</span> releaseTimes <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">12,23</span>,36,46,62<span class="token punctuation">]</span>, keysPressed <span class="token operator">=</span> <span class="token string">"spuda"</span>
+output <span class="token builtin class-name">:</span> <span class="token string">'a'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                
+          </div>
+          <div class="card-post-footer">
+            <div class="post-meta">
+              <time datetime="2022-04-26T15:00:00.000Z">
+                <i class="iconfont icon-calendar" style="margin-right: 2px;">
+                </i>
+                <span>
+                  2022-04-26
+                </span>
+              </time>
+              
+                
+                  
+                    
+                          
+                            <span class="dot"></span>
+                            
+                              
+                                    <a href="/categories/LeetCode/" class="post-meta-link">
+                                      LeetCode
+                                    </a>
+                                    
+                                      
+            </div>
+            <a href="/archives/d9221a63.html">
+              继续阅读
+            </a>
+          </div>
+        </article>
+  </div>
+  
+  <div class="card">
+    
+        <article class="card card-content">
           <a href="/archives/c7b84ffe.html">
             <h1 class="post-title">
               LeetCode腾讯精选练习50题-104.二叉树的最大深度
@@ -873,54 +965,6 @@ note   <span class="token builtin class-name">:</span> <span class="token number
         </article>
   </div>
   
-  <div class="card">
-    
-        <article class="card card-content">
-          <a href="/archives/774c957b.html">
-            <h1 class="post-title">
-              webstorm取消vue标签的高亮状态
-            </h1>
-          </a>
-          <!-- <div class="card-excerpt">
-            
-              WebStorm中vue标签高亮，影响编程体验
-                
-          </div> -->
-          <div class="card-excerpt">
-            
-              <h3 id="WebStorm中vue标签高亮，影响编程体验"><a href="#WebStorm中vue标签高亮，影响编程体验" class="headerlink" title="WebStorm中vue标签高亮，影响编程体验"></a>WebStorm中vue标签高亮，影响编程体验</h3>
-                
-          </div>
-          <div class="card-post-footer">
-            <div class="post-meta">
-              <time datetime="2022-03-04T06:00:00.000Z">
-                <i class="iconfont icon-calendar" style="margin-right: 2px;">
-                </i>
-                <span>
-                  2022-03-04
-                </span>
-              </time>
-              
-                
-                  
-                    
-                          
-                            <span class="dot"></span>
-                            
-                              
-                                    <a href="/categories/SpringBoot-Vue/" class="post-meta-link">
-                                      SpringBoot-Vue
-                                    </a>
-                                    
-                                      
-            </div>
-            <a href="/archives/774c957b.html">
-              继续阅读
-            </a>
-          </div>
-        </article>
-  </div>
-  
     
       <div class="nav">
   
@@ -956,7 +1000,7 @@ note   <span class="token builtin class-name">:</span> <span class="token number
   <a 
     class="author-posts-count" 
     href="/archives">
-    <span>125</span>
+    <span>126</span>
     <span>文章</span>
   </a>
   <a 
@@ -1011,17 +1055,17 @@ note   <span class="token builtin class-name">:</span> <span class="token number
         </div>
       </a>
     
-      <a href="/categories/LeetCode/">
-        <div class="categories-list-item">
-          LeetCode
-          <span class="categories-list-item-badge">68</span>
-        </div>
-      </a>
-    
       <a href="/categories/%E5%85%B6%E4%BB%96/">
         <div class="categories-list-item">
           其他
           <span class="categories-list-item-badge">3</span>
+        </div>
+      </a>
+    
+      <a href="/categories/LeetCode/">
+        <div class="categories-list-item">
+          LeetCode
+          <span class="categories-list-item-badge">69</span>
         </div>
       </a>
     
@@ -1283,11 +1327,15 @@ note   <span class="token builtin class-name">:</span> <span class="token number
     
       
         
+      
+    
+      
+        
           <a 
             href="/archives/2022" 
             class="archive-card-list-item">
             2022
-            <span class="archive-card-list-item-badge">23</span>
+            <span class="archive-card-list-item-badge">24</span>
           </a>
         
         
@@ -1737,6 +1785,11 @@ note   <span class="token builtin class-name">:</span> <span class="token number
   <div class="recent-posts-list">
     
       <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2022-04-26</div>
+        <a href="/archives/d9221a63.html"><div class="recent-posts-item-content">LeetCode其他-1629.按键持续时间最长的键</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
         <div class="recent-posts-item-title">2022-04-20</div>
         <a href="/archives/c7b84ffe.html"><div class="recent-posts-item-content">LeetCode腾讯精选练习50题-104.二叉树的最大深度</div></a>
       </div>
@@ -1749,11 +1802,6 @@ note   <span class="token builtin class-name">:</span> <span class="token number
       <div class="recent-posts-item">
         <div class="recent-posts-item-title">2022-04-13</div>
         <a href="/archives/7b8e9638.html"><div class="recent-posts-item-content">LeetCode腾讯精选练习50题-344.反转字符串</div></a>
-      </div>
-    
-      <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2022-04-10</div>
-        <a href="/archives/38c6df58.html"><div class="recent-posts-item-content">LeetCode腾讯精选练习50题-231.2的幂</div></a>
       </div>
     
   </div>
@@ -1869,11 +1917,15 @@ note   <span class="token builtin class-name">:</span> <span class="token number
     
       
         
+      
+    
+      
+        
           <a 
             href="/archives/2022" 
             class="archive-card-list-item">
             2022
-            <span class="archive-card-list-item-badge">23</span>
+            <span class="archive-card-list-item-badge">24</span>
           </a>
         
         
