@@ -6,7 +6,7 @@
   <link href="https://hexo.li98.cn/atom.xml" rel="self"/>
   
   <link href="https://hexo.li98.cn/"/>
-  <updated>2022-04-26T15:15:22.673Z</updated>
+  <updated>2022-04-30T12:07:16.999Z</updated>
   <id>https://hexo.li98.cn/</id>
   
   <author>
@@ -15,6 +15,43 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode腾讯精选练习50题-14.最长公共前缀</title>
+    <link href="https://hexo.li98.cn/archives/70dca.html"/>
+    <id>https://hexo.li98.cn/archives/70dca.html</id>
+    <published>2022-04-30T12:00:00.000Z</published>
+    <updated>2022-04-30T12:07:16.999Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><ul><li>编写一个函数来查找字符串数组中的最长公共前缀。</li><li>如果不存在公共前缀，返回空字符串 “”。</li><li>1 &lt;= strs.length &lt;= 200</li><li>0 &lt;= strs[i].length &lt;= 200</li><li>strs[i] 仅由小写英文字母组成</li></ul><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">exampleinput  <span class="token builtin class-name">:</span> strs <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"flower"</span>,<span class="token string">"flow"</span>,<span class="token string">"flight"</span><span class="token punctuation">]</span>output <span class="token builtin class-name">:</span> <span class="token string">"fl"</span>input  <span class="token builtin class-name">:</span> strs <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"dog"</span>,<span class="token string">"racecar"</span>,<span class="token string">"car"</span><span class="token punctuation">]</span>output <span class="token builtin class-name">:</span> <span class="token string">""</span>note   <span class="token builtin class-name">:</span> 不存在公共前缀<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><span id="more"></span><h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p><strong>思路1</strong></p><ul><li>纵向遍历</li><li>双重循环，同步对比数组中所有字符串的相同位置的字符</li><li>有不同时（或者某一字符串结束时），就可以最长公共前缀。</li><li>时间复杂度：O(mn)，其中 m 是字符串数组中的字符串的平均长度，n 是字符串数组的长度。最坏情况下，字符串数组中的每个字符串的每个字符都会被比较一次。</li><li>空间复杂度：O(1)</li></ul><p><strong>思路2</strong></p><ul><li>横向遍历</li><li>初始将结果定义 result 为字符串数组的第一个元素</li><li>遍历数组，对比之后的每一个元素，与当前 result 的公共前缀，并将 result 更新为当前能得到的最长公共前缀</li><li>遍历结束时，result 中存放的就是数组中所有元素的最长公共前缀</li><li>时间复杂度：O(mn)，其中 m 是字符串数组中的字符串的平均长度，n 是字符串数组的长度。最坏情况下，字符串数组中的每个字符串的每个字符都会被比较一次。</li><li>空间复杂度：O(1)</li></ul><p><strong>思路3</strong></p><ul><li>时间复杂度：O(mn)，其中 m 是字符串数组中的字符串的平均长度，n 是字符串数组的长度。最坏情况下，字符串数组中的每个字符串的每个字符都会被比较一次。</li><li>空间复杂度：O(1)</li><li>排序，取巧的方法</li><li>把字符串数组排序后，只取第一个和最后一个字符串进行比较，找的两者的公共前缀，就是整个字符串数组的公共前缀。</li><li>O(n logn)，排序的时间复杂度。</li><li>空间复杂度：O(1)</li></ul><h3 id="代码（Java）"><a href="#代码（Java）" class="headerlink" title="代码（Java）"></a>代码（Java）</h3><p><strong>思路1代码</strong></p><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Solution1</span> <span class="token punctuation">&#123;</span>    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">longestCommonPrefix</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> strs<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>        <span class="token keyword">int</span> minLen <span class="token operator">=</span> <span class="token number">201</span><span class="token punctuation">;</span>        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">String</span> s <span class="token operator">:</span> strs<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>            <span class="token keyword">if</span> <span class="token punctuation">(</span>s<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> minLen<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>                minLen <span class="token operator">=</span> s<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>            <span class="token punctuation">&#125;</span>        <span class="token punctuation">&#125;</span>        <span class="token class-name">StringBuilder</span> res <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> minLen<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>            <span class="token keyword">char</span> ch <span class="token operator">=</span> strs<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>            <span class="token keyword">boolean</span> flag <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">String</span> s <span class="token operator">:</span> strs<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>                <span class="token keyword">if</span> <span class="token punctuation">(</span>ch <span class="token operator">!=</span> s<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>                    flag <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>                    <span class="token keyword">break</span><span class="token punctuation">;</span>                <span class="token punctuation">&#125;</span>            <span class="token punctuation">&#125;</span>            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>flag<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>                <span class="token keyword">break</span><span class="token punctuation">;</span>            <span class="token punctuation">&#125;</span>            res<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>ch<span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token punctuation">&#125;</span>        <span class="token keyword">return</span> res<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment">/*        StringBuilder res = new StringBuilder(strs[0]);        for (int i = 0; i &lt; strs[0].length(); i++) &#123;            char ch = strs[0].charAt(i);            for (String s : strs) &#123;                if (i == s.length() || ch != s.charAt(i)) &#123;                    return res.substring(0, i);                &#125;            &#125;        &#125;        return res.toString();        */</span>    <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><strong>思路2代码</strong></p><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Solution2</span> <span class="token punctuation">&#123;</span>    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">longestCommonPrefix</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> strs<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>        <span class="token class-name">StringBuilder</span> res <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuilder</span><span class="token punctuation">(</span>strs<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> strs<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i <span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>            <span class="token keyword">int</span> len <span class="token operator">=</span> strs<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>            <span class="token keyword">if</span> <span class="token punctuation">(</span>len <span class="token operator">&lt;</span> res<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>                res<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span>len<span class="token punctuation">,</span> res<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>            <span class="token punctuation">&#125;</span>            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> len<span class="token punctuation">;</span> j <span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>                <span class="token keyword">if</span> <span class="token punctuation">(</span>j <span class="token operator">>=</span> res<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>                    <span class="token keyword">break</span><span class="token punctuation">;</span>                <span class="token punctuation">&#125;</span>                <span class="token keyword">if</span> <span class="token punctuation">(</span>res<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>j<span class="token punctuation">)</span> <span class="token operator">!=</span> strs<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>j<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>                    res<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span>j<span class="token punctuation">,</span> len<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                    <span class="token keyword">break</span><span class="token punctuation">;</span>                <span class="token punctuation">&#125;</span>            <span class="token punctuation">&#125;</span>        <span class="token punctuation">&#125;</span>        <span class="token keyword">return</span> res<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><strong>思路3代码</strong></p><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Solution3</span> <span class="token punctuation">&#123;</span>    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">longestCommonPrefix</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> strs<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>        <span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>strs<span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token class-name">StringBuilder</span> res <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuilder</span><span class="token punctuation">(</span>strs<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> strs<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> i <span class="token operator">&lt;</span> strs<span class="token punctuation">[</span>strs<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>            <span class="token keyword">if</span> <span class="token punctuation">(</span>strs<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token operator">!=</span> strs<span class="token punctuation">[</span>strs<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>                res<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> res<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                <span class="token keyword">break</span><span class="token punctuation">;</span>            <span class="token punctuation">&#125;</span>        <span class="token punctuation">&#125;</span>        <span class="token keyword">return</span> res<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;编写一个函数来查找字符串数组中的最长公共前缀。&lt;/li&gt;
+&lt;li&gt;如果不存在公共前缀，返回空字符串 “”。&lt;/li&gt;
+&lt;li&gt;1 &amp;lt;= strs.length &amp;lt;= 200&lt;/li&gt;
+&lt;li&gt;0 &amp;lt;= strs[i].length &amp;lt;= 200&lt;/li&gt;
+&lt;li&gt;strs[i] 仅由小写英文字母组成&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&quot;line-numbers language-bash&quot; data-language=&quot;bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;example
+input  &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; strs &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;flower&quot;&lt;/span&gt;,&lt;span class=&quot;token string&quot;&gt;&quot;flow&quot;&lt;/span&gt;,&lt;span class=&quot;token string&quot;&gt;&quot;flight&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+output &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;fl&quot;&lt;/span&gt;
+input  &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; strs &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;dog&quot;&lt;/span&gt;,&lt;span class=&quot;token string&quot;&gt;&quot;racecar&quot;&lt;/span&gt;,&lt;span class=&quot;token string&quot;&gt;&quot;car&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+output &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&quot;&lt;/span&gt;
+note   &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; 不存在公共前缀&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;</summary>
+    
+    
+    
+    <category term="LeetCode" scheme="https://hexo.li98.cn/categories/LeetCode/"/>
+    
+    
+    <category term="Java" scheme="https://hexo.li98.cn/tags/Java/"/>
+    
+    <category term="LeetCode" scheme="https://hexo.li98.cn/tags/LeetCode/"/>
+    
+    <category term="字符串" scheme="https://hexo.li98.cn/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode算法题-1629.按键持续时间最长的键</title>
@@ -100,13 +137,13 @@ note   &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; 该
     
     <category term="LeetCode" scheme="https://hexo.li98.cn/tags/LeetCode/"/>
     
-    <category term="树" scheme="https://hexo.li98.cn/tags/%E6%A0%91/"/>
-    
     <category term="二叉树" scheme="https://hexo.li98.cn/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     
-    <category term="BFS" scheme="https://hexo.li98.cn/tags/BFS/"/>
-    
     <category term="DFS" scheme="https://hexo.li98.cn/tags/DFS/"/>
+    
+    <category term="树" scheme="https://hexo.li98.cn/tags/%E6%A0%91/"/>
+    
+    <category term="BFS" scheme="https://hexo.li98.cn/tags/BFS/"/>
     
   </entry>
   
@@ -254,13 +291,13 @@ note   &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; 节
     
     <category term="LeetCode" scheme="https://hexo.li98.cn/tags/LeetCode/"/>
     
-    <category term="树" scheme="https://hexo.li98.cn/tags/%E6%A0%91/"/>
-    
     <category term="二叉树" scheme="https://hexo.li98.cn/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     
     <category term="二叉搜索树" scheme="https://hexo.li98.cn/tags/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/"/>
     
     <category term="DFS" scheme="https://hexo.li98.cn/tags/DFS/"/>
+    
+    <category term="树" scheme="https://hexo.li98.cn/tags/%E6%A0%91/"/>
     
   </entry>
   
@@ -513,9 +550,9 @@ output &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; &lt
     
     <category term="LeetCode" scheme="https://hexo.li98.cn/tags/LeetCode/"/>
     
-    <category term="队列" scheme="https://hexo.li98.cn/tags/%E9%98%9F%E5%88%97/"/>
-    
     <category term="DFS" scheme="https://hexo.li98.cn/tags/DFS/"/>
+    
+    <category term="队列" scheme="https://hexo.li98.cn/tags/%E9%98%9F%E5%88%97/"/>
     
     <category term="栈" scheme="https://hexo.li98.cn/tags/%E6%A0%88/"/>
     
@@ -555,11 +592,11 @@ output &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; &lt
     
     <category term="递归" scheme="https://hexo.li98.cn/tags/%E9%80%92%E5%BD%92/"/>
     
-    <category term="树" scheme="https://hexo.li98.cn/tags/%E6%A0%91/"/>
-    
     <category term="二叉树" scheme="https://hexo.li98.cn/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     
     <category term="DFS" scheme="https://hexo.li98.cn/tags/DFS/"/>
+    
+    <category term="树" scheme="https://hexo.li98.cn/tags/%E6%A0%91/"/>
     
   </entry>
   
@@ -597,9 +634,9 @@ output &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; &lt
     
     <category term="LeetCode" scheme="https://hexo.li98.cn/tags/LeetCode/"/>
     
-    <category term="树" scheme="https://hexo.li98.cn/tags/%E6%A0%91/"/>
-    
     <category term="二叉树" scheme="https://hexo.li98.cn/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
+    
+    <category term="树" scheme="https://hexo.li98.cn/tags/%E6%A0%91/"/>
     
     <category term="BFS" scheme="https://hexo.li98.cn/tags/BFS/"/>
     
@@ -639,9 +676,9 @@ output &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; &lt
     
     <category term="LeetCode" scheme="https://hexo.li98.cn/tags/LeetCode/"/>
     
-    <category term="二叉树" scheme="https://hexo.li98.cn/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
-    
     <category term="中序遍历" scheme="https://hexo.li98.cn/tags/%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86/"/>
+    
+    <category term="二叉树" scheme="https://hexo.li98.cn/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     
     <category term="二叉搜索树" scheme="https://hexo.li98.cn/tags/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/"/>
     
@@ -758,32 +795,6 @@ output &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; &lt
     <category term="数组" scheme="https://hexo.li98.cn/tags/%E6%95%B0%E7%BB%84/"/>
     
     <category term="前缀和" scheme="https://hexo.li98.cn/tags/%E5%89%8D%E7%BC%80%E5%92%8C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>router-link跳转失败（Vue router命名路由）</title>
-    <link href="https://hexo.li98.cn/archives/6cb8f3c5.html"/>
-    <id>https://hexo.li98.cn/archives/6cb8f3c5.html</id>
-    <published>2022-01-19T14:00:00.000Z</published>
-    <updated>2022-02-07T07:46:57.168Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="问题及解决办法"><a href="#问题及解决办法" class="headerlink" title="问题及解决办法"></a>问题及解决办法</h2><ul><li>在.vue文件中，使用<code>router-link</code>并指定命名路由时跳转失败</li><li>router-link的:to后指定的命名路由参数name，需要和<code>src/router/index.js</code>文件中定义的路由的name和对应。例如想跳转到index.js文件中已定义好的命名路由A中，:to后的name就需要写成A。</li></ul><span id="more"></span><h2 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h2><p>创建 Router 实例的时候，在 <code>routes</code> 配置中给某个路由设置名称。如在<code>src/router/index.js</code>文件中定义以下路由</p><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span><span class="token keyword">import</span> VueRouter <span class="token keyword">from</span> <span class="token string">'vue-router'</span>Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>VueRouter<span class="token punctuation">)</span><span class="token keyword">const</span> routes <span class="token operator">=</span> <span class="token punctuation">[</span>    <span class="token punctuation">&#123;</span>        path<span class="token operator">:</span> <span class="token string">'/blog/:blogId'</span><span class="token punctuation">,</span>        name<span class="token operator">:</span> <span class="token string">'BlogDetail'</span><span class="token punctuation">,</span>        component<span class="token operator">:</span> BlogDetail<span class="token punctuation">,</span>    <span class="token punctuation">&#125;</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>在.vue文件中链接到命名路由时，可以给 <code>router-link</code> 的 <code>to</code> 属性传一个对象：</p><pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;router-link :to&#x3D;&quot;&#123; name: &#39;BlogDetail&#39;, params: &#123; blogId: 123 &#125;&#125;&quot;&gt;文章标题&lt;&#x2F;router-link&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>与代码调用 <code>router.push()</code> 等价：</p><pre class="line-numbers language-js" data-language="js"><code class="language-js">router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> name<span class="token operator">:</span> <span class="token string">'BlogDetail'</span><span class="token punctuation">,</span> params<span class="token operator">:</span> <span class="token punctuation">&#123;</span> blogId<span class="token operator">:</span> <span class="token number">123</span> <span class="token punctuation">&#125;</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a><a href="https://router.vuejs.org/zh/guide/essentials/named-routes.html">官方文档</a></h2>]]></content>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;问题及解决办法&quot;&gt;&lt;a href=&quot;#问题及解决办法&quot; class=&quot;headerlink&quot; title=&quot;问题及解决办法&quot;&gt;&lt;/a&gt;问题及解决办法&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;在.vue文件中，使用&lt;code&gt;router-link&lt;/code&gt;并指定命名路由时跳转失败&lt;/li&gt;
-&lt;li&gt;router-link的:to后指定的命名路由参数name，需要和&lt;code&gt;src/router/index.js&lt;/code&gt;文件中定义的路由的name和对应。例如想跳转到index.js文件中已定义好的命名路由A中，:to后的name就需要写成A。&lt;/li&gt;
-&lt;/ul&gt;</summary>
-    
-    
-    
-    <category term="SpringBoot+Vue" scheme="https://hexo.li98.cn/categories/SpringBoot-Vue/"/>
-    
-    
-    <category term="Vue" scheme="https://hexo.li98.cn/tags/Vue/"/>
-    
-    <category term="router-link" scheme="https://hexo.li98.cn/tags/router-link/"/>
     
   </entry>
   
