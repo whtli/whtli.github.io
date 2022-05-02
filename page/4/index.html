@@ -254,6 +254,102 @@
   <div class="card">
     
         <article class="card card-content">
+          <a href="/archives/39dee8e5.html">
+            <h1 class="post-title">
+              安装Anaconda+常用的conda命令+Anaconda换源+安装Jupyter
+            </h1>
+          </a>
+          <!-- <div class="card-excerpt">
+            
+              安装Anaconda
+下载并安装Anaconda
+
+常用的conda命令  # 创建虚拟环境
+conda create -n pytorch python=3.6
+# 删除虚拟环境
+conda env remove -n pytorch
+# 激活指定虚拟环境
+conda activate pytorch
+# 退出当前虚拟环境
+conda deactivate
+# 安装包，如numpy（提前进入目标环境）
+conda install numpy
+或
+pip install numpy
+# 安装指定版本的包，如numpy
+pip install numpy==1.6.0
+# 升级包
+pip install --upgrade numpy
+# 卸载包
+pip uninstall numpy
+# 查看conda中所有环境
+conda info -e
+# 查看某个环境中安装的所有包（提前进入目标环境）
+conda list
+                
+          </div> -->
+          <div class="card-excerpt">
+            
+              <h2 id="安装Anaconda"><a href="#安装Anaconda" class="headerlink" title="安装Anaconda"></a>安装Anaconda</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/">下载并安装Anaconda</a></li>
+</ul>
+<h2 id="常用的conda命令"><a href="#常用的conda命令" class="headerlink" title="常用的conda命令"></a>常用的conda命令</h2>  <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 创建虚拟环境</span>
+conda create -n pytorch <span class="token assign-left variable">python</span><span class="token operator">=</span><span class="token number">3.6</span>
+<span class="token comment"># 删除虚拟环境</span>
+conda <span class="token function">env</span> remove -n pytorch
+<span class="token comment"># 激活指定虚拟环境</span>
+conda activate pytorch
+<span class="token comment"># 退出当前虚拟环境</span>
+conda deactivate
+<span class="token comment"># 安装包，如numpy（提前进入目标环境）</span>
+conda <span class="token function">install</span> numpy
+或
+pip <span class="token function">install</span> numpy
+<span class="token comment"># 安装指定版本的包，如numpy</span>
+pip <span class="token function">install</span> <span class="token assign-left variable">numpy</span><span class="token operator">==</span><span class="token number">1.6</span>.0
+<span class="token comment"># 升级包</span>
+pip <span class="token function">install</span> --upgrade numpy
+<span class="token comment"># 卸载包</span>
+pip uninstall numpy
+<span class="token comment"># 查看conda中所有环境</span>
+conda info -e
+<span class="token comment"># 查看某个环境中安装的所有包（提前进入目标环境）</span>
+conda list<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                
+          </div>
+          <div class="card-post-footer">
+            <div class="post-meta">
+              <time datetime="2021-12-08T13:00:00.000Z">
+                <i class="iconfont icon-calendar" style="margin-right: 2px;">
+                </i>
+                <span>
+                  2021-12-08
+                </span>
+              </time>
+              
+                
+                  
+                    
+                          
+                            <span class="dot"></span>
+                            
+                              
+                                    <a href="/categories/D2L/" class="post-meta-link">
+                                      D2L
+                                    </a>
+                                    
+                                      
+            </div>
+            <a href="/archives/39dee8e5.html">
+              继续阅读
+            </a>
+          </div>
+        </article>
+  </div>
+  
+  <div class="card">
+    
+        <article class="card card-content">
           <a href="/archives/b51853f8.html">
             <h1 class="post-title">
               SpringBoot+Vue项目部署到Linux服务器
@@ -943,80 +1039,6 @@ note   <span class="token builtin class-name">:</span> 该算式转化为常见�
         </article>
   </div>
   
-  <div class="card">
-    
-        <article class="card card-content">
-          <a href="/archives/d4c92f69.html">
-            <h1 class="post-title">
-              LeetCode精选TOP面试题015.三数之和
-            </h1>
-          </a>
-          <!-- <div class="card-excerpt">
-            
-              题目描述
-给定一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？
-找出所有和为 0 且不重复的三元组。
-0 &amp;lt;= nums.length &amp;lt;= 3000
--105 &amp;lt;= nums[i] &amp;lt;= 105example
-input  : nums = [-1,0,1,2,-1,-4]
-output : [[-1,-1,2],[-1,0,1]]
-input  : nums = []
-output : []
-input  : nums = [0]
-output : []
-
-
-
-                
-          </div> -->
-          <div class="card-excerpt">
-            
-              <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><ul>
-<li>给定一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？</li>
-<li>找出所有和为 0 且不重复的三元组。</li>
-<li>0 &lt;= nums.length &lt;= 3000</li>
-<li>-105 &lt;= nums[i] &lt;= 105<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">example
-input  <span class="token builtin class-name">:</span> nums <span class="token operator">=</span> <span class="token punctuation">[</span>-1,0,1,2,-1,-4<span class="token punctuation">]</span>
-output <span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token punctuation">[</span>-1,-1,2<span class="token punctuation">]</span>,<span class="token punctuation">[</span>-1,0,1<span class="token punctuation">]</span><span class="token punctuation">]</span>
-input  <span class="token builtin class-name">:</span> nums <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-output <span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-input  <span class="token builtin class-name">:</span> nums <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-output <span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-</li>
-</ul>
-                
-          </div>
-          <div class="card-post-footer">
-            <div class="post-meta">
-              <time datetime="2021-11-18T12:33:17.234Z">
-                <i class="iconfont icon-calendar" style="margin-right: 2px;">
-                </i>
-                <span>
-                  2021-11-18
-                </span>
-              </time>
-              
-                
-                  
-                    
-                          
-                            <span class="dot"></span>
-                            
-                              
-                                    <a href="/categories/LeetCode/" class="post-meta-link">
-                                      LeetCode
-                                    </a>
-                                    
-                                      
-            </div>
-            <a href="/archives/d4c92f69.html">
-              继续阅读
-            </a>
-          </div>
-        </article>
-  </div>
-  
     
       <div class="nav">
   
@@ -1064,7 +1086,7 @@ output <span class="token builtin class-name">:</span> <span class="token punctu
   <a 
     class="author-posts-count" 
     href="/archives">
-    <span>127</span>
+    <span>128</span>
     <span>文章</span>
   </a>
   <a 
@@ -1129,7 +1151,7 @@ output <span class="token builtin class-name">:</span> <span class="token punctu
       <a href="/categories/LeetCode/">
         <div class="categories-list-item">
           LeetCode
-          <span class="categories-list-item-badge">70</span>
+          <span class="categories-list-item-badge">71</span>
         </div>
       </a>
     
@@ -1273,9 +1295,9 @@ output <span class="token builtin class-name">:</span> <span class="token punctu
       </a>
     
       <a 
-        href="/tags/%E6%95%B0%E5%AD%A6/" 
-        title="数学">
-        <div class="tags-list-item">数学</div>
+        href="/tags/%E6%A0%88/" 
+        title="栈">
+        <div class="tags-list-item">栈</div>
       </a>
     
   </div>
@@ -1399,11 +1421,15 @@ output <span class="token builtin class-name">:</span> <span class="token punctu
     
       
         
+      
+    
+      
+        
           <a 
             href="/archives/2022" 
             class="archive-card-list-item">
             2022
-            <span class="archive-card-list-item-badge">25</span>
+            <span class="archive-card-list-item-badge">26</span>
           </a>
         
         
@@ -1853,6 +1879,11 @@ output <span class="token builtin class-name">:</span> <span class="token punctu
   <div class="recent-posts-list">
     
       <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2022-05-02</div>
+        <a href="/archives/78d80330.html"><div class="recent-posts-item-content">LeetCode腾讯精选练习50题-20.有效的括号</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
         <div class="recent-posts-item-title">2022-04-30</div>
         <a href="/archives/70dca.html"><div class="recent-posts-item-content">LeetCode腾讯精选练习50题-14.最长公共前缀</div></a>
       </div>
@@ -1865,11 +1896,6 @@ output <span class="token builtin class-name">:</span> <span class="token punctu
       <div class="recent-posts-item">
         <div class="recent-posts-item-title">2022-04-20</div>
         <a href="/archives/c7b84ffe.html"><div class="recent-posts-item-content">LeetCode腾讯精选练习50题-104.二叉树的最大深度</div></a>
-      </div>
-    
-      <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2022-04-19</div>
-        <a href="/archives/60d2c7c1.html"><div class="recent-posts-item-content">LeetCode腾讯精选练习50题-237.删除链表中的节点</div></a>
       </div>
     
   </div>
@@ -1993,11 +2019,15 @@ output <span class="token builtin class-name">:</span> <span class="token punctu
     
       
         
+      
+    
+      
+        
           <a 
             href="/archives/2022" 
             class="archive-card-list-item">
             2022
-            <span class="archive-card-list-item-badge">25</span>
+            <span class="archive-card-list-item-badge">26</span>
           </a>
         
         
