@@ -254,6 +254,74 @@
   <div class="card">
     
         <article class="card card-content">
+          <a href="/archives/2abdf615.html">
+            <h1 class="post-title">
+              win10使用Anaconda创建可使用PyTorch虚拟环境
+            </h1>
+          </a>
+          <!-- <div class="card-excerpt">
+            
+              1、安装Anaconda
+可参考安装Anaconda+常用的conda命令+Anaconda换源+安装Jupyter
+
+2、创建虚拟环境
+win10系统，进入cmd
+
+# 创建名为pytorch的虚拟环境
+conda create --name pytorch python=3.6
+# 激活名为pytorch的虚拟环境
+conda activate pytorch
+安装PyTorch包
+                
+          </div> -->
+          <div class="card-excerpt">
+            
+              <h2 id="1、安装Anaconda"><a href="#1、安装Anaconda" class="headerlink" title="1、安装Anaconda"></a>1、安装Anaconda</h2><ul>
+<li>可参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/flower_48237/article/details/121798811">安装Anaconda+常用的conda命令+Anaconda换源+安装Jupyter</a></li>
+</ul>
+<h2 id="2、创建虚拟环境"><a href="#2、创建虚拟环境" class="headerlink" title="2、创建虚拟环境"></a>2、创建虚拟环境</h2><ul>
+<li>win10系统，进入cmd</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 创建名为pytorch的虚拟环境</span>
+conda create --name pytorch <span class="token assign-left variable">python</span><span class="token operator">=</span><span class="token number">3.6</span>
+<span class="token comment"># 激活名为pytorch的虚拟环境</span>
+conda activate pytorch<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="安装PyTorch包"><a href="#安装PyTorch包" class="headerlink" title="安装PyTorch包"></a>安装PyTorch包</h2>
+                
+          </div>
+          <div class="card-post-footer">
+            <div class="post-meta">
+              <time datetime="2021-12-08T14:00:00.000Z">
+                <i class="iconfont icon-calendar" style="margin-right: 2px;">
+                </i>
+                <span>
+                  2021-12-08
+                </span>
+              </time>
+              
+                
+                  
+                    
+                          
+                            <span class="dot"></span>
+                            
+                              
+                                    <a href="/categories/D2L/" class="post-meta-link">
+                                      D2L
+                                    </a>
+                                    
+                                      
+            </div>
+            <a href="/archives/2abdf615.html">
+              继续阅读
+            </a>
+          </div>
+        </article>
+  </div>
+  
+  <div class="card">
+    
+        <article class="card card-content">
           <a href="/archives/39dee8e5.html">
             <h1 class="post-title">
               安装Anaconda+常用的conda命令+Anaconda换源+安装Jupyter
@@ -961,84 +1029,6 @@ output <span class="token builtin class-name">:</span> <span class="token number
         </article>
   </div>
   
-  <div class="card">
-    
-        <article class="card card-content">
-          <a href="/archives/b7aa63f2.html">
-            <h1 class="post-title">
-              LeetCode精选TOP面试题150.逆波兰表达式求值
-            </h1>
-          </a>
-          <!-- <div class="card-excerpt">
-            
-              题目描述
-根据 逆波兰表示法，求表达式的值。
-有效的算符包括 +、-、*、/ 。每个运算对象可以是整数，也可以是另一个逆波兰表达式。
-整数除法只保留整数部分。
-给定逆波兰表达式总是有效的。即表达式总会得出有效数值且不存在除数为 0 的情况。
-
-example
-input  : tokens = &amp;#123;&#34;2&#34;,&#34;1&#34;,&#34;+&#34;,&#34;3&#34;,&#34;*&#34;&amp;#125;
-output : 9
-note   : 该算式转化为常见的中缀算术表达式为：((2 + 1) * 3) = 9
-input  : tokens = &amp;#123;&#34;4&#34;,&#34;13&#34;,&#34;5&#34;,&#34;/&#34;,&#34;+&#34;&amp;#125;
-output : 6
-note   : 该算式转化为常见的中缀算术表达式为：(4 + (13 / 5)) = 6
-input  : tokens = &amp;#123;&#34;10&#34;,&#34;6&#34;,&#34;9&#34;,&#34;3&#34;,&#34;+&#34;,&#34;-11&#34;,&#34;*&#34;,&#34;/&#34;,&#34;*&#34;,&#34;17&#34;,&#34;+&#34;,&#34;5&#34;,&#34;+&#34;&amp;#125;
-output : 22
-note   : 该算式转化为常见的中缀算术表达式为：((10 * (6 / ((9 + 3) * -11))) + 17) + 5
-                
-          </div> -->
-          <div class="card-excerpt">
-            
-              <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><ul>
-<li>根据 逆波兰表示法，求表达式的值。</li>
-<li>有效的算符包括 +、-、*、/ 。每个运算对象可以是整数，也可以是另一个逆波兰表达式。</li>
-<li>整数除法只保留整数部分。</li>
-<li>给定逆波兰表达式总是有效的。即表达式总会得出有效数值且不存在除数为 0 的情况。</li>
-</ul>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">example
-input  <span class="token builtin class-name">:</span> tokens <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">"2"</span>,<span class="token string">"1"</span>,<span class="token string">"+"</span>,<span class="token string">"3"</span>,<span class="token string">"*"</span><span class="token punctuation">&#125;</span>
-output <span class="token builtin class-name">:</span> <span class="token number">9</span>
-note   <span class="token builtin class-name">:</span> 该算式转化为常见的中缀算术表达式为：<span class="token variable"><span class="token punctuation">((</span><span class="token number">2</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">9</span>
-input  <span class="token operator">:</span> tokens <span class="token operator">=</span> &#123;"<span class="token number">4</span>"<span class="token punctuation">,</span>"<span class="token number">13</span>"<span class="token punctuation">,</span>"<span class="token number">5</span>"<span class="token punctuation">,</span>"<span class="token operator">/</span>"<span class="token punctuation">,</span>"<span class="token operator">+</span>"&#125;
-output <span class="token operator">:</span> <span class="token number">6</span>
-note   <span class="token operator">:</span> 该算式转化为常见的中缀算术表达式为：<span class="token punctuation">(</span><span class="token number">4</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token number">13</span> <span class="token operator">/</span> <span class="token number">5</span><span class="token punctuation">))</span></span> <span class="token operator">=</span> <span class="token number">6</span>
-input  <span class="token builtin class-name">:</span> tokens <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">"10"</span>,<span class="token string">"6"</span>,<span class="token string">"9"</span>,<span class="token string">"3"</span>,<span class="token string">"+"</span>,<span class="token string">"-11"</span>,<span class="token string">"*"</span>,<span class="token string">"/"</span>,<span class="token string">"*"</span>,<span class="token string">"17"</span>,<span class="token string">"+"</span>,<span class="token string">"5"</span>,<span class="token string">"+"</span><span class="token punctuation">&#125;</span>
-output <span class="token builtin class-name">:</span> <span class="token number">22</span>
-note   <span class="token builtin class-name">:</span> 该算式转化为常见的中缀算术表达式为：<span class="token variable"><span class="token punctuation">((</span><span class="token number">10</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">6</span> <span class="token operator">/</span> <span class="token punctuation">((</span><span class="token number">9</span> <span class="token operator">+</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token operator">-</span><span class="token number">11</span><span class="token punctuation">))</span></span><span class="token punctuation">)</span> + <span class="token number">17</span><span class="token punctuation">)</span> + <span class="token number">5</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-                
-          </div>
-          <div class="card-post-footer">
-            <div class="post-meta">
-              <time datetime="2021-11-20T14:20:11.849Z">
-                <i class="iconfont icon-calendar" style="margin-right: 2px;">
-                </i>
-                <span>
-                  2021-11-20
-                </span>
-              </time>
-              
-                
-                  
-                    
-                          
-                            <span class="dot"></span>
-                            
-                              
-                                    <a href="/categories/LeetCode/" class="post-meta-link">
-                                      LeetCode
-                                    </a>
-                                    
-                                      
-            </div>
-            <a href="/archives/b7aa63f2.html">
-              继续阅读
-            </a>
-          </div>
-        </article>
-  </div>
-  
     
       <div class="nav">
   
@@ -1086,7 +1076,7 @@ note   <span class="token builtin class-name">:</span> 该算式转化为常见�
   <a 
     class="author-posts-count" 
     href="/archives">
-    <span>128</span>
+    <span>130</span>
     <span>文章</span>
   </a>
   <a 
@@ -1151,7 +1141,7 @@ note   <span class="token builtin class-name">:</span> 该算式转化为常见�
       <a href="/categories/LeetCode/">
         <div class="categories-list-item">
           LeetCode
-          <span class="categories-list-item-badge">71</span>
+          <span class="categories-list-item-badge">73</span>
         </div>
       </a>
     
@@ -1205,15 +1195,75 @@ note   <span class="token builtin class-name">:</span> 该算式转化为常见�
   <div class="tags-list">
     
       <a 
+        href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" 
+        title="深度学习">
+        <div class="tags-list-item">深度学习</div>
+      </a>
+    
+      <a 
+        href="/tags/PyTorch/" 
+        title="PyTorch">
+        <div class="tags-list-item">PyTorch</div>
+      </a>
+    
+      <a 
+        href="/tags/Jupyter/" 
+        title="Jupyter">
+        <div class="tags-list-item">Jupyter</div>
+      </a>
+    
+      <a 
+        href="/tags/Python/" 
+        title="Python">
+        <div class="tags-list-item">Python</div>
+      </a>
+    
+      <a 
+        href="/tags/%E5%85%B6%E4%BB%96/" 
+        title="其他">
+        <div class="tags-list-item">其他</div>
+      </a>
+    
+      <a 
+        href="/tags/Anaconda/" 
+        title="Anaconda">
+        <div class="tags-list-item">Anaconda</div>
+      </a>
+    
+      <a 
+        href="/tags/conda/" 
+        title="conda">
+        <div class="tags-list-item">conda</div>
+      </a>
+    
+      <a 
         href="/tags/Java/" 
         title="Java">
         <div class="tags-list-item">Java</div>
       </a>
     
       <a 
+        href="/tags/%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/" 
+        title="数值计算">
+        <div class="tags-list-item">数值计算</div>
+      </a>
+    
+      <a 
         href="/tags/LeetCode/" 
         title="LeetCode">
         <div class="tags-list-item">LeetCode</div>
+      </a>
+    
+      <a 
+        href="/tags/%E9%9D%A2%E8%AF%95/" 
+        title="面试">
+        <div class="tags-list-item">面试</div>
+      </a>
+    
+      <a 
+        href="/tags/%E6%95%B4%E6%95%B0/" 
+        title="整数">
+        <div class="tags-list-item">整数</div>
       </a>
     
       <a 
@@ -1229,75 +1279,15 @@ note   <span class="token builtin class-name">:</span> 该算式转化为常见�
       </a>
     
       <a 
-        href="/tags/%E9%9D%A2%E8%AF%95/" 
-        title="面试">
-        <div class="tags-list-item">面试</div>
+        href="/tags/%E5%88%86%E6%B2%BB/" 
+        title="分治">
+        <div class="tags-list-item">分治</div>
       </a>
     
       <a 
-        href="/tags/%E9%81%8D%E5%8E%86/" 
-        title="遍历">
-        <div class="tags-list-item">遍历</div>
-      </a>
-    
-      <a 
-        href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" 
-        title="二叉树">
-        <div class="tags-list-item">二叉树</div>
-      </a>
-    
-      <a 
-        href="/tags/%E9%80%92%E5%BD%92/" 
-        title="递归">
-        <div class="tags-list-item">递归</div>
-      </a>
-    
-      <a 
-        href="/tags/%E9%93%BE%E8%A1%A8/" 
-        title="链表">
-        <div class="tags-list-item">链表</div>
-      </a>
-    
-      <a 
-        href="/tags/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD/" 
-        title="因果推断">
-        <div class="tags-list-item">因果推断</div>
-      </a>
-    
-      <a 
-        href="/tags/Causality/" 
-        title="Causality">
-        <div class="tags-list-item">Causality</div>
-      </a>
-    
-      <a 
-        href="/tags/%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/" 
-        title="数值计算">
-        <div class="tags-list-item">数值计算</div>
-      </a>
-    
-      <a 
-        href="/tags/%E6%A0%91/" 
-        title="树">
-        <div class="tags-list-item">树</div>
-      </a>
-    
-      <a 
-        href="/tags/DFS/" 
-        title="DFS">
-        <div class="tags-list-item">DFS</div>
-      </a>
-    
-      <a 
-        href="/tags/SQL/" 
-        title="SQL">
-        <div class="tags-list-item">SQL</div>
-      </a>
-    
-      <a 
-        href="/tags/%E6%A0%88/" 
-        title="栈">
-        <div class="tags-list-item">栈</div>
+        href="/tags/%E5%AD%97%E7%AC%A6%E5%8C%B9%E9%85%8D/" 
+        title="字符匹配">
+        <div class="tags-list-item">字符匹配</div>
       </a>
     
   </div>
@@ -1425,11 +1415,15 @@ note   <span class="token builtin class-name">:</span> 该算式转化为常见�
     
       
         
+      
+    
+      
+        
           <a 
             href="/archives/2022" 
             class="archive-card-list-item">
             2022
-            <span class="archive-card-list-item-badge">26</span>
+            <span class="archive-card-list-item-badge">27</span>
           </a>
         
         
@@ -1849,12 +1843,16 @@ note   <span class="token builtin class-name">:</span> 该算式转化为常见�
         
       
     
+      
+        
+      
+    
     
       <a 
         href="/archives/2020" 
         class="archive-card-list-item">
         2020
-        <span class="archive-card-list-item-badge">61</span>
+        <span class="archive-card-list-item-badge">62</span>
       </a>
     
   </div>
@@ -1879,6 +1877,11 @@ note   <span class="token builtin class-name">:</span> 该算式转化为常见�
   <div class="recent-posts-list">
     
       <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2022-05-03</div>
+        <a href="/archives/b7607879.html"><div class="recent-posts-item-content">LeetCode腾讯精选练习50题-21.合并两个有序链表</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
         <div class="recent-posts-item-title">2022-05-02</div>
         <a href="/archives/78d80330.html"><div class="recent-posts-item-content">LeetCode腾讯精选练习50题-20.有效的括号</div></a>
       </div>
@@ -1891,11 +1894,6 @@ note   <span class="token builtin class-name">:</span> 该算式转化为常见�
       <div class="recent-posts-item">
         <div class="recent-posts-item-title">2022-04-26</div>
         <a href="/archives/d9221a63.html"><div class="recent-posts-item-content">LeetCode算法题-1629.按键持续时间最长的键</div></a>
-      </div>
-    
-      <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2022-04-20</div>
-        <a href="/archives/c7b84ffe.html"><div class="recent-posts-item-content">LeetCode腾讯精选练习50题-104.二叉树的最大深度</div></a>
       </div>
     
   </div>
@@ -2023,11 +2021,15 @@ note   <span class="token builtin class-name">:</span> 该算式转化为常见�
     
       
         
+      
+    
+      
+        
           <a 
             href="/archives/2022" 
             class="archive-card-list-item">
             2022
-            <span class="archive-card-list-item-badge">26</span>
+            <span class="archive-card-list-item-badge">27</span>
           </a>
         
         
@@ -2447,12 +2449,16 @@ note   <span class="token builtin class-name">:</span> 该算式转化为常见�
         
       
     
+      
+        
+      
+    
     
       <a 
         href="/archives/2020" 
         class="archive-card-list-item">
         2020
-        <span class="archive-card-list-item-badge">61</span>
+        <span class="archive-card-list-item-badge">62</span>
       </a>
     
   </div>

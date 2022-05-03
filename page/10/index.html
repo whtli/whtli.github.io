@@ -254,6 +254,134 @@
   <div class="card">
     
         <article class="card card-content">
+          <a href="/archives/d161f5a8.html">
+            <h1 class="post-title">
+              笔试题4-字符串序列的转换
+            </h1>
+          </a>
+          <!-- <div class="card-excerpt">
+            
+              
+2020年2月 TapTap × 心动网络的一个笔试题，原题记不太清了，只能回忆一下了。
+
+题目回忆给定两个字符串str1和str2，拿str1 = “asd”， str2 = “dsa” 举例。把str1的末尾字符取下，放到栈中，这个操作记为 E ；判断栈顶元素是否与str2 的首字符相同，如果相同，那么栈顶元素出栈，这个操作记为 D。现在给定任意的两个字符串，需要判断字符串1能否通过合理的E、D操作得到字符串2，并将E、D操作序列输出。规定每个字符串中没有相同的字符，每个字符都是唯一的。
+样例1
+input: asd dsa
+output: EDEDED
+
+样例2: 
+input: qwert twerq
+output: EDEEEDDDED
+                
+          </div> -->
+          <div class="card-excerpt">
+            
+              <blockquote>
+<p>2020年2月 TapTap × 心动网络的一个笔试题，原题记不太清了，只能回忆一下了。</p>
+</blockquote>
+<h3 id="题目回忆"><a href="#题目回忆" class="headerlink" title="题目回忆"></a>题目回忆</h3><p>给定两个字符串str1和str2，拿str1 = “asd”， str2 = “dsa” 举例。<br>把<strong>str1的末尾字符</strong>取下，放到栈中，这个操作记为 <strong>E</strong> ；<br>判断栈顶元素是否与<strong>str2 的首字符</strong>相同，如果相同，那么栈顶元素出栈，这个操作记为 <strong>D</strong>。<br>现在给定任意的两个字符串，需要判断字符串1能否通过合理的E、D操作得到字符串2，并将E、D操作序列输出。<br>规定每个字符串中<strong>没有相同的字符</strong>，每个字符都是唯一的。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">样例<span class="token number">1</span>
+input<span class="token operator">:</span> asd dsa
+output<span class="token operator">:</span> EDEDED<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">样例<span class="token number">2</span><span class="token operator">:</span> 
+input<span class="token operator">:</span> qwert twerq
+output<span class="token operator">:</span> EDEEEDDDED<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+                
+          </div>
+          <div class="card-post-footer">
+            <div class="post-meta">
+              <time datetime="2020-03-04T03:25:05.000Z">
+                <i class="iconfont icon-calendar" style="margin-right: 2px;">
+                </i>
+                <span>
+                  2020-03-04
+                </span>
+              </time>
+              
+                
+                  
+                    
+                          
+                            <span class="dot"></span>
+                            
+                              
+                                    <a href="/categories/%E7%AC%94%E8%AF%95%E9%A2%98/" class="post-meta-link">
+                                      笔试题
+                                    </a>
+                                    
+                                      
+            </div>
+            <a href="/archives/d161f5a8.html">
+              继续阅读
+            </a>
+          </div>
+        </article>
+  </div>
+  
+  <div class="card">
+    
+        <article class="card card-content">
+          <a href="/archives/b88b3653.html">
+            <h1 class="post-title">
+              LeetCode精选TOP面试题104.二叉树的最大深度
+            </h1>
+          </a>
+          <!-- <div class="card-excerpt">
+            
+              题目描述给定一个大小为 n 的数组，找到其中的多数元素。多数元素是指在数组中出现次数大于 ⌊ n/2 ⌋ 的元素。数组是非空的，并且给定的数组总是存在多数元素。
+示例 1:
+输入: [3,2,3]
+输出: 3
+示例 2:
+输入: [2,2,1,1,1,2,2]
+输出: 2
+                
+          </div> -->
+          <div class="card-excerpt">
+            
+              <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>给定一个大小为 n 的数组，找到其中的多数元素。多数元素是指在数组中出现次数大于 ⌊ n/2 ⌋ 的元素。<br>数组是非空的，并且给定的数组总是存在多数元素。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">示例 <span class="token number">1</span><span class="token operator">:</span>
+输入<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span>
+输出<span class="token operator">:</span> <span class="token number">3</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">示例 <span class="token number">2</span><span class="token operator">:</span>
+输入<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span>
+输出<span class="token operator">:</span> <span class="token number">2</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+                
+          </div>
+          <div class="card-post-footer">
+            <div class="post-meta">
+              <time datetime="2020-03-03T14:24:56.000Z">
+                <i class="iconfont icon-calendar" style="margin-right: 2px;">
+                </i>
+                <span>
+                  2020-03-03
+                </span>
+              </time>
+              
+                
+                  
+                    
+                          
+                            <span class="dot"></span>
+                            
+                              
+                                    <a href="/categories/LeetCode/" class="post-meta-link">
+                                      LeetCode
+                                    </a>
+                                    
+                                      
+            </div>
+            <a href="/archives/b88b3653.html">
+              继续阅读
+            </a>
+          </div>
+        </article>
+  </div>
+  
+  <div class="card">
+    
+        <article class="card card-content">
           <a href="/archives/9451e2de.html">
             <h1 class="post-title">
               【剑指offer】面试题33-二叉搜索树的后序遍历序列
@@ -687,102 +815,6 @@ output：true<span aria-hidden="true" class="line-numbers-rows"><span></span><sp
         </article>
   </div>
   
-  <div class="card">
-    
-        <article class="card card-content">
-          <a href="/archives/394445a5.html">
-            <h1 class="post-title">
-              【剑指offer】面试题32-从上到下打印二叉树
-            </h1>
-          </a>
-          <!-- <div class="card-excerpt">
-            
-              题目从上往下打印出二叉树的每个节点，同层节点从左至右打印。
-                
-          </div> -->
-          <div class="card-excerpt">
-            
-              <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>从上往下打印出二叉树的每个节点，同层节点从左至右打印。</p>
-                
-          </div>
-          <div class="card-post-footer">
-            <div class="post-meta">
-              <time datetime="2020-02-15T12:05:37.000Z">
-                <i class="iconfont icon-calendar" style="margin-right: 2px;">
-                </i>
-                <span>
-                  2020-02-15
-                </span>
-              </time>
-              
-                
-                  
-                    
-                          
-                            <span class="dot"></span>
-                            
-                              
-                                    <a href="/categories/%E5%89%91%E6%8C%87offer/" class="post-meta-link">
-                                      剑指offer
-                                    </a>
-                                    
-                                      
-            </div>
-            <a href="/archives/394445a5.html">
-              继续阅读
-            </a>
-          </div>
-        </article>
-  </div>
-  
-  <div class="card">
-    
-        <article class="card card-content">
-          <a href="/archives/cd1152fa.html">
-            <h1 class="post-title">
-              LeetCode精选TOP面试题108.将有序数组转换为二叉搜索树
-            </h1>
-          </a>
-          <!-- <div class="card-excerpt">
-            
-              题目描述将一个按照升序排列的有序数组，转换为一棵高度平衡二叉搜索树。一个高度平衡二叉树是指一个二叉树每个节点 的左右两个子树的高度差的绝对值不超过 1。将有序数组转换为二叉搜索树的结果肯定是不唯一的，因为存在多种建树方法。
-                
-          </div> -->
-          <div class="card-excerpt">
-            
-              <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>将一个按照升序排列的有序数组，转换为一棵高度平衡二叉搜索树。一个高度平衡二叉树是指一个二叉树每个节点 的左右两个子树的高度差的绝对值不超过 1。<br>将有序数组转换为二叉搜索树的结果肯定是不唯一的，因为存在多种建树方法。</p>
-                
-          </div>
-          <div class="card-post-footer">
-            <div class="post-meta">
-              <time datetime="2020-02-15T09:45:57.000Z">
-                <i class="iconfont icon-calendar" style="margin-right: 2px;">
-                </i>
-                <span>
-                  2020-02-15
-                </span>
-              </time>
-              
-                
-                  
-                    
-                          
-                            <span class="dot"></span>
-                            
-                              
-                                    <a href="/categories/LeetCode/" class="post-meta-link">
-                                      LeetCode
-                                    </a>
-                                    
-                                      
-            </div>
-            <a href="/archives/cd1152fa.html">
-              继续阅读
-            </a>
-          </div>
-        </article>
-  </div>
-  
     
       <div class="nav">
   
@@ -830,7 +862,7 @@ output：true<span aria-hidden="true" class="line-numbers-rows"><span></span><sp
   <a 
     class="author-posts-count" 
     href="/archives">
-    <span>128</span>
+    <span>130</span>
     <span>文章</span>
   </a>
   <a 
@@ -895,7 +927,7 @@ output：true<span aria-hidden="true" class="line-numbers-rows"><span></span><sp
       <a href="/categories/LeetCode/">
         <div class="categories-list-item">
           LeetCode
-          <span class="categories-list-item-badge">71</span>
+          <span class="categories-list-item-badge">73</span>
         </div>
       </a>
     
@@ -949,15 +981,75 @@ output：true<span aria-hidden="true" class="line-numbers-rows"><span></span><sp
   <div class="tags-list">
     
       <a 
+        href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" 
+        title="深度学习">
+        <div class="tags-list-item">深度学习</div>
+      </a>
+    
+      <a 
+        href="/tags/PyTorch/" 
+        title="PyTorch">
+        <div class="tags-list-item">PyTorch</div>
+      </a>
+    
+      <a 
+        href="/tags/Jupyter/" 
+        title="Jupyter">
+        <div class="tags-list-item">Jupyter</div>
+      </a>
+    
+      <a 
+        href="/tags/Python/" 
+        title="Python">
+        <div class="tags-list-item">Python</div>
+      </a>
+    
+      <a 
+        href="/tags/%E5%85%B6%E4%BB%96/" 
+        title="其他">
+        <div class="tags-list-item">其他</div>
+      </a>
+    
+      <a 
+        href="/tags/Anaconda/" 
+        title="Anaconda">
+        <div class="tags-list-item">Anaconda</div>
+      </a>
+    
+      <a 
+        href="/tags/conda/" 
+        title="conda">
+        <div class="tags-list-item">conda</div>
+      </a>
+    
+      <a 
         href="/tags/Java/" 
         title="Java">
         <div class="tags-list-item">Java</div>
       </a>
     
       <a 
+        href="/tags/%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/" 
+        title="数值计算">
+        <div class="tags-list-item">数值计算</div>
+      </a>
+    
+      <a 
         href="/tags/LeetCode/" 
         title="LeetCode">
         <div class="tags-list-item">LeetCode</div>
+      </a>
+    
+      <a 
+        href="/tags/%E9%9D%A2%E8%AF%95/" 
+        title="面试">
+        <div class="tags-list-item">面试</div>
+      </a>
+    
+      <a 
+        href="/tags/%E6%95%B4%E6%95%B0/" 
+        title="整数">
+        <div class="tags-list-item">整数</div>
       </a>
     
       <a 
@@ -973,75 +1065,15 @@ output：true<span aria-hidden="true" class="line-numbers-rows"><span></span><sp
       </a>
     
       <a 
-        href="/tags/%E9%9D%A2%E8%AF%95/" 
-        title="面试">
-        <div class="tags-list-item">面试</div>
+        href="/tags/%E5%88%86%E6%B2%BB/" 
+        title="分治">
+        <div class="tags-list-item">分治</div>
       </a>
     
       <a 
-        href="/tags/%E9%81%8D%E5%8E%86/" 
-        title="遍历">
-        <div class="tags-list-item">遍历</div>
-      </a>
-    
-      <a 
-        href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" 
-        title="二叉树">
-        <div class="tags-list-item">二叉树</div>
-      </a>
-    
-      <a 
-        href="/tags/%E9%80%92%E5%BD%92/" 
-        title="递归">
-        <div class="tags-list-item">递归</div>
-      </a>
-    
-      <a 
-        href="/tags/%E9%93%BE%E8%A1%A8/" 
-        title="链表">
-        <div class="tags-list-item">链表</div>
-      </a>
-    
-      <a 
-        href="/tags/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD/" 
-        title="因果推断">
-        <div class="tags-list-item">因果推断</div>
-      </a>
-    
-      <a 
-        href="/tags/Causality/" 
-        title="Causality">
-        <div class="tags-list-item">Causality</div>
-      </a>
-    
-      <a 
-        href="/tags/%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/" 
-        title="数值计算">
-        <div class="tags-list-item">数值计算</div>
-      </a>
-    
-      <a 
-        href="/tags/%E6%A0%91/" 
-        title="树">
-        <div class="tags-list-item">树</div>
-      </a>
-    
-      <a 
-        href="/tags/DFS/" 
-        title="DFS">
-        <div class="tags-list-item">DFS</div>
-      </a>
-    
-      <a 
-        href="/tags/SQL/" 
-        title="SQL">
-        <div class="tags-list-item">SQL</div>
-      </a>
-    
-      <a 
-        href="/tags/%E6%A0%88/" 
-        title="栈">
-        <div class="tags-list-item">栈</div>
+        href="/tags/%E5%AD%97%E7%AC%A6%E5%8C%B9%E9%85%8D/" 
+        title="字符匹配">
+        <div class="tags-list-item">字符匹配</div>
       </a>
     
   </div>
@@ -1169,11 +1201,15 @@ output：true<span aria-hidden="true" class="line-numbers-rows"><span></span><sp
     
       
         
+      
+    
+      
+        
           <a 
             href="/archives/2022" 
             class="archive-card-list-item">
             2022
-            <span class="archive-card-list-item-badge">26</span>
+            <span class="archive-card-list-item-badge">27</span>
           </a>
         
         
@@ -1593,12 +1629,16 @@ output：true<span aria-hidden="true" class="line-numbers-rows"><span></span><sp
         
       
     
+      
+        
+      
+    
     
       <a 
         href="/archives/2020" 
         class="archive-card-list-item">
         2020
-        <span class="archive-card-list-item-badge">61</span>
+        <span class="archive-card-list-item-badge">62</span>
       </a>
     
   </div>
@@ -1623,6 +1663,11 @@ output：true<span aria-hidden="true" class="line-numbers-rows"><span></span><sp
   <div class="recent-posts-list">
     
       <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2022-05-03</div>
+        <a href="/archives/b7607879.html"><div class="recent-posts-item-content">LeetCode腾讯精选练习50题-21.合并两个有序链表</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
         <div class="recent-posts-item-title">2022-05-02</div>
         <a href="/archives/78d80330.html"><div class="recent-posts-item-content">LeetCode腾讯精选练习50题-20.有效的括号</div></a>
       </div>
@@ -1635,11 +1680,6 @@ output：true<span aria-hidden="true" class="line-numbers-rows"><span></span><sp
       <div class="recent-posts-item">
         <div class="recent-posts-item-title">2022-04-26</div>
         <a href="/archives/d9221a63.html"><div class="recent-posts-item-content">LeetCode算法题-1629.按键持续时间最长的键</div></a>
-      </div>
-    
-      <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2022-04-20</div>
-        <a href="/archives/c7b84ffe.html"><div class="recent-posts-item-content">LeetCode腾讯精选练习50题-104.二叉树的最大深度</div></a>
       </div>
     
   </div>
@@ -1767,11 +1807,15 @@ output：true<span aria-hidden="true" class="line-numbers-rows"><span></span><sp
     
       
         
+      
+    
+      
+        
           <a 
             href="/archives/2022" 
             class="archive-card-list-item">
             2022
-            <span class="archive-card-list-item-badge">26</span>
+            <span class="archive-card-list-item-badge">27</span>
           </a>
         
         
@@ -2191,12 +2235,16 @@ output：true<span aria-hidden="true" class="line-numbers-rows"><span></span><sp
         
       
     
+      
+        
+      
+    
     
       <a 
         href="/archives/2020" 
         class="archive-card-list-item">
         2020
-        <span class="archive-card-list-item-badge">61</span>
+        <span class="archive-card-list-item-badge">62</span>
       </a>
     
   </div>

@@ -18,17 +18,17 @@
   <link 
     rel="icon" 
     href="/img/q.png">
-  <title>【剑指offer】面试题7-重建二叉树</title>
+  <title>LeetCode腾讯精选练习50题-21.合并两个有序链表</title>
   
     
       <meta 
         property="og:title" 
-        content="【剑指offer】面试题7-重建二叉树">
+        content="LeetCode腾讯精选练习50题-21.合并两个有序链表">
     
     
       <meta 
         property="og:url" 
-        content="https://hexo.li98.cn/archives/bbf8687.html">
+        content="https://hexo.li98.cn/archives/b7607879.html">
     
     
       <meta 
@@ -38,7 +38,16 @@
     
       <meta 
         property="og:img" 
-        content="&lt;h2 id=&#34;题目&#34;&gt;&lt;a href=&#34;#题目&#34; class=&#34;headerlink&#34; title=&#34;题目&#34;&gt;&lt;/a&gt;题目&lt;/h2&gt;&lt;p&gt;输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。例如输入前序遍历序列{1,2,4,7,3,5,6,8}和中序遍历序列{4,7,2,1,5,3,8,6}，则重建二叉树并返回。&lt;/p&gt;">
+        content="&lt;h3 id=&#34;题目描述&#34;&gt;&lt;a href=&#34;#题目描述&#34; class=&#34;headerlink&#34; title=&#34;题目描述&#34;&gt;&lt;/a&gt;题目描述&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 &lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;example
+input  &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; l1 &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1,2&lt;/span&gt;,4&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;, l2 &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1,3&lt;/span&gt;,4&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;
+output &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1,1&lt;/span&gt;,2,3,4,4&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;
+input  &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; l1 &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;, l2 &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;
+output &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;
+input  &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; l1 &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;, l2 &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;
+output &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;">
     
     
       <meta 
@@ -46,10 +55,10 @@
         content="article">
       <meta 
         property="og:article:published_time" 
-        content="2020-01-19">
+        content="2022-05-03">
       <meta 
         property="og:article:modified_time" 
-        content="2021-12-21">
+        content="2022-05-03">
       <meta 
         property="og:article:author" 
         content="李强">
@@ -61,11 +70,19 @@
         
           <meta 
             property="og:article:tag" 
-            content="二叉树">
+            content="LeetCode">
         
           <meta 
             property="og:article:tag" 
-            content="遍历算法">
+            content="递归">
+        
+          <meta 
+            property="og:article:tag" 
+            content="迭代">
+        
+          <meta 
+            property="og:article:tag" 
+            content="链表">
         
       
     
@@ -284,30 +301,30 @@
 <article class="card card-content">
   <header>
     <h1 class="post-title">
-      【剑指offer】面试题7-重建二叉树
+      LeetCode腾讯精选练习50题-21.合并两个有序链表
     </h1>
   </header>
   <div class="post-meta post-show-meta">
-    <time datetime="2020-01-19T14:43:39.000Z">
+    <time datetime="2022-05-03T06:00:00.000Z">
       <i 
         class="iconfont icon-calendar" 
         style="margin-right: 2px;">
       </i>
-      <span>2020-01-19</span>
+      <span>2022-05-03</span>
     </time>
     
       <span class="dot"></span>
       
         <a 
-          href="/categories/%E5%89%91%E6%8C%87offer/" 
+          href="/categories/LeetCode/" 
           class="post-meta-link">
-          剑指offer
+          LeetCode
         </a>
       
     
     
       <span class="dot"></span>
-      <span>574 字</span>
+      <span>439 字</span>
     
   </div>
   
@@ -331,18 +348,36 @@
             <span class="dot"></span>
           
           <a 
-            href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" 
+            href="/tags/LeetCode/" 
             class="post-meta-link">
-            二叉树
+            LeetCode
           </a>
         
           
             <span class="dot"></span>
           
           <a 
-            href="/tags/%E9%81%8D%E5%8E%86%E7%AE%97%E6%B3%95/" 
+            href="/tags/%E9%80%92%E5%BD%92/" 
             class="post-meta-link">
-            遍历算法
+            递归
+          </a>
+        
+          
+            <span class="dot"></span>
+          
+          <a 
+            href="/tags/%E8%BF%AD%E4%BB%A3/" 
+            class="post-meta-link">
+            迭代
+          </a>
+        
+          
+            <span class="dot"></span>
+          
+          <a 
+            href="/tags/%E9%93%BE%E8%A1%A8/" 
+            class="post-meta-link">
+            链表
           </a>
         
       </div>
@@ -352,76 +387,94 @@
   <div 
     id="section" 
     class="post-content">
-    <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。例如输入前序遍历序列{1,2,4,7,3,5,6,8}和中序遍历序列{4,7,2,1,5,3,8,6}，则重建二叉树并返回。</p>
+    <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><ul>
+<li>将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 </li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">example
+input  <span class="token builtin class-name">:</span> l1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1,2</span>,4<span class="token punctuation">]</span>, l2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1,3</span>,4<span class="token punctuation">]</span>
+output <span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token number">1,1</span>,2,3,4,4<span class="token punctuation">]</span>
+input  <span class="token builtin class-name">:</span> l1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>, l2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+output <span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+input  <span class="token builtin class-name">:</span> l1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>, l2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+output <span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <span id="more"></span>
-<h3 id="1-思路"><a href="#1-思路" class="headerlink" title="1. 思路"></a>1. 思路</h3><p>（1）确定根<br>（2）左右递归建树<br>——&gt;为了方便递归传参，代码中使用了//arraycopy()方法初始化每次用于构建新子树的两个数组。<br>arraycopy()方法用于将一个数组的元素快速拷贝到另一个数组。在使用时需要注意避免发生数组越界，即目标数组的空间不足。</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">//形式:
-System.arraycopy<span class="token punctuation">(</span>src, srcPos, dest, destPos, length<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-//参数介绍：
-src 	--<span class="token operator">></span> 源数组
-srcPos	--<span class="token operator">></span> 源数组中拷贝元素的起始位置。
-dest 	--<span class="token operator">></span> 目标数组
-destPos --<span class="token operator">></span> 拷贝到目标数组的起始位置
-length 	--<span class="token operator">></span> 被拷贝元素的个数
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="2-代码（Java实现）"><a href="#2-代码（Java实现）" class="headerlink" title="2. 代码（Java实现）"></a>2. 代码（Java实现）</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 树节点定义</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TreeNode</span> <span class="token punctuation">&#123;</span>
-	<span class="token keyword">int</span> val<span class="token punctuation">;</span>
-	<span class="token class-name">TreeNode</span> left<span class="token punctuation">;</span>
-	<span class="token class-name">TreeNode</span> right<span class="token punctuation">;</span>
-	<span class="token class-name">TreeNode</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> val <span class="token operator">=</span> x<span class="token punctuation">;</span> <span class="token punctuation">&#125;</span>
-
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">public</span> <span class="token class-name">TreeNode</span> <span class="token function">reConstructBinaryTree</span><span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> pre<span class="token punctuation">,</span><span class="token keyword">int</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> in<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token class-name">TreeNode</span>  tree <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeNode</span><span class="token punctuation">(</span>pre<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">int</span> length <span class="token operator">=</span> pre<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>length <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        	tree<span class="token punctuation">.</span>left <span class="token operator">=</span> tree<span class="token punctuation">.</span>right <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
-        	<span class="token keyword">return</span> tree<span class="token punctuation">;</span>
+<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p><strong>思路1</strong></p>
+<ul>
+<li><p>先把最简单的情况排除，一个链表为空时直接返回另一个链表即可</p>
+</li>
+<li><p>同时遍历两个链表，比较节点值的大小</p>
+</li>
+<li><p>将较小的节点放到结果链表中，并将值较小的节点的指针后移，另一个链表指针不移动</p>
+</li>
+<li><p>继续上述操作，直至两个链表指针至少一个为null</p>
+</li>
+<li><p>将剩下的那部分非空的链表节点整体放到结果链表的最后</p>
+</li>
+<li><p>时间复杂度O(m + n)</p>
+</li>
+<li><p>空间复杂度O(1)</p>
+</li>
+</ul>
+<p><strong>思路2</strong></p>
+<ul>
+<li>把思路1的内容转化成递归写法</li>
+<li>退出边界就是一个为空时直接返回另一个链表</li>
+<li>时间复杂度O(m + n)</li>
+<li>空间复杂度O(m + n)</li>
+</ul>
+<h3 id="代码（Java）"><a href="#代码（Java）" class="headerlink" title="代码（Java）"></a>代码（Java）</h3><p><strong>思路1代码</strong></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Solution1</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token class-name">ListNode</span> <span class="token function">mergeTwoLists</span><span class="token punctuation">(</span><span class="token class-name">ListNode</span> list1<span class="token punctuation">,</span> <span class="token class-name">ListNode</span> list2<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>list1 <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">return</span> list2<span class="token punctuation">;</span>
         <span class="token punctuation">&#125;</span>
-        <span class="token keyword">else</span> <span class="token punctuation">&#123;</span> 
-            <span class="token keyword">int</span> index <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-            <span class="token keyword">while</span><span class="token punctuation">(</span>index <span class="token operator">&lt;</span> in<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-            	<span class="token keyword">if</span><span class="token punctuation">(</span>in<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">==</span> tree<span class="token punctuation">.</span>val<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-            		<span class="token comment">//在中序序列中找到根的位置下标index记录下来</span>
-            		<span class="token keyword">break</span><span class="token punctuation">;</span>
-            	<span class="token punctuation">&#125;</span>
-            	index<span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>list2 <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">return</span> list1<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token class-name">ListNode</span> list <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ListNode</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">ListNode</span> res <span class="token operator">=</span> list<span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>list1 <span class="token operator">!=</span> <span class="token keyword">null</span> <span class="token operator">&amp;&amp;</span> list2 <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>list1<span class="token punctuation">.</span>val <span class="token operator">&lt;</span> list2<span class="token punctuation">.</span>val<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                res<span class="token punctuation">.</span>next <span class="token operator">=</span> list1<span class="token punctuation">;</span>
+                list1 <span class="token operator">=</span> list1<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+                res<span class="token punctuation">.</span>next <span class="token operator">=</span> list2<span class="token punctuation">;</span>
+                list2 <span class="token operator">=</span> list2<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
             <span class="token punctuation">&#125;</span>
-            
-            <span class="token comment">//递归构建左子树</span>
-            <span class="token keyword">if</span><span class="token punctuation">(</span>index <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-                <span class="token keyword">int</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> preleft <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span> <span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">;</span>  <span class="token comment">//左子树的pre数组</span>
-                <span class="token keyword">int</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> inleft <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span> <span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">;</span>   <span class="token comment">//左子树的in数组</span>
-                <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">arraycopy</span><span class="token punctuation">(</span>pre<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> preleft<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> index<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//arraycopy()方法，很方便</span>
-                <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">arraycopy</span><span class="token punctuation">(</span>in<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> inleft<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> index<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                tree<span class="token punctuation">.</span>left <span class="token operator">=</span> <span class="token function">reConstructBinaryTree</span><span class="token punctuation">(</span>preleft<span class="token punctuation">,</span> inleft<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//递归调用</span>
-            <span class="token punctuation">&#125;</span><span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
-            	tree<span class="token punctuation">.</span>left <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>	<span class="token comment">//index = 0，代表左边没节点，左子树空</span>
-            <span class="token punctuation">&#125;</span>
-            
-             <span class="token comment">//递归构建右子树</span>
-            <span class="token keyword">int</span> rlen <span class="token operator">=</span> length <span class="token operator">-</span> index <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
-            <span class="token comment">//怕麻烦，就先用变量代替rlen出来了这个长度，如果不对的话也方便修改，只修改等号右边就可以</span>
-            <span class="token keyword">if</span><span class="token punctuation">(</span>rlen <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-            	<span class="token keyword">int</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> preright <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span> <span class="token punctuation">[</span>rlen<span class="token punctuation">]</span><span class="token punctuation">;</span>	<span class="token comment">//右子树的pre数组</span>
-            	<span class="token keyword">int</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> inright <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span> <span class="token punctuation">[</span>rlen<span class="token punctuation">]</span><span class="token punctuation">;</span>	<span class="token comment">//右子树的in数组</span>
-                <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">arraycopy</span><span class="token punctuation">(</span>pre<span class="token punctuation">,</span> index <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> preright<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> rlen<span class="token punctuation">)</span><span class="token punctuation">;</span>	
-                <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">arraycopy</span><span class="token punctuation">(</span>in<span class="token punctuation">,</span> index <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> inright<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> rlen<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token function">reConstructBinaryTree</span><span class="token punctuation">(</span>preright<span class="token punctuation">,</span> inright<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                tree<span class="token punctuation">.</span>right <span class="token operator">=</span> <span class="token function">reConstructBinaryTree</span><span class="token punctuation">(</span>preright<span class="token punctuation">,</span> inright<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//递归调用</span>
-            <span class="token punctuation">&#125;</span><span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
-            	tree<span class="token punctuation">.</span>right <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>	<span class="token comment">//length - index - 1 = 0，代表右边没节点，右子树空</span>
-            <span class="token punctuation">&#125;</span>
-            <span class="token keyword">return</span> tree<span class="token punctuation">;</span>
+            res <span class="token operator">=</span> res<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token comment">// res.next = list1 != null ? list1 : list2;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>list1 <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            res<span class="token punctuation">.</span>next <span class="token operator">=</span> list1<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>list2 <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            res<span class="token punctuation">.</span>next <span class="token operator">=</span> list2<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> list<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>思路2代码</strong></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Solution2</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token class-name">ListNode</span> <span class="token function">mergeTwoLists</span><span class="token punctuation">(</span><span class="token class-name">ListNode</span> list1<span class="token punctuation">,</span> <span class="token class-name">ListNode</span> list2<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>list1 <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">return</span> list2<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>list2 <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">return</span> list1<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>list1<span class="token punctuation">.</span>val <span class="token operator">&lt;</span> list2<span class="token punctuation">.</span>val<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            list1<span class="token punctuation">.</span>next <span class="token operator">=</span> <span class="token function">mergeTwoLists</span><span class="token punctuation">(</span>list1<span class="token punctuation">.</span>next<span class="token punctuation">,</span> list2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> list1<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+            list2<span class="token punctuation">.</span>next <span class="token operator">=</span> <span class="token function">mergeTwoLists</span><span class="token punctuation">(</span>list1<span class="token punctuation">,</span> list2<span class="token punctuation">.</span>next<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> list2<span class="token punctuation">;</span>
         <span class="token punctuation">&#125;</span>
     <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
   </div>
   <div>
     
@@ -436,7 +489,7 @@ length 	--<span class="token operator">></span> 被拷贝元素的个数
             李强
           </a>
         </p>
-        <p><span style="font-weight: bold;">文章链接：</span><a style = "text-overflow : ellipsis;display: inline-block; width: 100%; overflow: hidden;" target="_blank" rel="nofollow noopener noreferrer" href="https://hexo.li98.cn/archives/bbf8687.html">https://hexo.li98.cn/archives/bbf8687.html</a></p>
+        <p><span style="font-weight: bold;">文章链接：</span><a style = "text-overflow : ellipsis;display: inline-block; width: 100%; overflow: hidden;" target="_blank" rel="nofollow noopener noreferrer" href="https://hexo.li98.cn/archives/b7607879.html">https://hexo.li98.cn/archives/b7607879.html</a></p>
         <p><span style="font-weight: bold;">版权声明：</span>本博客所有文章除特别声明外，均采用<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0 协议</a>。转载请注明出处！</p>
       </div>
     
@@ -444,29 +497,15 @@ length 	--<span class="token operator">></span> 被拷贝元素的个数
 </article>
 <div class="nav">
   
-    <div class="nav-item-prev">
-      <a 
-        href="/archives/ea6627bd.html" 
-        class="nav-link">
-        <i class="iconfont icon-left nav-prev-icon"></i>
-        <div>
-          <div class="nav-label">上一篇</div>
-          
-            <div class="nav-title">【剑指offer】面试题9-用两个栈实现队列 </div>
-          
-        </div>
-      </a>
-    </div>
-  
   
     <div class="nav-item-next">
       <a 
-        href="/archives/20e208b.html" 
+        href="/archives/78d80330.html" 
         class="nav-link">
         <div>
           <div class="nav-label">下一篇</div>
           
-            <div class="nav-title">【剑指offer】面试题6-从头到尾打印链表 </div>
+            <div class="nav-title">LeetCode腾讯精选练习50题-20.有效的括号 </div>
           
         </div>
         <i class="iconfont icon-right nav-next-icon"></i>
@@ -484,7 +523,7 @@ length 	--<span class="token operator">></span> 被拷贝元素的个数
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE"><span class="toc-text">题目</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%80%9D%E8%B7%AF"><span class="toc-text">1. 思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%BB%A3%E7%A0%81%EF%BC%88Java%E5%AE%9E%E7%8E%B0%EF%BC%89"><span class="toc-text">2. 代码（Java实现）</span></a></li></ol></li></ol>
+<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%EF%BC%88Java%EF%BC%89"><span class="toc-text">代码（Java）</span></a></li></ol>
 </div></main>
             <aside class="left-column">
               
@@ -548,7 +587,7 @@ length 	--<span class="token operator">></span> 被拷贝元素的个数
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE"><span class="toc-text">题目</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%80%9D%E8%B7%AF"><span class="toc-text">1. 思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%BB%A3%E7%A0%81%EF%BC%88Java%E5%AE%9E%E7%8E%B0%EF%BC%89"><span class="toc-text">2. 代码（Java实现）</span></a></li></ol></li></ol>
+<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%EF%BC%88Java%EF%BC%89"><span class="toc-text">代码（Java）</span></a></li></ol>
       </div>
     </article>
   
@@ -747,7 +786,7 @@ length 	--<span class="token operator">></span> 被拷贝元素的个数
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE"><span class="toc-text">题目</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%80%9D%E8%B7%AF"><span class="toc-text">1. 思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%BB%A3%E7%A0%81%EF%BC%88Java%E5%AE%9E%E7%8E%B0%EF%BC%89"><span class="toc-text">2. 代码（Java实现）</span></a></li></ol></li></ol>
+<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%EF%BC%88Java%EF%BC%89"><span class="toc-text">代码（Java）</span></a></li></ol>
     </article>
   
   
