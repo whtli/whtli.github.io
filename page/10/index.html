@@ -254,526 +254,288 @@
   <div class="card">
     
         <article class="card card-content">
-          <a href="/archives/ee146e35.html">
+          <a href="/archives/38f4f5a2.html">
             <h1 class="post-title">
-              LeetCode精选TOP面试题21.合并两个有序链表
+              SQL学习：INDEX、DROP、ALTER、 AUTO INCREMENT
             </h1>
           </a>
           <!-- <div class="card-excerpt">
             
-              题目描述
-将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。
-
-example
-input  : l1 = [1,2,4], l2 = [1,3,4]
-output : [1,1,2,3,4,4]
-input  : l1 = [], l2 = []
-output : []
-input  : l1 = [], l2 = [0]
-output : [0]
+              创建索引介绍在不读取整个表的情况下，索引能更加快速地查找数据。用户无法看到索引，他们只能被用来提高查询效率。更新一个带有索引的表比更新一个不带索引的表花费更多时间，这是由于索引本身也需要更新导致的。因此，理想的做法是仅在经常被搜索的表上创建索引。
                 
           </div> -->
           <div class="card-excerpt">
             
-              <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><ul>
-<li>将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。</li>
+              <h1 id="创建索引"><a href="#创建索引" class="headerlink" title="创建索引"></a>创建索引</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>在不读取整个表的情况下，索引能更加快速地查找数据。用户无法看到索引，他们只能被用来提高查询效率。更新一个带有索引的表比更新一个不带索引的表花费更多时间，这是由于索引本身也需要更新导致的。因此，理想的做法是仅在经常被搜索的表上创建索引。</p>
+                
+          </div>
+          <div class="card-post-footer">
+            <div class="post-meta">
+              <time datetime="2020-07-31T10:02:00.000Z">
+                <i class="iconfont icon-calendar" style="margin-right: 2px;">
+                </i>
+                <span>
+                  2020-07-31
+                </span>
+              </time>
+              
+                
+                  
+                    
+                          
+                            <span class="dot"></span>
+                            
+                              
+                                    <a href="/categories/SQL/" class="post-meta-link">
+                                      SQL
+                                    </a>
+                                    
+                                      
+            </div>
+            <a href="/archives/38f4f5a2.html">
+              继续阅读
+            </a>
+          </div>
+        </article>
+  </div>
+  
+  <div class="card">
+    
+        <article class="card card-content">
+          <a href="/archives/eed05ae9.html">
+            <h1 class="post-title">
+              SQL学习：CONSTRAINTS
+            </h1>
+          </a>
+          <!-- <div class="card-excerpt">
+            
+              约束介绍SQL 约束用于规定表中的数据规则。
+如果存在违反约束的数据行为，行为会被约束终止。
+约束可以在创建表时规定（通过 CREATE TABLE 语句）；
+或者在表创建之后规定（通过 ALTER TABLE 语句）。
+语法（CREATE TABLE + CONSTRAINT）CREATE TABLE table_name
+(
+column_name1 data_type(size) constraint_name,
+column_name2 data_type(size) constraint_name,
+column_name3 data_type(size) constraint_name,
+....
+);
+                
+          </div> -->
+          <div class="card-excerpt">
+            
+              <h1 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>SQL 约束用于规定表中的数据规则。</p>
+<p>如果存在违反约束的数据行为，行为会被约束终止。</p>
+<p>约束可以在创建表时规定（通过 CREATE TABLE 语句）；</p>
+<p>或者在表创建之后规定（通过 ALTER TABLE 语句）。</p>
+<h2 id="语法（CREATE-TABLE-CONSTRAINT）"><a href="#语法（CREATE-TABLE-CONSTRAINT）" class="headerlink" title="语法（CREATE TABLE + CONSTRAINT）"></a>语法（CREATE TABLE + CONSTRAINT）</h2><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> table_name
+<span class="token punctuation">(</span>
+column_name1 data_type<span class="token punctuation">(</span>size<span class="token punctuation">)</span> constraint_name<span class="token punctuation">,</span>
+column_name2 data_type<span class="token punctuation">(</span>size<span class="token punctuation">)</span> constraint_name<span class="token punctuation">,</span>
+column_name3 data_type<span class="token punctuation">(</span>size<span class="token punctuation">)</span> constraint_name<span class="token punctuation">,</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                
+          </div>
+          <div class="card-post-footer">
+            <div class="post-meta">
+              <time datetime="2020-07-30T10:02:00.000Z">
+                <i class="iconfont icon-calendar" style="margin-right: 2px;">
+                </i>
+                <span>
+                  2020-07-30
+                </span>
+              </time>
+              
+                
+                  
+                    
+                          
+                            <span class="dot"></span>
+                            
+                              
+                                    <a href="/categories/SQL/" class="post-meta-link">
+                                      SQL
+                                    </a>
+                                    
+                                      
+            </div>
+            <a href="/archives/eed05ae9.html">
+              继续阅读
+            </a>
+          </div>
+        </article>
+  </div>
+  
+  <div class="card">
+    
+        <article class="card card-content">
+          <a href="/archives/df88b555.html">
+            <h1 class="post-title">
+              SQL学习：增删改查
+            </h1>
+          </a>
+          <!-- <div class="card-excerpt">
+            
+              SELECT简介
+SELECT 语句用于从数据库中选取数据。
+结果被存储在一个结果表中，称为结果集。
+                
+          </div> -->
+          <div class="card-excerpt">
+            
+              <h1 id="SELECT"><a href="#SELECT" class="headerlink" title="SELECT"></a>SELECT</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><ul>
+<li>SELECT 语句用于从数据库中选取数据。</li>
+<li>结果被存储在一个结果表中，称为结果集。
+                
+          </div>
+          <div class="card-post-footer">
+            <div class="post-meta">
+              <time datetime="2020-07-29T10:02:00.000Z">
+                <i class="iconfont icon-calendar" style="margin-right: 2px;">
+                </i>
+                <span>
+                  2020-07-29
+                </span>
+              </time>
+              
+                
+                  
+                    
+                          
+                            <span class="dot"></span>
+                            
+                              
+                                    <a href="/categories/SQL/" class="post-meta-link">
+                                      SQL
+                                    </a>
+                                    
+                                      
+            </div>
+            <a href="/archives/df88b555.html">
+              继续阅读
+            </a>
+          </div>
+        </article>
+  </div>
+  
+  <div class="card">
+    
+        <article class="card card-content">
+          <a href="/archives/1eee7cd5.html">
+            <h1 class="post-title">
+              SQL学习：SELECT INTO、INSERT INTO SELECT、CREATE DATABASE、CREATE TABLE
+            </h1>
+          </a>
+          <!-- <div class="card-excerpt">
+            
+              SELECT INTO介绍可以从一个表复制数据，然后把数据插入到另一个新表中。
+语法SELECT * 
+INTO table2 [IN externable]
+FROM table1
+或
+SELECT　column_name(s)
+INTO table2 [IN externaldb]
+FROM table1
+                
+          </div> -->
+          <div class="card-excerpt">
+            
+              <h1 id="SELECT-INTO"><a href="#SELECT-INTO" class="headerlink" title="SELECT INTO"></a>SELECT INTO</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>可以从一个表复制数据，然后把数据插入到另一个新表中。</p>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token operator">*</span> 
+<span class="token keyword">INTO</span> table2 <span class="token punctuation">[</span><span class="token operator">IN</span> externable<span class="token punctuation">]</span>
+<span class="token keyword">FROM</span> table1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>或</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span>　column_name<span class="token punctuation">(</span>s<span class="token punctuation">)</span>
+<span class="token keyword">INTO</span> table2 <span class="token punctuation">[</span><span class="token operator">IN</span> externaldb<span class="token punctuation">]</span>
+<span class="token keyword">FROM</span> table1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+                
+          </div>
+          <div class="card-post-footer">
+            <div class="post-meta">
+              <time datetime="2020-07-29T10:02:00.000Z">
+                <i class="iconfont icon-calendar" style="margin-right: 2px;">
+                </i>
+                <span>
+                  2020-07-29
+                </span>
+              </time>
+              
+                
+                  
+                    
+                          
+                            <span class="dot"></span>
+                            
+                              
+                                    <a href="/categories/SQL/" class="post-meta-link">
+                                      SQL
+                                    </a>
+                                    
+                                      
+            </div>
+            <a href="/archives/1eee7cd5.html">
+              继续阅读
+            </a>
+          </div>
+        </article>
+  </div>
+  
+  <div class="card">
+    
+        <article class="card card-content">
+          <a href="/archives/94deee3b.html">
+            <h1 class="post-title">
+              SQL学习：JOIN 操作符
+            </h1>
+          </a>
+          <!-- <div class="card-excerpt">
+            
+              JOIN（连接）总介绍把两个或多个表的行连接起来有左连接，右连接，全连接，内连接，外连接等七个
+不同的 JOIN
+INNER JOIN：如果表中有至少一个匹配，则返回行
+LEFT JOIN：即使右表中没有匹配，也从左表返回所有的行
+RIGHT JOIN：即使左表中没有匹配，也从右表返回所有的行
+FULL JOIN：只要其中一个表中存在匹配，则返回行
+
+
+连接的结果可以在逻辑上看作是由SELECT语句指定的列组成的新表。
+
+
+左连接与右连接的左右指的是以两张表中的哪一张为基准，它们都是外连接。
+
+
+外连接就好像是为非基准表添加了一行全为空值的万能行，用来与基准表中找不到匹配的行进行匹配。假设两个没有空值的表进行左连接，左表是基准表，左表的所有行都出现在结果中，右表则可能因为无法与基准表匹配而出现是空值的字段。这部分主要涉及的是表连接的逻辑问题。
+
+                
+          </div> -->
+          <div class="card-excerpt">
+            
+              <h1 id="JOIN（连接）"><a href="#JOIN（连接）" class="headerlink" title="JOIN（连接）"></a>JOIN（连接）</h1><h2 id="总介绍"><a href="#总介绍" class="headerlink" title="总介绍"></a>总介绍</h2><p>把两个或多个表的行连接起来<br>有左连接，右连接，全连接，内连接，外连接等七个</p>
+<h2 id="不同的-JOIN"><a href="#不同的-JOIN" class="headerlink" title="不同的 JOIN"></a>不同的 JOIN</h2><ul>
+<li>INNER JOIN：如果表中有至少一个匹配，则返回行</li>
+<li>LEFT JOIN：即使右表中没有匹配，也从左表返回所有的行</li>
+<li>RIGHT JOIN：即使左表中没有匹配，也从右表返回所有的行</li>
+<li>FULL JOIN：只要其中一个表中存在匹配，则返回行</li>
 </ul>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">example
-input  <span class="token builtin class-name">:</span> l1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1,2</span>,4<span class="token punctuation">]</span>, l2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1,3</span>,4<span class="token punctuation">]</span>
-output <span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token number">1,1</span>,2,3,4,4<span class="token punctuation">]</span>
-input  <span class="token builtin class-name">:</span> l1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>, l2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-output <span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-input  <span class="token builtin class-name">:</span> l1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>, l2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-output <span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-                
-          </div>
-          <div class="card-post-footer">
-            <div class="post-meta">
-              <time datetime="2020-03-06T13:00:00.000Z">
-                <i class="iconfont icon-calendar" style="margin-right: 2px;">
-                </i>
-                <span>
-                  2020-03-06
-                </span>
-              </time>
-              
-                
-                  
-                    
-                          
-                            <span class="dot"></span>
-                            
-                              
-                                    <a href="/categories/LeetCode/" class="post-meta-link">
-                                      LeetCode
-                                    </a>
-                                    
-                                      
-            </div>
-            <a href="/archives/ee146e35.html">
-              继续阅读
-            </a>
-          </div>
-        </article>
-  </div>
-  
-  <div class="card">
-    
-        <article class="card card-content">
-          <a href="/archives/2e2e399.html">
-            <h1 class="post-title">
-              LeetCode精选TOP面试题13.罗马数字转整数
-            </h1>
-          </a>
-          <!-- <div class="card-excerpt">
-            
-              题目描述罗马数字包含以下七种字符: I， V， X， L，C，D 和 M。
-字符          数值
-I             1
-V             5
-X             10
-L             50
-C             100
-D             500
-M             1000
-例如， 罗马数字 2 写做 II ，即为两个并列的 1。12 写做 XII ，即为 X + II 。 27 写做  XXVII, 即为 XX + V + II 。通常情况下，罗马数字中小的数字在大的数字的右边。但也存在特例。
-                
-          </div> -->
-          <div class="card-excerpt">
-            
-              <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>罗马数字包含以下七种字符: I， V， X， L，C，D 和 M。</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">字符          数值
-<span class="token class-name">I</span>             <span class="token number">1</span>
-<span class="token class-name">V</span>             <span class="token number">5</span>
-<span class="token class-name">X</span>             <span class="token number">10</span>
-<span class="token class-name">L</span>             <span class="token number">50</span>
-<span class="token class-name">C</span>             <span class="token number">100</span>
-<span class="token class-name">D</span>             <span class="token number">500</span>
-<span class="token class-name">M</span>             <span class="token number">1000</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>例如， 罗马数字 2 写做 II ，即为两个并列的 1。12 写做 XII ，即为 X + II 。 27 写做  XXVII, 即为 XX + V + II 。<br>通常情况下，罗马数字中小的数字在大的数字的右边。但也存在特例。</p>
-                
-          </div>
-          <div class="card-post-footer">
-            <div class="post-meta">
-              <time datetime="2020-03-05T08:56:56.000Z">
-                <i class="iconfont icon-calendar" style="margin-right: 2px;">
-                </i>
-                <span>
-                  2020-03-05
-                </span>
-              </time>
-              
-                
-                  
-                    
-                          
-                            <span class="dot"></span>
-                            
-                              
-                                    <a href="/categories/LeetCode/" class="post-meta-link">
-                                      LeetCode
-                                    </a>
-                                    
-                                      
-            </div>
-            <a href="/archives/2e2e399.html">
-              继续阅读
-            </a>
-          </div>
-        </article>
-  </div>
-  
-  <div class="card">
-    
-        <article class="card card-content">
-          <a href="/archives/d161f5a8.html">
-            <h1 class="post-title">
-              笔试题4-字符串序列的转换
-            </h1>
-          </a>
-          <!-- <div class="card-excerpt">
-            
-              
-2020年2月 TapTap × 心动网络的一个笔试题，原题记不太清了，只能回忆一下了。
-
-题目回忆给定两个字符串str1和str2，拿str1 = “asd”， str2 = “dsa” 举例。把str1的末尾字符取下，放到栈中，这个操作记为 E ；判断栈顶元素是否与str2 的首字符相同，如果相同，那么栈顶元素出栈，这个操作记为 D。现在给定任意的两个字符串，需要判断字符串1能否通过合理的E、D操作得到字符串2，并将E、D操作序列输出。规定每个字符串中没有相同的字符，每个字符都是唯一的。
-样例1
-input: asd dsa
-output: EDEDED
-
-样例2: 
-input: qwert twerq
-output: EDEEEDDDED
-                
-          </div> -->
-          <div class="card-excerpt">
-            
-              <blockquote>
-<p>2020年2月 TapTap × 心动网络的一个笔试题，原题记不太清了，只能回忆一下了。</p>
+<blockquote>
+<p>连接的结果可以在逻辑上看作是由SELECT语句指定的列组成的新表。</p>
 </blockquote>
-<h3 id="题目回忆"><a href="#题目回忆" class="headerlink" title="题目回忆"></a>题目回忆</h3><p>给定两个字符串str1和str2，拿str1 = “asd”， str2 = “dsa” 举例。<br>把<strong>str1的末尾字符</strong>取下，放到栈中，这个操作记为 <strong>E</strong> ；<br>判断栈顶元素是否与<strong>str2 的首字符</strong>相同，如果相同，那么栈顶元素出栈，这个操作记为 <strong>D</strong>。<br>现在给定任意的两个字符串，需要判断字符串1能否通过合理的E、D操作得到字符串2，并将E、D操作序列输出。<br>规定每个字符串中<strong>没有相同的字符</strong>，每个字符都是唯一的。</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">样例<span class="token number">1</span>
-input<span class="token operator">:</span> asd dsa
-output<span class="token operator">:</span> EDEDED<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">样例<span class="token number">2</span><span class="token operator">:</span> 
-input<span class="token operator">:</span> qwert twerq
-output<span class="token operator">:</span> EDEEEDDDED<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-                
-          </div>
-          <div class="card-post-footer">
-            <div class="post-meta">
-              <time datetime="2020-03-04T03:25:05.000Z">
-                <i class="iconfont icon-calendar" style="margin-right: 2px;">
-                </i>
-                <span>
-                  2020-03-04
-                </span>
-              </time>
-              
-                
-                  
-                    
-                          
-                            <span class="dot"></span>
-                            
-                              
-                                    <a href="/categories/%E7%AC%94%E8%AF%95%E9%A2%98/" class="post-meta-link">
-                                      笔试题
-                                    </a>
-                                    
-                                      
-            </div>
-            <a href="/archives/d161f5a8.html">
-              继续阅读
-            </a>
-          </div>
-        </article>
-  </div>
-  
-  <div class="card">
-    
-        <article class="card card-content">
-          <a href="/archives/b88b3653.html">
-            <h1 class="post-title">
-              LeetCode精选TOP面试题104.二叉树的最大深度
-            </h1>
-          </a>
-          <!-- <div class="card-excerpt">
-            
-              题目描述给定一个大小为 n 的数组，找到其中的多数元素。多数元素是指在数组中出现次数大于 ⌊ n/2 ⌋ 的元素。数组是非空的，并且给定的数组总是存在多数元素。
-示例 1:
-输入: [3,2,3]
-输出: 3
-示例 2:
-输入: [2,2,1,1,1,2,2]
-输出: 2
-                
-          </div> -->
-          <div class="card-excerpt">
-            
-              <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>给定一个大小为 n 的数组，找到其中的多数元素。多数元素是指在数组中出现次数大于 ⌊ n/2 ⌋ 的元素。<br>数组是非空的，并且给定的数组总是存在多数元素。</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">示例 <span class="token number">1</span><span class="token operator">:</span>
-输入<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span>
-输出<span class="token operator">:</span> <span class="token number">3</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">示例 <span class="token number">2</span><span class="token operator">:</span>
-输入<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span>
-输出<span class="token operator">:</span> <span class="token number">2</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-                
-          </div>
-          <div class="card-post-footer">
-            <div class="post-meta">
-              <time datetime="2020-03-03T14:24:56.000Z">
-                <i class="iconfont icon-calendar" style="margin-right: 2px;">
-                </i>
-                <span>
-                  2020-03-03
-                </span>
-              </time>
-              
-                
-                  
-                    
-                          
-                            <span class="dot"></span>
-                            
-                              
-                                    <a href="/categories/LeetCode/" class="post-meta-link">
-                                      LeetCode
-                                    </a>
-                                    
-                                      
-            </div>
-            <a href="/archives/b88b3653.html">
-              继续阅读
-            </a>
-          </div>
-        </article>
-  </div>
-  
-  <div class="card">
-    
-        <article class="card card-content">
-          <a href="/archives/9451e2de.html">
-            <h1 class="post-title">
-              【剑指offer】面试题33-二叉搜索树的后序遍历序列
-            </h1>
-          </a>
-          <!-- <div class="card-excerpt">
-            
-              题目输入一个整数数组，判断该数组是不是某二叉搜索树的后序遍历的结果。如果是则输出Yes,否则输出No。假设输入的数组的任意两个数字都互不相同。
-样例1
-input：7，4，6，5
-output：false
-
-样例2
-input：2，4，3，6，8，7，5
-output：true
-                
-          </div> -->
-          <div class="card-excerpt">
-            
-              <h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>输入一个整数数组，判断该数组是不是某二叉搜索树的后序遍历的结果。如果是则输出Yes,否则输出No。假设输入的数组的任意两个数字都互不相同。</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">样例1
-input：7，4，6，5
-output：false<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">样例2
-input：2，4，3，6，8，7，5
-output：true<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-                
-          </div>
-          <div class="card-post-footer">
-            <div class="post-meta">
-              <time datetime="2020-03-03T09:30:24.000Z">
-                <i class="iconfont icon-calendar" style="margin-right: 2px;">
-                </i>
-                <span>
-                  2020-03-03
-                </span>
-              </time>
-              
-                
-                  
-                    
-                          
-                            <span class="dot"></span>
-                            
-                              
-                                    <a href="/categories/%E5%89%91%E6%8C%87offer/" class="post-meta-link">
-                                      剑指offer
-                                    </a>
-                                    
-                                      
-            </div>
-            <a href="/archives/9451e2de.html">
-              继续阅读
-            </a>
-          </div>
-        </article>
-  </div>
-  
-  <div class="card">
-    
-        <article class="card card-content">
-          <a href="/archives/3f5518c6.html">
-            <h1 class="post-title">
-              LeetCode精选TOP面试题412. Fizz Buzz
-            </h1>
-          </a>
-          <!-- <div class="card-excerpt">
-            
-              题目描述写一个程序，输出从 1 到 n 数字的字符串表示。1.如果 n 是3的倍数，输出“Fizz”；2. 如果 n 是5的倍数，输出“Buzz”；3.如果 n 同时是3和5的倍数，输出 “FizzBuzz”
-                
-          </div> -->
-          <div class="card-excerpt">
-            
-              <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>写一个程序，输出从 1 到 n 数字的字符串表示。<br>1.如果 n 是3的倍数，输出“Fizz”；<br>2. 如果 n 是5的倍数，输出“Buzz”；<br>3.如果 n 同时是3和5的倍数，输出 “FizzBuzz”</p>
-                
-          </div>
-          <div class="card-post-footer">
-            <div class="post-meta">
-              <time datetime="2020-03-02T05:07:00.000Z">
-                <i class="iconfont icon-calendar" style="margin-right: 2px;">
-                </i>
-                <span>
-                  2020-03-02
-                </span>
-              </time>
-              
-                
-                  
-                    
-                          
-                            <span class="dot"></span>
-                            
-                              
-                                    <a href="/categories/LeetCode/" class="post-meta-link">
-                                      LeetCode
-                                    </a>
-                                    
-                                      
-            </div>
-            <a href="/archives/3f5518c6.html">
-              继续阅读
-            </a>
-          </div>
-        </article>
-  </div>
-  
-  <div class="card">
-    
-        <article class="card card-content">
-          <a href="/archives/a6ecccb7.html">
-            <h1 class="post-title">
-              LeetCode精选TOP面试题191.位1的个数
-            </h1>
-          </a>
-          <!-- <div class="card-excerpt">
-            
-              题目描述编写一个函数，输入是一个无符号整数，返回其二进制表达式中数字位数为 ‘1’ 的个数（也被称为汉明重量）。
-                
-          </div> -->
-          <div class="card-excerpt">
-            
-              <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>编写一个函数，输入是一个无符号整数，返回其二进制表达式中数字位数为 ‘1’ 的个数（也被称为汉明重量）。</p>
-                
-          </div>
-          <div class="card-post-footer">
-            <div class="post-meta">
-              <time datetime="2020-02-28T08:00:41.000Z">
-                <i class="iconfont icon-calendar" style="margin-right: 2px;">
-                </i>
-                <span>
-                  2020-02-28
-                </span>
-              </time>
-              
-                
-                  
-                    
-                          
-                            <span class="dot"></span>
-                            
-                              
-                                    <a href="/categories/LeetCode/" class="post-meta-link">
-                                      LeetCode
-                                    </a>
-                                    
-                                      
-            </div>
-            <a href="/archives/a6ecccb7.html">
-              继续阅读
-            </a>
-          </div>
-        </article>
-  </div>
-  
-  <div class="card">
-    
-        <article class="card card-content">
-          <a href="/archives/e09ed3e9.html">
-            <h1 class="post-title">
-              LeetCode精选TOP面试题118.杨辉三角
-            </h1>
-          </a>
-          <!-- <div class="card-excerpt">
-            
-              题目描述给定一个非负整数 numRows，生成杨辉三角的前 numRows 行。在杨辉三角中，每个数是它左上方和右上方的数的和。
-示例:
-输入: 5
-输出:
-[
-     [1],
-    [1,1],
-   [1,2,1],
-  [1,3,3,1],
- [1,4,6,4,1]
-]
-                
-          </div> -->
-          <div class="card-excerpt">
-            
-              <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>给定一个非负整数 numRows，生成杨辉三角的前 numRows 行。<br><img src="https://img-blog.csdnimg.cn/20200225230007323.png" alt="杨辉三角示意图"><br>在杨辉三角中，每个数是它左上方和右上方的数的和。</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">示例:
-输入: <span class="token number">5</span>
-输出:
-<span class="token punctuation">[</span>
-     <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>,
-    <span class="token punctuation">[</span><span class="token number">1,1</span><span class="token punctuation">]</span>,
-   <span class="token punctuation">[</span><span class="token number">1,2</span>,1<span class="token punctuation">]</span>,
-  <span class="token punctuation">[</span><span class="token number">1,3</span>,3,1<span class="token punctuation">]</span>,
- <span class="token punctuation">[</span><span class="token number">1,4</span>,6,4,1<span class="token punctuation">]</span>
-<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-                
-          </div>
-          <div class="card-post-footer">
-            <div class="post-meta">
-              <time datetime="2020-02-25T14:09:00.000Z">
-                <i class="iconfont icon-calendar" style="margin-right: 2px;">
-                </i>
-                <span>
-                  2020-02-25
-                </span>
-              </time>
-              
-                
-                  
-                    
-                          
-                            <span class="dot"></span>
-                            
-                              
-                                    <a href="/categories/LeetCode/" class="post-meta-link">
-                                      LeetCode
-                                    </a>
-                                    
-                                      
-            </div>
-            <a href="/archives/e09ed3e9.html">
-              继续阅读
-            </a>
-          </div>
-        </article>
-  </div>
-  
-  <div class="card">
-    
-        <article class="card card-content">
-          <a href="/archives/e540efdf.html">
-            <h1 class="post-title">
-              笔试题2-句子倒置
-            </h1>
-          </a>
-          <!-- <div class="card-excerpt">
-            
-              
-2020年2月24日找工作参加某所的笔试，刚踩的坑，虽然测试样例过了，能想到的几种情况也有测试能通过，但总感觉还是有遗漏的情况没考虑到。
-
-题目倒置句子，标点符号不倒置，倒置之后句子的标点不变位置，输出时候以空格分隔。
-样例
-输入： I like China.
-输出： China. like I
-                
-          </div> -->
-          <div class="card-excerpt">
-            
-              <blockquote>
-<p>2020年2月24日找工作参加某所的笔试，刚踩的坑，虽然测试样例过了，能想到的几种情况也有测试能通过，但总感觉还是有遗漏的情况没考虑到。</p>
+<blockquote>
+<p>左连接与右连接的左右指的是以两张表中的哪一张为基准，它们都是外连接。</p>
 </blockquote>
-<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>倒置句子，标点符号不倒置，倒置之后句子的标点不变位置，输出时候以空格分隔。</p>
-<pre class="line-numbers language-none"><code class="language-none">样例
-输入： I like China.
-输出： China. like I<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>外连接就好像是为非基准表添加了一行全为空值的万能行，用来与基准表中找不到匹配的行进行匹配。假设两个没有空值的表进行左连接，左表是基准表，左表的所有行都出现在结果中，右表则可能因为无法与基准表匹配而出现是空值的字段。<br>这部分主要涉及的是表连接的逻辑问题。</p>
+</blockquote>
                 
           </div>
           <div class="card-post-footer">
             <div class="post-meta">
-              <time datetime="2020-02-24T14:16:27.000Z">
+              <time datetime="2020-07-28T10:02:00.000Z">
                 <i class="iconfont icon-calendar" style="margin-right: 2px;">
                 </i>
                 <span>
-                  2020-02-24
+                  2020-07-28
                 </span>
               </time>
               
@@ -784,13 +546,13 @@ output：true<span aria-hidden="true" class="line-numbers-rows"><span></span><sp
                             <span class="dot"></span>
                             
                               
-                                    <a href="/categories/%E7%AC%94%E8%AF%95%E9%A2%98/" class="post-meta-link">
-                                      笔试题
+                                    <a href="/categories/SQL/" class="post-meta-link">
+                                      SQL
                                     </a>
                                     
                                       
             </div>
-            <a href="/archives/e540efdf.html">
+            <a href="/archives/94deee3b.html">
               继续阅读
             </a>
           </div>
@@ -800,34 +562,34 @@ output：true<span aria-hidden="true" class="line-numbers-rows"><span></span><sp
   <div class="card">
     
         <article class="card card-content">
-          <a href="/archives/491299a6.html">
+          <a href="/archives/ceb130af.html">
             <h1 class="post-title">
-              笔试题2-约瑟夫问题：n个数字形成的圆圈中循环删除第m个数字
+              SQL学习：BETWEEN、AS、UNION 操作符
             </h1>
           </a>
           <!-- <div class="card-excerpt">
             
-              
-2020年2月24日找工作过程中的笔试题之一
-
-题目描述n个数字（1, 2, … , n）形成一个圆圈。从数字1开始，每次从这个圆圈中删除第m个数字（第一个为当前数字本身，第二个为当前数字的下一个数字）。当一个数字删除后，从被删除数字的下一个继续删除第m个数字。求出在这个圆圈中剩下的最后一个数字。
+              BETWEEN 操作符介绍sql操作符用于选取介于两个值之间的数据范围内的值。这些值可以是数值、文本或者日期。
+语法SELECT column_name(s)
+FROM table_name 
+WHERE column_name BETWEEN value1 AND value2;
                 
           </div> -->
           <div class="card-excerpt">
             
-              <blockquote>
-<p>2020年2月24日找工作过程中的笔试题之一</p>
-</blockquote>
-<h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>n个数字（1, 2, … , n）形成一个圆圈。从数字1开始，每次从这个圆圈中删除第m个数字（第一个为当前数字本身，第二个为当前数字的下一个数字）。当一个数字删除后，从被删除数字的下一个继续删除第m个数字。求出在这个圆圈中剩下的最后一个数字。</p>
+              <h1 id="BETWEEN-操作符"><a href="#BETWEEN-操作符" class="headerlink" title="BETWEEN 操作符"></a>BETWEEN 操作符</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>sql操作符用于选取介于两个值之间的数据范围内的值。<br>这些值可以是数值、文本或者日期。</p>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> column_name<span class="token punctuation">(</span>s<span class="token punctuation">)</span>
+<span class="token keyword">FROM</span> table_name 
+<span class="token keyword">WHERE</span> column_name <span class="token operator">BETWEEN</span> value1 <span class="token operator">AND</span> value2<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
                 
           </div>
           <div class="card-post-footer">
             <div class="post-meta">
-              <time datetime="2020-02-24T14:16:27.000Z">
+              <time datetime="2020-07-27T10:02:00.000Z">
                 <i class="iconfont icon-calendar" style="margin-right: 2px;">
                 </i>
                 <span>
-                  2020-02-24
+                  2020-07-27
                 </span>
               </time>
               
@@ -838,13 +600,251 @@ output：true<span aria-hidden="true" class="line-numbers-rows"><span></span><sp
                             <span class="dot"></span>
                             
                               
-                                    <a href="/categories/%E7%AC%94%E8%AF%95%E9%A2%98/" class="post-meta-link">
-                                      笔试题
+                                    <a href="/categories/SQL/" class="post-meta-link">
+                                      SQL
                                     </a>
                                     
                                       
             </div>
-            <a href="/archives/491299a6.html">
+            <a href="/archives/ceb130af.html">
+              继续阅读
+            </a>
+          </div>
+        </article>
+  </div>
+  
+  <div class="card">
+    
+        <article class="card card-content">
+          <a href="/archives/b34bf9ab.html">
+            <h1 class="post-title">
+              SQL学习：SELECT TOP, LIMIT, ROWNUM 子句、LIKE、IN
+            </h1>
+          </a>
+          <!-- <div class="card-excerpt">
+            
+              SELECT TOP, LIMIT, ROWNUM 子句介绍SELECT TOP 子句用于规定要返回的记录的数目。
+SELECT TOP 子句对于拥有数千条记录的大型表来说，是非常有用的。** notes **:不是所有的数据库系统都支持 SELECT TOP 语句。MySQL 支持 LIMIT 语句来选取指定的条数数据， Oracle 可以使用 ROWNUM 来选取。
+                
+          </div> -->
+          <div class="card-excerpt">
+            
+              <h1 id="SELECT-TOP-LIMIT-ROWNUM-子句"><a href="#SELECT-TOP-LIMIT-ROWNUM-子句" class="headerlink" title="SELECT TOP, LIMIT, ROWNUM 子句"></a>SELECT TOP, LIMIT, ROWNUM 子句</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>SELECT TOP 子句用于规定要返回的记录的数目。</p>
+<p>SELECT TOP 子句对于拥有数千条记录的大型表来说，是非常有用的。<br>** notes **:<br>不是所有的数据库系统都支持 SELECT TOP 语句。<br>MySQL 支持 LIMIT 语句来选取指定的条数数据， Oracle 可以使用 ROWNUM 来选取。</p>
+                
+          </div>
+          <div class="card-post-footer">
+            <div class="post-meta">
+              <time datetime="2020-07-24T10:02:00.000Z">
+                <i class="iconfont icon-calendar" style="margin-right: 2px;">
+                </i>
+                <span>
+                  2020-07-24
+                </span>
+              </time>
+              
+                
+                  
+                    
+                          
+                            <span class="dot"></span>
+                            
+                              
+                                    <a href="/categories/SQL/" class="post-meta-link">
+                                      SQL
+                                    </a>
+                                    
+                                      
+            </div>
+            <a href="/archives/b34bf9ab.html">
+              继续阅读
+            </a>
+          </div>
+        </article>
+  </div>
+  
+  <div class="card">
+    
+        <article class="card card-content">
+          <a href="/archives/501582a6.html">
+            <h1 class="post-title">
+              LeetCode精选TOP面试题26.删除排序数组中的重复项
+            </h1>
+          </a>
+          <!-- <div class="card-excerpt">
+            
+              题目描述给定一个排序数组，你需要在 原地 删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。不要使用额外的数组空间，你必须在 原地 修改输入数组 并在使用 O(1) 额外空间的条件下完成。
+example1:
+input  : [1,1,2] 
+output : [1,2]
+note   : 函数应该返回新的长度 2, 并且原数组 nums 的前两个元素被修改为 1, 2。 
+example2:
+input  : [0,0,1,1,1,2,2,3,3,4]
+output : [0,1,2,3,4]
+note   : 函数应该返回新的长度 5, 并且原数组 nums 的前五个元素被修改为 0, 1, 2, 3, 4。
+                
+          </div> -->
+          <div class="card-excerpt">
+            
+              <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>给定一个排序数组，你需要在 原地 删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。<br>不要使用额外的数组空间，你必须在 原地 修改输入数组 并在使用 O(1) 额外空间的条件下完成。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">example1:
+input  <span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token number">1,1</span>,2<span class="token punctuation">]</span> 
+output <span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token number">1,2</span><span class="token punctuation">]</span>
+note   <span class="token builtin class-name">:</span> 函数应该返回新的长度 <span class="token number">2</span>, 并且原数组 nums 的前两个元素被修改为 <span class="token number">1</span>, <span class="token number">2</span>。 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">example2:
+input  <span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token number">0,0</span>,1,1,1,2,2,3,3,4<span class="token punctuation">]</span>
+output <span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token number">0,1</span>,2,3,4<span class="token punctuation">]</span>
+note   <span class="token builtin class-name">:</span> 函数应该返回新的长度 <span class="token number">5</span>, 并且原数组 nums 的前五个元素被修改为 <span class="token number">0</span>, <span class="token number">1</span>, <span class="token number">2</span>, <span class="token number">3</span>, <span class="token number">4</span>。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+                
+          </div>
+          <div class="card-post-footer">
+            <div class="post-meta">
+              <time datetime="2020-05-25T11:41:00.000Z">
+                <i class="iconfont icon-calendar" style="margin-right: 2px;">
+                </i>
+                <span>
+                  2020-05-25
+                </span>
+              </time>
+              
+                
+                  
+                    
+                          
+                            <span class="dot"></span>
+                            
+                              
+                                    <a href="/categories/LeetCode/" class="post-meta-link">
+                                      LeetCode
+                                    </a>
+                                    
+                                      
+            </div>
+            <a href="/archives/501582a6.html">
+              继续阅读
+            </a>
+          </div>
+        </article>
+  </div>
+  
+  <div class="card">
+    
+        <article class="card card-content">
+          <a href="/archives/4c4d07ae.html">
+            <h1 class="post-title">
+              LeetCode精选TOP面试题53.最大子序和
+            </h1>
+          </a>
+          <!-- <div class="card-excerpt">
+            
+              题目描述给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。
+example:
+input : -2,1,-3,4,-1,2,1,-5,4
+output: 6
+note  : 连续子数组 [4,-1,2,1] 的和最大，为 6
+                
+          </div> -->
+          <div class="card-excerpt">
+            
+              <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">example:
+input <span class="token builtin class-name">:</span> -2,1,-3,4,-1,2,1,-5,4
+output: <span class="token number">6</span>
+note  <span class="token builtin class-name">:</span> 连续子数组 <span class="token punctuation">[</span><span class="token number">4</span>,-1,2,1<span class="token punctuation">]</span> 的和最大，为 <span class="token number">6</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+                
+          </div>
+          <div class="card-post-footer">
+            <div class="post-meta">
+              <time datetime="2020-05-24T10:02:00.000Z">
+                <i class="iconfont icon-calendar" style="margin-right: 2px;">
+                </i>
+                <span>
+                  2020-05-24
+                </span>
+              </time>
+              
+                
+                  
+                    
+                          
+                            <span class="dot"></span>
+                            
+                              
+                                    <a href="/categories/LeetCode/" class="post-meta-link">
+                                      LeetCode
+                                    </a>
+                                    
+                                      
+            </div>
+            <a href="/archives/4c4d07ae.html">
+              继续阅读
+            </a>
+          </div>
+        </article>
+  </div>
+  
+  <div class="card">
+    
+        <article class="card card-content">
+          <a href="/archives/ba31be9f.html">
+            <h1 class="post-title">
+              LeetCode精选TOP面试题38.外观数列
+            </h1>
+          </a>
+          <!-- <div class="card-excerpt">
+            
+              题目描述「外观数列」是一个整数序列，从数字 1 开始，序列中的每一项都是对前一项的描述。前五项如下：
+1.   1
+2.   11
+3.   21
+4.   1211
+5.   111221
+1  被读作  &#34;one 1&#34;  (&#34;一个一&#34;) , 即 11。
+11 被读作 &#34;two 1s&#34; (&#34;两个一&#34;）, 即 21。
+21 被读作 &#34;one 2&#34;,  &#34;one 1&#34; （&#34;一个二&#34; ,  &#34;一个一&#34;) , 即 1211。
+给定一个正整数 n（1 ≤ n ≤ 30），输出外观数列的第 n 项。
+注意：整数序列中的每一项将表示为一个字符串。
+                
+          </div> -->
+          <div class="card-excerpt">
+            
+              <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>「外观数列」是一个整数序列，从数字 1 开始，序列中的每一项都是对前一项的描述。前五项如下：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token number">1</span>.   <span class="token number">1</span>
+<span class="token number">2</span>.   <span class="token number">11</span>
+<span class="token number">3</span>.   <span class="token number">21</span>
+<span class="token number">4</span>.   <span class="token number">1211</span>
+<span class="token number">5</span>.   <span class="token number">111221</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token number">1</span>  被读作  <span class="token string">"one 1"</span>  <span class="token punctuation">(</span><span class="token string">"一个一"</span><span class="token punctuation">)</span> , 即 <span class="token number">11</span>。
+<span class="token number">11</span> 被读作 <span class="token string">"two 1s"</span> <span class="token punctuation">(</span><span class="token string">"两个一"</span>）, 即 <span class="token number">21</span>。
+<span class="token number">21</span> 被读作 <span class="token string">"one 2"</span>,  <span class="token string">"one 1"</span> （<span class="token string">"一个二"</span> ,  <span class="token string">"一个一"</span><span class="token punctuation">)</span> , 即 <span class="token number">1211</span>。
+给定一个正整数 n（1 ≤ n ≤ <span class="token number">30</span>），输出外观数列的第 n 项。
+注意：整数序列中的每一项将表示为一个字符串。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                
+          </div>
+          <div class="card-post-footer">
+            <div class="post-meta">
+              <time datetime="2020-03-27T06:54:51.000Z">
+                <i class="iconfont icon-calendar" style="margin-right: 2px;">
+                </i>
+                <span>
+                  2020-03-27
+                </span>
+              </time>
+              
+                
+                  
+                    
+                          
+                            <span class="dot"></span>
+                            
+                              
+                                    <a href="/categories/LeetCode/" class="post-meta-link">
+                                      LeetCode
+                                    </a>
+                                    
+                                      
+            </div>
+            <a href="/archives/ba31be9f.html">
               继续阅读
             </a>
           </div>
@@ -898,7 +898,7 @@ output：true<span aria-hidden="true" class="line-numbers-rows"><span></span><sp
   <a 
     class="author-posts-count" 
     href="/archives">
-    <span>132</span>
+    <span>152</span>
     <span>文章</span>
   </a>
   <a 
@@ -910,7 +910,7 @@ output：true<span aria-hidden="true" class="line-numbers-rows"><span></span><sp
   <a 
     class="author-tags-count" 
     href="/tags">
-    <span>67</span>
+    <span>71</span>
     <span>标签</span>
   </a>
 </div>
@@ -946,13 +946,6 @@ output：true<span aria-hidden="true" class="line-numbers-rows"><span></span><sp
   </div>
   <div class="categories-list">
     
-      <a href="/categories/%E5%85%B6%E4%BB%96/">
-        <div class="categories-list-item">
-          其他
-          <span class="categories-list-item-badge">3</span>
-        </div>
-      </a>
-    
       <a href="/categories/D2L/">
         <div class="categories-list-item">
           D2L
@@ -960,10 +953,17 @@ output：true<span aria-hidden="true" class="line-numbers-rows"><span></span><sp
         </div>
       </a>
     
+      <a href="/categories/%E5%85%B6%E4%BB%96/">
+        <div class="categories-list-item">
+          其他
+          <span class="categories-list-item-badge">3</span>
+        </div>
+      </a>
+    
       <a href="/categories/LeetCode/">
         <div class="categories-list-item">
           LeetCode
-          <span class="categories-list-item-badge">75</span>
+          <span class="categories-list-item-badge">95</span>
         </div>
       </a>
     
@@ -1053,6 +1053,12 @@ output：true<span aria-hidden="true" class="line-numbers-rows"><span></span><sp
       </a>
     
       <a 
+        href="/tags/%E9%93%BE%E8%A1%A8/" 
+        title="链表">
+        <div class="tags-list-item">链表</div>
+      </a>
+    
+      <a 
         href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" 
         title="二叉树">
         <div class="tags-list-item">二叉树</div>
@@ -1065,9 +1071,21 @@ output：true<span aria-hidden="true" class="line-numbers-rows"><span></span><sp
       </a>
     
       <a 
-        href="/tags/%E9%93%BE%E8%A1%A8/" 
-        title="链表">
-        <div class="tags-list-item">链表</div>
+        href="/tags/%E6%8E%92%E5%BA%8F/" 
+        title="排序">
+        <div class="tags-list-item">排序</div>
+      </a>
+    
+      <a 
+        href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/" 
+        title="双指针">
+        <div class="tags-list-item">双指针</div>
+      </a>
+    
+      <a 
+        href="/tags/%E6%95%B0%E5%AD%A6/" 
+        title="数学">
+        <div class="tags-list-item">数学</div>
       </a>
     
       <a 
@@ -1083,33 +1101,15 @@ output：true<span aria-hidden="true" class="line-numbers-rows"><span></span><sp
       </a>
     
       <a 
-        href="/tags/%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/" 
-        title="数值计算">
-        <div class="tags-list-item">数值计算</div>
+        href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" 
+        title="动态规划">
+        <div class="tags-list-item">动态规划</div>
       </a>
     
       <a 
-        href="/tags/DFS/" 
-        title="DFS">
-        <div class="tags-list-item">DFS</div>
-      </a>
-    
-      <a 
-        href="/tags/%E6%A0%91/" 
-        title="树">
-        <div class="tags-list-item">树</div>
-      </a>
-    
-      <a 
-        href="/tags/%E6%8E%92%E5%BA%8F/" 
-        title="排序">
-        <div class="tags-list-item">排序</div>
-      </a>
-    
-      <a 
-        href="/tags/SQL/" 
-        title="SQL">
-        <div class="tags-list-item">SQL</div>
+        href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/" 
+        title="哈希表">
+        <div class="tags-list-item">哈希表</div>
       </a>
     
   </div>
@@ -1249,11 +1249,91 @@ output：true<span aria-hidden="true" class="line-numbers-rows"><span></span><sp
     
       
         
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
           <a 
             href="/archives/2022" 
             class="archive-card-list-item">
             2022
-            <span class="archive-card-list-item-badge">29</span>
+            <span class="archive-card-list-item-badge">49</span>
           </a>
         
         
@@ -1707,23 +1787,23 @@ output：true<span aria-hidden="true" class="line-numbers-rows"><span></span><sp
   <div class="recent-posts-list">
     
       <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2022-05-04</div>
-        <a href="/archives/daef219.html"><div class="recent-posts-item-content">LeetCode腾讯精选练习50题-88.合并两个有序数组</div></a>
+        <div class="recent-posts-item-title">2022-07-13</div>
+        <a href="/archives/533bfe2b.html"><div class="recent-posts-item-content">LeetCode腾讯精选练习50题-054.螺旋矩阵</div></a>
       </div>
     
       <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2022-05-04</div>
-        <a href="/archives/1f28f583.html"><div class="recent-posts-item-content">LeetCode腾讯精选练习50题-26.删除有序数组中的重复项</div></a>
+        <div class="recent-posts-item-title">2022-07-13</div>
+        <a href="/archives/4a5d2c97.html"><div class="recent-posts-item-content">LeetCode腾讯精选练习50题-059.螺旋矩阵II</div></a>
       </div>
     
       <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2022-05-03</div>
-        <a href="/archives/b7607879.html"><div class="recent-posts-item-content">LeetCode腾讯精选练习50题-21.合并两个有序链表</div></a>
+        <div class="recent-posts-item-title">2022-06-07</div>
+        <a href="/archives/bae2b272.html"><div class="recent-posts-item-content">LeetCode腾讯精选练习50题-142.环形链表 II</div></a>
       </div>
     
       <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2022-05-02</div>
-        <a href="/archives/78d80330.html"><div class="recent-posts-item-content">LeetCode腾讯精选练习50题-20.有效的括号</div></a>
+        <div class="recent-posts-item-title">2022-06-05</div>
+        <a href="/archives/27b234bf.html"><div class="recent-posts-item-content">LeetCode腾讯精选练习50题-061.旋转链表</div></a>
       </div>
     
   </div>
@@ -1863,11 +1943,91 @@ output：true<span aria-hidden="true" class="line-numbers-rows"><span></span><sp
     
       
         
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
           <a 
             href="/archives/2022" 
             class="archive-card-list-item">
             2022
-            <span class="archive-card-list-item-badge">29</span>
+            <span class="archive-card-list-item-badge">49</span>
           </a>
         
         

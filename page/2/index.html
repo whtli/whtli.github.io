@@ -254,50 +254,70 @@
   <div class="card">
     
         <article class="card card-content">
-          <a href="/archives/92cb0ef2.html">
+          <a href="/archives/582739c1.html">
             <h1 class="post-title">
-              LeetCode腾讯精选练习50题-235.二叉搜索树的最近公共祖先
+              LeetCode腾讯精选练习50题-155.最小栈
             </h1>
           </a>
           <!-- <div class="card-excerpt">
             
               题目描述
-给定一个二叉搜索树, 找到该树中两个指定节点的最近公共祖先。
-最近公共祖先的定义为：
-对于有根树 T 的两个结点 p、q，最近公共祖先表示为一个结点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（一个节点也可以是它自己的祖先）。
+设计一个支持 push ，pop ，top 操作，并能在常数时间内检索到最小元素的栈。
+实现 MinStack 类:
+
+MinStack() 初始化堆栈对象。
+void push(int val) 将元素val推入堆栈。
+void pop() 删除堆栈顶部的元素。
+int top() 获取堆栈顶部的元素。
+int getMin() 获取堆栈中的最小元素。
 
 example
-input  : root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 8
-output : 6
-note   : 节点 2 和节点 8 的最近公共祖先是节点 6。
-input  : root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 4
-output : 2
-note   : 节点 2 和节点 4 的最近公共祖先是节点 2。
+input  : [&#34;MinStack&#34;,&#34;push&#34;,&#34;push&#34;,&#34;push&#34;,&#34;getMin&#34;,&#34;pop&#34;,&#34;top&#34;,&#34;getMin&#34;]
+         [[],[-2],[0],[-3],[],[],[],[]]
+output : [null,null,null,null,-3,null,0,-2]
+note   : MinStack minStack = new MinStack();
+         minStack.push(-2);
+         minStack.push(0);
+         minStack.push(-3);
+         minStack.getMin();   --&gt; 返回 -3.
+         minStack.pop();
+         minStack.top();      --&gt; 返回 0.
+         minStack.getMin();   --&gt; 返回 -2.
                 
           </div> -->
           <div class="card-excerpt">
             
               <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><ul>
-<li>给定一个二叉搜索树, 找到该树中两个指定节点的最近公共祖先。</li>
-<li>最近公共祖先的定义为：</li>
-<li>对于有根树 T 的两个结点 p、q，最近公共祖先表示为一个结点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（一个节点也可以是它自己的祖先）。</li>
+<li>设计一个支持 push ，pop ，top 操作，并能在常数时间内检索到最小元素的栈。</li>
+<li>实现 MinStack 类:</li>
+<li></li>
+<li>MinStack() 初始化堆栈对象。</li>
+<li>void push(int val) 将元素val推入堆栈。</li>
+<li>void pop() 删除堆栈顶部的元素。</li>
+<li>int top() 获取堆栈顶部的元素。</li>
+<li>int getMin() 获取堆栈中的最小元素。</li>
 </ul>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">example
-input  <span class="token builtin class-name">:</span> root <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">6,2</span>,8,0,4,7,9,null,null,3,5<span class="token punctuation">]</span>, p <span class="token operator">=</span> <span class="token number">2</span>, q <span class="token operator">=</span> <span class="token number">8</span>
-output <span class="token builtin class-name">:</span> <span class="token number">6</span>
-note   <span class="token builtin class-name">:</span> 节点 <span class="token number">2</span> 和节点 <span class="token number">8</span> 的最近公共祖先是节点 <span class="token number">6</span>。
-input  <span class="token builtin class-name">:</span> root <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">6,2</span>,8,0,4,7,9,null,null,3,5<span class="token punctuation">]</span>, p <span class="token operator">=</span> <span class="token number">2</span>, q <span class="token operator">=</span> <span class="token number">4</span>
-output <span class="token builtin class-name">:</span> <span class="token number">2</span>
-note   <span class="token builtin class-name">:</span> 节点 <span class="token number">2</span> 和节点 <span class="token number">4</span> 的最近公共祖先是节点 <span class="token number">2</span>。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+input  <span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token string">"MinStack"</span>,<span class="token string">"push"</span>,<span class="token string">"push"</span>,<span class="token string">"push"</span>,<span class="token string">"getMin"</span>,<span class="token string">"pop"</span>,<span class="token string">"top"</span>,<span class="token string">"getMin"</span><span class="token punctuation">]</span>
+         <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token punctuation">]</span>,<span class="token punctuation">[</span>-2<span class="token punctuation">]</span>,<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>,<span class="token punctuation">[</span>-3<span class="token punctuation">]</span>,<span class="token punctuation">[</span><span class="token punctuation">]</span>,<span class="token punctuation">[</span><span class="token punctuation">]</span>,<span class="token punctuation">[</span><span class="token punctuation">]</span>,<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+output <span class="token builtin class-name">:</span> <span class="token punctuation">[</span>null,null,null,null,-3,null,0,-2<span class="token punctuation">]</span>
+note   <span class="token builtin class-name">:</span> MinStack minStack <span class="token operator">=</span> new MinStack<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+         minStack.push<span class="token punctuation">(</span>-2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+         minStack.push<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+         minStack.push<span class="token punctuation">(</span>-3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+         minStack.getMin<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   --<span class="token operator">></span> 返回 -3.
+         minStack.pop<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+         minStack.top<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      --<span class="token operator">></span> 返回 <span class="token number">0</span>.
+         minStack.getMin<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   --<span class="token operator">></span> 返回 -2.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
           </div>
           <div class="card-post-footer">
             <div class="post-meta">
-              <time datetime="2022-04-09T13:00:00.000Z">
+              <time datetime="2022-05-16T13:00:00.000Z">
                 <i class="iconfont icon-calendar" style="margin-right: 2px;">
                 </i>
                 <span>
-                  2022-04-09
+                  2022-05-16
                 </span>
               </time>
               
@@ -314,7 +334,7 @@ note   <span class="token builtin class-name">:</span> 节点 <span class="token
                                     
                                       
             </div>
-            <a href="/archives/92cb0ef2.html">
+            <a href="/archives/582739c1.html">
               继续阅读
             </a>
           </div>
@@ -324,514 +344,122 @@ note   <span class="token builtin class-name">:</span> 节点 <span class="token
   <div class="card">
     
         <article class="card card-content">
-          <a href="/archives/5b7d327e.html">
+          <a href="/archives/c7f15b03.html">
             <h1 class="post-title">
-              LeetCode腾讯精选练习50题-292.Nim游戏
+              LeetCode腾讯精选练习50题-121.买卖股票的最佳时机
             </h1>
           </a>
           <!-- <div class="card-excerpt">
             
               题目描述
-两个人一起玩 Nim 游戏：
-桌子上有一堆石头。你们轮流进行自己的回合， 你作为先手。
-每一回合，轮到的人拿掉 1 - 3 块石头。拿掉最后一块石头的人就是获胜者。
-假设你们每一步都是最优解。请编写一个函数，来判断你是否可以在给定石头数量为 n 的情况下赢得游戏。
-如果可以赢，返回 true；否则，返回 false。
+给定一个数组 prices ，它的第 i 个元素 prices[i] 表示一支给定股票第 i 天的价格。
+只能选择 某一天 买入这只股票，并选择在 未来的某一个不同的日子 卖出该股票。
+设计一个算法来计算所能获取的最大利润。
+返回可以从这笔交易中获取的最大利润。
+如果不能获取任何利润，返回 0 。
 
 example
-input  : n = 4
-output : false
-note   : 1. 你移除1颗石头；你的朋友移走了3块石头，包括最后一块。你的朋友赢了。
-         2. 你移除2颗石头；你的朋友移走2块石头，包括最后一块。你的朋友赢了。
-         3. 你移走3颗石头；你的朋友移走了最后一块石头。你的朋友赢了。
-         =&gt; 在所有结果中，你的朋友是赢家。
-input  : n = 1
-output : true
-note   : 你移除1颗石头。你赢了。
-input  : n = 2
-output : true
-note   : 你移除2个石头。你赢了。
-                
-          </div> -->
-          <div class="card-excerpt">
-            
-              <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><ul>
-<li>两个人一起玩 Nim 游戏：</li>
-<li>桌子上有一堆石头。你们轮流进行自己的回合， 你作为先手。</li>
-<li>每一回合，轮到的人拿掉 1 - 3 块石头。拿掉最后一块石头的人就是获胜者。</li>
-<li>假设你们每一步都是最优解。请编写一个函数，来判断你是否可以在给定石头数量为 n 的情况下赢得游戏。</li>
-<li>如果可以赢，返回 true；否则，返回 false。</li>
-</ul>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">example
-input  <span class="token builtin class-name">:</span> n <span class="token operator">=</span> <span class="token number">4</span>
-output <span class="token builtin class-name">:</span> <span class="token boolean">false</span>
-note   <span class="token builtin class-name">:</span> <span class="token number">1</span>. 你移除1颗石头；你的朋友移走了3块石头，包括最后一块。你的朋友赢了。
-         <span class="token number">2</span>. 你移除2颗石头；你的朋友移走2块石头，包括最后一块。你的朋友赢了。
-         <span class="token number">3</span>. 你移走3颗石头；你的朋友移走了最后一块石头。你的朋友赢了。
-         <span class="token operator">=</span><span class="token operator">></span> 在所有结果中，你的朋友是赢家。
-input  <span class="token builtin class-name">:</span> n <span class="token operator">=</span> <span class="token number">1</span>
-output <span class="token builtin class-name">:</span> <span class="token boolean">true</span>
-note   <span class="token builtin class-name">:</span> 你移除1颗石头。你赢了。
-input  <span class="token builtin class-name">:</span> n <span class="token operator">=</span> <span class="token number">2</span>
-output <span class="token builtin class-name">:</span> <span class="token boolean">true</span>
-note   <span class="token builtin class-name">:</span> 你移除2个石头。你赢了。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-                
-          </div>
-          <div class="card-post-footer">
-            <div class="post-meta">
-              <time datetime="2022-04-08T03:00:00.000Z">
-                <i class="iconfont icon-calendar" style="margin-right: 2px;">
-                </i>
-                <span>
-                  2022-04-08
-                </span>
-              </time>
-              
-                
-                  
-                    
-                          
-                            <span class="dot"></span>
-                            
-                              
-                                    <a href="/categories/LeetCode/" class="post-meta-link">
-                                      LeetCode
-                                    </a>
-                                    
-                                      
-            </div>
-            <a href="/archives/5b7d327e.html">
-              继续阅读
-            </a>
-          </div>
-        </article>
-  </div>
-  
-  <div class="card">
-    
-        <article class="card card-content">
-          <a href="/archives/688ebbf7.html">
-            <h1 class="post-title">
-              LeetCode腾讯精选练习50题-009.回文数
-            </h1>
-          </a>
-          <!-- <div class="card-excerpt">
-            
-              题目描述
-给定一个整数 x ，如果 x 是一个回文整数，返回 true ；否则，返回 false 。
-回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。
-进阶：不将整数转为字符串来解决这个问题
-
-example
-input  : 121
-output : true
-input  : -121
-output : false
-                
-          </div> -->
-          <div class="card-excerpt">
-            
-              <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><ul>
-<li>给定一个整数 x ，如果 x 是一个回文整数，返回 true ；否则，返回 false 。</li>
-<li>回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。</li>
-<li>进阶：不将整数转为字符串来解决这个问题</li>
-</ul>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">example
-input  <span class="token builtin class-name">:</span> <span class="token number">121</span>
-output <span class="token builtin class-name">:</span> <span class="token boolean">true</span>
-input  <span class="token builtin class-name">:</span> -121
-output <span class="token builtin class-name">:</span> <span class="token boolean">false</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-                
-          </div>
-          <div class="card-post-footer">
-            <div class="post-meta">
-              <time datetime="2022-04-06T13:00:00.000Z">
-                <i class="iconfont icon-calendar" style="margin-right: 2px;">
-                </i>
-                <span>
-                  2022-04-06
-                </span>
-              </time>
-              
-                
-                  
-                    
-                          
-                            <span class="dot"></span>
-                            
-                              
-                                    <a href="/categories/LeetCode/" class="post-meta-link">
-                                      LeetCode
-                                    </a>
-                                    
-                                      
-            </div>
-            <a href="/archives/688ebbf7.html">
-              继续阅读
-            </a>
-          </div>
-        </article>
-  </div>
-  
-  <div class="card">
-    
-        <article class="card card-content">
-          <a href="/archives/4e858b60.html">
-            <h1 class="post-title">
-              Python使用Pandas计算相关系数
-            </h1>
-          </a>
-          <!-- <div class="card-excerpt">
-            
-              问题：
-给定成分数据，使用Pandas计算各成分之间的相关系数
-
-代码
-调用函数：pandas.corr()
-
-                
-          </div> -->
-          <div class="card-excerpt">
-            
-              <h3 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h3><ul>
-<li>给定成分数据，使用Pandas计算各成分之间的相关系数</li>
-</ul>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><ul>
-<li>调用函数：pandas.corr()</li>
-</ul>
-                
-          </div>
-          <div class="card-post-footer">
-            <div class="post-meta">
-              <time datetime="2022-03-21T15:00:00.000Z">
-                <i class="iconfont icon-calendar" style="margin-right: 2px;">
-                </i>
-                <span>
-                  2022-03-21
-                </span>
-              </time>
-              
-                
-                  
-                    
-                          
-                            <span class="dot"></span>
-                            
-                              
-                                    <a href="/categories/%E5%85%B6%E4%BB%96/" class="post-meta-link">
-                                      其他
-                                    </a>
-                                    
-                                      
-            </div>
-            <a href="/archives/4e858b60.html">
-              继续阅读
-            </a>
-          </div>
-        </article>
-  </div>
-  
-  <div class="card">
-    
-        <article class="card card-content">
-          <a href="/archives/42e9890.html">
-            <h1 class="post-title">
-              LeetCode精选TOP面试题50.Pow(x, n)
-            </h1>
-          </a>
-          <!-- <div class="card-excerpt">
-            
-              题目描述
-实现 pow(x, n) ，即计算 x 的 n 次幂函数（即，xn ）。
-
-example
-input  : x = 2.00000, n = 10
-output : 1024.00000
-input  : x = 2.10000, n = 3
-output : 9.26100
-input  : x = 2.00000, n = -2
-output : 0.25000
-note   : 2^-2 = 1/2^2 = 1/4 = 0.25
-                
-          </div> -->
-          <div class="card-excerpt">
-            
-              <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><ul>
-<li>实现 pow(x, n) ，即计算 x 的 n 次幂函数（即，xn ）。</li>
-</ul>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">example
-input  <span class="token builtin class-name">:</span> x <span class="token operator">=</span> <span class="token number">2.00000</span>, n <span class="token operator">=</span> <span class="token number">10</span>
-output <span class="token builtin class-name">:</span> <span class="token number">1024.00000</span>
-input  <span class="token builtin class-name">:</span> x <span class="token operator">=</span> <span class="token number">2.10000</span>, n <span class="token operator">=</span> <span class="token number">3</span>
-output <span class="token builtin class-name">:</span> <span class="token number">9.26100</span>
-input  <span class="token builtin class-name">:</span> x <span class="token operator">=</span> <span class="token number">2.00000</span>, n <span class="token operator">=</span> -2
-output <span class="token builtin class-name">:</span> <span class="token number">0.25000</span>
-note   <span class="token builtin class-name">:</span> <span class="token number">2</span>^-2 <span class="token operator">=</span> <span class="token number">1</span>/2^2 <span class="token operator">=</span> <span class="token number">1</span>/4 <span class="token operator">=</span> <span class="token number">0.25</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-                
-          </div>
-          <div class="card-post-footer">
-            <div class="post-meta">
-              <time datetime="2022-03-17T06:00:00.000Z">
-                <i class="iconfont icon-calendar" style="margin-right: 2px;">
-                </i>
-                <span>
-                  2022-03-17
-                </span>
-              </time>
-              
-                
-                  
-                    
-                          
-                            <span class="dot"></span>
-                            
-                              
-                                    <a href="/categories/LeetCode/" class="post-meta-link">
-                                      LeetCode
-                                    </a>
-                                    
-                                      
-            </div>
-            <a href="/archives/42e9890.html">
-              继续阅读
-            </a>
-          </div>
-        </article>
-  </div>
-  
-  <div class="card">
-    
-        <article class="card card-content">
-          <a href="/archives/774c957b.html">
-            <h1 class="post-title">
-              webstorm取消vue标签的高亮状态
-            </h1>
-          </a>
-          <!-- <div class="card-excerpt">
-            
-              WebStorm中vue标签高亮，影响编程体验
-                
-          </div> -->
-          <div class="card-excerpt">
-            
-              <h3 id="WebStorm中vue标签高亮，影响编程体验"><a href="#WebStorm中vue标签高亮，影响编程体验" class="headerlink" title="WebStorm中vue标签高亮，影响编程体验"></a>WebStorm中vue标签高亮，影响编程体验</h3>
-                
-          </div>
-          <div class="card-post-footer">
-            <div class="post-meta">
-              <time datetime="2022-03-04T06:00:00.000Z">
-                <i class="iconfont icon-calendar" style="margin-right: 2px;">
-                </i>
-                <span>
-                  2022-03-04
-                </span>
-              </time>
-              
-                
-                  
-                    
-                          
-                            <span class="dot"></span>
-                            
-                              
-                                    <a href="/categories/SpringBoot-Vue/" class="post-meta-link">
-                                      SpringBoot-Vue
-                                    </a>
-                                    
-                                      
-            </div>
-            <a href="/archives/774c957b.html">
-              继续阅读
-            </a>
-          </div>
-        </article>
-  </div>
-  
-  <div class="card">
-    
-        <article class="card card-content">
-          <a href="/archives/952dea56.html">
-            <h1 class="post-title">
-              LeetCode精选TOP面试题138. 复制带随机指针的链表
-            </h1>
-          </a>
-          <!-- <div class="card-excerpt">
-            
-              题目描述
-给定一个长度为 n 的链表，每个节点包含一个额外增加的随机指针 random ，该指针可以指向链表中的任何节点或空节点。
-构造这个链表的 深拷贝。 深拷贝应该正好由 n 个 全新 节点组成，其中每个新节点的值都设为其对应的原节点的值。新节点的 next 指针和 random 指针也都应指向复制链表中的新节点，并使原链表和复制链表中的这些指针能够表示相同的链表状态。复制链表中的指针都不应指向原链表中的节点 。
-
-example
-input  : head = [[7,null],[13,0],[11,4],[10,2],[1,0]]
-output : [[7,null],[13,0],[11,4],[10,2],[1,0]]  
-input  : head = [[3,null],[3,0],[3,null]]
-output : [[3,null],[3,0],[3,null]]
-                
-          </div> -->
-          <div class="card-excerpt">
-            
-              <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><ul>
-<li>给定一个长度为 n 的链表，每个节点包含一个额外增加的随机指针 random ，该指针可以指向链表中的任何节点或空节点。</li>
-<li>构造这个链表的 深拷贝。 深拷贝应该正好由 n 个 全新 节点组成，其中每个新节点的值都设为其对应的原节点的值。新节点的 next 指针和 random 指针也都应指向复制链表中的新节点，并使原链表和复制链表中的这些指针能够表示相同的链表状态。复制链表中的指针都不应指向原链表中的节点 。</li>
-</ul>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">example
-input  <span class="token builtin class-name">:</span> <span class="token function">head</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">7</span>,null<span class="token punctuation">]</span>,<span class="token punctuation">[</span><span class="token number">13,0</span><span class="token punctuation">]</span>,<span class="token punctuation">[</span><span class="token number">11,4</span><span class="token punctuation">]</span>,<span class="token punctuation">[</span><span class="token number">10,2</span><span class="token punctuation">]</span>,<span class="token punctuation">[</span><span class="token number">1,0</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
-output <span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">7</span>,null<span class="token punctuation">]</span>,<span class="token punctuation">[</span><span class="token number">13,0</span><span class="token punctuation">]</span>,<span class="token punctuation">[</span><span class="token number">11,4</span><span class="token punctuation">]</span>,<span class="token punctuation">[</span><span class="token number">10,2</span><span class="token punctuation">]</span>,<span class="token punctuation">[</span><span class="token number">1,0</span><span class="token punctuation">]</span><span class="token punctuation">]</span>  
-input  <span class="token builtin class-name">:</span> <span class="token function">head</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">3</span>,null<span class="token punctuation">]</span>,<span class="token punctuation">[</span><span class="token number">3,0</span><span class="token punctuation">]</span>,<span class="token punctuation">[</span><span class="token number">3</span>,null<span class="token punctuation">]</span><span class="token punctuation">]</span>
-output <span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">3</span>,null<span class="token punctuation">]</span>,<span class="token punctuation">[</span><span class="token number">3,0</span><span class="token punctuation">]</span>,<span class="token punctuation">[</span><span class="token number">3</span>,null<span class="token punctuation">]</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-                
-          </div>
-          <div class="card-post-footer">
-            <div class="post-meta">
-              <time datetime="2022-03-03T08:00:00.000Z">
-                <i class="iconfont icon-calendar" style="margin-right: 2px;">
-                </i>
-                <span>
-                  2022-03-03
-                </span>
-              </time>
-              
-                
-                  
-                    
-                          
-                            <span class="dot"></span>
-                            
-                              
-                                    <a href="/categories/LeetCode/" class="post-meta-link">
-                                      LeetCode
-                                    </a>
-                                    
-                                      
-            </div>
-            <a href="/archives/952dea56.html">
-              继续阅读
-            </a>
-          </div>
-        </article>
-  </div>
-  
-  <div class="card">
-    
-        <article class="card card-content">
-          <a href="/archives/6ffca0a6.html">
-            <h1 class="post-title">
-              LeetCode精选TOP面试题341.扁平化嵌套列表迭代器
-            </h1>
-          </a>
-          <!-- <div class="card-excerpt">
-            
-              题目描述
-给定一个嵌套的整数列表 nestedList 。
-每个元素要么是一个整数，要么是一个列表；该列表的元素也可能是整数或者是其他列表。
-实现一个迭代器将其扁平化，使之能够遍历这个列表中的所有整数。
-实现扁平迭代器类 NestedIterator ：
-NestedIterator(List nestedList) 用嵌套列表 nestedList 初始化迭代器。
-int next() 返回嵌套列表的下一个整数。
-boolean hasNext() 如果仍然存在待迭代的整数，返回 true ；否则，返回 false 。
-
-example
-input  : nestedList = [[1,1],2,[1,1]]
-output : [1,1,2,1,1]
-input  : nestedList = [1,[4,[6]]]
-output : [1,4,6]
-                
-          </div> -->
-          <div class="card-excerpt">
-            
-              <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><ul>
-<li>给定一个嵌套的整数列表 nestedList 。</li>
-<li>每个元素要么是一个整数，要么是一个列表；该列表的元素也可能是整数或者是其他列表。</li>
-<li>实现一个迭代器将其扁平化，使之能够遍历这个列表中的所有整数。</li>
-<li>实现扁平迭代器类 NestedIterator ：</li>
-<li>NestedIterator(List<NestedInteger> nestedList) 用嵌套列表 nestedList 初始化迭代器。</li>
-<li>int next() 返回嵌套列表的下一个整数。</li>
-<li>boolean hasNext() 如果仍然存在待迭代的整数，返回 true ；否则，返回 false 。</li>
-</ul>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">example
-input  <span class="token builtin class-name">:</span> nestedList <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1,1</span><span class="token punctuation">]</span>,2,<span class="token punctuation">[</span><span class="token number">1,1</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
-output <span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token number">1,1</span>,2,1,1<span class="token punctuation">]</span>
-input  <span class="token builtin class-name">:</span> nestedList <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span>,<span class="token punctuation">[</span><span class="token number">4</span>,<span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
-output <span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token number">1,4</span>,6<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-                
-          </div>
-          <div class="card-post-footer">
-            <div class="post-meta">
-              <time datetime="2022-03-01T14:00:00.000Z">
-                <i class="iconfont icon-calendar" style="margin-right: 2px;">
-                </i>
-                <span>
-                  2022-03-01
-                </span>
-              </time>
-              
-                
-                  
-                    
-                          
-                            <span class="dot"></span>
-                            
-                              
-                                    <a href="/categories/LeetCode/" class="post-meta-link">
-                                      LeetCode
-                                    </a>
-                                    
-                                      
-            </div>
-            <a href="/archives/6ffca0a6.html">
-              继续阅读
-            </a>
-          </div>
-        </article>
-  </div>
-  
-  <div class="card">
-    
-        <article class="card card-content">
-          <a href="/archives/92af397c.html">
-            <h1 class="post-title">
-              LeetCode精选TOP面试题236.二叉树的最近公共祖先
-            </h1>
-          </a>
-          <!-- <div class="card-excerpt">
-            
-              题目描述
-给定一个二叉树, 找到该树中两个指定节点的最近公共祖先。
-最近公共祖先的定义为：
-对于有根树 T 的两个节点 p、q，最近公共祖先表示为一个节点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（一个节点也可以是它自己的祖先）。
-
-example
-input  : root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 1
-output : 3
-input  : root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 4
+input  : prices = [7,1,5,3,6,4]
 output : 5
-input  : root = [1,2], p = 1, q = 2
+note   : 在第 2 天（股票价格 = 1）的时候买入，在第 5 天（股票价格 = 6）的时候卖出，最大利润 = 6-1 = 5 。
+         注意利润不能是 7-1 = 6, 因为卖出价格需要大于买入价格；同时，不能在买入前卖出股票。
+
+input  : prices = [7,6,4,3,1]
+output : 0
+note   : 在这种情况下, 没有交易完成, 所以最大利润为 0。
+                
+          </div> -->
+          <div class="card-excerpt">
+            
+              <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><ul>
+<li>给定一个数组 prices ，它的第 i 个元素 prices[i] 表示一支给定股票第 i 天的价格。</li>
+<li>只能选择 某一天 买入这只股票，并选择在 未来的某一个不同的日子 卖出该股票。</li>
+<li>设计一个算法来计算所能获取的最大利润。</li>
+<li>返回可以从这笔交易中获取的最大利润。</li>
+<li>如果不能获取任何利润，返回 0 。</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">example
+input  <span class="token builtin class-name">:</span> prices <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">7,1</span>,5,3,6,4<span class="token punctuation">]</span>
+output <span class="token builtin class-name">:</span> <span class="token number">5</span>
+note   <span class="token builtin class-name">:</span> 在第 <span class="token number">2</span> 天（股票价格 <span class="token operator">=</span> <span class="token number">1</span>）的时候买入，在第 <span class="token number">5</span> 天（股票价格 <span class="token operator">=</span> <span class="token number">6</span>）的时候卖出，最大利润 <span class="token operator">=</span> <span class="token number">6</span>-1 <span class="token operator">=</span> <span class="token number">5</span> 。
+         注意利润不能是 <span class="token number">7</span>-1 <span class="token operator">=</span> <span class="token number">6</span>, 因为卖出价格需要大于买入价格；同时，不能在买入前卖出股票。
+
+input  <span class="token builtin class-name">:</span> prices <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">7,6</span>,4,3,1<span class="token punctuation">]</span>
+output <span class="token builtin class-name">:</span> <span class="token number">0</span>
+note   <span class="token builtin class-name">:</span> 在这种情况下, 没有交易完成, 所以最大利润为 <span class="token number">0</span>。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                
+          </div>
+          <div class="card-post-footer">
+            <div class="post-meta">
+              <time datetime="2022-05-15T13:00:00.000Z">
+                <i class="iconfont icon-calendar" style="margin-right: 2px;">
+                </i>
+                <span>
+                  2022-05-15
+                </span>
+              </time>
+              
+                
+                  
+                    
+                          
+                            <span class="dot"></span>
+                            
+                              
+                                    <a href="/categories/LeetCode/" class="post-meta-link">
+                                      LeetCode
+                                    </a>
+                                    
+                                      
+            </div>
+            <a href="/archives/c7f15b03.html">
+              继续阅读
+            </a>
+          </div>
+        </article>
+  </div>
+  
+  <div class="card">
+    
+        <article class="card card-content">
+          <a href="/archives/29574803.html">
+            <h1 class="post-title">
+              LeetCode腾讯精选练习50题-53.最大子数组和
+            </h1>
+          </a>
+          <!-- <div class="card-excerpt">
+            
+              题目描述
+给定一个整数数组 nums ，请找出一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。
+子数组 是数组中的一个连续部分。
+
+example
+input  : nums = [-2,1,-3,4,-1,2,1,-5,4]
+output : 6
+input  : nums = [1]
 output : 1
                 
           </div> -->
           <div class="card-excerpt">
             
               <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><ul>
-<li>给定一个二叉树, 找到该树中两个指定节点的最近公共祖先。</li>
-<li>最近公共祖先的定义为：</li>
-<li>对于有根树 T 的两个节点 p、q，最近公共祖先表示为一个节点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（一个节点也可以是它自己的祖先）。</li>
+<li>给定一个整数数组 nums ，请找出一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。</li>
+<li>子数组 是数组中的一个连续部分。</li>
 </ul>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">example
-input  <span class="token builtin class-name">:</span> root <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3,5</span>,1,6,2,0,8,null,null,7,4<span class="token punctuation">]</span>, p <span class="token operator">=</span> <span class="token number">5</span>, q <span class="token operator">=</span> <span class="token number">1</span>
-output <span class="token builtin class-name">:</span> <span class="token number">3</span>
-input  <span class="token builtin class-name">:</span> root <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3,5</span>,1,6,2,0,8,null,null,7,4<span class="token punctuation">]</span>, p <span class="token operator">=</span> <span class="token number">5</span>, q <span class="token operator">=</span> <span class="token number">4</span>
-output <span class="token builtin class-name">:</span> <span class="token number">5</span>
-input  <span class="token builtin class-name">:</span> root <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1,2</span><span class="token punctuation">]</span>, p <span class="token operator">=</span> <span class="token number">1</span>, q <span class="token operator">=</span> <span class="token number">2</span>
-output <span class="token builtin class-name">:</span> <span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+input  <span class="token builtin class-name">:</span> nums <span class="token operator">=</span> <span class="token punctuation">[</span>-2,1,-3,4,-1,2,1,-5,4<span class="token punctuation">]</span>
+output <span class="token builtin class-name">:</span> <span class="token number">6</span>
+input  <span class="token builtin class-name">:</span> nums <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+output <span class="token builtin class-name">:</span> <span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
           </div>
           <div class="card-post-footer">
             <div class="post-meta">
-              <time datetime="2022-02-20T15:00:00.000Z">
+              <time datetime="2022-05-15T06:00:00.000Z">
                 <i class="iconfont icon-calendar" style="margin-right: 2px;">
                 </i>
                 <span>
-                  2022-02-20
+                  2022-05-15
                 </span>
               </time>
               
@@ -848,7 +476,7 @@ output <span class="token builtin class-name">:</span> <span class="token number
                                     
                                       
             </div>
-            <a href="/archives/92af397c.html">
+            <a href="/archives/29574803.html">
               继续阅读
             </a>
           </div>
@@ -858,54 +486,44 @@ output <span class="token builtin class-name">:</span> <span class="token number
   <div class="card">
     
         <article class="card card-content">
-          <a href="/archives/909ffbac.html">
+          <a href="/archives/5ec751d6.html">
             <h1 class="post-title">
-              LeetCode精选TOP面试题103.二叉树的锯齿形层序遍历
+              LeetCode腾讯精选练习50题-169.多数元素
             </h1>
           </a>
           <!-- <div class="card-excerpt">
             
               题目描述
-给定二叉树的根节点 root ，返回其节点值的 锯齿形层序遍历 。
-即先从左往右，再从右往左进行下一层遍历，以此类推，层与层之间交替进行。
+给定一个大小为 n 的数组 nums ，返回其中的多数元素。
+多数元素是指在数组中出现次数 大于 ⌊ n/2 ⌋ 的元素。
+可以假设数组是非空的，并且给定的数组总是存在多数元素。
 
 example
-input  : root = [3,9,20,null,null,15,7]
-output : [[3],[20,9],[15,7]]
-note   :     3
-            / \
-           9  20
-             /  \
-            15   7
-input  : root = []
-output : []
+input  : 
+output : 
+note   : 
                 
           </div> -->
           <div class="card-excerpt">
             
               <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><ul>
-<li>给定二叉树的根节点 root ，返回其节点值的 锯齿形层序遍历 。</li>
-<li>即先从左往右，再从右往左进行下一层遍历，以此类推，层与层之间交替进行。</li>
+<li>给定一个大小为 n 的数组 nums ，返回其中的多数元素。</li>
+<li>多数元素是指在数组中出现次数 大于 ⌊ n/2 ⌋ 的元素。</li>
+<li>可以假设数组是非空的，并且给定的数组总是存在多数元素。</li>
 </ul>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">example
-input  <span class="token builtin class-name">:</span> root <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3,9</span>,20,null,null,15,7<span class="token punctuation">]</span>
-output <span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span>,<span class="token punctuation">[</span><span class="token number">20,9</span><span class="token punctuation">]</span>,<span class="token punctuation">[</span><span class="token number">15,7</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
-note   <span class="token builtin class-name">:</span>     <span class="token number">3</span>
-            / <span class="token punctuation">\</span>
-           <span class="token number">9</span>  <span class="token number">20</span>
-             /  <span class="token punctuation">\</span>
-            <span class="token number">15</span>   <span class="token number">7</span>
-input  <span class="token builtin class-name">:</span> root <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-output <span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+input  <span class="token builtin class-name">:</span> 
+output <span class="token builtin class-name">:</span> 
+note   <span class="token builtin class-name">:</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
                 
           </div>
           <div class="card-post-footer">
             <div class="post-meta">
-              <time datetime="2022-02-19T07:00:00.000Z">
+              <time datetime="2022-05-14T13:00:00.000Z">
                 <i class="iconfont icon-calendar" style="margin-right: 2px;">
                 </i>
                 <span>
-                  2022-02-19
+                  2022-05-14
                 </span>
               </time>
               
@@ -922,7 +540,397 @@ output <span class="token builtin class-name">:</span> <span class="token punctu
                                     
                                       
             </div>
-            <a href="/archives/909ffbac.html">
+            <a href="/archives/5ec751d6.html">
+              继续阅读
+            </a>
+          </div>
+        </article>
+  </div>
+  
+  <div class="card">
+    
+        <article class="card card-content">
+          <a href="/archives/80dc4c6a.html">
+            <h1 class="post-title">
+              LeetCode腾讯精选练习50题-557.反转字符串中的单词III
+            </h1>
+          </a>
+          <!-- <div class="card-excerpt">
+            
+              题目描述
+给定一个字符串 s ，需要反转字符串中每个单词的字符顺序，同时仍保留空格和单词的初始顺序。
+
+example
+input  : s = &#34;Let&#39;s take LeetCode contest&#34;
+output : &#34;s&#39;teL ekat edoCteeL tsetnoc&#34;
+                
+          </div> -->
+          <div class="card-excerpt">
+            
+              <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><ul>
+<li>给定一个字符串 s ，需要反转字符串中每个单词的字符顺序，同时仍保留空格和单词的初始顺序。</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">example
+input  <span class="token builtin class-name">:</span> s <span class="token operator">=</span> <span class="token string">"Let's take LeetCode contest"</span>
+output <span class="token builtin class-name">:</span> <span class="token string">"s'teL ekat edoCteeL tsetnoc"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+                
+          </div>
+          <div class="card-post-footer">
+            <div class="post-meta">
+              <time datetime="2022-05-13T13:00:00.000Z">
+                <i class="iconfont icon-calendar" style="margin-right: 2px;">
+                </i>
+                <span>
+                  2022-05-13
+                </span>
+              </time>
+              
+                
+                  
+                    
+                          
+                            <span class="dot"></span>
+                            
+                              
+                                    <a href="/categories/LeetCode/" class="post-meta-link">
+                                      LeetCode
+                                    </a>
+                                    
+                                      
+            </div>
+            <a href="/archives/80dc4c6a.html">
+              继续阅读
+            </a>
+          </div>
+        </article>
+  </div>
+  
+  <div class="card">
+    
+        <article class="card card-content">
+          <a href="/archives/8990e8d7.html">
+            <h1 class="post-title">
+              LeetCode腾讯精选练习50题-206.反转链表
+            </h1>
+          </a>
+          <!-- <div class="card-excerpt">
+            
+              题目描述
+给定单链表的头节点 head ，请反转链表，并返回反转后的链表。
+
+example
+input  : head = [1,2,3,4,5]
+output : [5,4,3,2,1]
+input  : head = []
+output : []
+                
+          </div> -->
+          <div class="card-excerpt">
+            
+              <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><ul>
+<li>给定单链表的头节点 head ，请反转链表，并返回反转后的链表。</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">example
+input  <span class="token builtin class-name">:</span> <span class="token function">head</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1,2</span>,3,4,5<span class="token punctuation">]</span>
+output <span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token number">5,4</span>,3,2,1<span class="token punctuation">]</span>
+input  <span class="token builtin class-name">:</span> <span class="token function">head</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+output <span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                
+          </div>
+          <div class="card-post-footer">
+            <div class="post-meta">
+              <time datetime="2022-05-12T13:00:00.000Z">
+                <i class="iconfont icon-calendar" style="margin-right: 2px;">
+                </i>
+                <span>
+                  2022-05-12
+                </span>
+              </time>
+              
+                
+                  
+                    
+                          
+                            <span class="dot"></span>
+                            
+                              
+                                    <a href="/categories/LeetCode/" class="post-meta-link">
+                                      LeetCode
+                                    </a>
+                                    
+                                      
+            </div>
+            <a href="/archives/8990e8d7.html">
+              继续阅读
+            </a>
+          </div>
+        </article>
+  </div>
+  
+  <div class="card">
+    
+        <article class="card card-content">
+          <a href="/archives/86096bd5.html">
+            <h1 class="post-title">
+              LeetCode腾讯精选练习50题-217.存在重复元素
+            </h1>
+          </a>
+          <!-- <div class="card-excerpt">
+            
+              题目描述
+给定一个整数数组 nums 。
+如果任一值在数组中出现 至少两次 ，返回 true ；如果数组中每个元素互不相同，返回 false 。
+
+example
+input  : nums = [1,2,3,1]
+output : true
+input  : nums = [1,2,3,4]
+output : false
+                
+          </div> -->
+          <div class="card-excerpt">
+            
+              <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><ul>
+<li>给定一个整数数组 nums 。</li>
+<li>如果任一值在数组中出现 至少两次 ，返回 true ；如果数组中每个元素互不相同，返回 false 。</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">example
+input  <span class="token builtin class-name">:</span> nums <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1,2</span>,3,1<span class="token punctuation">]</span>
+output <span class="token builtin class-name">:</span> <span class="token boolean">true</span>
+input  <span class="token builtin class-name">:</span> nums <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1,2</span>,3,4<span class="token punctuation">]</span>
+output <span class="token builtin class-name">:</span> <span class="token boolean">false</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                
+          </div>
+          <div class="card-post-footer">
+            <div class="post-meta">
+              <time datetime="2022-05-10T06:00:00.000Z">
+                <i class="iconfont icon-calendar" style="margin-right: 2px;">
+                </i>
+                <span>
+                  2022-05-10
+                </span>
+              </time>
+              
+                
+                  
+                    
+                          
+                            <span class="dot"></span>
+                            
+                              
+                                    <a href="/categories/LeetCode/" class="post-meta-link">
+                                      LeetCode
+                                    </a>
+                                    
+                                      
+            </div>
+            <a href="/archives/86096bd5.html">
+              继续阅读
+            </a>
+          </div>
+        </article>
+  </div>
+  
+  <div class="card">
+    
+        <article class="card card-content">
+          <a href="/archives/88849d3e.html">
+            <h1 class="post-title">
+              LeetCode腾讯精选练习50题-141.环形链表
+            </h1>
+          </a>
+          <!-- <div class="card-excerpt">
+            
+              题目描述
+给定一个链表的头节点 head ，判断链表中是否有环。
+如果链表中有某个节点，可以通过连续跟踪 next 指针再次到达，则链表中存在环。 
+为了表示给定链表中的环，评测系统内部使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。注意：pos 不作为参数进行传递 。仅仅是为了标识链表的实际情况。
+如果链表中存在环 ，则返回 true 。 否则，返回 false 。
+
+example
+input  : head = [3,2,0,-4], pos = 1
+output : true
+input  : head = [1,2], pos = 0
+output : true
+input  : head = [1], pos = -1
+output : false
+                
+          </div> -->
+          <div class="card-excerpt">
+            
+              <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><ul>
+<li>给定一个链表的头节点 head ，判断链表中是否有环。</li>
+<li>如果链表中有某个节点，可以通过连续跟踪 next 指针再次到达，则链表中存在环。 </li>
+<li>为了表示给定链表中的环，评测系统内部使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。注意：pos 不作为参数进行传递 。仅仅是为了标识链表的实际情况。</li>
+<li>如果链表中存在环 ，则返回 true 。 否则，返回 false 。</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">example
+input  <span class="token builtin class-name">:</span> <span class="token function">head</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3,2</span>,0,-4<span class="token punctuation">]</span>, pos <span class="token operator">=</span> <span class="token number">1</span>
+output <span class="token builtin class-name">:</span> <span class="token boolean">true</span>
+input  <span class="token builtin class-name">:</span> <span class="token function">head</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1,2</span><span class="token punctuation">]</span>, pos <span class="token operator">=</span> <span class="token number">0</span>
+output <span class="token builtin class-name">:</span> <span class="token boolean">true</span>
+input  <span class="token builtin class-name">:</span> <span class="token function">head</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>, pos <span class="token operator">=</span> -1
+output <span class="token builtin class-name">:</span> <span class="token boolean">false</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                
+          </div>
+          <div class="card-post-footer">
+            <div class="post-meta">
+              <time datetime="2022-05-08T12:00:00.000Z">
+                <i class="iconfont icon-calendar" style="margin-right: 2px;">
+                </i>
+                <span>
+                  2022-05-08
+                </span>
+              </time>
+              
+                
+                  
+                    
+                          
+                            <span class="dot"></span>
+                            
+                              
+                                    <a href="/categories/LeetCode/" class="post-meta-link">
+                                      LeetCode
+                                    </a>
+                                    
+                                      
+            </div>
+            <a href="/archives/88849d3e.html">
+              继续阅读
+            </a>
+          </div>
+        </article>
+  </div>
+  
+  <div class="card">
+    
+        <article class="card card-content">
+          <a href="/archives/d9b017a1.html">
+            <h1 class="post-title">
+              LeetCode腾讯精选练习50题-160.相交链表
+            </h1>
+          </a>
+          <!-- <div class="card-excerpt">
+            
+              题目描述
+给定两个单链表的头节点 headA 和 headB ，找出并返回两个单链表相交的起始节点。
+如果两个链表不存在相交节点，返回 null 。
+
+example
+input  : intersectVal = 8, listA = [4,1,8,4,5], listB = [5,6,1,8,4,5], skipA = 2, skipB = 3
+output : Intersected at &#39;8&#39;
+input  : intersectVal = 2, listA = [1,9,1,2,4], listB = [3,2,4], skipA = 3, skipB = 1
+output : Intersected at &#39;2&#39;
+input  : intersectVal = 0, listA = [2,6,4], listB = [1,5], skipA = 3, skipB = 2
+output : null
+                
+          </div> -->
+          <div class="card-excerpt">
+            
+              <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><ul>
+<li>给定两个单链表的头节点 headA 和 headB ，找出并返回两个单链表相交的起始节点。</li>
+<li>如果两个链表不存在相交节点，返回 null 。</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">example
+input  <span class="token builtin class-name">:</span> intersectVal <span class="token operator">=</span> <span class="token number">8</span>, listA <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">4,1</span>,8,4,5<span class="token punctuation">]</span>, listB <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">5,6</span>,1,8,4,5<span class="token punctuation">]</span>, skipA <span class="token operator">=</span> <span class="token number">2</span>, skipB <span class="token operator">=</span> <span class="token number">3</span>
+output <span class="token builtin class-name">:</span> Intersected at <span class="token string">'8'</span>
+input  <span class="token builtin class-name">:</span> intersectVal <span class="token operator">=</span> <span class="token number">2</span>, listA <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1,9</span>,1,2,4<span class="token punctuation">]</span>, listB <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3,2</span>,4<span class="token punctuation">]</span>, skipA <span class="token operator">=</span> <span class="token number">3</span>, skipB <span class="token operator">=</span> <span class="token number">1</span>
+output <span class="token builtin class-name">:</span> Intersected at <span class="token string">'2'</span>
+input  <span class="token builtin class-name">:</span> intersectVal <span class="token operator">=</span> <span class="token number">0</span>, listA <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">2,6</span>,4<span class="token punctuation">]</span>, listB <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1,5</span><span class="token punctuation">]</span>, skipA <span class="token operator">=</span> <span class="token number">3</span>, skipB <span class="token operator">=</span> <span class="token number">2</span>
+output <span class="token builtin class-name">:</span> null<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                
+          </div>
+          <div class="card-post-footer">
+            <div class="post-meta">
+              <time datetime="2022-05-06T13:00:00.000Z">
+                <i class="iconfont icon-calendar" style="margin-right: 2px;">
+                </i>
+                <span>
+                  2022-05-06
+                </span>
+              </time>
+              
+                
+                  
+                    
+                          
+                            <span class="dot"></span>
+                            
+                              
+                                    <a href="/categories/LeetCode/" class="post-meta-link">
+                                      LeetCode
+                                    </a>
+                                    
+                                      
+            </div>
+            <a href="/archives/d9b017a1.html">
+              继续阅读
+            </a>
+          </div>
+        </article>
+  </div>
+  
+  <div class="card">
+    
+        <article class="card card-content">
+          <a href="/archives/d26384cc.html">
+            <h1 class="post-title">
+              LeetCode腾讯精选练习50题-136.只出现一次的数字
+            </h1>
+          </a>
+          <!-- <div class="card-excerpt">
+            
+              题目描述
+给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。
+说明：
+算法应该具有线性时间复杂度。 可以不使用额外空间来实现吗？
+
+example
+input  : nums = &amp;#123;2,1,2&amp;#125;
+output : 1
+input  : nums = &amp;#123;4,3,2,3,2&amp;#125;
+output : 4
+                
+          </div> -->
+          <div class="card-excerpt">
+            
+              <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><ul>
+<li>给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。</li>
+<li>说明：</li>
+<li>算法应该具有线性时间复杂度。 可以不使用额外空间来实现吗？</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">example
+input  <span class="token builtin class-name">:</span> nums <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token number">2,1</span>,2<span class="token punctuation">&#125;</span>
+output <span class="token builtin class-name">:</span> <span class="token number">1</span>
+input  <span class="token builtin class-name">:</span> nums <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token number">4,3</span>,2,3,2<span class="token punctuation">&#125;</span>
+output <span class="token builtin class-name">:</span> <span class="token number">4</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                
+          </div>
+          <div class="card-post-footer">
+            <div class="post-meta">
+              <time datetime="2022-05-06T06:00:00.000Z">
+                <i class="iconfont icon-calendar" style="margin-right: 2px;">
+                </i>
+                <span>
+                  2022-05-06
+                </span>
+              </time>
+              
+                
+                  
+                    
+                          
+                            <span class="dot"></span>
+                            
+                              
+                                    <a href="/categories/LeetCode/" class="post-meta-link">
+                                      LeetCode
+                                    </a>
+                                    
+                                      
+            </div>
+            <a href="/archives/d26384cc.html">
               继续阅读
             </a>
           </div>
@@ -976,7 +984,7 @@ output <span class="token builtin class-name">:</span> <span class="token punctu
   <a 
     class="author-posts-count" 
     href="/archives">
-    <span>132</span>
+    <span>152</span>
     <span>文章</span>
   </a>
   <a 
@@ -988,7 +996,7 @@ output <span class="token builtin class-name">:</span> <span class="token punctu
   <a 
     class="author-tags-count" 
     href="/tags">
-    <span>67</span>
+    <span>71</span>
     <span>标签</span>
   </a>
 </div>
@@ -1024,13 +1032,6 @@ output <span class="token builtin class-name">:</span> <span class="token punctu
   </div>
   <div class="categories-list">
     
-      <a href="/categories/%E5%85%B6%E4%BB%96/">
-        <div class="categories-list-item">
-          其他
-          <span class="categories-list-item-badge">3</span>
-        </div>
-      </a>
-    
       <a href="/categories/D2L/">
         <div class="categories-list-item">
           D2L
@@ -1038,10 +1039,17 @@ output <span class="token builtin class-name">:</span> <span class="token punctu
         </div>
       </a>
     
+      <a href="/categories/%E5%85%B6%E4%BB%96/">
+        <div class="categories-list-item">
+          其他
+          <span class="categories-list-item-badge">3</span>
+        </div>
+      </a>
+    
       <a href="/categories/LeetCode/">
         <div class="categories-list-item">
           LeetCode
-          <span class="categories-list-item-badge">75</span>
+          <span class="categories-list-item-badge">95</span>
         </div>
       </a>
     
@@ -1131,6 +1139,12 @@ output <span class="token builtin class-name">:</span> <span class="token punctu
       </a>
     
       <a 
+        href="/tags/%E9%93%BE%E8%A1%A8/" 
+        title="链表">
+        <div class="tags-list-item">链表</div>
+      </a>
+    
+      <a 
         href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" 
         title="二叉树">
         <div class="tags-list-item">二叉树</div>
@@ -1143,9 +1157,21 @@ output <span class="token builtin class-name">:</span> <span class="token punctu
       </a>
     
       <a 
-        href="/tags/%E9%93%BE%E8%A1%A8/" 
-        title="链表">
-        <div class="tags-list-item">链表</div>
+        href="/tags/%E6%8E%92%E5%BA%8F/" 
+        title="排序">
+        <div class="tags-list-item">排序</div>
+      </a>
+    
+      <a 
+        href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/" 
+        title="双指针">
+        <div class="tags-list-item">双指针</div>
+      </a>
+    
+      <a 
+        href="/tags/%E6%95%B0%E5%AD%A6/" 
+        title="数学">
+        <div class="tags-list-item">数学</div>
       </a>
     
       <a 
@@ -1161,33 +1187,15 @@ output <span class="token builtin class-name">:</span> <span class="token punctu
       </a>
     
       <a 
-        href="/tags/%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/" 
-        title="数值计算">
-        <div class="tags-list-item">数值计算</div>
+        href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" 
+        title="动态规划">
+        <div class="tags-list-item">动态规划</div>
       </a>
     
       <a 
-        href="/tags/DFS/" 
-        title="DFS">
-        <div class="tags-list-item">DFS</div>
-      </a>
-    
-      <a 
-        href="/tags/%E6%A0%91/" 
-        title="树">
-        <div class="tags-list-item">树</div>
-      </a>
-    
-      <a 
-        href="/tags/%E6%8E%92%E5%BA%8F/" 
-        title="排序">
-        <div class="tags-list-item">排序</div>
-      </a>
-    
-      <a 
-        href="/tags/SQL/" 
-        title="SQL">
-        <div class="tags-list-item">SQL</div>
+        href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/" 
+        title="哈希表">
+        <div class="tags-list-item">哈希表</div>
       </a>
     
   </div>
@@ -1327,11 +1335,91 @@ output <span class="token builtin class-name">:</span> <span class="token punctu
     
       
         
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
           <a 
             href="/archives/2022" 
             class="archive-card-list-item">
             2022
-            <span class="archive-card-list-item-badge">29</span>
+            <span class="archive-card-list-item-badge">49</span>
           </a>
         
         
@@ -1785,23 +1873,23 @@ output <span class="token builtin class-name">:</span> <span class="token punctu
   <div class="recent-posts-list">
     
       <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2022-05-04</div>
-        <a href="/archives/daef219.html"><div class="recent-posts-item-content">LeetCode腾讯精选练习50题-88.合并两个有序数组</div></a>
+        <div class="recent-posts-item-title">2022-07-13</div>
+        <a href="/archives/533bfe2b.html"><div class="recent-posts-item-content">LeetCode腾讯精选练习50题-054.螺旋矩阵</div></a>
       </div>
     
       <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2022-05-04</div>
-        <a href="/archives/1f28f583.html"><div class="recent-posts-item-content">LeetCode腾讯精选练习50题-26.删除有序数组中的重复项</div></a>
+        <div class="recent-posts-item-title">2022-07-13</div>
+        <a href="/archives/4a5d2c97.html"><div class="recent-posts-item-content">LeetCode腾讯精选练习50题-059.螺旋矩阵II</div></a>
       </div>
     
       <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2022-05-03</div>
-        <a href="/archives/b7607879.html"><div class="recent-posts-item-content">LeetCode腾讯精选练习50题-21.合并两个有序链表</div></a>
+        <div class="recent-posts-item-title">2022-06-07</div>
+        <a href="/archives/bae2b272.html"><div class="recent-posts-item-content">LeetCode腾讯精选练习50题-142.环形链表 II</div></a>
       </div>
     
       <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2022-05-02</div>
-        <a href="/archives/78d80330.html"><div class="recent-posts-item-content">LeetCode腾讯精选练习50题-20.有效的括号</div></a>
+        <div class="recent-posts-item-title">2022-06-05</div>
+        <a href="/archives/27b234bf.html"><div class="recent-posts-item-content">LeetCode腾讯精选练习50题-061.旋转链表</div></a>
       </div>
     
   </div>
@@ -1941,11 +2029,91 @@ output <span class="token builtin class-name">:</span> <span class="token punctu
     
       
         
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
           <a 
             href="/archives/2022" 
             class="archive-card-list-item">
             2022
-            <span class="archive-card-list-item-badge">29</span>
+            <span class="archive-card-list-item-badge">49</span>
           </a>
         
         
