@@ -254,6 +254,72 @@
   <div class="card">
     
         <article class="card card-content">
+          <a href="/archives/60d2c7c1.html">
+            <h1 class="post-title">
+              LeetCode腾讯精选练习50题-237.删除链表中的节点
+            </h1>
+          </a>
+          <!-- <div class="card-excerpt">
+            
+              题目描述
+请编写一个函数，用于 删除单链表中某个特定节点 。在设计函数时需要注意，你无法访问链表的头节点 head ，只能直接访问 要被删除的节点 。
+题目数据保证需要删除的节点不是末尾节点。
+链表中每个节点的值都是 唯一 的
+
+example
+input  : head = [4,5,1,9], node = 5
+output : [4,1,9]
+input  : head = [4,5,1,9], node = 1
+output : head = [4,5,1,9], node = 1
+                
+          </div> -->
+          <div class="card-excerpt">
+            
+              <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><ul>
+<li>请编写一个函数，用于 删除单链表中某个特定节点 。在设计函数时需要注意，你无法访问链表的头节点 head ，只能直接访问 要被删除的节点 。</li>
+<li>题目数据保证需要删除的节点不是末尾节点。</li>
+<li>链表中每个节点的值都是 唯一 的</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">example
+input  <span class="token builtin class-name">:</span> <span class="token function">head</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">4,5</span>,1,9<span class="token punctuation">]</span>, node <span class="token operator">=</span> <span class="token number">5</span>
+output <span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token number">4,1</span>,9<span class="token punctuation">]</span>
+input  <span class="token builtin class-name">:</span> <span class="token function">head</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">4,5</span>,1,9<span class="token punctuation">]</span>, node <span class="token operator">=</span> <span class="token number">1</span>
+output <span class="token builtin class-name">:</span> <span class="token function">head</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">4,5</span>,1,9<span class="token punctuation">]</span>, node <span class="token operator">=</span> <span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                
+          </div>
+          <div class="card-post-footer">
+            <div class="post-meta">
+              <time datetime="2022-04-19T13:00:00.000Z">
+                <i class="iconfont icon-calendar" style="margin-right: 2px;">
+                </i>
+                <span>
+                  2022-04-19
+                </span>
+              </time>
+              
+                
+                  
+                    
+                          
+                            <span class="dot"></span>
+                            
+                              
+                                    <a href="/categories/LeetCode/" class="post-meta-link">
+                                      LeetCode
+                                    </a>
+                                    
+                                      
+            </div>
+            <a href="/archives/60d2c7c1.html">
+              继续阅读
+            </a>
+          </div>
+        </article>
+  </div>
+  
+  <div class="card">
+    
+        <article class="card card-content">
           <a href="/archives/7b8e9638.html">
             <h1 class="post-title">
               LeetCode腾讯精选练习50题-344.反转字符串
@@ -847,80 +913,6 @@ output <span class="token builtin class-name">:</span> <span class="token punctu
         </article>
   </div>
   
-  <div class="card">
-    
-        <article class="card card-content">
-          <a href="/archives/6ffca0a6.html">
-            <h1 class="post-title">
-              LeetCode精选TOP面试题341.扁平化嵌套列表迭代器
-            </h1>
-          </a>
-          <!-- <div class="card-excerpt">
-            
-              题目描述
-给定一个嵌套的整数列表 nestedList 。
-每个元素要么是一个整数，要么是一个列表；该列表的元素也可能是整数或者是其他列表。
-实现一个迭代器将其扁平化，使之能够遍历这个列表中的所有整数。
-实现扁平迭代器类 NestedIterator ：
-NestedIterator(List nestedList) 用嵌套列表 nestedList 初始化迭代器。
-int next() 返回嵌套列表的下一个整数。
-boolean hasNext() 如果仍然存在待迭代的整数，返回 true ；否则，返回 false 。
-
-example
-input  : nestedList = [[1,1],2,[1,1]]
-output : [1,1,2,1,1]
-input  : nestedList = [1,[4,[6]]]
-output : [1,4,6]
-                
-          </div> -->
-          <div class="card-excerpt">
-            
-              <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><ul>
-<li>给定一个嵌套的整数列表 nestedList 。</li>
-<li>每个元素要么是一个整数，要么是一个列表；该列表的元素也可能是整数或者是其他列表。</li>
-<li>实现一个迭代器将其扁平化，使之能够遍历这个列表中的所有整数。</li>
-<li>实现扁平迭代器类 NestedIterator ：</li>
-<li>NestedIterator(List<NestedInteger> nestedList) 用嵌套列表 nestedList 初始化迭代器。</li>
-<li>int next() 返回嵌套列表的下一个整数。</li>
-<li>boolean hasNext() 如果仍然存在待迭代的整数，返回 true ；否则，返回 false 。</li>
-</ul>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">example
-input  <span class="token builtin class-name">:</span> nestedList <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1,1</span><span class="token punctuation">]</span>,2,<span class="token punctuation">[</span><span class="token number">1,1</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
-output <span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token number">1,1</span>,2,1,1<span class="token punctuation">]</span>
-input  <span class="token builtin class-name">:</span> nestedList <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span>,<span class="token punctuation">[</span><span class="token number">4</span>,<span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
-output <span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token number">1,4</span>,6<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-                
-          </div>
-          <div class="card-post-footer">
-            <div class="post-meta">
-              <time datetime="2022-03-01T14:00:00.000Z">
-                <i class="iconfont icon-calendar" style="margin-right: 2px;">
-                </i>
-                <span>
-                  2022-03-01
-                </span>
-              </time>
-              
-                
-                  
-                    
-                          
-                            <span class="dot"></span>
-                            
-                              
-                                    <a href="/categories/LeetCode/" class="post-meta-link">
-                                      LeetCode
-                                    </a>
-                                    
-                                      
-            </div>
-            <a href="/archives/6ffca0a6.html">
-              继续阅读
-            </a>
-          </div>
-        </article>
-  </div>
-  
     
       <div class="nav">
   
@@ -968,7 +960,7 @@ output <span class="token builtin class-name">:</span> <span class="token punctu
   <a 
     class="author-posts-count" 
     href="/archives">
-    <span>154</span>
+    <span>155</span>
     <span>文章</span>
   </a>
   <a 
@@ -1033,7 +1025,7 @@ output <span class="token builtin class-name">:</span> <span class="token punctu
       <a href="/categories/LeetCode/">
         <div class="categories-list-item">
           LeetCode
-          <span class="categories-list-item-badge">96</span>
+          <span class="categories-list-item-badge">97</span>
         </div>
       </a>
     
@@ -1407,11 +1399,15 @@ output <span class="token builtin class-name">:</span> <span class="token punctu
     
       
         
+      
+    
+      
+        
           <a 
             href="/archives/2022" 
             class="archive-card-list-item">
             2022
-            <span class="archive-card-list-item-badge">51</span>
+            <span class="archive-card-list-item-badge">52</span>
           </a>
         
         
@@ -1870,6 +1866,11 @@ output <span class="token builtin class-name">:</span> <span class="token punctu
       </div>
     
       <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2022-09-23</div>
+        <a href="/archives/13f1b654.html"><div class="recent-posts-item-content">LeetCode腾讯精选练习50题-062.不同路径</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
         <div class="recent-posts-item-title">2022-09-21</div>
         <a href="/archives/a232f9d0.html"><div class="recent-posts-item-content">Git报错Kex_exchange_identification</div></a>
       </div>
@@ -1877,11 +1878,6 @@ output <span class="token builtin class-name">:</span> <span class="token punctu
       <div class="recent-posts-item">
         <div class="recent-posts-item-title">2022-07-13</div>
         <a href="/archives/533bfe2b.html"><div class="recent-posts-item-content">LeetCode腾讯精选练习50题-054.螺旋矩阵</div></a>
-      </div>
-    
-      <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2022-07-13</div>
-        <a href="/archives/4a5d2c97.html"><div class="recent-posts-item-content">LeetCode腾讯精选练习50题-059.螺旋矩阵II</div></a>
       </div>
     
   </div>
@@ -2109,11 +2105,15 @@ output <span class="token builtin class-name">:</span> <span class="token punctu
     
       
         
+      
+    
+      
+        
           <a 
             href="/archives/2022" 
             class="archive-card-list-item">
             2022
-            <span class="archive-card-list-item-badge">51</span>
+            <span class="archive-card-list-item-badge">52</span>
           </a>
         
         

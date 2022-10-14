@@ -18,17 +18,17 @@
   <link 
     rel="icon" 
     href="/img/q.png">
-  <title>LeetCode腾讯精选练习50题-88.合并两个有序数组</title>
+  <title>LeetCode腾讯精选练习50题-062.不同路径</title>
   
     
       <meta 
         property="og:title" 
-        content="LeetCode腾讯精选练习50题-88.合并两个有序数组">
+        content="LeetCode腾讯精选练习50题-062.不同路径">
     
     
       <meta 
         property="og:url" 
-        content="https://hexo.li98.cn/archives/daef219.html">
+        content="https://hexo.li98.cn/archives/13f1b654.html">
     
     
       <meta 
@@ -39,19 +39,20 @@
       <meta 
         property="og:img" 
         content="&lt;h3 id=&#34;题目描述&#34;&gt;&lt;a href=&#34;#题目描述&#34; class=&#34;headerlink&#34; title=&#34;题目描述&#34;&gt;&lt;/a&gt;题目描述&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;给定两个按 非递减顺序 排列的整数数组 nums1 和 nums2，另有两个整数 m 和 n ，分别表示 nums1 和 nums2 中的元素数目。&lt;/li&gt;
-&lt;li&gt;请合并 nums2 到 nums1 中，使合并后的数组同样按 非递减顺序 排列。&lt;/li&gt;
-&lt;li&gt;注意：&lt;/li&gt;
-&lt;li&gt;最终，合并后数组不应由函数返回，而是存储在数组 nums1 中。&lt;/li&gt;
-&lt;li&gt;为了应对这种情况，nums1 的初始长度为 m + n，其中前 m 个元素表示应合并的元素，后 n 个元素为 0 ，应忽略。&lt;/li&gt;
-&lt;li&gt;nums2 的长度为 n 。&lt;/li&gt;
+&lt;li&gt;一个机器人位于一个 m x n 网格的左上角 （起始点在下图中标记为 “Start” ）。&lt;/li&gt;
+&lt;li&gt;机器人每次只能向下或者向右移动一步。机器人试图达到网格的右下角（在下图中标记为 “Finish” ）。&lt;/li&gt;
+&lt;li&gt;问总共有多少条不同的路径？&lt;/li&gt;
 &lt;/ul&gt;
 &lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;example
-input  &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; nums1 &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1,2&lt;/span&gt;,3,0,0,0&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;, m &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt;, nums2 &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;2,5&lt;/span&gt;,6&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;, n &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt;
-output &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1,2&lt;/span&gt;,2,3,5,6&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;
-input  &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; nums1 &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;, m &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;, nums2 &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;, n &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;
-output &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;
-note   &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;">
+input  &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; m &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt;, n &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;
+output &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt;
+note   &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; 从左上角开始，总共有 &lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt; 条路径可以到达右下角。
+         &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;. 向右 -&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt; 向下 -&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt; 向下
+         &lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;. 向下 -&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt; 向下 -&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt; 向右
+         &lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt;. 向下 -&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt; 向右 -&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt; 向下
+
+input  &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; m &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;7&lt;/span&gt;, n &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt;
+output &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;28&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;">
     
     
       <meta 
@@ -59,10 +60,10 @@ note   &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; &lt;s
         content="article">
       <meta 
         property="og:article:published_time" 
-        content="2022-05-04">
+        content="2022-09-23">
       <meta 
         property="og:article:modified_time" 
-        content="2022-05-04">
+        content="2022-10-14">
       <meta 
         property="og:article:author" 
         content="李强">
@@ -78,15 +79,11 @@ note   &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; &lt;s
         
           <meta 
             property="og:article:tag" 
-            content="数组">
+            content="数学">
         
           <meta 
             property="og:article:tag" 
-            content="排序">
-        
-          <meta 
-            property="og:article:tag" 
-            content="双指针">
+            content="动态规划">
         
       
     
@@ -305,16 +302,16 @@ note   &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; &lt;s
 <article class="card card-content">
   <header>
     <h1 class="post-title">
-      LeetCode腾讯精选练习50题-88.合并两个有序数组
+      LeetCode腾讯精选练习50题-062.不同路径
     </h1>
   </header>
   <div class="post-meta post-show-meta">
-    <time datetime="2022-05-04T13:00:00.000Z">
+    <time datetime="2022-09-23T13:00:00.000Z">
       <i 
         class="iconfont icon-calendar" 
         style="margin-right: 2px;">
       </i>
-      <span>2022-05-04</span>
+      <span>2022-09-23</span>
     </time>
     
       <span class="dot"></span>
@@ -328,7 +325,7 @@ note   &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; &lt;s
     
     
       <span class="dot"></span>
-      <span>623 字</span>
+      <span>684 字</span>
     
   </div>
   
@@ -361,27 +358,18 @@ note   &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; &lt;s
             <span class="dot"></span>
           
           <a 
-            href="/tags/%E6%95%B0%E7%BB%84/" 
+            href="/tags/%E6%95%B0%E5%AD%A6/" 
             class="post-meta-link">
-            数组
+            数学
           </a>
         
           
             <span class="dot"></span>
           
           <a 
-            href="/tags/%E6%8E%92%E5%BA%8F/" 
+            href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" 
             class="post-meta-link">
-            排序
-          </a>
-        
-          
-            <span class="dot"></span>
-          
-          <a 
-            href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/" 
-            class="post-meta-link">
-            双指针
+            动态规划
           </a>
         
       </div>
@@ -392,63 +380,97 @@ note   &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; &lt;s
     id="section" 
     class="post-content">
     <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><ul>
-<li>给定两个按 非递减顺序 排列的整数数组 nums1 和 nums2，另有两个整数 m 和 n ，分别表示 nums1 和 nums2 中的元素数目。</li>
-<li>请合并 nums2 到 nums1 中，使合并后的数组同样按 非递减顺序 排列。</li>
-<li>注意：</li>
-<li>最终，合并后数组不应由函数返回，而是存储在数组 nums1 中。</li>
-<li>为了应对这种情况，nums1 的初始长度为 m + n，其中前 m 个元素表示应合并的元素，后 n 个元素为 0 ，应忽略。</li>
-<li>nums2 的长度为 n 。</li>
+<li>一个机器人位于一个 m x n 网格的左上角 （起始点在下图中标记为 “Start” ）。</li>
+<li>机器人每次只能向下或者向右移动一步。机器人试图达到网格的右下角（在下图中标记为 “Finish” ）。</li>
+<li>问总共有多少条不同的路径？</li>
 </ul>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">example
-input  <span class="token builtin class-name">:</span> nums1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1,2</span>,3,0,0,0<span class="token punctuation">]</span>, m <span class="token operator">=</span> <span class="token number">3</span>, nums2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">2,5</span>,6<span class="token punctuation">]</span>, n <span class="token operator">=</span> <span class="token number">3</span>
-output <span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token number">1,2</span>,2,3,5,6<span class="token punctuation">]</span>
-input  <span class="token builtin class-name">:</span> nums1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>, m <span class="token operator">=</span> <span class="token number">1</span>, nums2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>, n <span class="token operator">=</span> <span class="token number">0</span>
-output <span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
-note   <span class="token builtin class-name">:</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+input  <span class="token builtin class-name">:</span> m <span class="token operator">=</span> <span class="token number">3</span>, n <span class="token operator">=</span> <span class="token number">2</span>
+output <span class="token builtin class-name">:</span> <span class="token number">3</span>
+note   <span class="token builtin class-name">:</span> 从左上角开始，总共有 <span class="token number">3</span> 条路径可以到达右下角。
+         <span class="token number">1</span>. 向右 -<span class="token operator">></span> 向下 -<span class="token operator">></span> 向下
+         <span class="token number">2</span>. 向下 -<span class="token operator">></span> 向下 -<span class="token operator">></span> 向右
+         <span class="token number">3</span>. 向下 -<span class="token operator">></span> 向右 -<span class="token operator">></span> 向下
+
+input  <span class="token builtin class-name">:</span> m <span class="token operator">=</span> <span class="token number">7</span>, n <span class="token operator">=</span> <span class="token number">3</span>
+output <span class="token builtin class-name">:</span> <span class="token number">28</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <span id="more"></span>
 
-<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p><strong>思路1</strong></p>
+<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><h5 id="思路1-动态规划"><a href="#思路1-动态规划" class="headerlink" title="思路1 动态规划"></a>思路1 动态规划</h5><ul>
+<li><p>这是一个标准的动态规划问题，可以完成状态转移</p>
+</li>
+<li><p>转移方程：dp[i][j] = dp[i-1][j] + dp[i][j-1]</p>
+</li>
+<li><p>因为只能向右或向下移动，所以：</p>
 <ul>
-<li>遍历数组nums2，将其元素逐个放入nums1初始的后n个位置</li>
-<li>对数组nums1排序</li>
-<li>时间复杂度：O(N×log(N))，其中 N = m+n</li>
-<li>空间复杂度：O(1)</li>
+<li>对于第一行和第一列的所有格子，都有且仅有一条路径可以直达其位置</li>
+<li>对于非第一行或非第一列的格子，<code>到达其位置的路径数</code> = <code>到达其上方格子的路径数</code>+<code>到达其左方格子的路径数</code></li>
 </ul>
-<p><strong>思路2</strong></p>
+</li>
+<li><p>绘制网格图后，可以通过举例测试确定上述规律</p>
+</li>
+<li><p>时间复杂度:O(m x n)</p>
+</li>
+<li><p>空间复杂度:O(m x n)</p>
+<h5 id="思路2-组合数学"><a href="#思路2-组合数学" class="headerlink" title="思路2 组合数学"></a>思路2 组合数学</h5><p>从左上角到右下角的过程中，需要移动 m+n-2 次，其中有 m-1 次向下移动，n-1 次向右移动。<br>因此路径的总数，就等于从 m+n-2 次移动中选择 m-1 次向下移动的方案数，即组合数：</p>
+</li>
+</ul>
+<p>C = (m + n - 2)! / (m - 1)! * (n - 1)!<br>因此直接计算出这个组合数即可。<br>化简可得：C = (m + n - 2) * (m + n - 3) * ··· * n / (m - 1)!</p>
 <ul>
-<li>双指针，同时逆序遍历数组nums1和nums2，其中nums1从第m个元素遍历到第1个元素，nums2从第n个元素遍历到第1个元素</li>
-<li>假设当前nums1被遍历的元素为 a， nums2被遍历的元素为b，则取a和b中的较大者，放入nums1的最后</li>
-<li>即从nums1的真正末尾位置 m+n 开始向前填充值，将遍历过程中m和n的较大者逐个放入nums1的后方，并且后方存放元素的指针不断前移</li>
-<li>因为nums1和nums2本身是有序递增的，所以填充得到的结果依然是有序的</li>
-<li>若nums1遍历结束，而nums2未结束，则继续遍历nums2并将其所有元素逐个移动到nums1的剩余位置中</li>
-<li>当nums2遍历结束，而nums1未结束，则不需要继续操作，此时未遍历完的nums1的部分元素一定还是有序递增的排列在nums1的前方，没有被变动过，且一定都小于其当前的所有后方元素</li>
-<li>时间复杂度：O(N)，其中 N = m+n</li>
-<li>空间复杂度：O(1)</li>
+<li>时间复杂度:O(m)</li>
+<li>空间复杂度:O(1)</li>
 </ul>
 <h3 id="代码（Java）"><a href="#代码（Java）" class="headerlink" title="代码（Java）"></a>代码（Java）</h3><p><strong>思路1代码</strong></p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Solution1</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">merge</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> nums1<span class="token punctuation">,</span> <span class="token keyword">int</span> m<span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> nums2<span class="token punctuation">,</span> <span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-            nums1<span class="token punctuation">[</span>i <span class="token operator">+</span> m<span class="token punctuation">]</span> <span class="token operator">=</span> nums2<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">uniquePaths</span><span class="token punctuation">(</span><span class="token keyword">int</span> m<span class="token punctuation">,</span> <span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> pathNum <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span>m<span class="token punctuation">]</span><span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token comment">/*
+        for (int j = 0; j &lt; n; j++) &#123;
+            pathNum[0][j] = 1;
+        &#125;
+        for (int i = 1; i &lt; m; i++) &#123;
+            pathNum[i][0] = 1;
+        &#125;
+        for (int i = 1; i &lt; m; i++) &#123;
+            for (int j = 1; j &lt; n; j++) &#123;
+                pathNum[i][j] = pathNum[i - 1][j] + pathNum[i][j - 1];
+            &#125;
+        &#125;
+        */</span>
+
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> m<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">||</span> j <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                    pathNum<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+                <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+                    pathNum<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> pathNum<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">+</span> pathNum<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+                <span class="token punctuation">&#125;</span>
+
+            <span class="token punctuation">&#125;</span>
         <span class="token punctuation">&#125;</span>
-        <span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>nums1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">/* 打印动态规划得到的二维数组
+        for (int i = 0; i &lt; m; i++) &#123;
+            for (int j = 0; j &lt; n; j++) &#123;
+                System.out.print(pathNum[i][j] + "\t");
+            &#125;
+            System.out.println();
+        &#125;
+        */</span>
+        <span class="token keyword">return</span> pathNum<span class="token punctuation">[</span>m <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>思路2代码</strong></p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Solution2</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">merge</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> nums1<span class="token punctuation">,</span> <span class="token keyword">int</span> m<span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> nums2<span class="token punctuation">,</span> <span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">int</span> len <span class="token operator">=</span> m <span class="token operator">+</span> n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
-        <span class="token keyword">int</span> i <span class="token operator">=</span> m <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> j <span class="token operator">=</span> n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
-        <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">>=</span><span class="token number">0</span> <span class="token operator">&amp;&amp;</span> j <span class="token operator">>=</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-            nums1<span class="token punctuation">[</span>len<span class="token operator">--</span><span class="token punctuation">]</span> <span class="token operator">=</span> nums1<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">></span> nums2<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">?</span> nums1<span class="token punctuation">[</span>i<span class="token operator">--</span><span class="token punctuation">]</span> <span class="token operator">:</span> nums2<span class="token punctuation">[</span>j<span class="token operator">--</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">uniquePaths</span><span class="token punctuation">(</span><span class="token keyword">int</span> m<span class="token punctuation">,</span> <span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">long</span> ans <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> x <span class="token operator">=</span> n<span class="token punctuation">,</span> y <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> y <span class="token operator">&lt;</span> m<span class="token punctuation">;</span> x<span class="token operator">++</span><span class="token punctuation">,</span> y<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token comment">// x和y同时前进 m - 2 次，刚好满足化简后的公式</span>
+            ans <span class="token operator">=</span> ans <span class="token operator">*</span> x <span class="token operator">/</span> y<span class="token punctuation">;</span>
         <span class="token punctuation">&#125;</span>
-        <span class="token keyword">while</span><span class="token punctuation">(</span>j <span class="token operator">>=</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-            nums1<span class="token punctuation">[</span>len<span class="token operator">--</span><span class="token punctuation">]</span> <span class="token operator">=</span> nums2<span class="token punctuation">[</span>j<span class="token operator">--</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span> ans<span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
   </div>
   <div>
     
@@ -463,7 +485,7 @@ note   <span class="token builtin class-name">:</span> <span aria-hidden="true" 
             李强
           </a>
         </p>
-        <p><span style="font-weight: bold;">文章链接：</span><a style = "text-overflow : ellipsis;display: inline-block; width: 100%; overflow: hidden;" target="_blank" rel="nofollow noopener noreferrer" href="https://hexo.li98.cn/archives/daef219.html">https://hexo.li98.cn/archives/daef219.html</a></p>
+        <p><span style="font-weight: bold;">文章链接：</span><a style = "text-overflow : ellipsis;display: inline-block; width: 100%; overflow: hidden;" target="_blank" rel="nofollow noopener noreferrer" href="https://hexo.li98.cn/archives/13f1b654.html">https://hexo.li98.cn/archives/13f1b654.html</a></p>
         <p><span style="font-weight: bold;">版权声明：</span>本博客所有文章除特别声明外，均采用<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0 协议</a>。转载请注明出处！</p>
       </div>
     
@@ -473,13 +495,13 @@ note   <span class="token builtin class-name">:</span> <span aria-hidden="true" 
   
     <div class="nav-item-prev">
       <a 
-        href="/archives/d26384cc.html" 
+        href="/archives/f371ce93.html" 
         class="nav-link">
         <i class="iconfont icon-left nav-prev-icon"></i>
         <div>
           <div class="nav-label">上一篇</div>
           
-            <div class="nav-title">LeetCode腾讯精选练习50题-136.只出现一次的数字 </div>
+            <div class="nav-title">LeetCode腾讯精选练习50题-011.盛水最多的容器 </div>
           
         </div>
       </a>
@@ -488,12 +510,12 @@ note   <span class="token builtin class-name">:</span> <span aria-hidden="true" 
   
     <div class="nav-item-next">
       <a 
-        href="/archives/1f28f583.html" 
+        href="/archives/a232f9d0.html" 
         class="nav-link">
         <div>
           <div class="nav-label">下一篇</div>
           
-            <div class="nav-title">LeetCode腾讯精选练习50题-26.删除有序数组中的重复项 </div>
+            <div class="nav-title">Git报错Kex_exchange_identification </div>
           
         </div>
         <i class="iconfont icon-right nav-next-icon"></i>
@@ -511,7 +533,7 @@ note   <span class="token builtin class-name">:</span> <span aria-hidden="true" 
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%EF%BC%88Java%EF%BC%89"><span class="toc-text">代码（Java）</span></a></li></ol>
+<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="toc-text">解题思路</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF1-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92"><span class="toc-text">思路1 动态规划</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF2-%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6"><span class="toc-text">思路2 组合数学</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%EF%BC%88Java%EF%BC%89"><span class="toc-text">代码（Java）</span></a></li></ol>
 </div></main>
             <aside class="left-column">
               
@@ -575,7 +597,7 @@ note   <span class="token builtin class-name">:</span> <span aria-hidden="true" 
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%EF%BC%88Java%EF%BC%89"><span class="toc-text">代码（Java）</span></a></li></ol>
+<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="toc-text">解题思路</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF1-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92"><span class="toc-text">思路1 动态规划</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF2-%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6"><span class="toc-text">思路2 组合数学</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%EF%BC%88Java%EF%BC%89"><span class="toc-text">代码（Java）</span></a></li></ol>
       </div>
     </article>
   
@@ -774,7 +796,7 @@ note   <span class="token builtin class-name">:</span> <span aria-hidden="true" 
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%EF%BC%88Java%EF%BC%89"><span class="toc-text">代码（Java）</span></a></li></ol>
+<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="toc-text">解题思路</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF1-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92"><span class="toc-text">思路1 动态规划</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF2-%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6"><span class="toc-text">思路2 组合数学</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%EF%BC%88Java%EF%BC%89"><span class="toc-text">代码（Java）</span></a></li></ol>
     </article>
   
   
