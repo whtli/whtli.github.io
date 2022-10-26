@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>李强的个人博客</title>
+  <title>whtli的个人博客</title>
   
   <subtitle>记录学习过程</subtitle>
   <link href="https://hexo.li98.cn/atom.xml" rel="self"/>
@@ -10,7 +10,7 @@
   <id>https://hexo.li98.cn/</id>
   
   <author>
-    <name>李强</name>
+    <name>whtli</name>
     
   </author>
   
@@ -696,9 +696,9 @@ note   &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; &lt
     
     <category term="数组" scheme="https://hexo.li98.cn/tags/%E6%95%B0%E7%BB%84/"/>
     
-    <category term="数学" scheme="https://hexo.li98.cn/tags/%E6%95%B0%E5%AD%A6/"/>
-    
     <category term="排序" scheme="https://hexo.li98.cn/tags/%E6%8E%92%E5%BA%8F/"/>
+    
+    <category term="数学" scheme="https://hexo.li98.cn/tags/%E6%95%B0%E5%AD%A6/"/>
     
     <category term="Map" scheme="https://hexo.li98.cn/tags/Map/"/>
     
