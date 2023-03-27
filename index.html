@@ -90,10 +90,10 @@ var _hmt = _hmt || [];
 			</ul>
 		</nav>
 		<nav style="color:grey; font-size: small;">
-			总文章数 157
+			总文章数 158
 		</nav>
 		<nav style="color: grey; font-size: small;">
-			总字数 108.3k
+			总字数 109.8k
 		</nav>
 		<br>
 		<nav class="header-smart-menu">
@@ -188,6 +188,364 @@ var _hmt = _hmt || [];
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-Else-使用Python获取国自然项目数据" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/archives/4017ce11.html">使用Python获取国自然项目数据</a>
+    </h1>
+  
+
+        
+        <a href="/archives/4017ce11.html" class="archive-article-date">
+  	<time datetime="2023-03-27T03:30:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-03-27</time>
+</a>
+        
+        <br>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><p>从指定网站中获取不同分类下的所有国自然项目数据，如优青、杰青、面上、重大等分类中的项目数据。</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><h4 id="1-网页原始数据获取"><a href="#1-网页原始数据获取" class="headerlink" title="1.网页原始数据获取"></a>1.网页原始数据获取</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> urllib3
+<span class="token keyword">import</span> time
+<span class="token keyword">from</span> urllib<span class="token punctuation">.</span>parse <span class="token keyword">import</span> unquote
+
+
+<span class="token keyword">def</span> <span class="token function">download_content</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">'''
+    根据链接下载数据
+    :param url: 链接
+    :return: 页面数据
+    '''</span>
+    http <span class="token operator">=</span> urllib3<span class="token punctuation">.</span>PoolManager<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token comment"># 不登录只能查看20页，所以总页数需要通过查询条件限制在20页以内，建议通过起止时间来限制，便于分类和获取</span>
+    body <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">'startTime'</span><span class="token punctuation">:</span> <span class="token string">'2016'</span><span class="token punctuation">,</span> <span class="token string">'endTime'</span><span class="token punctuation">:</span> <span class="token string">"2021"</span><span class="token punctuation">,</span>
+            <span class="token string">'addcomment_s1'</span><span class="token punctuation">:</span> <span class="token string">'D'</span><span class="token punctuation">,</span>
+            <span class="token string">'searchsubmit'</span><span class="token punctuation">:</span> <span class="token string">'true'</span><span class="token punctuation">,</span>
+            <span class="token string">'subcategory'</span><span class="token punctuation">:</span> <span class="token string">'优秀青年基金项目'</span><span class="token punctuation">&#125;</span>
+
+    <span class="token comment"># letpub网站是POST请求，izaiwen网站（已停用）是GET请求</span>
+    response <span class="token operator">=</span> http<span class="token punctuation">.</span>request<span class="token punctuation">(</span><span class="token string">'POST'</span><span class="token punctuation">,</span> url<span class="token punctuation">,</span> fields<span class="token operator">=</span>body<span class="token punctuation">)</span>
+    <span class="token comment"># 从返回结果中获取页面内容，编码一般是utf-8</span>
+    response_data <span class="token operator">=</span> response<span class="token punctuation">.</span>data
+    html_content <span class="token operator">=</span> response_data<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+    unquote<span class="token punctuation">(</span>html_content<span class="token punctuation">)</span>
+    <span class="token comment"># print(html_content)</span>
+    <span class="token keyword">return</span> html_content
+
+
+<span class="token keyword">def</span> <span class="token function">save_to_file</span><span class="token punctuation">(</span>filename<span class="token punctuation">,</span> content<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">'''
+    保存数据到本地文件
+    :param filename: 文件名
+    :param content: 文件内容
+    :return: 本地文件
+    '''</span>
+    fo <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span>filename<span class="token punctuation">,</span> <span class="token string">'w'</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+    fo<span class="token punctuation">.</span>write<span class="token punctuation">(</span>content<span class="token punctuation">)</span>
+    fo<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    <span class="token comment"># url需要从http://www.letpub.com.cn/中按需修改</span>
+    url_prefix <span class="token operator">=</span> <span class="token string">'https://www.letpub.com.cn/nsfcfund_search.php?mode=advanced&amp;datakind=list&amp;currentpage='</span>
+    <span class="token comment"># 总页数根据网页查询结果调整</span>
+    page_total <span class="token operator">=</span> <span class="token number">18</span>
+    <span class="token comment"># 保存路径名建议根据查询条件按年份区分</span>
+    path_prefix <span class="token operator">=</span> <span class="token string">'./2016-2021/page-'</span>
+    path_suffix <span class="token operator">=</span> <span class="token string">'.html'</span>
+
+    <span class="token comment"># 从第一页开始获取，中间加休眠5~10秒，防止访问被禁</span>
+    page_number <span class="token operator">=</span> <span class="token number">1</span>
+    <span class="token keyword">while</span> page_number <span class="token operator">&lt;=</span> page_total<span class="token punctuation">:</span>
+        <span class="token comment"># 每页的url</span>
+        url <span class="token operator">=</span> url_prefix <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span>page_number<span class="token punctuation">)</span>
+        <span class="token comment"># 每页的原始数据</span>
+        page_data <span class="token operator">=</span> download_content<span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+        <span class="token comment"># 每页的保存路径</span>
+        save_path <span class="token operator">=</span> path_prefix <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span>page_number<span class="token punctuation">)</span> <span class="token operator">+</span> path_suffix
+        <span class="token comment"># 保存每页的数据</span>
+        save_to_file<span class="token punctuation">(</span>save_path<span class="token punctuation">,</span> page_data<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'page '</span> <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span>page_number<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">' end'</span><span class="token punctuation">)</span>
+        <span class="token comment"># 休眠</span>
+        time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+        page_number <span class="token operator">+=</span> <span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="2-数据处理"><a href="#2-数据处理" class="headerlink" title="2.数据处理"></a>2.数据处理</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> csv
+
+
+<span class="token keyword">def</span> <span class="token function">save_to_file</span><span class="token punctuation">(</span>filename<span class="token punctuation">,</span> content<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    fo <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span>filename<span class="token punctuation">,</span> <span class="token string">"w"</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span>
+    fo<span class="token punctuation">.</span>write<span class="token punctuation">(</span>content<span class="token punctuation">)</span>
+    fo<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">def</span> <span class="token function">replace_string</span><span class="token punctuation">(</span>content<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">'''
+    页面数据处理方法（根据网站页面内容自定义，以letpub网站举例）
+    :param content: 页面内容
+    :return: 处理后的页面内容
+    '''</span>
+
+    <span class="token triple-quoted-string string">'''
+    页面数据分割的形式，可以打开原始的页面数据文件看看，找易于分割出需要内容的字符串，像letpub网站有下面两行明显标识，很好分割
+    '''</span>
+    content <span class="token operator">=</span> content<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'&lt;!-- ################## start content ################## -->'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+    content <span class="token operator">=</span> content<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'&lt;!-- ################## end content ################## -->'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+    content <span class="token operator">=</span> content<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'TR>'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span>
+
+    <span class="token triple-quoted-string string">'''
+    替换页面中重复多次出现的标签
+    '''</span>
+    <span class="token comment"># 此处标签替换为换行是为了区分不同的项目（通常是每页10个项目）</span>
+    content <span class="token operator">=</span> content<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'&lt;tr style="background:#EFEFEF;">'</span><span class="token punctuation">,</span> <span class="token string">'\n'</span><span class="token punctuation">)</span>
+    content <span class="token operator">=</span> content<span class="token punctuation">.</span>replace<span class="token punctuation">(</span>
+        <span class="token string">'&lt;td style="border:1px #DDD solid; border-collapse:collapse; text-align:left; padding:8px 8px 8px 8px;">'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span>
+    content <span class="token operator">=</span> content<span class="token punctuation">.</span>replace<span class="token punctuation">(</span>
+        <span class="token string">'style="border:1px #DDD solid; border-collapse:collapse; text-align:left; padding:8px 8px 8px 8px;  font-size:13px; color:#333333;">'</span><span class="token punctuation">,</span>
+        <span class="token string">''</span><span class="token punctuation">)</span>
+    content <span class="token operator">=</span> content<span class="token punctuation">.</span>replace<span class="token punctuation">(</span>
+        <span class="token string">'&lt;td style="border:1px #DDD solid; border-collapse:collapse; text-align:left; padding:8px 8px 8px 8px; font-size:13px; color:#333333;"'</span><span class="token punctuation">,</span>
+        <span class="token string">''</span><span class="token punctuation">)</span>
+    <span class="token comment"># 项目小标题对于实际内容获取每页帮助，直接替换；若需要保留，可以只替换&lt;/td>标签</span>
+    content <span class="token operator">=</span> content<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'题目&lt;/td>'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span>
+    content <span class="token operator">=</span> content<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'学科分类&lt;/td>'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span>
+    content <span class="token operator">=</span> content<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'学科代码&lt;/td>'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span>
+    content <span class="token operator">=</span> content<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'执行时间&lt;/td>'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span>
+    content <span class="token operator">=</span> content<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'中文关键词&lt;/td>'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span>
+    content <span class="token operator">=</span> content<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'英文关键词&lt;/td>'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span>
+    content <span class="token operator">=</span> content<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'结题摘要&lt;/td>'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span>
+    <span class="token comment"># 此处的替换字符串@@可以修改为任意其他的可以唯一区分的字符串（如##、#%），不建议使用空格、反斜杠等容易出现内容歧义的字符</span>
+    content <span class="token operator">=</span> content<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'&lt;/td>'</span><span class="token punctuation">,</span> <span class="token string">'@@'</span><span class="token punctuation">)</span>
+    content <span class="token operator">=</span> content<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'&lt;td'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span>
+    content <span class="token operator">=</span> content<span class="token punctuation">.</span>replace<span class="token punctuation">(</span>
+        <span class="token string">'style="border:1px #DDD solid; border-collapse:collapse; text-align:left; padding:8px 8px 8px 8px; color:#3b5998; font-weight:bold;">'</span><span class="token punctuation">,</span>
+        <span class="token string">''</span><span class="token punctuation">)</span>
+    content <span class="token operator">=</span> content<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'colspan="6">'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span>
+    content <span class="token operator">=</span> content<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'&lt;/tr>'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span>
+    content <span class="token operator">=</span> content<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'&lt;tr>'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span>
+
+    <span class="token triple-quoted-string string">'''
+    单独处理页面中剩余的非通用标签，如下方的表头
+    '''</span>
+    content <span class="token operator">=</span> content<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'批准年份'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+    content <span class="token operator">=</span> content<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'&lt;/th>'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span>
+    content <span class="token operator">=</span> content<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'&lt;'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span>
+    content <span class="token operator">=</span> content<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'&lt;/th>'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span>
+    content <span class="token operator">=</span> content<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'  '</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span>
+    content <span class="token operator">=</span> content<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">' '</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span>
+    <span class="token comment"># 返回结果</span>
+    <span class="token keyword">return</span> content
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+
+    <span class="token triple-quoted-string string">'''
+    以下参数需要手动指定，以按年份查询区分为例
+    '''</span>
+
+    <span class="token comment"># 页面文件的存储路径</span>
+    origin_path_name <span class="token operator">=</span> <span class="token string">'./2016-2021/'</span>
+    <span class="token comment"># 文件前缀、后准、页面数量</span>
+    file_name_prefix <span class="token operator">=</span> <span class="token string">'page-'</span>
+    file_name_suffix <span class="token operator">=</span> <span class="token string">'.html'</span>
+    file_number <span class="token operator">=</span> <span class="token number">18</span>
+    <span class="token comment"># 结果输出的目标路径</span>
+    target_path_name <span class="token operator">=</span> <span class="token string">'./flushed_data/2016-2021/'</span>
+    <span class="token comment"># 处理后文件的前缀、后缀</span>
+    target_file_name_prefix <span class="token operator">=</span> <span class="token string">'flushed-page-'</span>
+    target_file_name_suffix <span class="token operator">=</span> <span class="token string">'.txt'</span>
+
+    <span class="token triple-quoted-string string">'''
+    需要从页面数据中获取的常用的信息
+    '''</span>
+
+    <span class="token comment"># 负责人</span>
+    charge_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token comment"># 单位</span>
+    department_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token comment"># 金额 (万)</span>
+    money_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token comment"># 项目编号</span>
+    project_number_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token comment"># 项目类型</span>
+    project_type_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token comment"># 所属学部</span>
+    xuebu_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token comment"># 批准年份</span>
+    pass_year_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token comment"># 题目</span>
+    title_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token comment"># 学科分类</span>
+    subject_type_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token comment"># 学科代码</span>
+    subject_code_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token comment"># 执行时间</span>
+    execution_time_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+    <span class="token comment"># 记录所有页面中的每一行（因为预处理时不可以替换的换行符\n的存在，会出现空行，通过长度判断筛选掉）</span>
+    lines <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token comment"># 从第1个页面开始处理</span>
+    page_number <span class="token operator">=</span> <span class="token number">1</span>
+    <span class="token keyword">while</span> page_number <span class="token operator">&lt;=</span> file_number<span class="token punctuation">:</span>
+        <span class="token comment"># 处理后的页面内容</span>
+        content <span class="token operator">=</span> <span class="token string">''</span>
+        <span class="token comment"># 页面文件名</span>
+        file_name <span class="token operator">=</span> origin_path_name <span class="token operator">+</span> file_name_prefix <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span>page_number<span class="token punctuation">)</span> <span class="token operator">+</span> file_name_suffix
+        <span class="token comment"># 打开文件获取数据，按行追加到页面内容中</span>
+        <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span>file_name<span class="token punctuation">,</span> <span class="token string">'r+'</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+            <span class="token keyword">for</span> line <span class="token keyword">in</span> f<span class="token punctuation">:</span>
+                content <span class="token operator">+=</span> line
+        f<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token comment"># 页面数据处理（方法内容自定义，需要根据页面实际内容调整）</span>
+        content <span class="token operator">=</span> replace_string<span class="token punctuation">(</span>content<span class="token punctuation">)</span>
+        <span class="token comment"># print(content)</span>
+
+        <span class="token comment"># 保存各处理后的页面内容到文件中</span>
+        save_path <span class="token operator">=</span> target_path_name <span class="token operator">+</span> target_file_name_prefix <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span>page_number<span class="token punctuation">)</span> <span class="token operator">+</span> target_file_name_suffix
+        save_to_file<span class="token punctuation">(</span>save_path<span class="token punctuation">,</span> content<span class="token punctuation">)</span>
+
+        <span class="token comment"># 打开上一步保存的处理后的页面数据文件</span>
+        <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span>save_path<span class="token punctuation">,</span> <span class="token string">'r'</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+            <span class="token comment"># 将符合筛选要求的行内容添加到列表中（因为预处理时不可以替换的换行符\n的存在，会出现空行，通过长度判断筛选掉）</span>
+            <span class="token keyword">for</span> line <span class="token keyword">in</span> f<span class="token punctuation">:</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>line<span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                    line <span class="token operator">=</span> line<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'\n'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span>
+                    lines<span class="token punctuation">.</span>append<span class="token punctuation">(</span>line<span class="token punctuation">)</span>
+        f<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token comment"># 下一个页面</span>
+        page_number <span class="token operator">+=</span> <span class="token number">1</span>
+
+    <span class="token comment"># 处理列表信息，分到各个单独的列表中</span>
+    <span class="token keyword">for</span> line <span class="token keyword">in</span> lines<span class="token punctuation">:</span>
+        <span class="token comment"># 可能因为‘结题摘要’等小项的存在，导致出现一些冗余行，先打印结果看看，在循环中加个筛选</span>
+        <span class="token keyword">if</span> line<span class="token punctuation">.</span>count<span class="token punctuation">(</span><span class="token string">'@@'</span><span class="token punctuation">)</span> <span class="token operator">>=</span> <span class="token number">9</span><span class="token punctuation">:</span>
+            <span class="token comment"># 页面数据处理方法中人为添加的分隔符做分割，按照网页数据中固定顺序分到不同的列表中</span>
+            items <span class="token operator">=</span> line<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'@@'</span><span class="token punctuation">)</span>
+            <span class="token comment"># print(items)</span>
+            charge_list<span class="token punctuation">.</span>append<span class="token punctuation">(</span>items<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+            department_list<span class="token punctuation">.</span>append<span class="token punctuation">(</span>items<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+            money_list<span class="token punctuation">.</span>append<span class="token punctuation">(</span>items<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+            project_number_list<span class="token punctuation">.</span>append<span class="token punctuation">(</span>items<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+            project_type_list<span class="token punctuation">.</span>append<span class="token punctuation">(</span>items<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+            xuebu_list<span class="token punctuation">.</span>append<span class="token punctuation">(</span>items<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+            pass_year_list<span class="token punctuation">.</span>append<span class="token punctuation">(</span>items<span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+            title_list<span class="token punctuation">.</span>append<span class="token punctuation">(</span>items<span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+            subject_type_list<span class="token punctuation">.</span>append<span class="token punctuation">(</span>items<span class="token punctuation">[</span><span class="token number">8</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+            subject_code_list<span class="token punctuation">.</span>append<span class="token punctuation">(</span>items<span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+            execution_time_list<span class="token punctuation">.</span>append<span class="token punctuation">(</span>items<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+    <span class="token comment"># 把上方的列表合并为一个table</span>
+    content_to_table <span class="token operator">=</span> <span class="token builtin">zip</span><span class="token punctuation">(</span>charge_list<span class="token punctuation">,</span> department_list<span class="token punctuation">,</span> money_list<span class="token punctuation">,</span> project_number_list<span class="token punctuation">,</span> project_type_list<span class="token punctuation">,</span> xuebu_list<span class="token punctuation">,</span>
+                           pass_year_list<span class="token punctuation">,</span> title_list<span class="token punctuation">,</span> subject_type_list<span class="token punctuation">,</span> subject_code_list<span class="token punctuation">,</span> execution_time_list<span class="token punctuation">)</span>
+
+    <span class="token comment"># 把数据保存到表格中</span>
+    output_table_path <span class="token operator">=</span> origin_path_name<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">'.csv'</span>
+    <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span>output_table_path<span class="token punctuation">,</span> <span class="token string">'w'</span><span class="token punctuation">,</span> newline<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+        writer <span class="token operator">=</span> csv<span class="token punctuation">.</span>writer<span class="token punctuation">(</span>f<span class="token punctuation">)</span>
+        <span class="token keyword">for</span> row <span class="token keyword">in</span> content_to_table<span class="token punctuation">:</span>
+            writer<span class="token punctuation">.</span>writerow<span class="token punctuation">(</span>row<span class="token punctuation">)</span>
+    f<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+      
+
+      <!-- 百度自动推送方式提交 -->
+      <!-- 
+        <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+        </script>
+       -->
+      <!-- 百度自动推送方式提交结束 -->
+
+      <!-- 增加版权声明 -->
+      
+      
+      <div class="declare" hidden="hidden"></div>
+      
+
+      <!-- 增加版权声明结束 -->
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">其他</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/其他//" class="article-tag-list-link color3">其他</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/archives/4017ce11.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-D2L-pip uninstall scikit-learn报错失败" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -1395,147 +1753,6 @@ output <span class="token builtin class-name">:</span> <span class="token punctu
 
 
   
-    <article id="post-LeetCode腾讯精选练习50题-016.最接近的三数之和" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/archives/61876662.html">LeetCode腾讯精选练习50题-016.最接近的三数之和</a>
-    </h1>
-  
-
-        
-        <a href="/archives/61876662.html" class="archive-article-date">
-  	<time datetime="2022-06-04T04:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-06-04</time>
-</a>
-        
-        <br>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><ul>
-<li>给定一个长度为 n 的整数数组 nums 和 一个目标值 target。</li>
-<li>请从 nums 中选出三个整数，使它们的和与 target 最接近。</li>
-<li>返回这三个数的和。</li>
-<li>假定每组输入只存在恰好一个解。</li>
-</ul>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">example
-input  <span class="token builtin class-name">:</span> nums <span class="token operator">=</span> <span class="token punctuation">[</span>-1,2,1,-4<span class="token punctuation">]</span>, target <span class="token operator">=</span> <span class="token number">1</span>
-output <span class="token builtin class-name">:</span> <span class="token number">2</span>
-note   <span class="token builtin class-name">:</span> 与 target 最接近的和是 <span class="token number">2</span> <span class="token punctuation">(</span>-1 + <span class="token number">2</span> + <span class="token number">1</span> <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">)</span> 。
-
-input  <span class="token builtin class-name">:</span> nums <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0,0</span>,0<span class="token punctuation">]</span>, target <span class="token operator">=</span> <span class="token number">1</span>
-output <span class="token builtin class-name">:</span> <span class="token number">0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-        
-      
-
-      <!-- 百度自动推送方式提交 -->
-      <!-- 
-        <script>
-        (function(){
-            var bp = document.createElement('script');
-            var curProtocol = window.location.protocol.split(':')[0];
-            if (curProtocol === 'https') {
-                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-            }
-            else {
-                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-            }
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(bp, s);
-        })();
-        </script>
-       -->
-      <!-- 百度自动推送方式提交结束 -->
-
-      <!-- 增加版权声明 -->
-      
-      
-      <div class="declare" hidden="hidden"></div>
-      
-
-      <!-- 增加版权声明结束 -->
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数组</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">排序</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">双指针</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/LeetCode//" class="article-tag-list-link color4">LeetCode</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/archives/61876662.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/2/">下一页; &amp;末页</a>
@@ -1669,6 +1886,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Jupyter</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
@@ -1678,10 +1899,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Jupyter</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1709,19 +1926,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">字符串</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">整数</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">分治</a>
+                <a href="javascript:void(0)" class="js-tag color3">数组</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数组</a>
+                <a href="javascript:void(0)" class="js-tag color4">字符串</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">分治</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1733,11 +1950,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">遍历</a>
+                <a href="javascript:void(0)" class="js-tag color5">字符匹配</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">字符匹配</a>
+                <a href="javascript:void(0)" class="js-tag color3">遍历</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1777,11 +1994,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">迭代</a>
+                <a href="javascript:void(0)" class="js-tag color3">列表</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">列表</a>
+                <a href="javascript:void(0)" class="js-tag color3">迭代</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1813,6 +2030,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">栈</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">链表</a>
               </li>
              
@@ -1825,15 +2046,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">栈</a>
+                <a href="javascript:void(0)" class="js-tag color4">汉明码</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">进制转换</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">汉明码</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1845,11 +2062,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">贪心</a>
+                <a href="javascript:void(0)" class="js-tag color3">回文</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">回文</a>
+                <a href="javascript:void(0)" class="js-tag color3">贪心</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1897,11 +2114,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">router-link</a>
+                <a href="javascript:void(0)" class="js-tag color4">WebStorm</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">WebStorm</a>
+                <a href="javascript:void(0)" class="js-tag color2">router-link</a>
               </li>
              
               <li class="article-tag-list-item">
