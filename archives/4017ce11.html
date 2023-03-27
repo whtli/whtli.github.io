@@ -18,7 +18,7 @@
 <meta property="og:description" content="需求从指定网站中获取不同分类下的所有国自然项目数据，如优青、杰青、面上、重大等分类中的项目数据。 依赖包 urllib3 time csv  代码整个过程分为数据获取和数据处理两部分，具体代码如下。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-03-27T03:30:00.000Z">
-<meta property="article:modified_time" content="2023-03-27T08:44:53.380Z">
+<meta property="article:modified_time" content="2023-03-27T15:06:22.130Z">
 <meta property="article:author" content="whtli">
 <meta property="article:tag" content="Python">
 <meta property="article:tag" content="其他">
@@ -211,7 +211,7 @@ var _hmt = _hmt || [];
         <!-- <span class="archive-article-date">
             阅读量 <span id="busuanzi_value_page_pv"></span>
         </span> -->
-        阅读量 <span id="busuanzi_value_page_pv"></span> | 字数：1.6k字 | 预计阅读时长：6分钟
+        阅读量 <span id="busuanzi_value_page_pv"></span> | 字数：1.6k字 | 预计阅读时长：7分钟
         
       </header>
     
@@ -267,7 +267,7 @@ var _hmt = _hmt || [];
 
 
 <span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
-    <span class="token comment"># url需要从http://www.letpub.com.cn/中按需修改</span>
+    <span class="token comment"># url需要根据在letpub网站中点击查询时，控制台中显示的实际地址`Request URL`修改</span>
     url_prefix <span class="token operator">=</span> <span class="token string">'https://www.letpub.com.cn/nsfcfund_search.php?mode=advanced&amp;datakind=list&amp;currentpage='</span>
     <span class="token comment"># 总页数根据网页查询结果调整</span>
     page_total <span class="token operator">=</span> <span class="token number">18</span>
@@ -275,7 +275,7 @@ var _hmt = _hmt || [];
     path_prefix <span class="token operator">=</span> <span class="token string">'./2016-2021/page-'</span>
     path_suffix <span class="token operator">=</span> <span class="token string">'.html'</span>
 
-    <span class="token comment"># 从第一页开始获取，中间加休眠5~10秒，防止访问被禁</span>
+    <span class="token comment"># 从第一页开始获取，中间加休眠5~10秒左右，防止访问被禁</span>
     page_number <span class="token operator">=</span> <span class="token number">1</span>
     <span class="token keyword">while</span> page_number <span class="token operator">&lt;=</span> page_total<span class="token punctuation">:</span>
         <span class="token comment"># 每页的url</span>
@@ -287,9 +287,10 @@ var _hmt = _hmt || [];
         <span class="token comment"># 保存每页的数据</span>
         save_to_file<span class="token punctuation">(</span>save_path<span class="token punctuation">,</span> page_data<span class="token punctuation">)</span>
         <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'page '</span> <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span>page_number<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">' end'</span><span class="token punctuation">)</span>
-        <span class="token comment"># 休眠</span>
+        <span class="token comment"># 休眠10秒</span>
         time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
-        page_number <span class="token operator">+=</span> <span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        <span class="token comment"># 访问下一个页面</span>
+        page_number <span class="token operator">+=</span> <span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h4 id="2-数据处理"><a href="#2-数据处理" class="headerlink" title="2.数据处理"></a>2.数据处理</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> csv
 
@@ -317,7 +318,7 @@ var _hmt = _hmt || [];
     <span class="token triple-quoted-string string">'''
     替换页面中重复多次出现的标签
     '''</span>
-    <span class="token comment"># 此处标签替换为换行是为了区分不同的项目（通常是每页10个项目）</span>
+    <span class="token comment"># 此处标签替换为换行符\n是为了区分不同的项目（通常是每页10个项目）</span>
     content <span class="token operator">=</span> content<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'&lt;tr style="background:#EFEFEF;">'</span><span class="token punctuation">,</span> <span class="token string">'\n'</span><span class="token punctuation">)</span>
     content <span class="token operator">=</span> content<span class="token punctuation">.</span>replace<span class="token punctuation">(</span>
         <span class="token string">'&lt;td style="border:1px #DDD solid; border-collapse:collapse; text-align:left; padding:8px 8px 8px 8px;">'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span>
@@ -327,7 +328,7 @@ var _hmt = _hmt || [];
     content <span class="token operator">=</span> content<span class="token punctuation">.</span>replace<span class="token punctuation">(</span>
         <span class="token string">'&lt;td style="border:1px #DDD solid; border-collapse:collapse; text-align:left; padding:8px 8px 8px 8px; font-size:13px; color:#333333;"'</span><span class="token punctuation">,</span>
         <span class="token string">''</span><span class="token punctuation">)</span>
-    <span class="token comment"># 项目小标题对于实际内容获取每页帮助，直接替换；若需要保留，可以只替换&lt;/td>标签</span>
+    <span class="token comment"># 项目小标题对于实际内容获取没有帮助，直接替换掉；若需要保留，可以只替换&lt;/td>标签</span>
     content <span class="token operator">=</span> content<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'题目&lt;/td>'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span>
     content <span class="token operator">=</span> content<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'学科分类&lt;/td>'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span>
     content <span class="token operator">=</span> content<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'学科代码&lt;/td>'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span>
@@ -459,7 +460,7 @@ var _hmt = _hmt || [];
     content_to_table <span class="token operator">=</span> <span class="token builtin">zip</span><span class="token punctuation">(</span>charge_list<span class="token punctuation">,</span> department_list<span class="token punctuation">,</span> money_list<span class="token punctuation">,</span> project_number_list<span class="token punctuation">,</span> project_type_list<span class="token punctuation">,</span> xuebu_list<span class="token punctuation">,</span>
                            pass_year_list<span class="token punctuation">,</span> title_list<span class="token punctuation">,</span> subject_type_list<span class="token punctuation">,</span> subject_code_list<span class="token punctuation">,</span> execution_time_list<span class="token punctuation">)</span>
 
-    <span class="token comment"># 把数据保存到表格中</span>
+    <span class="token comment"># 把数据保存到表格中（csv文件如果用word打开乱码，可以用wps打开）</span>
     output_table_path <span class="token operator">=</span> origin_path_name<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">'.csv'</span>
     <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span>output_table_path<span class="token punctuation">,</span> <span class="token string">'w'</span><span class="token punctuation">,</span> newline<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
         writer <span class="token operator">=</span> csv<span class="token punctuation">.</span>writer<span class="token punctuation">(</span>f<span class="token punctuation">)</span>
@@ -792,15 +793,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">PyTorch</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Jupyter</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -836,6 +837,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">整数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">数组</a>
               </li>
              
@@ -844,7 +849,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">整数</a>
+                <a href="javascript:void(0)" class="js-tag color3">分治</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -860,14 +865,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">分治</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">遍历</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">数学</a>
               </li>
              
@@ -876,7 +873,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color3">遍历</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -892,7 +889,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">递归</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">列表</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -904,15 +909,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">列表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">迭代</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">树</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -932,11 +929,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">树</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">BFS</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">队列</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">栈</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -952,15 +957,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">栈</a>
+                <a href="javascript:void(0)" class="js-tag color4">汉明码</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">进制转换</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">汉明码</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1000,15 +1001,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">router-link</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1028,7 +1025,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">WebStorm</a>
+                <a href="javascript:void(0)" class="js-tag color2">router-link</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1037,6 +1034,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">因果推断</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">WebStorm</a>
               </li>
              
               <li class="article-tag-list-item">
