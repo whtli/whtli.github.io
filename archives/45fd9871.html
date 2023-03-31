@@ -10,15 +10,15 @@
   <meta name="google-site-verification" content="Awm5Iyx3JSuseumMaosXrgsK2gqrzTee1TZKEP8Iyo0" />
   <meta name="baidu-site-verification" content="codeva-mucT4kdR7e" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="题目 创建三个线程，按指定顺序打印1到100，具体如下： 线程1打印1 线程2打印2 线程3打印3 线程1打印4 线程2打印5 线程3打印6 …… 线程3打印99 线程1打印100  知识点：wait()&#x2F;notifyAll()   代码import java.util.concurrent.atomic.AtomicInteger;  &#x2F;**  * @author: LiQiang  * @da">
+  <meta name="description" content="题目 创建三个线程，按指定顺序打印1到100，具体如下：  线程1打印1 线程2打印2 线程3打印3 线程1打印4 线程2打印5 线程3打印6 …… 线程3打印99 线程1打印100印100   知识点：wait()&#x2F;notifyAll()   代码import java.util.concurrent.atomic.AtomicInteger;  &#x2F;**  * @author: LiQiang">
 <meta property="og:type" content="article">
 <meta property="og:title" content="三个线程按指定顺序打印1到100">
 <meta property="og:url" content="https://hexo.whtli.cn/archives/45fd9871.html">
 <meta property="og:site_name" content="whtli的个人博客">
-<meta property="og:description" content="题目 创建三个线程，按指定顺序打印1到100，具体如下： 线程1打印1 线程2打印2 线程3打印3 线程1打印4 线程2打印5 线程3打印6 …… 线程3打印99 线程1打印100  知识点：wait()&#x2F;notifyAll()   代码import java.util.concurrent.atomic.AtomicInteger;  &#x2F;**  * @author: LiQiang  * @da">
+<meta property="og:description" content="题目 创建三个线程，按指定顺序打印1到100，具体如下：  线程1打印1 线程2打印2 线程3打印3 线程1打印4 线程2打印5 线程3打印6 …… 线程3打印99 线程1打印100印100   知识点：wait()&#x2F;notifyAll()   代码import java.util.concurrent.atomic.AtomicInteger;  &#x2F;**  * @author: LiQiang">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-03-30T15:12:45.000Z">
-<meta property="article:modified_time" content="2023-03-31T01:54:28.636Z">
+<meta property="article:modified_time" content="2023-03-31T01:57:31.900Z">
 <meta property="article:author" content="whtli">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="多线程">
@@ -211,7 +211,7 @@ var _hmt = _hmt || [];
         <!-- <span class="archive-article-date">
             阅读量 <span id="busuanzi_value_page_pv"></span>
         </span> -->
-        阅读量 <span id="busuanzi_value_page_pv"></span> | 字数：411字 | 预计阅读时长：2分钟
+        阅读量 <span id="busuanzi_value_page_pv"></span> | 字数：412字 | 预计阅读时长：2分钟
         
       </header>
     
@@ -219,15 +219,17 @@ var _hmt = _hmt || [];
       
         <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><ul>
 <li><p>创建三个线程，按指定顺序打印1到100，具体如下：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">线程1打印1
-线程2打印2
-线程3打印3
-线程1打印4
-线程2打印5
-线程3打印6
-……
-线程3打印99
-线程1打印100<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>线程1打印1</li>
+<li>线程2打印2</li>
+<li>线程3打印3</li>
+<li>线程1打印4</li>
+<li>线程2打印5</li>
+<li>线程3打印6</li>
+<li>……</li>
+<li>线程3打印99</li>
+<li>线程1打印100印100</li>
+</ul>
 </li>
 <li><p>知识点：wait()/notifyAll()</p>
 </li>
