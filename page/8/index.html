@@ -90,10 +90,10 @@ var _hmt = _hmt || [];
 			</ul>
 		</nav>
 		<nav style="color:grey; font-size: small;">
-			总文章数 161
+			总文章数 162
 		</nav>
 		<nav style="color: grey; font-size: small;">
-			总字数 111.4k
+			总字数 112k
 		</nav>
 		<br>
 		<nav class="header-smart-menu">
@@ -188,6 +188,162 @@ var _hmt = _hmt || [];
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-LeetCode精选TOP面试题036.有效的数独" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/archives/840877d1.html">LeetCode精选TOP面试题036.有效的数独</a>
+    </h1>
+  
+
+        
+        <a href="/archives/840877d1.html" class="archive-article-date">
+  	<time datetime="2021-11-23T14:53:57.685Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-23</time>
+</a>
+        
+        <br>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><ul>
+<li>判断一个 9 x 9 的数独是否有效。一个有效的数独（部分已被填充，空白格用 ‘.’ 表示）不一定是可解的，只需要根据以下规则，验证已经填入的数字是否有效即可。</li>
+<li>(1)数字 1-9 在每一行只能出现一次。</li>
+<li>(2)数字 1-9 在每一列只能出现一次。</li>
+<li>(3)数字 1-9 在每一个以粗实线分隔的 3x3 宫内只能出现一次。</li>
+<li>board.length == 9; board[i].length == 9; board[i][j]是数字（1-9）或 ‘.’</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">example
+input  <span class="token builtin class-name">:</span> board <span class="token operator">=</span>     <span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span><span class="token string">'8'</span>, <span class="token string">'3'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'7'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span><span class="token punctuation">&#125;</span>
+                     ,<span class="token punctuation">&#123;</span><span class="token string">'6'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'1'</span>, <span class="token string">'9'</span>, <span class="token string">'5'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span><span class="token punctuation">&#125;</span>
+                     ,<span class="token punctuation">&#123;</span><span class="token string">'.'</span>, <span class="token string">'9'</span>, <span class="token string">'8'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'6'</span>, <span class="token string">'.'</span><span class="token punctuation">&#125;</span>
+                     ,<span class="token punctuation">&#123;</span><span class="token string">'8'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'6'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'3'</span><span class="token punctuation">&#125;</span>
+                     ,<span class="token punctuation">&#123;</span><span class="token string">'4'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'8'</span>, <span class="token string">'.'</span>, <span class="token string">'3'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'1'</span><span class="token punctuation">&#125;</span>
+                     ,<span class="token punctuation">&#123;</span><span class="token string">'7'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'2'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'6'</span><span class="token punctuation">&#125;</span>
+                     ,<span class="token punctuation">&#123;</span><span class="token string">'.'</span>, <span class="token string">'6'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'2'</span>, <span class="token string">'8'</span>, <span class="token string">'.'</span><span class="token punctuation">&#125;</span>
+                     ,<span class="token punctuation">&#123;</span><span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'4'</span>, <span class="token string">'1'</span>, <span class="token string">'9'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'5'</span><span class="token punctuation">&#125;</span>
+                     ,<span class="token punctuation">&#123;</span><span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'8'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'7'</span>, <span class="token string">'9'</span><span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>                                                                                                                               
+output <span class="token builtin class-name">:</span> <span class="token boolean">true</span>
+input  <span class="token builtin class-name">:</span> board <span class="token operator">=</span>     <span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span><span class="token string">'8'</span>, <span class="token string">'3'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'7'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span><span class="token punctuation">&#125;</span>
+                     ,<span class="token punctuation">&#123;</span><span class="token string">'6'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'1'</span>, <span class="token string">'9'</span>, <span class="token string">'5'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span><span class="token punctuation">&#125;</span>
+                     ,<span class="token punctuation">&#123;</span><span class="token string">'.'</span>, <span class="token string">'9'</span>, <span class="token string">'8'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'6'</span>, <span class="token string">'.'</span><span class="token punctuation">&#125;</span>
+                     ,<span class="token punctuation">&#123;</span><span class="token string">'8'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'6'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'3'</span><span class="token punctuation">&#125;</span>
+                     ,<span class="token punctuation">&#123;</span><span class="token string">'4'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'8'</span>, <span class="token string">'.'</span>, <span class="token string">'3'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'1'</span><span class="token punctuation">&#125;</span>
+                     ,<span class="token punctuation">&#123;</span><span class="token string">'7'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'2'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'6'</span><span class="token punctuation">&#125;</span>
+                     ,<span class="token punctuation">&#123;</span><span class="token string">'.'</span>, <span class="token string">'6'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'2'</span>, <span class="token string">'8'</span>, <span class="token string">'.'</span><span class="token punctuation">&#125;</span>
+                     ,<span class="token punctuation">&#123;</span><span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'4'</span>, <span class="token string">'1'</span>, <span class="token string">'9'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'5'</span><span class="token punctuation">&#125;</span>
+                     ,<span class="token punctuation">&#123;</span><span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'8'</span>, <span class="token string">'.'</span>, <span class="token string">'.'</span>, <span class="token string">'7'</span>, <span class="token string">'9'</span><span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>   
+output <span class="token builtin class-name">:</span> <span class="token boolean">false</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        
+      
+
+      <!-- 百度自动推送方式提交 -->
+      <!-- 
+        <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+        </script>
+       -->
+      <!-- 百度自动推送方式提交结束 -->
+
+      <!-- 增加版权声明 -->
+      
+      
+      <div class="declare" hidden="hidden"></div>
+      
+
+      <!-- 增加版权声明结束 -->
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数组</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">哈希表</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">矩阵</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/LeetCode//" class="article-tag-list-link color4">LeetCode</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/archives/840877d1.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-LeetCode精选TOP面试题227.基本计算器II" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -1487,145 +1643,6 @@ output <span class="token builtin class-name">:</span> <span class="token punctu
 
 
   
-    <article id="post-LeetCode精选TOP面试题033.搜索旋转排序数组" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/archives/7fd81635.html">LeetCode精选TOP面试题033.搜索旋转排序数组</a>
-    </h1>
-  
-
-        
-        <a href="/archives/7fd81635.html" class="archive-article-date">
-  	<time datetime="2021-10-30T13:24:35.287Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-10-30</time>
-</a>
-        
-        <br>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>整数数组 nums 按升序排列，数组中的值 互不相同 。<br>在传递给函数之前，nums 在预先未知的某个下标 k（0 &lt;= k &lt; nums.length）上进行了 旋转，使数组变为 [nums[k], nums[k+1], …, nums[n-1], nums[0], nums[1], …, nums[k-1]]（下标 从 0 开始 计数）。例如， [0,1,2,4,5,6,7] 在下标 3 处经旋转后可能变为 [4,5,6,7,0,1,2] 。</p>
-<p>给定 旋转后 的数组 nums 和一个整数 target ，如果 nums 中存在这个目标值 target ，则返回它的下标，否则返回 -1 。</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">example
-input  <span class="token builtin class-name">:</span> nums <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token number">4,5</span>,6,7,0,1,2<span class="token punctuation">&#125;</span>, target <span class="token operator">=</span> <span class="token number">0</span>
-output <span class="token builtin class-name">:</span> <span class="token number">4</span>
-input  <span class="token builtin class-name">:</span> nums <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token number">4,5</span>,6,7,0,1,2<span class="token punctuation">&#125;</span>, target <span class="token operator">=</span> <span class="token number">3</span>
-output <span class="token builtin class-name">:</span> -1
-input  <span class="token builtin class-name">:</span> nums <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token number">3,1</span><span class="token punctuation">&#125;</span>, target <span class="token operator">=</span> <span class="token number">1</span>
-output <span class="token builtin class-name">:</span> <span class="token number">1</span>
-input  <span class="token builtin class-name">:</span> nums <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token number">1</span><span class="token punctuation">&#125;</span>, target <span class="token operator">=</span> <span class="token number">0</span>
-output <span class="token builtin class-name">:</span> -1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-        
-      
-
-      <!-- 百度自动推送方式提交 -->
-      <!-- 
-        <script>
-        (function(){
-            var bp = document.createElement('script');
-            var curProtocol = window.location.protocol.split(':')[0];
-            if (curProtocol === 'https') {
-                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-            }
-            else {
-                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-            }
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(bp, s);
-        })();
-        </script>
-       -->
-      <!-- 百度自动推送方式提交结束 -->
-
-      <!-- 增加版权声明 -->
-      
-      
-      <div class="declare" hidden="hidden"></div>
-      
-
-      <!-- 增加版权声明结束 -->
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数组</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">二分查找</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/LeetCode//" class="article-tag-list-link color4">LeetCode</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/archives/7fd81635.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/7/">&amp;首页; 上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/9/">下一页; &amp;末页</a>
@@ -1767,14 +1784,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Anaconda</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">conda</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">其他</a>
               </li>
              
@@ -1783,7 +1792,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Anaconda</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">conda</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">多线程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1796,10 +1817,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">栈</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">多线程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1827,10 +1844,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">分治</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">排序</a>
               </li>
              
@@ -1839,15 +1852,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">分治</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">字符匹配</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">遍历</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">二分查找</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1864,6 +1877,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">矩阵</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">二分查找</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1971,6 +1988,14 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">后端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">maven</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
@@ -1988,14 +2013,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">后端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">maven</a>
               </li>
              
               <li class="article-tag-list-item">
