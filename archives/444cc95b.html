@@ -6,22 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://hexo.whtli.cn">
-  <title>多读单写场景下的thread-safe的map | whtli的个人博客</title>
+  <title>两数组元素之差最小绝对值 | whtli的个人博客</title>
   <meta name="google-site-verification" content="Awm5Iyx3JSuseumMaosXrgsK2gqrzTee1TZKEP8Iyo0" />
   <meta name="baidu-site-verification" content="codeva-mucT4kdR7e" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="题目基于HashMap，实现多读单写场景下的thread-safe的map 代码import java.util.HashMap; import java.util.Map; import java.util.concurrent.Semaphore; import java.util.concurrent.locks.ReadWriteLock; import java.util.concurr">
+  <meta name="description" content="题目 给定两个整数数组，从两个数组中各取一个元素，要求它们的差值绝对值最小  代码1. 先排序，后双指针import java.util.Arrays;  public class Main &amp;#123;     public static void main(String[] args) &amp;#123;         int[] arr1 &#x3D; &amp;#123;1, 3, 5, 11&amp;#125;;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="多读单写场景下的thread-safe的map">
-<meta property="og:url" content="https://hexo.whtli.cn/archives/b2712a0b.html">
+<meta property="og:title" content="两数组元素之差最小绝对值">
+<meta property="og:url" content="https://hexo.whtli.cn/archives/444cc95b.html">
 <meta property="og:site_name" content="whtli的个人博客">
-<meta property="og:description" content="题目基于HashMap，实现多读单写场景下的thread-safe的map 代码import java.util.HashMap; import java.util.Map; import java.util.concurrent.Semaphore; import java.util.concurrent.locks.ReadWriteLock; import java.util.concurr">
+<meta property="og:description" content="题目 给定两个整数数组，从两个数组中各取一个元素，要求它们的差值绝对值最小  代码1. 先排序，后双指针import java.util.Arrays;  public class Main &amp;#123;     public static void main(String[] args) &amp;#123;         int[] arr1 &#x3D; &amp;#123;1, 3, 5, 11&amp;#125;;">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-08-05T16:17:45.000Z">
-<meta property="article:modified_time" content="2023-08-05T16:21:06.530Z">
+<meta property="article:published_time" content="2023-08-22T14:58:45.000Z">
+<meta property="article:modified_time" content="2023-08-22T15:30:18.266Z">
 <meta property="article:author" content="whtli">
 <meta property="article:tag" content="Java">
-<meta property="article:tag" content="多线程">
+<meta property="article:tag" content="排序">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="whtli的个人博客" type="application/atom+xml">
@@ -96,7 +96,7 @@ var _hmt = _hmt || [];
 			总文章数 162
 		</nav>
 		<nav style="color: grey; font-size: small;">
-			总字数 112k
+			总字数 111.6k
 		</nav>
 		<br>
 		<nav class="header-smart-menu">
@@ -190,20 +190,20 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Else-多读单写的thread-safe的map" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Else-两数组元素之差最小绝对值" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      多读单写场景下的thread-safe的map
+      两数组元素之差最小绝对值
     </h1>
   
 
         
-        <a href="/archives/b2712a0b.html" class="archive-article-date">
-  	<time datetime="2023-08-05T16:17:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-08-06</time>
+        <a href="/archives/444cc95b.html" class="archive-article-date">
+  	<time datetime="2023-08-22T14:58:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-08-22</time>
 </a>
         
         <br>
@@ -211,171 +211,52 @@ var _hmt = _hmt || [];
         <!-- <span class="archive-article-date">
             阅读量 <span id="busuanzi_value_page_pv"></span>
         </span> -->
-        阅读量 <span id="busuanzi_value_page_pv"></span> | 字数：684字 | 预计阅读时长：3分钟
+        阅读量 <span id="busuanzi_value_page_pv"></span> | 字数：214字 | 预计阅读时长：1分钟
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>基于HashMap，实现多读单写场景下的thread-safe的map</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util</span><span class="token punctuation">.</span><span class="token class-name">HashMap</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util</span><span class="token punctuation">.</span><span class="token class-name">Map</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>concurrent</span><span class="token punctuation">.</span><span class="token class-name">Semaphore</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>concurrent<span class="token punctuation">.</span>locks</span><span class="token punctuation">.</span><span class="token class-name">ReadWriteLock</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>concurrent<span class="token punctuation">.</span>locks</span><span class="token punctuation">.</span><span class="token class-name">ReentrantReadWriteLock</span><span class="token punctuation">;</span>
+        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><ul>
+<li>给定两个整数数组，从两个数组中各取一个元素，要求它们的差值绝对值最小</li>
+</ul>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><h3 id="1-先排序，后双指针"><a href="#1-先排序，后双指针" class="headerlink" title="1. 先排序，后双指针"></a>1. 先排序，后双指针</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util</span><span class="token punctuation">.</span><span class="token class-name">Arrays</span><span class="token punctuation">;</span>
 
-<span class="token comment">/**
- * 思路1：借助 ReadWriteLock 实现多读单写的线程安全map
- */</span>
-<span class="token keyword">class</span> <span class="token class-name">MultiReadSingleWriteMap1</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">K</span><span class="token punctuation">,</span> <span class="token class-name">V</span><span class="token punctuation">></span></span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">K</span><span class="token punctuation">,</span> <span class="token class-name">V</span><span class="token punctuation">></span></span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token comment">// 使用ReadWriteLock实现读写锁</span>
-    <span class="token comment">// 读操作使用读锁 readLock()，写操作使用写锁 writeLock()</span>
-    <span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token class-name">ReadWriteLock</span> lock <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ReentrantReadWriteLock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr1 <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr2 <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
 
-    <span class="token comment">/**
-     * get操作
-     * 类型：读
-     */</span>
-    <span class="token keyword">public</span> <span class="token class-name">V</span> <span class="token function">get</span><span class="token punctuation">(</span><span class="token class-name">K</span> key<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token comment">// 读取时允许多个线程同时读取</span>
-        lock<span class="token punctuation">.</span><span class="token function">readLock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">lock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
-            <span class="token keyword">return</span> map<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span> <span class="token keyword">finally</span> <span class="token punctuation">&#123;</span>
-            lock<span class="token punctuation">.</span><span class="token function">readLock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">unlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span>
+        <span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>arr1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>arr2<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    <span class="token comment">/**
-     * put操作
-     * 类型：写
-     */</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">put</span><span class="token punctuation">(</span><span class="token class-name">K</span> key<span class="token punctuation">,</span> <span class="token class-name">V</span> value<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token comment">// 写入时只有一个线程可以访问 Map</span>
-        lock<span class="token punctuation">.</span><span class="token function">writeLock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">lock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
-            <span class="token comment">// 新增/修改目标值</span>
-            map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span> <span class="token keyword">finally</span> <span class="token punctuation">&#123;</span>
-            <span class="token comment">// 释放写锁</span>
-            lock<span class="token punctuation">.</span><span class="token function">writeLock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">unlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span>
+        <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> minDiff <span class="token operator">=</span> <span class="token class-name">Integer</span><span class="token punctuation">.</span>MAX_VALUE<span class="token punctuation">;</span>
+        <span class="token keyword">int</span> num1 <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> num2 <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
 
-    <span class="token comment">/**
-     * remove操作
-     * 类型：写
-     */</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">remove</span><span class="token punctuation">(</span><span class="token class-name">K</span> key<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token comment">// remove属于写操作，只有一个线程可以访问Map</span>
-        lock<span class="token punctuation">.</span><span class="token function">writeLock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">lock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
-            <span class="token comment">// 删除目标值</span>
-            map<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span> <span class="token keyword">finally</span> <span class="token punctuation">&#123;</span>
-            <span class="token comment">// 释放写锁</span>
-            lock<span class="token punctuation">.</span><span class="token function">writeLock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">unlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
-
-
-<span class="token comment">/**
- * 思路2：借助 synchronized、信号量 实现多读单写的线程安全map
- */</span>
-<span class="token keyword">class</span> <span class="token class-name">MultiReadSingleWriteMap2</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">K</span><span class="token punctuation">,</span> <span class="token class-name">V</span><span class="token punctuation">></span></span> <span class="token punctuation">&#123;</span>
-    <span class="token comment">// 定义读信号量、写信号量</span>
-    <span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token class-name">Semaphore</span> readLock<span class="token punctuation">;</span>
-    <span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token class-name">Semaphore</span> writeLock<span class="token punctuation">;</span>
-    <span class="token comment">// 定义读计数器，用于判断占据和释放写锁的时机</span>
-    <span class="token keyword">private</span> <span class="token keyword">int</span> readCount<span class="token punctuation">;</span>
-    <span class="token comment">// 定义用于实际存储键值对的Map</span>
-    <span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">K</span><span class="token punctuation">,</span> <span class="token class-name">V</span><span class="token punctuation">></span></span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-    <span class="token comment">/**
-     * 构造函数
-     */</span>
-    <span class="token keyword">public</span> <span class="token class-name">MultiReadSingleWriteMap2</span><span class="token punctuation">(</span><span class="token keyword">int</span> readLimit<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>readCount <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token comment">// 读信号量初始化为输入上限值</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>readLock <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Semaphore</span><span class="token punctuation">(</span>readLimit<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment">// 写信号量初始化上限为1</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>writeLock <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Semaphore</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-
-    <span class="token comment">/**
-     * get操作
-     * 类型：读
-     */</span>
-    <span class="token keyword">public</span> <span class="token class-name">V</span> <span class="token function">get</span><span class="token punctuation">(</span><span class="token class-name">K</span> key<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">InterruptedException</span> <span class="token punctuation">&#123;</span>
-        <span class="token comment">// 获取读信号量</span>
-        readLock<span class="token punctuation">.</span><span class="token function">acquire</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
-            <span class="token comment">// 使用synchronized锁住临界区，对读计数器操作</span>
-            <span class="token keyword">synchronized</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-                <span class="token comment">// 拿到读信号量，读线程计数器加1，占据写信号量</span>
-                readCount <span class="token operator">++</span><span class="token punctuation">;</span>
-                <span class="token keyword">if</span> <span class="token punctuation">(</span>readCount <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-                    <span class="token comment">// 因为写信号量只有1个，所以在读计数器等于1时占据一次就足够</span>
-                    writeLock<span class="token punctuation">.</span><span class="token function">acquire</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token punctuation">&#125;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> arr1<span class="token punctuation">.</span>length <span class="token operator">&amp;&amp;</span> j <span class="token operator">&lt;</span> arr2<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">int</span> diff <span class="token operator">=</span> <span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span>arr1<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-</span> arr2<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>diff <span class="token operator">&lt;</span> minDiff<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                minDiff <span class="token operator">=</span> diff<span class="token punctuation">;</span>
+                num1 <span class="token operator">=</span> arr1<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+                num2 <span class="token operator">=</span> arr2<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
             <span class="token punctuation">&#125;</span>
-        <span class="token punctuation">&#125;</span> <span class="token keyword">finally</span> <span class="token punctuation">&#123;</span>
-            readLock<span class="token punctuation">.</span><span class="token function">release</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span>
-        <span class="token comment">// 读取目标值</span>
-        <span class="token class-name">V</span> value <span class="token operator">=</span> map<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment">// 重新获取读信号量</span>
-        readLock<span class="token punctuation">.</span><span class="token function">acquire</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
-            <span class="token keyword">synchronized</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-                <span class="token comment">// 读取完毕，读线程计数器减1</span>
-                readCount <span class="token operator">--</span><span class="token punctuation">;</span>
-                <span class="token comment">// 如果读线程计数器为0，没有线程在读，可以释放写信号量</span>
-                <span class="token keyword">if</span> <span class="token punctuation">(</span>readCount <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-                    writeLock<span class="token punctuation">.</span><span class="token function">release</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token punctuation">&#125;</span>
+            <span class="token comment">// 如果不需要记录两个数分别是多少，可以直接使用以下语句</span>
+            <span class="token comment">// minDiff = Math.min(minDiff, Math.abs(arr1[i] - arr2[j]));</span>
+
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>arr1<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;</span> arr2<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                i<span class="token operator">++</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+                j<span class="token operator">++</span><span class="token punctuation">;</span>
             <span class="token punctuation">&#125;</span>
-        <span class="token punctuation">&#125;</span> <span class="token keyword">finally</span> <span class="token punctuation">&#123;</span>
-            readLock<span class="token punctuation">.</span><span class="token function">release</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">&#125;</span>
-        <span class="token keyword">return</span> value<span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
 
-    <span class="token comment">/**
-     * put操作
-     * 类型：写
-     */</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">put</span><span class="token punctuation">(</span><span class="token class-name">K</span> key<span class="token punctuation">,</span> <span class="token class-name">V</span> value<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">InterruptedException</span> <span class="token punctuation">&#123;</span>
-        <span class="token comment">// 尝试获取写信号量</span>
-        writeLock<span class="token punctuation">.</span><span class="token function">acquire</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
-            <span class="token comment">// 新增/修改目标值</span>
-            map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span> <span class="token keyword">finally</span> <span class="token punctuation">&#123;</span>
-            <span class="token comment">// 释放写信号量</span>
-            writeLock<span class="token punctuation">.</span><span class="token function">release</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"两个数组中差值绝对值最小的元素是 "</span> <span class="token operator">+</span> num1 <span class="token operator">+</span> <span class="token string">" 和 "</span> <span class="token operator">+</span> num2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"它们的差值绝对值是 "</span> <span class="token operator">+</span> minDiff<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    <span class="token comment">/**
-     * remove操作
-     * 类型：写
-     */</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">remove</span><span class="token punctuation">(</span><span class="token class-name">K</span> key<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">InterruptedException</span> <span class="token punctuation">&#123;</span>
-        <span class="token comment">// 尝试获取写信号量</span>
-        writeLock<span class="token punctuation">.</span><span class="token function">acquire</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
-            <span class="token comment">// 删除目标值</span>
-            map<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span> <span class="token keyword">finally</span> <span class="token punctuation">&#123;</span>
-            <span class="token comment">// 释放写信号量</span>
-            writeLock<span class="token punctuation">.</span><span class="token function">release</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span>
     <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
       
 
       <!-- 百度自动推送方式提交 -->
@@ -407,7 +288,7 @@ var _hmt = _hmt || [];
         
         <br>
         <strong>本文链接：</strong>
-        <a rel="license" href="https://hexo.whtli.cn/archives/b2712a0b.html">https://hexo.whtli.cn/archives/b2712a0b.html</a>
+        <a rel="license" href="https://hexo.whtli.cn/archives/444cc95b.html">https://hexo.whtli.cn/archives/444cc95b.html</a>
         <br>
         <strong>版权声明：</strong>
         遵循
@@ -432,7 +313,7 @@ var _hmt = _hmt || [];
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">多线程</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">排序</a>
         		</li>
       		
 		</ul>
@@ -499,7 +380,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://hexo.whtli.cn/archives/b2712a0b.html" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://hexo.whtli.cn/archives/444cc95b.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -542,7 +423,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE"><span class="toc-number">1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-number">2.</span> <span class="toc-text">代码</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE"><span class="toc-number">1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-number">2.</span> <span class="toc-text">代码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%85%88%E6%8E%92%E5%BA%8F%EF%BC%8C%E5%90%8E%E5%8F%8C%E6%8C%87%E9%92%88"><span class="toc-number">2.1.</span> <span class="toc-text">1. 先排序，后双指针</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -585,7 +466,7 @@ var _hmt = _hmt || [];
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2023 whtli
+    		&copy; 2024 whtli
     	</div>
       	<div class="footer-right">
       		<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
@@ -712,14 +593,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">其他</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Anaconda</a>
               </li>
              
@@ -728,11 +601,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">其他</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">多线程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">排序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -748,7 +633,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数值计算</a>
+                <a href="javascript:void(0)" class="js-tag color3">整数</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -760,7 +645,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数组</a>
+                <a href="javascript:void(0)" class="js-tag color5">数值计算</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -768,11 +653,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">整数</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">排序</a>
+                <a href="javascript:void(0)" class="js-tag color3">数组</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -800,15 +681,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">二分查找</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">哈希表</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">矩阵</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">二分查找</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -916,14 +797,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">后端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">maven</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
@@ -948,7 +821,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">WebStorm</a>
+                <a href="javascript:void(0)" class="js-tag color3">后端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">maven</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -957,6 +834,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">因果推断</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">WebStorm</a>
               </li>
              
               <li class="article-tag-list-item">
